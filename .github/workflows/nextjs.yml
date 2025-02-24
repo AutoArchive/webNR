@@ -5,7 +5,10 @@
 name: Deploy Next.js site to Pages
 
 on:
-
+  push:
+    branches:
+      - master 
+      - main
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -70,5 +73,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
-          publish_branch: gh-pages
+          publish_branch: app-pages
           force_orphan: true  # This will ensure clean deployment
