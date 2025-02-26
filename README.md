@@ -2,8 +2,6 @@
 
 A modern, privacy-focused, cross-platform web novel reader that works entirely client-side in browser. Built with Next.js and TypeScript.
 
-[中文文档](README.zh.md)
-
 ## Key Features
 
 🔒 **Privacy First**

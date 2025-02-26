@@ -27,29 +27,3 @@ Open search view for a specific source:
 ```
 https://app.webnovel.win?search=https://repo1.com
 ```
-
-## Reading Parameters
-
-### Open Chapter
-
-Jump to specific chapter:
-
-```
-https://app.webnovel.win?novel=NOVEL_ID&chapter=CHAPTER_NUMBER
-```
-
-### Set Theme
-
-Set reading theme:
-
-```
-https://app.webnovel.win?theme=dark
-```
-
-## Examples
-
-### Complete Example
-
-```
-https://app.webnovel.win?repos=https://repo1.com&theme=dark&chapter=1
-```
