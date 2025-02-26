@@ -12,7 +12,8 @@ tags:
 
 ## Introduction  
 
-Web novel enthusiasts have a growing number of tools to streamline their reading experience. From mobile apps that aggregate chapters from fan-translation sites to official platforms with proprietary content, the ecosystem of **web novel reader software** is diverse. This post provides a developer-focused analysis of the most relevant projects – both open-source and commercial – comparing features, architectures, and target audiences. We'll break down how these competitors stack up against **our project** (a new entrant in this space), identifying strengths, gaps, and opportunities. Advanced users and potential contributors will gain insight into implementation details, scalability considerations, and best practices for building a web novel reader. *(Any previously mentioned image/chart content is omitted in this text-only analysis.)*
+Web novel enthusiasts have a growing number of tools to streamline their reading experience. From mobile apps that aggregate chapters from fan-translation sites to official platforms with proprietary content, the ecosystem of **web novel reader software** is diverse. This post provides a developer-focused analysis of the most relevant projects – both open-source and commercial – comparing features, architectures, and target audiences. We'll break down how these competitors stack up against **our project** (a new entrant in this space), identifying strengths, gaps, and opportunities. Advanced users and potential contributors will gain insight into implementation details, scalability considerations, and best practices for building a web novel reader.
+<!-- more -->
 
 ## Landscape of Web Novel Readers  
 
