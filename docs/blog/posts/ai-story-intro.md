@@ -7,6 +7,7 @@ date: 2025-02-25
 **Part 1 of our AI Storytelling Series**
 
 *Artificial intelligence has moved from science fiction into the realm of creative expression, fundamentally changing how stories are conceived, developed, and experienced. In this first article of our series on AI storytelling, we explore the general applications and business aspects of this rapidly evolving technology.*
+<!-- more -->
 
 ## General AI Applications in Storytelling and Role-Playing  
 

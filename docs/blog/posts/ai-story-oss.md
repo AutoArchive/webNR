@@ -7,6 +7,7 @@ date: 2025-03-01
 **Part 2 of our AI Storytelling Series**
 
 *While commercial AI storytelling platforms garner headlines with billion-dollar valuations, a vibrant open-source movement is simultaneously democratizing access to these powerful narrative technologies. In this second article of our series, we explore the community-driven innovations, technical underpinnings, and the essential comparison between proprietary and open approaches to AI storytelling.*
+<!-- more -->
 
 ## 3. Open-Source Projects and Contributions  
 
