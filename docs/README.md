@@ -10,7 +10,7 @@
   </p>
   
   <p>
-    <a href="README.zh.md">中文文档</a> |
+    <a href="/source/">Source 书源</a> |
     <a href="https://app.webnovel.win">Live Demo 在线演示</a>
   </p>
 </div>
