@@ -11,7 +11,7 @@
   
   <p>
     <a href="/source/">Source 书源</a> |
-    <a href="https://app.webnovel.win">Live Demo 在线演示</a>
+    <a href="https://app.webnovel.win">Live Demo 在线阅读</a>
   </p>
 </div>
 
