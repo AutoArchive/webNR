@@ -76,6 +76,19 @@ export const LibraryView: React.FC<LibraryViewProps> = ({ onNovelSelect }) => {
         }
     };
 
+    const handleExportSelected = async () => {
+        try {
+            for (const novelId of selectedNovels) {
+                await NovelStorage.exportNovelAsTxt(novelId);
+            }
+            setSelectedNovels(new Set());
+            setIsSelectionMode(false);
+        } catch (error) {
+            console.error('Failed to export novels:', error);
+            alert('Failed to export novels. Please try again.');
+        }
+    };
+
     const handleSelectionModeToggle = () => {
         setIsSelectionMode(!isSelectionMode);
         if (!isSelectionMode) {
@@ -94,6 +107,7 @@ export const LibraryView: React.FC<LibraryViewProps> = ({ onNovelSelect }) => {
                 selectedCount={selectedNovels.size}
                 onSelectionModeToggle={handleSelectionModeToggle}
                 onDeleteSelected={handleDeleteSelected}
+                onExportSelected={handleExportSelected}
             />
 
             <div className="space-y-2">

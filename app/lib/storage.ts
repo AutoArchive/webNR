@@ -267,4 +267,39 @@ export class NovelStorage {
             transaction.onerror = () => reject(transaction.error);
         });
     }
+
+    static async exportNovelAsTxt(novelId: string): Promise<void> {
+        const db = await this.getDB();
+        
+        // Get novel metadata
+        const novel = await new Promise<Novel>((resolve, reject) => {
+            const transaction = db.transaction(this.NOVELS_STORE, 'readonly');
+            const store = transaction.objectStore(this.NOVELS_STORE);
+            const request = store.get(novelId);
+            
+            request.onsuccess = () => {
+                if (request.result) {
+                    resolve(request.result);
+                } else {
+                    reject(new Error('Novel not found'));
+                }
+            };
+            request.onerror = () => reject(request.error);
+        });
+
+        // Get novel content
+        const content = await this.getNovelContent(novelId);
+        
+        // Create and download the file
+        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${novel.title}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
 }

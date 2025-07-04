@@ -12,6 +12,7 @@ interface LibraryControlsProps {
     selectedCount: number;
     onSelectionModeToggle: () => void;
     onDeleteSelected: () => void;
+    onExportSelected?: () => void;
 }
 
 export const LibraryControls: React.FC<LibraryControlsProps> = ({
@@ -23,6 +24,7 @@ export const LibraryControls: React.FC<LibraryControlsProps> = ({
     selectedCount,
     onSelectionModeToggle,
     onDeleteSelected,
+    onExportSelected,
 }) => {
     const { t } = useTranslation();
 
@@ -57,12 +59,20 @@ export const LibraryControls: React.FC<LibraryControlsProps> = ({
                     {isSelectionMode ? t('library.cancel') : t('library.select')}
                 </button>
                 {isSelectionMode && selectedCount > 0 && (
-                    <button
-                        onClick={onDeleteSelected}
-                        className="px-4 py-2 rounded-lg bg-red-500 hover:bg-red-600 text-white transition-colors"
-                    >
-                        {t('library.delete')} ({selectedCount})
-                    </button>
+                    <>
+                        <button
+                            onClick={onExportSelected}
+                            className="px-4 py-2 rounded-lg bg-green-500 hover:bg-green-600 text-white transition-colors"
+                        >
+                            {t('library.export')} ({selectedCount})
+                        </button>
+                        <button
+                            onClick={onDeleteSelected}
+                            className="px-4 py-2 rounded-lg bg-red-500 hover:bg-red-600 text-white transition-colors"
+                        >
+                            {t('library.delete')} ({selectedCount})
+                        </button>
+                    </>
                 )}
             </div>
         </div>

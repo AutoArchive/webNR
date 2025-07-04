@@ -28,7 +28,7 @@ interface ReaderProps {
 }
 
 const DEFAULT_CONFIG: ReaderConfig = {
-  fontSize: 16,
+  fontSize: 20,
   isPaged: false,
   charsPerPage: 500,
 };
