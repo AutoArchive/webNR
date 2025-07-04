@@ -233,7 +233,7 @@ export default function Home() {
                   currentOffset={currentOffset}
                   onPositionChange={handlePositionChange}
                   defaultConfig={{
-                    fontSize: 16,
+                    fontSize: 20,
                     isPaged: false,
                   }}
                   showMenu={showReaderMenu}
