@@ -9,7 +9,7 @@
 - Last closeout pull request: #15
 - Last successful production deployment: not applicable to the bootstrap infrastructure change
 - Last public verification: public application reviewed during bootstrap on 2026-08-05
-- Skill submodule commit: `516e9e2dcf012506a677a749049d64c5914643e9`
+- Skill submodule commit: `16446ddbec8eeb1173362c7ce41977a274e897e8`
 
 ## Current signals
 
@@ -19,6 +19,7 @@
 - Repository: administrator and pull-request write access verified; PR quality gates are active.
 - Production: `https://app.webnovel.win/` is publicly reachable, but deployment-to-commit evidence is not yet enforced.
 - Autonomous schedule: enabled for daily operation in `America/Los_Angeles`.
+- Branch cleanup: merged automation branch deletion is best-effort and does not affect completion or blocker status.
 
 ## Active focus
 
