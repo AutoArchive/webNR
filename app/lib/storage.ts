@@ -170,6 +170,10 @@ export class NovelStorage {
     }
 
     static async importFromFile(file: File): Promise<Novel> {
+        if (!file.name.toLowerCase().endsWith('.txt')) {
+            throw new Error('Unsupported local file format. WebNR currently supports TXT files only.');
+        }
+
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
 

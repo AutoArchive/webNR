@@ -22,6 +22,12 @@ export const AddView: React.FC<AddViewProps> = ({ onImportComplete }) => {
         const file = event.target.files?.[0];
         if (!file) return;
 
+        if (!file.name.toLowerCase().endsWith('.txt')) {
+            setError('WebNR currently supports local TXT files. EPUB support is not available yet.');
+            event.target.value = '';
+            return;
+        }
+
         setIsLoading(true);
         setLoadingMessage(t('add.loading').replace('{filename}', file.name));
         setError(null);
@@ -68,7 +74,7 @@ export const AddView: React.FC<AddViewProps> = ({ onImportComplete }) => {
                         {t('add.uploadTitle')}
                     </h2>
                     <p id="file-help" className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                        TXT and EPUB files are processed and stored in this browser.
+                        TXT files are decoded, processed, and stored in this browser. EPUB support is planned but is not available yet.
                     </p>
                     <label className="mt-4 block text-sm font-medium text-gray-800 dark:text-gray-200" htmlFor="novel-file">
                         {t('discover.localImport')}
@@ -77,7 +83,7 @@ export const AddView: React.FC<AddViewProps> = ({ onImportComplete }) => {
                         id="novel-file"
                         ref={fileInputRef}
                         type="file"
-                        accept=".txt,.epub,text/plain,application/epub+zip"
+                        accept=".txt,text/plain"
                         aria-describedby="file-help"
                         onChange={event => { void handleFileUpload(event); }}
                         className="mt-2 block w-full rounded-lg text-sm text-gray-500 file:mr-4 file:rounded-lg file:border-0 file:bg-blue-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-blue-700 hover:file:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:file:bg-blue-900/20 dark:file:text-blue-300 dark:hover:file:bg-blue-900/30"

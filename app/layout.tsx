@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-const title = 'WebNR — Private Offline TXT & EPUB Reader';
-const description = 'Read your own TXT and EPUB books in the browser. WebNR works offline, stores books and reading progress locally, requires no account, and includes text-to-speech and customizable reading modes.';
+const title = 'WebNR — Private Offline TXT Reader';
+const description = 'Read your own TXT books in the browser. WebNR works offline, stores books and reading progress locally, requires no account, and includes text-to-speech and customizable reading modes.';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -80,7 +80,7 @@ const structuredData = {
     priceCurrency: 'USD',
   },
   featureList: [
-    'Local TXT and EPUB import',
+    'Local TXT import with common text encodings',
     'Offline progressive web app',
     'Local reading progress',
     'Text-to-speech',

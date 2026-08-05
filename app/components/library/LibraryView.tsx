@@ -169,7 +169,7 @@ export const LibraryView: React.FC<LibraryViewProps> = ({ onNovelSelect, onAddNo
 
                         <ul className="mt-6 grid gap-3 text-sm text-gray-700 dark:text-gray-200 sm:grid-cols-3">
                             <li className="rounded-lg bg-gray-50 p-3 dark:bg-gray-900/50">
-                                <strong className="block text-gray-950 dark:text-white">TXT / EPUB</strong>
+                                <strong className="block text-gray-950 dark:text-white">TXT</strong>
                                 {t('discover.localImport')}
                             </li>
                             <li className="rounded-lg bg-gray-50 p-3 dark:bg-gray-900/50">

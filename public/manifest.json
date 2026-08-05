@@ -2,7 +2,7 @@
   "id": "/",
   "name": "WebNR — Private Offline Reader",
   "short_name": "WebNR",
-  "description": "Read your own TXT and EPUB books offline. Books and reading progress stay in your browser, with no account required.",
+  "description": "Read your own TXT books offline. Books and reading progress stay in your browser, with no account required.",
   "lang": "en",
   "start_url": "/",
   "scope": "/",
@@ -15,7 +15,7 @@
     {
       "name": "Import a book",
       "short_name": "Import",
-      "description": "Import a local TXT or EPUB file, or a supported URL",
+      "description": "Import a local TXT file or a supported text URL",
       "url": "/?view=add"
     },
     {
