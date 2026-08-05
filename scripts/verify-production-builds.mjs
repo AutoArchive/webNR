@@ -3,7 +3,10 @@ import { resolve4, resolve6, resolveCname } from 'node:dns/promises';
 
 const statusPath = '.github/seo-data/status.md';
 const status = readFileSync(statusPath, 'utf8');
-const maxAttempts = 42;
+const configuredAttempts = Number.parseInt(process.env.PRODUCTION_EVIDENCE_ATTEMPTS ?? '42', 10);
+const maxAttempts = Number.isInteger(configuredAttempts) && configuredAttempts > 0
+  ? configuredAttempts
+  : 42;
 const retryDelayMs = 10_000;
 
 const targets = [
