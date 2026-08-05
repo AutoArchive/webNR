@@ -6,6 +6,10 @@ on:
       - main
     paths-ignore:
       - '.github/seo-data/**'
+      - '.github/requirements-docs.txt'
+      - '.github/workflows/publish-docs-pages.yml'
+      - 'docs/**'
+      - 'mkdocs.yml'
   workflow_dispatch:
 
 permissions:
