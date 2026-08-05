@@ -2,11 +2,11 @@
 
 ## Current state
 
-- Last completed run: pending metadata-only closeout merge for 2026-08-05 bootstrap
+- Last completed run: 2026-08-05 bootstrap cycle, recorded by closeout pull request #15
 - Last data window: provider exports unavailable; repository and public-site evidence collected on 2026-08-05
 - Last site-change pull request: none; bootstrap infrastructure pull request was #14
 - Last squash merge: `a773984e95baa28dbf7f846d7b514e2229755585`
-- Last closeout pull request: #15, pending final checks and squash merge
+- Last closeout pull request: #15
 - Last successful production deployment: not applicable to the bootstrap infrastructure change
 - Last public verification: public application reviewed during bootstrap on 2026-08-05
 - Skill submodule commit: `516e9e2dcf012506a677a749049d64c5914643e9`
