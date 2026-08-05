@@ -2,11 +2,11 @@
 
 ## Current state
 
-- Last completed run: 2026-08-05 branch-cleanup policy adoption; metadata closeout in progress
+- Last completed run: 2026-08-05 branch-cleanup policy adoption, recorded by closeout pull request #17
 - Last data window: provider exports unavailable; repository and public-site evidence collected on 2026-08-05
 - Last site-change pull request: none; latest metadata and skill-adoption pull request was #16
 - Last squash merge: `2275505bcfb0838ec67e53d37198922002c4482c`
-- Last closeout pull request: #15; current policy-adoption closeout pending
+- Last closeout pull request: #17
 - Last successful production deployment: not applicable to metadata and shared-skill policy changes
 - Last public verification: public application reviewed during bootstrap on 2026-08-05
 - Skill submodule commit: `16446ddbec8eeb1173362c7ce41977a274e897e8`
