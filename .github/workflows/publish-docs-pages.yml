@@ -119,6 +119,7 @@ jobs:
           grep -Fq 'AutoArchive/webNR' site/index.html
           grep -Fq 'https://autoarchive.github.io/webNR/' site/index.html
           grep -R -Fq 'G-DGH8HNQKE4' site
+          grep -R -Fq 'G-NL0WV2XMJN' site
           if grep -R -E -q 'yourusername/webnr|yunwei37/webNR|https://www\.webnovel\.win' site; then
             echo 'Obsolete repository or documentation-domain reference in artifact' >&2
             exit 1
@@ -177,6 +178,7 @@ jobs:
             if [ "${pages_ready}" = 'true' ] \
               && printf '%s' "${build_response}" | grep -Fq "\"commit\": \"${BUILD_SHA}\"" \
               && printf '%s' "${home_response}" | grep -Fq 'G-DGH8HNQKE4' \
+              && printf '%s' "${home_response}" | grep -Fq 'G-NL0WV2XMJN' \
               && printf '%s' "${guide_response}" | grep -Fq 'TXT import troubleshooting' \
               && printf '%s' "${guide_response}" | grep -Fq 'TXT 导入排障'; then
               printf 'Verified Pages configuration, documentation commit, GA4, and guide for %s\n' "${BUILD_SHA}"
