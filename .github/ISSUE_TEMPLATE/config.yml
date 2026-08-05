@@ -5,4 +5,4 @@ contact_links:
     about: Report vulnerabilities privately. Do not include exploit details in a public issue.
   - name: WebNR documentation
     url: https://autoarchive.github.io/webNR/
-    about: Read current usage, privacy, format-support, troubleshooting, and contribution guidance.
+    about: Read current usage, analytics, format-support, troubleshooting, and contribution guidance.

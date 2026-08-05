@@ -112,6 +112,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </LanguageProvider>
         <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${CONFIG.ANALYTICS.GOOGLE_ANALYTICS_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){window.dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              // The site owner explicitly requires the complete browser URL,
+              // including import and other query parameters, to be reported.
+              gtag('config', '${CONFIG.ANALYTICS.GOOGLE_ANALYTICS_ID}', {
+                page_location: window.location.href,
+                page_path: window.location.pathname + window.location.search,
+                page_title: document.title,
+                allow_google_signals: false,
+                allow_ad_personalization_signals: false
+              });
+            `,
+          }}
+        />
+        <Script
           id="register-service-worker"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{

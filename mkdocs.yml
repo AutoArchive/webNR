@@ -56,6 +56,9 @@ plugins:
       type: timeago
 
 extra:
+  analytics:
+    provider: google
+    property: G-DGH8HNQKE4
   homepage: https://app.webnovel.win/
   social:
     - icon: fontawesome/brands/github
