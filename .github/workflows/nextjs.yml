@@ -8,8 +8,11 @@ on:
       - '.github/seo-data/**'
       - '.github/requirements-docs.txt'
       - '.github/workflows/publish-docs-pages.yml'
+      - '.github/workflows/quality.yml'
+      - '.github/workflows/nextjs.yml'
       - 'docs/**'
       - 'mkdocs.yml'
+      - 'scripts/verify-production-builds.mjs'
   workflow_dispatch:
 
 permissions:
@@ -30,16 +33,13 @@ jobs:
         uses: actions/checkout@v5
         with:
           submodules: recursive
-
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
           node-version: '20'
           cache: npm
-
       - name: Install dependencies
         run: npm ci
-
       - name: Write public build identity
         env:
           BUILD_SHA: ${{ github.sha }}
@@ -53,10 +53,8 @@ jobs:
           };
           fs.writeFileSync('public/build.json', `${JSON.stringify(manifest, null, 2)}\n`);
           NODE
-
       - name: Build static application
         run: npm run build
-
       - name: Validate deployment artifact
         env:
           BUILD_SHA: ${{ github.sha }}
@@ -75,7 +73,6 @@ jobs:
             exit 1
           fi
           touch out/.nojekyll
-
       - name: Publish app-pages branch
         uses: peaceiris/actions-gh-pages@v4.1.0
         with:
@@ -84,7 +81,6 @@ jobs:
           publish_branch: app-pages
           force_orphan: true
           commit_message: "deploy: ${{ github.sha }}"
-
       - name: Verify exact production build
         env:
           BUILD_SHA: ${{ github.sha }}
