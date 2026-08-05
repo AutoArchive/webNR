@@ -107,3 +107,19 @@ jobs:
         run: >-
           python .github/seo-skills/scripts/validate_seo_data.py
           --data-root .github/seo-data
+
+  production-evidence:
+    name: Production evidence
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout recorded deployment state
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+
+      - name: Verify recorded public builds
+        run: node scripts/verify-production-builds.mjs
