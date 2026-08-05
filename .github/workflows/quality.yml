@@ -8,7 +8,9 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: read
+  pages: read
 
 concurrency:
   group: quality-${{ github.workflow }}-${{ github.ref }}
@@ -108,10 +110,94 @@ jobs:
           python .github/seo-skills/scripts/validate_seo_data.py
           --data-root .github/seo-data
 
+  deployment-configuration:
+    name: Deployment configuration
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Inspect registered workflows, recent documentation runs, and Pages state
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          api="https://api.github.com/repos/${REPOSITORY}"
+          headers=(
+            --header 'Accept: application/vnd.github+json'
+            --header "Authorization: Bearer ${GH_TOKEN}"
+            --header 'X-GitHub-Api-Version: 2022-11-28'
+          )
+
+          curl --fail-with-body --silent --show-error "${headers[@]}" \
+            "${api}/actions/workflows?per_page=100" > "${RUNNER_TEMP}/workflows.json"
+          curl --fail-with-body --silent --show-error "${headers[@]}" \
+            "${api}/actions/workflows/publish-docs-pages.yml/runs?branch=main&per_page=10" \
+            > "${RUNNER_TEMP}/docs-runs.json"
+          curl --fail-with-body --silent --show-error "${headers[@]}" \
+            "${api}/pages" > "${RUNNER_TEMP}/pages.json"
+          curl --fail-with-body --silent --show-error "${headers[@]}" \
+            "${api}/pages/builds/latest" > "${RUNNER_TEMP}/latest-pages-build.json" || true
+
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          temp = Path(os.environ['RUNNER_TEMP'])
+          workflows = json.loads((temp / 'workflows.json').read_text())
+          runs = json.loads((temp / 'docs-runs.json').read_text())
+          pages = json.loads((temp / 'pages.json').read_text())
+
+          print('REGISTERED WORKFLOWS')
+          for item in workflows.get('workflows', []):
+              print(json.dumps({
+                  'id': item.get('id'),
+                  'name': item.get('name'),
+                  'path': item.get('path'),
+                  'state': item.get('state'),
+              }, sort_keys=True))
+
+          print('DOCUMENTATION WORKFLOW RUNS')
+          print('total_count=', runs.get('total_count'))
+          for item in runs.get('workflow_runs', []):
+              print(json.dumps({
+                  'id': item.get('id'),
+                  'event': item.get('event'),
+                  'status': item.get('status'),
+                  'conclusion': item.get('conclusion'),
+                  'head_sha': item.get('head_sha'),
+                  'run_number': item.get('run_number'),
+                  'html_url': item.get('html_url'),
+              }, sort_keys=True))
+
+          print('PAGES SITE')
+          allowed = {
+              key: pages.get(key)
+              for key in (
+                  'url', 'status', 'cname', 'custom_404', 'html_url',
+                  'build_type', 'source', 'https_enforced',
+                  'protected_domain_state', 'pending_domain_unverified_at'
+              )
+          }
+          print(json.dumps(allowed, sort_keys=True))
+
+          latest_path = temp / 'latest-pages-build.json'
+          if latest_path.exists() and latest_path.stat().st_size:
+              try:
+                  latest = json.loads(latest_path.read_text())
+              except json.JSONDecodeError:
+                  latest = {'unparsed': latest_path.read_text()[:500]}
+              print('LATEST PAGES BUILD')
+              print(json.dumps({
+                  key: latest.get(key)
+                  for key in ('url', 'status', 'error', 'pusher', 'commit', 'duration', 'created_at', 'updated_at')
+              }, default=str, sort_keys=True))
+          PY
+
   production-evidence:
     name: Production evidence
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 2
     steps:
       - name: Checkout recorded deployment state
         uses: actions/checkout@v5
@@ -122,4 +208,6 @@ jobs:
           node-version: '20'
 
       - name: Verify recorded public builds
+        env:
+          PRODUCTION_EVIDENCE_ATTEMPTS: '2'
         run: node scripts/verify-production-builds.mjs
