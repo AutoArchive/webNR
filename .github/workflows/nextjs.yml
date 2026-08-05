@@ -6,6 +6,9 @@ on:
       - main
     paths-ignore:
       - '.github/seo-data/**'
+      - '.github/workflows/quality.yml'
+      - '.github/workflows/nextjs.yml'
+      - 'scripts/verify-production-builds.mjs'
   workflow_dispatch:
 
 permissions:
