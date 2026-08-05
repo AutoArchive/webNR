@@ -8,7 +8,7 @@ export const CONFIG = {
   CANONICAL_DOMAIN: 'https://app.webnovel.win', // Base URL for canonical links
 
   // Analytics
-  GOOGLE_ANALYTICS_ID: 'G-DGH8HNQKE4',
+  GOOGLE_ANALYTICS_IDS: ['G-DGH8HNQKE4', 'G-NL0WV2XMJN'],
 
   // PWA Settings
   PWA: {

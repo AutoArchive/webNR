@@ -23,10 +23,9 @@
 
 ## Cloudflare data
 
-- Cloudflare enabled: no
+- Cloudflare enabled: yes
 - Zone hostname: `webnovel.win`
 - Preferred dataset: `httpRequestsAdaptiveGroups`
-- Availability note: the connected Cloudflare accounts do not currently expose this zone.
 
 ## Deployment
 

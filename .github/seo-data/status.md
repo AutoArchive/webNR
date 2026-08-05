@@ -13,9 +13,9 @@
 
 ## Current signals
 
-- Google Analytics 4: Google Drive is connected; no matching export was found during bootstrap.
-- Google Search Console: Google Drive is connected; no matching export was found during bootstrap.
-- Cloudflare: connected accounts do not expose the `webnovel.win` zone; collection is disabled until the zone becomes available.
+- Google Analytics 4: the historical tag is preserved and a dedicated current property is pending production deployment; no matching Drive export was found during bootstrap.
+- Google Search Console: the domain property is configured; no matching Drive export was found during bootstrap.
+- Cloudflare: the `webnovel.win` zone is available for read-only analytics collection.
 - Repository: administrator and pull-request write access verified; PR quality gates are active.
 - Production: `https://app.webnovel.win/` is publicly reachable, but deployment-to-commit evidence is not yet enforced.
 - Autonomous schedule: enabled for daily operation in `America/Los_Angeles`.
@@ -24,7 +24,7 @@
 ## Active focus
 
 - Improve the empty-library onboarding experience and static search-visible product explanation.
-- Align privacy claims with actual analytics behavior.
+- Measure only aggregate acquisition behavior and keep imported reading data outside analytics.
 - Make production deployment evidence attributable to the exact squash commit.
 
 This file is the current verified summary. Detailed history belongs in `daily/`.

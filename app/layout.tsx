@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const googleAnalyticsConfig = CONFIG.GOOGLE_ANALYTICS_IDS
+  .map((id) => `gtag('config', '${id}');`)
+  .join('\n');
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -55,7 +59,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         
         {/* Google Analytics */}
-        <Script async src={`https://www.googletagmanager.com/gtag/js?id=${CONFIG.GOOGLE_ANALYTICS_ID}`} />
+        <Script async src={`https://www.googletagmanager.com/gtag/js?id=${CONFIG.GOOGLE_ANALYTICS_IDS[0]}`} />
         <Script
           id="google-analytics"
           dangerouslySetInnerHTML={{
@@ -63,7 +67,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${CONFIG.GOOGLE_ANALYTICS_ID}');
+              ${googleAnalyticsConfig}
             `,
           }}
         />
