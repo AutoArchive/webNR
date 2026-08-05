@@ -156,10 +156,12 @@ jobs:
             guide_response="$(curl --fail --silent --show-error --max-time 15 "${TROUBLESHOOTING_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
 
             pages_ready="$(
-              printf '%s' "${pages_response}" | python3 -c '
-          import json, sys
+              PAGES_RESPONSE="${pages_response}" python3 - <<'PY'
+          import json
+          import os
+
           try:
-              data = json.load(sys.stdin)
+              data = json.loads(os.environ.get("PAGES_RESPONSE", ""))
           except Exception:
               print("false")
           else:
@@ -170,7 +172,7 @@ jobs:
                   and data.get("status") == "built"
               )
               print("true" if ready else "false")
-          '
+          PY
             )"
 
             if [ "${pages_ready}" = 'true' ] \
@@ -181,8 +183,8 @@ jobs:
               exit 0
             fi
 
-            printf 'Attempt %s: Pages=%s build-bytes=%s guide-bytes=%s\n' \
-              "${attempt}" "${pages_response}" "${#build_response}" "${#guide_response}"
+            printf 'Attempt %s: pages-ready=%s build-bytes=%s guide-bytes=%s\n' \
+              "${attempt}" "${pages_ready}" "${#build_response}" "${#guide_response}"
             sleep 10
           done
           echo "Documentation did not expose expected Pages configuration, commit, and guide for ${BUILD_SHA}" >&2
