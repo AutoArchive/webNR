@@ -3,14 +3,14 @@
 ## Current state
 
 - Last completed run: 2026-08-05 branch-cleanup policy adoption, recorded by closeout pull request #17
-- Active operating cycle: product, dependency, truthful format support, bilingual troubleshooting, and direct application/documentation delivery are merged; permanent public evidence and final metadata closeout remain
+- Active operating cycle: product, dependency, truthful format support, bilingual troubleshooting, and direct application delivery are merged; documentation production, permanent evidence, and final metadata closeout remain
 - Last data window: Google Drive contains no matching analytics exports; repository, CI, deployment, dependency, format, documentation, DNS, response-header, workflow, and public-artifact evidence collected on 2026-08-05
 - Last site-change pull request: #35
 - Last squash merge: `499762b2ead74a74a13286a7cdca2d8fa6045f2e`
 - Last closeout pull request: #17
-- Last successful attributable application deployment: `e051c7f5cd6cc41eef84965404cafb493b8f84df`
+- Last successful attributable application deployment: `499762b2ead74a74a13286a7cdca2d8fa6045f2e`
 - Last successful attributable documentation deployment: `499762b2ead74a74a13286a7cdca2d8fa6045f2e`
-- Last public verification: this pull request cannot merge unless its required `Production evidence` job proves the application endpoint exposes `e051c7f5cd6cc41eef84965404cafb493b8f84df` and the documentation endpoint exposes `499762b2ead74a74a13286a7cdca2d8fa6045f2e`
+- Last public verification: pull request #36 observed the application at exact `499762b2ead74a74a13286a7cdca2d8fa6045f2e`; its documentation statement remains unproven and cannot merge while the custom-domain endpoint returns HTTP 404
 - Skill submodule commit: `6dde51078f87d5f6cf1c22045df13a3f786a5f02`
 
 ## Current signals
@@ -21,8 +21,9 @@
 - Repository: administrator and pull-request write access verified; quality gates cover dependency audit, ESLint, TypeScript, production app build, strict documentation build, exact public production evidence, and public SEO-data validation.
 - Product delivery: pull requests #19 through #23 passed every expected check and final self-review and were squash-merged.
 - Documentation content: pull request #31 merged the bilingual TXT import troubleshooting guide and canonical `manual` paths as `57c904bb637b97eb0b8cc9a99e035d91c39574fb`.
-- Documentation deployment: pull request #35 replaced the non-firing indirect trigger with a direct default-branch publisher and squash-merged as `499762b2ead74a74a13286a7cdca2d8fa6045f2e`. The same PR isolated documentation-only paths from application publication.
-- Production evidence: application and documentation deployment statements above are enforced by this same pull request's required public verifier and cannot reach `main` without matching endpoints.
+- Application deployment: pull request #35 changed `.github/workflows/nextjs.yml`, so the application publisher correctly ran once for that merge and publicly exposes `499762b2ead74a74a13286a7cdca2d8fa6045f2e`.
+- Documentation deployment: pull request #35 added a direct default-branch publisher, but the public documentation custom domain still returns HTTP 404. A read-only diagnostic job now inspects workflow registration, recent documentation runs, Pages configuration, and the latest Pages build before the next repair.
+- Production evidence: only the application deployment is currently verified. The documentation deployment line above is an intended target enforced by the same failing PR and must not reach `main` until the public endpoint matches.
 - Privacy: operations do not collect imported filenames, book titles, content, reading history, source URLs, cookies, credentials, or private analytics identifiers.
 - Application: local TXT and supported text-URL import are exposed through onboarding and Add navigation; EPUB remains rejected until a real parser and versioned fixtures exist.
 - Content and community: bilingual product guidance, security policy, roadmap, contribution policy, release archive, structured issue forms, and reproducible troubleshooting replace obsolete links and unrelated generic AI articles.
@@ -31,11 +32,11 @@
 
 ## Active focus
 
-- Pass the permanent custom-domain production-evidence check for application `e051c7f5cd6cc41eef84965404cafb493b8f84df` and documentation `499762b2ead74a74a13286a7cdca2d8fa6045f2e`.
-- Complete a clean final review and squash-merge the evidence gate without triggering redundant application or documentation deployment.
-- Close superseded failed evidence pull requests #32 and #34 without merge.
+- Read the Pages and workflow diagnostic from pull request #36 and repair the precise registration, permission, Pages-source, or custom-domain defect.
+- Deploy and publicly verify the documentation build and bilingual TXT troubleshooting page.
+- Restore the permanent evidence job to its normal bounded retry window and merge it only after both endpoints match.
 - Create and merge the metadata-only closeout pull request with complete PR, CI, squash, deployment, public-verification, analytics-availability, and submodule evidence.
 - Evaluate remaining focused Dependabot pull requests after closeout; do not blindly merge Next.js 16 major-upgrade proposals.
 - Next product milestones: backup/restore, IndexedDB migrations, E2E/accessibility/offline tests, stable releases, real EPUB parsing, and versioned clean-room Legado compatibility fixtures.
 
-This file contains verified facts or facts whose truth is enforced by the same pull request's required public-evidence check. Detailed history belongs in `daily/`.
+This file contains verified facts and clearly marks the unproven documentation target. Detailed history belongs in `daily/`.
