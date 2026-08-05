@@ -9,7 +9,6 @@ on:
       - 'mkdocs.yml'
       - '.github/requirements-docs.txt'
       - '.github/workflows/publish-docs-pages.yml'
-      - '.github/workflows/docs-pages.yml'
   workflow_dispatch:
 
 permissions:
@@ -27,9 +26,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      PRODUCTION_BUILD_URL: https://www.webnovel.win/build.json
-      PRODUCTION_HOME_URL: https://www.webnovel.win/
-      TROUBLESHOOTING_URL: https://www.webnovel.win/troubleshooting/txt-import/
+      PRODUCTION_BUILD_URL: https://autoarchive.github.io/webNR/build.json
+      PRODUCTION_HOME_URL: https://autoarchive.github.io/webNR/
+      TROUBLESHOOTING_URL: https://autoarchive.github.io/webNR/troubleshooting/txt-import/
     steps:
       - name: Select trusted default-branch commit
         id: source
@@ -97,9 +96,9 @@ jobs:
       - name: Build documentation strictly
         run: mkdocs build --strict
 
-      - name: Preserve Pages custom domain and disable Jekyll
+      - name: Disable Jekyll and remove stale custom-domain metadata
         run: |
-          printf 'www.webnovel.win\n' > site/CNAME
+          rm -f site/CNAME
           touch site/.nojekyll
 
       - name: Validate documentation artifact
@@ -109,19 +108,19 @@ jobs:
           set -eu
           test -f site/index.html
           test -f site/build.json
-          test -f site/CNAME
           test -f site/.nojekyll
+          test ! -e site/CNAME
           test -f site/troubleshooting/txt-import/index.html
           test -f site/manual/contributing/index.html
           test -f site/manual/url-params/index.html
-          grep -Fxq 'www.webnovel.win' site/CNAME
           grep -Fq "${BUILD_SHA}" site/build.json
           grep -Fq 'TXT import troubleshooting' site/troubleshooting/txt-import/index.html
           grep -Fq 'TXT 导入排障' site/troubleshooting/txt-import/index.html
           grep -Fq 'AutoArchive/webNR' site/index.html
+          grep -Fq 'https://autoarchive.github.io/webNR/' site/index.html
           grep -R -Fq 'G-DGH8HNQKE4' site
-          if grep -R -E -q 'yourusername/webnr|yunwei37/webNR' site; then
-            echo 'Obsolete repository reference in documentation artifact' >&2
+          if grep -R -E -q 'yourusername/webnr|yunwei37/webNR|https://www\.webnovel\.win' site; then
+            echo 'Obsolete repository or documentation-domain reference in artifact' >&2
             exit 1
           fi
 
@@ -134,7 +133,7 @@ jobs:
           force_orphan: true
           commit_message: "docs-deploy: ${{ steps.source.outputs.sha }}"
 
-      - name: Wait for legacy Pages build and custom-domain registration
+      - name: Wait for legacy Pages build and public documentation
         env:
           BUILD_SHA: ${{ steps.source.outputs.sha }}
           GH_TOKEN: ${{ github.token }}
@@ -167,8 +166,9 @@ jobs:
               ready = (
                   data.get("build_type") == "legacy"
                   and data.get("source") == {"branch": "gh-pages", "path": "/"}
-                  and data.get("cname") == "www.webnovel.win"
+                  and not data.get("cname")
                   and data.get("status") == "built"
+                  and data.get("html_url") == "https://autoarchive.github.io/webNR/"
               )
               print("true" if ready else "false")
           PY
@@ -179,7 +179,7 @@ jobs:
               && printf '%s' "${home_response}" | grep -Fq 'G-DGH8HNQKE4' \
               && printf '%s' "${guide_response}" | grep -Fq 'TXT import troubleshooting' \
               && printf '%s' "${guide_response}" | grep -Fq 'TXT 导入排障'; then
-              printf 'Verified legacy Pages configuration, documentation commit, GA4, and guide for %s\n' "${BUILD_SHA}"
+              printf 'Verified Pages configuration, documentation commit, GA4, and guide for %s\n' "${BUILD_SHA}"
               exit 0
             fi
 
