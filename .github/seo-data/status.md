@@ -2,39 +2,40 @@
 
 ## Current state
 
-- Last completed run: 2026-08-05 full product, content, deployment, and production-evidence cycle; metadata closeout pull request #42 pending final checks and merge
-- Last data window: Google Drive contains no matching analytics exports; repository, CI, dependency, deployment, Pages, DNS, response-header, and public-content evidence collected on 2026-08-05
-- Last site-change pull request: #40
-- Last site-change squash merge: `d1b4d1ede10037bcc1353c3edbd9d4e7c245d882`
-- Last production-evidence pull request: #41
-- Last production-evidence squash merge: `cef991a8f4a7cc85dae2bbf88bbbebb36b736048`
-- Last closeout pull request: #42, pending final checks and squash merge
+- Last completed run: 2026-08-05 full product, content, deployment, production-evidence, and metadata-closeout cycle
+- Last completed closeout pull request: #42
+- Last completed closeout squash merge: `8d29606ea45c52b5cb247dc09c819c326a2f322e`
+- Active correction: restore mandatory GA4 to the reader and documentation site with owner-selected `full-url` reporting
+- Last data window: Google Drive contains no matching GA4 or Search Console export; repository, CI, Pages, public-build, and analytics implementation evidence collected on 2026-08-05
 - Last successful attributable application deployment: `d1b4d1ede10037bcc1353c3edbd9d4e7c245d882`
 - Last successful attributable documentation deployment: `d1b4d1ede10037bcc1353c3edbd9d4e7c245d882`
-- Last public verification: PR #41 final Quality run `31037180170`, Production evidence job `92412164747`, verified both public build identities and the bilingual TXT troubleshooting page at exact source commit `d1b4d1ede10037bcc1353c3edbd9d4e7c245d882`
-- Skill submodule commit: `6dde51078f87d5f6cf1c22045df13a3f786a5f02`
+- Last permanent production-evidence implementation: `cef991a8f4a7cc85dae2bbf88bbbebb36b736048`
+- Working documentation URL: `https://autoarchive.github.io/webNR/`
+- Skill submodule commit on current `main`: `6dde51078f87d5f6cf1c22045df13a3f786a5f02`
+- Required skill submodule commit for analytics: `5c3174fa6ca5b01ff2f56b1cfb248877187ce2f5`
 
 ## Current signals
 
-- Analytics: the configured Google Drive export folder exists but contains no GA4 or Search Console files. Missing optional analytics did not block product, documentation, CI, deployment, or public verification work.
-- Cloudflare: connected accounts do not expose the `webnovel.win` zone. The reader remains verified at `app.webnovel.win`; the former `www.webnovel.win` documentation hostname is not treated as production.
-- Application: first-use onboarding exposes local TXT and supported text-URL import; privacy claims match runtime behavior; browser zoom, accessible navigation, recoverable feedback, PWA update behavior, metadata, JSON-LD, robots, sitemap, and exact build identity are repaired.
-- Format boundary: EPUB and other unsupported containers are rejected until a real parser, security model, fixtures, and tests exist.
-- Dependencies: Next.js 15.5.22 and the current lockfile pass the permanent dependency-audit boundary, ESLint, TypeScript, and production build.
-- Documentation: the canonical public site is `https://autoarchive.github.io/webNR/`. It contains current bilingual usage, privacy, security, roadmap, contribution, release, troubleshooting, and source-development guidance without third-party analytics.
-- Public content: the bilingual TXT import troubleshooting guide documents actual supported inputs, encoding failures, CORS and HTTP failures, browser storage loss, safe PWA recovery, authorization boundaries, and privacy-safe reproduction.
-- Deployment: documentation is strictly built and published through the configured legacy `gh-pages:/` source; the reader and documentation expose exact source commit `d1b4d1ede10037bcc1353c3edbd9d4e7c245d882`.
-- Permanent quality gate: every Quality run now requires dependency audit, application checks, strict documentation checks, public SEO-data validation, exact reader/documentation build identities, and actual bilingual troubleshooting content.
-- Diagnostic history: failed evidence pull requests #32, #34, #36, and #38 were retained as evidence and closed without merge; no failed check was bypassed.
-- Privacy: operations do not collect imported filenames, book titles, content, reading history, source URLs, cookies, credentials, personal emails, provider IDs, or raw analytics.
-- Autonomous operation: each local day requires at least one meaningful public update and same-cycle repair of confirmed low-risk defects.
+- Runtime analytics policy: mandatory on every managed site. WebNR owner policy is `full-url`.
+- Google Analytics 4: the active correction restores measurement `G-DGH8HNQKE4` to the reader and documentation site. The reader sends the complete browser URL, including query parameters and imported URLs in `?add=...`.
+- Google signals and ad-personalization signals remain disabled.
+- GA4 evidence: Google Drive is connected; the configured export folder contains no matching export. Missing exports are not treated as zero traffic.
+- Google Search Console: required; the configured Google Drive folder contains no matching export.
+- Infrastructure analytics: connected Cloudflare accounts do not expose the `webnovel.win` zone. This does not block GA4, Search Console preparation, GitHub Pages analytics, or product delivery.
+- Permanent production evidence: every Quality run verifies the recorded exact reader and documentation builds plus the bilingual troubleshooting content.
+- Documentation delivery: `https://autoarchive.github.io/webNR/` is the canonical working documentation URL.
+- Data behavior: imported book content and reading progress remain in browser storage. GA4 page views include complete page URLs and query parameters; no custom events containing local file contents or reading progress are added.
+- Application: local TXT and supported text-URL import are available; EPUB remains rejected until a real parser and versioned fixtures exist.
+- Autonomous operation: each local day requires a meaningful public update, mandatory analytics verification, and same-cycle repair of confirmed defects.
 - Branch cleanup: best-effort and nonblocking.
 
 ## Active focus
 
-- Complete closeout pull request #42 through the permanent Quality and Production evidence gates, final diff review, and squash merge.
-- Next product milestones: browser-library backup and restore, versioned IndexedDB migrations, Playwright accessibility/offline/import tests, stable releases, a secure EPUB parser, and versioned clean-room Legado compatibility fixtures.
-- Evaluate focused dependency updates against current `main`; Next.js 16 remains a deliberate major migration rather than an automatic routine update.
-- Treat an optional `www.webnovel.win` custom-domain migration as a separate reviewed task only after the GitHub Pages setting or correct Cloudflare zone becomes writable.
+- Deliver the analytics correction from the latest default branch without replacing the completed #42 history or the permanent Production evidence gate.
+- Require green Web quality, Documentation quality, SEO data contract, and Production evidence on the final analytics head.
+- Squash-merge only after a clean complete diff review.
+- Verify the exact analytics squash commit and GA4 implementation on `https://app.webnovel.win/` and `https://autoarchive.github.io/webNR/`.
+- Create and merge a metadata-only analytics closeout that appends PR, CI, squash, deployment, public-verification, URL-policy, and submodule evidence to the existing daily record.
+- Next product milestones: backup/restore, IndexedDB migrations, E2E/accessibility/offline tests, stable releases, real EPUB parsing, and versioned clean-room Legado compatibility fixtures.
 
 This file is the current verified summary. Detailed history belongs in `daily/`.

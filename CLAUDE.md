@@ -38,11 +38,25 @@ WebNR is a client-side web novel reader built with Next.js 15, React 19, and Typ
 - `components/search/` - Cross-repository search functionality
 
 **Key Features**
-- Privacy-first: All processing happens client-side
-- Multi-source support: Local files, URLs, and external repositories
+- Local-first book storage: imported book content and reading progress remain in IndexedDB
+- Mandatory GA4 site analytics on the reader and documentation site
+- Full-URL analytics policy: page views include the complete query string, including `?add=...` imported URLs
+- Multi-source support: local files, URLs, and external repositories
 - Progressive Web App with offline capabilities
 - Text-to-Speech integration with Web Speech API
 - Responsive design with dark/light theme support
+
+### Analytics Contract
+
+- Measurement ID: `G-DGH8HNQKE4`
+- Application implementation: `app/layout.tsx` and `config/constants.ts`
+- Documentation implementation: `mkdocs.yml`
+- URL reporting mode: `full-url`
+- `page_location` must use `window.location.href`
+- `page_path` must include `window.location.pathname + window.location.search`
+- Do not remove, gate, redact, or reduce analytics without an explicit owner instruction
+- Google signals and ad-personalization signals remain disabled unless explicitly changed
+- Do not add custom events containing local file contents, reading progress, credentials, cookies, authorization values, or browser storage without explicit authorization
 
 ### Data Flow
 
@@ -50,9 +64,12 @@ WebNR is a client-side web novel reader built with Next.js 15, React 19, and Typ
 2. **Reading**: Novel metadata → content retrieval → reader component
 3. **Progress**: Reading position → automatic persistence → sync across sessions
 4. **Search**: Repository data → local filtering → paginated results
+5. **Analytics**: Browser page URL, including query parameters → GA4 page-view measurement
 
 ### Testing & Quality
 
 - Jest configured with TypeScript support
 - ESLint with Next.js and TypeScript rules
-- No automated tests currently implemented - add tests when implementing new features
+- Quality CI requires GA4 in generated application and documentation output
+- Deployment workflows verify GA4 on both production domains
+- No automated unit/E2E tests currently implemented - add tests when implementing new features
