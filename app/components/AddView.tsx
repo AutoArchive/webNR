@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useRef, useState } from 'react';
 import { NovelStorage } from '../lib/storage';
 import { Novel } from '../types';
@@ -8,16 +10,13 @@ interface AddViewProps {
     onImportComplete: (novel: Novel) => void;
 }
 
-export const AddView: React.FC<AddViewProps> = ({
-    onImportComplete,
-}) => {
+export const AddView: React.FC<AddViewProps> = ({ onImportComplete }) => {
     const { t } = useTranslation();
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [loadingMessage, setLoadingMessage] = useState('');
+    const [urlValue, setUrlValue] = useState('');
     const fileInputRef = useRef<HTMLInputElement>(null);
-    const urlInputRef = useRef<HTMLInputElement>(null);
-    const abortControllerRef = useRef<AbortController | null>(null);
 
     const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -30,104 +29,103 @@ export const AddView: React.FC<AddViewProps> = ({
         try {
             const novel = await NovelStorage.importFromFile(file);
             onImportComplete(novel);
-        } catch (err) {
+        } catch (importError) {
             setError(t('add.error.import'));
-            console.error('Import error:', err);
+            console.error('Import error:', importError);
         } finally {
             setIsLoading(false);
             setLoadingMessage('');
+            if (fileInputRef.current) {
+                fileInputRef.current.value = '';
+            }
         }
     };
 
-    const handleUrlImport = async () => {
-        const url = urlInputRef.current?.value;
-        if (!url) return;
+    const handleUrlImport = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setError(null);
 
-        // Redirect to root with the URL as a query parameter
-        const encodedUrl = encodeURIComponent(url);
-        window.location.href = `/?add=${encodedUrl}`;
-    };
-
-    const handleCancel = () => {
-        if (abortControllerRef.current) {
-            abortControllerRef.current.abort();
+        try {
+            const url = new URL(urlValue.trim());
+            if (!['http:', 'https:'].includes(url.protocol)) {
+                throw new Error('Unsupported protocol');
+            }
+            window.location.assign(`/?add=${encodeURIComponent(url.toString())}`);
+        } catch {
+            setError(t('discover.error.invalidRepo'));
         }
     };
 
     return (
-        <div className="p-4 max-w-xl mx-auto">
-            <div className="space-y-6">
-                {/* File Upload Section */}
-                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-                    <h2 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">
+        <div className="h-full overflow-auto p-4">
+            <div className="mx-auto max-w-xl space-y-6 py-4">
+                <p className="rounded-lg border border-blue-100 bg-blue-50 px-4 py-3 text-sm leading-6 text-blue-900 dark:border-blue-900/50 dark:bg-blue-950/30 dark:text-blue-100">
+                    {t('settings.privacyDescription')}
+                </p>
+
+                <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800" aria-labelledby="local-file-heading">
+                    <h2 id="local-file-heading" className="text-lg font-semibold text-gray-900 dark:text-gray-100">
                         {t('add.uploadTitle')}
                     </h2>
-                    <div className="space-y-4">
-                        <input
-                            ref={fileInputRef}
-                            type="file"
-                            accept=".txt,.epub"
-                            onChange={handleFileUpload}
-                            className="block w-full text-sm text-gray-500 dark:text-gray-400
-                                file:mr-4 file:py-2 file:px-4
-                                file:rounded-lg file:border-0
-                                file:text-sm file:font-semibold
-                                file:bg-blue-50 file:text-blue-700
-                                dark:file:bg-blue-900/20 dark:file:text-blue-400
-                                hover:file:bg-blue-100 dark:hover:file:bg-blue-900/30
-                                focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
-                        />
-                    </div>
-                </div>
+                    <p id="file-help" className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                        TXT and EPUB files are processed and stored in this browser.
+                    </p>
+                    <label className="mt-4 block text-sm font-medium text-gray-800 dark:text-gray-200" htmlFor="novel-file">
+                        {t('discover.localImport')}
+                    </label>
+                    <input
+                        id="novel-file"
+                        ref={fileInputRef}
+                        type="file"
+                        accept=".txt,.epub,text/plain,application/epub+zip"
+                        aria-describedby="file-help"
+                        onChange={event => { void handleFileUpload(event); }}
+                        className="mt-2 block w-full rounded-lg text-sm text-gray-500 file:mr-4 file:rounded-lg file:border-0 file:bg-blue-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-blue-700 hover:file:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:file:bg-blue-900/20 dark:file:text-blue-300 dark:hover:file:bg-blue-900/30"
+                    />
+                </section>
 
-                {/* URL Import Section */}
-                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-                    <h2 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800" aria-labelledby="url-import-heading">
+                    <h2 id="url-import-heading" className="text-lg font-semibold text-gray-900 dark:text-gray-100">
                         {t('add.urlTitle')}
                     </h2>
-                    <div className="space-y-4">
+                    <form className="mt-4 space-y-4" onSubmit={handleUrlImport}>
+                        <label className="block text-sm font-medium text-gray-800 dark:text-gray-200" htmlFor="novel-url">
+                            {t('add.urlTitle')}
+                        </label>
                         <input
-                            ref={urlInputRef}
+                            id="novel-url"
                             type="url"
+                            inputMode="url"
+                            autoComplete="url"
+                            required
+                            value={urlValue}
+                            onChange={event => setUrlValue(event.target.value)}
                             placeholder={t('add.urlPlaceholder')}
-                            className="w-full px-4 py-2 rounded-lg 
-                                bg-white dark:bg-gray-700 
-                                border border-gray-200 dark:border-gray-600 
-                                text-gray-900 dark:text-gray-100
-                                placeholder-gray-500 dark:placeholder-gray-400
-                                focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent"
+                            className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-transparent focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:placeholder-gray-400 dark:focus:ring-blue-400"
                         />
                         <button
-                            onClick={handleUrlImport}
-                            disabled={isLoading}
-                            className="w-full px-4 py-2 rounded-lg
-                                bg-blue-500 hover:bg-blue-600 
-                                text-white font-medium
-                                transition-colors
-                                disabled:bg-gray-300 dark:disabled:bg-gray-700
-                                disabled:text-gray-500 dark:disabled:text-gray-400
-                                disabled:cursor-not-allowed"
+                            type="submit"
+                            disabled={isLoading || !urlValue.trim()}
+                            className="min-h-11 w-full rounded-lg bg-blue-600 px-4 py-2 font-medium text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500 dark:focus:ring-offset-gray-800 dark:disabled:bg-gray-700 dark:disabled:text-gray-400"
                         >
                             {t('add.import')}
                         </button>
-                    </div>
-                </div>
+                    </form>
+                </section>
 
-                {/* Error Display */}
                 {error && (
-                    <div className="text-red-500 dark:text-red-400 text-sm mt-2 px-2">
+                    <div role="alert" className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800 dark:border-red-900/50 dark:bg-red-950/30 dark:text-red-200">
                         {error}
                     </div>
                 )}
 
-                {/* Loading Dialog */}
                 {isLoading && (
                     <LoadingDialog
                         message={loadingMessage}
-                        onCancel={handleCancel}
+                        onCancel={() => setIsLoading(false)}
                     />
                 )}
             </div>
         </div>
     );
-}; 
+};

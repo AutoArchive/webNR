@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { getSystemLanguage } from '../lib/language';
 import { translations } from './translations';
 
@@ -13,66 +13,61 @@ export type Translations = {
 export const SUPPORTED_LANGUAGES = ['en', 'zh'] as const;
 export type SupportedLanguage = typeof SUPPORTED_LANGUAGES[number];
 
+const normalizeLanguage = (language: string): SupportedLanguage => (
+  SUPPORTED_LANGUAGES.includes(language as SupportedLanguage)
+    ? language as SupportedLanguage
+    : 'en'
+);
+
 const getStoredLanguage = (): SupportedLanguage | null => {
   if (typeof window === 'undefined') return null;
-  const savedLang = localStorage.getItem('preferred-language');
-  return (savedLang && SUPPORTED_LANGUAGES.includes(savedLang as SupportedLanguage)) 
-    ? savedLang as SupportedLanguage 
-    : null;
+  const savedLanguage = localStorage.getItem('preferred-language');
+  return savedLanguage ? normalizeLanguage(savedLanguage) : null;
 };
 
-const storeLanguage = (lang: SupportedLanguage): void => {
+const storeLanguage = (language: SupportedLanguage): void => {
   if (typeof window === 'undefined') return;
-  localStorage.setItem('preferred-language', lang);
+  localStorage.setItem('preferred-language', language);
 };
 
-const createTranslator = (translations: Translations, language: string) => {
-  return (key: string): string => {
-    return translations[language]?.[key] || key;
-  };
+const createTranslator = (translationTable: Translations, language: SupportedLanguage) => {
+  return (key: string): string => translationTable[language]?.[key] || translationTable.en?.[key] || key;
 };
 
 interface LanguageContextType {
-  language: string;
-  setLanguage: (lang: string) => void;
+  language: SupportedLanguage;
+  setLanguage: (language: string) => void;
   t: (key: string) => string;
 }
 
-const LanguageContext = createContext<LanguageContextType>({
-  language: 'en',
-  setLanguage: () => {},
-  t: (key: string) => key,
-});
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider = ({ 
+export const LanguageProvider = ({
   children,
-  initialLang
-}: { 
+  initialLang,
+}: {
   children: React.ReactNode;
   initialLang: string;
 }) => {
-  const [language, setLanguage] = useState(initialLang);
+  const [language, setLanguage] = useState<SupportedLanguage>(normalizeLanguage(initialLang));
 
   useEffect(() => {
-    const savedLang = getStoredLanguage();
-    if (savedLang) {
-      setLanguage(savedLang);
-      return;
-    }
+    const resolvedLanguage = getStoredLanguage() ?? normalizeLanguage(getSystemLanguage());
+    setLanguage(resolvedLanguage);
+    document.documentElement.lang = resolvedLanguage === 'zh' ? 'zh-CN' : 'en';
+    document.documentElement.dir = 'ltr';
+    storeLanguage(resolvedLanguage);
+  }, []);
 
-    const systemLang = getSystemLanguage();
-    if (systemLang !== language) {
-      setLanguage(systemLang);
-      storeLanguage(systemLang as SupportedLanguage);
-    }
-  }, [language]);
-
-  const handleSetLanguage = (newLang: string) => {
-    setLanguage(newLang);
-    storeLanguage(newLang as SupportedLanguage);
+  const handleSetLanguage = (newLanguage: string) => {
+    const normalizedLanguage = normalizeLanguage(newLanguage);
+    setLanguage(normalizedLanguage);
+    document.documentElement.lang = normalizedLanguage === 'zh' ? 'zh-CN' : 'en';
+    document.documentElement.dir = 'ltr';
+    storeLanguage(normalizedLanguage);
   };
 
-  const t = createTranslator(translations, language);
+  const t = useMemo(() => createTranslator(translations, language), [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
@@ -87,4 +82,4 @@ export const useTranslation = () => {
     throw new Error('useTranslation must be used within a LanguageProvider');
   }
   return context;
-}; 
+};

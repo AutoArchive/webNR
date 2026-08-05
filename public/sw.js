@@ -1,98 +1,72 @@
-const CACHE_NAME = 'webnr-cache-v1';
+const CACHE_NAME = 'webnr-shell-v3';
+const APP_SHELL = ['/', '/manifest.json', '/favicon.ico'];
 
-self.addEventListener('install', (event) => {
+self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => {
-        // Only cache essential resources
-        const essentialResources = [
-          '/',
-          '/manifest.json',
-          '/favicon.ico'
-        ];
-        
-        // Cache each resource individually with error handling
-        return Promise.all(
-          essentialResources.map(url => {
-            return fetch(url)
-              .then(response => {
-                if (!response.ok) {
-                  throw new Error(`Failed to cache ${url}: ${response.status} ${response.statusText}`);
-                }
-                return cache.put(url, response);
-              })
-              .catch(error => {
-                console.warn(`Failed to cache ${url}:`, error);
-                // Continue despite failure
-                return Promise.resolve();
-              });
-          })
-        );
-      })
+      .then(cache => Promise.all(
+        APP_SHELL.map(url => cache.add(new Request(url, { cache: 'reload' })).catch(error => {
+          console.warn(`Unable to precache ${url}:`, error);
+        })),
+      ))
+      .then(() => self.skipWaiting()),
   );
 });
 
-self.addEventListener('activate', (event) => {
+self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
+    caches.keys()
+      .then(cacheNames => Promise.all(
+        cacheNames
+          .filter(cacheName => cacheName.startsWith('webnr-') && cacheName !== CACHE_NAME)
+          .map(cacheName => caches.delete(cacheName)),
+      ))
+      .then(() => self.clients.claim()),
   );
 });
 
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        // Cache hit - return response
-        if (response) {
-          return response;
-        }
+self.addEventListener('fetch', event => {
+  const { request } = event;
+  const url = new URL(request.url);
 
-        // Clone the request because it can only be used once
-        const fetchRequest = event.request.clone();
+  if (request.method !== 'GET' || url.origin !== self.location.origin) {
+    return;
+  }
 
-        return fetch(fetchRequest)
-          .then((response) => {
-            // Check if we received a valid response
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
-            }
-
-            // Clone the response because it can only be used once
+  if (request.mode === 'navigate') {
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          if (response.ok && url.pathname === '/' && !url.search) {
             const responseToCache = response.clone();
+            void caches.open(CACHE_NAME).then(cache => cache.put('/', responseToCache));
+          }
+          return response;
+        })
+        .catch(async () => {
+          const cachedShell = await caches.match('/');
+          return cachedShell ?? new Response(
+            '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>WebNR offline</title><body><main><h1>WebNR is offline</h1><p>Reconnect once to cache the application shell, then try again.</p></main></body></html>',
+            { headers: { 'Content-Type': 'text/html; charset=utf-8' }, status: 503 },
+          );
+        }),
+    );
+    return;
+  }
 
-            caches.open(CACHE_NAME)
-              .then((cache) => {
-                try {
-                  cache.put(event.request, responseToCache);
-                } catch (error) {
-                  console.warn('Failed to cache response:', error);
-                }
-              });
+  event.respondWith(
+    caches.match(request).then(cachedResponse => {
+      const networkResponse = fetch(request)
+        .then(response => {
+          if (response.ok && response.type === 'basic') {
+            const responseToCache = response.clone();
+            void caches.open(CACHE_NAME).then(cache => cache.put(request, responseToCache));
+          }
+          return response;
+        })
+        .catch(() => cachedResponse ?? new Response('', { status: 504, statusText: 'Offline' }));
 
-            return response;
-          })
-          .catch((error) => {
-            console.warn('Fetch failed:', error);
-            // You might want to return a custom offline page here
-            return new Response('Offline');
-          });
-      })
+      return cachedResponse ?? networkResponse;
+    }),
   );
 });
-
-// Handle errors
-self.addEventListener('error', (event) => {
-  console.error('Service worker error:', event.error);
-});
-
-self.addEventListener('unhandledrejection', (event) => {
-  console.error('Service worker unhandled rejection:', event.reason);
-}); 

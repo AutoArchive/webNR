@@ -6,9 +6,9 @@
  * Bookmark definition
  */
 export interface Bookmark {
-  offset: number;        // Character offset in the text file
-  timestamp: number;     // When the bookmark was created
-  note?: string;        // Optional note for the bookmark
+  offset: number;
+  timestamp: number;
+  note?: string;
 }
 
 export interface Novel {
@@ -26,4 +26,4 @@ export interface Novel {
   tags?: string[];
 }
 
-export type View = 'library' | 'discover' | 'reader' | 'settings'; // adjust these values based on your actual view types
+export type View = 'library' | 'discover' | 'reader' | 'settings' | 'search' | 'add';
