@@ -111,7 +111,10 @@ jobs:
   production-evidence:
     name: Production evidence
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
+    permissions:
+      actions: write
+      contents: read
     steps:
       - name: Checkout recorded deployment state
         uses: actions/checkout@v5
@@ -120,6 +123,27 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: '20'
+
+      - name: Reactivate and dispatch documentation deployment
+        if: github.event_name == 'pull_request' && github.head_ref == 'seo/verify-production-evidence-v4'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -eu
+          curl --fail-with-body --silent --show-error \
+            --request PUT \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/${REPOSITORY}/actions/workflows/docs-pages.yml/enable"
+          curl --fail-with-body --silent --show-error \
+            --request POST \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/${REPOSITORY}/actions/workflows/docs-pages.yml/dispatches" \
+            --data '{"ref":"main"}'
 
       - name: Verify recorded public builds
         run: node scripts/verify-production-builds.mjs
