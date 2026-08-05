@@ -42,4 +42,4 @@ Current release state, known limitations, and development commands are maintaine
 
 ## Contributing
 
-Useful contributions include backup and restore, IndexedDB migrations, TXT encoding fixtures, accessibility tests, offline/update tests, a real secure EPUB parser, and versioned clean-room Legado compatibility fixtures. See [Contributing](../../mannual/contributing.md).
+Useful contributions include backup and restore, IndexedDB migrations, TXT encoding fixtures, accessibility tests, offline/update tests, a real secure EPUB parser, and versioned clean-room Legado compatibility fixtures. See [Contributing](../../manual/contributing.md) and [TXT import troubleshooting](../../troubleshooting/txt-import.md).
