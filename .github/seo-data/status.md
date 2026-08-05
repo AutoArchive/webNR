@@ -2,12 +2,12 @@
 
 ## Current state
 
-- Last completed run: 2026-08-05 bootstrap cycle, recorded by closeout pull request #15
+- Last completed run: 2026-08-05 branch-cleanup policy adoption; metadata closeout in progress
 - Last data window: provider exports unavailable; repository and public-site evidence collected on 2026-08-05
-- Last site-change pull request: none; bootstrap infrastructure pull request was #14
-- Last squash merge: `a773984e95baa28dbf7f846d7b514e2229755585`
-- Last closeout pull request: #15
-- Last successful production deployment: not applicable to the bootstrap infrastructure change
+- Last site-change pull request: none; latest metadata and skill-adoption pull request was #16
+- Last squash merge: `2275505bcfb0838ec67e53d37198922002c4482c`
+- Last closeout pull request: #15; current policy-adoption closeout pending
+- Last successful production deployment: not applicable to metadata and shared-skill policy changes
 - Last public verification: public application reviewed during bootstrap on 2026-08-05
 - Skill submodule commit: `16446ddbec8eeb1173362c7ce41977a274e897e8`
 
