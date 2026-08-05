@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Header } from './components/Header';
 import type { HeaderButton } from './components/Header';
+import { AddView } from './components/AddView';
 import { LibraryView } from './components/library/LibraryView';
 import { Reader } from './components/Reader';
 import { SettingsView } from './components/SettingsView';
@@ -18,7 +19,9 @@ import { handleUrlImport, handleRepoImport } from './lib/url-handlers';
 import { SoundIcon } from './components/icons';
 import { CONFIG } from '../config/constants';
 
-type View = 'library' | 'reader' | 'settings' | 'discover' | 'search';
+type View = 'library' | 'reader' | 'settings' | 'discover' | 'search' | 'add';
+
+const NAVIGABLE_VIEWS: View[] = ['library', 'settings', 'discover', 'search', 'add'];
 
 export default function Home() {
   const { t } = useTranslation();
@@ -34,20 +37,24 @@ export default function Home() {
   const [isTTSMode, setIsTTSMode] = useState(false);
 
   const handleNovelSelect = useCallback(async (novel: Novel) => {
-    const content = await NovelStorage.getNovelContent(novel.id);
+    const novelContent = await NovelStorage.getNovelContent(novel.id);
     setCurrentNovel(novel);
-    setContent(content);
+    setContent(novelContent);
     setCurrentOffset(novel.lastPosition);
     setCurrentView('reader');
   }, []);
 
-  // Handle URL query parameters for auto-import and repo adding
   useEffect(() => {
     const handleParams = () => {
       const params = new URLSearchParams(window.location.search);
       const addUrl = params.get('add');
       const addRepos = params.get('repos');
       const searchRepo = params.get('search');
+      const requestedView = params.get('view') as View | null;
+
+      if (requestedView && NAVIGABLE_VIEWS.includes(requestedView)) {
+        setCurrentView(requestedView);
+      }
 
       if (searchRepo) {
         setCurrentView('search');
@@ -62,7 +69,7 @@ export default function Home() {
             onLoadingMessage: setLoadingMessage,
             onRepositoriesChange: setRepositories,
             onViewChange: setCurrentView,
-            t
+            t,
           });
           window.history.replaceState({}, '', window.location.pathname);
         }
@@ -71,16 +78,13 @@ export default function Home() {
           onLoading: setIsLoading,
           onLoadingMessage: setLoadingMessage,
           onNovelSelect: handleNovelSelect,
-          t
+          t,
         });
         window.history.replaceState({}, '', window.location.pathname);
       }
     };
 
-    // Listen for route changes
     window.addEventListener('popstate', handleParams);
-    
-    // Initial check
     handleParams();
 
     return () => {
@@ -88,28 +92,18 @@ export default function Home() {
     };
   }, [handleNovelSelect, repositories, t]);
 
-  // Initialize dark mode from localStorage or system preference
   useEffect(() => {
     const savedDarkMode = localStorage.getItem('darkMode');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const shouldBeDark = savedDarkMode ? savedDarkMode === 'true' : systemPrefersDark;
     setIsDarkMode(shouldBeDark);
-    if (shouldBeDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    document.documentElement.classList.toggle('dark', shouldBeDark);
   }, []);
 
-  // Handle dark mode toggle
   const handleDarkModeToggle = useCallback(() => {
-    setIsDarkMode(prev => {
-      const newValue = !prev;
-      if (newValue) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
+    setIsDarkMode(previousValue => {
+      const newValue = !previousValue;
+      document.documentElement.classList.toggle('dark', newValue);
       localStorage.setItem('darkMode', newValue.toString());
       return newValue;
     });
@@ -118,7 +112,7 @@ export default function Home() {
   const handlePositionChange = useCallback((offset: number) => {
     setCurrentOffset(offset);
     if (currentNovel) {
-      NovelStorage.updateNovelProgress(currentNovel.id, offset);
+      void NovelStorage.updateNovelProgress(currentNovel.id, offset);
     }
   }, [currentNovel]);
 
@@ -129,7 +123,6 @@ export default function Home() {
     setCurrentView('library');
   }, []);
 
-  // Get the current view title
   const getViewTitle = () => {
     switch (currentView) {
       case 'reader':
@@ -140,12 +133,13 @@ export default function Home() {
         return t('common.discover');
       case 'search':
         return t('common.search');
+      case 'add':
+        return t('navigation.add');
       default:
         return t('library.title');
     }
   };
 
-  // Get back action for current view
   const getBackAction = () => {
     if (currentView === 'library') return undefined;
     return handleBackToLibrary;
@@ -153,12 +147,13 @@ export default function Home() {
 
   const handleNavigate = useCallback((view: View) => {
     if (currentView === 'reader' && view !== 'reader') {
-      handleBackToLibrary();
+      setCurrentNovel(null);
+      setContent('');
+      setCurrentOffset(0);
     }
     setCurrentView(view);
-  }, [currentView, handleBackToLibrary]);
+  }, [currentView]);
 
-  // Load repositories on mount
   useEffect(() => {
     const loadRepositories = async () => {
       try {
@@ -168,39 +163,38 @@ export default function Home() {
         console.error('Failed to load repositories:', error);
       }
     };
-    loadRepositories();
+    void loadRepositories();
   }, []);
 
-  // Define header buttons based on current view
   const getHeaderButtons = (): HeaderButton[] => {
     if (currentView === 'reader') {
       return [
         {
           icon: <SoundIcon />,
-          onClick: () => setIsTTSMode(prev => !prev),
-          ariaLabel: isTTSMode ? 'Disable text-to-speech' : 'Enable text-to-speech'
+          onClick: () => setIsTTSMode(previousValue => !previousValue),
+          ariaLabel: isTTSMode ? 'Disable text-to-speech' : 'Enable text-to-speech',
         },
         {
           icon: (
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           ),
           onClick: () => setShowReaderMenu(true),
-          ariaLabel: 'Open reader menu'
-        }
+          ariaLabel: 'Open reader menu',
+        },
       ];
     }
-    
+
     if (currentView === 'library') {
       return [{
         icon: (
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
           </svg>
         ),
-        onClick: () => window.location.href = CONFIG.HOME_PAGE,
-        ariaLabel: t('common.home')
+        onClick: () => { window.location.href = CONFIG.HOME_PAGE; },
+        ariaLabel: t('common.home'),
       }];
     }
 
@@ -210,19 +204,22 @@ export default function Home() {
   return (
     <div className="h-[100dvh] w-screen overflow-hidden bg-gray-50 dark:bg-gray-900">
       <div className="h-full flex flex-col">
-        {/* Header */}
         <Header
           title={getViewTitle()}
           buttons={getHeaderButtons()}
           onBackClick={getBackAction()}
         />
 
-        {/* Main content area */}
-        <div className="flex-1 min-h-0">
+        <main className="flex-1 min-h-0" id="main-content">
           {currentView === 'library' && (
             <LibraryView
               onNovelSelect={handleNovelSelect}
+              onAddNovel={() => setCurrentView('add')}
             />
+          )}
+
+          {currentView === 'add' && (
+            <AddView onImportComplete={handleNovelSelect} />
           )}
 
           {currentView === 'reader' && currentNovel && (
@@ -254,10 +251,10 @@ export default function Home() {
           {currentView === 'discover' && (
             <DiscoverView onViewChange={setCurrentView} />
           )}
-          
+
           {currentView === 'search' && (
             <div className="h-full">
-              <SearchView 
+              <SearchView
                 repositories={repositories}
                 onSearching={() => {}}
                 className="h-full"
@@ -265,16 +262,14 @@ export default function Home() {
             </div>
           )}
 
-          {/* Loading Dialog */}
           {isLoading && (
             <LoadingDialog
               message={loadingMessage}
               onCancel={() => setIsLoading(false)}
             />
           )}
-        </div>
+        </main>
 
-        {/* Footer Navigation */}
         {currentView !== 'reader' && (
           <Footer
             currentView={currentView}
