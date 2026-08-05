@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { getSystemLanguage } from '../lib/language';
 import { translations } from './translations';
 
@@ -67,7 +67,7 @@ export const LanguageProvider = ({
     storeLanguage(normalizedLanguage);
   };
 
-  const t = createTranslator(translations, language);
+  const t = useMemo(() => createTranslator(translations, language), [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
