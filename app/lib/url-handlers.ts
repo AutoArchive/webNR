@@ -3,8 +3,9 @@ import { LocalRepo } from '../types/repo';
 import { NovelStorage } from './storage';
 import { fetchRepoIndex, syncRepository } from './discover';
 
-// Add this type for translation parameters
 type TranslationParams = Record<string, string | number>;
+type FeedbackType = 'success' | 'error';
+type FeedbackHandler = (message: string, type: FeedbackType) => void;
 
 export async function handleUrlImport(
   url: string,
@@ -12,59 +13,32 @@ export async function handleUrlImport(
     onLoading: (isLoading: boolean) => void;
     onLoadingMessage: (message: string) => void;
     onNovelSelect: (novel: Novel) => void;
+    onFeedback?: FeedbackHandler;
     t: (key: string, params?: TranslationParams) => string;
-  }
+  },
 ): Promise<void> {
-  const { onLoading, onLoadingMessage, onNovelSelect, t } = options;
-  
+  const { onLoading, onLoadingMessage, onNovelSelect, onFeedback, t } = options;
+
   try {
-    // Get base URL (repository URL)
-    const baseUrl = new URL(url).origin;
-    
-    // Check if novel already exists
-    const existingNovel = await NovelStorage.findNovelByUrl(url);
-    if (existingNovel) {
-      const shouldDownloadAgain = window.confirm(t('add.confirmRedownload'));
-      if (!shouldDownloadAgain) {
-        onNovelSelect(existingNovel);
-        return;
-      }
+    const parsedUrl = new URL(url);
+    if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
+      throw new Error('Unsupported URL protocol');
     }
 
-    // Check if repository exists
-    const repositories = await NovelStorage.getAllRepositories();
-    const repoExists = repositories.some(repo => repo.url === baseUrl);
-
-    // If repo doesn't exist, ask user if they want to import it
-    if (!repoExists) {
-      const shouldImportRepo = window.confirm(t('add.confirmImportRepo'));
-      if (shouldImportRepo) {
-        try {
-          await handleRepoImport([baseUrl], {
-            repositories,
-            onLoading,
-            onLoadingMessage,
-            onRepositoriesChange: (repos) => {
-              console.log('Repositories changed:', repos);
-            },
-            onViewChange: () => {}, // Don't change view in this case
-            t
-          });
-        } catch (error) {
-          console.error('Failed to import repository:', error);
-          // Continue with novel import even if repo import fails
-        }
-      }
+    const existingNovel = await NovelStorage.findNovelByUrl(parsedUrl.toString());
+    if (existingNovel) {
+      onNovelSelect(existingNovel);
+      return;
     }
 
     onLoading(true);
     onLoadingMessage(t('add.loadingUrl'));
-    
-    const novel = await NovelStorage.importFromUrl(url);
+
+    const novel = await NovelStorage.importFromUrl(parsedUrl.toString());
     onNovelSelect(novel);
-  } catch (err) {
-    console.error('Failed to import novel from URL:', err);
-    window.alert(t('add.error.url'));
+  } catch (error) {
+    console.error('Failed to import novel from URL:', error);
+    onFeedback?.(t('add.error.url'), 'error');
   } finally {
     onLoading(false);
     onLoadingMessage('');
@@ -79,72 +53,87 @@ export async function handleRepoImport(
     onLoadingMessage: (message: string) => void;
     onRepositoriesChange: (repos: LocalRepo[]) => void;
     onViewChange: (view: 'discover') => void;
+    onFeedback?: FeedbackHandler;
     t: (key: string, params?: TranslationParams) => string;
-  }
+  },
 ): Promise<void> {
-  const { repositories, onLoading, onLoadingMessage, onRepositoriesChange, onViewChange, t } = options;
-  
+  const {
+    repositories,
+    onLoading,
+    onLoadingMessage,
+    onRepositoriesChange,
+    onViewChange,
+    onFeedback,
+    t,
+  } = options;
+
   onLoading(true);
   onLoadingMessage(t('discover.addRepoButton'));
-  
+
+  let updatedRepositories = [...repositories];
+  let hasChanges = false;
+  let failureCount = 0;
+
   try {
-    let hasChanges = false;
-    for (const url of repoUrls) {
-      const existingRepo = repositories.find(repo => repo.url === url);
-      
-      if (existingRepo) {
-        try {
+    for (const rawUrl of repoUrls) {
+      try {
+        const parsedUrl = new URL(rawUrl.trim());
+        if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
+          throw new Error('Unsupported repository protocol');
+        }
+        const url = parsedUrl.toString();
+        const existingRepo = updatedRepositories.find(repository => repository.url === url);
+
+        if (existingRepo) {
           const index = await syncRepository(existingRepo);
-          const updatedRepo = {
+          const refreshedRepo: LocalRepo = {
             ...existingRepo,
             index,
-            lastSync: new Date().toISOString()
+            lastSync: new Date().toISOString(),
           };
-          await NovelStorage.saveRepository(updatedRepo);
-          onRepositoriesChange(
-            repositories.map(r => r.url === url ? updatedRepo : r)
+          await NovelStorage.saveRepository(refreshedRepo);
+          updatedRepositories = updatedRepositories.map(repository =>
+            repository.url === url ? refreshedRepo : repository,
           );
-          hasChanges = true;
-        } catch (error) {
-          console.error(`Failed to sync repository ${url}:`, error);
-          continue; // Skip to next repo if sync fails
-        }
-      } else {
-        try {
+        } else {
           const repoData = await fetchRepoIndex(url);
           const newRepo: LocalRepo = {
             url,
             meta: {
               name: repoData.name,
               description: '',
-              url: url,
+              url,
               lastUpdated: repoData.lastSync,
               novels: repoData.novels.length,
-              updatedNovels: repoData.updatedNovels
+              updatedNovels: repoData.updatedNovels,
             },
             lastSync: new Date().toISOString(),
-            index: repoData
+            index: repoData,
           };
-          
+
           await NovelStorage.saveRepository(newRepo);
-          onRepositoriesChange([...repositories, newRepo]);
-          hasChanges = true;
-        } catch (error) {
-          console.error(`Failed to add repository ${url}:`, error);
-          continue; // Skip to next repo if add fails
+          updatedRepositories = [...updatedRepositories, newRepo];
         }
+        hasChanges = true;
+      } catch (error) {
+        failureCount += 1;
+        console.error(`Failed to import repository ${rawUrl}:`, error);
       }
     }
-    
+
     if (hasChanges) {
-      window.alert(t('add.repoImported'));
+      onRepositoriesChange(updatedRepositories);
+      onFeedback?.(t('add.repoImported'), 'success');
       onViewChange('discover');
+    }
+    if (failureCount > 0) {
+      onFeedback?.(t('discover.error.invalidRepo'), 'error');
     }
   } catch (error) {
     console.error('Failed to handle repositories:', error);
-    window.alert(t('discover.error.invalidRepo'));
+    onFeedback?.(t('discover.error.invalidRepo'), 'error');
   } finally {
     onLoading(false);
     onLoadingMessage('');
   }
-} 
+}
