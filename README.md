@@ -3,7 +3,7 @@
 WebNR is a local-first web reader for user-owned TXT books and supported text URLs. It runs as an installable progressive web app, stores books and reading progress in the browser, and does not require an account.
 
 - Reader: <https://app.webnovel.win/>
-- Documentation: <https://www.webnovel.win/>
+- Documentation: <https://autoarchive.github.io/webNR/>
 - Source and issues: <https://github.com/AutoArchive/webNR>
 
 ## Current capabilities
@@ -28,7 +28,7 @@ WebNR is a local-first web reader for user-owned TXT books and supported text UR
 3. Select a local TXT file, or enter a supported text URL.
 4. Start reading. The book and progress are stored in the current browser profile.
 
-For encoding, CORS, storage, and PWA-update failures, see the [TXT import troubleshooting guide](docs/troubleshooting/txt-import.md).
+For encoding, CORS, storage, and PWA-update failures, see the [TXT import troubleshooting guide](https://autoarchive.github.io/webNR/troubleshooting/txt-import/).
 
 ## Local development
 
@@ -68,7 +68,7 @@ WebNR source definitions are connectors, not content licenses. Contributors must
 
 ## Contributing
 
-Issues and focused pull requests are welcome. See the [contributing guide](docs/manual/contributing.md). Every change must use a branch and pull request, pass the expected app/documentation/SEO checks, receive a complete final review, and preserve the declared analytics, local-data, and content-policy boundaries.
+Issues and focused pull requests are welcome. See the [contributing guide](https://autoarchive.github.io/webNR/manual/contributing/). Every change must use a branch and pull request, pass the expected app/documentation/SEO checks, receive a complete final review, and preserve the declared analytics, local-data, and content-policy boundaries.
 
 ## License
 
