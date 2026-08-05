@@ -1,15 +1,29 @@
 import * as jschardet from 'jschardet';
-import { TextDecoder } from 'text-encoding';
 import { Novel } from '../types';
 import { LocalRepo } from '../types/repo';
 
 function generateUUID(): string {
-    // Fallback UUID generator
+    if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+        return crypto.randomUUID();
+    }
+
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         const r = Math.random() * 16 | 0;
         const v = c === 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);
     });
+}
+
+function toBinaryString(bytes: Uint8Array): string {
+    const chunkSize = 0x8000;
+    let result = '';
+
+    for (let offset = 0; offset < bytes.length; offset += chunkSize) {
+        const chunk = bytes.subarray(offset, Math.min(offset + chunkSize, bytes.length));
+        result += String.fromCharCode(...chunk);
+    }
+
+    return result;
 }
 
 export class NovelStorage {
@@ -29,17 +43,14 @@ export class NovelStorage {
             request.onupgradeneeded = (event) => {
                 const db = (event.target as IDBOpenDBRequest).result;
 
-                // Create novels store for metadata
                 if (!db.objectStoreNames.contains(this.NOVELS_STORE)) {
                     db.createObjectStore(this.NOVELS_STORE, { keyPath: 'id' });
                 }
 
-                // Create content store for novel content
                 if (!db.objectStoreNames.contains(this.CONTENT_STORE)) {
                     db.createObjectStore(this.CONTENT_STORE, { keyPath: 'id' });
                 }
 
-                // Create repositories store
                 if (!db.objectStoreNames.contains(this.REPOS_STORE)) {
                     db.createObjectStore(this.REPOS_STORE, { keyPath: 'url' });
                 }
@@ -52,11 +63,9 @@ export class NovelStorage {
         return new Promise<void>((resolve, reject) => {
             const transaction = db.transaction([this.NOVELS_STORE, this.CONTENT_STORE], 'readwrite');
 
-            // Save novel metadata
             const novelsStore = transaction.objectStore(this.NOVELS_STORE);
             novelsStore.put(novel);
 
-            // Save content
             const contentStore = transaction.objectStore(this.CONTENT_STORE);
             contentStore.put({
                 id: novel.id,
@@ -118,9 +127,7 @@ export class NovelStorage {
         return new Promise<void>((resolve, reject) => {
             const transaction = db.transaction([this.NOVELS_STORE, this.CONTENT_STORE], 'readwrite');
 
-            // Delete novel metadata
             transaction.objectStore(this.NOVELS_STORE).delete(novelId);
-            // Delete content
             transaction.objectStore(this.CONTENT_STORE).delete(novelId);
 
             transaction.oncomplete = () => resolve();
@@ -129,21 +136,17 @@ export class NovelStorage {
     }
 
     private static async detectAndDecodeText(buffer: ArrayBuffer): Promise<string> {
-        // First try UTF-8
         try {
-            const utf8Text = new TextDecoder('utf-8', { fatal: true }).decode(buffer);
-            return utf8Text;
+            return new TextDecoder('utf-8', { fatal: true }).decode(buffer);
         } catch {
-            // If UTF-8 fails, detect encoding
-            const uint8Array = new Uint8Array(buffer);
-            const result = jschardet.detect(Buffer.from(uint8Array));
+            const bytes = new Uint8Array(buffer);
+            const result = jschardet.detect(toBinaryString(bytes));
 
             if (!result.encoding) {
                 throw new Error('Could not detect file encoding');
             }
 
-            // Common encoding aliases
-            const encodingMap: { [key: string]: string } = {
+            const encodingMap: Record<string, string> = {
                 'ascii': 'windows-1252',
                 'iso-8859-1': 'windows-1252',
                 'windows-1252': 'windows-1252',
@@ -161,7 +164,6 @@ export class NovelStorage {
                 return new TextDecoder(encoding).decode(buffer);
             } catch (decodeError) {
                 console.error('Failed to decode with detected encoding:', encoding, decodeError);
-                // Fallback to UTF-8 without fatal flag as last resort
                 return new TextDecoder('utf-8').decode(buffer);
             }
         }
@@ -182,7 +184,7 @@ export class NovelStorage {
 
                     const novel: Novel = {
                         id: generateUUID(),
-                        title: file.name.replace(/\.[^/.]+$/, ''), // Remove file extension
+                        title: file.name.replace(/\.[^/.]+$/, ''),
                         source: 'local',
                         filepath: file.name,
                         lastRead: Date.now(),
@@ -199,7 +201,7 @@ export class NovelStorage {
             };
 
             reader.onerror = () => reject(new Error('Failed to read file'));
-            reader.readAsArrayBuffer(file); // Read as ArrayBuffer instead of text
+            reader.readAsArrayBuffer(file);
         });
     }
 
@@ -270,13 +272,12 @@ export class NovelStorage {
 
     static async exportNovelAsTxt(novelId: string): Promise<void> {
         const db = await this.getDB();
-        
-        // Get novel metadata
+
         const novel = await new Promise<Novel>((resolve, reject) => {
             const transaction = db.transaction(this.NOVELS_STORE, 'readonly');
             const store = transaction.objectStore(this.NOVELS_STORE);
             const request = store.get(novelId);
-            
+
             request.onsuccess = () => {
                 if (request.result) {
                     resolve(request.result);
@@ -287,19 +288,16 @@ export class NovelStorage {
             request.onerror = () => reject(request.error);
         });
 
-        // Get novel content
         const content = await this.getNovelContent(novelId);
-        
-        // Create and download the file
         const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
         const url = URL.createObjectURL(blob);
-        
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `${novel.title}.txt`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.download = `${novel.title}.txt`;
+        document.body.appendChild(anchor);
+        anchor.click();
+        document.body.removeChild(anchor);
         URL.revokeObjectURL(url);
     }
 }

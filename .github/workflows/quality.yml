@@ -19,6 +19,8 @@ jobs:
     name: Web quality
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
     steps:
       - name: Checkout repository and skills
         uses: actions/checkout@v4
@@ -28,17 +30,22 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
           cache: npm
 
       - name: Install dependencies
         run: npm ci
 
+      - name: Audit dependency tree
+        run: |
+          npm audit --json > "${RUNNER_TEMP}/npm-audit.json" || true
+          node scripts/validate-npm-audit.mjs "${RUNNER_TEMP}/npm-audit.json"
+
       - name: Lint
         run: npm run lint
 
       - name: Type check
-        run: npx tsc --noEmit
+        run: npm run typecheck
 
       - name: Production build
         run: npm run build
