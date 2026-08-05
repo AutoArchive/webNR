@@ -1,0 +1,61 @@
+name: Compatibility report
+description: Report a TXT encoding, source-schema, browser, or future format compatibility case
+title: "compat: "
+labels:
+  - compatibility
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use synthetic, public-domain, self-owned, or explicitly authorized fixtures only. A source definition does not grant a content license.
+  - type: input
+    id: build
+    attributes:
+      label: WebNR build or commit
+      placeholder: Commit from /build.json
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Compatibility area
+      options:
+        - TXT encoding
+        - Large TXT file
+        - Browser / PWA
+        - WebNR repository definition
+        - Declarative source rule
+        - Legado data import/export proposal
+        - EPUB fixture proposal
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: fixture
+    attributes:
+      label: Fixture and license
+      description: Describe the minimal fixture and why the project may use it. Link only to public, authorized material.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Observed and expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: capabilities
+    attributes:
+      label: Required capabilities
+      description: List domains, cookies, JavaScript, dynamic DOM, authentication, pagination, encoding, or other required behavior.
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Content and security confirmation
+      options:
+        - label: The fixture is public-domain, self-owned, synthetic, or explicitly authorized.
+          required: true
+        - label: The report does not request bypassing authentication, payment, DRM, robots, rate limits, or access controls.
+          required: true
+        - label: The report contains no private URL, credential, cookie, imported book content, or reading history.
+          required: true
