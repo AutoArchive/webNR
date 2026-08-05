@@ -1,7 +1,7 @@
 site_name: WebNR Documentation
 site_description: User and developer documentation for the private, local-first WebNR TXT reader
 site_author: AutoArchive contributors
-site_url: https://www.webnovel.win/
+site_url: https://autoarchive.github.io/webNR/
 repo_url: https://github.com/AutoArchive/webNR
 repo_name: AutoArchive/webNR
 edit_uri: edit/main/docs/
