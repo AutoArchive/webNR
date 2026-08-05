@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from '../contexts/LanguageContext';
 
-type View = 'library' | 'reader' | 'settings' | 'discover' | 'search';
+type View = 'library' | 'reader' | 'settings' | 'discover' | 'search' | 'add';
 
 interface FooterProps {
   currentView: View;
@@ -9,7 +9,7 @@ interface FooterProps {
 }
 
 interface NavItem {
-  view: View;
+  view: Exclude<View, 'reader'>;
   icon: React.ReactElement;
 }
 
@@ -21,6 +21,12 @@ export function Footer({ currentView, onNavigate }: FooterProps) {
       view: 'library',
       icon: (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+      ),
+    },
+    {
+      view: 'add',
+      icon: (
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
       ),
     },
     {
@@ -47,25 +53,33 @@ export function Footer({ currentView, onNavigate }: FooterProps) {
   ];
 
   return (
-    <nav className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-      <div className="flex justify-around items-center h-14">
-        {navItems.map(({ view, icon }) => (
-          <button
-            key={view}
-            onClick={() => onNavigate(view)}
-            className={`flex flex-col items-center px-4 py-2 transition-colors ${
-              currentView === view 
-                ? 'text-blue-600 dark:text-blue-400' 
-                : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
-            }`}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {icon}
-            </svg>
-            <span className="text-xs mt-1">{t(`common.${view}`)}</span>
-          </button>
-        ))}
+    <nav className="border-t border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800" aria-label="Primary navigation">
+      <div className="flex h-16 items-center justify-around">
+        {navItems.map(({ view, icon }) => {
+          const isCurrent = currentView === view;
+          const label = t(`navigation.${view}`);
+
+          return (
+            <button
+              key={view}
+              type="button"
+              onClick={() => onNavigate(view)}
+              aria-label={label}
+              aria-current={isCurrent ? 'page' : undefined}
+              className={`flex min-h-11 min-w-12 flex-col items-center justify-center rounded-lg px-2 py-1 text-xs transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                isCurrent
+                  ? 'text-blue-600 dark:text-blue-400'
+                  : 'text-gray-600 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-100'
+              }`}
+            >
+              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                {icon}
+              </svg>
+              <span className="mt-1">{label}</span>
+            </button>
+          );
+        })}
       </div>
     </nav>
   );
-} 
+}
