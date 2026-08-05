@@ -7,10 +7,13 @@
 - Last completed closeout squash merge: `8d29606ea45c52b5cb247dc09c819c326a2f322e`
 - Latest site-change pull request: #44
 - Latest site-change squash merge: `11fc17fa574a9954b05c968dd7f9daa1d5e31e78`
-- Analytics closeout: pending current metadata-only pull request
+- Analytics closeout pull request: #45
+- Analytics closeout initial Quality run: `31038751609`
+- Analytics closeout final squash merge: pending
 - Last data window: Google Drive contains no matching GA4 or Search Console export; repository, CI, Pages, public-build, and analytics implementation evidence collected on 2026-08-05
 - Last successful attributable application deployment: `11fc17fa574a9954b05c968dd7f9daa1d5e31e78`
 - Last successful attributable documentation deployment: `11fc17fa574a9954b05c968dd7f9daa1d5e31e78`
+- Last successful public production verification: Quality run `31038751609`, Production evidence job `92417518169`
 - Last permanent production-evidence implementation: `cef991a8f4a7cc85dae2bbf88bbbebb36b736048`
 - Working documentation URL: `https://autoarchive.github.io/webNR/`
 - Skill submodule commit: `5c3174fa6ca5b01ff2f56b1cfb248877187ce2f5`
@@ -26,7 +29,7 @@
 - Infrastructure analytics: connected Cloudflare accounts do not expose the `webnovel.win` zone. This does not block GA4, Search Console preparation, GitHub Pages analytics, or product delivery.
 - Application deployment artifact: `app-pages/build.json` identifies `11fc17fa574a9954b05c968dd7f9daa1d5e31e78`; generated HTML contains the GA4 loader and full-URL configuration.
 - Documentation deployment artifact: `gh-pages/build.json` identifies `11fc17fa574a9954b05c968dd7f9daa1d5e31e78`; generated HTML contains GA4 measurement `G-DGH8HNQKE4`.
-- Permanent production evidence: every Quality run verifies the recorded exact reader and documentation builds plus the bilingual troubleshooting content.
+- Public production verification: Production evidence successfully requested the reader build, documentation build, and bilingual TXT troubleshooting page for exact source commit `11fc17fa574a9954b05c968dd7f9daa1d5e31e78`.
 - Documentation delivery: `https://autoarchive.github.io/webNR/` is the canonical working documentation URL.
 - Data behavior: imported book content and reading progress remain in browser storage. No custom analytics events containing local file contents or reading progress were added.
 - Application: local TXT and supported text-URL import are available; EPUB remains rejected until a real parser and versioned fixtures exist.
@@ -35,9 +38,8 @@
 
 ## Active focus
 
-- Pass the metadata-only closeout through Web quality, Documentation quality, SEO data contract, and Production evidence.
-- Require Production evidence to prove both public sites expose exact source commit `11fc17fa574a9954b05c968dd7f9daa1d5e31e78` and the required public content.
-- Record the final closeout pull request, Quality run, public verification, and squash merge in the current daily report.
+- Pass the final metadata-corrected closeout head through Web quality, Documentation quality, SEO data contract, and Production evidence.
+- Perform a complete final diff and check review, then squash-merge pull request #45.
 - Re-enable the daily WebNR operator with the working documentation URL and mandatory `full-url` analytics policy.
 - Next product milestones: backup/restore, IndexedDB migrations, E2E/accessibility/offline tests, stable releases, real EPUB parsing, and versioned clean-room Legado compatibility fixtures.
 
