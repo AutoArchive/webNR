@@ -8,7 +8,7 @@ on:
       - 'docs/**'
       - 'mkdocs.yml'
       - '.github/requirements-docs.txt'
-      - '.github/workflows/blank.yml'
+      - '.github/workflows/docs-pages.yml'
   workflow_dispatch:
 
 permissions:
