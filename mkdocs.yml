@@ -54,7 +54,6 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
-  - git-authors
 
 extra:
   homepage: https://app.webnovel.win/
