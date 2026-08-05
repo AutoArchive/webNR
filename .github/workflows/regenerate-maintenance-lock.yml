@@ -84,7 +84,7 @@ jobs:
           rm .github/workflows/regenerate-maintenance-lock.yml npm-audit.json
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add package.json package-lock.json app/lib/storage.ts scripts/generate-icons.mjs scripts/generate-icons.js .github/workflows/regenerate-maintenance-lock.yml
+          git add package-lock.json .github/workflows/regenerate-maintenance-lock.yml
           git diff --cached --check
           git commit -m 'chore: finalize stable dependency maintenance'
           git push origin HEAD:${HEAD_BRANCH}
