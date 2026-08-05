@@ -1,68 +1,41 @@
-# Source System
+# WebNR source definitions
 
-WebNR supports multiple novel sources through a plugin system. This page explains how sources work and important legal considerations.
+WebNR can import independently distributed repository definitions for discovery and search. A source definition is a connector configuration, not a content license, endorsement, or promise that a target website permits automated access.
 
-## Legal Notice
+## Current support
 
-### Disclaimer
+The current source system can load WebNR repository metadata and use its configured search and import behavior when the browser is allowed to contact the declared URLs. Browser CORS rules, remote availability, rate limits, authentication, and target-site terms still apply.
 
-WebNR is a web novel reader that allows users to connect to various content sources. Please note:
+WebNR does not currently claim complete Legado compatibility. Compatibility work must use a clean-room implementation and a versioned fixture suite that states which fields, rules, and capabilities are supported.
 
-1. WebNR does not host, store, or distribute any novel content
-2. WebNR is not responsible for the content available through third-party sources
-3. Users are responsible for ensuring their use complies with local laws and regulations
-4. Source plugins are maintained by the community and not officially endorsed
+## Official project boundary
 
-### Copyright Notice
+WebNR and its official documentation:
 
-- WebNR respects intellectual property rights
-- If you are a copyright holder and believe your work is improperly accessed through a source, please contact us
-- We will promptly review and remove problematic sources
-- Users should support official releases when available
+- do not host or bundle novels;
+- do not operate a public proxy for bypassing browser or target-site controls;
+- do not publish unreviewed third-party source collections;
+- use only synthetic, public-domain, self-owned, or explicitly authorized fixtures and examples;
+- do not bypass authentication, payment, DRM, robots, rate limits, or other access controls.
 
-### Terms of Use
+A user-installed definition remains the user's responsibility. Its presence in a browser does not transfer copyright or access rights.
 
-By using WebNR sources, you agree to:
+## Requirements for source contributors
 
-1. Use the software for personal, non-commercial purposes only
-2. Not abuse or overload source websites
-3. Respect rate limits and access restrictions
-4. Not circumvent any technical measures implemented by content owners
+A proposed source or fixture must document:
 
-## About Sources
+1. its stable identifier and schema version;
+2. every network domain and capability it requires;
+3. whether it uses cookies, authentication, JavaScript, dynamic DOM, pagination, or non-UTF text;
+4. the license or authorization for any public example data;
+5. reasonable request rates and failure behavior;
+6. deterministic validation steps and expected results;
+7. known incompatibilities and security limitations.
 
-Sources in WebNR are:
+Do not submit private URLs, credentials, cookies, imported book text, reading history, or unauthorized content.
 
-- Community-maintained plugins
-- Independently hosted and distributed
-- Optional and user-installed
-- Subject to their own terms of service
+## Reporting compatibility issues
 
-## For Source Developers
+Use the [structured compatibility report](https://github.com/AutoArchive/webNR/issues/new?template=compatibility.yml) with a synthetic, public-domain, self-owned, or explicitly authorized fixture. Include the WebNR build from `/build.json` and the exact capability that failed.
 
-If you're developing a source:
-
-1. Ensure compliance with the target website's terms of service
-2. Implement proper rate limiting
-3. Include appropriate attribution
-4. Document any usage restrictions
-
-[Contributing Guidelines →](../development/contributing.md)
-
-## Reporting Issues
-
-If you encounter issues with sources or have concerns:
-
-1. Check if the source is still maintained
-2. Report technical issues on GitHub
-3. For legal concerns, contact us directly
-
-## Support Official Content
-
-We encourage users to:
-
-- Purchase official releases when available
-- Support content creators
-- Use legal streaming/reading services
-- Report unauthorized distribution
-
+See the [contributing guide](../mannual/contributing.md) and the [roadmap](https://github.com/AutoArchive/webNR/blob/main/ROADMAP.md) before proposing a new source runtime feature.

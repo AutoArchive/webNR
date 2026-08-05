@@ -1,119 +1,71 @@
-# WebNR - Web Novel Reader
+# WebNR
 
-A modern, privacy-focused, cross-platform web novel reader that works entirely client-side in browser. Built with Next.js and TypeScript.
+WebNR is a private, local-first web reader for user-owned TXT books and supported text URLs. It runs as an installable progressive web app, stores books and reading progress in the browser, and does not require an account.
 
-## Key Features
+- Reader: <https://app.webnovel.win/>
+- Documentation: <https://www.webnovel.win/>
+- Source and issues: <https://github.com/AutoArchive/webNR>
 
-🔒 **Privacy First**
-  
-- All data processed locally
-- No login required
-- No tracking or analytics
-- Works offline as PWA
+## Current capabilities
 
-📚 **Multi-Source Reading**
+- Import local `.txt` files with UTF-8 and common legacy encodings such as GB18030 and Big5.
+- Import text from an HTTP or HTTPS URL when the remote server permits browser access.
+- Read in scrolling or paged mode with configurable typography, dark mode, bookmarks, progress, and text-to-speech.
+- Install WebNR as a PWA and reopen the application shell offline.
+- Add independently distributed WebNR repository definitions for discovery and search.
 
-- Import from local files
-- Import from URLs
-- Connect to compatible novel Sources
-- Support for multiple text encodings (UTF-8, GB18030, Big5)
+## Important limitations
 
-🌐 **source System**
-  
-  - Connect to multiple novel Sources
-  - Browse popular and latest novels
-  - Search across Sources
-  - Automatic source syncing
-  - Categories and tags support
+- **EPUB is not supported yet.** WebNR rejects EPUB and other non-TXT local files until a real parser, security review, fixtures, and import tests exist.
+- URL imports are subject to browser CORS rules and the remote site's availability and terms.
+- Browser storage can be removed by the browser or user. A complete backup and restore workflow remains a product priority.
+- WebNR does not provide or bundle books and does not operate an official registry of unreviewed third-party sources.
 
-📖 **Rich Reading Experience**
+## Use WebNR
 
-  - Two reading modes: Paged and Scroll
-  - Customizable font size
-  - Dark/Light theme with system preference detection
-  - Progress tracking
-  - Clean, distraction-free interface
-  - Text-to-Speech support with adjustable speed and voice selection
-  - One-click access to web resources and definitions
+1. Open <https://app.webnovel.win/>.
+2. Choose **Add** or **Import Novel**.
+3. Select a local TXT file, or enter a supported text URL.
+4. Start reading. The book and progress are stored in the current browser profile.
 
-🔍 **Advanced Search**
+## Local development
 
-  - Full-text search across all Sources
-  - Multiple sorting options (relevance, newest, popular, rating)
-  - Paginated results
-  - Quick source filtering
+Requirements: Node.js 20 and npm.
 
-🌍 **Internationalization**
-
-  - Multi-language support
-  - Currently supports English and Chinese
-  - Easy to add new translations
-
-📱 **Cross-Platform**
-
-  - Works as Progressive Web App (PWA)
-  - Responsive design for all screen sizes
-  - Installable on any device
-  - Offline support
-
-
-## URL Parameters
-
-The app supports several URL parameters for direct actions:
-
-- `?repos=URL1,URL2,...` - Add one or more source URLs
-  ```
-  https://app.webnovel.win?repos=https://repo1.com,https://repo2.com
-  ```
-
-- `?add=URL` - Import novel directly from URL
-
-  ```
-  https://app.webnovel.win?add=https://example.com/novel.txt
-  ```
-
-- `?search=REPO_URL` - Open search view for specific source
-
-  ```
-  https://app.webnovel.win?search=https://repo1.com
-  ```
-
-## Getting Started
-
-1. Clone the source:
 ```bash
-git clone https://github.com/yourusername/webnr.git
-```
-
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-```
-
-3. Run the development server:
-```bash
+git clone --recurse-submodules https://github.com/AutoArchive/webNR.git
+cd webNR
+npm ci
 npm run dev
-# or
-yarn dev
 ```
 
-4. Open http://localhost:3000 with your browser to start using the app.
+Before opening a pull request, run:
 
-## Technology Stack
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
 
-- **Frontend Framework**: Next.js with TypeScript
-- **Styling**: Tailwind CSS
-- **Storage**: IndexedDB for local data storage
-- **State Management**: React Context
-- **Internationalization**: Custom i18n implementation
-- **Text-to-Speech**: Web Speech API
+The documentation site additionally requires Python 3.12:
+
+```bash
+python -m pip install --requirement .github/requirements-docs.txt
+mkdocs build --strict
+```
+
+## Privacy boundary
+
+The reading application does not load Google Analytics. Imported book content, filenames, and reading progress are not sent to WebNR servers. Network imports contact the URL selected by the user, and source definitions may contact the domains they declare. Do not put private user data, credentials, analytics identifiers, or raw provider exports in this public repository.
+
+## Source definitions and content policy
+
+WebNR source definitions are connectors, not content licenses. Contributors must follow target-site terms, use reasonable request rates, avoid bypassing authentication, payment, DRM, robots, or access controls, and publish only public-domain, self-owned, or explicitly authorized examples in official project materials.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Issues and focused pull requests are welcome. See the [contributing guide](docs/mannual/contributing.md). Every change must use a branch and pull request, pass the expected app/documentation/SEO checks, receive a complete final review, and preserve the local-data and content-policy boundaries.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT. See [LICENSE](LICENSE).

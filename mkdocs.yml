@@ -1,16 +1,22 @@
-site_name: WebNR - Web Novel Reader
-site_description: A modern, privacy-focused, cross-platform web novel reader
-site_url: https://www.webnovel.win
-repo_url: https://github.com/yunwei37/webNR
-repo_name: webNR
+site_name: WebNR Documentation
+site_description: User and developer documentation for the private, local-first WebNR TXT reader
+site_author: AutoArchive contributors
+site_url: https://www.webnovel.win/
+repo_url: https://github.com/AutoArchive/webNR
+repo_name: AutoArchive/webNR
+edit_uri: edit/main/docs/
+strict: true
 
 theme:
   name: material
+  language: en
   features:
+    - content.action.edit
     - navigation.tabs
     - navigation.sections
     - navigation.top
     - search.highlight
+    - search.suggest
   palette:
     - scheme: default
       primary: black
@@ -26,56 +32,37 @@ theme:
         name: Switch to light mode
 
 markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-  - admonition
-  - pymdownx.details
-  - attr_list
-  - md_in_html
-  - tables
 
 plugins:
   - search
+  - privacy
   - blog
-  - social
   - rss:
-      match_path: ".*"
+      match_path: "blog/posts/.*"
       date_from_meta:
-        as_creation: date.created
-        as_update: date.updated
+        as_creation: date
   - git-revision-date-localized:
       enable_creation_date: true
-  - git-authors  
-  # - i18n:
-  #     docs_structure: suffix
-  #     default_language: en
-  #     languages:
-  #       - locale: en
-  #         default: true
-  #         name: English
-  #         build: true
-  #       - locale: zh
-  #         name: Chinese
-  #         build: true
+      type: timeago
 
 extra:
-  analytics:
-    provider: google
-    property: G-DGH8HNQKE4
-  # alternate:
-  #   - name: English
-  #     link: /
-  #     lang: en
-  #   - name: 中文
-  #     link: /zh/
-  #     lang: zh
+  homepage: https://app.webnovel.win/
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/yunwei37/webNR
-    - icon: fontawesome/solid/house
-      link: https://webnovel.win
+      link: https://github.com/AutoArchive/webNR
+      name: WebNR source code
+    - icon: fontawesome/solid/book-open-reader
+      link: https://app.webnovel.win/
+      name: Open WebNR reader
 
-copyright: Copyright &copy; 2024 WebNR
+copyright: Copyright &copy; 2025–2026 AutoArchive contributors

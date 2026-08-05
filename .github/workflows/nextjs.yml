@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '.github/seo-data/**'
   workflow_dispatch:
 
 permissions:
@@ -17,14 +19,16 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
     steps:
       - name: Checkout repository and skills
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '20'
           cache: npm
@@ -60,7 +64,7 @@ jobs:
           test -f out/sitemap.xml
           test -f out/sw.js
           test -f out/build.json
-          grep -Fq 'WebNR — Private Offline TXT' out/index.html
+          grep -Fq 'WebNR — Private Offline TXT Reader' out/index.html
           grep -Fq "${BUILD_SHA}" out/build.json
           if grep -Fq 'googletagmanager.com' out/index.html; then
             echo 'Unexpected Google Analytics loader in production artifact' >&2

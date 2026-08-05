@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/AutoArchive/webNR/security/advisories/new
+    about: Report vulnerabilities privately. Do not include exploit details in a public issue.
+  - name: WebNR documentation
+    url: https://www.webnovel.win/
+    about: Read current usage, privacy, format-support, and contribution guidance.

@@ -1,59 +1,106 @@
-name: ci 
+name: Deploy WebNR documentation
+
 on:
   push:
     branches:
-      - master 
       - main
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - '.github/requirements-docs.txt'
+      - '.github/workflows/blank.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: docs-pages-production
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pages: write      # Add permission for GitHub Pages
-      id-token: write   # Add permission for GitHub Pages deployment
-
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository and skills
+        uses: actions/checkout@v5
         with:
-          recursive: true
-      - name: Configure Git Credentials
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: .github/requirements-docs.txt
+
+      - name: Install pinned documentation dependencies
+        run: pip install --requirement .github/requirements-docs.txt
+
+      - name: Write public documentation build identity
+        env:
+          BUILD_SHA: ${{ github.sha }}
         run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git submodule update --init --recursive
-      - uses: actions/setup-python@v5
+          python - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          payload = {
+              "commit": os.environ["BUILD_SHA"],
+              "builtAt": datetime.now(timezone.utc).isoformat(),
+              "source": "github-actions",
+          }
+          Path("docs/build.json").write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+          PY
+
+      - name: Build documentation strictly
+        run: mkdocs build --strict
+
+      - name: Validate documentation artifact
+        env:
+          BUILD_SHA: ${{ github.sha }}
+        run: |
+          set -eu
+          test -f site/index.html
+          test -f site/build.json
+          grep -Fq "${BUILD_SHA}" site/build.json
+          grep -Fq 'AutoArchive/webNR' site/index.html
+          if grep -R -Fq 'googletagmanager.com' site; then
+            echo 'Unexpected Google Analytics loader in documentation artifact' >&2
+            exit 1
+          fi
+          if grep -R -E -q 'yourusername/webnr|yunwei37/webNR' site; then
+            echo 'Obsolete repository reference in documentation artifact' >&2
+            exit 1
+          fi
+          touch site/.nojekyll
+
+      - name: Publish gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4.1.0
         with:
-          python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - uses: actions/cache@v4
-        with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
-      - run: pip install mkdocs-material "mkdocs-material[imaging]" mkdocs-git-authors-plugin mkdocs-git-revision-date-localized-plugin
-      - run: pip install mkdocs-rss-plugin  mkdocs-static-i18n[material] python-dotenv openai pdfplumber python-docx
-      # - run: pip install -r .github/scripts/requirements.txt
-      - run: sudo apt-get install libcairo2-dev
-      # - name: Prepare site
-      #   run: |
-      #     mkdir -p docs
-      #     cp README.md docs/README.md
-      #     cp README.zh.md docs/README.zh.md
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
+          force_orphan: true
+          commit_message: "docs deploy: ${{ github.sha }}"
 
-      # - name: Create docs directory
-      #   run: |
-      #     mkdir -p site
-      #     cp -r .github/*.yml ./
-
-      - run: mkdocs gh-deploy --force
-
-      # - name: Run publish script
-      #   env:
-      #     PUBLISHER_API_KEY: ${{ secrets.PUBLISHER_API_KEY }}
-      #     PUBLISH_AS_DRAFT: 'true'  # Or 'false' if you want to publish directly
-      #   run: |
-      #     python .github/manage/publish.py
-      
-    
+      - name: Verify exact documentation deployment
+        env:
+          BUILD_SHA: ${{ github.sha }}
+          PRODUCTION_BUILD_URL: https://www.webnovel.win/build.json
+        run: |
+          set -u
+          for attempt in $(seq 1 30); do
+            response="$(curl --fail --silent --show-error --max-time 15 "${PRODUCTION_BUILD_URL}?commit=${BUILD_SHA}" || true)"
+            if printf '%s' "${response}" | grep -Fq "\"commit\": \"${BUILD_SHA}\""; then
+              printf 'Verified documentation production commit %s\n' "${BUILD_SHA}"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "Documentation production did not expose expected commit ${BUILD_SHA}" >&2
+          exit 1
