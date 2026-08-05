@@ -1,13 +1,14 @@
 name: Publish WebNR documentation
 
 on:
-  workflow_run:
-    workflows:
-      - Quality
-    types:
-      - completed
+  push:
     branches:
       - main
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - '.github/requirements-docs.txt'
+      - '.github/workflows/publish-docs-pages.yml'
   workflow_dispatch:
 
 permissions:
@@ -20,34 +21,25 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  select-source:
-    name: Select verified documentation source
-    if: >-
-      github.event_name == 'workflow_dispatch' ||
-      (
-        github.event.workflow_run.conclusion == 'success' &&
-        github.event.workflow_run.event == 'push' &&
-        github.event.workflow_run.head_branch == github.event.repository.default_branch &&
-        github.event.workflow_run.head_repository.full_name == github.repository
-      )
+  source:
+    name: Select trusted documentation source
     runs-on: ubuntu-latest
     timeout-minutes: 5
     outputs:
       source_sha: ${{ steps.source.outputs.sha }}
-      should_deploy: ${{ steps.changes.outputs.should_deploy }}
     steps:
-      - name: Select trusted source commit
+      - name: Select default-branch commit
         id: source
         env:
           EVENT_NAME: ${{ github.event_name }}
-          WORKFLOW_RUN_SHA: ${{ github.event.workflow_run.head_sha }}
+          PUSH_SHA: ${{ github.sha }}
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
           set -euo pipefail
-          if [ "${EVENT_NAME}" = 'workflow_run' ]; then
-            source_sha="${WORKFLOW_RUN_SHA}"
+          if [ "${EVENT_NAME}" = 'push' ]; then
+            source_sha="${PUSH_SHA}"
           else
             source_sha="$(
               curl --fail-with-body --silent --show-error \
@@ -64,44 +56,16 @@ jobs:
           fi
           printf 'sha=%s\n' "${source_sha}" >> "${GITHUB_OUTPUT}"
 
-      - name: Checkout trusted source history
-        uses: actions/checkout@v5
-        with:
-          ref: ${{ steps.source.outputs.sha }}
-          fetch-depth: 2
-
-      - name: Detect documentation delivery changes
-        id: changes
-        env:
-          EVENT_NAME: ${{ github.event_name }}
-          SOURCE_SHA: ${{ steps.source.outputs.sha }}
-        run: |
-          set -euo pipefail
-          if [ "${EVENT_NAME}" = 'workflow_dispatch' ]; then
-            should_deploy=true
-          elif git diff --quiet "${SOURCE_SHA}^" "${SOURCE_SHA}" -- \
-            docs \
-            mkdocs.yml \
-            .github/requirements-docs.txt \
-            .github/workflows/publish-docs-pages.yml; then
-            should_deploy=false
-          else
-            should_deploy=true
-          fi
-          printf 'should_deploy=%s\n' "${should_deploy}" >> "${GITHUB_OUTPUT}"
-          printf 'Documentation deployment selected: %s\n' "${should_deploy}"
-
   build:
     name: Build documentation artifact
-    needs: select-source
-    if: needs.select-source.outputs.should_deploy == 'true'
+    needs: source
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Checkout verified source
+      - name: Checkout reviewed default-branch source
         uses: actions/checkout@v5
         with:
-          ref: ${{ needs.select-source.outputs.source_sha }}
+          ref: ${{ needs.source.outputs.source_sha }}
           fetch-depth: 0
           submodules: recursive
 
@@ -133,7 +97,7 @@ jobs:
 
       - name: Write exact documentation build identity
         env:
-          BUILD_SHA: ${{ needs.select-source.outputs.source_sha }}
+          BUILD_SHA: ${{ needs.source.outputs.source_sha }}
         run: |
           python - <<'PY'
           import json
@@ -154,7 +118,7 @@ jobs:
 
       - name: Validate documentation artifact
         env:
-          BUILD_SHA: ${{ needs.select-source.outputs.source_sha }}
+          BUILD_SHA: ${{ needs.source.outputs.source_sha }}
         run: |
           set -eu
           test -f site/index.html
@@ -183,7 +147,7 @@ jobs:
   deploy:
     name: Deploy and verify documentation
     needs:
-      - select-source
+      - source
       - build
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -197,7 +161,7 @@ jobs:
 
       - name: Verify exact documentation deployment
         env:
-          BUILD_SHA: ${{ needs.select-source.outputs.source_sha }}
+          BUILD_SHA: ${{ needs.source.outputs.source_sha }}
           PRODUCTION_BUILD_URL: https://www.webnovel.win/build.json
           TROUBLESHOOTING_URL: https://www.webnovel.win/troubleshooting/txt-import/
         run: |
