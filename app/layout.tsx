@@ -124,13 +124,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               function gtag(){window.dataLayer.push(arguments);}
               gtag('js', new Date());
 
-              // Deliberately omit the query string. WebNR accepts import URLs in
-              // query parameters, and those user-selected values must not be
-              // transmitted to analytics.
-              var publicPath = window.location.pathname;
+              // The site owner explicitly requires the complete browser URL,
+              // including import and other query parameters, to be reported.
               gtag('config', '${CONFIG.ANALYTICS.GOOGLE_ANALYTICS_ID}', {
-                page_location: window.location.origin + publicPath,
-                page_path: publicPath,
+                page_location: window.location.href,
+                page_path: window.location.pathname + window.location.search,
                 page_title: document.title,
                 allow_google_signals: false,
                 allow_ad_personalization_signals: false
