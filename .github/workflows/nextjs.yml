@@ -1,77 +1,95 @@
-# Sample workflow for building and deploying a Next.js site to GitHub Pages
-#
-# To get started with Next.js see: https://nextjs.org/docs/getting-started
-#
-name: Deploy Next.js site to Pages
+name: Deploy WebNR app to Pages
 
 on:
   push:
     branches:
-      - master 
       - main
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
+  group: app-pages-production
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - name: Checkout
+      - name: Checkout repository and skills
         uses: actions/checkout@v4
-      - name: Detect package manager
-        id: detect-package-manager
-        run: |
-          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
-            echo "manager=yarn" >> $GITHUB_OUTPUT
-            echo "command=install" >> $GITHUB_OUTPUT
-            echo "runner=yarn" >> $GITHUB_OUTPUT
-            exit 0
-          elif [ -f "${{ github.workspace }}/package.json" ]; then
-            echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "command=ci" >> $GITHUB_OUTPUT
-            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
-            exit 0
-          else
-            echo "Unable to determine package manager"
-            exit 1
-          fi
-      - name: Setup Node
+        with:
+          submodules: recursive
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            .next/cache
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
+          node-version: '20'
+          cache: npm
+
       - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Build with Next.js
+        run: npm ci
+
+      - name: Write public build identity
+        env:
+          BUILD_SHA: ${{ github.sha }}
         run: |
-          ${{ steps.detect-package-manager.outputs.runner }} next build
-          touch out/.nojekyll  # Prevents GitHub Pages from ignoring files that begin with an underscore
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+          node <<'NODE'
+          const fs = require('node:fs');
+          const manifest = {
+            commit: process.env.BUILD_SHA,
+            builtAt: new Date().toISOString(),
+            source: 'github-actions'
+          };
+          fs.writeFileSync('public/build.json', `${JSON.stringify(manifest, null, 2)}\n`);
+          NODE
+
+      - name: Build static application
+        run: npm run build
+
+      - name: Validate deployment artifact
+        env:
+          BUILD_SHA: ${{ github.sha }}
+        run: |
+          set -eu
+          test -f out/index.html
+          test -f out/manifest.json
+          test -f out/robots.txt
+          test -f out/sitemap.xml
+          test -f out/sw.js
+          test -f out/build.json
+          grep -Fq 'WebNR — Private Offline TXT' out/index.html
+          grep -Fq "${BUILD_SHA}" out/build.json
+          if grep -Fq 'googletagmanager.com' out/index.html; then
+            echo 'Unexpected Google Analytics loader in production artifact' >&2
+            exit 1
+          fi
+          touch out/.nojekyll
+
+      - name: Publish app-pages branch
+        uses: peaceiris/actions-gh-pages@v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
           publish_branch: app-pages
-          force_orphan: true  # This will ensure clean deployment
+          force_orphan: true
+          commit_message: "deploy: ${{ github.sha }}"
+
+      - name: Verify exact production build
+        env:
+          BUILD_SHA: ${{ github.sha }}
+          PRODUCTION_BUILD_URL: https://app.webnovel.win/build.json
+        run: |
+          set -u
+          for attempt in $(seq 1 30); do
+            response="$(curl --fail --silent --show-error --max-time 15 "${PRODUCTION_BUILD_URL}?commit=${BUILD_SHA}" || true)"
+            if printf '%s' "${response}" | grep -Fq "\"commit\": \"${BUILD_SHA}\""; then
+              printf 'Verified production commit %s\n' "${BUILD_SHA}"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "Production did not expose expected commit ${BUILD_SHA}" >&2
+          exit 1
