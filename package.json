@@ -9,7 +9,7 @@
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
-    "generate-icons": "node scripts/generate-icons.js"
+    "generate-icons": "node scripts/generate-icons.mjs"
   },
   "dependencies": {
     "@types/crypto-js": "^4.2.2",
