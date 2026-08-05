@@ -1,138 +1,64 @@
-<div align="center">
-  <h1>WebNR - Web Novel Reader<br/>网文阅读器</h1>
-  <p>
-    A modern, privacy-focused, cross-platform web novel reader that works entirely offline, client-side in browser.<br/>
-    一个现代化的、注重隐私的、跨平台的网文阅读器，完全离线运行，基于浏览器。<br/>
-    Built with Next.js and TypeScript.<br/>
-    使用 Next.js 和 TypeScript 构建。<br/>
-    No installation needed, open with one click.<br/>
-    无需安装，一键即用。
-  </p>
-  
-  <p>
-    <a href="/source/">Source 书源</a> |
-    <a href="https://app.webnovel.win">Live Demo 在线阅读</a>
-  </p>
-</div>
+# WebNR Documentation / WebNR 文档
 
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 16px;">
-  <img src="imgs/Screenshot%202025-02-09%20174735.png" alt="Screenshot 2" style="width: 100%; border-radius: 8px;"/>
-  <img src="imgs/Screenshot%202025-02-09%20174807.png" alt="Screenshot 3" style="width: 100%; border-radius: 8px;"/>
-  <img src="imgs/Screenshot%202025-02-09%20174820.png" alt="Screenshot 4" style="width: 100%; border-radius: 8px;"/>
-  <img src="imgs/Screenshot%202025-02-09%20174833.png" alt="Screenshot 5" style="width: 100%; border-radius: 8px;"/>
-  <img src="imgs/Screenshot%202025-02-09%20174855.png" alt="Screenshot 6" style="width: 100%; border-radius: 8px;"/>
-  <img src="imgs/Screenshot%202025-02-09%20174925.png" alt="Screenshot 7" style="width: 100%; border-radius: 8px;"/>
-  <img src="imgs/Screenshot%202025-02-09%20174556.png" alt="Screenshot 1" style="width: 100%; border-radius: 8px;"/>
-</div>
+WebNR is a private, local-first browser reader for user-owned TXT books and supported text URLs. It stores imported text and reading progress in the current browser profile and requires no account.
 
+WebNR 是一个隐私优先、本地存储的浏览器 TXT 阅读器。导入的文本与阅读进度保存在当前浏览器配置中，无需账号。
 
-## ✨ Key Features 主要特点
+[Open WebNR / 打开阅读器](https://app.webnovel.win/) · [GitHub](https://github.com/AutoArchive/webNR) · [Report an issue / 报告问题](https://github.com/AutoArchive/webNR/issues)
 
-<table>
-<tr>
-<td>
-<h3>🔒 Privacy First 隐私优先</h3>
+## Start reading / 开始阅读
 
-- All data processed locally<br/>所有数据本地处理
-- No login required<br/>无需登录
-- No tracking or analytics<br/>无跟踪和分析
-- Works offline as PWA<br/>支持离线 PWA 应用
-</td>
-<td>
-<h3>📚 Multi-Source Reading 多源阅读</h3>
+1. Open the reader and choose **Add** or **Import Novel**. / 打开阅读器并选择 **Add** 或 **Import Novel**。
+2. Select a local `.txt` file, or enter an HTTP/HTTPS text URL. / 选择本地 `.txt` 文件，或输入 HTTP/HTTPS 文本地址。
+3. Start reading. The application stores the book and progress locally. / 开始阅读，书籍与进度会保存在浏览器本地。
 
-- Import from local files<br/>从本地文件导入
-- Import from URLs<br/>从网址导入
-- Connect to Sources<br/>连接到源
-- Multiple text encodings<br/>多种文本编码支持
-</td>
-</tr>
-<tr>
-<td>
-<h3>🌐 Source System 源系统</h3>
+!!! warning "Current format support / 当前格式支持"
+    Local TXT is supported. EPUB, PDF, and other container formats are rejected until real parsers, security review, fixtures, and import tests exist.
 
-- Multiple novel Sources<br/>多小说源支持
-- Browse popular/latest novels<br/>浏览热门/最新小说
-- Cross-source search<br/>跨源搜索
-- Auto source syncing<br/>自动源同步
-</td>
-<td>
-<h3>📖 Rich Reading Experience 丰富的阅读体验</h3>
+    当前支持本地 TXT。EPUB、PDF 等容器格式在拥有真实解析器、安全审查、测试样本与导入测试之前不会被接受。
 
-- Paged and Scroll modes<br/>翻页和滚动模式
-- Customizable font size<br/>自定义字体大小
-- Dark/Light themes<br/>深色/浅色主题
-- Progress tracking<br/>阅读进度追踪
-</td>
-</tr>
-</table>
+## What works today / 当前能力
 
-<details>
-<summary><h2>🔗 URL Parameters URL参数</h2></summary>
+- UTF-8 and common legacy text encodings, including GB18030 and Big5. / 支持 UTF-8、GB18030、Big5 等常见文本编码。
+- Local TXT and permitted text URL imports. / 支持本地 TXT 与允许跨域访问的文本 URL。
+- Paged and scrolling modes, typography controls, dark mode, progress, bookmarks, and text-to-speech. / 支持翻页与滚动、排版设置、深色模式、进度、书签与语音朗读。
+- Installable PWA and an offline application shell. / 可安装为 PWA，并支持离线打开应用外壳。
+- Independently distributed repository definitions for discovery and search. / 可添加独立分发的仓库定义进行发现与搜索。
 
-The app supports several URL parameters for direct actions:<br/>
-应用支持多个URL参数进行直接操作：
+## Privacy and data / 隐私与数据
 
-```
-# Add Sources 添加源
-https://app.webnovel.win?repos=https://repo1.com,https://repo2.com
+The reader does not load Google Analytics. Imported book content, filenames, and reading progress are not sent to WebNR servers. URL imports contact the URL selected by the user. Clearing browser site data can remove the local library, so backup and restore remain high-priority product work.
 
-# Import novel 导入小说
-https://app.webnovel.win?add=https://example.com/novel.txt
+阅读器不加载 Google Analytics。导入内容、文件名与阅读进度不会发送到 WebNR 服务器。URL 导入会直接访问用户选择的地址。清除浏览器站点数据可能删除本地书库，因此备份与恢复是高优先级功能。
 
-# Open search 打开搜索
-https://app.webnovel.win?search=https://repo1.com
-```
+## Browser and network limitations / 浏览器与网络限制
 
-</details>
+- URL imports are controlled by browser CORS rules. / URL 导入受浏览器 CORS 规则限制。
+- WebNR does not bypass authentication, payment, DRM, robots, or access controls. / WebNR 不绕过登录、付费、DRM、robots 或访问控制。
+- Source definitions do not grant a content license. / 书源定义不代表内容授权。
 
-<details>
-<summary><h2>🚀 Getting Started 开始使用</h2></summary>
+## Develop WebNR / 开发 WebNR
 
-1. Clone the source 克隆源码:
 ```bash
-git clone https://github.com/yourusername/webnr.git
-```
-
-2. Install dependencies 安装依赖:
-```bash
-npm install
-# or 或者
-yarn install
-```
-
-3. Run the development server 运行开发服务器:
-```bash
+git clone --recurse-submodules https://github.com/AutoArchive/webNR.git
+cd webNR
+npm ci
 npm run dev
-# or 或者
-yarn dev
 ```
 
-4. Open 打开 [http://localhost:3000](http://localhost:3000) with your browser 使用浏览器访问。
+Validate application changes:
 
-</details>
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
 
-<details>
-<summary><h2>🛠️ Technology Stack 技术栈</h2></summary>
+Validate documentation changes:
 
-- **Frontend Framework 前端框架**: Next.js with TypeScript
-- **Styling 样式**: Tailwind CSS
-- **Storage 存储**: IndexedDB
-- **State Management 状态管理**: React Context
-- **Internationalization 国际化**: Custom i18n
-- **Text-to-Speech 文字转语音**: Web Speech API
+```bash
+python -m pip install --requirement .github/requirements-docs.txt
+mkdocs build --strict
+```
 
-</details>
-
-<div align="center">
-
-## 📝 License 许可证
-
-This project is licensed under the [MIT License](LICENSE).<br/>
-本项目采用 [MIT 许可证](LICENSE)。
-
-<p>
-  <a href="#top">Back to top 返回顶部</a>
-</p>
-
-</div>
+See [Contributing](mannual/contributing.md) for the pull-request and review contract.
