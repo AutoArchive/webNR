@@ -8,8 +8,11 @@ on:
       - '.github/seo-data/**'
       - '.github/requirements-docs.txt'
       - '.github/workflows/publish-docs-pages.yml'
+      - '.github/workflows/quality.yml'
+      - '.github/workflows/nextjs.yml'
       - 'docs/**'
       - 'mkdocs.yml'
+      - 'scripts/verify-production-builds.mjs'
   workflow_dispatch:
 
 permissions:
