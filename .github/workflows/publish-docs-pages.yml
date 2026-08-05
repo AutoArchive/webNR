@@ -24,33 +24,47 @@ jobs:
     name: Select verified documentation source
     if: >-
       github.event_name == 'workflow_dispatch' ||
-      github.event.workflow_run.conclusion == 'success'
+      (
+        github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.event == 'push' &&
+        github.event.workflow_run.head_branch == github.event.repository.default_branch &&
+        github.event.workflow_run.head_repository.full_name == github.repository
+      )
     runs-on: ubuntu-latest
     timeout-minutes: 5
     outputs:
       source_sha: ${{ steps.source.outputs.sha }}
       should_deploy: ${{ steps.changes.outputs.should_deploy }}
     steps:
-      - name: Select source commit
+      - name: Select trusted source commit
         id: source
         env:
           EVENT_NAME: ${{ github.event_name }}
           WORKFLOW_RUN_SHA: ${{ github.event.workflow_run.head_sha }}
-          DEFAULT_SHA: ${{ github.sha }}
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
-          set -eu
+          set -euo pipefail
           if [ "${EVENT_NAME}" = 'workflow_run' ]; then
             source_sha="${WORKFLOW_RUN_SHA}"
           else
-            source_sha="${DEFAULT_SHA}"
+            source_sha="$(
+              curl --fail-with-body --silent --show-error \
+                --header 'Accept: application/vnd.github+json' \
+                --header "Authorization: Bearer ${GH_TOKEN}" \
+                --header 'X-GitHub-Api-Version: 2022-11-28' \
+                "https://api.github.com/repos/${REPOSITORY}/commits/${DEFAULT_BRANCH}" \
+              | python3 -c 'import json, sys; print(json.load(sys.stdin)["sha"])'
+            )"
           fi
-          case "${source_sha}" in
-            [0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]) ;;
-            *) echo "Invalid source commit: ${source_sha}" >&2; exit 1 ;;
-          esac
+          if [[ ! "${source_sha}" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Invalid source commit: ${source_sha}" >&2
+            exit 1
+          fi
           printf 'sha=%s\n' "${source_sha}" >> "${GITHUB_OUTPUT}"
 
-      - name: Checkout source history
+      - name: Checkout trusted source history
         uses: actions/checkout@v5
         with:
           ref: ${{ steps.source.outputs.sha }}
@@ -62,7 +76,7 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           SOURCE_SHA: ${{ steps.source.outputs.sha }}
         run: |
-          set -eu
+          set -euo pipefail
           if [ "${EVENT_NAME}" = 'workflow_dispatch' ]; then
             should_deploy=true
           elif git diff --quiet "${SOURCE_SHA}^" "${SOURCE_SHA}" -- \
