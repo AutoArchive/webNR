@@ -112,6 +112,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </LanguageProvider>
         <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${CONFIG.ANALYTICS.GOOGLE_ANALYTICS_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){window.dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              // Deliberately omit the query string. WebNR accepts import URLs in
+              // query parameters, and those user-selected values must not be
+              // transmitted to analytics.
+              var publicPath = window.location.pathname;
+              gtag('config', '${CONFIG.ANALYTICS.GOOGLE_ANALYTICS_ID}', {
+                page_location: window.location.origin + publicPath,
+                page_path: publicPath,
+                page_title: document.title,
+                allow_google_signals: false,
+                allow_ad_personalization_signals: false
+              });
+            `,
+          }}
+        />
+        <Script
           id="register-service-worker"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
