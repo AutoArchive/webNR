@@ -50,6 +50,16 @@ jobs:
       - name: Production build
         run: npm run build
 
+      - name: Validate application analytics output
+        run: |
+          set -eu
+          test -f out/index.html
+          grep -R -Fq 'G-DGH8HNQKE4' out
+          grep -R -Fq 'window.location.href' out
+          grep -R -Fq 'window.location.pathname + window.location.search' out
+          grep -R -Fq 'allow_google_signals' out
+          grep -R -Fq 'allow_ad_personalization_signals' out
+
   docs:
     name: Documentation quality
     runs-on: ubuntu-latest
@@ -79,10 +89,7 @@ jobs:
           set -eu
           test -f site/index.html
           grep -Fq 'AutoArchive/webNR' site/index.html
-          if grep -R -Fq 'googletagmanager.com' site; then
-            echo 'Unexpected Google Analytics loader in documentation artifact' >&2
-            exit 1
-          fi
+          grep -R -Fq 'G-DGH8HNQKE4' site
           if grep -R -E -q 'yourusername/webnr|yunwei37/webNR' site; then
             echo 'Obsolete repository reference in documentation artifact' >&2
             exit 1
