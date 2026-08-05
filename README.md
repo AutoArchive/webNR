@@ -28,6 +28,8 @@ WebNR is a private, local-first web reader for user-owned TXT books and supporte
 3. Select a local TXT file, or enter a supported text URL.
 4. Start reading. The book and progress are stored in the current browser profile.
 
+For encoding, CORS, storage, and PWA-update failures, see the [TXT import troubleshooting guide](docs/troubleshooting/txt-import.md).
+
 ## Local development
 
 Requirements: Node.js 20 and npm.
@@ -64,7 +66,7 @@ WebNR source definitions are connectors, not content licenses. Contributors must
 
 ## Contributing
 
-Issues and focused pull requests are welcome. See the [contributing guide](docs/mannual/contributing.md). Every change must use a branch and pull request, pass the expected app/documentation/SEO checks, receive a complete final review, and preserve the local-data and content-policy boundaries.
+Issues and focused pull requests are welcome. See the [contributing guide](docs/manual/contributing.md). Every change must use a branch and pull request, pass the expected app/documentation/SEO checks, receive a complete final review, and preserve the local-data and content-policy boundaries.
 
 ## License
 
