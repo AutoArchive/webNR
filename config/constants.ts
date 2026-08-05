@@ -3,7 +3,7 @@
  */
 export const CONFIG = {
   GITHUB_REPO: 'https://github.com/AutoArchive/webNR',
-  HOME_PAGE: 'https://www.webnovel.win',
+  HOME_PAGE: 'https://autoarchive.github.io/webNR/',
   CANONICAL_DOMAIN: 'https://app.webnovel.win',
 
   ANALYTICS: {
