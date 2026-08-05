@@ -32,8 +32,8 @@ owner instruction recorded in the relevant pull request and daily report.
 
 - Google Drive enabled: yes
 - Google Drive folder name: `webNR SEO Weekly CSV`
-- GA4 export filename pattern: `ga4-*.csv`
-- Search Console export filename pattern: `gsc-*.csv`
+- GA4 export filename pattern: `*_ga4_organic_landing_pages.csv`
+- Search Console export filename pattern: `*_gsc_*.csv`
 - Lookback days: 28
 - Finalization lag days: 3
 

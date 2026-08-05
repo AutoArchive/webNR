@@ -48,9 +48,9 @@ WebNR is a client-side web novel reader built with Next.js 15, React 19, and Typ
 
 ### Analytics Contract
 
-- Measurement ID: `G-DGH8HNQKE4`
+- Measurement IDs: `G-DGH8HNQKE4` and `G-NL0WV2XMJN`
 - Application implementation: `app/layout.tsx` and `config/constants.ts`
-- Documentation implementation: `mkdocs.yml`
+- Documentation implementation: `mkdocs.yml` and `docs/javascripts/additional-analytics.js`
 - URL reporting mode: `full-url`
 - `page_location` must use `window.location.href`
 - `page_path` must include `window.location.pathname + window.location.search`

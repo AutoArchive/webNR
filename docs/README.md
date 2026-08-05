@@ -27,11 +27,11 @@ WebNR 是一个本地优先的浏览器 TXT 阅读器。导入的文本与阅读
 
 ## Data and analytics / 数据与分析
 
-Imported book content and reading progress stay in the current browser profile and are not uploaded to a WebNR content server. The reader and documentation site use Google Analytics 4 measurement `G-DGH8HNQKE4`.
+Imported book content and reading progress stay in the current browser profile and are not uploaded to a WebNR content server. The reader and documentation site send page views to Google Analytics 4 measurements `G-DGH8HNQKE4` and `G-NL0WV2XMJN`.
 
 The reader sends the **complete browser page URL**, including query parameters, to Google Analytics. Therefore an imported URL in `?add=...` is included in the reported page URL. Google signals and ad-personalization signals are disabled. WebNR does not add custom analytics events containing local file contents or reading progress.
 
-导入的书籍正文与阅读进度保存在当前浏览器配置中，不会上传到 WebNR 内容服务器。阅读器与文档站使用 Google Analytics 4，Measurement ID 为 `G-DGH8HNQKE4`。
+导入的书籍正文与阅读进度保存在当前浏览器配置中，不会上传到 WebNR 内容服务器。阅读器与文档站会把页面浏览发送至 Google Analytics 4，Measurement ID 为 `G-DGH8HNQKE4` 和 `G-NL0WV2XMJN`。
 
 阅读器会把**完整浏览器页面网址**发送给 Google Analytics，包括查询参数。因此，`?add=...` 中的导入网址也会包含在上报的页面网址中。Google signals 与广告个性化信号已关闭。WebNR 不会额外创建包含本地文件正文或阅读进度的自定义分析事件。
 

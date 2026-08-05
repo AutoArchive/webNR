@@ -48,6 +48,7 @@ jobs:
           set -eu
           test -f out/index.html
           grep -R -Fq 'G-DGH8HNQKE4' out
+          grep -R -Fq 'G-NL0WV2XMJN' out
           grep -R -Fq 'window.location.href' out
           grep -R -Fq 'window.location.pathname + window.location.search' out
           grep -R -Fq 'allow_google_signals' out
@@ -83,6 +84,7 @@ jobs:
           grep -Fq 'TXT import troubleshooting' site/troubleshooting/txt-import/index.html
           grep -Fq 'TXT 导入排障' site/troubleshooting/txt-import/index.html
           grep -R -Fq 'G-DGH8HNQKE4' site
+          grep -R -Fq 'G-NL0WV2XMJN' site
           if grep -R -E -q 'yourusername/webnr|yunwei37/webNR|https://www\.webnovel\.win' site; then
             echo 'Obsolete repository or documentation-domain reference in artifact' >&2
             exit 1
