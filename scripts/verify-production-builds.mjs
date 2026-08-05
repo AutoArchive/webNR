@@ -49,7 +49,7 @@ async function verifyTarget(target) {
 
   await describeTarget(target);
 
-  for (let attempt = 1; attempt <= 12; attempt += 1) {
+  for (let attempt = 1; attempt <= 4; attempt += 1) {
     try {
       const response = await fetch(`${target.url}?expected=${expectedCommit}&attempt=${attempt}&time=${Date.now()}`, {
         cache: 'no-store',
@@ -85,8 +85,10 @@ async function verifyTarget(target) {
       lastObserved = error instanceof Error ? error.message : String(error);
     }
 
-    if (attempt < 12) {
-      await sleep(10_000);
+    console.log(`${target.label} attempt ${attempt} did not match ${expectedCommit}: ${lastObserved}`);
+
+    if (attempt < 4) {
+      await sleep(5_000);
     }
   }
 
