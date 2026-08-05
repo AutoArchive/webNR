@@ -1,6 +1,6 @@
 # WebNR
 
-WebNR is a private, local-first web reader for user-owned TXT books and supported text URLs. It runs as an installable progressive web app, stores books and reading progress in the browser, and does not require an account.
+WebNR is a local-first web reader for user-owned TXT books and supported text URLs. It runs as an installable progressive web app, stores books and reading progress in the browser, and does not require an account.
 
 - Reader: <https://app.webnovel.win/>
 - Documentation: <https://www.webnovel.win/>
@@ -56,9 +56,11 @@ python -m pip install --requirement .github/requirements-docs.txt
 mkdocs build --strict
 ```
 
-## Privacy boundary
+## Data and analytics
 
-The reading application does not load Google Analytics. Imported book content, filenames, and reading progress are not sent to WebNR servers. Network imports contact the URL selected by the user, and source definitions may contact the domains they declare. Do not put private user data, credentials, analytics identifiers, or raw provider exports in this public repository.
+Imported book content and reading progress are stored in the current browser profile and are not uploaded to a WebNR content server. Both the reader and documentation site use Google Analytics 4 measurement `G-DGH8HNQKE4` for site analysis.
+
+The reader reports the **complete browser page URL**, including query parameters. This includes an imported text URL when WebNR is opened with a parameter such as `?add=https://example.com/book.txt`. The implementation also disables Google signals and ad-personalization signals. The project does not add custom analytics events containing local file contents or reading progress.
 
 ## Source definitions and content policy
 
@@ -66,7 +68,7 @@ WebNR source definitions are connectors, not content licenses. Contributors must
 
 ## Contributing
 
-Issues and focused pull requests are welcome. See the [contributing guide](docs/manual/contributing.md). Every change must use a branch and pull request, pass the expected app/documentation/SEO checks, receive a complete final review, and preserve the local-data and content-policy boundaries.
+Issues and focused pull requests are welcome. See the [contributing guide](docs/manual/contributing.md). Every change must use a branch and pull request, pass the expected app/documentation/SEO checks, receive a complete final review, and preserve the declared analytics, local-data, and content-policy boundaries.
 
 ## License
 
