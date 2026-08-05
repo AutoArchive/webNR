@@ -1,0 +1,48 @@
+name: Generate Next.js lockfile artifact
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  generate-lockfile:
+    if: github.head_ref == 'seo/next-15-5-21-security'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout maintenance branch
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Resolve package lock from npm
+        run: npm install --package-lock-only --ignore-scripts
+
+      - name: Verify resolved maintenance versions
+        run: |
+          node <<'NODE'
+          const lock = require('./package-lock.json');
+          const nextVersion = lock.packages?.['node_modules/next']?.version;
+          const eslintConfigVersion = lock.packages?.['node_modules/eslint-config-next']?.version;
+          if (nextVersion !== '15.5.21') {
+            throw new Error(`Expected next 15.5.21, received ${nextVersion}`);
+          }
+          if (eslintConfigVersion !== '15.5.21') {
+            throw new Error(`Expected eslint-config-next 15.5.21, received ${eslintConfigVersion}`);
+          }
+          NODE
+
+      - name: Upload generated package lock
+        uses: actions/upload-artifact@v4
+        with:
+          name: next-15-5-21-package-lock
+          path: package-lock.json
+          if-no-files-found: error
+          retention-days: 1
