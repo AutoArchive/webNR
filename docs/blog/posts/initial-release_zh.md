@@ -42,4 +42,4 @@ WebNR 最初被定位为浏览器阅读器，重点包括本地存储、无需�
 
 ## 参与贡献
 
-高价值贡献包括备份与恢复、IndexedDB 迁移、TXT 编码测试样本、无障碍测试、PWA 离线与更新测试、真实且安全的 EPUB 解析器，以及带版本测试样本的 clean-room Legado 兼容层。参见[贡献指南](../../mannual/contributing.md)。
+高价值贡献包括备份与恢复、IndexedDB 迁移、TXT 编码测试样本、无障碍测试、PWA 离线与更新测试、真实且安全的 EPUB 解析器，以及带版本测试样本的 clean-room Legado 兼容层。参见[贡献指南](../../manual/contributing.md)与 [TXT 导入排障](../../troubleshooting/txt-import.md)。
