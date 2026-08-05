@@ -9,26 +9,28 @@ on:
       - 'mkdocs.yml'
       - '.github/requirements-docs.txt'
       - '.github/workflows/publish-docs-pages.yml'
+      - '.github/workflows/docs-pages.yml'
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  actions: read
+  contents: write
+  pages: read
 
 concurrency:
   group: webnr-documentation-production
   cancel-in-progress: false
 
 jobs:
-  source:
-    name: Select trusted documentation source
+  deploy:
+    name: Build, publish, and verify documentation
     runs-on: ubuntu-latest
-    timeout-minutes: 5
-    outputs:
-      source_sha: ${{ steps.source.outputs.sha }}
+    timeout-minutes: 15
+    env:
+      PRODUCTION_BUILD_URL: https://www.webnovel.win/build.json
+      TROUBLESHOOTING_URL: https://www.webnovel.win/troubleshooting/txt-import/
     steps:
-      - name: Select default-branch commit
+      - name: Select trusted default-branch commit
         id: source
         env:
           EVENT_NAME: ${{ github.event_name }}
@@ -56,16 +58,10 @@ jobs:
           fi
           printf 'sha=%s\n' "${source_sha}" >> "${GITHUB_OUTPUT}"
 
-  build:
-    name: Build documentation artifact
-    needs: source
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
       - name: Checkout reviewed default-branch source
         uses: actions/checkout@v5
         with:
-          ref: ${{ needs.source.outputs.source_sha }}
+          ref: ${{ steps.source.outputs.sha }}
           fetch-depth: 0
           submodules: recursive
 
@@ -79,25 +75,9 @@ jobs:
       - name: Install pinned documentation dependencies
         run: pip install --requirement .github/requirements-docs.txt
 
-      - name: Configure repository Pages for workflow publishing
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REPOSITORY: ${{ github.repository }}
-        run: |
-          curl --fail-with-body --silent --show-error \
-            --request PUT \
-            --header 'Accept: application/vnd.github+json' \
-            --header "Authorization: Bearer ${GH_TOKEN}" \
-            --header 'X-GitHub-Api-Version: 2022-11-28' \
-            "https://api.github.com/repos/${REPOSITORY}/pages" \
-            --data '{"build_type":"workflow"}'
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-
       - name: Write exact documentation build identity
         env:
-          BUILD_SHA: ${{ needs.source.outputs.source_sha }}
+          BUILD_SHA: ${{ steps.source.outputs.sha }}
         run: |
           python - <<'PY'
           import json
@@ -108,7 +88,7 @@ jobs:
           payload = {
               "commit": os.environ["BUILD_SHA"],
               "builtAt": datetime.now(timezone.utc).isoformat(),
-              "source": "github-pages-workflow",
+              "source": "github-pages-branch",
           }
           Path("docs/build.json").write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
           PY
@@ -116,16 +96,24 @@ jobs:
       - name: Build documentation strictly
         run: mkdocs build --strict
 
+      - name: Preserve Pages custom domain and disable Jekyll
+        run: |
+          printf 'www.webnovel.win\n' > site/CNAME
+          touch site/.nojekyll
+
       - name: Validate documentation artifact
         env:
-          BUILD_SHA: ${{ needs.source.outputs.source_sha }}
+          BUILD_SHA: ${{ steps.source.outputs.sha }}
         run: |
           set -eu
           test -f site/index.html
           test -f site/build.json
+          test -f site/CNAME
+          test -f site/.nojekyll
           test -f site/troubleshooting/txt-import/index.html
           test -f site/manual/contributing/index.html
           test -f site/manual/url-params/index.html
+          grep -Fxq 'www.webnovel.win' site/CNAME
           grep -Fq "${BUILD_SHA}" site/build.json
           grep -Fq 'TXT import troubleshooting' site/troubleshooting/txt-import/index.html
           grep -Fq 'TXT 导入排障' site/troubleshooting/txt-import/index.html
@@ -139,43 +127,65 @@ jobs:
             exit 1
           fi
 
-      - name: Upload documentation Pages artifact
-        uses: actions/upload-pages-artifact@v4
+      - name: Publish generated site to configured Pages source
+        uses: peaceiris/actions-gh-pages@v4.1.0
         with:
-          path: site
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
+          force_orphan: true
+          commit_message: "docs-deploy: ${{ steps.source.outputs.sha }}"
 
-  deploy:
-    name: Deploy and verify documentation
-    needs:
-      - source
-      - build
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy documentation to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-      - name: Verify exact documentation deployment
+      - name: Wait for legacy Pages build and custom-domain registration
         env:
-          BUILD_SHA: ${{ needs.source.outputs.source_sha }}
-          PRODUCTION_BUILD_URL: https://www.webnovel.win/build.json
-          TROUBLESHOOTING_URL: https://www.webnovel.win/troubleshooting/txt-import/
+          BUILD_SHA: ${{ steps.source.outputs.sha }}
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
         run: |
           set -u
-          for attempt in $(seq 1 30); do
+          api="https://api.github.com/repos/${REPOSITORY}"
+          for attempt in $(seq 1 45); do
+            pages_response="$(
+              curl --fail --silent --show-error --max-time 15 \
+                --header 'Accept: application/vnd.github+json' \
+                --header "Authorization: Bearer ${GH_TOKEN}" \
+                --header 'X-GitHub-Api-Version: 2022-11-28' \
+                "${api}/pages" || true
+            )"
             build_response="$(curl --fail --silent --show-error --max-time 15 "${PRODUCTION_BUILD_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
             guide_response="$(curl --fail --silent --show-error --max-time 15 "${TROUBLESHOOTING_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
-            if printf '%s' "${build_response}" | grep -Fq "\"commit\": \"${BUILD_SHA}\"" \
+
+            pages_ready="$(
+              PAGES_RESPONSE="${pages_response}" python3 - <<'PY'
+          import json
+          import os
+
+          try:
+              data = json.loads(os.environ.get("PAGES_RESPONSE", ""))
+          except Exception:
+              print("false")
+          else:
+              ready = (
+                  data.get("build_type") == "legacy"
+                  and data.get("source") == {"branch": "gh-pages", "path": "/"}
+                  and data.get("cname") == "www.webnovel.win"
+                  and data.get("status") == "built"
+              )
+              print("true" if ready else "false")
+          PY
+            )"
+
+            if [ "${pages_ready}" = 'true' ] \
+              && printf '%s' "${build_response}" | grep -Fq "\"commit\": \"${BUILD_SHA}\"" \
               && printf '%s' "${guide_response}" | grep -Fq 'TXT import troubleshooting' \
               && printf '%s' "${guide_response}" | grep -Fq 'TXT 导入排障'; then
-              printf 'Verified documentation commit and troubleshooting guide for %s\n' "${BUILD_SHA}"
+              printf 'Verified legacy Pages configuration, documentation commit, and guide for %s\n' "${BUILD_SHA}"
               exit 0
             fi
+
+            printf 'Attempt %s: pages-ready=%s build-bytes=%s guide-bytes=%s\n' \
+              "${attempt}" "${pages_ready}" "${#build_response}" "${#guide_response}"
             sleep 10
           done
-          echo "Documentation did not expose expected commit and guide for ${BUILD_SHA}" >&2
+          echo "Documentation did not expose expected Pages configuration, commit, and guide for ${BUILD_SHA}" >&2
           exit 1
