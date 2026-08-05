@@ -28,6 +28,7 @@ jobs:
     timeout-minutes: 15
     env:
       PRODUCTION_BUILD_URL: https://www.webnovel.win/build.json
+      PRODUCTION_HOME_URL: https://www.webnovel.win/
       TROUBLESHOOTING_URL: https://www.webnovel.win/troubleshooting/txt-import/
     steps:
       - name: Select trusted default-branch commit
@@ -118,10 +119,7 @@ jobs:
           grep -Fq 'TXT import troubleshooting' site/troubleshooting/txt-import/index.html
           grep -Fq 'TXT 导入排障' site/troubleshooting/txt-import/index.html
           grep -Fq 'AutoArchive/webNR' site/index.html
-          if grep -R -Fq 'googletagmanager.com' site; then
-            echo 'Unexpected Google Analytics loader in documentation artifact' >&2
-            exit 1
-          fi
+          grep -R -Fq 'G-DGH8HNQKE4' site
           if grep -R -E -q 'yourusername/webnr|yunwei37/webNR' site; then
             echo 'Obsolete repository reference in documentation artifact' >&2
             exit 1
@@ -153,6 +151,7 @@ jobs:
                 "${api}/pages" || true
             )"
             build_response="$(curl --fail --silent --show-error --max-time 15 "${PRODUCTION_BUILD_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
+            home_response="$(curl --fail --silent --show-error --max-time 15 "${PRODUCTION_HOME_URL}?analytics-check=${BUILD_SHA}&attempt=${attempt}" || true)"
             guide_response="$(curl --fail --silent --show-error --max-time 15 "${TROUBLESHOOTING_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
 
             pages_ready="$(
@@ -177,15 +176,16 @@ jobs:
 
             if [ "${pages_ready}" = 'true' ] \
               && printf '%s' "${build_response}" | grep -Fq "\"commit\": \"${BUILD_SHA}\"" \
+              && printf '%s' "${home_response}" | grep -Fq 'G-DGH8HNQKE4' \
               && printf '%s' "${guide_response}" | grep -Fq 'TXT import troubleshooting' \
               && printf '%s' "${guide_response}" | grep -Fq 'TXT 导入排障'; then
-              printf 'Verified legacy Pages configuration, documentation commit, and guide for %s\n' "${BUILD_SHA}"
+              printf 'Verified legacy Pages configuration, documentation commit, GA4, and guide for %s\n' "${BUILD_SHA}"
               exit 0
             fi
 
-            printf 'Attempt %s: pages-ready=%s build-bytes=%s guide-bytes=%s\n' \
-              "${attempt}" "${pages_ready}" "${#build_response}" "${#guide_response}"
+            printf 'Attempt %s: pages-ready=%s build-bytes=%s home-bytes=%s guide-bytes=%s\n' \
+              "${attempt}" "${pages_ready}" "${#build_response}" "${#home_response}" "${#guide_response}"
             sleep 10
           done
-          echo "Documentation did not expose expected Pages configuration, commit, and guide for ${BUILD_SHA}" >&2
+          echo "Documentation did not expose expected Pages configuration, commit, GA4, and guide for ${BUILD_SHA}" >&2
           exit 1
