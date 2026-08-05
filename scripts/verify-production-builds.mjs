@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs';
+import { resolve4, resolve6, resolveCname } from 'node:dns/promises';
 
 const statusPath = '.github/seo-data/status.md';
 const status = readFileSync(statusPath, 'utf8');
@@ -18,6 +19,25 @@ const targets = [
 
 const sleep = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
 
+async function resolveOrEmpty(resolver, hostname) {
+  try {
+    return await resolver(hostname);
+  } catch {
+    return [];
+  }
+}
+
+async function describeTarget(target) {
+  const hostname = new URL(target.url).hostname;
+  const [cnames, ipv4, ipv6] = await Promise.all([
+    resolveOrEmpty(resolveCname, hostname),
+    resolveOrEmpty(resolve4, hostname),
+    resolveOrEmpty(resolve6, hostname),
+  ]);
+
+  console.log(`${target.label} DNS ${hostname}: ${JSON.stringify({ cnames, ipv4, ipv6 })}`);
+}
+
 async function verifyTarget(target) {
   const match = status.match(target.pattern);
   if (!match) {
@@ -26,6 +46,8 @@ async function verifyTarget(target) {
 
   const expectedCommit = match[1];
   let lastObserved = 'no response';
+
+  await describeTarget(target);
 
   for (let attempt = 1; attempt <= 12; attempt += 1) {
     try {
@@ -38,14 +60,25 @@ async function verifyTarget(target) {
         signal: AbortSignal.timeout(15_000),
       });
 
+      const selectedHeaders = Object.fromEntries(
+        ['server', 'via', 'x-vercel-id', 'cf-ray', 'cache-control', 'etag', 'last-modified']
+          .map(name => [name, response.headers.get(name)])
+          .filter(([, value]) => value !== null),
+      );
+
       if (!response.ok) {
-        lastObserved = `HTTP ${response.status}`;
+        lastObserved = JSON.stringify({ status: response.status, headers: selectedHeaders });
       } else {
         const payload = await response.json();
-        lastObserved = JSON.stringify(payload);
+        lastObserved = JSON.stringify({ payload, headers: selectedHeaders });
         if (payload.commit === expectedCommit) {
           console.log(`Verified ${target.label} production commit ${expectedCommit} at ${target.url}`);
-          return;
+          return {
+            label: target.label,
+            expectedCommit,
+            observedCommit: payload.commit,
+            headers: selectedHeaders,
+          };
         }
       }
     } catch (error) {
@@ -62,6 +95,17 @@ async function verifyTarget(target) {
   );
 }
 
-for (const target of targets) {
-  await verifyTarget(target);
+const results = await Promise.allSettled(targets.map(verifyTarget));
+const failures = results
+  .filter(result => result.status === 'rejected')
+  .map(result => result.reason instanceof Error ? result.reason.message : String(result.reason));
+
+for (const result of results) {
+  if (result.status === 'fulfilled') {
+    console.log(`Production evidence: ${JSON.stringify(result.value)}`);
+  }
+}
+
+if (failures.length > 0) {
+  throw new Error(`Production evidence failed:\n${failures.join('\n')}`);
 }
