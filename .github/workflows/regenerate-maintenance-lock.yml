@@ -1,0 +1,90 @@
+name: Regenerate stable maintenance lockfile
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate-lockfile:
+    if: github.head_ref == 'seo/next-15-5-21-security' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout maintenance branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          submodules: recursive
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Resolve and automatically repair lockfile
+        run: |
+          npm install --package-lock-only --ignore-scripts
+          npm audit fix --package-lock-only --ignore-scripts || true
+
+      - name: Verify resolved dependency policy
+        run: |
+          node <<'NODE'
+          const lock = require('./package-lock.json');
+          const nextVersion = lock.packages?.['node_modules/next']?.version;
+          const eslintConfigVersion = lock.packages?.['node_modules/eslint-config-next']?.version;
+          if (nextVersion !== '15.5.22') {
+            throw new Error(`Expected next 15.5.22, received ${nextVersion}`);
+          }
+          if (eslintConfigVersion !== '15.5.22') {
+            throw new Error(`Expected eslint-config-next 15.5.22, received ${eslintConfigVersion}`);
+          }
+          if (lock.packages?.['node_modules/text-encoding']) {
+            throw new Error('Deprecated text-encoding package is still present');
+          }
+          NODE
+
+      - name: Install and validate repaired lockfile
+        run: |
+          npm ci
+          npm run lint
+          npm run typecheck
+          npm run build
+
+      - name: Export residual audit report
+        run: npm audit --json > npm-audit.json || true
+
+      - name: Validate residual vulnerabilities
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const report = JSON.parse(fs.readFileSync('npm-audit.json', 'utf8'));
+          const vulnerabilities = report.vulnerabilities || {};
+          const allowedStableUpstream = new Set(['next', 'postcss', 'sharp']);
+          const critical = Object.entries(vulnerabilities).filter(([, value]) => value.severity === 'critical');
+          if (critical.length > 0) {
+            throw new Error(`Critical vulnerabilities remain: ${critical.map(([name]) => name).join(', ')}`);
+          }
+          const disallowedHigh = Object.entries(vulnerabilities).filter(
+            ([name, value]) => value.severity === 'high' && !allowedStableUpstream.has(name),
+          );
+          if (disallowedHigh.length > 0) {
+            throw new Error(`Repairable high vulnerabilities remain: ${disallowedHigh.map(([name]) => name).join(', ')}`);
+          }
+          console.log(JSON.stringify(report.metadata?.vulnerabilities || {}, null, 2));
+          NODE
+
+      - name: Commit repaired lockfile and remove this workflow
+        env:
+          HEAD_BRANCH: ${{ github.head_ref }}
+        run: |
+          rm .github/workflows/regenerate-maintenance-lock.yml npm-audit.json
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add package.json package-lock.json app/lib/storage.ts scripts/generate-icons.mjs scripts/generate-icons.js .github/workflows/regenerate-maintenance-lock.yml
+          git diff --cached --check
+          git commit -m 'chore: finalize stable dependency maintenance'
+          git push origin HEAD:${HEAD_BRANCH}
