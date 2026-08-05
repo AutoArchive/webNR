@@ -4,7 +4,7 @@ WebNR is a private, local-first browser reader for user-owned TXT books and supp
 
 WebNR 是一个隐私优先、本地存储的浏览器 TXT 阅读器。导入的文本与阅读进度保存在当前浏览器配置中，无需账号。
 
-[Open WebNR / 打开阅读器](https://app.webnovel.win/) · [GitHub](https://github.com/AutoArchive/webNR) · [Report an issue / 报告问题](https://github.com/AutoArchive/webNR/issues)
+[Open WebNR / 打开阅读器](https://app.webnovel.win/) · [TXT import troubleshooting / TXT 导入排障](troubleshooting/txt-import.md) · [GitHub](https://github.com/AutoArchive/webNR) · [Report an issue / 报告问题](https://github.com/AutoArchive/webNR/issues)
 
 ## Start reading / 开始阅读
 
@@ -37,6 +37,8 @@ The reader does not load Google Analytics. Imported book content, filenames, and
 - WebNR does not bypass authentication, payment, DRM, robots, or access controls. / WebNR 不绕过登录、付费、DRM、robots 或访问控制。
 - Source definitions do not grant a content license. / 书源定义不代表内容授权。
 
+See [TXT import troubleshooting / TXT 导入排障](troubleshooting/txt-import.md) for encoding, CORS, storage, PWA update, and reproducible-report guidance.
+
 ## Develop WebNR / 开发 WebNR
 
 ```bash
@@ -61,4 +63,4 @@ python -m pip install --requirement .github/requirements-docs.txt
 mkdocs build --strict
 ```
 
-See [Contributing](mannual/contributing.md) for the pull-request and review contract.
+See [Contributing](manual/contributing.md) for the pull-request and review contract.
