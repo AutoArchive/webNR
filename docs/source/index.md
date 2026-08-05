@@ -38,4 +38,4 @@ Do not submit private URLs, credentials, cookies, imported book text, reading hi
 
 Use the [structured compatibility report](https://github.com/AutoArchive/webNR/issues/new?template=compatibility.yml) with a synthetic, public-domain, self-owned, or explicitly authorized fixture. Include the WebNR build from `/build.json` and the exact capability that failed.
 
-See the [contributing guide](../mannual/contributing.md) and the [roadmap](https://github.com/AutoArchive/webNR/blob/main/ROADMAP.md) before proposing a new source runtime feature.
+See the [contributing guide](../manual/contributing.md), [TXT import troubleshooting](../troubleshooting/txt-import.md), and the [roadmap](https://github.com/AutoArchive/webNR/blob/main/ROADMAP.md) before proposing a new source runtime feature.
