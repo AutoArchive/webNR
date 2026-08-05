@@ -20,6 +20,7 @@ import { SoundIcon } from './components/icons';
 import { CONFIG } from '../config/constants';
 
 type View = 'library' | 'reader' | 'settings' | 'discover' | 'search' | 'add';
+type Feedback = { type: 'success' | 'error'; message: string };
 
 const NAVIGABLE_VIEWS: View[] = ['library', 'settings', 'discover', 'search', 'add'];
 
@@ -35,6 +36,11 @@ export default function Home() {
   const [repositories, setRepositories] = useState<LocalRepo[]>([]);
   const [showReaderMenu, setShowReaderMenu] = useState(false);
   const [isTTSMode, setIsTTSMode] = useState(false);
+  const [feedback, setFeedback] = useState<Feedback | null>(null);
+
+  const handleFeedback = useCallback((message: string, type: Feedback['type']) => {
+    setFeedback({ message, type });
+  }, []);
 
   const handleNovelSelect = useCallback(async (novel: Novel) => {
     const novelContent = await NovelStorage.getNovelContent(novel.id);
@@ -63,21 +69,23 @@ export default function Home() {
       if (addRepos) {
         const repoUrls = addRepos.split(',').filter(url => url.trim());
         if (repoUrls.length > 0) {
-          handleRepoImport(repoUrls, {
+          void handleRepoImport(repoUrls, {
             repositories,
             onLoading: setIsLoading,
             onLoadingMessage: setLoadingMessage,
             onRepositoriesChange: setRepositories,
             onViewChange: setCurrentView,
+            onFeedback: handleFeedback,
             t,
           });
           window.history.replaceState({}, '', window.location.pathname);
         }
       } else if (addUrl) {
-        handleUrlImport(addUrl, {
+        void handleUrlImport(addUrl, {
           onLoading: setIsLoading,
           onLoadingMessage: setLoadingMessage,
           onNovelSelect: handleNovelSelect,
+          onFeedback: handleFeedback,
           t,
         });
         window.history.replaceState({}, '', window.location.pathname);
@@ -90,7 +98,7 @@ export default function Home() {
     return () => {
       window.removeEventListener('popstate', handleParams);
     };
-  }, [handleNovelSelect, repositories, t]);
+  }, [handleFeedback, handleNovelSelect, repositories, t]);
 
   useEffect(() => {
     const savedDarkMode = localStorage.getItem('darkMode');
@@ -151,6 +159,7 @@ export default function Home() {
       setContent('');
       setCurrentOffset(0);
     }
+    setFeedback(null);
     setCurrentView(view);
   }, [currentView]);
 
@@ -161,10 +170,11 @@ export default function Home() {
         setRepositories(repos);
       } catch (error) {
         console.error('Failed to load repositories:', error);
+        setFeedback({ type: 'error', message: t('discover.error.fetchFailed') });
       }
     };
     void loadRepositories();
-  }, []);
+  }, [t]);
 
   const getHeaderButtons = (): HeaderButton[] => {
     if (currentView === 'reader') {
@@ -210,7 +220,31 @@ export default function Home() {
           onBackClick={getBackAction()}
         />
 
-        <main className="flex-1 min-h-0" id="main-content">
+        <main className="relative flex-1 min-h-0" id="main-content">
+          {feedback && (
+            <div className="absolute left-4 right-4 top-4 z-40 mx-auto max-w-2xl">
+              <div
+                role={feedback.type === 'error' ? 'alert' : 'status'}
+                aria-live="polite"
+                className={`flex items-start justify-between gap-4 rounded-lg border px-4 py-3 text-sm shadow-lg ${
+                  feedback.type === 'error'
+                    ? 'border-red-200 bg-red-50 text-red-800 dark:border-red-900/50 dark:bg-red-950 dark:text-red-100'
+                    : 'border-green-200 bg-green-50 text-green-800 dark:border-green-900/50 dark:bg-green-950 dark:text-green-100'
+                }`}
+              >
+                <span>{feedback.message}</span>
+                <button
+                  type="button"
+                  onClick={() => setFeedback(null)}
+                  className="rounded px-1 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  aria-label={t('common.close')}
+                >
+                  ×
+                </button>
+              </div>
+            </div>
+          )}
+
           {currentView === 'library' && (
             <LibraryView
               onNovelSelect={handleNovelSelect}
