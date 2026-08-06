@@ -1,217 +1,140 @@
 # Daily WebNR operating task
 
-## Objective
+## Authority
 
-Run one fully autonomous product, source, reader-content, community, analytics,
-and SEO operating cycle for WebNR. The durable priorities and publication
-calendar live in `plan.md` and `editorial-calendar.md`.
+This file is the daily execution entrypoint for WebNR. The repository is the sole
+authority for product, content, analytics, source, compatibility, delivery, and
+closeout policy. The external scheduler only starts the run.
 
-The operating model is:
+Begin from the latest remote default branch, synchronize all submodules, and
+continue any existing WebNR automation pull request before creating duplicate
+work. Do not take over another contributor's pull request without an explicit user
+instruction.
 
-1. concentrate and finish currently confirmed technical repairs;
-2. continue daily production monitoring and same-cycle bug repair;
-3. publish one useful reader-facing content asset in every rolling 48-hour
-   window;
-4. discover several source candidates every day, fully audit at least three, and
-   target one passing integration.
+## Read before acting
 
-No normal step requires human approval.
+Read completely:
 
-## Required skills and context
+- repository instructions;
+- `site.md` for production, analytics, data windows, and deployment facts;
+- `plan.md` for long-term product, reader-content, source, and Legado goals;
+- `editorial-calendar.md` for the rolling 48-hour reader-publication schedule;
+- `data-analysis.md` for mandatory daily, weekly, and monthly analysis;
+- `promotion.md` for reader-community evidence and distribution rules;
+- `status.md`, `block.md`, and the newest daily records;
+- the pinned applicable skills under `.github/seo-skills`, especially
+  `$operate-seo-site`, `$ensure-site-analytics`, `$collect-seo-data`,
+  `$deliver-github-pr`, and `$research-blog` when required.
 
-Read the complete pinned versions of:
+Check the shared skill upstream and review its complete diff. A compatible pointer
+update may be included in the first suitable WebNR pull request. A submodule check
+does not authorize editing `AutoArchive/seo-skill`.
 
-- `$operate-seo-site`;
-- `$ensure-site-analytics`;
-- `$collect-seo-data`;
-- `$deliver-github-pr`;
-- `$research-blog` when the selected content requires broad, historical,
-  cross-language, social, or ecosystem evidence.
+## Daily execution order
 
-Also read repository instructions, all `.github/seo-data/*.md` files, the newest
-daily records, open automation work, normal contributor pull requests, issues,
-CI, dependencies, deployment state, and current production behavior.
+### 1. Analyze current evidence
 
-Checking or updating the submodule does not authorize editing
-`AutoArchive/seo-skill`. Do not take over another contributor's pull request
-without an explicit user instruction.
+Complete the full pass in `data-analysis.md` before selecting routine work. Check
+all available GA4, Search Console, infrastructure, GitHub, CI, deployment, public
+production, reader-content, source-health, and relevant public-community evidence.
+Label missing, delayed, partial, or incomparable evidence truthfully. Record
+explicit technical, content, source, search, community, and measurement decisions.
 
-## Analytics policy
+A reproducible technical collection, production, or measurement defect enters the
+same-cycle repair path immediately.
 
-WebNR requires both GA4 destinations on both production sites:
+### 2. Repair technical defects
 
-- `G-DGH8HNQKE4`;
-- `G-NL0WV2XMJN`.
+Follow the concentrated-repair and daily-guard priorities in `plan.md`. Repair all
+confirmed low-risk, reversible, and verifiable defects that can safely be completed
+in the current cycle. Keep one coherent outcome per pull request, but use multiple
+focused pull requests rather than artificially spreading known work across days.
 
-The owner-selected policy is full-URL reporting. Both destinations must receive
-the complete browser URL, including the full query string and imported URLs in
-`?add=...`. Keep Google signals and ad-personalization signals disabled unless the
-owner explicitly changes that decision. Do not introduce additional custom
-events containing local book text, reading progress, credentials, cookies,
-authorization values, or browser storage without separate explicit authorization.
+Technical incidents and regressions preempt routine content, source, and promotion
+work until repaired, safely rolled back, or truthfully blocked by a genuine
+human-only external action.
 
-Verify analytics in source, generated application and documentation outputs, both
-public production sites, the exact deployed commits, and available provider
-evidence. Missing, incomplete, policy-inconsistent, or unverified analytics is a
-same-cycle technical defect.
+### 3. Discover, audit, and integrate sources
 
-## Technical work
+Follow the source program in `plan.md` and `editorial-calendar.md`:
 
-### Concentrated repair pass
+- discover at least five new source or collection candidates;
+- fully audit at least three;
+- target one passing integration;
+- retest a rotating sample of existing sources;
+- repair, downgrade, mark, or remove failures;
+- record safe rejection or deferral reasons.
 
-While confirmed low-risk, reversible, and verifiable technical debt remains,
-repair as much as can be reviewed safely in the current operating cycle. Keep one
-coherent outcome per pull request, but use multiple focused pull requests rather
-than spreading known defects across artificial daily increments.
+WebNR may create its own source definition, OPDS/RSS adapter, normalized feed,
+Legado wrapper, or authorized/public-domain TXT catalog. Unknown metadata remains
+unknown. Never invent authorship, provenance, license, freshness, or popularity,
+and never depend on bypassing login, payment, DRM, captchas, robots, or access
+controls.
 
-Audit onboarding, TXT import and encoding, reading flows, browser storage,
-backup/restore, IndexedDB and OPFS migrations, PWA updates and offline behavior,
-accessibility, performance, dependencies, security, tests, releases, analytics,
-crawlability, canonical, robots, sitemap, structured data, internal links, CI,
-deployments, and exact public-build attribution.
+### 4. Publish reader-facing content when due
 
-### Daily guard after repair
+Check the rolling 48-hour cadence in `editorial-calendar.md`. When an asset is due,
+publish or substantially improve one reader-facing page about source finding,
+novel sites, apps, channels, public community discussion, recommendations,
+regional ecosystems, or Legado migration. Product manuals and technical pages are
+supporting content.
 
-After the repair pass, run daily production smoke tests and regression checks for:
+Use `$research-blog` completely for research-heavy historical, cross-language,
+social, ecosystem, or contested topics. Practical guides and comparisons require
+current first-hand testing, official or primary sources, and reproducible evidence.
+Every public asset needs a stable descriptive URL, direct answer, verification
+date, method, internal links, canonical, sitemap entry, static indexable output,
+and exact production verification.
 
-- local TXT import and permitted URL import;
-- encoding and large-file behavior;
-- open/read/progress/export journeys;
-- backup, restore, and migrations once implemented;
-- PWA installation, update, offline reopening, and cache behavior;
-- keyboard, screen-reader, zoom, language, and reduced-motion behavior;
-- dependency audit, lint, typecheck, tests, application build, and strict
-  documentation build;
-- both production deployments, both GA4 destinations, full-URL reporting,
-  canonical, robots, sitemap, and important public routes;
-- integrated source health and Legado compatibility fixtures.
+### 5. Verify analytics and production
 
-Repair a reproducible safe bug in the same cycle. A technical defect preempts
-routine content or promotion until repaired, safely rolled back, or truthfully
-blocked by an external human-only action.
+Use `site.md` and `$ensure-site-analytics`. Both production sites must retain GA4
+`G-DGH8HNQKE4` and `G-NL0WV2XMJN`. Both destinations use full-URL reporting,
+including the complete query string and imported URL in `?add=...`. Keep Google
+signals and ad-personalization disabled unless the owner explicitly changes the
+policy.
 
-## Reader-content cadence
+Verify source, generated output, public runtime, exact build identities, and
+available provider evidence. A script tag, workflow URL, provider export, preview,
+artifact, or HTTP 200 alone is not production proof.
 
-Check whether a qualifying reader-facing content asset has reached production in
-the previous 48 hours. If not, publish or substantially upgrade one in the current
-cycle according to `editorial-calendar.md`.
+### 6. Deliver and close out
 
-Primary content serves readers who want to find:
+Use `$deliver-github-pr` for every product, content, source, corrective, and
+closeout outcome:
 
-- working book sources and TXT collections;
-- novel sites and authorized reading routes;
-- useful apps and reading channels;
-- public reader communities and social-media discussion;
-- recommendations by genre, language, completion status, platform, or reading
-  habit;
-- Chinese, English, Japanese, Korean, translated-fiction, fan-fiction, and
-  independent-serial ecosystems;
-- practical migration paths between Legado, feeds, catalogs, and WebNR.
+1. create a fresh `seo/` branch from the latest remote default branch;
+2. commit and push the actual change;
+3. open a real non-draft pull request;
+4. wait for every required and expected check;
+5. after green CI, review the complete final diff, commits, generated output,
+   evidence, source permissions, analytics, security, and deployment impact from
+   scratch;
+6. fix findings on the same branch and repeat CI and full review;
+7. squash-merge only with the expected head SHA;
+8. verify the exact production deployment and affected plus representative
+   unaffected public behavior;
+9. update the normal daily and status evidence through the repository's closeout
+   process.
 
-Product manuals, troubleshooting, release notes, benchmarks, and source SDK pages
-remain supporting content. They may satisfy the 48-hour cadence when they answer a
-real current reader or contributor need and contain substantial verified value.
-
-Use `$research-blog` for research-heavy ecosystem and community analysis. Use
-current first-hand testing, official standards, official platform documentation,
-public feeds, project source, and reproducible fixtures for practical guides and
-comparisons. Never publish generic AI articles, copied platform summaries,
-keyword variants, fabricated popularity, unsupported rankings, or thin pages.
-
-Every page must have a stable descriptive URL, a direct opening answer, current
-verification date, selection or sampling method, natural internal links,
-canonical, sitemap entry, static rendered HTML, and exact production verification.
-
-## Daily source discovery and integration
-
-Every cycle must:
-
-1. discover at least five new source or collection candidates;
-2. fully audit at least three;
-3. target one passing integration;
-4. retest a rotating sample of existing sources;
-5. repair, downgrade, mark, or remove failed sources;
-6. record safe rejection reasons when candidates fail.
-
-A candidate may be OPDS, RSS/Atom, a public API, a public index or sitemap, an
-authorized or public-domain TXT collection, an author feed, an open-source CMS,
-a public Legado definition, or another useful discovery route.
-
-The origin does not need to be WebNR-compatible and does not need complete
-metadata. WebNR may build and maintain its own source definition, adapter,
-normalized feed, static TXT catalog, or Legado compatibility wrapper. Derive a
-display title from a filename when useful and mark unknown fields as unknown.
-Never invent authorship, provenance, license, update state, or popularity.
-
-Before integration, verify distribution basis, terms and robots, HTTPS, CORS,
-cookies, login, scripts, WebView or Bridge requirements, requested domains,
-permissions, rate limits, pagination, timeout, response limits, encoding, failure
-behavior, duplication, reader value, at least one versioned fixture, and a
-reproducible health test.
-
-Do not integrate sources that normally depend on bypassing authentication,
-payment, DRM, captchas, robots, access controls, or unauthorized redistribution.
-The target is one passing source per day, never one unreviewed link per day.
-
-## Legado compatibility
-
-Prefer compatibility with existing Legado sources over requiring maintainers to
-rewrite them for WebNR. Progress through versioned fixtures for:
-
-- JSON import and field-preserving inspection;
-- common search, book-info, TOC, content, pagination, CSS, XPath, JSONPath,
-  regular-expression, header, charset, and replacement rules;
-- controlled state, cookies, variables, and permissions;
-- restricted JavaScript execution;
-- optional Bridge-dependent WebView and cross-origin capabilities.
-
-Publish only the tested compatibility level and fixture-suite version. A public
-third-party definition may first enter an isolated compatibility corpus before it
-is recommended to readers.
-
-## Delivery sequence
-
-For every coherent product, content, source, corrective, or closeout outcome:
-
-1. use `$deliver-github-pr` to start from the latest remote default branch and
-   prepare a fresh `seo/` branch;
-2. include a reviewed compatible submodule update in the first suitable pull
-   request when available;
-3. implement only the intended outcome and define affected routes, unaffected
-   routes, public acceptance, and rollback before editing;
-4. commit and push the actual code or content and create a real non-draft pull
-   request;
-5. wait for every required and expected check; missing, queued, skipped, failed,
-   cancelled, and timed-out checks block merge;
-6. after CI, re-read the complete final diff, commits, generated output, source
-   permissions, analytics behavior, content evidence, tests, and deployment
-   impact from scratch;
-7. fix every finding on the same branch and repeat CI and complete review;
-8. squash-merge only with the expected head SHA after a clean final review;
-9. identify the production deployments for the exact squash commit and verify
-   the affected and representative unaffected public behavior;
-10. update the normal daily/status closeout evidence through the same pull-request
-    discipline when the repository requires it.
-
-Branch deletion is best-effort hygiene. A branch, preview, workflow URL, artifact,
-script tag, provider export, or HTTP 200 alone is not production proof.
+Missing, queued, skipped, failed, cancelled, or timed-out checks block merge.
+Branch cleanup is best-effort and never a blocker.
 
 ## Daily completion
 
 A cycle is complete only when:
 
+- the required data-analysis pass and explicit decisions are recorded;
 - mandatory analytics and full-URL behavior are verified;
 - every actionable technical defect discovered in the cycle is repaired and
   publicly verified or has a truthful external blocker;
 - at least five source candidates were discovered, at least three fully audited,
   and one passing integration was attempted;
-- any due 48-hour reader-content asset was merged, deployed, and publicly
-  verified;
+- any due reader-content asset is merged, deployed, indexed correctly, and
+  publicly verified;
 - all main and applicable closeout pull requests have green expected CI, clean
-  final reviews, and squash merges;
-- every rendered change is tied to the exact production commit and passes its
-  public acceptance checks.
+  final reviews, squash merges, and truthful production evidence.
 
-A metadata-only edit, source candidate list, local patch, issue, draft pull
-request, generated branch, or unverified article does not satisfy the public
-content or source-integration cadence.
+A metadata-only edit, candidate list, local patch, issue, draft pull request,
+generated branch, raw research packet, or unverified article does not satisfy the
+public content or source-integration cadence.
