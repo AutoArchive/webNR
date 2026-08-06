@@ -73,7 +73,7 @@ export function NovelCard({ novel }: NovelCardProps) {
                 <a
                   onClick={(e) => {
                     e.preventDefault();
-                    window.location.href = `/?add=${encodeURIComponent(novel.downloadUrl!)}`;
+                    window.location.href = `/?add=${encodeURIComponent(novel.downloadUrl)}`;
                   }}
                   href={novel.downloadUrl}
                   className="p-1.5 rounded-full 
@@ -109,7 +109,9 @@ export function NovelCard({ novel }: NovelCardProps) {
           </div>
           <div className="text-sm text-gray-600 dark:text-gray-300">
             <p>{t('discover.novel.categories')}: {novel.categories.join(', ')}</p>
-            <p>{t('discover.novel.lastUpdated')}: {novel.lastUpdated}</p>
+            {novel.lastUpdated && (
+              <p>{t('discover.novel.lastUpdated')}: {novel.lastUpdated}</p>
+            )}
             {novel.region && <p>{t('discover.novel.region')}: {novel.region}</p>}
           </div>
           <div className="flex gap-3 mt-4">
@@ -122,14 +124,16 @@ export function NovelCard({ novel }: NovelCardProps) {
                 {t('discover.novel.visit')}
               </a>
             )}
-            <a 
-              href={`/?add=${encodeURIComponent(novel.downloadUrl!)}`} 
-              aria-label={t('discover.novel.addToLibrary')}
-              className="text-blue-600 dark:text-blue-400 hover:text-blue-700 
-                dark:hover:text-blue-300 font-medium transition-colors duration-200"
-            >
-              {t('discover.novel.addToLibrary')}
-            </a>
+            {novel.downloadUrl && (
+              <a 
+                href={`/?add=${encodeURIComponent(novel.downloadUrl)}`} 
+                aria-label={t('discover.novel.addToLibrary')}
+                className="text-blue-600 dark:text-blue-400 hover:text-blue-700 
+                  dark:hover:text-blue-300 font-medium transition-colors duration-200"
+              >
+                {t('discover.novel.addToLibrary')}
+              </a>
+            )}
           </div>
         </div>
       )}
