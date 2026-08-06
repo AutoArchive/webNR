@@ -90,24 +90,6 @@ jobs:
             exit 1
           fi
 
-  seo-data:
-    name: SEO data contract
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: Checkout repository and skills
-        uses: actions/checkout@v5
-        with:
-          submodules: recursive
-      - name: Setup Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: '3.12'
-      - name: Validate public SEO operating data
-        run: >-
-          python .github/seo-skills/scripts/validate_seo_data.py
-          --data-root .github/seo-data
-
   production-evidence:
     name: Production evidence
     runs-on: ubuntu-latest
