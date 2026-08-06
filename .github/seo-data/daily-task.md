@@ -1,38 +1,217 @@
-# Daily SEO task
+# Daily WebNR operating task
 
 ## Objective
 
-Run one fully autonomous, evidence-backed SEO, product-quality, analytics, and user-experience operating cycle for WebNR. No normal step requires human approval. Every local calendar day must deliver at least one meaningful user-visible improvement to the production application or its public help content.
+Run one fully autonomous product, source, reader-content, community, analytics,
+and SEO operating cycle for WebNR. The durable priorities and publication
+calendar live in `plan.md` and `editorial-calendar.md`.
 
-## Schedule
+The operating model is:
 
-- Frequency: daily
-- Timezone: use `site.md`
-- Data window: use the lookback and finalization lag in `site.md`
-- Pull-request scope: one coherent outcome per main pull request; use additional focused pull requests in the same cycle when independent defects also require repair
+1. concentrate and finish currently confirmed technical repairs;
+2. continue daily production monitoring and same-cycle bug repair;
+3. publish one useful reader-facing content asset in every rolling 48-hour
+   window;
+4. discover several source candidates every day, fully audit at least three, and
+   target one passing integration.
 
-## Mandatory analytics policy
+No normal step requires human approval.
 
-Read and enforce `$ensure-site-analytics` on every run. WebNR requires Google Analytics 4 on both the application and documentation site. `site.md` sets `URL reporting: full-url`, so the application must send the complete browser URL, including query parameters and imported URLs in `?add=...`. Do not remove analytics, strip query parameters, redact the full URL, or switch providers without an explicit later instruction from the site owner recorded in the pull request and daily report.
+## Required skills and context
 
-Verify analytics in source, generated application and documentation output, canonical production pages, and available GA4 evidence. A script tag alone or a Drive export alone is not proof. Missing, broken, policy-inconsistent, or unverified analytics is a same-cycle technical defect.
+Read the complete pinned versions of:
 
-## Required sequence
+- `$operate-seo-site`;
+- `$ensure-site-analytics`;
+- `$collect-seo-data`;
+- `$deliver-github-pr`;
+- `$research-blog` when the selected content requires broad, historical,
+  cross-language, social, or ecosystem evidence.
 
-1. Read the pinned `$ensure-site-analytics`, `$collect-seo-data`, and `$change-seo-site` skills, all `.github/seo-data/*.md` files, and newest reports.
-2. Fetch the remote default branch and create a fresh branch from it for each coherent outcome.
-3. Check whether the `seo-skills` submodule has an allowed update and include an available update in the first compatible main pull request.
-4. Audit GA4 in `app/layout.tsx`, `config/constants.ts`, `mkdocs.yml`, generated outputs, and both public domains. Confirm complete browser URL reporting, including query strings, while Google signals and ad-personalization signals remain disabled.
-5. Collect finalized Google Drive and available Cloudflare evidence without committing raw data or private provider identifiers. When a provider is unavailable, record that fact and continue with public-site, repository, CI, deployment, issue, and user-journey evidence.
-6. Inspect the live application and repository for actionable technical defects affecting analytics, onboarding, accessibility, security, crawlability, performance, reliability, data safety, PWA behavior, compatibility, build health, or deployment. Repair every confirmed low-risk, reversible, and verifiable defect during the same operating cycle. Do not defer a discovered repair merely because another pull request has already shipped that day.
-7. Deliver at least one meaningful user-visible production update every day. Prefer fixing product behavior or improving an existing high-value page. When no product defect is justified, publish or substantially improve durable help, compatibility, troubleshooting, benchmark, release, or source-development content backed by actual WebNR behavior. Never create thin pages, keyword variants, generic AI articles, fabricated measurements, or changes made only to satisfy cadence.
-8. Write or append `.github/seo-data/daily/YYYY-MM-DD.md`; refresh `status.md`, maintain future work in `plan.md`, and keep `block.md` limited to genuine human-only or permission blockers.
-9. For each coherent change, define its production acceptance check before editing, validate locally when possible, push the branch, and create a real non-draft pull request.
-10. Wait for all required and expected CI, self-review the complete final diff, commits, generated output, analytics URL behavior, security and data boundaries, and check results; fix and repeat when needed, then squash-merge. Attempt to delete the merged head branch only when safe deletion is supported; branch cleanup is best-effort and non-blocking.
-11. For every site-visible change, wait for the exact squash commit to deploy successfully and verify the intended behavior and GA4 implementation on the public site.
-12. Open a metadata-only closeout pull request with final evidence for the cycle; wait for CI, self-review, and squash-merge it.
-13. Continue autonomously while safe progress is possible. Record a `block.md` item only when an external system enforces a human-only action or required permission is absent. A missing branch-deletion operation, unavailable infrastructure analytics source, or undeleted merged automation branch is not a blocker.
+Also read repository instructions, all `.github/seo-data/*.md` files, the newest
+daily records, open automation work, normal contributor pull requests, issues,
+CI, dependencies, deployment state, and current production behavior.
+
+Checking or updating the submodule does not authorize editing
+`AutoArchive/seo-skill`. Do not take over another contributor's pull request
+without an explicit user instruction.
+
+## Analytics policy
+
+WebNR requires both GA4 destinations on both production sites:
+
+- `G-DGH8HNQKE4`;
+- `G-NL0WV2XMJN`.
+
+The owner-selected policy is full-URL reporting. Both destinations must receive
+the complete browser URL, including the full query string and imported URLs in
+`?add=...`. Keep Google signals and ad-personalization signals disabled unless the
+owner explicitly changes that decision. Do not introduce additional custom
+events containing local book text, reading progress, credentials, cookies,
+authorization values, or browser storage without separate explicit authorization.
+
+Verify analytics in source, generated application and documentation outputs, both
+public production sites, the exact deployed commits, and available provider
+evidence. Missing, incomplete, policy-inconsistent, or unverified analytics is a
+same-cycle technical defect.
+
+## Technical work
+
+### Concentrated repair pass
+
+While confirmed low-risk, reversible, and verifiable technical debt remains,
+repair as much as can be reviewed safely in the current operating cycle. Keep one
+coherent outcome per pull request, but use multiple focused pull requests rather
+than spreading known defects across artificial daily increments.
+
+Audit onboarding, TXT import and encoding, reading flows, browser storage,
+backup/restore, IndexedDB and OPFS migrations, PWA updates and offline behavior,
+accessibility, performance, dependencies, security, tests, releases, analytics,
+crawlability, canonical, robots, sitemap, structured data, internal links, CI,
+deployments, and exact public-build attribution.
+
+### Daily guard after repair
+
+After the repair pass, run daily production smoke tests and regression checks for:
+
+- local TXT import and permitted URL import;
+- encoding and large-file behavior;
+- open/read/progress/export journeys;
+- backup, restore, and migrations once implemented;
+- PWA installation, update, offline reopening, and cache behavior;
+- keyboard, screen-reader, zoom, language, and reduced-motion behavior;
+- dependency audit, lint, typecheck, tests, application build, and strict
+  documentation build;
+- both production deployments, both GA4 destinations, full-URL reporting,
+  canonical, robots, sitemap, and important public routes;
+- integrated source health and Legado compatibility fixtures.
+
+Repair a reproducible safe bug in the same cycle. A technical defect preempts
+routine content or promotion until repaired, safely rolled back, or truthfully
+blocked by an external human-only action.
+
+## Reader-content cadence
+
+Check whether a qualifying reader-facing content asset has reached production in
+the previous 48 hours. If not, publish or substantially upgrade one in the current
+cycle according to `editorial-calendar.md`.
+
+Primary content serves readers who want to find:
+
+- working book sources and TXT collections;
+- novel sites and authorized reading routes;
+- useful apps and reading channels;
+- public reader communities and social-media discussion;
+- recommendations by genre, language, completion status, platform, or reading
+  habit;
+- Chinese, English, Japanese, Korean, translated-fiction, fan-fiction, and
+  independent-serial ecosystems;
+- practical migration paths between Legado, feeds, catalogs, and WebNR.
+
+Product manuals, troubleshooting, release notes, benchmarks, and source SDK pages
+remain supporting content. They may satisfy the 48-hour cadence when they answer a
+real current reader or contributor need and contain substantial verified value.
+
+Use `$research-blog` for research-heavy ecosystem and community analysis. Use
+current first-hand testing, official standards, official platform documentation,
+public feeds, project source, and reproducible fixtures for practical guides and
+comparisons. Never publish generic AI articles, copied platform summaries,
+keyword variants, fabricated popularity, unsupported rankings, or thin pages.
+
+Every page must have a stable descriptive URL, a direct opening answer, current
+verification date, selection or sampling method, natural internal links,
+canonical, sitemap entry, static rendered HTML, and exact production verification.
+
+## Daily source discovery and integration
+
+Every cycle must:
+
+1. discover at least five new source or collection candidates;
+2. fully audit at least three;
+3. target one passing integration;
+4. retest a rotating sample of existing sources;
+5. repair, downgrade, mark, or remove failed sources;
+6. record safe rejection reasons when candidates fail.
+
+A candidate may be OPDS, RSS/Atom, a public API, a public index or sitemap, an
+authorized or public-domain TXT collection, an author feed, an open-source CMS,
+a public Legado definition, or another useful discovery route.
+
+The origin does not need to be WebNR-compatible and does not need complete
+metadata. WebNR may build and maintain its own source definition, adapter,
+normalized feed, static TXT catalog, or Legado compatibility wrapper. Derive a
+display title from a filename when useful and mark unknown fields as unknown.
+Never invent authorship, provenance, license, update state, or popularity.
+
+Before integration, verify distribution basis, terms and robots, HTTPS, CORS,
+cookies, login, scripts, WebView or Bridge requirements, requested domains,
+permissions, rate limits, pagination, timeout, response limits, encoding, failure
+behavior, duplication, reader value, at least one versioned fixture, and a
+reproducible health test.
+
+Do not integrate sources that normally depend on bypassing authentication,
+payment, DRM, captchas, robots, access controls, or unauthorized redistribution.
+The target is one passing source per day, never one unreviewed link per day.
+
+## Legado compatibility
+
+Prefer compatibility with existing Legado sources over requiring maintainers to
+rewrite them for WebNR. Progress through versioned fixtures for:
+
+- JSON import and field-preserving inspection;
+- common search, book-info, TOC, content, pagination, CSS, XPath, JSONPath,
+  regular-expression, header, charset, and replacement rules;
+- controlled state, cookies, variables, and permissions;
+- restricted JavaScript execution;
+- optional Bridge-dependent WebView and cross-origin capabilities.
+
+Publish only the tested compatibility level and fixture-suite version. A public
+third-party definition may first enter an isolated compatibility corpus before it
+is recommended to readers.
+
+## Delivery sequence
+
+For every coherent product, content, source, corrective, or closeout outcome:
+
+1. use `$deliver-github-pr` to start from the latest remote default branch and
+   prepare a fresh `seo/` branch;
+2. include a reviewed compatible submodule update in the first suitable pull
+   request when available;
+3. implement only the intended outcome and define affected routes, unaffected
+   routes, public acceptance, and rollback before editing;
+4. commit and push the actual code or content and create a real non-draft pull
+   request;
+5. wait for every required and expected check; missing, queued, skipped, failed,
+   cancelled, and timed-out checks block merge;
+6. after CI, re-read the complete final diff, commits, generated output, source
+   permissions, analytics behavior, content evidence, tests, and deployment
+   impact from scratch;
+7. fix every finding on the same branch and repeat CI and complete review;
+8. squash-merge only with the expected head SHA after a clean final review;
+9. identify the production deployments for the exact squash commit and verify
+   the affected and representative unaffected public behavior;
+10. update the normal daily/status closeout evidence through the same pull-request
+    discipline when the repository requires it.
+
+Branch deletion is best-effort hygiene. A branch, preview, workflow URL, artifact,
+script tag, provider export, or HTTP 200 alone is not production proof.
 
 ## Daily completion
 
-A day is complete only after required GA4 is present and verified with complete browser URL reporting, all actionable confirmed technical defects discovered during the cycle have been repaired or accurately proven non-actionable, at least one meaningful user-visible update has reached production, every main pull request and the closeout pull request are squash-merged, required and expected CI is green, each exact squash commit has a successful attributable deployment, and the public acceptance checks pass. Merged branch cleanup is optional repository hygiene. A failed or missing CI check, failed or unattributable deployment, local-only commit, issue, draft PR, workflow URL, script tag alone, provider export alone, HTTP 200 alone, metadata-only update, or unverified content does not satisfy the daily requirement.
+A cycle is complete only when:
+
+- mandatory analytics and full-URL behavior are verified;
+- every actionable technical defect discovered in the cycle is repaired and
+  publicly verified or has a truthful external blocker;
+- at least five source candidates were discovered, at least three fully audited,
+  and one passing integration was attempted;
+- any due 48-hour reader-content asset was merged, deployed, and publicly
+  verified;
+- all main and applicable closeout pull requests have green expected CI, clean
+  final reviews, and squash merges;
+- every rendered change is tied to the exact production commit and passes its
+  public acceptance checks.
+
+A metadata-only edit, source candidate list, local patch, issue, draft pull
+request, generated branch, or unverified article does not satisfy the public
+content or source-integration cadence.
