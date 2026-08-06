@@ -8,7 +8,7 @@
 - Working reader URL: `https://app.webnovel.win/`
 - Working documentation URL: `https://autoarchive.github.io/webNR/`
 - Current skill submodule in the reader-content planning branch: `f6e9479e7d979620985ae6125cefc5e614978ea3`
-- Latest verified data window: Google Drive records GA4 and Search Console exports for `2026-07-27` through `2026-08-02`
+- Current analytics export state: the configured Google Drive folder is accessible but a direct parent-folder query on 2026-08-05 returned no visible documents; previous repository records describing a `2026-07-27` through `2026-08-02` export window are not treated as currently reverified evidence
 - Current long-term operating direction: reader discovery, recommendations, community and ecosystem analysis, daily source growth, broad clean-room Legado compatibility, and supporting product maintenance
 
 The application build commit differs from the last product squash commit because a temporary branch-creation probe was accidentally written to and then removed from `main`. The final repository tree contains no probe file. The resulting application deployment is the current exact production identity and contains the same intended product behavior plus the removal commit.
@@ -20,7 +20,7 @@ The application build commit differs from the last product squash commit because
 - WebNR owner policy is full-URL reporting. Reader page views use `window.location.href` and pathname plus query string, including imported URLs carried in `?add=...`.
 - Google signals and ad-personalization signals remain disabled.
 - Imported book text and reading progress remain in browser storage. No additional custom analytics event containing local content or progress is authorized.
-- Google Drive contains the configured GA4 organic landing-page export and six Search Console exports for queries, pages, countries, devices, search appearance, and dates for the latest recorded window.
+- Google Drive is connected and the configured folder exists, but the current folder-content query returned no visible GA4 or Search Console files. Missing exports are recorded as unavailable and never converted into zero traffic.
 - Connected Cloudflare accounts do not expose the `webnovel.win` zone. This does not block GitHub Pages production verification, GA4, Search Console, product delivery, content production, or source work.
 - Application and documentation CI cover dependency audit, lint, typecheck, production application build, strict documentation build, dual-GA4 output assertions, and recorded public production evidence.
 - Local TXT and supported text-URL import are available. EPUB remains unsupported until a real parser, safe rendering policy, and versioned fixtures exist.
@@ -37,6 +37,7 @@ The application build commit differs from the last product squash commit because
 3. Publish the first reader guide: finding and verifying working Legado sources.
 4. Discover at least five source candidates, fully audit at least three, and target the first passing daily integration.
 5. Build the initial isolated Legado compatibility corpus and source-health model.
-6. Continue backup/restore, browser-storage migration, E2E, accessibility, offline, release, EPUB, and Legado capability work as product support for the reader program.
+6. Re-establish current GA4 and Search Console export evidence in the configured Drive folder without blocking product, content, or source work.
+7. Continue backup/restore, browser-storage migration, E2E, accessibility, offline, release, EPUB, and Legado capability work as product support for the reader program.
 
 Detailed historical evidence remains in `.github/seo-data/daily/`. This file contains current verified operating facts and priorities. The two `Last successful attributable ... deployment` lines are stable machine-readable interfaces used by `scripts/verify-production-builds.mjs` and must retain their exact labels.
