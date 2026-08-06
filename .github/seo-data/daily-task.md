@@ -130,8 +130,8 @@ A cycle is complete only when:
   publicly verified or has a truthful external blocker;
 - at least five source candidates were discovered, at least three fully audited,
   and one passing integration was attempted;
-- any due reader-content asset is merged, deployed, indexed correctly, and
-  publicly verified;
+- any due reader-content asset is merged, deployed, publicly verified, and has
+  correct canonical, sitemap inclusion, and static indexable output;
 - all main and applicable closeout pull requests have green expected CI, clean
   final reviews, squash merges, and truthful production evidence.
 
