@@ -46,7 +46,7 @@ WebNR 不会复制已经删除的项目内容，也不会把第三方站点抓�
 
 这是优先级最高的一类。作者自己发布的 TXT、RSS 或下载页，明确公共领域的馆藏，以及带有公开使用条件的 OPDS 目录，都能提供清楚的来源依据。
 
-Project Gutenberg 提供机器可读目录和 OPDS，但其政策要求应用使用可联系的 User-Agent、保持接近人工浏览的请求频率，并避免大规模直接链接到电子书文件。适合的做法是使用官方目录、链接到作品落地页，或下载公开目录后建立自己的低频索引；把它当作无限带宽的文件代理并不合适。
+Project Gutenberg 提供机器可读目录和 OPDS。它目前的新入库政策聚焦美国公版作品，但目录中仍可能保留历史授权条目；其版权判断以美国法为准，其他法域的读者还要核对所在地法律和单本电子书内的许可。其网站政策要求应用使用可联系的 User-Agent、保持接近人工浏览的请求频率，并避免大规模直接链接到电子书文件。适合的做法是使用官方目录、链接到作品落地页，或下载公开目录后建立自己的低频索引；把它当作无限带宽的文件代理并不合适。
 
 Standard Ebooks 也提供 OPDS 1.2/2.0、Atom 和 RSS。它的“新书发布”Feed 面向所有人，而完整电子书 Feed 的访问包含赞助、贡献者或符合条件的开源项目等路径。WebNR 已把它列为值得接入的候选，但在获得适用访问方式并完成测试前，不会把受限 Feed 伪装成公开源。
 
@@ -108,7 +108,7 @@ WebNR 不会通过绕过验证码、登录、付费、DRM、robots 或访问控�
 | 候选 | 当前决定 | 主要依据 |
 | --- | --- | --- |
 | WebNR Originals | **已接入** | 项目原创、CC0、同源静态目录、固定 TXT 和健康检查入口 |
-| Project Gutenberg OPDS | **通过目录价值审计，等待专用 adapter** | 公共领域目录可用；需要遵守 User-Agent、低频请求和落地页链接政策 |
+| Project Gutenberg OPDS | **通过目录价值审计，等待专用 adapter** | 机器目录有价值；需要逐本核对许可和法域，并遵守 User-Agent、低频请求与落地页链接政策 |
 | Standard Ebooks OPDS | **延期** | 完整 Feed 存在访问条件；需确认开源项目访问方式 |
 | `gedoor/legado` 当前仓库 | **仅作状态与公告引用** | 项目内容已删除，首页发布侵权相关公告 |
 | `XIU2/Yuedu` | **隔离兼容语料候选** | 有规则和失效反馈价值；目标站许可需逐条复核 |
@@ -142,6 +142,7 @@ Legado 兼容将分阶段推进：
 - [Project Gutenberg 自动访问政策](https://www.gutenberg.org/policy/robot_access.html)
 - [Project Gutenberg 使用条款与 OPDS 要求](https://www.gutenberg.org/policy/terms_of_use.html)
 - [Project Gutenberg 链接政策](https://www.gutenberg.org/policy/linking.html)
+- [Project Gutenberg 许可说明](https://www.gutenberg.org/policy/license.html)
 - [Standard Ebooks Feed 与访问方式](https://standardebooks.org/feeds)
 - [Wikisource 版权政策](https://wikisource.org/wiki/Wikisource:Copyright_policy)
 - [WebNR Originals 来源说明](https://app.webnovel.win/sources/webnr-originals/README.txt)
