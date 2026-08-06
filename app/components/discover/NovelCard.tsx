@@ -11,6 +11,7 @@ interface NovelCardProps {
 export function NovelCard({ novel }: NovelCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const { t } = useTranslation();
+  const downloadUrl = novel.downloadUrl;
 
   const formatSize = (size?: number) => {
     if (!size) return '';
@@ -69,13 +70,13 @@ export function NovelCard({ novel }: NovelCardProps) {
                   <LinkIcon />
                 </a>
               )}
-              {novel.downloadUrl && (
+              {downloadUrl && (
                 <a
                   onClick={(e) => {
                     e.preventDefault();
-                    window.location.href = `/?add=${encodeURIComponent(novel.downloadUrl)}`;
+                    window.location.href = `/?add=${encodeURIComponent(downloadUrl)}`;
                   }}
-                  href={novel.downloadUrl}
+                  href={downloadUrl}
                   className="p-1.5 rounded-full 
                     hover:bg-gray-100 dark:hover:bg-gray-700 
                     text-gray-600 dark:text-gray-300
@@ -124,9 +125,9 @@ export function NovelCard({ novel }: NovelCardProps) {
                 {t('discover.novel.visit')}
               </a>
             )}
-            {novel.downloadUrl && (
+            {downloadUrl && (
               <a 
-                href={`/?add=${encodeURIComponent(novel.downloadUrl)}`} 
+                href={`/?add=${encodeURIComponent(downloadUrl)}`} 
                 aria-label={t('discover.novel.addToLibrary')}
                 className="text-blue-600 dark:text-blue-400 hover:text-blue-700 
                   dark:hover:text-blue-300 font-medium transition-colors duration-200"
