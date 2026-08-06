@@ -3,8 +3,8 @@
 ## Current state
 
 - Last completed product and analytics change: pull request #46, squash merge `4585ae5fc288894738c20524b534e22b547b108e`
-- Current application production build: `eaef3b70b3de3ef2527f5ff827f22b4ffef23537`
-- Current documentation production build: `4585ae5fc288894738c20524b534e22b547b108e`
+- Last successful attributable application deployment: `eaef3b70b3de3ef2527f5ff827f22b4ffef23537`
+- Last successful attributable documentation deployment: `4585ae5fc288894738c20524b534e22b547b108e`
 - Working reader URL: `https://app.webnovel.win/`
 - Working documentation URL: `https://autoarchive.github.io/webNR/`
 - Current skill submodule in the reader-content planning branch: `f6e9479e7d979620985ae6125cefc5e614978ea3`
@@ -39,4 +39,4 @@ The application build commit differs from the last product squash commit because
 5. Build the initial isolated Legado compatibility corpus and source-health model.
 6. Continue backup/restore, browser-storage migration, E2E, accessibility, offline, release, EPUB, and Legado capability work as product support for the reader program.
 
-Detailed historical evidence remains in `.github/seo-data/daily/`. This file contains current verified operating facts and priorities.
+Detailed historical evidence remains in `.github/seo-data/daily/`. This file contains current verified operating facts and priorities. The two `Last successful attributable ... deployment` lines are stable machine-readable interfaces used by `scripts/verify-production-builds.mjs` and must retain their exact labels.
