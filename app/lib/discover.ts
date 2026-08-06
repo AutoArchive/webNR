@@ -21,6 +21,11 @@ function timestamp(value?: string): number {
   return Number.isFinite(parsed) ? parsed : 0;
 }
 
+function siblingPath(entryPath: string, filename: string): string {
+  const slash = entryPath.lastIndexOf('/');
+  return slash >= 0 ? `${entryPath.slice(0, slash + 1)}${filename}` : filename;
+}
+
 // Repository management functions
 export async function fetchRepoIndex(url: string): Promise<RepoIndex> {
   try {
@@ -31,7 +36,7 @@ export async function fetchRepoIndex(url: string): Promise<RepoIndex> {
 
     const indexUrl = suppliedUrl.pathname.endsWith('/search_index.yml')
       ? suppliedUrl
-      : new URL(`${suppliedUrl.toString().replace(/\/?$/, '/') }search_index.yml`);
+      : new URL('search_index.yml', `${suppliedUrl.toString().replace(/\/?$/, '/')}`);
 
     const response = await fetch(indexUrl);
     if (!response.ok) {
@@ -81,7 +86,7 @@ export async function fetchRepoIndex(url: string): Promise<RepoIndex> {
         || repositoryBaseUrl;
 
       const fallbackDownloadUrl = data.filename
-        ? resolveHttpUrl(data.filename, new URL('.', pageUrl).toString())
+        ? resolveHttpUrl(siblingPath(path, data.filename), repositoryBaseUrl)
         : undefined;
       const downloadUrl = resolveHttpUrl(data.download_url, repositoryBaseUrl)
         || fallbackDownloadUrl;
