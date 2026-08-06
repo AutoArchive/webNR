@@ -15,6 +15,68 @@ function resolveHttpUrl(value: string | undefined, baseUrl: string): string | un
   }
 }
 
+function asNonEmptyString(value: unknown): string | undefined {
+  if (typeof value !== 'string') return undefined;
+  const trimmed = value.trim();
+  return trimmed || undefined;
+}
+
+function asStringArray(value: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+
+  return Array.from(new Set(
+    value
+      .map(asNonEmptyString)
+      .filter((item): item is string => Boolean(item)),
+  ));
+}
+
+function asNonNegativeNumber(value: unknown): number | undefined {
+  return typeof value === 'number' && Number.isFinite(value) && value >= 0
+    ? value
+    : undefined;
+}
+
+function asNonNegativeInteger(value: unknown): number | undefined {
+  const number = asNonNegativeNumber(value);
+  return number === undefined ? undefined : Math.floor(number);
+}
+
+async function readResponseTextWithLimit(response: Response): Promise<string> {
+  const contentLength = Number(response.headers.get('content-length'));
+  if (Number.isFinite(contentLength) && contentLength > MAX_REPOSITORY_INDEX_BYTES) {
+    throw new Error('Repository index is too large');
+  }
+
+  if (!response.body) {
+    throw new Error('Repository index response has no readable body');
+  }
+
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let totalBytes = 0;
+  let yamlText = '';
+
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      if (!value) continue;
+
+      totalBytes += value.byteLength;
+      if (totalBytes > MAX_REPOSITORY_INDEX_BYTES) {
+        await reader.cancel();
+        throw new Error('Repository index is too large');
+      }
+      yamlText += decoder.decode(value, { stream: true });
+    }
+    yamlText += decoder.decode();
+    return yamlText;
+  } finally {
+    reader.releaseLock();
+  }
+}
+
 function timestamp(value?: string): number {
   if (!value) return 0;
   const parsed = Date.parse(value);
@@ -43,16 +105,7 @@ export async function fetchRepoIndex(url: string): Promise<RepoIndex> {
       throw new Error(`Failed to fetch index: ${response.statusText}`);
     }
 
-    const contentLength = Number(response.headers.get('content-length'));
-    if (Number.isFinite(contentLength) && contentLength > MAX_REPOSITORY_INDEX_BYTES) {
-      throw new Error('Repository index is too large');
-    }
-
-    const yamlText = await response.text();
-    if (new TextEncoder().encode(yamlText).byteLength > MAX_REPOSITORY_INDEX_BYTES) {
-      throw new Error('Repository index is too large');
-    }
-
+    const yamlText = await readResponseTextWithLimit(response);
     const loaded = yaml.load(yamlText);
     if (!loaded || Array.isArray(loaded) || typeof loaded !== 'object') {
       throw new Error('Repository index must be a YAML mapping');
@@ -70,40 +123,46 @@ export async function fetchRepoIndex(url: string): Promise<RepoIndex> {
       if (processedPaths.has(path)) continue;
       processedPaths.add(path);
 
-      if (data.filename && !data.filename.toLowerCase().endsWith('.txt')) continue;
+      const entry = data as Record<string, unknown>;
+      const filename = asNonEmptyString(entry.filename);
+      if (filename && !filename.toLowerCase().endsWith('.txt')) continue;
 
-      data.categories?.forEach(category => categorySet.add(category));
-      data.tags?.forEach(tag => tagSet.add(tag));
+      const categories = asStringArray(entry.categories);
+      const tags = asStringArray(entry.tags);
+      categories.forEach(category => categorySet.add(category));
+      tags.forEach(tag => tagSet.add(tag));
 
-      const title = data.title?.trim()
-        || data.filename?.replace(/\.[^/.]+$/, '')
+      const title = asNonEmptyString(entry.title)
+        || filename?.replace(/\.[^/.]+$/, '')
         || path.split('/').pop()?.replace(/\.[^/.]+$/, '')
         || 'Untitled';
 
       const fallbackPagePath = path.replace(/\.md$/, '');
-      const pageUrl = resolveHttpUrl(data.page_url, repositoryBaseUrl)
+      const pageUrl = resolveHttpUrl(asNonEmptyString(entry.page_url), repositoryBaseUrl)
         || resolveHttpUrl(fallbackPagePath, repositoryBaseUrl)
         || repositoryBaseUrl;
 
-      const fallbackDownloadUrl = data.filename
-        ? resolveHttpUrl(siblingPath(path, data.filename), repositoryBaseUrl)
+      const fallbackDownloadUrl = filename
+        ? resolveHttpUrl(siblingPath(path, filename), repositoryBaseUrl)
         : undefined;
-      const downloadUrl = resolveHttpUrl(data.download_url, repositoryBaseUrl)
+      const downloadUrl = resolveHttpUrl(asNonEmptyString(entry.download_url), repositoryBaseUrl)
         || fallbackDownloadUrl;
 
       novels.push({
         id: path,
         title,
-        author: data.author?.trim() || 'Unknown',
-        description: data.description || '',
+        author: asNonEmptyString(entry.author) || 'Unknown',
+        description: asNonEmptyString(entry.description) || '',
         cover: null,
-        tags: data.tags || [],
-        categories: data.categories || [],
-        chapters: data.chapters || 0,
-        date: data.date || '',
-        lastUpdated: data['archived date'] || data.lastUpdated || '',
-        size: data.size,
-        region: data.region,
+        tags,
+        categories,
+        chapters: asNonNegativeInteger(entry.chapters) || 0,
+        date: asNonEmptyString(entry.date) || '',
+        lastUpdated: asNonEmptyString(entry['archived date'])
+          || asNonEmptyString(entry.lastUpdated)
+          || '',
+        size: asNonNegativeNumber(entry.size),
+        region: asNonEmptyString(entry.region),
         pageUrl,
         downloadUrl,
       });
@@ -184,7 +243,8 @@ export function getPopularNovels(repositories: LocalRepo[], limit = 6): NovelMet
     .sort((a, b) => {
       const chapterDiff = (b.chapters || 0) - (a.chapters || 0);
       if (chapterDiff !== 0) return chapterDiff;
-      return timestamp(b.date) - timestamp(a.date);
+      const dateDiff = timestamp(b.date) - timestamp(a.date);
+      return dateDiff !== 0 ? dateDiff : a.title.localeCompare(b.title);
     })
     .slice(0, limit);
 }
@@ -192,6 +252,9 @@ export function getPopularNovels(repositories: LocalRepo[], limit = 6): NovelMet
 export function getLatestNovels(repositories: LocalRepo[], limit = 5): NovelMeta[] {
   return repositories
     .flatMap(repo => repo.index?.novels || [])
-    .sort((a, b) => timestamp(b.lastUpdated) - timestamp(a.lastUpdated))
+    .sort((a, b) => {
+      const dateDiff = timestamp(b.lastUpdated) - timestamp(a.lastUpdated);
+      return dateDiff !== 0 ? dateDiff : a.title.localeCompare(b.title);
+    })
     .slice(0, limit);
 }
