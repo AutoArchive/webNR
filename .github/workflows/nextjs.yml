@@ -6,6 +6,7 @@ on:
       - main
     paths-ignore:
       - '.github/seo-data/**'
+      - '.github/seo-skills'
       - '.github/requirements-docs.txt'
       - '.github/workflows/publish-docs-pages.yml'
       - '.github/workflows/quality.yml'
