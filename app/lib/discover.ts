@@ -88,6 +88,19 @@ function siblingPath(entryPath: string, filename: string): string {
   return slash >= 0 ? `${entryPath.slice(0, slash + 1)}${filename}` : filename;
 }
 
+function repositoryName(indexUrl: URL): string {
+  const pathSegments = indexUrl.pathname.split('/').filter(Boolean);
+  const directory = pathSegments.length > 1 ? pathSegments[pathSegments.length - 2] : '';
+  if (directory) {
+    try {
+      return decodeURIComponent(directory);
+    } catch {
+      return directory;
+    }
+  }
+  return indexUrl.hostname;
+}
+
 // Repository management functions
 export async function fetchRepoIndex(url: string): Promise<RepoIndex> {
   try {
@@ -168,10 +181,8 @@ export async function fetchRepoIndex(url: string): Promise<RepoIndex> {
       });
     }
 
-    const repoName = indexUrl.hostname.split('.')[0];
-
     return {
-      name: repoName,
+      name: repositoryName(indexUrl),
       novels,
       updatedNovels: novels.length,
       lastSync: new Date().toISOString(),
