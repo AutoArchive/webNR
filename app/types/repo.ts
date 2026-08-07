@@ -1,10 +1,15 @@
 export interface YamlNovelSearchIndex {
+  title?: string;
   author?: string;
   date?: string;
   description?: string;
   tags?: string[];
   categories?: string[];
   filename?: string;
+  page_url?: string;
+  download_url?: string;
+  license?: string;
+  source?: string;
   region?: string;
   size?: number;
   chapters?: number;
@@ -57,4 +62,4 @@ export interface LocalRepo {
 export interface SearchResult extends NovelMeta {
   repoUrl: string;
   score: number;
-} 
+}
