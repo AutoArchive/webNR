@@ -5,6 +5,10 @@ Repository URL
 --------------
 https://app.webnovel.win/sources/aozora-starter
 
+One-click add URL
+-----------------
+https://app.webnovel.win/?repos=https%3A%2F%2Fapp.webnovel.win%2Fsources%2Faozora-starter
+
 Purpose
 -------
 This WebNR-maintained source is a small, link-based discovery catalog for selected
