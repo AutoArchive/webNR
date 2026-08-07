@@ -53,7 +53,7 @@ jobs:
           grep -R -Fq 'window.location.pathname + window.location.search' out
           grep -R -Fq 'allow_google_signals' out
           grep -R -Fq 'allow_ad_personalization_signals' out
-      - name: Validate first-party source output
+      - name: Validate source output
         run: |
           set -eu
           test -f out/sources/webnr-originals/search_index.yml
@@ -62,6 +62,12 @@ jobs:
           grep -Fq 'title: 灯下索引' out/sources/webnr-originals/search_index.yml
           grep -Fq 'license: CC0-1.0' out/sources/webnr-originals/search_index.yml
           grep -Fq '《灯下索引》' out/sources/webnr-originals/stories/lantern-index.txt
+          test -f out/sources/aozora-starter/search_index.yml
+          test -f out/sources/aozora-starter/README.txt
+          grep -Fq 'title: 吾輩は猫である' out/sources/aozora-starter/search_index.yml
+          grep -Fq 'title: 羅生門' out/sources/aozora-starter/search_index.yml
+          grep -Fq 'license: CC-BY-4.0-metadata' out/sources/aozora-starter/search_index.yml
+          grep -Fq 'https://www.aozora.gr.jp/cards/000148/card789.html' out/sources/aozora-starter/search_index.yml
 
   docs:
     name: Documentation quality
