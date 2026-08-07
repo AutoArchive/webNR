@@ -88,6 +88,13 @@ export async function handleRepoImport(
           const index = await syncRepository(existingRepo);
           const refreshedRepo: LocalRepo = {
             ...existingRepo,
+            meta: {
+              ...existingRepo.meta,
+              name: index.name,
+              lastUpdated: index.lastSync,
+              novels: index.novels.length,
+              updatedNovels: index.updatedNovels,
+            },
             index,
             lastSync: new Date().toISOString(),
           };
