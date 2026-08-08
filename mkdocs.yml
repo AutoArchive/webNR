@@ -68,7 +68,4 @@ extra:
       link: https://app.webnovel.win/
       name: Open WebNR reader
 
-extra_javascript:
-  - javascripts/additional-analytics.js
-
 copyright: Copyright &copy; 2025–2026 AutoArchive contributors

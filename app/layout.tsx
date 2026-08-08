@@ -133,13 +133,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 allow_google_signals: false,
                 allow_ad_personalization_signals: false
               });
-              gtag('config', '${CONFIG.ANALYTICS.ADDITIONAL_GOOGLE_ANALYTICS_ID}', {
-                page_location: window.location.href,
-                page_path: window.location.pathname + window.location.search,
-                page_title: document.title,
-                allow_google_signals: false,
-                allow_ad_personalization_signals: false
-              });
             `,
           }}
         />
