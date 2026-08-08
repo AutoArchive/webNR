@@ -1,4 +1,4 @@
-name: Publish WebNR documentation
+name: Publish WebNR documentation build mirror
 
 on:
   push:
@@ -17,19 +17,19 @@ permissions:
   pages: read
 
 concurrency:
-  group: webnr-documentation-production
+  group: webnr-documentation-build-mirror
   cancel-in-progress: false
 
 jobs:
   deploy:
-    name: Build, publish, and verify documentation
+    name: Build, publish, and verify documentation mirror
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      PRODUCTION_BUILD_URL: https://www.webnovel.win/build.json
-      PRODUCTION_HOME_URL: https://www.webnovel.win/
-      TROUBLESHOOTING_URL: https://www.webnovel.win/troubleshooting/txt-import/
-      READER_ARTICLE_URL: https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/
+      MIRROR_BUILD_URL: https://autoarchive.github.io/webNR/build.json
+      MIRROR_HOME_URL: https://autoarchive.github.io/webNR/
+      MIRROR_TROUBLESHOOTING_URL: https://autoarchive.github.io/webNR/troubleshooting/txt-import/
+      MIRROR_READER_ARTICLE_URL: https://autoarchive.github.io/webNR/blog/2026/08/08/legal-free-novels-txt-collections/
     steps:
       - name: Select trusted default-branch commit
         id: source
@@ -89,7 +89,7 @@ jobs:
           payload = {
               "commit": os.environ["BUILD_SHA"],
               "builtAt": datetime.now(timezone.utc).isoformat(),
-              "source": "github-pages-branch",
+              "source": "github-pages-build-mirror",
           }
           Path("docs/build.json").write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
           PY
@@ -97,11 +97,10 @@ jobs:
       - name: Build documentation strictly
         run: mkdocs build --strict
 
-      - name: Preserve custom domain and disable Jekyll
+      - name: Keep mirror noncanonical and disable Jekyll
         run: |
           set -eu
-          test -f site/CNAME
-          grep -Fxq 'www.webnovel.win' site/CNAME
+          rm -f site/CNAME
           touch site/.nojekyll
 
       - name: Validate documentation artifact
@@ -112,14 +111,13 @@ jobs:
           test -f site/index.html
           test -f site/build.json
           test -f site/.nojekyll
-          test -f site/CNAME
+          test ! -e site/CNAME
           test -f site/sitemap.xml
           test -f site/feed_rss_created.xml
           test -f site/troubleshooting/txt-import/index.html
           test -f site/manual/contributing/index.html
           test -f site/manual/url-params/index.html
           test -f site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
-          grep -Fxq 'www.webnovel.win' site/CNAME
           grep -Fq "${BUILD_SHA}" site/build.json
           grep -Fq 'TXT import troubleshooting' site/troubleshooting/txt-import/index.html
           grep -Fq 'TXT 导入排障' site/troubleshooting/txt-import/index.html
@@ -138,16 +136,16 @@ jobs:
             exit 1
           fi
 
-      - name: Publish generated site to configured Pages source
+      - name: Publish generated site to documentation build mirror
         uses: peaceiris/actions-gh-pages@v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
           publish_branch: gh-pages
           force_orphan: true
-          commit_message: "docs-deploy: ${{ steps.source.outputs.sha }}"
+          commit_message: "docs-mirror: ${{ steps.source.outputs.sha }}"
 
-      - name: Wait for legacy Pages build and canonical public site
+      - name: Wait for legacy Pages mirror and verify canonical output
         env:
           BUILD_SHA: ${{ steps.source.outputs.sha }}
           GH_TOKEN: ${{ github.token }}
@@ -163,10 +161,10 @@ jobs:
                 --header 'X-GitHub-Api-Version: 2022-11-28' \
                 "${api}/pages" || true
             )"
-            build_response="$(curl --fail --silent --show-error --max-time 15 "${PRODUCTION_BUILD_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
-            home_response="$(curl --fail --silent --show-error --max-time 15 "${PRODUCTION_HOME_URL}?analytics-check=${BUILD_SHA}&attempt=${attempt}" || true)"
-            guide_response="$(curl --fail --silent --show-error --max-time 15 "${TROUBLESHOOTING_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
-            article_response="$(curl --fail --silent --show-error --max-time 15 "${READER_ARTICLE_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
+            build_response="$(curl --fail --silent --show-error --max-time 15 "${MIRROR_BUILD_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
+            home_response="$(curl --fail --silent --show-error --max-time 15 "${MIRROR_HOME_URL}?canonical-check=${BUILD_SHA}&attempt=${attempt}" || true)"
+            guide_response="$(curl --fail --silent --show-error --max-time 15 "${MIRROR_TROUBLESHOOTING_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
+            article_response="$(curl --fail --silent --show-error --max-time 15 "${MIRROR_READER_ARTICLE_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
 
             pages_ready="$(
               PAGES_RESPONSE="${pages_response}" python3 - <<'PY'
@@ -181,8 +179,9 @@ jobs:
               ready = (
                   data.get("build_type") == "legacy"
                   and data.get("source") == {"branch": "gh-pages", "path": "/"}
-                  and data.get("cname") == "www.webnovel.win"
+                  and not data.get("cname")
                   and data.get("status") == "built"
+                  and data.get("html_url") == "https://autoarchive.github.io/webNR/"
               )
               print("true" if ready else "false")
           PY
@@ -193,12 +192,11 @@ jobs:
               && printf '%s' "${home_response}" | grep -Fq 'G-DGH8HNQKE4' \
               && printf '%s' "${home_response}" | grep -Fq 'https://www.webnovel.win/' \
               && ! printf '%s' "${home_response}" | grep -Fq 'G-NL0WV2XMJN' \
-              && ! printf '%s' "${home_response}" | grep -Fq 'https://autoarchive.github.io/webNR/' \
               && printf '%s' "${guide_response}" | grep -Fq 'TXT import troubleshooting' \
               && printf '%s' "${guide_response}" | grep -Fq 'TXT 导入排障' \
               && printf '%s' "${article_response}" | grep -Fq '2026 年哪里能合法免费看小说' \
               && printf '%s' "${article_response}" | grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/'; then
-              printf 'Verified Pages custom domain, documentation commit, canonical output, GA4, guide, and reader article for %s\n' "${BUILD_SHA}"
+              printf 'Verified noncanonical GitHub Pages mirror and www canonical output for %s\n' "${BUILD_SHA}"
               exit 0
             fi
 
@@ -206,5 +204,5 @@ jobs:
               "${attempt}" "${pages_ready}" "${#build_response}" "${#home_response}" "${#guide_response}" "${#article_response}"
             sleep 10
           done
-          echo "Documentation did not expose expected www.webnovel.win Pages configuration, commit, canonical output, GA4, guide, and reader article for ${BUILD_SHA}" >&2
+          echo "Documentation mirror did not expose expected commit, www canonical output, GA4, guide, and reader article for ${BUILD_SHA}" >&2
           exit 1
