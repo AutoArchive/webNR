@@ -1,0 +1,42 @@
+{
+  "id": "/",
+  "name": "WebNR — Private Offline Reader",
+  "short_name": "WebNR",
+  "description": "Read your own TXT books offline. Books and reading progress stay in your browser, with no account required.",
+  "lang": "en",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "categories": ["books", "education", "utilities"],
+  "shortcuts": [
+    {
+      "name": "Import a book",
+      "short_name": "Import",
+      "description": "Import a local TXT file or a supported text URL",
+      "url": "/?view=add"
+    },
+    {
+      "name": "Reader settings",
+      "short_name": "Settings",
+      "description": "Change theme, language, and reading preferences",
+      "url": "/?view=settings"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+aozora/wagahai-wa-neko-de-aru.md:
+  title: 吾輩は猫である
+  author: 夏目 漱石
+  description: 青空文庫の公式図書カードへのリンク。WebNR では現在、作品ページの発見用として提供し、ZIP/Shift_JIS 本文の直接取り込みは行わない。
+  page_url: https://www.aozora.gr.jp/cards/000148/card789.html
+  source: 青空文庫
+  license: CC-BY-4.0-metadata
+  tags:
+    - 青空文庫
+    - 日本文学
+    - 小説
+  categories:
+    - 公開テキスト案内
+  region: ja-JP
+
+aozora/rashomon.md:
+  title: 羅生門
+  author: 芥川 竜之介
+  description: 青空文庫の公式図書カードへのリンク。WebNR では現在、作品ページの発見用として提供し、ZIP/Shift_JIS 本文の直接取り込みは行わない。
+  page_url: https://www.aozora.gr.jp/cards/000879/card127.html
+  source: 青空文庫
+  license: CC-BY-4.0-metadata
+  tags:
+    - 青空文庫
+    - 日本文学
+    - 短編
+  categories:
+    - 公開テキスト案内
+  region: ja-JP
+
+aozora/hashire-merosu.md:
+  title: 走れメロス
+  author: 太宰 治
+  description: 青空文庫の公式図書カードへのリンク。WebNR では現在、作品ページの発見用として提供し、ZIP/Shift_JIS 本文の直接取り込みは行わない。
+  page_url: https://www.aozora.gr.jp/cards/000035/card1567.html
+  source: 青空文庫
+  license: CC-BY-4.0-metadata
+  tags:
+    - 青空文庫
+    - 日本文学
+    - 短編
+  categories:
+    - 公開テキスト案内
+  region: ja-JP
+
+aozora/yodaka-no-hoshi.md:
+  title: よだかの星
+  author: 宮沢 賢治
+  description: 青空文庫の公式図書カードへのリンク。WebNR では現在、作品ページの発見用として提供し、ZIP/Shift_JIS 本文の直接取り込みは行わない。
+  page_url: https://www.aozora.gr.jp/cards/000081/card473.html
+  source: 青空文庫
+  license: CC-BY-4.0-metadata
+  tags:
+    - 青空文庫
+    - 日本文学
+    - 童話
+  categories:
+    - 公開テキスト案内
+  region: ja-JP
