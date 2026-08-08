@@ -64,6 +64,7 @@ jobs:
           test -f out/sources/webnr-originals/README.txt
           grep -Fq 'title: 灯下索引' out/sources/webnr-originals/search_index.yml
           grep -Fq 'license: CC0-1.0' out/sources/webnr-originals/search_index.yml
+          grep -Fq 'page_url: https://www.webnovel.win/blog/2026/08/06/legado-source-guide/' out/sources/webnr-originals/search_index.yml
           grep -Fq '《灯下索引》' out/sources/webnr-originals/stories/lantern-index.txt
           test -f out/sources/aozora-starter/search_index.yml
           test -f out/sources/aozora-starter/README.txt
@@ -104,26 +105,34 @@ jobs:
         run: |
           set -eu
           test -f site/index.html
+          test -f site/CNAME
+          test -f site/sitemap.xml
+          test -f site/feed_rss_created.xml
           test -f site/troubleshooting/txt-import/index.html
           test -f site/blog/2026/08/06/legado-source-guide/index.html
           test -f site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
+          grep -Fxq 'www.webnovel.win' site/CNAME
           grep -Fq 'AutoArchive/webNR' site/index.html
-          grep -Fq 'https://autoarchive.github.io/webNR/' site/index.html
+          grep -Fq 'https://www.webnovel.win/' site/index.html
           grep -Fq 'TXT import troubleshooting' site/troubleshooting/txt-import/index.html
           grep -Fq 'TXT 导入排障' site/troubleshooting/txt-import/index.html
           grep -Fq '2026 年 Legado 书源在哪里找' site/blog/2026/08/06/legado-source-guide/index.html
           grep -Fq 'WebNR Originals' site/blog/2026/08/06/legado-source-guide/index.html
+          grep -Fq 'https://www.webnovel.win/blog/2026/08/06/legado-source-guide/' site/blog/2026/08/06/legado-source-guide/index.html
           grep -Fq '2026 年哪里能合法免费看小说' site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
           grep -Fq 'Standard Ebooks Starter' site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
           grep -Fq 'Project Madurai' site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
           grep -Fq 'Project Ben-Yehuda' site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
+          grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/' site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
+          grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/' site/sitemap.xml
+          grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/' site/feed_rss_created.xml
           grep -R -Fq 'G-DGH8HNQKE4' site
           if grep -R -Fq 'G-NL0WV2XMJN' site; then
             echo 'Obsolete secondary GA4 destination found in documentation output' >&2
             exit 1
           fi
-          if grep -R -E -q 'yourusername/webnr|yunwei37/webNR|https://www\.webnovel\.win' site; then
-            echo 'Obsolete repository or documentation-domain reference in artifact' >&2
+          if grep -R -E -q 'yourusername/webnr|yunwei37/webNR|https://autoarchive\.github\.io/webNR' site; then
+            echo 'Obsolete repository or noncanonical documentation origin found in artifact' >&2
             exit 1
           fi
 
