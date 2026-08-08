@@ -2,9 +2,11 @@
 
 WebNR is a local-first web reader for user-owned TXT books and supported text URLs. It runs as an installable progressive web app, stores books and reading progress in the browser, and does not require an account.
 
-- Reader: <https://app.webnovel.win/>
-- Documentation: <https://autoarchive.github.io/webNR/>
+- Website and documentation: <https://www.webnovel.win/>
+- Reader application: <https://app.webnovel.win/>
 - Source and issues: <https://github.com/AutoArchive/webNR>
+
+`https://www.webnovel.win/` is the single canonical public website for WebNR documentation, reader-facing articles, search indexing, canonicals, sitemaps, and RSS. `https://app.webnovel.win/` is the reader application runtime and is not an alternate documentation origin.
 
 ## Current capabilities
 
@@ -28,7 +30,7 @@ WebNR is a local-first web reader for user-owned TXT books and supported text UR
 3. Select a local TXT file, or enter a supported text URL.
 4. Start reading. The book and progress are stored in the current browser profile.
 
-For encoding, CORS, storage, and PWA-update failures, see the [TXT import troubleshooting guide](https://autoarchive.github.io/webNR/troubleshooting/txt-import/).
+For encoding, CORS, storage, and PWA-update failures, see the [TXT import troubleshooting guide](https://www.webnovel.win/troubleshooting/txt-import/).
 
 ## Local development
 
@@ -58,7 +60,7 @@ mkdocs build --strict
 
 ## Data and analytics
 
-Imported book content and reading progress are stored in the current browser profile and are not uploaded to a WebNR content server. Both the reader and documentation site use Google Analytics 4 measurement `G-DGH8HNQKE4` for site analysis.
+Imported book content and reading progress are stored in the current browser profile and are not uploaded to a WebNR content server. Both the reader and canonical website use Google Analytics 4 measurement `G-DGH8HNQKE4` for site analysis.
 
 The reader reports the **complete browser page URL**, including query parameters. This includes an imported text URL when WebNR is opened with a parameter such as `?add=https://example.com/book.txt`. The implementation also disables Google signals and ad-personalization signals. The project does not add custom analytics events containing local file contents or reading progress.
 
@@ -68,7 +70,7 @@ WebNR source definitions are connectors, not content licenses. Contributors must
 
 ## Contributing
 
-Issues and focused pull requests are welcome. See the [contributing guide](https://autoarchive.github.io/webNR/manual/contributing/). Every change must use a branch and pull request, pass the expected app/documentation/SEO checks, receive a complete final review, and preserve the declared analytics, local-data, and content-policy boundaries.
+Issues and focused pull requests are welcome. See the [contributing guide](https://www.webnovel.win/manual/contributing/). Every change must use a branch and pull request, pass the expected app/documentation/SEO checks, receive a complete final review, and preserve the declared analytics, local-data, and content-policy boundaries.
 
 ## License
 
