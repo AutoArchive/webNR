@@ -98,12 +98,16 @@ jobs:
           cache-dependency-path: .github/requirements-docs.txt
       - name: Install pinned documentation dependencies
         run: pip install --requirement .github/requirements-docs.txt
-      - name: Build documentation strictly
-        run: mkdocs build --strict
+      - name: Build attributable documentation artifact
+        run: |
+          WEBNR_DOCS_BUILD_SHA="$(git rev-parse HEAD)" \
+          WEBNR_DOCS_BUILD_SOURCE='quality-ci' \
+          bash scripts/build-docs-production.sh
       - name: Validate documentation output
         run: |
           set -eu
           test -f site/index.html
+          test -f site/build.json
           test -f site/troubleshooting/txt-import/index.html
           test -f site/blog/2026/08/06/legado-source-guide/index.html
           test -f site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
