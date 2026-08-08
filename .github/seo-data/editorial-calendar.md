@@ -79,6 +79,6 @@ A scheduled asset is complete only when:
 - source, platform, app, and channel facts have current verification dates;
 - related pages and relevant WebNR import routes are linked naturally;
 - canonical, sitemap, static rendered HTML, and intended navigation are correct;
-- both configured GA4 destinations and the exact build identity remain present;
+- the configured GA4 destination and the exact build identity remain present;
 - the real pull request, CI, squash merge, production deployment, and public page
   verification have completed.

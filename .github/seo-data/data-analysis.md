@@ -17,7 +17,7 @@ aggregates, evidence status, comparisons, decisions, and delivery results.
 Read every source that is currently available and label unavailable sources
 truthfully:
 
-1. **GA4** — both configured WebNR destinations, using finalized exports or
+1. **GA4** — the configured WebNR destination, using finalized exports or
    connected provider evidence when available.
 2. **Google Search Console** — query, page, country, device, search appearance,
    date, indexing, and sitemap evidence when available.
@@ -26,8 +26,8 @@ truthfully:
 4. **GitHub and delivery** — pull requests, issues, CI, dependency audit,
    deployments, build identities, workflow failures, and release state.
 5. **Public production** — application and documentation routes, status codes,
-   canonical, robots, sitemap, rendered content, dual GA4, important user flows,
-   and source-health checks.
+   canonical, robots, sitemap, rendered content, configured GA4, important user
+   flows, and source-health checks.
 6. **Reader-content evidence** — publication dates, internal links, indexed pages,
    landing-page performance, query coverage, referrals, and content freshness.
 7. **Source program evidence** — candidates discovered, candidates fully audited,
