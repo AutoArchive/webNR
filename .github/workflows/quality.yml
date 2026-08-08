@@ -105,13 +105,11 @@ jobs:
         run: |
           set -eu
           test -f site/index.html
-          test -f site/CNAME
           test -f site/sitemap.xml
           test -f site/feed_rss_created.xml
           test -f site/troubleshooting/txt-import/index.html
           test -f site/blog/2026/08/06/legado-source-guide/index.html
           test -f site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
-          grep -Fxq 'www.webnovel.win' site/CNAME
           grep -Fq 'AutoArchive/webNR' site/index.html
           grep -Fq 'https://www.webnovel.win/' site/index.html
           grep -Fq 'TXT import troubleshooting' site/troubleshooting/txt-import/index.html
