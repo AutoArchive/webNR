@@ -78,7 +78,7 @@ owner instruction recorded in the relevant pull request and daily report.
 ### Documentation build mirror
 
 - Provider: `github-actions` plus GitHub Pages
-- Workflow: `Publish WebNR documentation build mirror`
+- Current workflow: `Publish WebNR documentation`
 - Source: `gh-pages` branch
 - Mirror URL: `https://autoarchive.github.io/webNR/`
 - Custom domain: none
