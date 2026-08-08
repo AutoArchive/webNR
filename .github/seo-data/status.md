@@ -14,12 +14,12 @@
 ## Current signals
 
 - Runtime analytics is mandatory on both production sites.
-- Both sites expose GA4 destinations `G-DGH8HNQKE4` and `G-NL0WV2XMJN`.
+- Both sites use the single GA4 destination `G-DGH8HNQKE4`.
 - WebNR owner policy is full-URL reporting. Reader page views use `window.location.href` and pathname plus query string, including imported URLs carried in `?add=...`.
 - Google signals and ad-personalization signals remain disabled.
 - Imported book text and reading progress remain in browser storage. No additional custom analytics event containing local content or progress is authorized.
 - Connected Cloudflare accounts do not expose the `webnovel.win` zone. This does not block GitHub Pages production verification, GA4, Search Console, product delivery, content production, or source work.
-- Application and documentation CI cover dependency audit, lint, typecheck, production application build, strict documentation build, dual-GA4 output assertions, integrated-source output, and recorded public production evidence.
+- Application and documentation CI cover dependency audit, lint, typecheck, production application build, strict documentation build, single-GA4 output assertions, integrated-source output, and recorded public production evidence.
 - The first reader-discovery article, `2026 年 Legado 书源在哪里找？一份面向读者的查找与验源指南`, remains in the exact documentation production build with canonical `https://autoarchive.github.io/webNR/blog/2026/08/06/legado-source-guide/`.
 - `WebNR Originals` remains the first passing integrated source. The exact application production build contains its source terms, YAML catalog, and original CC0 TXT fixture 《灯下索引》.
 - `Aozora Bunko Starter` is the second passing integrated source. The exact application production build contains its attributed four-work discovery catalog, links to official Aozora book cards, and no direct download URL.

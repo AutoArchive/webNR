@@ -88,9 +88,9 @@ and exact production verification.
 
 ### 5. Verify analytics and production
 
-Use `site.md` and `$ensure-site-analytics`. Both production sites must retain GA4
-`G-DGH8HNQKE4` and `G-NL0WV2XMJN`. Both destinations use full-URL reporting,
-including the complete query string and imported URL in `?add=...`. Keep Google
+Use `site.md` and `$ensure-site-analytics`. Both production sites must retain the
+single GA4 destination `G-DGH8HNQKE4`. It uses full-URL reporting, including the
+complete query string and imported URL in `?add=...`. Keep Google
 signals and ad-personalization disabled unless the owner explicitly changes the
 policy.
 

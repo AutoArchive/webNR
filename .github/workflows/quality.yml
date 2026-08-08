@@ -48,7 +48,10 @@ jobs:
           set -eu
           test -f out/index.html
           grep -R -Fq 'G-DGH8HNQKE4' out
-          grep -R -Fq 'G-NL0WV2XMJN' out
+          if grep -R -Fq 'G-NL0WV2XMJN' out; then
+            echo 'Obsolete secondary GA4 destination found in application output' >&2
+            exit 1
+          fi
           grep -R -Fq 'window.location.href' out
           grep -R -Fq 'window.location.pathname + window.location.search' out
           grep -R -Fq 'allow_google_signals' out
@@ -102,7 +105,10 @@ jobs:
           grep -Fq '2026 年 Legado 书源在哪里找' site/blog/2026/08/06/legado-source-guide/index.html
           grep -Fq 'WebNR Originals' site/blog/2026/08/06/legado-source-guide/index.html
           grep -R -Fq 'G-DGH8HNQKE4' site
-          grep -R -Fq 'G-NL0WV2XMJN' site
+          if grep -R -Fq 'G-NL0WV2XMJN' site; then
+            echo 'Obsolete secondary GA4 destination found in documentation output' >&2
+            exit 1
+          fi
           if grep -R -E -q 'yourusername/webnr|yunwei37/webNR|https://www\.webnovel\.win' site; then
             echo 'Obsolete repository or documentation-domain reference in artifact' >&2
             exit 1
