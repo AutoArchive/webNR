@@ -1,4 +1,4 @@
-name: Publish WebNR documentation build mirror
+name: Publish WebNR documentation
 
 on:
   push:
