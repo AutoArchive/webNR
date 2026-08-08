@@ -5,19 +5,23 @@
 - Canonical public site URL: `https://www.webnovel.win/`
 - Site name: `WebNR`
 - Reader application URL: `https://app.webnovel.win/`
+- Documentation build mirror URL: `https://autoarchive.github.io/webNR/`
 - Timezone: `America/Los_Angeles`
 
 `https://www.webnovel.win/` is the single canonical public origin for WebNR
 reader-facing content, documentation, blog articles, search indexing, canonical
-links, sitemap and RSS output, and public documentation links. The GitHub Pages
-origin `https://autoarchive.github.io/webNR/` is an implementation origin only;
-it must not be treated as an alternate production identity or emitted as a
-canonical public URL.
+links, sitemap and RSS output, and public documentation links. No other hostname
+is an alternate public identity for those surfaces.
 
 `https://app.webnovel.win/` is the reader application runtime. It may own
-application routes, application source artifacts, and application-specific
-metadata, but it is not an alternate origin for the public documentation and
-editorial site.
+application routes, application source artifacts, application downloads, and
+application-specific metadata, but it is not an alternate origin for the public
+documentation and editorial site.
+
+`https://autoarchive.github.io/webNR/` is a generated documentation build mirror
+used for attributable builds and recovery. It must emit canonicals and discovery
+metadata pointing to `https://www.webnovel.win/`, must not claim the custom
+domain, and must never be promoted as the public canonical site.
 
 ## Repository
 
@@ -35,7 +39,7 @@ editorial site.
 - URL reporting: `full-url`
 - Search analytics required: `google-search-console`
 - Search evidence route: Google Drive exports described below
-- Infrastructure analytics: unavailable until the connected Cloudflare account exposes `webnovel.win`
+- Infrastructure analytics: unavailable until an authenticated Cloudflare connection exposes the `webnovel.win` zone
 - Analytics payload policy: send the complete browser page URL, including query parameters such as imported URLs in `?add=...`; disable Google signals and ad-personalization signals; do not add custom events containing local file contents or reading progress
 
 The site owner explicitly requires GA4 and complete page-URL reporting. Agents
@@ -53,22 +57,33 @@ owner instruction recorded in the relevant pull request and daily report.
 
 ## Cloudflare data
 
-- Cloudflare enabled: no
+- Cloudflare analytics enabled: no
 - Zone hostname: `webnovel.win`
 - Preferred dataset: `httpRequestsAdaptiveGroups`
-- Availability note: the connected Cloudflare accounts do not currently expose this zone.
+- Availability note: the currently authenticated analytics connections do not expose this zone.
 
 ## Deployment
 
-### Canonical public site
+### Canonical public documentation and editorial site
+
+- Canonical hostname: `www.webnovel.win`
+- Public edge observed on 2026-08-08: Cloudflare
+- Required source: the reviewed WebNR documentation build generated from the current default-branch commit
+- Verification URL: `https://www.webnovel.win/`
+- Required build identity URL: `https://www.webnovel.win/build.json`
+- Current routing control: unavailable from the connected tooling in this operating environment
+- Acceptance rule: the canonical hostname must expose the exact reviewed documentation build, current reader-facing articles, `G-DGH8HNQKE4`, and canonical/sitemap/RSS URLs under `https://www.webnovel.win/`
+- Prohibited substitution: do not make the GitHub Pages mirror or `app.webnovel.win` the canonical documentation address merely because the canonical hostname is temporarily stale or externally blocked
+
+### Documentation build mirror
 
 - Provider: `github-actions` plus GitHub Pages
-- Production workflow: `Publish WebNR documentation`
-- Production source: `gh-pages` branch
-- Custom domain: `www.webnovel.win`
-- Verification URL: `https://www.webnovel.win/`
-- Required custom-domain artifact: root `CNAME` containing exactly `www.webnovel.win`
-- Acceptance rule: generated canonicals, sitemap, RSS, navigation/home links, and public documentation links use `https://www.webnovel.win/`; `https://autoarchive.github.io/webNR/` is not accepted as a public production identity
+- Workflow: `Publish WebNR documentation build mirror`
+- Source: `gh-pages` branch
+- Mirror URL: `https://autoarchive.github.io/webNR/`
+- Custom domain: none
+- Purpose: attributable generated-build mirror and recovery evidence only
+- Acceptance rule: exact build identity and rendered content may be verified here, but all generated canonical, sitemap, RSS, and public documentation identity must point to `https://www.webnovel.win/`
 
 ### Reader application
 
@@ -76,8 +91,10 @@ owner instruction recorded in the relevant pull request and daily report.
 - Production workflow: `Deploy Next.js site to Pages`
 - Production source: `app-pages` branch
 - Verification URL: `https://app.webnovel.win/`
+- Public Cloudflare Pages mirror observed on 2026-08-08: `https://webnr.pages.dev/`
+- Boundary: the application and its source/download artifacts remain separate from the canonical documentation/editorial site
 
 Store only durable public metadata here. Public browser measurement IDs may be
 stored in runtime source. Never add private property IDs, Drive IDs, Cloudflare
-IDs, account identifiers, personal emails, credentials, raw analytics rows,
-cookies, authorization values, or private provider URLs.
+account IDs, personal emails, credentials, raw analytics rows, cookies,
+authorization values, or private provider URLs.
