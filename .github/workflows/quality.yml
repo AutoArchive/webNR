@@ -81,6 +81,12 @@ jobs:
           grep -Fq 'title: The Time Machine' out/sources/standard-ebooks-starter/search_index.yml
           grep -Fq 'license: CC0-1.0-standard-ebooks' out/sources/standard-ebooks-starter/search_index.yml
           grep -Fq 'https://standardebooks.org/ebooks/jane-austen/pride-and-prejudice' out/sources/standard-ebooks-starter/search_index.yml
+          test -f out/sources/project-madurai-starter/search_index.yml
+          test -f out/sources/project-madurai-starter/README.txt
+          grep -Fq 'title: திருக்குறள்' out/sources/project-madurai-starter/search_index.yml
+          grep -Fq 'title: சிலப்பதிகாரம் — புகார்க் காண்டம்' out/sources/project-madurai-starter/search_index.yml
+          grep -Fq 'license: Project-Madurai-origin-terms' out/sources/project-madurai-starter/search_index.yml
+          grep -Fq 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html' out/sources/project-madurai-starter/search_index.yml
 
   browser-e2e:
     name: Chromium user journeys
