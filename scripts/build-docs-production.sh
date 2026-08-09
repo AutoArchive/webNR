@@ -36,6 +36,10 @@ payload = {
 Path("docs/build.json").write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 PY
 
+if [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
+  git fetch --unshallow --tags
+fi
+
 python -m mkdocs build --strict
 
 # Domain ownership is configured at the serving platform. Never let a stale
