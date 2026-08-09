@@ -24,6 +24,7 @@ Remove the visible Google Analytics notice from the WebNR reader application whi
 ## Deployment evidence
 
 - The `app-pages` artifact branch exposes exact squash commit `2df9e0f50cc93d79418a435069f46150d76d46f6`, source `github-actions`.
-- The closeout pull request must not merge until its Production evidence job independently observes the same exact commit on `https://app.webnovel.win/build.json`.
+- Closeout Quality run `31340025388`, Production evidence job `93312160963`, independently resolved the Cloudflare-served `app.webnovel.win` hostname and observed exact commit `2df9e0f50cc93d79418a435069f46150d76d46f6` at `https://app.webnovel.win/build.json`.
+- The same Production evidence job independently verified the existing documentation build mirror at `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd` with its `www.webnovel.win` canonical boundary intact.
 
 No documentation render change is part of this focused delivery.
