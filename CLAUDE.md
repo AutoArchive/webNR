@@ -8,13 +8,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run build` - Build production application
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint with Next.js rules
+- `npm run typecheck` - Run the TypeScript type check
 - `npm run generate-icons` - Generate PWA icons using scripts/generate-icons.js
 
 ## Project Architecture
 
 ### Core Application Structure
 
-WebNR is a client-side web novel reader built with Next.js 15, React 19, and TypeScript. The architecture follows a modular component-based design:
+WebNR is a client-side web novel reader built with Next.js 16.3, React 19, and TypeScript. The architecture follows a modular component-based design:
 
 **Storage Layer (`app/lib/storage.ts`)**
 - Uses IndexedDB for offline-first data persistence
@@ -68,8 +69,11 @@ WebNR is a client-side web novel reader built with Next.js 15, React 19, and Typ
 
 ### Testing & Quality
 
-- Jest configured with TypeScript support
 - ESLint with Next.js and TypeScript rules
+- TypeScript checking through `npm run typecheck`
+- Production application build through `npm run build`
+- Playwright Chromium user-journey tests under `tests/e2e/`, run in CI on desktop Chromium and Pixel 7 emulation
 - Quality CI requires GA4 in generated application and documentation output
+- Quality CI validates maintained source output, exact recorded production evidence, and both documentation and application builds
 - Deployment workflows verify GA4 on both production domains
-- No automated unit/E2E tests currently implemented - add tests when implementing new features
+- Add or update regression coverage when implementing behavior that changes a tested reader journey
