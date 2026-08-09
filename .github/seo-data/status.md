@@ -9,7 +9,7 @@
 - Latest application deployment artifact branch commit: `2df9e0f50cc93d79418a435069f46150d76d46f6`
 - Canonical public documentation and editorial URL: `https://www.webnovel.win/`
 - Canonical public-site state: healthy and attributable on the independent `webnr-docs` Cloudflare Pages project; the last independently recorded exact canonical build is main commit `7d319f26e2c3398215c1d2cedca6f99820f1de50`
-- Reader public-site state: expected exact pull request #70 squash commit `2df9e0f50cc93d79418a435069f46150d76d46f6`; the closeout Production evidence gate must independently observe this commit on `https://app.webnovel.win/build.json` before the closeout can merge
+- Reader public-site state: healthy and attributable; closeout Quality run `31340025388`, Production evidence job `93312160963`, independently observed exact pull request #70 squash commit `2df9e0f50cc93d79418a435069f46150d76d46f6` on `https://app.webnovel.win/build.json`
 - Working reader URL: `https://app.webnovel.win/`
 - Working documentation build mirror URL: `https://autoarchive.github.io/webNR/`
 - Current skill submodule: `d1194eeb23a6dd5cf04956f5efcfe8e3f0105003`
@@ -25,7 +25,7 @@
 - `https://app.webnovel.win/` is the reader application runtime, not an alternate documentation origin.
 - `https://autoarchive.github.io/webNR/` is an attributable documentation build mirror only. It emits `www.webnovel.win` canonical/discovery metadata and must not claim the custom domain.
 - Pull request #70 removed the visible Google Analytics notice from the reader's empty-library onboarding and Add/import view while preserving the runtime GA4 destination, full-URL reporting, Google-signal settings and documentation disclosure. Its final Quality run `31339726456` passed Web quality, Documentation quality, Production evidence against the prior public baseline, and Chromium user journeys; the Chromium suite passed all eight desktop/mobile tests and now asserts that the analytics notice is absent from both first-use and import UI.
-- The `app-pages` application artifact exposes exact pull request #70 squash commit `2df9e0f50cc93d79418a435069f46150d76d46f6`, source `github-actions`. The closeout Production evidence gate is the authority for confirming that the Cloudflare-served reader hostname has advanced to the same exact commit.
+- The `app-pages` application artifact exposes exact pull request #70 squash commit `2df9e0f50cc93d79418a435069f46150d76d46f6`, source `github-actions`. Closeout Quality run `31340025388`, Production evidence job `93312160963`, independently resolved the Cloudflare-served `app.webnovel.win` hostname and observed the same exact commit, so the reader UI cleanup is production-verified.
 - The public GitHub Pages documentation build mirror exposes exact squash commit `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd` and labels itself `github-pages-build-mirror`.
 - The documentation mirror contains the generated article `WebNR：给 Legado 用户的一个独立网页端替代选择` at mirror path `/blog/2026/08/09/webnr-legado-web-alternative/`, with intended canonical `https://www.webnovel.win/blog/2026/08/09/webnr-legado-web-alternative/`.
 - Pull request #62 final Quality run `31303061815` passed Web quality, Documentation quality, Production evidence against the pre-merge production baseline, and Chromium user journeys.
