@@ -9,7 +9,7 @@
 - Latest application deployment artifact branch commit: `65fbda14e8062d7b055db5987646598b04ffcddc`
 - Canonical public documentation and editorial URL: `https://www.webnovel.win/`
 - Canonical public-site state: healthy and attributable on the independent `webnr-docs` Cloudflare Pages project; the last independently recorded exact canonical build is main commit `7d319f26e2c3398215c1d2cedca6f99820f1de50`
-- Reader public-site state: healthy and attributable on the separate `webnr` Cloudflare Pages project; production verification requires `https://app.webnovel.win/build.json` to expose exact pull request #68 squash commit `65fbda14e8062d7b055db5987646598b04ffcddc`
+- Reader public-site state: healthy and attributable on the separate `webnr` Cloudflare Pages project; cache-busted production verification on 2026-08-09 confirmed `https://app.webnovel.win/build.json` exposes exact pull request #68 squash commit `65fbda14e8062d7b055db5987646598b04ffcddc`
 - Working reader URL: `https://app.webnovel.win/`
 - Working documentation build mirror URL: `https://autoarchive.github.io/webNR/`
 - Current skill submodule: `d1194eeb23a6dd5cf04956f5efcfe8e3f0105003`
@@ -24,7 +24,7 @@
 - `https://www.webnovel.win/` is the sole canonical public identity for documentation, reader-facing articles, search indexing, canonical tags, sitemap, and RSS. A temporary delivery failure must never cause automation to promote another hostname as the canonical documentation address.
 - `https://app.webnovel.win/` is the reader application runtime, not an alternate documentation origin.
 - `https://autoarchive.github.io/webNR/` is an attributable documentation build mirror only. It emits `www.webnovel.win` canonical/discovery metadata and must not claim the custom domain.
-- The `app-pages` application artifact exposes exact squash commit `65fbda14e8062d7b055db5987646598b04ffcddc`, source `github-actions`, and includes the Project Madurai Starter plus the previously integrated source catalogs. The production-evidence gate independently checks the Cloudflare-served `app.webnovel.win` build marker against the same recorded commit before closeout can merge.
+- The `app-pages` application artifact exposes exact squash commit `65fbda14e8062d7b055db5987646598b04ffcddc`, source `github-actions`, and includes the Project Madurai Starter plus the previously integrated source catalogs. Closeout Production evidence job `93272242519` then resolved the Cloudflare-served `app.webnovel.win` target and independently observed the same exact commit with a Cloudflare response before this record was finalized.
 - The public GitHub Pages documentation build mirror exposes exact squash commit `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd` and labels itself `github-pages-build-mirror`.
 - The documentation mirror contains the generated article `WebNR：给 Legado 用户的一个独立网页端替代选择` at mirror path `/blog/2026/08/09/webnr-legado-web-alternative/`, with intended canonical `https://www.webnovel.win/blog/2026/08/09/webnr-legado-web-alternative/`.
 - Pull request #62 final Quality run `31303061815` passed Web quality, Documentation quality, Production evidence against the pre-merge production baseline, and Chromium user journeys.
