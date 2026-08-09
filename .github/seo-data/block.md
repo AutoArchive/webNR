@@ -1,24 +1,54 @@
 # Human-only blockers
 
-## `www.webnovel.win` Cloudflare production routing
+## `webnovel.win` Cloudflare production routing
+
+Two Cloudflare-served production hostnames are stale relative to reviewed repository artifacts.
+
+### Canonical documentation route
 
 **Blocked action:** make `https://www.webnovel.win/` serve the current reviewed WebNR documentation/editorial build while keeping it the single canonical public documentation hostname.
 
-**Verified 2026-08-08 evidence:**
+**Verified evidence:**
 
-- a cache-busted GitHub Actions routing diagnostic resolved `www.webnovel.win` to Cloudflare edge addresses and received HTTP 200 from Cloudflare for the root page;
-- that root still served the older `WebNR - Web Novel Reader` documentation/site shell, while `https://www.webnovel.win/build.json` returned HTTP 404, so the canonical hostname has no attributable current build identity;
-- `https://autoarchive.github.io/webNR/build.json` exposed the current documentation build commit `ec8ebc389c613fd9d5386ebf20f93a17f6fd51f3`;
-- `https://app.webnovel.win/build.json` and `https://webnr.pages.dev/build.json` exposed the same current application commit `ec8ebc389c613fd9d5386ebf20f93a17f6fd51f3` and the Pages project served the reader application, not the documentation site;
-- historical pull request #40 records why the project temporarily moved documentation canonicals to the GitHub Pages project URL: the earlier `www` route was on Cloudflare, GitHub Pages reported no custom domain, and the available GitHub/Cloudflare connections could not change the required external routing;
-- pull request #58 merged the repository-owned `scripts/build-docs-production.sh` entrypoint to `main`, so a documentation Pages deployment can now emit an exact `/build.json` from Cloudflare's commit SHA without dashboard-specific build logic;
-- pull request #59 is the active rendered-site repair. Repository-side Quality run `31277096343` passed Web quality, Documentation quality, and Production evidence; its generated documentation uses `www.webnovel.win` canonicals, sitemap, RSS, current reader articles, and single GA4 while keeping GitHub Pages noncanonical.
+- cache-busted routing diagnostics resolved `www.webnovel.win` to Cloudflare edge addresses and received HTTP 200 for the root page, but the root served the older `WebNR - Web Novel Reader` site shell while `https://www.webnovel.win/build.json` returned HTTP 404;
+- `https://autoarchive.github.io/webNR/` is the noncanonical documentation build mirror and currently exposes exact reviewed commit `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd`;
+- the mirror contains the 2026-08-09 WebNR Legado web-alternative article and emits `www.webnovel.win` canonical/discovery metadata;
+- pull requests #57, #58, #61 and #59 completed the repository-side canonical contract, attributable MkDocs build entrypoint, shallow-checkout repair and rendered canonical-output repair.
 
-**Why automation cannot finish this step:** the currently connected tools provide repository administration and read-only public routing evidence, but no authenticated Cloudflare zone/Pages/Worker/custom-domain control for the `webnovel.win` zone. The GitHub Pages custom-domain fallback was already tested historically and must not be repeated as a substitute for fixing the actual Cloudflare route.
+### Reader application route
 
-**Minimal external action required:** using the Cloudflare account that controls `webnovel.win`, create or select a documentation Pages deployment sourced from `AutoArchive/webNR` with production branch `main`; set the build command to `python -m pip install --requirement .github/requirements-docs.txt && bash scripts/build-docs-production.sh`, output directory to `site`, and `PYTHON_VERSION=3.12`; then attach `www.webnovel.win` to that documentation deployment. If `www.webnovel.win` is currently attached to a stale Pages project, Worker route, or other origin, replace that attachment. Do **not** attach `www.webnovel.win` to `webnr.pages.dev`, because that Pages project is the reader application. Preserve `app.webnovel.win` for the reader application.
+**Blocked action:** make `https://app.webnovel.win/` serve the latest reviewed application artifact from pull request #62.
 
-**Acceptance after the external action:** automation resumes pull request #59, first requires `https://www.webnovel.win/build.json` to expose the exact current `main` documentation commit and current reader content from the documentation project, then re-runs/final-reviews #59 and squash-merges it with the exact head SHA. After merge, it waits for both the Cloudflare documentation deployment and GitHub Pages build mirror, requires `www/build.json` to equal the squash commit, verifies the 2026-08-06 and 2026-08-08 reader articles, `www` canonical/sitemap/RSS output, `G-DGH8HNQKE4`, and the unaffected `app.webnovel.win` reader, then completes permanent production-evidence and closeout changes.
+**Verified evidence:**
+
+- pull request #62 merged as `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd` and the `app-pages` artifact branch contains a `build.json` for that exact commit;
+- closeout Production evidence run `31303434565` independently verified the documentation mirror at `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd`;
+- the same run made 42 cache-busted requests to `https://app.webnovel.win/build.json` from GitHub Actions between 08:24 and 08:31 UTC on 2026-08-09;
+- every request was served by Cloudflare and returned the older commit `a6e9256369b0b2c29f3c80e428708e0b2da4894c`, built at `2026-08-09T07:57:41.833Z`;
+- therefore `app-pages` branch publication is not sufficient proof of production application deployment, and pull request #62's PWA registration repair, keyboard accessibility repair and auxiliary Legado UI statement are not yet verified on the public reader hostname.
+
+### Why automation cannot finish these steps
+
+The remaining mutations are outside the repository and require control of the Cloudflare configuration currently serving `webnovel.win`. Repository code, application/documentation artifacts, exact build identities, canonical metadata, and the noncanonical documentation mirror are ready. The current tool environment exposes GitHub repository control and public routing evidence but no authenticated write control for the Cloudflare account/zone/projects serving `webnovel.win`; no installable Cloudflare control plugin was available in the current plugin catalog.
+
+Repointing GitHub Pages to the custom domain or treating `app-pages` as public production would hide the real routing problem rather than repair it.
+
+### Minimal external action required
+
+Using the Cloudflare account that controls `webnovel.win`:
+
+1. **Documentation:** create or select a documentation Pages deployment sourced from `AutoArchive/webNR`, production branch `main`; set build command to `python -m pip install --requirement .github/requirements-docs.txt && bash scripts/build-docs-production.sh`, output directory `site`, and `PYTHON_VERSION=3.12`; attach `www.webnovel.win` to that documentation deployment. If `www` is currently attached to a stale Pages project, Worker route, or other origin, replace that attachment. Do **not** attach `www.webnovel.win` to the reader project.
+2. **Reader:** identify the Cloudflare route/project currently serving `app.webnovel.win` and reconnect it to the application deployment path that receives the current `app-pages`/reader build. Remove or replace the stale origin/cache/project binding that continues to serve `a6e9256369b0b2c29f3c80e428708e0b2da4894c`. Preserve `app.webnovel.win` as the reader runtime.
+
+### Acceptance after the external action
+
+- `https://www.webnovel.win/build.json` exposes the current rendered documentation commit (currently `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd` until another rendered-site change supersedes it);
+- `www` directly serves the 2026-08-06 Legado source guide, 2026-08-08 legal free-reading guide, and 2026-08-09 WebNR Legado web-alternative article;
+- canonical tags, sitemap and RSS remain on `www.webnovel.win`;
+- `https://app.webnovel.win/build.json` exposes the current reader application artifact (currently `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd` until superseded);
+- the public reader shows the auxiliary Legado statement and passes the Service Worker, local TXT/URL import, persistence, keyboard and error-recovery acceptance paths represented by the permanent Chromium suite;
+- GA4 `G-DGH8HNQKE4` remains present with the owner-selected full-URL reader behavior;
+- `www.webnovel.win` remains documentation/editorial/search and `app.webnovel.win` remains the reader application.
 
 The configured Google Drive folder currently contains no matching GA4 or Search Console exports. That data-source gap is not a human blocker and must continue to be reported as unavailable rather than zero.
 
