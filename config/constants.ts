@@ -3,8 +3,12 @@
  */
 export const CONFIG = {
   GITHUB_REPO: 'https://github.com/AutoArchive/webNR',
-  HOME_PAGE: 'https://www.webnovel.win',
+  HOME_PAGE: 'https://www.webnovel.win/',
   CANONICAL_DOMAIN: 'https://app.webnovel.win',
+
+  ANALYTICS: {
+    GOOGLE_ANALYTICS_ID: 'G-DGH8HNQKE4',
+  },
 
   PWA: {
     THEME_COLOR: '#000000',

@@ -1,0 +1,193 @@
+name: Publish WebNR documentation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - 'scripts/build-docs-production.sh'
+      - '.github/requirements-docs.txt'
+      - '.github/workflows/publish-docs-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+  pages: read
+
+concurrency:
+  group: webnr-documentation-build-mirror
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Build, publish, and verify documentation mirror
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      MIRROR_BUILD_URL: https://autoarchive.github.io/webNR/build.json
+      MIRROR_HOME_URL: https://autoarchive.github.io/webNR/
+      MIRROR_TROUBLESHOOTING_URL: https://autoarchive.github.io/webNR/troubleshooting/txt-import/
+      MIRROR_READER_ARTICLE_URL: https://autoarchive.github.io/webNR/blog/2026/08/08/legal-free-novels-txt-collections/
+    steps:
+      - name: Select trusted default-branch commit
+        id: source
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PUSH_SHA: ${{ github.sha }}
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          if [ "${EVENT_NAME}" = 'push' ]; then
+            source_sha="${PUSH_SHA}"
+          else
+            source_sha="$(
+              curl --fail-with-body --silent --show-error \
+                --header 'Accept: application/vnd.github+json' \
+                --header "Authorization: Bearer ${GH_TOKEN}" \
+                --header 'X-GitHub-Api-Version: 2022-11-28' \
+                "https://api.github.com/repos/${REPOSITORY}/commits/${DEFAULT_BRANCH}" \
+              | python3 -c 'import json, sys; print(json.load(sys.stdin)["sha"])'
+            )"
+          fi
+          if [[ ! "${source_sha}" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Invalid source commit: ${source_sha}" >&2
+            exit 1
+          fi
+          printf 'sha=%s\n' "${source_sha}" >> "${GITHUB_OUTPUT}"
+
+      - name: Checkout reviewed default-branch source
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ steps.source.outputs.sha }}
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: .github/requirements-docs.txt
+
+      - name: Install pinned documentation dependencies
+        run: pip install --requirement .github/requirements-docs.txt
+
+      - name: Build attributable documentation artifact
+        env:
+          BUILD_SHA: ${{ steps.source.outputs.sha }}
+        run: |
+          WEBNR_DOCS_BUILD_SHA="${BUILD_SHA}" \
+          WEBNR_DOCS_BUILD_SOURCE='github-pages-build-mirror' \
+          bash scripts/build-docs-production.sh
+          touch site/.nojekyll
+
+      - name: Validate documentation artifact
+        env:
+          BUILD_SHA: ${{ steps.source.outputs.sha }}
+        run: |
+          set -eu
+          test -f site/index.html
+          test -f site/build.json
+          test -f site/.nojekyll
+          test ! -e site/CNAME
+          test -f site/sitemap.xml
+          test -f site/feed_rss_created.xml
+          test -f site/troubleshooting/txt-import/index.html
+          test -f site/manual/contributing/index.html
+          test -f site/manual/url-params/index.html
+          test -f site/blog/2026/08/06/legado-source-guide/index.html
+          test -f site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
+          grep -Fq "${BUILD_SHA}" site/build.json
+          grep -Fq 'TXT import troubleshooting' site/troubleshooting/txt-import/index.html
+          grep -Fq 'TXT 导入排障' site/troubleshooting/txt-import/index.html
+          grep -Fq 'AutoArchive/webNR' site/index.html
+          grep -Fq 'https://www.webnovel.win/' site/index.html
+          grep -Fq 'https://www.webnovel.win/blog/2026/08/06/legado-source-guide/' site/blog/2026/08/06/legado-source-guide/index.html
+          grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/' site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
+          grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/' site/sitemap.xml
+          grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/' site/feed_rss_created.xml
+          grep -R -Fq 'G-DGH8HNQKE4' site
+          if grep -R -Fq 'G-NL0WV2XMJN' site; then
+            echo 'Obsolete secondary GA4 destination found in documentation output' >&2
+            exit 1
+          fi
+          if grep -R -E -q 'yourusername/webnr|yunwei37/webNR|https://autoarchive\.github\.io/webNR' site; then
+            echo 'Obsolete repository or noncanonical documentation origin found in artifact' >&2
+            exit 1
+          fi
+
+      - name: Publish generated site to documentation build mirror
+        uses: peaceiris/actions-gh-pages@v4.1.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
+          force_orphan: true
+          commit_message: "docs-mirror: ${{ steps.source.outputs.sha }}"
+
+      - name: Wait for legacy Pages mirror and verify canonical output
+        env:
+          BUILD_SHA: ${{ steps.source.outputs.sha }}
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -u
+          api="https://api.github.com/repos/${REPOSITORY}"
+          for attempt in $(seq 1 45); do
+            pages_response="$(
+              curl --fail --silent --show-error --max-time 15 \
+                --header 'Accept: application/vnd.github+json' \
+                --header "Authorization: Bearer ${GH_TOKEN}" \
+                --header 'X-GitHub-Api-Version: 2022-11-28' \
+                "${api}/pages" || true
+            )"
+            build_response="$(curl --fail --silent --show-error --max-time 15 "${MIRROR_BUILD_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
+            home_response="$(curl --fail --silent --show-error --max-time 15 "${MIRROR_HOME_URL}?canonical-check=${BUILD_SHA}&attempt=${attempt}" || true)"
+            guide_response="$(curl --fail --silent --show-error --max-time 15 "${MIRROR_TROUBLESHOOTING_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
+            article_response="$(curl --fail --silent --show-error --max-time 15 "${MIRROR_READER_ARTICLE_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
+
+            pages_ready="$(
+              PAGES_RESPONSE="${pages_response}" python3 - <<'PY'
+          import json
+          import os
+
+          try:
+              data = json.loads(os.environ.get("PAGES_RESPONSE", ""))
+          except Exception:
+              print("false")
+          else:
+              ready = (
+                  data.get("build_type") == "legacy"
+                  and data.get("source") == {"branch": "gh-pages", "path": "/"}
+                  and not data.get("cname")
+                  and data.get("status") == "built"
+                  and data.get("html_url") == "https://autoarchive.github.io/webNR/"
+              )
+              print("true" if ready else "false")
+          PY
+            )"
+
+            if [ "${pages_ready}" = 'true' ] \
+              && printf '%s' "${build_response}" | grep -Fq "\"commit\": \"${BUILD_SHA}\"" \
+              && printf '%s' "${home_response}" | grep -Fq 'G-DGH8HNQKE4' \
+              && printf '%s' "${home_response}" | grep -Fq 'https://www.webnovel.win/' \
+              && ! printf '%s' "${home_response}" | grep -Fq 'G-NL0WV2XMJN' \
+              && printf '%s' "${guide_response}" | grep -Fq 'TXT import troubleshooting' \
+              && printf '%s' "${guide_response}" | grep -Fq 'TXT 导入排障' \
+              && printf '%s' "${article_response}" | grep -Fq '2026 年哪里能合法免费看小说' \
+              && printf '%s' "${article_response}" | grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/'; then
+              printf 'Verified noncanonical GitHub Pages mirror and www canonical output for %s\n' "${BUILD_SHA}"
+              exit 0
+            fi
+
+            printf 'Attempt %s: pages-ready=%s build-bytes=%s home-bytes=%s guide-bytes=%s article-bytes=%s\n' \
+              "${attempt}" "${pages_ready}" "${#build_response}" "${#home_response}" "${#guide_response}" "${#article_response}"
+            sleep 10
+          done
+          echo "Documentation mirror did not expose expected commit, www canonical output, GA4, guide, and reader article for ${BUILD_SHA}" >&2
+          exit 1

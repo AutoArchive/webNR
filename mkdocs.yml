@@ -56,7 +56,10 @@ plugins:
       type: timeago
 
 extra:
-  homepage: https://app.webnovel.win/
+  analytics:
+    provider: google
+    property: G-DGH8HNQKE4
+  homepage: https://www.webnovel.win/
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/AutoArchive/webNR

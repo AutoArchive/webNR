@@ -1,10 +1,10 @@
 # WebNR Documentation / WebNR 文档
 
-WebNR is a private, local-first browser reader for user-owned TXT books and supported text URLs. It stores imported text and reading progress in the current browser profile and requires no account.
+WebNR is a local-first browser reader for user-owned TXT books and supported text URLs. It stores imported text and reading progress in the current browser profile and requires no account.
 
-WebNR 是一个隐私优先、本地存储的浏览器 TXT 阅读器。导入的文本与阅读进度保存在当前浏览器配置中，无需账号。
+WebNR 是一个本地优先的浏览器 TXT 阅读器。导入的文本与阅读进度保存在当前浏览器配置中，无需账号。
 
-[Open WebNR / 打开阅读器](https://app.webnovel.win/) · [GitHub](https://github.com/AutoArchive/webNR) · [Report an issue / 报告问题](https://github.com/AutoArchive/webNR/issues)
+[Open WebNR / 打开阅读器](https://app.webnovel.win/) · [TXT import troubleshooting / TXT 导入排障](troubleshooting/txt-import.md) · [GitHub](https://github.com/AutoArchive/webNR) · [Report an issue / 报告问题](https://github.com/AutoArchive/webNR/issues)
 
 ## Start reading / 开始阅读
 
@@ -25,17 +25,23 @@ WebNR 是一个隐私优先、本地存储的浏览器 TXT 阅读器。导入的
 - Installable PWA and an offline application shell. / 可安装为 PWA，并支持离线打开应用外壳。
 - Independently distributed repository definitions for discovery and search. / 可添加独立分发的仓库定义进行发现与搜索。
 
-## Privacy and data / 隐私与数据
+## Data and analytics / 数据与分析
 
-The reader does not load Google Analytics. Imported book content, filenames, and reading progress are not sent to WebNR servers. URL imports contact the URL selected by the user. Clearing browser site data can remove the local library, so backup and restore remain high-priority product work.
+Imported book content and reading progress stay in the current browser profile and are not uploaded to a WebNR content server. The reader and documentation site send page views to Google Analytics 4 measurement `G-DGH8HNQKE4`.
 
-阅读器不加载 Google Analytics。导入内容、文件名与阅读进度不会发送到 WebNR 服务器。URL 导入会直接访问用户选择的地址。清除浏览器站点数据可能删除本地书库，因此备份与恢复是高优先级功能。
+The reader sends the **complete browser page URL**, including query parameters, to Google Analytics. Therefore an imported URL in `?add=...` is included in the reported page URL. Google signals and ad-personalization signals are disabled. WebNR does not add custom analytics events containing local file contents or reading progress.
+
+导入的书籍正文与阅读进度保存在当前浏览器配置中，不会上传到 WebNR 内容服务器。阅读器与文档站会把页面浏览发送至 Google Analytics 4，Measurement ID 为 `G-DGH8HNQKE4`。
+
+阅读器会把**完整浏览器页面网址**发送给 Google Analytics，包括查询参数。因此，`?add=...` 中的导入网址也会包含在上报的页面网址中。Google signals 与广告个性化信号已关闭。WebNR 不会额外创建包含本地文件正文或阅读进度的自定义分析事件。
 
 ## Browser and network limitations / 浏览器与网络限制
 
 - URL imports are controlled by browser CORS rules. / URL 导入受浏览器 CORS 规则限制。
 - WebNR does not bypass authentication, payment, DRM, robots, or access controls. / WebNR 不绕过登录、付费、DRM、robots 或访问控制。
 - Source definitions do not grant a content license. / 书源定义不代表内容授权。
+
+See [TXT import troubleshooting / TXT 导入排障](troubleshooting/txt-import.md) for encoding, CORS, storage, PWA update, and reproducible-report guidance.
 
 ## Develop WebNR / 开发 WebNR
 
@@ -61,4 +67,4 @@ python -m pip install --requirement .github/requirements-docs.txt
 mkdocs build --strict
 ```
 
-See [Contributing](mannual/contributing.md) for the pull-request and review contract.
+See [Contributing](manual/contributing.md) for the pull-request and review contract.

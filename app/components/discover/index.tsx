@@ -104,6 +104,13 @@ export function DiscoverView({ onViewChange }: DiscoverViewProps) {
       const index = await syncRepository(repo);
       const updatedRepo: LocalRepo = {
         ...repo,
+        meta: {
+          ...repo.meta,
+          name: index.name,
+          lastUpdated: index.lastSync,
+          novels: index.novels.length,
+          updatedNovels: index.updatedNovels,
+        },
         index,
         lastSync: new Date().toISOString(),
       };

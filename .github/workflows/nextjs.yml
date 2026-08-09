@@ -6,6 +6,15 @@ on:
       - main
     paths-ignore:
       - '.github/seo-data/**'
+      - '.github/seo-skills'
+      - '.github/requirements-docs.txt'
+      - '.github/workflows/publish-docs-pages.yml'
+      - '.github/workflows/quality.yml'
+      - '.github/workflows/nextjs.yml'
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - 'scripts/build-docs-production.sh'
+      - 'scripts/verify-production-builds.mjs'
   workflow_dispatch:
 
 permissions:
@@ -26,16 +35,13 @@ jobs:
         uses: actions/checkout@v5
         with:
           submodules: recursive
-
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
           node-version: '20'
           cache: npm
-
       - name: Install dependencies
         run: npm ci
-
       - name: Write public build identity
         env:
           BUILD_SHA: ${{ github.sha }}
@@ -49,10 +55,8 @@ jobs:
           };
           fs.writeFileSync('public/build.json', `${JSON.stringify(manifest, null, 2)}\n`);
           NODE
-
       - name: Build static application
         run: npm run build
-
       - name: Validate deployment artifact
         env:
           BUILD_SHA: ${{ github.sha }}
@@ -66,12 +70,16 @@ jobs:
           test -f out/build.json
           grep -Fq 'WebNR — Private Offline TXT Reader' out/index.html
           grep -Fq "${BUILD_SHA}" out/build.json
-          if grep -Fq 'googletagmanager.com' out/index.html; then
-            echo 'Unexpected Google Analytics loader in production artifact' >&2
+          grep -R -Fq 'G-DGH8HNQKE4' out
+          if grep -R -Fq 'G-NL0WV2XMJN' out; then
+            echo 'Obsolete secondary GA4 destination found in application output' >&2
             exit 1
           fi
+          grep -R -Fq 'window.location.href' out
+          grep -R -Fq 'window.location.pathname + window.location.search' out
+          grep -R -Fq 'allow_google_signals' out
+          grep -R -Fq 'allow_ad_personalization_signals' out
           touch out/.nojekyll
-
       - name: Publish app-pages branch
         uses: peaceiris/actions-gh-pages@v4.1.0
         with:
@@ -80,20 +88,25 @@ jobs:
           publish_branch: app-pages
           force_orphan: true
           commit_message: "deploy: ${{ github.sha }}"
-
       - name: Verify exact production build
         env:
           BUILD_SHA: ${{ github.sha }}
           PRODUCTION_BUILD_URL: https://app.webnovel.win/build.json
+          PRODUCTION_HOME_URL: https://app.webnovel.win/
         run: |
           set -u
           for attempt in $(seq 1 30); do
-            response="$(curl --fail --silent --show-error --max-time 15 "${PRODUCTION_BUILD_URL}?commit=${BUILD_SHA}" || true)"
-            if printf '%s' "${response}" | grep -Fq "\"commit\": \"${BUILD_SHA}\""; then
-              printf 'Verified production commit %s\n' "${BUILD_SHA}"
+            build_response="$(curl --fail --silent --show-error --max-time 15 "${PRODUCTION_BUILD_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
+            home_response="$(curl --fail --silent --show-error --max-time 15 "${PRODUCTION_HOME_URL}?analytics-check=${BUILD_SHA}&attempt=${attempt}" || true)"
+            if printf '%s' "${build_response}" | grep -Fq "\"commit\": \"${BUILD_SHA}\"" \
+              && printf '%s' "${home_response}" | grep -Fq 'G-DGH8HNQKE4' \
+              && ! printf '%s' "${home_response}" | grep -Fq 'G-NL0WV2XMJN' \
+              && printf '%s' "${home_response}" | grep -Fq 'window.location.href' \
+              && printf '%s' "${home_response}" | grep -Fq 'window.location.pathname + window.location.search'; then
+              printf 'Verified production commit and full-URL GA4 configuration for %s\n' "${BUILD_SHA}"
               exit 0
             fi
             sleep 10
           done
-          echo "Production did not expose expected commit ${BUILD_SHA}" >&2
+          echo "Production did not expose expected commit and full-URL GA4 configuration for ${BUILD_SHA}" >&2
           exit 1

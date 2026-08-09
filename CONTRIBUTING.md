@@ -2,7 +2,7 @@
 
 Thank you for helping make WebNR a reliable, private, local-first reader.
 
-Read the complete [contributing guide](docs/mannual/contributing.md) before opening a pull request. The minimum workflow is:
+Read the complete [contributing guide](docs/manual/contributing.md) before opening a pull request. The minimum workflow is:
 
 ```bash
 git clone --recurse-submodules https://github.com/AutoArchive/webNR.git

@@ -1,0 +1,20 @@
+stories/lantern-index.md:
+  title: 灯下索引
+  author: WebNR contributors
+  description: 一篇关于旧书目录、夜班图书馆与失而复得的短篇小说。该文本由 WebNR 项目原创并以 CC0 1.0 发布，用于验证书源导入、TXT 阅读与来源健康检查。
+  filename: lantern-index.txt
+  page_url: https://www.webnovel.win/blog/2026/08/06/legado-source-guide/
+  download_url: https://app.webnovel.win/sources/webnr-originals/stories/lantern-index.txt
+  license: CC0-1.0
+  source: WebNR Originals
+  tags:
+    - 原创
+    - 短篇
+    - CC0
+    - 示例书源
+  categories:
+    - 短篇小说
+  date: "2026-08-06"
+  archived date: "2026-08-06"
+  region: zh-CN
+  chapters: 1
