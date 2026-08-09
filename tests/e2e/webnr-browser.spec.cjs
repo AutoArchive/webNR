@@ -16,6 +16,8 @@ test('shows the Legado web-alternative note and registers the PWA shell', async 
 
   await expect(page.getByRole('button', { name: 'Import Novel' })).toBeVisible();
   await expect(page.getByText(/independent browser-based alternative/i)).toBeVisible();
+  await expect(page.locator('body')).not.toContainText('Google Analytics records page views');
+  await expect(page.locator('body')).not.toContainText('Privacy first');
 
   const manifestAvailable = await page.evaluate(async () => {
     const response = await fetch('/manifest.json');
@@ -27,6 +29,10 @@ test('shows the Legado web-alternative note and registers the PWA shell', async 
     () => page.evaluate(async () => Boolean(await navigator.serviceWorker.getRegistration())),
     { timeout: 12_000 }
   ).toBe(true);
+
+  await page.getByRole('button', { name: 'Import Novel' }).click();
+  await expect(page.getByRole('heading', { name: 'Upload File' })).toBeVisible();
+  await expect(page.locator('body')).not.toContainText('Google Analytics records page views');
 });
 
 test('imports a local TXT, persists it in IndexedDB, and reopens it with the keyboard', async ({ page }) => {
