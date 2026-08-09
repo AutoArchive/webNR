@@ -3,13 +3,13 @@
 ## Current state
 
 - Last merged product and reader-content change: pull request #62, squash merge `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd`
-- Last successful attributable application deployment: `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd`
+- Last successful attributable application deployment: `7d319f26e2c3398215c1d2cedca6f99820f1de50`
 - Last successful attributable documentation deployment: `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd`
-- Last successful canonical Cloudflare documentation deployment: `4639c8197a0525bdca0cd85f4034ef5a8677c220`
-- Latest application deployment artifact branch commit: `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd`
+- Last successful canonical Cloudflare documentation deployment: `7d319f26e2c3398215c1d2cedca6f99820f1de50`
+- Latest application deployment artifact branch commit: `7d319f26e2c3398215c1d2cedca6f99820f1de50`
 - Canonical public documentation and editorial URL: `https://www.webnovel.win/`
-- Canonical public-site state: healthy and attributable on the independent `webnr-docs` Cloudflare Pages project; `https://www.webnovel.win/build.json` exposes exact main commit `4639c8197a0525bdca0cd85f4034ef5a8677c220`
-- Reader public-site state: healthy and attributable on the separate `webnr` Cloudflare Pages project; `https://app.webnovel.win/build.json` exposes exact pull request #62 squash commit `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd`
+- Canonical public-site state: healthy and attributable on the independent `webnr-docs` Cloudflare Pages project; `https://www.webnovel.win/build.json` exposes exact main commit `7d319f26e2c3398215c1d2cedca6f99820f1de50`
+- Reader public-site state: healthy and attributable on the separate `webnr` Cloudflare Pages project; `https://app.webnovel.win/build.json` exposes exact pull request #29 squash commit `7d319f26e2c3398215c1d2cedca6f99820f1de50`
 - Working reader URL: `https://app.webnovel.win/`
 - Working documentation build mirror URL: `https://autoarchive.github.io/webNR/`
 - Current skill submodule: `d1194eeb23a6dd5cf04956f5efcfe8e3f0105003`
@@ -23,7 +23,7 @@
 - `https://www.webnovel.win/` is the sole canonical public identity for documentation, reader-facing articles, search indexing, canonical tags, sitemap, and RSS. A temporary delivery failure must never cause automation to promote another hostname as the canonical documentation address.
 - `https://app.webnovel.win/` is the reader application runtime, not an alternate documentation origin.
 - `https://autoarchive.github.io/webNR/` is an attributable documentation build mirror only. It emits `www.webnovel.win` canonical/discovery metadata and must not claim the custom domain.
-- The `app-pages` artifact branch and the Cloudflare-served `app.webnovel.win` public runtime both expose exact squash commit `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd`. Public acceptance also found the auxiliary Legado statement and the single historical GA4 destination in the rendered reader.
+- The `app-pages` artifact branch and the Cloudflare-served `app.webnovel.win` public runtime both expose exact squash commit `7d319f26e2c3398215c1d2cedca6f99820f1de50`. Public acceptance also found the auxiliary Legado statement and the single historical GA4 destination in the rendered reader.
 - The public GitHub Pages documentation build mirror exposes exact squash commit `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd` and labels itself `github-pages-build-mirror`.
 - The documentation mirror contains the generated article `WebNR：给 Legado 用户的一个独立网页端替代选择` at mirror path `/blog/2026/08/09/webnr-legado-web-alternative/`, with intended canonical `https://www.webnovel.win/blog/2026/08/09/webnr-legado-web-alternative/`.
 - Pull request #62 final Quality run `31303061815` passed Web quality, Documentation quality, Production evidence against the pre-merge production baseline, and Chromium user journeys.
@@ -35,7 +35,8 @@
 - The 2026-08-08 routing diagnostic proved that `www.webnovel.win` and the documentation mirror are different delivery paths: the mirror exposed an exact reviewed build while `www/build.json` returned 404 and the `www` root served an older site shell.
 - `https://webnr.pages.dev/` is a reader-application mirror/project and must not be used as the documentation origin for `www`.
 - Pull request #57 established the durable canonical contract; pull request #58 added the repository-owned documentation build entrypoint; pull request #61 repaired shallow-checkout history for that build; pull request #59 merged the rendered canonical-origin source repair as `a6e9256369b0b2c29f3c80e428708e0b2da4894c`.
-- Repository-side documentation canonical generation and the `www` Cloudflare serving route are complete. The canonical site exposes exact main commit `4639c8197a0525bdca0cd85f4034ef5a8677c220`, the three current reader guides, `www` canonicals, sitemap, RSS, and the single historical GA4 destination.
+- Repository-side documentation canonical generation and the `www` Cloudflare serving route are complete. The canonical site exposes exact main commit `7d319f26e2c3398215c1d2cedca6f99820f1de50`, the three current reader guides, `www` canonicals, sitemap, RSS, and the single historical GA4 destination.
+- Pull request #29 upgraded Next.js to 16.3.0 and the matching native flat ESLint configuration, upgraded the affected Sharp dependency, preserved the prior behavioral lint baseline for separately scoped React refactors, passed all four Quality jobs, and produced an audit result with no known vulnerabilities.
 - Runtime analytics is mandatory on the canonical public site and reader application.
 - Both public surfaces use the single GA4 destination `G-DGH8HNQKE4`.
 - WebNR owner policy is full-URL reporting. Reader page views use `window.location.href` and pathname plus query string, including imported URLs carried in `?add=...`.
