@@ -79,7 +79,8 @@ async function verifyTarget(target) {
             const contentMatches = contentResponse.ok
               && html.includes('TXT import troubleshooting')
               && html.includes('TXT 导入排障')
-              && html.includes('https://autoarchive.github.io/webNR/');
+              && html.includes('https://www.webnovel.win/troubleshooting/txt-import/')
+              && !html.includes('https://autoarchive.github.io/webNR/');
             lastObserved = JSON.stringify({
               build: buildEvidence,
               content: { status: contentResponse.status, headers: selectedHeaders(contentResponse), contentMatches },
