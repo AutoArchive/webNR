@@ -1,0 +1,59 @@
+project-madurai/tirukkural.md:
+  title: திருக்குறள்
+  author: திருவள்ளுவர்
+  description: Project Madurai 的官方 Unicode/UTF-8 电子文本页。WebNR 当前仅提供来源发现链接，不复制正文或 PDF，并保留来源项目的权利与分发边界。
+  page_url: https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html
+  source: Project Madurai
+  license: Project-Madurai-origin-terms
+  tags:
+    - Project Madurai
+    - தமிழ்
+    - Classical literature
+  categories:
+    - Free reading discovery
+  region: ta-IN
+
+project-madurai/auvaiyar-ethical-works.md:
+  title: ஆத்திசூடி மற்றும் ஔவையார் நீதிநூல்கள்
+  author: ஔவையார்
+  description: Project Madurai 的官方 Unicode/UTF-8 页面，收录 ஆத்திசூடி、கொன்றைவேந்தன்、மூதுரை 与 நல்வழி。WebNR 仅链接原始页面，不重新分发电子文本。
+  page_url: https://www.projectmadurai.org/pm_etexts/utf8/pmuni0002.html
+  source: Project Madurai
+  license: Project-Madurai-origin-terms
+  tags:
+    - Project Madurai
+    - தமிழ்
+    - Classical literature
+  categories:
+    - Free reading discovery
+  region: ta-IN
+
+project-madurai/cilappathikaram-pukar.md:
+  title: சிலப்பதிகாரம் — புகார்க் காண்டம்
+  author: இளங்கோ அடிகள்
+  description: Project Madurai 的官方 Unicode/UTF-8《சிலப்பதிகாரம்》 புகார்க் காண்டம் 页面。WebNR 只保留作品元数据和官方页面链接，不代理第三方文件。
+  page_url: https://www.projectmadurai.org/pm_etexts/utf8/pmuni0046.html
+  source: Project Madurai
+  license: Project-Madurai-origin-terms
+  tags:
+    - Project Madurai
+    - தமிழ்
+    - Epic
+  categories:
+    - Free reading discovery
+  region: ta-IN
+
+project-madurai/tinaimalai-nurraimpatu.md:
+  title: திணைமாலை நூற்றைம்பது
+  author: கணிமேதாவியார்
+  description: Project Madurai 的官方 Unicode/UTF-8 电子文本页。WebNR 当前把它作为泰米尔古典文学发现入口，不抓取、缓存或重新发布正文。
+  page_url: https://www.projectmadurai.org/pm_etexts/utf8/pmuni0056.html
+  source: Project Madurai
+  license: Project-Madurai-origin-terms
+  tags:
+    - Project Madurai
+    - தமிழ்
+    - Classical literature
+  categories:
+    - Free reading discovery
+  region: ta-IN
