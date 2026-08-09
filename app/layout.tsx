@@ -142,11 +142,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{
             __html: `
               if ('serviceWorker' in navigator) {
-                window.addEventListener('load', function () {
+                var registerWebNRServiceWorker = function () {
                   navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function (error) {
                     console.error('Service worker registration failed:', error);
                   });
-                }, { once: true });
+                };
+
+                if (document.readyState === 'complete') {
+                  registerWebNRServiceWorker();
+                } else {
+                  window.addEventListener('load', registerWebNRServiceWorker, { once: true });
+                }
               }
             `,
           }}

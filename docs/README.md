@@ -2,9 +2,13 @@
 
 WebNR is a local-first browser reader for user-owned TXT books and supported text URLs. It stores imported text and reading progress in the current browser profile and requires no account.
 
+For Legado users, WebNR is also an **independent browser-based alternative to Legado** for web-first reading workflows. It is not an official Legado web client and has no affiliation with the Legado project; compatibility is implemented independently and documented only where it is tested.
+
 WebNR 是一个本地优先的浏览器 TXT 阅读器。导入的文本与阅读进度保存在当前浏览器配置中，无需账号。
 
-[Open WebNR / 打开阅读器](https://app.webnovel.win/) · [TXT import troubleshooting / TXT 导入排障](troubleshooting/txt-import.md) · [GitHub](https://github.com/AutoArchive/webNR) · [Report an issue / 报告问题](https://github.com/AutoArchive/webNR/issues)
+对于 Legado 用户，WebNR 也可以作为一个**独立的网页端替代选择**，适合希望直接在浏览器中完成阅读、导入和书源发现的场景。WebNR 不是 Legado 官方网页端，与 Legado 项目没有隶属关系；兼容能力采用独立实现，并只对已经测试的部分作出说明。
+
+[Open WebNR / 打开阅读器](https://app.webnovel.win/) · [Why it can be a Legado web alternative / 为什么可作为 Legado 网页端替代](blog/posts/2026-08-09-webnr-legado-web-alternative.md) · [TXT import troubleshooting / TXT 导入排障](troubleshooting/txt-import.md) · [GitHub](https://github.com/AutoArchive/webNR) · [Report an issue / 报告问题](https://github.com/AutoArchive/webNR/issues)
 
 ## Start reading / 开始阅读
 
@@ -24,6 +28,10 @@ WebNR 是一个本地优先的浏览器 TXT 阅读器。导入的文本与阅读
 - Paged and scrolling modes, typography controls, dark mode, progress, bookmarks, and text-to-speech. / 支持翻页与滚动、排版设置、深色模式、进度、书签与语音朗读。
 - Installable PWA and an offline application shell. / 可安装为 PWA，并支持离线打开应用外壳。
 - Independently distributed repository definitions for discovery and search. / 可添加独立分发的仓库定义进行发现与搜索。
+
+Current WebNR repository definitions are native WebNR catalogs. Arbitrary Legado source JSON is not yet a drop-in runtime format; common Legado fields and rule behaviors are being added incrementally with versioned fixtures and explicit capability levels.
+
+当前 WebNR 书源使用 WebNR 自有目录格式。任意 Legado 书源 JSON 目前还不能直接作为完整运行时格式执行；常用字段与规则行为会通过版本化测试样本和明确的兼容等级逐步加入。
 
 ## Data and analytics / 数据与分析
 

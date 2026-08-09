@@ -18,9 +18,28 @@ export const NovelListItem: React.FC<NovelListItemProps> = ({
 }) => {
     const [isPressed, setIsPressed] = useState(false);
 
+    const activate = () => {
+        if (isSelectionMode) {
+            onSelect(novel.id);
+        } else {
+            onClick(novel);
+        }
+    };
+
     return (
         <div
-            onClick={() => onClick(novel)}
+            role="button"
+            tabIndex={0}
+            aria-label={isSelectionMode
+                ? `${isSelected ? 'Deselect' : 'Select'} ${novel.title}`
+                : `Open ${novel.title}`}
+            onClick={activate}
+            onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    activate();
+                }
+            }}
             onMouseDown={() => setIsPressed(true)}
             onMouseUp={() => setIsPressed(false)}
             onMouseLeave={() => setIsPressed(false)}
@@ -29,6 +48,7 @@ export const NovelListItem: React.FC<NovelListItemProps> = ({
                 transition-all duration-100 ease-in-out
                 bg-white dark:bg-gray-800 shadow-sm
                 hover:scale-[1.02] hover:shadow-md
+                focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900
                 ${isPressed ? 'scale-[0.98] bg-gray-50 dark:bg-gray-700' : ''}
                 active:scale-[0.98] active:bg-gray-50 dark:active:bg-gray-700
             `}
@@ -42,10 +62,11 @@ export const NovelListItem: React.FC<NovelListItemProps> = ({
                             onChange={() => onSelect(novel.id)}
                             onClick={(e) => e.stopPropagation()}
                             className="w-5 h-5 rounded border-gray-300 dark:border-gray-600"
+                            aria-label={`${isSelected ? 'Deselect' : 'Select'} ${novel.title}`}
                         />
                     </div>
                 )}
-                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded flex items-center justify-center text-2xl flex-shrink-0">
+                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded flex items-center justify-center text-2xl flex-shrink-0" aria-hidden="true">
                     📖
                 </div>
                 <div className="flex-1 min-w-0">
@@ -60,4 +81,4 @@ export const NovelListItem: React.FC<NovelListItemProps> = ({
             </div>
         </div>
     );
-}; 
+};
