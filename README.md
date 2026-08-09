@@ -2,6 +2,8 @@
 
 WebNR is a local-first web reader for user-owned TXT books and supported text URLs. It runs as an installable progressive web app, stores books and reading progress in the browser, and does not require an account.
 
+For Legado users, WebNR can also serve as an **independent browser-based alternative to Legado** for web-first reading workflows. WebNR is not an official Legado web client and is not affiliated with the Legado project; compatibility is implemented independently and only claimed where it is tested.
+
 - Website and documentation: <https://www.webnovel.win/>
 - Reader application: <https://app.webnovel.win/>
 - Source and issues: <https://github.com/AutoArchive/webNR>
@@ -22,6 +24,9 @@ WebNR is a local-first web reader for user-owned TXT books and supported text UR
 - URL imports are subject to browser CORS rules and the remote site's availability and terms.
 - Browser storage can be removed by the browser or user. A complete backup and restore workflow remains a product priority.
 - WebNR does not provide or bundle books and does not operate an official registry of unreviewed third-party sources.
+- WebNR does not yet execute arbitrary Legado source JSON as a drop-in replacement. Legado compatibility is being added incrementally with versioned fixtures and explicit capability levels.
+
+Read [WebNR as a Legado web alternative](https://www.webnovel.win/blog/2026/08/09/webnr-legado-web-alternative/) for the current browser-first use cases, compatibility boundary, and migration direction.
 
 ## Use WebNR
 

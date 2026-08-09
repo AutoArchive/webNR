@@ -56,6 +56,7 @@ jobs:
           grep -R -Fq 'window.location.pathname + window.location.search' out
           grep -R -Fq 'allow_google_signals' out
           grep -R -Fq 'allow_ad_personalization_signals' out
+          grep -R -Fq 'independent browser-based alternative' out
       - name: Validate source output
         run: |
           set -eu
@@ -80,6 +81,53 @@ jobs:
           grep -Fq 'title: The Time Machine' out/sources/standard-ebooks-starter/search_index.yml
           grep -Fq 'license: CC0-1.0-standard-ebooks' out/sources/standard-ebooks-starter/search_index.yml
           grep -Fq 'https://standardebooks.org/ebooks/jane-austen/pride-and-prejudice' out/sources/standard-ebooks-starter/search_index.yml
+
+  browser-e2e:
+    name: Chromium user journeys
+    needs: web
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      WEBNR_E2E_BASE_URL: http://127.0.0.1:4173
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install application dependencies
+        run: npm ci
+      - name: Install pinned Playwright runner
+        run: npm install --no-save --package-lock=false @playwright/test@1.62.0
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+      - name: Build production application
+        run: npm run build
+      - name: Run browser user journeys
+        run: |
+          set -euo pipefail
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory out > "${RUNNER_TEMP}/webnr-http.log" 2>&1 &
+          server_pid=$!
+          trap 'kill ${server_pid} 2>/dev/null || true' EXIT
+
+          ready=false
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent --show-error --max-time 3 http://127.0.0.1:4173/ >/dev/null; then
+              ready=true
+              break
+            fi
+            sleep 1
+          done
+
+          if [ "${ready}" != 'true' ]; then
+            cat "${RUNNER_TEMP}/webnr-http.log" >&2 || true
+            exit 1
+          fi
+
+          npx playwright test --config=tests/e2e/playwright.config.cjs
 
   docs:
     name: Documentation quality
@@ -114,8 +162,10 @@ jobs:
           test -f site/troubleshooting/txt-import/index.html
           test -f site/blog/2026/08/06/legado-source-guide/index.html
           test -f site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
+          test -f site/blog/2026/08/09/webnr-legado-web-alternative/index.html
           grep -Fq 'AutoArchive/webNR' site/index.html
           grep -Fq 'https://www.webnovel.win/' site/index.html
+          grep -Fq 'Legado 用户' site/index.html
           grep -Fq 'TXT import troubleshooting' site/troubleshooting/txt-import/index.html
           grep -Fq 'TXT 导入排障' site/troubleshooting/txt-import/index.html
           grep -Fq '2026 年 Legado 书源在哪里找' site/blog/2026/08/06/legado-source-guide/index.html
@@ -126,8 +176,12 @@ jobs:
           grep -Fq 'Project Madurai' site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
           grep -Fq 'Project Ben-Yehuda' site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
           grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/' site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
+          grep -Fq 'WebNR：给 Legado 用户的一个独立网页端替代选择' site/blog/2026/08/09/webnr-legado-web-alternative/index.html
+          grep -Fq 'https://www.webnovel.win/blog/2026/08/09/webnr-legado-web-alternative/' site/blog/2026/08/09/webnr-legado-web-alternative/index.html
           grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/' site/sitemap.xml
+          grep -Fq 'https://www.webnovel.win/blog/2026/08/09/webnr-legado-web-alternative/' site/sitemap.xml
           grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/' site/feed_rss_created.xml
+          grep -Fq 'https://www.webnovel.win/blog/2026/08/09/webnr-legado-web-alternative/' site/feed_rss_created.xml
           grep -R -Fq 'G-DGH8HNQKE4' site
           if grep -R -Fq 'G-NL0WV2XMJN' site; then
             echo 'Obsolete secondary GA4 destination found in documentation output' >&2

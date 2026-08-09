@@ -13,9 +13,10 @@ const targets = [
     pattern: /^- Last successful attributable application deployment: `([0-9a-f]{40})`$/m,
   },
   {
-    label: 'documentation',
+    label: 'documentation build mirror',
     buildUrl: 'https://autoarchive.github.io/webNR/build.json',
     contentUrl: 'https://autoarchive.github.io/webNR/troubleshooting/txt-import/',
+    expectedCanonical: 'https://www.webnovel.win/troubleshooting/txt-import/',
     pattern: /^- Last successful attributable documentation deployment: `([0-9a-f]{40})`$/m,
   },
 ];
@@ -79,21 +80,27 @@ async function verifyTarget(target) {
             const contentMatches = contentResponse.ok
               && html.includes('TXT import troubleshooting')
               && html.includes('TXT 导入排障')
-              && html.includes('https://autoarchive.github.io/webNR/');
+              && (!target.expectedCanonical || html.includes(target.expectedCanonical));
             lastObserved = JSON.stringify({
               build: buildEvidence,
-              content: { status: contentResponse.status, headers: selectedHeaders(contentResponse), contentMatches },
+              content: {
+                status: contentResponse.status,
+                headers: selectedHeaders(contentResponse),
+                contentMatches,
+                expectedCanonical: target.expectedCanonical ?? null,
+              },
             });
-            if (!contentMatches) throw new Error(`Documentation content did not match: ${lastObserved}`);
+            if (!contentMatches) throw new Error(`Documentation mirror content did not match: ${lastObserved}`);
           }
 
-          console.log(`Verified ${target.label} production commit ${expectedCommit} at ${target.buildUrl}`);
+          console.log(`Verified ${target.label} commit ${expectedCommit} at ${target.buildUrl}`);
           return {
             label: target.label,
             expectedCommit,
             observedCommit: payload.commit,
             headers: selectedHeaders(buildResponse),
             contentUrl: target.contentUrl ?? null,
+            expectedCanonical: target.expectedCanonical ?? null,
           };
         }
         lastObserved = JSON.stringify(buildEvidence);
@@ -106,7 +113,7 @@ async function verifyTarget(target) {
     if (attempt < maxAttempts) await sleep(retryDelayMs);
   }
 
-  throw new Error(`${target.label} production did not expose recorded commit ${expectedCommit}; last observed: ${lastObserved}`);
+  throw new Error(`${target.label} did not expose recorded commit ${expectedCommit}; last observed: ${lastObserved}`);
 }
 
 const results = await Promise.allSettled(targets.map(verifyTarget));
