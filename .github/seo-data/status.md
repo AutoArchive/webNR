@@ -2,14 +2,14 @@
 
 ## Current state
 
-- Last merged product and reader-content change: pull request #68, squash merge `65fbda14e8062d7b055db5987646598b04ffcddc`
-- Last successful attributable application deployment: `65fbda14e8062d7b055db5987646598b04ffcddc`
+- Last merged product and reader-content change: pull request #70, squash merge `2df9e0f50cc93d79418a435069f46150d76d46f6`
+- Last successful attributable application deployment: `2df9e0f50cc93d79418a435069f46150d76d46f6`
 - Last successful attributable documentation deployment: `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd`
 - Last successful canonical Cloudflare documentation deployment: `7d319f26e2c3398215c1d2cedca6f99820f1de50`
-- Latest application deployment artifact branch commit: `65fbda14e8062d7b055db5987646598b04ffcddc`
+- Latest application deployment artifact branch commit: `2df9e0f50cc93d79418a435069f46150d76d46f6`
 - Canonical public documentation and editorial URL: `https://www.webnovel.win/`
 - Canonical public-site state: healthy and attributable on the independent `webnr-docs` Cloudflare Pages project; the last independently recorded exact canonical build is main commit `7d319f26e2c3398215c1d2cedca6f99820f1de50`
-- Reader public-site state: healthy and attributable on the separate `webnr` Cloudflare Pages project; cache-busted production verification on 2026-08-09 confirmed `https://app.webnovel.win/build.json` exposes exact pull request #68 squash commit `65fbda14e8062d7b055db5987646598b04ffcddc`
+- Reader public-site state: healthy and attributable; closeout Quality run `31340025388`, Production evidence job `93312160963`, independently observed exact pull request #70 squash commit `2df9e0f50cc93d79418a435069f46150d76d46f6` on `https://app.webnovel.win/build.json`
 - Working reader URL: `https://app.webnovel.win/`
 - Working documentation build mirror URL: `https://autoarchive.github.io/webNR/`
 - Current skill submodule: `d1194eeb23a6dd5cf04956f5efcfe8e3f0105003`
@@ -24,7 +24,8 @@
 - `https://www.webnovel.win/` is the sole canonical public identity for documentation, reader-facing articles, search indexing, canonical tags, sitemap, and RSS. A temporary delivery failure must never cause automation to promote another hostname as the canonical documentation address.
 - `https://app.webnovel.win/` is the reader application runtime, not an alternate documentation origin.
 - `https://autoarchive.github.io/webNR/` is an attributable documentation build mirror only. It emits `www.webnovel.win` canonical/discovery metadata and must not claim the custom domain.
-- The `app-pages` application artifact exposes exact squash commit `65fbda14e8062d7b055db5987646598b04ffcddc`, source `github-actions`, and includes the Project Madurai Starter plus the previously integrated source catalogs. Closeout Production evidence job `93272242519` then resolved the Cloudflare-served `app.webnovel.win` target and independently observed the same exact commit with a Cloudflare response before this record was finalized.
+- Pull request #70 removed the visible Google Analytics notice from the reader's empty-library onboarding and Add/import view while preserving the runtime GA4 destination, full-URL reporting, Google-signal settings and documentation disclosure. Its final Quality run `31339726456` passed Web quality, Documentation quality, Production evidence against the prior public baseline, and Chromium user journeys; the Chromium suite passed all eight desktop/mobile tests and now asserts that the analytics notice is absent from both first-use and import UI.
+- The `app-pages` application artifact exposes exact pull request #70 squash commit `2df9e0f50cc93d79418a435069f46150d76d46f6`, source `github-actions`. Closeout Quality run `31340025388`, Production evidence job `93312160963`, independently resolved the Cloudflare-served `app.webnovel.win` hostname and observed the same exact commit, so the reader UI cleanup is production-verified.
 - The public GitHub Pages documentation build mirror exposes exact squash commit `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd` and labels itself `github-pages-build-mirror`.
 - The documentation mirror contains the generated article `WebNR：给 Legado 用户的一个独立网页端替代选择` at mirror path `/blog/2026/08/09/webnr-legado-web-alternative/`, with intended canonical `https://www.webnovel.win/blog/2026/08/09/webnr-legado-web-alternative/`.
 - Pull request #62 final Quality run `31303061815` passed Web quality, Documentation quality, Production evidence against the pre-merge production baseline, and Chromium user journeys.
