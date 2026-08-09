@@ -36,7 +36,7 @@ payload = {
 Path("docs/build.json").write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 PY
 
-mkdocs build --strict
+python -m mkdocs build --strict
 
 # Domain ownership is configured at the serving platform. Never let a stale
 # source-tree CNAME make the generated artifact claim a GitHub Pages domain.
