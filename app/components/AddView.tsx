@@ -65,10 +65,6 @@ export const AddView: React.FC<AddViewProps> = ({ onImportComplete }) => {
     return (
         <div className="h-full overflow-auto p-4">
             <div className="mx-auto max-w-xl space-y-6 py-4">
-                <p className="rounded-lg border border-blue-100 bg-blue-50 px-4 py-3 text-sm leading-6 text-blue-900 dark:border-blue-900/50 dark:bg-blue-950/30 dark:text-blue-100">
-                    {t('settings.privacyDescription')}
-                </p>
-
                 <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800" aria-labelledby="local-file-heading">
                     <h2 id="local-file-heading" className="text-lg font-semibold text-gray-900 dark:text-gray-100">
                         {t('add.uploadTitle')}
