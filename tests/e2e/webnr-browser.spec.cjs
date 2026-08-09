@@ -91,9 +91,9 @@ test('keeps unsupported files and invalid URL schemes recoverable', async ({ pag
     mimeType: 'application/epub+zip',
     buffer: Buffer.from('not actually an epub'),
   });
-  await expect(page.getByRole('alert')).toContainText('WebNR currently supports local TXT files');
+  await expect(page.locator('div[role="alert"]').filter({ hasText: 'WebNR currently supports local TXT files' })).toBeVisible();
 
   await page.locator('#novel-url').fill('ftp://example.test/book.txt');
   await page.getByRole('button', { name: 'Import', exact: true }).click();
-  await expect(page.getByRole('alert')).toContainText('Invalid repository URL');
+  await expect(page.locator('div[role="alert"]').filter({ hasText: 'Invalid repository URL' })).toBeVisible();
 });
