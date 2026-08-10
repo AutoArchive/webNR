@@ -11,13 +11,68 @@ const targets = [
     label: 'application',
     buildUrl: 'https://app.webnovel.win/build.json',
     pattern: /^- Last successful attributable application deployment: `([0-9a-f]{40})`$/m,
+    contentChecks: [
+      {
+        url: 'https://app.webnovel.win/',
+        accept: 'text/html',
+        needles: [
+          'G-DGH8HNQKE4',
+          'window.location.href',
+          'window.location.pathname + window.location.search',
+        ],
+      },
+      {
+        url: 'https://app.webnovel.win/sources/english-serial-platforms-starter/search_index.yml',
+        accept: 'text/plain',
+        needles: [
+          'title: Royal Road — Complete & Rising Stars',
+          'title: Wattpad — Stories',
+          'license: Link-only-WebNR-editorial',
+        ],
+      },
+    ],
   },
   {
     label: 'documentation build mirror',
     buildUrl: 'https://autoarchive.github.io/webNR/build.json',
-    contentUrl: 'https://autoarchive.github.io/webNR/troubleshooting/txt-import/',
-    expectedCanonical: 'https://www.webnovel.win/troubleshooting/txt-import/',
     pattern: /^- Last successful attributable documentation deployment: `([0-9a-f]{40})`$/m,
+    contentChecks: [
+      {
+        url: 'https://autoarchive.github.io/webNR/troubleshooting/txt-import/',
+        accept: 'text/html',
+        expectedCanonical: 'https://www.webnovel.win/troubleshooting/txt-import/',
+        needles: ['TXT import troubleshooting', 'TXT 导入排障'],
+      },
+    ],
+  },
+  {
+    label: 'canonical documentation site',
+    buildUrl: 'https://www.webnovel.win/build.json',
+    pattern: /^- Last successful canonical Cloudflare documentation deployment: `([0-9a-f]{40})`$/m,
+    contentChecks: [
+      {
+        url: 'https://www.webnovel.win/troubleshooting/txt-import/',
+        accept: 'text/html',
+        expectedCanonical: 'https://www.webnovel.win/troubleshooting/txt-import/',
+        needles: ['TXT import troubleshooting', 'TXT 导入排障'],
+      },
+      {
+        url: 'https://www.webnovel.win/blog/2026/08/10/english-serial-fiction-platforms/',
+        accept: 'text/html',
+        expectedCanonical: 'https://www.webnovel.win/blog/2026/08/10/english-serial-fiction-platforms/',
+        needles: ['2026 英文连载小说平台怎么选', 'English Serial Platforms Starter'],
+      },
+      {
+        url: 'https://www.webnovel.win/sitemap.xml',
+        accept: 'application/xml,text/xml',
+        needles: ['https://www.webnovel.win/blog/2026/08/10/english-serial-fiction-platforms/'],
+      },
+      {
+        url: 'https://www.webnovel.win/feed_rss_created.xml',
+        accept: 'application/rss+xml,application/xml,text/xml',
+        needles: ['https://www.webnovel.win/blog/2026/08/10/english-serial-fiction-platforms/'],
+      },
+    ],
   },
 ];
 
@@ -57,6 +112,32 @@ async function fetchNoCache(url, attempt, expectedCommit, accept) {
   });
 }
 
+async function verifyContentChecks(target, attempt, expectedCommit) {
+  const results = [];
+
+  for (const check of target.contentChecks ?? []) {
+    const response = await fetchNoCache(check.url, attempt, expectedCommit, check.accept ?? 'text/plain');
+    const body = response.ok ? await response.text() : '';
+    const contentMatches = response.ok
+      && (check.needles ?? []).every(needle => body.includes(needle))
+      && (!check.expectedCanonical || body.includes(check.expectedCanonical));
+    const result = {
+      url: check.url,
+      status: response.status,
+      headers: selectedHeaders(response),
+      contentMatches,
+      expectedCanonical: check.expectedCanonical ?? null,
+    };
+    results.push(result);
+
+    if (!contentMatches) {
+      throw new Error(`${target.label} content did not match: ${JSON.stringify(result)}`);
+    }
+  }
+
+  return results;
+}
+
 async function verifyTarget(target) {
   const match = status.match(target.pattern);
   if (!match) throw new Error(`Missing recorded ${target.label} deployment in ${statusPath}`);
@@ -74,33 +155,14 @@ async function verifyTarget(target) {
         const payload = await buildResponse.json();
         const buildEvidence = { payload, headers: selectedHeaders(buildResponse) };
         if (payload.commit === expectedCommit) {
-          if (target.contentUrl) {
-            const contentResponse = await fetchNoCache(target.contentUrl, attempt, expectedCommit, 'text/html');
-            const html = contentResponse.ok ? await contentResponse.text() : '';
-            const contentMatches = contentResponse.ok
-              && html.includes('TXT import troubleshooting')
-              && html.includes('TXT 导入排障')
-              && (!target.expectedCanonical || html.includes(target.expectedCanonical));
-            lastObserved = JSON.stringify({
-              build: buildEvidence,
-              content: {
-                status: contentResponse.status,
-                headers: selectedHeaders(contentResponse),
-                contentMatches,
-                expectedCanonical: target.expectedCanonical ?? null,
-              },
-            });
-            if (!contentMatches) throw new Error(`Documentation mirror content did not match: ${lastObserved}`);
-          }
-
+          const contentChecks = await verifyContentChecks(target, attempt, expectedCommit);
           console.log(`Verified ${target.label} commit ${expectedCommit} at ${target.buildUrl}`);
           return {
             label: target.label,
             expectedCommit,
             observedCommit: payload.commit,
             headers: selectedHeaders(buildResponse),
-            contentUrl: target.contentUrl ?? null,
-            expectedCanonical: target.expectedCanonical ?? null,
+            contentChecks,
           };
         }
         lastObserved = JSON.stringify(buildEvidence);
