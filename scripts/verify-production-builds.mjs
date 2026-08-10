@@ -11,6 +11,7 @@ const targets = [
     label: 'application',
     buildUrl: 'https://app.webnovel.win/build.json',
     pattern: /^- Last successful attributable application deployment: `([0-9a-f]{40})`$/m,
+    targetPattern: /^- Current application verification target: `([0-9a-f]{40})`$/m,
     contentChecks: [
       {
         url: 'https://app.webnovel.win/',
@@ -36,6 +37,7 @@ const targets = [
     label: 'documentation build mirror',
     buildUrl: 'https://autoarchive.github.io/webNR/build.json',
     pattern: /^- Last successful attributable documentation deployment: `([0-9a-f]{40})`$/m,
+    targetPattern: /^- Current documentation mirror verification target: `([0-9a-f]{40})`$/m,
     contentChecks: [
       {
         url: 'https://autoarchive.github.io/webNR/troubleshooting/txt-import/',
@@ -49,6 +51,7 @@ const targets = [
     label: 'canonical documentation site',
     buildUrl: 'https://www.webnovel.win/build.json',
     pattern: /^- Last successful canonical Cloudflare documentation deployment: `([0-9a-f]{40})`$/m,
+    targetPattern: /^- Current canonical documentation verification target: `([0-9a-f]{40})`$/m,
     contentChecks: [
       {
         url: 'https://www.webnovel.win/troubleshooting/txt-import/',
@@ -139,10 +142,11 @@ async function verifyContentChecks(target, attempt, expectedCommit) {
 }
 
 async function verifyTarget(target) {
-  const match = status.match(target.pattern);
-  if (!match) throw new Error(`Missing recorded ${target.label} deployment in ${statusPath}`);
+  const lastSuccessfulMatch = status.match(target.pattern);
+  if (!lastSuccessfulMatch) throw new Error(`Missing recorded ${target.label} deployment in ${statusPath}`);
 
-  const expectedCommit = match[1];
+  const verificationTargetMatch = target.targetPattern ? status.match(target.targetPattern) : null;
+  const expectedCommit = verificationTargetMatch?.[1] ?? lastSuccessfulMatch[1];
   let lastObserved = 'no response';
   await describeTarget(target);
 
@@ -161,6 +165,7 @@ async function verifyTarget(target) {
             label: target.label,
             expectedCommit,
             observedCommit: payload.commit,
+            targetSource: verificationTargetMatch ? 'current-verification-target' : 'last-successful-record',
             headers: selectedHeaders(buildResponse),
             contentChecks,
           };
