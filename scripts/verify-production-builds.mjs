@@ -17,7 +17,16 @@ const targets = [
     buildUrl: 'https://autoarchive.github.io/webNR/build.json',
     contentUrl: 'https://autoarchive.github.io/webNR/troubleshooting/txt-import/',
     expectedCanonical: 'https://www.webnovel.win/troubleshooting/txt-import/',
+    expectedTexts: ['TXT import troubleshooting', 'TXT 导入排障'],
     pattern: /^- Last successful attributable documentation deployment: `([0-9a-f]{40})`$/m,
+  },
+  {
+    label: 'canonical documentation',
+    buildUrl: 'https://www.webnovel.win/build.json',
+    contentUrl: 'https://www.webnovel.win/blog/2026/08/10/english-serial-fiction-platforms/',
+    expectedCanonical: 'https://www.webnovel.win/blog/2026/08/10/english-serial-fiction-platforms/',
+    expectedTexts: ['2026 英文连载小说平台怎么选', 'English Serial Platforms Starter'],
+    pattern: /^- Last successful canonical Cloudflare documentation deployment: `([0-9a-f]{40})`$/m,
   },
 ];
 
@@ -77,10 +86,9 @@ async function verifyTarget(target) {
           if (target.contentUrl) {
             const contentResponse = await fetchNoCache(target.contentUrl, attempt, expectedCommit, 'text/html');
             const html = contentResponse.ok ? await contentResponse.text() : '';
-            const contentMatches = contentResponse.ok
-              && html.includes('TXT import troubleshooting')
-              && html.includes('TXT 导入排障')
-              && (!target.expectedCanonical || html.includes(target.expectedCanonical));
+            const textMatches = (target.expectedTexts ?? []).every(text => html.includes(text));
+            const canonicalMatches = !target.expectedCanonical || html.includes(target.expectedCanonical);
+            const contentMatches = contentResponse.ok && textMatches && canonicalMatches;
             lastObserved = JSON.stringify({
               build: buildEvidence,
               content: {
@@ -88,9 +96,10 @@ async function verifyTarget(target) {
                 headers: selectedHeaders(contentResponse),
                 contentMatches,
                 expectedCanonical: target.expectedCanonical ?? null,
+                expectedTexts: target.expectedTexts ?? [],
               },
             });
-            if (!contentMatches) throw new Error(`Documentation mirror content did not match: ${lastObserved}`);
+            if (!contentMatches) throw new Error(`${target.label} content did not match: ${lastObserved}`);
           }
 
           console.log(`Verified ${target.label} commit ${expectedCommit} at ${target.buildUrl}`);
@@ -101,6 +110,7 @@ async function verifyTarget(target) {
             headers: selectedHeaders(buildResponse),
             contentUrl: target.contentUrl ?? null,
             expectedCanonical: target.expectedCanonical ?? null,
+            expectedTexts: target.expectedTexts ?? [],
           };
         }
         lastObserved = JSON.stringify(buildEvidence);
