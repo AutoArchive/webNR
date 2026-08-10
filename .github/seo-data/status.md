@@ -3,24 +3,19 @@
 ## Current state
 
 - Last merged product and reader-content change: pull request #72, squash merge `e5de80559e3d9bc4f467c74d81e6eac423eecf47`
-- Last successful attributable application deployment: `2df9e0f50cc93d79418a435069f46150d76d46f6`
-- Last successful attributable documentation deployment: `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd`
-- Last successful canonical Cloudflare documentation deployment: `7d319f26e2c3398215c1d2cedca6f99820f1de50`
-- Current application verification target: `e5de80559e3d9bc4f467c74d81e6eac423eecf47`
-- Current documentation mirror verification target: `e5de80559e3d9bc4f467c74d81e6eac423eecf47`
-- Current canonical documentation verification target: `e5de80559e3d9bc4f467c74d81e6eac423eecf47`
+- Last successful attributable application deployment: `e5de80559e3d9bc4f467c74d81e6eac423eecf47`
+- Last successful attributable documentation deployment: `e5de80559e3d9bc4f467c74d81e6eac423eecf47`
+- Last successful canonical Cloudflare documentation deployment: `e5de80559e3d9bc4f467c74d81e6eac423eecf47`
 - Latest application deployment artifact branch commit: `e5de80559e3d9bc4f467c74d81e6eac423eecf47`
 - Canonical public documentation and editorial URL: `https://www.webnovel.win/`
-- Canonical public-site state: the independent `webnr-docs` Cloudflare Pages project remains the required canonical route; the 2026-08-10 closeout must independently prove exact commit `e5de80559e3d9bc4f467c74d81e6eac423eecf47` before advancing the last-successful record
-- Reader public-site state: the generated `app-pages` artifact exposes exact pull request #72 squash commit `e5de80559e3d9bc4f467c74d81e6eac423eecf47`; the 2026-08-10 closeout must independently prove the same exact commit on `https://app.webnovel.win/build.json` before advancing the last-successful record
+- Canonical public-site state: healthy and attributable on the independent `webnr-docs` Cloudflare Pages project; pull request #73 initial Quality run `31412094151`, Production evidence job `93532348626`, independently observed exact commit `e5de80559e3d9bc4f467c74d81e6eac423eecf47`, the 2026-08-10 article canonical, sitemap entry, RSS entry, and representative troubleshooting content on `www.webnovel.win`
+- Reader public-site state: healthy and attributable; pull request #73 initial Quality run `31412094151`, Production evidence job `93532348626`, independently observed exact pull request #72 squash commit `e5de80559e3d9bc4f467c74d81e6eac423eecf47`, the single GA4/full-URL runtime configuration, and the public English serial-platform source on `app.webnovel.win`
 - Working reader URL: `https://app.webnovel.win/`
 - Working documentation build mirror URL: `https://autoarchive.github.io/webNR/`
 - Current skill submodule: `9f0bd4f0b33b28fc22592e5463d95f63cda4d165`
 - Current analytics export state: the configured Google Drive folder is accessible, but the 2026-08-10 direct folder-content check exposed no matching GA4 or Search Console files; missing exports are treated as unavailable rather than zero
 - Current Cloudflare traffic-analytics state: the authenticated zone connector did not expose an exact active `webnovel.win` zone in any currently exposed account during the 2026-08-10 scheduled cycle, so Cloudflare request analytics are unavailable for this cycle rather than zero
 - Current long-term operating direction: reader discovery, recommendations, community and ecosystem analysis, daily source growth, broad clean-room Legado compatibility, and supporting product maintenance
-
-The three `Current ... verification target` lines are temporary closeout targets. They do not replace the last-successful records. `scripts/verify-production-builds.mjs` must prove each target on its actual public route before the closeout advances the corresponding last-successful line and removes the temporary target.
 
 ## Current signals
 
@@ -30,22 +25,22 @@ The three `Current ... verification target` lines are temporary closeout targets
 - `https://app.webnovel.win/` is the reader application runtime, not an alternate documentation origin.
 - `https://autoarchive.github.io/webNR/` is an attributable documentation build mirror only. It emits `www.webnovel.win` canonical/discovery metadata and must not claim the custom domain.
 - Pull request #72 published the scheduled 2026-08-10 reader comparison of Royal Road, Scribble Hub, Wattpad, Tapas, and Honeyfeed and added `English Serial Platforms Starter` as a WebNR-maintained link-only discovery source. Its final head `707269a4cc44b3b563d026473c8fb6fec898de11` passed Quality run `31409672801` before squash merge `e5de80559e3d9bc4f467c74d81e6eac423eecf47`.
-- The `app-pages` application artifact and `gh-pages` documentation mirror artifact both expose exact pull request #72 squash commit `e5de80559e3d9bc4f467c74d81e6eac423eecf47`. The generated documentation article emits canonical `https://www.webnovel.win/blog/2026/08/10/english-serial-fiction-platforms/` and the configured GA4 destination.
-- The 2026-08-10 evidence pass found that the repository's Production evidence verifier covered the reader and noncanonical documentation mirror but did not independently require the canonical `www.webnovel.win` build. The current closeout repairs that blind spot and adds exact canonical article, sitemap/RSS, application analytics, and source-output acceptance checks.
+- The `app-pages` application artifact and `gh-pages` documentation mirror artifact both expose exact pull request #72 squash commit `e5de80559e3d9bc4f467c74d81e6eac423eecf47`. Pull request #73 Production evidence job `93532348626` independently observed that same exact commit on the public reader, public documentation mirror, and canonical documentation site.
+- The generated and canonical 2026-08-10 article emits canonical `https://www.webnovel.win/blog/2026/08/10/english-serial-fiction-platforms/`; the public sitemap and RSS both include the route.
+- The 2026-08-10 evidence pass found that the repository's Production evidence verifier covered the reader and noncanonical documentation mirror but did not independently require the canonical `www.webnovel.win` build. Pull request #73 repairs that blind spot and adds exact canonical article, sitemap/RSS, application analytics, and source-output acceptance checks.
 - Pull request #70 removed the visible Google Analytics notice from the reader's empty-library onboarding and Add/import view while preserving the runtime GA4 destination, full-URL reporting, Google-signal settings and documentation disclosure. Its final Quality run `31339726456` passed Web quality, Documentation quality, Production evidence against the prior public baseline, and Chromium user journeys; the Chromium suite passed all eight desktop/mobile tests and now asserts that the analytics notice is absent from both first-use and import UI.
 - The `app-pages` application artifact exposed exact pull request #70 squash commit `2df9e0f50cc93d79418a435069f46150d76d46f6`, source `github-actions`. Closeout Quality run `31340025388`, Production evidence job `93312160963`, independently resolved the Cloudflare-served `app.webnovel.win` hostname and observed the same exact commit, so the reader UI cleanup was production-verified before the newer #72 delivery.
-- The GitHub Pages documentation build mirror previously exposed exact squash commit `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd` and labels itself `github-pages-build-mirror`; the generated artifact has now advanced to the #72 target `e5de80559e3d9bc4f467c74d81e6eac423eecf47` and awaits independent public closeout proof.
 - The documentation mirror contains the generated article `WebNR：给 Legado 用户的一个独立网页端替代选择` at mirror path `/blog/2026/08/09/webnr-legado-web-alternative/`, with intended canonical `https://www.webnovel.win/blog/2026/08/09/webnr-legado-web-alternative/`, as well as the generated 2026-08-10 platform-comparison route.
 - Pull request #62 final Quality run `31303061815` passed Web quality, Documentation quality, Production evidence against the pre-merge production baseline, and Chromium user journeys.
 - Chromium job `93218999672` ran eight tests across desktop Chromium and Pixel 7 emulation; all eight passed. The suite covers first use, manifest and Service Worker registration, local TXT import, rendered reading content, IndexedDB persistence, keyboard reopen, CORS-allowed URL import and recoverable invalid-input errors.
 - The Chromium gate found and repaired a real PWA bug: an `afterInteractive` registration script could attach its `window.load` listener after the load event had already fired. Registration now runs immediately when the document is already complete.
 - The same cycle repaired mouse-only library activation. Novel rows now expose button semantics, keyboard focus, Enter/Space activation and visible focus treatment.
 - Closeout Quality run `31303434565` independently verified the exact documentation mirror at `7140fd24277ab357ed8029db8aa8f6c1ecdfe6bd` and correctly exposed the then-stale application route. The Cloudflare production deployment subsequently advanced `app.webnovel.win` to the same exact commit, resolving that incident without rewriting the historical failed run.
-- Production-evidence logic follows the current topology: `app.webnovel.win` is the public reader target; GitHub Pages is the attributable documentation build mirror and must emit `www.webnovel.win` canonical output; the canonical `www.webnovel.win` route is now also an explicit exact-build verification target.
+- Production-evidence logic follows the current topology: `app.webnovel.win` is the public reader target; GitHub Pages is the attributable documentation build mirror and must emit `www.webnovel.win` canonical output; the canonical `www.webnovel.win` route is an explicit exact-build verification target.
 - The 2026-08-08 routing diagnostic proved that `www.webnovel.win` and the documentation mirror are different delivery paths: the mirror exposed an exact reviewed build while `www/build.json` returned 404 and the `www` root served an older site shell.
 - `https://webnr.pages.dev/` is a reader-application mirror/project and must not be used as the documentation origin for `www`.
 - Pull request #57 established the durable canonical contract; pull request #58 added the repository-owned documentation build entrypoint; pull request #61 repaired shallow-checkout history for that build; pull request #59 merged the rendered canonical-origin source repair as `a6e9256369b0b2c29f3c80e428708e0b2da4894c`.
-- Repository-side documentation canonical generation and the `www` Cloudflare serving route are complete. The last independently recorded canonical site build remains `7d319f26e2c3398215c1d2cedca6f99820f1de50` until the current closeout proves and advances the 2026-08-10 target.
+- Repository-side documentation canonical generation and the `www` Cloudflare serving route are complete. The current independently verified canonical site build is exact product/content commit `e5de80559e3d9bc4f467c74d81e6eac423eecf47`.
 - Pull request #29 upgraded Next.js to 16.3.0 and the matching native flat ESLint configuration, upgraded the affected Sharp dependency, preserved the prior behavioral lint baseline for separately scoped React refactors, passed all four Quality jobs, and produced an audit result with no known vulnerabilities.
 - Pull request #67 repaired stale repository guidance after that migration. Quality run `31323828174` passed Web quality, Documentation quality, Production evidence, and Chromium user journeys before squash merge `23a660fa0e68b74ef73716ac0383dafd01786fab`; the change was developer-guidance-only and required no rendered-site deployment.
 - Pull request #68 added `Project Madurai Starter` as a link-only Tamil-literature discovery catalog with four audited origin pages, preserved the existing source catalogs, and extended source-output validation. Quality run `31324032188` passed Web quality, Documentation quality, Production evidence, and Chromium user journeys before squash merge `65fbda14e8062d7b055db5987646598b04ffcddc`.
@@ -70,7 +65,7 @@ The three `Current ... verification target` lines are temporary closeout targets
 
 ## Active focus
 
-1. Complete the 2026-08-10 exact production closeout, then keep `https://www.webnovel.win/` as the sole canonical documentation/editorial identity and `https://app.webnovel.win/` as the reader runtime with exact public build evidence after rendered changes.
+1. Complete pull request #73's final CI/review/merge lifecycle, then keep `https://www.webnovel.win/` as the sole canonical documentation/editorial identity and `https://app.webnovel.win/` as the reader runtime with exact public build evidence after rendered changes.
 2. Keep `https://autoarchive.github.io/webNR/` as an exact attributable build mirror only and prevent it from regaining public canonical status.
 3. Keep the Chromium desktop/mobile journeys as a permanent gate and expand them alongside backup/restore, storage migration, offline behavior and accessibility improvements.
 4. Continue the reader-facing editorial schedule; the English serial-fiction platform comparison is the 2026-08-10 asset, and the next scheduled reader topic is the 2026-08-12 map of public reader communities and recommendation channels.
