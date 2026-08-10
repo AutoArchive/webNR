@@ -87,6 +87,13 @@ jobs:
           grep -Fq 'title: சிலப்பதிகாரம் — புகார்க் காண்டம்' out/sources/project-madurai-starter/search_index.yml
           grep -Fq 'license: Project-Madurai-origin-terms' out/sources/project-madurai-starter/search_index.yml
           grep -Fq 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html' out/sources/project-madurai-starter/search_index.yml
+          test -f out/sources/english-serial-platforms-starter/search_index.yml
+          test -f out/sources/english-serial-platforms-starter/README.txt
+          grep -Fq 'title: Royal Road — Complete & Rising Stars' out/sources/english-serial-platforms-starter/search_index.yml
+          grep -Fq 'title: Scribble Hub — Series Finder' out/sources/english-serial-platforms-starter/search_index.yml
+          grep -Fq 'title: Tapas — Novels' out/sources/english-serial-platforms-starter/search_index.yml
+          grep -Fq 'title: Honeyfeed — Novels' out/sources/english-serial-platforms-starter/search_index.yml
+          grep -Fq 'license: Link-only-WebNR-editorial' out/sources/english-serial-platforms-starter/search_index.yml
 
   browser-e2e:
     name: Chromium user journeys
@@ -169,6 +176,7 @@ jobs:
           test -f site/blog/2026/08/06/legado-source-guide/index.html
           test -f site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
           test -f site/blog/2026/08/09/webnr-legado-web-alternative/index.html
+          test -f site/blog/2026/08/10/english-serial-fiction-platforms/index.html
           grep -Fq 'AutoArchive/webNR' site/index.html
           grep -Fq 'https://www.webnovel.win/' site/index.html
           grep -Fq 'Legado 用户' site/index.html
@@ -184,10 +192,14 @@ jobs:
           grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/' site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
           grep -Fq 'WebNR：给 Legado 用户的一个独立网页端替代选择' site/blog/2026/08/09/webnr-legado-web-alternative/index.html
           grep -Fq 'https://www.webnovel.win/blog/2026/08/09/webnr-legado-web-alternative/' site/blog/2026/08/09/webnr-legado-web-alternative/index.html
+          grep -Fq '2026 英文连载小说平台怎么选' site/blog/2026/08/10/english-serial-fiction-platforms/index.html
+          grep -Fq 'English Serial Platforms Starter' site/blog/2026/08/10/english-serial-fiction-platforms/index.html
           grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/' site/sitemap.xml
           grep -Fq 'https://www.webnovel.win/blog/2026/08/09/webnr-legado-web-alternative/' site/sitemap.xml
+          grep -Fq 'https://www.webnovel.win/blog/2026/08/10/english-serial-fiction-platforms/' site/sitemap.xml
           grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/' site/feed_rss_created.xml
           grep -Fq 'https://www.webnovel.win/blog/2026/08/09/webnr-legado-web-alternative/' site/feed_rss_created.xml
+          grep -Fq 'https://www.webnovel.win/blog/2026/08/10/english-serial-fiction-platforms/' site/feed_rss_created.xml
           grep -R -Fq 'G-DGH8HNQKE4' site
           if grep -R -Fq 'G-NL0WV2XMJN' site; then
             echo 'Obsolete secondary GA4 destination found in documentation output' >&2
