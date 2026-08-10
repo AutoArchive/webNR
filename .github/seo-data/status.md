@@ -6,6 +6,7 @@
 - Last successful attributable application deployment: `e5de80559e3d9bc4f467c74d81e6eac423eecf47`
 - Last successful attributable documentation deployment: `e5de80559e3d9bc4f467c74d81e6eac423eecf47`
 - Last successful canonical Cloudflare documentation deployment: `e5de80559e3d9bc4f467c74d81e6eac423eecf47`
+- Current canonical documentation verification target: `cb4c1b2d4d6112cbb2beafdee9f09b95465ee0ab`
 - Latest application deployment artifact branch commit: `e5de80559e3d9bc4f467c74d81e6eac423eecf47`
 - Canonical public documentation and editorial URL: `https://www.webnovel.win/`
 - Canonical public-site state: healthy and attributable on the independent `webnr-docs` Cloudflare Pages project; pull request #73 initial Quality run `31412094151`, Production evidence job `93532348626`, independently observed exact commit `e5de80559e3d9bc4f467c74d81e6eac423eecf47`, the 2026-08-10 article canonical, sitemap entry, RSS entry, and representative troubleshooting content on `www.webnovel.win`
@@ -65,7 +66,7 @@
 
 ## Active focus
 
-1. Complete pull request #73's final CI/review/merge lifecycle, then keep `https://www.webnovel.win/` as the sole canonical documentation/editorial identity and `https://app.webnovel.win/` as the reader runtime with exact public build evidence after rendered changes.
+1. Complete the post-merge canonical build reconciliation for pull request #73, then keep `https://www.webnovel.win/` as the sole canonical documentation/editorial identity and `https://app.webnovel.win/` as the reader runtime with exact public build evidence after rendered changes.
 2. Keep `https://autoarchive.github.io/webNR/` as an exact attributable build mirror only and prevent it from regaining public canonical status.
 3. Keep the Chromium desktop/mobile journeys as a permanent gate and expand them alongside backup/restore, storage migration, offline behavior and accessibility improvements.
 4. Continue the reader-facing editorial schedule; the English serial-fiction platform comparison is the 2026-08-10 asset, and the next scheduled reader topic is the 2026-08-12 map of public reader communities and recommendation channels.
