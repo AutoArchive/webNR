@@ -9,6 +9,7 @@ strict: true
 
 theme:
   name: material
+  font: false
   language: en
   features:
     - content.action.edit
