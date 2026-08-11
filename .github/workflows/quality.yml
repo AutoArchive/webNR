@@ -94,6 +94,14 @@ jobs:
           grep -Fq 'title: Tapas — Novels' out/sources/english-serial-platforms-starter/search_index.yml
           grep -Fq 'title: Honeyfeed — Novels' out/sources/english-serial-platforms-starter/search_index.yml
           grep -Fq 'license: Link-only-WebNR-editorial' out/sources/english-serial-platforms-starter/search_index.yml
+          test -f out/sources/project-gutenberg-starter/search_index.yml
+          test -f out/sources/project-gutenberg-starter/README.txt
+          grep -Fq "title: Alice's Adventures in Wonderland" out/sources/project-gutenberg-starter/search_index.yml
+          grep -Fq 'title: The Adventures of Sherlock Holmes' out/sources/project-gutenberg-starter/search_index.yml
+          grep -Fq 'title: Dracula' out/sources/project-gutenberg-starter/search_index.yml
+          grep -Fq 'title: Moby Dick; Or, The Whale' out/sources/project-gutenberg-starter/search_index.yml
+          grep -Fq 'license: Link-only-WebNR-editorial' out/sources/project-gutenberg-starter/search_index.yml
+          grep -Fq 'https://www.gutenberg.org/ebooks/11' out/sources/project-gutenberg-starter/search_index.yml
 
   browser-e2e:
     name: Chromium user journeys
