@@ -13,6 +13,12 @@ categories:
 
 **直接答案：** 想找 LitRPG、Progression Fantasy、长篇英文连载，先去 **Royal Road Recommendations**、**r/ProgressionFantasy** 和 **r/litrpg**；想带着一长串标签、篇幅、更新状态去精确求书，**Scribble Hub 的 “I’m Looking For”** 很适合；想找亚洲翻译网文、轻小说、耽美等跨语言作品，**Novel Updates 的 Recommendation Lists** 与类型化 Reddit 社群更接近读者实际检索路径；想找更宽泛的奇幻、爱情、通俗小说，**r/Fantasy、r/fantasyromance、r/books 与 Goodreads Recommendation Requests** 覆盖面更宽；想要即时聊天、buddy read、作者或读者群，**Discord Discover / Server Directory** 提供另一层入口。平台内论坛如 Royal Road、Scribble Hub、Tapas 则最适合讨论“这个平台上的作品”。[P1][P2][P5][P7][P8][P9][P10][P11][P14][P15][P16][P20]
 
+## 摘要
+
+本文以 2026 年 8 月 12 日公开可观察的网文读者社区为样本，结合 24 个平台、论坛、社区与帮助页面和 24 项社会阅读、参与式文化、在线书评、fanfiction、平台化与推荐系统研究，比较不同社区怎样承接找下一本、精确求书、找回忘记书名的作品、追更讨论与长期读书关系。核心发现是一条三层“社区管线”：目录与标签先压缩候选集合，可检索的论坛、Reddit 与读者列表处理复杂语义和长尾问题，Discord 与平台内社区承接持续互动。读者获得更高匹配度的关键来自问题粒度与社区信息结构的对应；公开可检索性、标签语言、治理方式与互动节奏共同决定一条推荐在何处产生、如何被保存，以及后来读者还能怎样复用。
+
+**关键词：** 网文发现；社会阅读；读者推荐；社区检索；Reddit；Discord；Royal Road；Novel Updates
+
 这张地图按“读者准备完成什么任务”组织，重点放在任务匹配；社区体量只作为背景信号。2026 年 8 月 12 日的公开采样显示，找书、找回忘记书名的作品、判断连载状态、追某一类型、参与章节讨论、加入长期读书群，分别对应不同的信息结构。公开论坛与 Reddit 留下可检索的长尾问答；平台内社区拥有更丰富的作品状态与标签语境；Discord 强在同步互动与持续关系；Goodreads 和 Novel Updates 更接近由书目、列表和读者记录组织起来的发现层。[P1][P2][P5][P7][P15][P16][A3][A8][A9]
 
 本文同时延续 WebNR 的上一份平台比较：[2026 英文连载小说平台怎么选？](/blog/2026/08/10/english-serial-fiction-platforms/)。上一篇回答“去哪里读”，这一篇回答“去哪里问、去哪里找、去哪里跟人聊”。
@@ -20,6 +26,8 @@ categories:
 ## 研究问题与采样方法
 
 本文关注一个具体问题：**公开网络上的网文读者，如何在不同社区里完成推荐与讨论？**
+
+**中心论点：** 网文发现的有效路径由三层协同组成：目录与标签负责快速缩小候选，可检索公共社区负责复杂偏好、遗忘书名和相似作品等语义任务，即时聊天与平台内社区负责持续讨论和关系维持。读者选择社区时，把问题粒度、可检索性与互动节奏放在社区体量之前，更容易获得可用答案。
 
 采样日期为 **2026 年 8 月 12 日**。主样本由 24 个公开的一手页面组成，包括平台论坛首页、推荐分区、官方帮助、公开 subreddit、推荐请求页、公开服务器目录与平台社区说明；其中 15 个页面直接呈现推荐、求书、找书或读者交流，9 个页面用于解释平台结构、发现机制与进入门槛。[P1]-[P24] 观察重点放在页面当前结构、讨论入口、公开可见程度、请求格式和平台规则。旧线程只用于识别长期稳定的提问形态，当前索引页与 2026 年页面承担更高权重。
 
@@ -115,7 +123,7 @@ Goodreads 常被理解成评分与书架网站，而 Recommendation Requests 提
 
 ## Discord：最强的即时层，公开网页只看到入口
 
-Discord 的 Discover / Server Directory 让部分 Community Server 通过公开目录被发现；官方帮助同时规定服务器发现能力需要满足规模、活跃、安全和管理要求。[P16][P17][P18][P19] 在公开目录里搜索 books、web novel、fantasy 等词，可以找到面向读书、作者、出版社和特定作品的服务器。
+Discord 的公开 Server Directory 可以直接按关键词发现可公开展示的 Community Server；Discover Tab 帮助页说明应用内 Discover 处于实验性分发阶段，服务器搜索在该实验中以桌面端为主。服务器进入公开发现还需满足规模、活跃、安全与管理条件。[P16][P17][P18][P19]
 
 Discord 与前面的社区形成一个明显差异：**目录是公开的，核心对话通常发生在加入服务器之后。** 这使它非常适合：
 
@@ -238,7 +246,7 @@ Royal Road 和 Scribble Hub 的读者习惯用平台标签、连载状态和机�
 - [P15] Goodreads, Recommendation Requests — https://www.goodreads.com/recommendation_requests
 - [P16] Discord, Server Directory: books — https://discord.com/servers?query=books
 - [P17] Discord, Server Directory: web novel query — https://discord.com/servers?query=webno
-- [P18] Discord Help Center, Server Discovery — https://support.discord.com/hc/en-us/articles/360023968311-Server-Discovery
+- [P18] Discord Help Center, Discover Tab — https://support.discord.com/hc/en-us/articles/25323248535319-Discover-Tab
 - [P19] Discord Help Center, Enabling Server Discovery — https://support.discord.com/hc/en-us/articles/360030843331-Enabling-Server-Discovery
 - [P20] Tapas Forums — https://forums.tapas.io/
 - [P21] Tapas Help Center, What is Tapas Community? — https://help.tapas.io/hc/en-us/articles/4409607638171-What-is-Tapas-Community
