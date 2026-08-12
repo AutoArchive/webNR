@@ -102,6 +102,14 @@ jobs:
           grep -Fq 'title: Moby Dick; Or, The Whale' out/sources/project-gutenberg-starter/search_index.yml
           grep -Fq 'license: Link-only-WebNR-editorial' out/sources/project-gutenberg-starter/search_index.yml
           grep -Fq 'https://www.gutenberg.org/ebooks/11' out/sources/project-gutenberg-starter/search_index.yml
+          test -f out/sources/global-grey-starter/search_index.yml
+          test -f out/sources/global-grey-starter/README.txt
+          grep -Fq 'title: The Woman in White' out/sources/global-grey-starter/search_index.yml
+          grep -Fq 'title: The Castle of Otranto' out/sources/global-grey-starter/search_index.yml
+          grep -Fq 'title: North and South' out/sources/global-grey-starter/search_index.yml
+          grep -Fq 'title: The Beetle' out/sources/global-grey-starter/search_index.yml
+          grep -Fq 'license: Link-only-WebNR-editorial' out/sources/global-grey-starter/search_index.yml
+          grep -Fq 'https://www.globalgreyebooks.com/woman-in-white-ebook.html' out/sources/global-grey-starter/search_index.yml
 
   browser-e2e:
     name: Chromium user journeys
