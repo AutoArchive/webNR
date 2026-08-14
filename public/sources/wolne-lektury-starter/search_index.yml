@@ -1,0 +1,63 @@
+wolne-lektury/lalka.md:
+  title: Lalka
+  author: Bolesław Prus
+  description: Wolne Lektury 的《Lalka》官方目录页。WebNR 仅保存作品标题、作者与经核验的发现链接；正文、下载格式、编辑注释与具体许可条件继续由来源页提供。
+  page_url: https://wolnelektury.pl/katalog/lektura/lalka/
+  source: Wolne Lektury
+  license: Link-only-WebNR-editorial
+  tags:
+    - Wolne Lektury
+    - Polish literature
+    - Novel
+    - Positivism
+  categories:
+    - Free reading discovery
+  region: pl-PL
+
+wolne-lektury/quo-vadis.md:
+  title: Quo vadis
+  author: Henryk Sienkiewicz
+  description: Wolne Lektury 的《Quo vadis》官方目录页。WebNR 把读者带回来源站核对在线阅读、下载与版本权利说明，不复制或重新托管来源正文及媒体文件。
+  page_url: https://wolnelektury.pl/katalog/lektura/quo-vadis/
+  source: Wolne Lektury
+  license: Link-only-WebNR-editorial
+  tags:
+    - Wolne Lektury
+    - Polish literature
+    - Historical novel
+    - Classic fiction
+  categories:
+    - Free reading discovery
+  region: pl-PL
+
+wolne-lektury/chlopi.md:
+  title: Chłopi
+  author: Władysław Stanisław Reymont
+  description: Wolne Lektury 的《Chłopi》官方目录页。该条目是人工核验的发现入口；WebNR 不抓取章节、音频、封面或下载文件，并把版本说明与许可判断留在来源页。
+  page_url: https://wolnelektury.pl/katalog/lektura/chlopi/
+  source: Wolne Lektury
+  license: Link-only-WebNR-editorial
+  tags:
+    - Wolne Lektury
+    - Polish literature
+    - Novel
+    - Nobel literature
+  categories:
+    - Free reading discovery
+  region: pl-PL
+
+wolne-lektury/nad-niemnem.md:
+  title: Nad Niemnem
+  author: Eliza Orzeszkowa
+  description: Wolne Lektury 的《Nad Niemnem》官方目录页。WebNR 仅维护稳定的发现链接与基础书目事实；多卷内容、在线阅读、下载及来源许可信息仍由 Wolne Lektury 提供。
+  page_url: https://wolnelektury.pl/katalog/lektura/nad-niemnem/
+  source: Wolne Lektury
+  license: Link-only-WebNR-editorial
+  tags:
+    - Wolne Lektury
+    - Polish literature
+    - Novel
+    - Positivism
+  categories:
+    - Free reading discovery
+  region: pl-PL
