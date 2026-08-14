@@ -38,6 +38,7 @@
   },
   "overrides": {
     "brace-expansion@<2": "1.1.18",
-    "brace-expansion@>=2 <3": "2.1.4"
+    "brace-expansion@>=2 <3": "2.1.4",
+    "nanoid": "3.3.18"
   }
 }
