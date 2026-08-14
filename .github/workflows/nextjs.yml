@@ -95,7 +95,7 @@ jobs:
           PRODUCTION_HOME_URL: https://app.webnovel.win/
         run: |
           set -u
-          for attempt in $(seq 1 30); do
+          for attempt in $(seq 1 60); do
             build_response="$(curl --fail --silent --show-error --max-time 15 "${PRODUCTION_BUILD_URL}?commit=${BUILD_SHA}&attempt=${attempt}" || true)"
             home_response="$(curl --fail --silent --show-error --max-time 15 "${PRODUCTION_HOME_URL}?analytics-check=${BUILD_SHA}&attempt=${attempt}" || true)"
             if printf '%s' "${build_response}" | grep -Fq "\"commit\": \"${BUILD_SHA}\"" \
