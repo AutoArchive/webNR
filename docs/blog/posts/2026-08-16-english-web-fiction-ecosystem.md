@@ -21,7 +21,7 @@ WebNR 今天同时加入一个只做跳转发现的 **English Web-Fiction Discov
 
 本文以 **2026 年 8 月 16 日**公开可观察的英文网文发现入口为样本，结合 30 个平台、目录、社区、作者站、公共目录与官方说明页面，以及 26 项参与式文化、社会阅读、fanfiction、平台化文化生产、数字文学与推荐系统研究，回答一个读者导向的问题：当英文 web fiction 分散在平台、论坛、作者站、newsletter 与公共目录里时，怎样用更少的试错成本找到真正适合自己的下一本？
 
-核心发现是一张“发现网络”。平台原生榜单提供新鲜度和状态字段，跨平台目录提供横向迁移，论坛故事库提供作品与讨论共存的长尾空间，读者社区提供自然语言推荐，newsletter 与作者站提供连续订阅，公共目录提供稳定书目与长期可访问入口。读者在这些层之间移动时，最有价值的携带物是自己的偏好向量：参照作品、题材、机制、篇幅、连载状态、更新节奏、关系结构、内容边界与阅读设备。[A1][A2][A3][A8][A9][A22][A23][A24][A25][A27]
+核心发现是一张“发现网络”。平台原生榜单提供新鲜度和状态字段，跨平台目录提供横向迁移，论坛故事库提供作品与讨论共存的长尾空间，读者社区提供自然语言推荐，newsletter 与作者站提供连续订阅，公共目录提供稳定书目与长期可访问入口。读者在这些层之间移动时，最有价值的携带物是自己的偏好向量：参照作品、题材、机制、篇幅、连载状态、更新节奏、关系结构、内容边界与阅读设备。[A1][A2][A3][A8][A9][A22][A23][A24][A25][A26]
 
 **关键词：** 英文网文；web serial；web fiction；Royal Road；Top Web Fiction；SpaceBattles；newsletter；社会阅读；跨平台发现
 
@@ -52,7 +52,7 @@ WebNR 今天同时加入一个只做跳转发现的 **English Web-Fiction Discov
 | 找经典免费文本 | Project Gutenberg、Standard Ebooks、Wikisource | WebNR 公共来源 | 版本、格式、版权/许可说明 |
 | 找“像 A 但更偏 B”的作品 | 专门 Reddit / 论坛推荐区 | Discord 读者群 | 参照作品、理由、情绪、机制 |
 
-这张表的重点在“任务”。同一个平台在不同任务里的价值差异很大。Royal Road 的 Rising Stars 适合捕捉快速上升作品，Complete 适合降低追更风险；Scribble Hub 的 Series Finder 适合把需求拆成字段；Top Web Fiction 适合跨站迁移；论坛故事库适合寻找平台首页覆盖较少的作品；newsletter 适合持续关系；公共目录适合稳定入口。推荐研究长期把候选生成、排序与用户偏好表达视为多阶段过程，社会阅读研究则展示了评论、书单与讨论如何补充结构化字段。[A3][A9][A10][A22][A23][A24]
+这张表的重点在“任务”。同一个平台在各类任务里的价值分布很鲜明。Royal Road 的 Rising Stars 适合捕捉快速上升作品，Complete 适合降低追更风险；Scribble Hub 的 Series Finder 适合把需求拆成字段；Top Web Fiction 适合跨站迁移；论坛故事库适合寻找平台首页覆盖较少的作品；newsletter 适合持续关系；公共目录适合稳定入口。推荐研究长期把候选生成、排序与用户偏好表达视为多阶段过程，社会阅读研究则展示了评论、书单与讨论如何补充结构化字段。[A3][A9][A10][A22][A23][A24]
 
 ## 第一层：平台原生榜单负责“快”和“细”
 
@@ -104,7 +104,7 @@ Reddit 的强项来自“类型社区先于平台”。r/ProgressionFantasy、r/
 
 Substack 当前提供 Fiction 分类与 Top Fiction 页面，页面聚合原创 fiction、文学写作与相关出版内容。[P14] SFWA 在 2026 年 4 月专门讨论了使用 newsletter platform 发布 serial fiction 的实践，说明邮件平台已经成为英文连载的现实发行路径之一。[P15]
 
-newsletter 的发现逻辑与 Royal Road 很不一样。榜单平台强调统一库存中的排序与筛选；newsletter 强调订阅关系、作者声音、邮件到达和推荐网络。读者一旦找到喜欢的作者，后续章节可以通过 inbox、reader app 或网页目录持续到达。对于已经形成读者关系的项目，这种“推送式连续性”很有价值。
+newsletter 的发现逻辑与 Royal Road 形成鲜明对照。榜单平台强调统一库存中的排序与筛选；newsletter 强调订阅关系、作者声音、邮件到达和推荐网络。读者一旦找到喜欢的作者，后续章节可以通过 inbox、reader app 或网页目录持续到达。对于已经形成读者关系的项目，这种“推送式连续性”很有价值。
 
 作者自托管站则把控制权进一步移向作品本身。The Wandering Inn 的官方目录当前明确区分 Web Serial、Audiobook 与 Ebook，并以 volume、chapter、interlude 组织长篇阅读。[P22] Parahumans 2 的目录用 arc 和 chapter 组织 Ward，同时保留 Glow-worm 等过渡内容。[P23] 这些例子显示，英文 web serial 的“平台”有时就是作者自己维护的网站，外部发现入口承担把读者带到这里的任务。
 
@@ -128,13 +128,13 @@ Standard Ebooks 当前还明确提供可供 ereader 或 RSS reader 使用的 cat
 
 这份地图呈现出四种结构性差异。
 
-**第一，库存边界不同。** Royal Road、Scribble Hub 的榜单从站内作品出发；Top Web Fiction 从被列出的跨站作品出发；SpaceBattles、Sufficient Velocity 从论坛社区出发；Substack 从 newsletter publication 出发；作者站从单一作品或作者宇宙出发。[P1][P4][P6][P8][P10][P14][P22]
+**第一，库存边界各异。** Royal Road、Scribble Hub 的榜单从站内作品出发；Top Web Fiction 从被列出的跨站作品出发；SpaceBattles、Sufficient Velocity 从论坛社区出发；Substack 从 newsletter publication 出发；作者站从单一作品或作者宇宙出发。[P1][P4][P6][P8][P10][P14][P22]
 
-**第二，排序信号不同。** Rising Stars 关注近期增长与榜单逻辑，Top Web Fiction 使用 reader boosts，论坛故事库暴露更新、watchers、views、replies 和标签，newsletter 依赖订阅与推荐网络。每一种排序都在回答不同问题。[P1][P6][P8][P10][P14]
+**第二，排序信号各异。** Rising Stars 关注近期增长与榜单逻辑，Top Web Fiction 使用 reader boosts，论坛故事库暴露更新、watchers、views、replies 和标签，newsletter 依赖订阅与推荐网络。每一种排序都在回答不同问题。[P1][P6][P8][P10][P14]
 
-**第三，文本粒度不同。** 平台把 fiction 当作品对象，论坛把作品与线程绑定，Reddit 可以把一章当一帖，作者站按 chapter/arc/volume 组织，公共目录则把 edition、ebook 与书目记录放在中心。[P8][P12][P13][P22][P23][P27][P28]
+**第三，文本粒度各异。** 平台把 fiction 当作品对象，论坛把作品与线程绑定，Reddit 可以把一章当一帖，作者站按 chapter/arc/volume 组织，公共目录则把 edition、ebook 与书目记录放在中心。[P8][P12][P13][P22][P23][P27][P28]
 
-**第四，社区记忆不同。** 公开论坛、Reddit、Top Web Fiction 和目录页容易形成长期 URL；Discord 与 newsletter 更强调持续关系和时间流；公共目录强调版本与书目稳定性。在线社区与社会阅读研究都表明，平台结构会改变哪些互动容易保存、哪些信息容易再次检索。[A1][A3][A9][A16][A21]
+**第四，社区记忆形态各异。** 公开论坛、Reddit、Top Web Fiction 和目录页容易形成长期 URL；Discord 与 newsletter 更强调持续关系和时间流；公共目录强调版本与书目稳定性。在线社区与社会阅读研究都表明，平台结构会改变哪些互动容易保存、哪些信息容易再次检索。[A1][A3][A9][A16][A21]
 
 因此，读者获得更高命中率的关键是组合入口，让每一层负责自己擅长的任务。
 
@@ -176,7 +176,7 @@ Standard Ebooks 当前还明确提供可供 ereader 或 RSS reader 使用的 cat
 
 公开网页天然更容易进入本文样本。Top Web Fiction、公开论坛、Reddit、作者站、公开 newsletter 页面和公共目录都拥有可搜索 URL；私密 Discord、封闭 Patreon 社区、邮件正文、作者群聊和邀请制读书会留下的公开证据更少。搜索可见度因此会放大开放网页层的存在感。
 
-另外，各入口的“活跃”含义也不同。Royal Road 的当前榜单变化很快；Top Web Fiction 的 boost 以周为周期；论坛故事可以持续多年；newsletter 依赖作者发送节奏；公共目录的更新重点是新版本与新收录。把这些信号压成一个统一热度数字会丢失大量语境。[P1][P6][P8][P10][P14][P27][P28]
+另外，各入口的“活跃”含义也各有尺度。Royal Road 的当前榜单变化很快；Top Web Fiction 的 boost 以周为周期；论坛故事可以持续多年；newsletter 依赖作者发送节奏；公共目录的更新重点是新版本与新收录。把这些信号压成一个统一热度数字会丢失大量语境。[P1][P6][P8][P10][P14][P27][P28]
 
 平台上的高曝光作品还可能形成反馈回路：获得更多展示后积累更多阅读与互动，再进一步提高可见性。推荐系统与平台化文化生产研究为理解这种循环提供了成熟框架。[A2][A22][A23][A24] 所以本文把“推荐哪个入口”定义为任务匹配，而把“哪个生态最大”留给需要统一口径、统一时间窗和独立流量数据的研究。
 
@@ -188,13 +188,13 @@ Standard Ebooks 当前还明确提供可供 ereader 或 RSS reader 使用的 cat
 
 这种分工带来一个实用结果：读者可以把“平台忠诚”转换成“路径忠诚”。路径本身稳定：**结构化筛选 → 跨平台扩展 → 社区语义检索 → 官方跟随 → 本地阅读状态。** 具体站点可以随着题材与作品变化，路径仍然可复用。
 
-从研究角度，这也解释了为什么 web fiction 很难被一个单站数据库完整表示。作品身份可能跨越多个站点；作者可能同时维护免费 serial、ebook、audiobook、Patreon 或 newsletter；同一作品的讨论又分布在平台评论、Reddit、Discord 与论坛。真正有价值的发现基础设施更接近图：节点是作品、作者、平台、目录、社区与版本，边是“托管于”“推荐于”“讨论于”“订阅于”“改编为”“收录于”。[A2][A9][A25][A27]
+从研究角度，这也解释了为什么 web fiction 很难被一个单站数据库完整表示。作品身份可能跨越多个站点；作者可能同时维护免费 serial、ebook、audiobook、Patreon 或 newsletter；同一作品的讨论又分布在平台评论、Reddit、Discord 与论坛。真正有价值的发现基础设施更接近图：节点是作品、作者、平台、目录、社区与版本，边是“托管于”“推荐于”“讨论于”“订阅于”“改编为”“收录于”。[A2][A9][A25][A26]
 
 WebNR 当前采用的轻量来源策略可以视为这张图的第一步：先记录公开、可解释、来源明确的入口和 provenance，再逐渐为具有清晰机器接口与授权边界的来源增加结构化能力。
 
 ## 结论：找英文网文，从“选平台”升级成“走路径”
 
-2026 年的英文 web fiction 生态已经足够分散，也足够互联。Royal Road 与 Scribble Hub 提供高密度平台发现；Top Web Fiction 提供跨站排名；SpaceBattles 与 Sufficient Velocity 把论坛创作整理成故事库；Reddit Serials 与 r/HFY 展示社区原生连载；Novel Updates、Reddit 与 Discord提供读者策展和语义推荐；Substack、newsletter 与作者官网负责持续跟随；Project Gutenberg、Standard Ebooks、Wikisource 提供稳定的公开书目层。[P1]-[P30]
+2026 年的英文 web fiction 生态已经足够分散，也足够互联。Royal Road 与 Scribble Hub 提供高密度平台发现；Top Web Fiction 提供跨站排名；SpaceBattles 与 Sufficient Velocity 把论坛创作整理成故事库；Reddit Serials 与 r/HFY 展示社区原生连载；Novel Updates、Reddit 与 Discord 提供读者策展和语义推荐；Substack、newsletter 与作者官网负责持续跟随；Project Gutenberg、Standard Ebooks、Wikisource 提供稳定的公开书目层。[P1]-[P30]
 
 对读者，最有效的策略可以压缩成一句话：**先用字段找到候选，再用跨平台目录扩大范围，用社区解释口味，最后回到官方入口持续跟随。**
 
@@ -224,7 +224,7 @@ WebNR 当前采用的轻量来源策略可以视为这张图的第一步：先�
 - [P18] Reddit, r/litrpg — https://www.reddit.com/r/litrpg/
 - [P19] Reddit, r/Fantasy — https://www.reddit.com/r/Fantasy/
 - [P20] Goodreads, Recommendation Requests — https://www.goodreads.com/recommendation_requests
-- [P21] Discord, Server Discovery / Discover — https://support.discord.com/hc/en-us/articles/360023968311-Server-Discovery
+- [P21] Discord, Discover Tab — https://support.discord.com/hc/en-us/articles/25323248535319-Discover-Tab
 - [P22] The Wandering Inn, Table of Contents — https://wanderinginn.com/table-of-contents/
 - [P23] Parahumans 2, Table of Contents — https://www.parahumans.net/table-of-contents/
 - [P24] Tapas Help Center, What is Tapas Community? — https://help.tapas.io/hc/en-us/articles/4409607638171-What-is-Tapas-Community
@@ -256,7 +256,7 @@ WebNR 当前采用的轻量来源策略可以视为这张图的第一步：先�
 - [A17] C. M. Messina, “Tracing fan uptakes: Tagging, language, and ideological practices in The Legend of Korra fanfictions” (2019). https://wac.colostate.edu/docs/jwa/vol3/messina.pdf
 - [A18] A. Sereda, “‘Dirty stories saved my life’: Fanfiction as a source of emotional support” (2019). https://dspace.cuni.cz/bitstream/handle/20.500.11956/110315/130257705.pdf?sequence=1
 - [A19] S. Mosher, “Exploration of Derivative Works: The Appeal of Fanfiction to Creative Minds Within Fan Communities” (2024). https://escholarship.org/content/qt0qs5m0zg/qt0qs5m0zg.pdf?v=lg
-- [A20] K. Bahoric & E. Swaggerty, “Fanfiction: Exploring in- and out-of-school literacy practices” (2015). https://www.researchgate.net/profile/Elizabeth-Swaggerty/publication/280531703_Fanfiction_Exploring_in-_and_out-of-school_literacy_practices/links/563a5e4208ae405111a5864b/Fanfiction-Exploring-in-and-out-of-school-literacy-practices.pdf
+- [A20] K. Bahoric & E. Swaggerty, “Fanfiction: Exploring in- and out-of-school literacy practices” (2015). https://www.researchgate.net/profile/Elizabeth-Swaggerty/publication/280531703_Fanfiction_Exploring_in-_and_out-of-school_literacy_practices/links/563a5e4208ae405111a5864b/Fanfiction-Exploring-in-and_out-of-school_literacy_practices.pdf
 - [A21] Joseph Seering, “Reconsidering Self-Moderation.” *Proceedings of the ACM on Human-Computer Interaction*. https://dl.acm.org/doi/pdf/10.1145/3415178
 - [A22] Linyuan Lü, Matúš Medo, Chi Ho Yeung, Yicheng Zhang, Zi-Ke Zhang & Tao Zhou, “Recommender systems.” https://arxiv.org/pdf/1202.1112
 - [A23] Yuncong Li et al., “Modeling User Repeat Consumption Behavior for Online Novel Recommendation.” https://arxiv.org/abs/2209.01963
