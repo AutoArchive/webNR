@@ -130,7 +130,7 @@ Standard Ebooks 当前还明确提供可供 ereader 或 RSS reader 使用的 cat
 
 **第一，库存边界各异。** Royal Road、Scribble Hub 的榜单从站内作品出发；Top Web Fiction 从被列出的跨站作品出发；SpaceBattles、Sufficient Velocity 从论坛社区出发；Substack 从 newsletter publication 出发；作者站从单一作品或作者宇宙出发。[P1][P4][P6][P8][P10][P14][P22]
 
-**第二，排序信号各异。** Rising Stars 关注近期增长与榜单逻辑，Top Web Fiction 使用 reader boosts，论坛故事库暴露更新、watchers、views、replies 和标签，newsletter 依赖订阅与推荐网络。每一种排序都在回答不同问题。[P1][P6][P8][P10][P14]
+**第二，排序信号各异。** Rising Stars 关注近期增长与榜单逻辑，Top Web Fiction 使用 reader boosts，论坛故事库暴露更新、watchers、views、replies 和标签，newsletter 依赖订阅与推荐网络。每一种排序都对应一类问题。[P1][P6][P8][P10][P14]
 
 **第三，文本粒度各异。** 平台把 fiction 当作品对象，论坛把作品与线程绑定，Reddit 可以把一章当一帖，作者站按 chapter/arc/volume 组织，公共目录则把 edition、ebook 与书目记录放在中心。[P8][P12][P13][P22][P23][P27][P28]
 
@@ -256,7 +256,7 @@ WebNR 当前采用的轻量来源策略可以视为这张图的第一步：先�
 - [A17] C. M. Messina, “Tracing fan uptakes: Tagging, language, and ideological practices in The Legend of Korra fanfictions” (2019). https://wac.colostate.edu/docs/jwa/vol3/messina.pdf
 - [A18] A. Sereda, “‘Dirty stories saved my life’: Fanfiction as a source of emotional support” (2019). https://dspace.cuni.cz/bitstream/handle/20.500.11956/110315/130257705.pdf?sequence=1
 - [A19] S. Mosher, “Exploration of Derivative Works: The Appeal of Fanfiction to Creative Minds Within Fan Communities” (2024). https://escholarship.org/content/qt0qs5m0zg/qt0qs5m0zg.pdf?v=lg
-- [A20] K. Bahoric & E. Swaggerty, “Fanfiction: Exploring in- and out-of-school literacy practices” (2015). https://www.researchgate.net/profile/Elizabeth-Swaggerty/publication/280531703_Fanfiction_Exploring_in-_and_out-of-school_literacy_practices/links/563a5e4208ae405111a5864b/Fanfiction-Exploring-in-and_out-of-school_literacy_practices.pdf
+- [A20] K. Bahoric & E. Swaggerty, “Fanfiction: Exploring in- and out-of-school literacy practices” (2015). https://www.researchgate.net/profile/Elizabeth-Swaggerty/publication/280531703_Fanfiction_Exploring_in-_and_out-of-school_literacy_practices/links/563a5e4208ae405111a5864b/Fanfiction-Exploring-in-and-out-of-school-literacy-practices.pdf
 - [A21] Joseph Seering, “Reconsidering Self-Moderation.” *Proceedings of the ACM on Human-Computer Interaction*. https://dl.acm.org/doi/pdf/10.1145/3415178
 - [A22] Linyuan Lü, Matúš Medo, Chi Ho Yeung, Yicheng Zhang, Zi-Ke Zhang & Tao Zhou, “Recommender systems.” https://arxiv.org/pdf/1202.1112
 - [A23] Yuncong Li et al., “Modeling User Repeat Consumption Behavior for Online Novel Recommendation.” https://arxiv.org/abs/2209.01963
