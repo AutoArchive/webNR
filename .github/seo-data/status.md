@@ -6,9 +6,9 @@
 - Latest merged reader-content change: pull request #92, squash merge `bc691fa5b53d8eb5614f33e30a1b4d7397f70e77`
 - Last successful attributable application deployment: `129b2604b76261c42da6838cd649af4f127335fd`
 - Current application verification target: `129b2604b76261c42da6838cd649af4f127335fd`
-- Last successful attributable documentation-mirror deployment: `bc691fa5b53d8eb5614f33e30a1b4d7397f70e77`
-- Current documentation-mirror verification target: `bc691fa5b53d8eb5614f33e30a1b4d7397f70e77`
-- Last directly observed canonical Cloudflare documentation deployment: `129b2604b76261c42da6838cd649af4f127335fd`
+- Last successful attributable documentation deployment: `bc691fa5b53d8eb5614f33e30a1b4d7397f70e77`
+- Current documentation mirror verification target: `bc691fa5b53d8eb5614f33e30a1b4d7397f70e77`
+- Last successful canonical Cloudflare documentation deployment: `129b2604b76261c42da6838cd649af4f127335fd`
 - Current canonical documentation verification target: `bc691fa5b53d8eb5614f33e30a1b4d7397f70e77`
 - Latest application deployment artifact branch commit: `129b2604b76261c42da6838cd649af4f127335fd`
 - Canonical public documentation and editorial URL: `https://www.webnovel.win/`
