@@ -1,0 +1,47 @@
+chinese-web-fiction-platforms/qidian.md:
+  title: 起点中文网 — 官方小说发现入口
+  author: 起点中文网
+  description: 起点中文网的官方入口，提供分类、榜单、完本、免费等读者发现路径。WebNR 仅保存官方跳转链接与自写说明，不复制作品、章节、榜单、评论或平台目录数据。
+  page_url: https://www.qidian.com/
+  source: WebNR Chinese Web-Fiction Platform Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - 起点中文网
+    - 中文网文
+    - 官方平台
+    - 小说发现
+  categories:
+    - Official platform discovery
+  region: zh-CN
+
+chinese-web-fiction-platforms/jjwxc.md:
+  title: 晋江文学城 — 官方作品库
+  author: 晋江文学城
+  description: 晋江文学城的官方公开作品库入口，可按作品类型、状态等条件发现作品。WebNR 只链接原站；作者作品、收费章节、评论、收藏与授权状态均以晋江文学城及作者的当前说明为准。
+  page_url: https://www.jjwxc.net/bookbase.php?fw=0
+  source: WebNR Chinese Web-Fiction Platform Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - 晋江文学城
+    - 中文网文
+    - 官方平台
+    - 作品库
+  categories:
+    - Official platform discovery
+  region: zh-CN
+
+chinese-web-fiction-platforms/zongheng.md:
+  title: 纵横中文网 — 官方小说发现入口
+  author: 纵横中文网
+  description: 纵横中文网的官方入口，提供分类、榜单、书库与完本等读者发现路径。WebNR 仅维护官方跳转链接与自写说明，不抓取、缓存或重新发布作品、目录、评论、榜单或账户数据。
+  page_url: https://www.zongheng.com/
+  source: WebNR Chinese Web-Fiction Platform Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - 纵横中文网
+    - 中文网文
+    - 官方平台
+    - 小说发现
+  categories:
+    - Official platform discovery
+  region: zh-CN
