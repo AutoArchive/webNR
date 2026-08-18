@@ -4,19 +4,19 @@
 
 - Last merged product/source change: pull request #97, squash merge `800f1da2c5abf255c3c5f1bb63cdc2956dc364e9`
 - Latest merged reader-content change: pull request #98, squash merge `1c38192bbd2f1656c9bb924823c05c5e48d7fd92`
-- Last successful attributable application deployment: `a322c529ce8f4783dc2d56de6bd27a44419a81c3`
+- Last successful attributable application deployment: `800f1da2c5abf255c3c5f1bb63cdc2956dc364e9`
 - Current application verification target: `800f1da2c5abf255c3c5f1bb63cdc2956dc364e9`
-- Last successful attributable documentation deployment: `bc691fa5b53d8eb5614f33e30a1b4d7397f70e77`
+- Last successful attributable documentation deployment: `1c38192bbd2f1656c9bb924823c05c5e48d7fd92`
 - Current documentation mirror verification target: `1c38192bbd2f1656c9bb924823c05c5e48d7fd92`
-- Last successful canonical Cloudflare documentation deployment: `a322c529ce8f4783dc2d56de6bd27a44419a81c3`
+- Last successful canonical Cloudflare documentation deployment: `1c38192bbd2f1656c9bb924823c05c5e48d7fd92`
 - Current canonical documentation verification target: `1c38192bbd2f1656c9bb924823c05c5e48d7fd92`
 - Latest application deployment artifact branch commit: `800f1da2c5abf255c3c5f1bb63cdc2956dc364e9`
 - Canonical public documentation and editorial URL: `https://www.webnovel.win/`
 - Working reader URL: `https://app.webnovel.win/`
 - Working documentation build mirror URL: `https://autoarchive.github.io/webNR/`
-- Reader public-site state: pull request #97 expanded the Chinese Web-Fiction Platforms Starter and squash-merged as `800f1da2c5abf255c3c5f1bb63cdc2956dc364e9` after final-head Quality run `32163096351` succeeded. This closeout advances the exact application verification target to that squash commit; the closeout PR may merge only after its Production evidence job observes the exact public application build without weakening any verifier assertion.
-- Documentation-mirror state: pull request #98 published the 2026-08-18 Chinese online-fiction discovery ecosystem guide and squash-merged as `1c38192bbd2f1656c9bb924823c05c5e48d7fd92` after final-head Quality run `32164006710` succeeded with all four expected jobs. This closeout advances the mirror target to that exact squash commit and waits for direct public-build verification.
-- Canonical documentation state: the canonical target is also `1c38192bbd2f1656c9bb924823c05c5e48d7fd92`. The closeout PR may merge only after Production evidence directly observes that exact canonical build together with the repository's canonical content checks, sitemap, and RSS checks. Propagation is a reason to keep waiting, never a reason to loosen the verifier.
+- Reader public-site state: healthy and attributable. Pull request #97 expanded the Chinese Web-Fiction Platforms Starter and squash-merged as `800f1da2c5abf255c3c5f1bb63cdc2956dc364e9` after final-head Quality run `32163096351` succeeded. Pull request #99 Quality run `32165803348` subsequently observed that exact application commit at public `build.json` and passed the existing application content checks without weakening the verifier.
+- Documentation-mirror state: healthy and attributable. Pull request #98 published the 2026-08-18 Chinese online-fiction discovery ecosystem guide and squash-merged as `1c38192bbd2f1656c9bb924823c05c5e48d7fd92` after final-head Quality run `32164006710` succeeded with all four expected jobs. Pull request #99 Quality run `32165803348` directly observed that exact mirror build and its canonical troubleshooting-page evidence. The `gh-pages` artifact also contains the new Chinese ecosystem article with canonical metadata pointing to `https://www.webnovel.win/blog/2026/08/18/chinese-online-fiction-ecosystem/`.
+- Canonical documentation state: healthy and attributable at `1c38192bbd2f1656c9bb924823c05c5e48d7fd92`. During pull request #99 Quality run `32165803348`, the canonical site initially still exposed `800f1da2c5abf255c3c5f1bb63cdc2956dc364e9` while Cloudflare Pages propagated, then directly matched `1c38192bbd2f1656c9bb924823c05c5e48d7fd92` at 2026-08-18T17:31:01Z. The same unchanged verifier passed canonical content, representative unaffected-route, sitemap, and RSS checks.
 - Current skill submodule: `f42128a3f05c73cf10c786a2711c488bb3a14839`, exactly matching the current `AutoArchive/seo-skill` default branch during the 2026-08-18 cycle.
 - Current analytics export state: the configured Google Drive folder is accessible, but the 2026-08-18 direct non-trashed child listing exposed no matching GA4 or Search Console exports; missing provider data is unavailable rather than zero.
 - Current Cloudflare traffic-analytics state: neither connected Cloudflare account exposed an exact `webnovel.win` zone during the 2026-08-18 cycle; request analytics are unavailable rather than zero.
@@ -46,7 +46,7 @@
 
 ## Active focus
 
-1. Complete the 2026-08-18 closeout only after exact public application, documentation-mirror, and canonical build evidence reaches `800f1da2c5abf255c3c5f1bb63cdc2956dc364e9`, `1c38192bbd2f1656c9bb924823c05c5e48d7fd92`, and `1c38192bbd2f1656c9bb924823c05c5e48d7fd92` respectively.
+1. Preserve the verified 2026-08-18 production identities: application `800f1da2c5abf255c3c5f1bb63cdc2956dc364e9`, documentation mirror `1c38192bbd2f1656c9bb924823c05c5e48d7fd92`, and canonical documentation `1c38192bbd2f1656c9bb924823c05c5e48d7fd92`; advance them only after exact verifier evidence for a later rendered change.
 2. Prepare the scheduled 2026-08-20 Japanese web-novel and translation discovery asset with Japanese-language first-party/community research and the repository's full research-blog quality floor; do not substitute thin filler before that date.
 3. Continue daily source growth from the audited and deferred queues. Commercial-platform ingestion stays link-only unless explicit machine-interface permission plus reproducible robots, paging, cadence, timeout, provenance, update/deletion, and rights fixtures justify a richer capability level.
 4. Preserve exact independent build identities for the reader, canonical documentation site, and documentation mirror; keep all four Quality jobs and the production verifier as permanent release gates.
