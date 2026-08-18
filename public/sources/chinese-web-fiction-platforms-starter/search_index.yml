@@ -45,3 +45,36 @@ chinese-web-fiction-platforms/zongheng.md:
   categories:
     - Official platform discovery
   region: zh-CN
+
+chinese-web-fiction-platforms/17k.md:
+  title: 17K小说网 — 官方小说发现入口
+  author: 17K小说网
+  description: 17K小说网的官方入口，提供原创小说阅读与站内分类、搜索等发现路径。WebNR 只保存官方入口和自写说明，作品正文、章节、评论、账户与版权信息继续由17K小说网呈现。
+  page_url: https://www.17k.com/
+  source: WebNR Chinese Web-Fiction Platform Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - 17K小说网
+    - 中文网文
+    - 官方平台
+    - 小说发现
+  categories:
+    - Official platform discovery
+  region: zh-CN
+
+chinese-web-fiction-platforms/qimao.md:
+  title: 七猫中文网 — 官方免费小说发现入口
+  author: 七猫中文网
+  description: 七猫中文网的官方入口，提供免费阅读、小说推荐与排行榜等读者发现路径。WebNR 仅保存官方跳转链接与自写说明，阅读、广告、账户、评论、作者作品及授权状态均由七猫中文网负责。
+  page_url: https://www.qimao.com/
+  source: WebNR Chinese Web-Fiction Platform Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - 七猫中文网
+    - 中文网文
+    - 免费阅读
+    - 官方平台
+    - 小说发现
+  categories:
+    - Official platform discovery
+  region: zh-CN
