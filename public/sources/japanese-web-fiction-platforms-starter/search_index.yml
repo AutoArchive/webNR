@@ -1,7 +1,7 @@
 japanese-web-fiction-platforms/narou.md:
   title: 小説を読もう！ — 小説家になろう公式作品検索
   author: 小説家になろう
-  description: 小説家になろうグループの公式公開作品検索・ランキング入口。WebNR は公式リンクと自写说明のみを保存し、作品正文、章节、ランキング、评论、账户数据や平台目录数据は取得・复制しません。
+  description: 小説家になろうグループの公式公開作品検索・ランキング入口。WebNR は公式リンクと独自の案内文だけを保存し、作品本文、エピソード、ランキング、コメント、アカウント情報やプラットフォームのカタログデータは取得・複製しません。
   page_url: https://yomou.syosetu.com/
   source: WebNR Japanese Web-Fiction Platform Directory
   license: Link-only-WebNR-editorial
@@ -18,7 +18,7 @@ japanese-web-fiction-platforms/narou.md:
 japanese-web-fiction-platforms/kakuyomu.md:
   title: カクヨム — 公式Web小説検索・ランキング
   author: KADOKAWA
-  description: KADOKAWA が運営するカクヨムの公式入口で、作品検索やランキングからWeb小説を探せます。WebNR は公式リンクと自写说明のみを保存し、作品、エピソード、评论、账户、收费内容や平台数据は再配布しません。
+  description: KADOKAWA が運営するカクヨムの公式入口で、作品検索やランキングからWeb小説を探せます。WebNR は公式リンクと独自の案内文だけを保存し、作品、エピソード、コメント、アカウント、有料コンテンツやプラットフォームデータは再配布しません。
   page_url: https://kakuyomu.jp/
   source: WebNR Japanese Web-Fiction Platform Directory
   license: Link-only-WebNR-editorial
@@ -35,7 +35,7 @@ japanese-web-fiction-platforms/kakuyomu.md:
 japanese-web-fiction-platforms/estar.md:
   title: エブリスタ — 公式小説一覧・ランキング
   author: 株式会社エブリスタ
-  description: エブリスタの公式小説一覧入口で、ジャンル、検索、ランキングなどから作品を探せます。WebNR は公式リンクと自写说明のみを保存し、作品正文、章节、表紙、评论、账户、收费内容や平台目录数据は取得・再配布しません。
+  description: エブリスタの公式小説一覧入口で、ジャンル、検索、ランキングなどから作品を探せます。WebNR は公式リンクと独自の案内文だけを保存し、作品本文、エピソード、表紙、コメント、アカウント、有料コンテンツやプラットフォームのカタログデータは取得・再配布しません。
   page_url: https://estar.jp/novels
   source: WebNR Japanese Web-Fiction Platform Directory
   license: Link-only-WebNR-editorial
