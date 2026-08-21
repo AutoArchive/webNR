@@ -1,0 +1,50 @@
+korean-web-fiction-platforms/munpia.md:
+  title: 문피아 — 공식 웹소설 발견 입구
+  author: 주식회사 문피아
+  description: 문피아의 공식 웹소설 입구입니다. 판타지, 무협을 비롯한 장르와 작품 탐색 경로를 원문 플랫폼에서 이용할 수 있습니다. WebNR은 공식 링크와 독자 안내용으로 직접 작성한 설명만 저장하며 작품 본문, 회차, 랭킹 값, 댓글, 계정, 구매 정보 또는 플랫폼 카탈로그를 수집·복제하지 않습니다.
+  page_url: https://www.munpia.com/
+  source: WebNR Korean Web-Fiction Platform Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - 문피아
+    - 한국 웹소설
+    - 판타지
+    - 무협
+    - 공식 플랫폼
+  categories:
+    - Official platform discovery
+  region: ko-KR
+
+korean-web-fiction-platforms/naver-series.md:
+  title: 네이버 시리즈 — 공식 웹소설 홈
+  author: 네이버웹툰 유한회사
+  description: 네이버웹툰이 운영하는 네이버 시리즈의 공식 웹소설 홈입니다. 추천, TOP 100, 카테고리, 신간 및 연재 작품 등 현재 원문 플랫폼의 발견 경로를 이용할 수 있습니다. WebNR은 공식 링크와 직접 작성한 안내문만 저장하고 작품, 회차, 표지, 평점, 랭킹, 댓글, 유료 콘텐츠나 계정 데이터를 다시 배포하지 않습니다.
+  page_url: https://series.naver.com/novel/home.series
+  source: WebNR Korean Web-Fiction Platform Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - 네이버 시리즈
+    - 한국 웹소설
+    - 네이버웹툰
+    - 공식 플랫폼
+    - 웹소설 발견
+  categories:
+    - Official platform discovery
+  region: ko-KR
+
+korean-web-fiction-platforms/ridi.md:
+  title: 리디 — 공식 웹소설 추천·발견
+  author: 리디 주식회사
+  description: 리디의 공식 웹소설 추천 입구입니다. 로맨스, 로맨스판타지, 판타지, BL 등 장르와 신작, 베스트, 키워드 기반 발견 경로를 원문 플랫폼에서 이용할 수 있습니다. WebNR은 공식 링크와 직접 작성한 설명만 저장하며 작품 본문, 회차, 표지, 랭킹 값, 구매·계정 정보나 플랫폼 데이터를 수집·복제하지 않습니다.
+  page_url: https://ridibooks.com/webnovel/recommendation
+  source: WebNR Korean Web-Fiction Platform Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - 리디
+    - 한국 웹소설
+    - 로맨스
+    - 판타지
+    - 공식 플랫폼
+  categories:
+    - Official platform discovery
+  region: ko-KR
