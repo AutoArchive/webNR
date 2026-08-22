@@ -6,17 +6,17 @@
 - Latest merged reader-content change: pull request #109, squash merge `a243461f65c8358d5dcf7832e11b2d355476704a`
 - Last successful attributable application deployment: `a0aeaf85d7f40e4bc56ba143dfe34d17553979d3`
 - Current application verification target: `a0aeaf85d7f40e4bc56ba143dfe34d17553979d3`
-- Last successful attributable documentation deployment: `65caa4ccef928a2ef319698804fec67ee10ea9c1`
+- Last successful attributable documentation deployment: `a243461f65c8358d5dcf7832e11b2d355476704a`
 - Current documentation mirror verification target: `a243461f65c8358d5dcf7832e11b2d355476704a`
-- Last successful canonical Cloudflare documentation deployment: `a0aeaf85d7f40e4bc56ba143dfe34d17553979d3`
+- Last successful canonical Cloudflare documentation deployment: `a243461f65c8358d5dcf7832e11b2d355476704a`
 - Current canonical documentation verification target: `a243461f65c8358d5dcf7832e11b2d355476704a`
 - Latest application deployment artifact branch commit: `5af3551f069f8aaed2703660fe6bd637f7489b94`
 - Canonical public documentation and editorial URL: `https://www.webnovel.win/`
 - Working reader URL: `https://app.webnovel.win/`
 - Working documentation build mirror URL: `https://autoarchive.github.io/webNR/`
-- Reader public-site state: healthy and attributable at exact source commit `a0aeaf85d7f40e4bc56ba143dfe34d17553979d3`. Pull request #109 Quality run `32588202269` independently reverified that exact application identity at 2026-08-22T17:36:07Z with HTTP 200 representative application/source checks and the existing full-URL GA4 assertions. The content-only #109 merge does not trigger the application deployment workflow, so the application target remains `a0aeaf85d7f40e4bc56ba143dfe34d17553979d3`.
-- Documentation-mirror state: last independently verified identity remains `65caa4ccef928a2ef319698804fec67ee10ea9c1`. Pull request #109 merged the scheduled Korean reader article as source commit `a243461f65c8358d5dcf7832e11b2d355476704a`, which triggers the documentation publication workflow; the mirror verification target is now that exact commit and must be promoted only after the production-evidence gate observes it.
-- Canonical documentation state: healthy and attributable at exact pre-content source commit `a0aeaf85d7f40e4bc56ba143dfe34d17553979d3`, independently reverified by pull request #109 Quality run `32588202269` at 2026-08-22T17:36:08Z with representative canonical, sitemap, RSS, and article checks. The merged Korean article makes `a243461f65c8358d5dcf7832e11b2d355476704a` the current canonical verification target; promotion requires exact public evidence.
+- Reader public-site state: healthy and attributable at exact source commit `a0aeaf85d7f40e4bc56ba143dfe34d17553979d3`. Pull request #110 Quality run `32588430431` independently reverified that exact application identity at 2026-08-22T17:41:51Z with HTTP 200 representative application/source checks and the existing full-URL GA4 assertions. The content-only #109 merge does not trigger the application deployment workflow, so the application target remains `a0aeaf85d7f40e4bc56ba143dfe34d17553979d3`.
+- Documentation-mirror state: healthy and attributable at exact source commit `a243461f65c8358d5dcf7832e11b2d355476704a`. Pull request #110 Quality run `32588430431` independently observed that exact identity at 2026-08-22T17:41:51Z and passed the representative troubleshooting-page canonical assertion. The verification target remains the same exact commit until the next rendered documentation publication.
+- Canonical documentation state: healthy and attributable at exact source commit `a243461f65c8358d5dcf7832e11b2d355476704a`. Pull request #110 Quality run `32588430431` independently observed that exact identity at 2026-08-22T17:41:51Z after bounded propagation; representative troubleshooting/article canonical checks, sitemap, and RSS all passed. The verification target remains the same exact commit until the next rendered documentation change.
 - Current skill submodule: `f42128a3f05c73cf10c786a2711c488bb3a14839`, exactly matching the current `AutoArchive/seo-skill` default branch during the 2026-08-22 cycle.
 - Current analytics export state: the configured Google Drive folder is accessible, but the 2026-08-22 direct non-trashed child listing exposes no matching GA4 or Search Console exports; missing provider data is unavailable rather than zero.
 - Current Cloudflare traffic-analytics state: neither connected Cloudflare account exposes an exact `webnovel.win` zone during the 2026-08-22 cycle; request analytics are unavailable rather than zero.
@@ -43,7 +43,7 @@
 
 ## Active focus
 
-1. Verify and then promote the exact 2026-08-22 post-content production targets: application `a0aeaf85d7f40e4bc56ba143dfe34d17553979d3`, documentation mirror `a243461f65c8358d5dcf7832e11b2d355476704a`, and canonical documentation `a243461f65c8358d5dcf7832e11b2d355476704a`; advance last-successful labels only after exact public evidence.
+1. Preserve the exact verified 2026-08-22 production state: application `a0aeaf85d7f40e4bc56ba143dfe34d17553979d3`, documentation mirror `a243461f65c8358d5dcf7832e11b2d355476704a`, and canonical documentation `a243461f65c8358d5dcf7832e11b2d355476704a`; keep exact public-evidence gating for the next rendered change.
 2. Preserve the completed Korean web-novel discovery guide and prepare the scheduled 2026-08-24 progression-fantasy and LitRPG recommendation-method guide using the repository's reader-value and evidence requirements rather than cadence-only filler.
 3. Continue daily source growth from the audited and deferred queues. Commercial/user-generated platform ingestion stays link-only unless explicit machine-interface permission plus reproducible robots, paging, cadence, timeout, provenance, update/deletion, and rights fixtures justify a richer capability level.
 4. Preserve exact independent build identities for the reader, canonical documentation site, and documentation mirror; keep all four Quality jobs and the production verifier as permanent release gates.
