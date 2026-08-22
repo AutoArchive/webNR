@@ -1,0 +1,66 @@
+wikisource/pride-and-prejudice-1813.md:
+  title: Pride and Prejudice (1813)
+  author: Jane Austen
+  description: English Wikisource 的《Pride and Prejudice》1813 年版作品页。WebNR 仅保存书目事实、人工核验的发现链接与自写说明；正文、扫描、导出格式、校对状态及具体权利标记继续由 Wikisource 页面提供。
+  page_url: https://en.wikisource.org/wiki/Pride_and_Prejudice_(1813)
+  source: English Wikisource
+  license: Link-only-WebNR-editorial
+  tags:
+    - Wikisource
+    - English literature
+    - Public domain edition
+    - Novel
+  categories:
+    - Free reading discovery
+  region: en-US
+
+wikisource/frankenstein-1831.md:
+  title: Frankenstein, or the Modern Prometheus (Revised Edition, 1831)
+  author: Mary Shelley
+  description: English Wikisource 的《Frankenstein》1831 修订版作品页。该条目只提供稳定的发现入口；WebNR 不复制 Wikisource 正文、页面扫描、下载文件或编辑者注释，并把版本状态与许可核对留在来源页。
+  page_url: https://en.wikisource.org/wiki/Frankenstein,_or_the_Modern_Prometheus_(Revised_Edition,_1831)
+  source: English Wikisource
+  license: Link-only-WebNR-editorial
+  tags:
+    - Wikisource
+    - English literature
+    - Public domain edition
+    - Gothic fiction
+    - Science fiction
+  categories:
+    - Free reading discovery
+  region: en-US
+
+wikisource/dracula.md:
+  title: Dracula
+  author: Bram Stoker
+  description: English Wikisource 的《Dracula》作品页。WebNR 当前仅维护标题、作者、来源与经核验的阅读发现链接，不把来源站的正文、扫描或可下载格式重新包装为 WebNR 内容。
+  page_url: https://en.wikisource.org/wiki/Dracula
+  source: English Wikisource
+  license: Link-only-WebNR-editorial
+  tags:
+    - Wikisource
+    - English literature
+    - Public domain edition
+    - Gothic fiction
+    - Horror
+  categories:
+    - Free reading discovery
+  region: en-US
+
+wikisource/the-time-machine-holt.md:
+  title: The Time Machine (Holt text)
+  author: H. G. Wells
+  description: English Wikisource 的《The Time Machine》Holt 版作品页。WebNR 仅提供人工核验的发现链接和基础书目事实；具体版本、正文、导出格式与页面权利说明仍由 Wikisource 维护。
+  page_url: https://en.wikisource.org/wiki/The_Time_Machine_(Holt_text)
+  source: English Wikisource
+  license: Link-only-WebNR-editorial
+  tags:
+    - Wikisource
+    - English literature
+    - Public domain edition
+    - Science fiction
+    - Novel
+  categories:
+    - Free reading discovery
+  region: en-US

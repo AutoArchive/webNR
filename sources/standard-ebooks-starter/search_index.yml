@@ -1,0 +1,60 @@
+standard-ebooks/pride-and-prejudice.md:
+  title: Pride and Prejudice
+  author: Jane Austen
+  description: Standard Ebooks 的官方作品页。WebNR 当前把它作为合法免费阅读发现入口，不复制 EPUB 文件，也不伪装成 TXT 直链。
+  page_url: https://standardebooks.org/ebooks/jane-austen/pride-and-prejudice
+  source: Standard Ebooks
+  license: CC0-1.0-standard-ebooks
+  tags:
+    - Standard Ebooks
+    - Public domain
+    - Fiction
+  categories:
+    - Free reading discovery
+  region: en-US
+
+standard-ebooks/frankenstein.md:
+  title: Frankenstein
+  author: Mary Shelley
+  description: Standard Ebooks 的官方作品页。页面提供在线阅读与电子书下载；WebNR 当前仅提供发现链接，等待安全 EPUB 解析器后再评估直接导入。
+  page_url: https://standardebooks.org/ebooks/mary-shelley/frankenstein
+  source: Standard Ebooks
+  license: CC0-1.0-standard-ebooks
+  tags:
+    - Standard Ebooks
+    - Public domain
+    - Horror
+    - Science fiction
+  categories:
+    - Free reading discovery
+  region: en-US
+
+standard-ebooks/the-picture-of-dorian-gray.md:
+  title: The Picture of Dorian Gray
+  author: Oscar Wilde
+  description: Standard Ebooks 的官方作品页。WebNR 当前链接到来源页面并保留法域版权提示，不缓存或重新分发第三方文件。
+  page_url: https://standardebooks.org/ebooks/oscar-wilde/the-picture-of-dorian-gray
+  source: Standard Ebooks
+  license: CC0-1.0-standard-ebooks
+  tags:
+    - Standard Ebooks
+    - Public domain
+    - Fiction
+  categories:
+    - Free reading discovery
+  region: en-US
+
+standard-ebooks/the-time-machine.md:
+  title: The Time Machine
+  author: H. G. Wells
+  description: Standard Ebooks 的官方作品页。WebNR 当前提供作品发现与跳转，不把来源站的 EPUB、AZW3 或 KEPUB 文件包装成 TXT 下载。
+  page_url: https://standardebooks.org/ebooks/h-g-wells/the-time-machine
+  source: Standard Ebooks
+  license: CC0-1.0-standard-ebooks
+  tags:
+    - Standard Ebooks
+    - Public domain
+    - Science fiction
+  categories:
+    - Free reading discovery
+  region: en-US
