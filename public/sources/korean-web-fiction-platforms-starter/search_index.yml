@@ -48,3 +48,37 @@ korean-web-fiction-platforms/ridi.md:
   categories:
     - Official platform discovery
   region: ko-KR
+
+korean-web-fiction-platforms/novelpia.md:
+  title: 노벨피아 — 공식 웹소설 검색·발견
+  author: 주식회사 메타크래프트
+  description: 노벨피아의 공식 웹소설 입구입니다. 검색, 랭킹, 자유연재, 플러스 작품 등 원문 플랫폼의 발견 경로를 이용할 수 있습니다. WebNR은 공식 링크와 직접 작성한 안내만 저장하며 작품 본문, 회차, 표지, 랭킹 값, 댓글, 멤버십·계정·결제 정보 또는 플랫폼 카탈로그를 수집·복제하지 않습니다.
+  page_url: https://novelpia.com/
+  source: WebNR Korean Web-Fiction Platform Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - 노벨피아
+    - 한국 웹소설
+    - 자유연재
+    - 플러스
+    - 공식 플랫폼
+  categories:
+    - Official platform discovery
+  region: ko-KR
+
+korean-web-fiction-platforms/britg.md:
+  title: 브릿G — 공식 소설·연재 발견 입구
+  author: 주식회사 민음인
+  description: 브릿G의 공식 소설 플랫폼 입구입니다. 장편·중단편 연재, 리뷰와 커뮤니티 기능, 독자용 작품 탐색 경로를 원문 플랫폼에서 이용할 수 있습니다. WebNR은 공식 링크와 직접 작성한 안내만 저장하며 작품 본문, 회차, 리뷰, 댓글, 작가·계정·구매 정보 또는 플랫폼 데이터를 수집·복제하지 않습니다.
+  page_url: https://britg.kr/
+  source: WebNR Korean Web-Fiction Platform Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - 브릿G
+    - 한국 소설
+    - 웹소설
+    - 리뷰
+    - 공식 플랫폼
+  categories:
+    - Official platform discovery
+  region: ko-KR

@@ -12,7 +12,7 @@ https://app.webnovel.win/?repos=https%3A%2F%2Fapp.webnovel.win%2Fsources%2Fkorea
 Purpose
 -------
 This WebNR-maintained source is a link-only discovery directory for official
-Korean web-fiction platforms reviewed on 2026-08-21. It helps readers reach
+Korean web-fiction platforms reviewed on 2026-08-22. It helps readers reach
 current first-party web-novel browsing and discovery surfaces while leaving
 reading, accounts, purchases, comments, age gates, recommendations, and
 work-specific rights at the origin platform.
@@ -22,6 +22,8 @@ Included discovery routes
 - 문피아 (Munpia) — official Korean web-novel platform and discovery surface
 - 네이버 시리즈 (NAVER SERIES) — NAVER WEBTOON's official web-novel discovery and reading surface
 - 리디 (RIDI) — official Korean web-novel recommendation, category, and ranking surface
+- 노벨피아 (Novelpia) — official Korean web-novel search, ranking, free-serialization, and subscription discovery surface
+- 브릿G (BritG) — official fiction platform with serial fiction, reviews, community discovery, and reader tools
 
 Content and rights boundary
 ---------------------------
@@ -39,7 +41,13 @@ conditions to paid content, age-restricted access, and other service areas.
 RIDI's current v5.0 terms, effective 2026-08-20, reserve rights in company-created
 content and expressly restrict unauthorized macros, scripts, bots, scraping,
 abnormal traffic, unauthorized extraction, and circumvention of technical
-protections. Those boundaries are why this starter is link-only.
+protections. Novelpia's current service terms took effect on 2026-08-13 and its
+public pages state that registered content remains protected by the site and
+original rightsholders against unauthorized copying, transmission, modification,
+and distribution. BritG's current published member and registered-author terms
+keep member-posted work rights with their authors and restrict copying or reuse
+of service-obtained information without authorization. Those boundaries are why
+this starter remains link-only.
 
 Current WebNR behavior
 ----------------------
@@ -47,13 +55,13 @@ Selecting an item opens the official origin page. WebNR performs no runtime API,
 HTML, feed, ranking, search-result, or chapter polling for this starter, so it
 creates no automated origin-site crawl, account, cookie, CORS, pagination,
 rate-limit, or session dependency. WebNR does not automate accounts, purchases,
-free-ticket systems, age verification, DRM, captchas, access controls, or
-regional restrictions.
+free-ticket systems, subscriptions, age verification, DRM, captchas, access
+controls, or regional restrictions.
 
 Audit boundary
 --------------
 The public landing routes and current rights/access boundaries were rechecked on
-2026-08-21. Because this source sends no automated requests to the origins,
+2026-08-22. Because this source sends no automated requests to the origins,
 robots behavior, request cadence, response-size limits, pagination, timeouts,
 encoding, and authenticated-session behavior are outside the admitted runtime
 boundary. A richer adapter would require a separate audit of an explicitly
@@ -61,8 +69,9 @@ permitted machine interface, current origin rules, request cadence, authenticati
 state, pagination, rate limits and backoff, provenance, attribution,
 update/deletion behavior, work-level rights, and representative versioned
 fixtures. RIDI must not be upgraded to an automated scraper under its current
-terms.
+terms. Novelpia and BritG likewise remain link-only until an explicitly permitted
+machine interface and complete runtime fixtures justify a different capability.
 
 Last verified
 -------------
-2026-08-21
+2026-08-22
