@@ -38,8 +38,8 @@ provider content and restrict unapproved commercial reuse of information or
 platform-owned materials. NAVER WEBTOON's current service terms reserve rights
 in the service while keeping author rights in user postings and apply separate
 conditions to paid content, age-restricted access, and other service areas.
-RIDI's current v5.0 terms, effective 2026-08-20, reserve rights in company-created
-content and expressly restrict unauthorized macros, scripts, bots, scraping,
+RIDI's published terms page currently identifies service terms v4.14, effective
+2026-04-02, and expressly restricts unauthorized macros, scripts, bots, scraping,
 abnormal traffic, unauthorized extraction, and circumvention of technical
 protections. Novelpia's current service terms took effect on 2026-08-13 and its
 public pages state that registered content remains protected by the site and
