@@ -1,0 +1,50 @@
+progression-litrpg-publisher-discovery/aethon-books.md:
+  title: Aethon Books — GameLit/LitRPG & Progression Catalog
+  author: Aethon Books
+  description: Aethon Books 的官方目录提供独立的 GameLit/LitRPG 分类，并在奇幻目录中收录 progression fantasy 作品。WebNR 仅保存官方目录链接和自行撰写的发现说明，不抓取或复制书籍简介、封面、价格、评分、作者资料或正文。
+  page_url: https://aethonbooks.com/catalog/
+  source: WebNR Progression & LitRPG Publisher Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Aethon Books
+    - LitRPG
+    - GameLit
+    - Progression fantasy
+    - Publisher catalog
+  categories:
+    - Publisher discovery
+  region: en
+
+progression-litrpg-publisher-discovery/mountaindale-press.md:
+  title: Mountaindale Press — LitRPG Catalog
+  author: Mountaindale Press
+  description: Mountaindale Press 的官方目录集中展示 LitRPG、GameLit 与相关 progression fiction，并提供作者、系列、新作与已完结系列等发现入口。WebNR 仅链接官方目录，不抓取或复制目录数据、书籍内容、价格、封面、评分或购买信息。
+  page_url: https://www.mountaindalepress.store/pages/catalog
+  source: WebNR Progression & LitRPG Publisher Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Mountaindale Press
+    - LitRPG
+    - GameLit
+    - Progression fantasy
+    - Publisher catalog
+  categories:
+    - Publisher discovery
+  region: en
+
+progression-litrpg-publisher-discovery/portal-books.md:
+  title: Portal Books — LitRPG, Progression & Cultivation Catalog
+  author: Portal Books
+  description: Portal Books 的官方书目面向 LitRPG、progression fantasy、cultivation 与 portal adventure，读者可从原站查看系列与当前出版状态。WebNR 仅保存官方发现链接与自行撰写的标签，不复制书籍简介、封面、评分、价格、作者资料、零售数据或正文。
+  page_url: https://portal-books.com/our-books/
+  source: WebNR Progression & LitRPG Publisher Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Portal Books
+    - LitRPG
+    - Progression fantasy
+    - Cultivation
+    - Publisher catalog
+  categories:
+    - Publisher discovery
+  region: en
