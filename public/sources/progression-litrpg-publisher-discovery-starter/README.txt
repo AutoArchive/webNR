@@ -22,6 +22,9 @@ Included discovery routes
 - Aethon Books — first-party catalog with a dedicated GameLit/LitRPG section and progression-fantasy releases
 - Mountaindale Press — first-party publisher catalog centered on LitRPG and related progression fiction
 - Portal Books — first-party catalog for LitRPG, progression fantasy, cultivation, and portal adventure
+- Wraithmarked Creative — first-party series collections that include Arcane Ascension, Mother of Learning, and Warformed
+- Shadow Alley Press — first-party library with LitRPG, cultivation, isekai, and progression-adjacent series
+- Timeless Wind Publishing — first-party publisher site explicitly covering progression fantasy, LitRPG, time loops, cultivation, and system-apocalypse fiction
 
 Content and rights boundary
 ---------------------------
@@ -40,17 +43,40 @@ reuse license. No reviewed origin exposes an explicit machine-interface license
 that would justify copying or continuously polling its catalog. The admitted
 capability is therefore link-only.
 
+The 2026-08-24 audit added three first-party discovery routes. Wraithmarked's
+public collections page exposes named fantasy series and normal reader-facing
+collection links. Shadow Alley Press exposes a public Library and identifies its
+focus as adult science fiction, fantasy, and action-adventure; its current catalog
+and release pages include LitRPG, cultivation, isekai, and progression-related
+series. Timeless Wind Publishing identifies itself as an independent fantasy and
+science-fiction publisher and explicitly lists progression fantasy, power fantasy,
+LitRPG, time loops, cultivation, and system apocalypse among the genres it seeks
+to publish. All three pages were reachable through a normal browser without an
+account on 2026-08-24. Their public pages provide no machine-readable reuse grant
+that WebNR relies on, so the admitted behavior stays link-only and copies no
+origin catalog data.
+
+Two additional candidates were screened during the same cycle and left outside
+the source. Royal Guard Publishing presents LitRPG and fantasy publishing but its
+first-party site currently emphasizes author submissions and links readers onward
+to retailer searches rather than exposing a stable reader catalog. The Legion
+Publishers publicly accepts LitRPG, GameLit, Progression Fantasy, Dungeon Core,
+Cultivation, Magical Academy, Harem, and Cyberpunk submissions, but the audited
+surface is likewise submission-oriented. Both remain candidates for a later
+reader-surface audit instead of being admitted on publisher identity alone.
+
 Current WebNR behavior
 ----------------------
-Selecting an item opens the corresponding public publisher catalog. WebNR does
-not call origin APIs, crawl catalog HTML, poll search or release pages, proxy
-responses, mirror metadata, cache publisher assets, automate accounts, or perform
-purchases. This starter adds no origin-site cookie, CORS, pagination, request-
-cadence, response-size, or rate-limit dependency to the WebNR reader path.
+Selecting an item opens the corresponding public publisher catalog or first-party
+discovery page. WebNR does not call origin APIs, crawl catalog HTML, poll search or
+release pages, proxy responses, mirror metadata, cache publisher assets, automate
+accounts, or perform purchases. This starter adds no origin-site cookie, CORS,
+pagination, request-cadence, response-size, or rate-limit dependency to the WebNR
+reader path.
 
 Audit boundary
 --------------
-The three included HTTPS catalog routes were rechecked on 2026-08-23 and were
+The six included HTTPS discovery routes were rechecked on 2026-08-24 and were
 publicly reachable without an account. Because the source makes no runtime
 requests to those origins beyond a reader choosing to follow a normal link,
 robots rules, automated-request cadence, pagination, CORS, response-size limits,
@@ -67,4 +93,4 @@ origin.
 
 Last verified
 -------------
-2026-08-23
+2026-08-24
