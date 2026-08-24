@@ -48,3 +48,53 @@ progression-litrpg-publisher-discovery/portal-books.md:
   categories:
     - Publisher discovery
   region: en
+
+progression-litrpg-publisher-discovery/wraithmarked-creative.md:
+  title: Wraithmarked Creative — Progression-Fantasy Series Discovery
+  author: Wraithmarked Creative
+  description: Wraithmarked Creative 的第一方系列目录集中列出 Arcane Ascension、Mother of Learning、Warformed 等 fantasy 与 progression-adjacent 系列。WebNR 仅保存官方集合页链接和自行撰写的发现标签，不复制商品、书籍、封面、价格、简介、库存或账户信息。
+  page_url: https://wraithmarked.com/collections
+  source: WebNR Progression & LitRPG Publisher Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Wraithmarked Creative
+    - Progression fantasy
+    - Fantasy
+    - Publisher catalog
+  categories:
+    - Publisher discovery
+  region: en
+
+progression-litrpg-publisher-discovery/shadow-alley-press.md:
+  title: Shadow Alley Press — LitRPG & Progression-Fantasy Library
+  author: Shadow Alley Press
+  description: Shadow Alley Press 的第一方 Library 提供其 fantasy 与 science-fiction 系列发现入口，当前书目包含 LitRPG、cultivation、isekai 与 progression 相关作品。WebNR 仅链接官方书库，不复制书籍简介、封面、价格、评论、零售链接、作者资料或正文。
+  page_url: https://shadowalleypress.com/library/
+  source: WebNR Progression & LitRPG Publisher Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Shadow Alley Press
+    - LitRPG
+    - Progression fantasy
+    - Cultivation
+    - Publisher catalog
+  categories:
+    - Publisher discovery
+  region: en
+
+progression-litrpg-publisher-discovery/timeless-wind-publishing.md:
+  title: Timeless Wind Publishing — Progression Fantasy & LitRPG Discovery
+  author: Timeless Wind Publishing
+  description: Timeless Wind Publishing 的第一方站点明确覆盖 progression fantasy、LitRPG、time loops、cultivation 与 system-apocalypse 等类型，并链接其当前出版作品。WebNR 仅保存官方站点链接和自行撰写的发现说明，不复制书籍简介、封面、价格、零售数据、作者资料或正文。
+  page_url: https://www.timelesswind.com/
+  source: WebNR Progression & LitRPG Publisher Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Timeless Wind Publishing
+    - LitRPG
+    - Progression fantasy
+    - Cultivation
+    - Publisher catalog
+  categories:
+    - Publisher discovery
+  region: en
