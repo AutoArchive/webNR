@@ -8,15 +8,15 @@
 - Current application verification target: `c7ec8cec3b0a6e2754f43b483eb85313fc2e2fe0`
 - Last successful attributable documentation deployment: `7b671beb4a5321c60528b0b2add96296f2e68296`
 - Current documentation mirror verification target: `7b671beb4a5321c60528b0b2add96296f2e68296`
-- Last successful canonical Cloudflare documentation deployment: `7b671beb4a5321c60528b0b2add96296f2e68296`
-- Current canonical documentation verification target: `7b671beb4a5321c60528b0b2add96296f2e68296`
+- Last successful canonical Cloudflare documentation deployment: `c7ec8cec3b0a6e2754f43b483eb85313fc2e2fe0`
+- Current canonical documentation verification target: `c7ec8cec3b0a6e2754f43b483eb85313fc2e2fe0`
 - Latest application deployment artifact branch commit: `848a59f36eeba7e405b646228064dd3024947cad`
 - Canonical public documentation and editorial URL: `https://www.webnovel.win/`
 - Working reader URL: `https://app.webnovel.win/`
 - Working documentation build mirror URL: `https://autoarchive.github.io/webNR/`
 - Reader public-site target: exact source commit `c7ec8cec3b0a6e2754f43b483eb85313fc2e2fe0` from pull request #116. Application artifact branch commit `848a59f36eeba7e405b646228064dd3024947cad` has `build.json` naming that exact source commit and contains the three-entry static `Fanfiction Discovery Starter` fixture.
-- Documentation-mirror target: exact source commit `7b671beb4a5321c60528b0b2add96296f2e68296` from pull request #114. The documentation build identity is unchanged by the 2026-08-25 source-only application deployment.
-- Canonical documentation target: exact source commit `7b671beb4a5321c60528b0b2add96296f2e68296` from pull request #114. The unchanged Production evidence gate must continue to observe this identity directly at `https://www.webnovel.win/build.json` together with representative canonical, sitemap, RSS, troubleshooting, and content assertions.
+- Documentation-mirror target: exact source commit `7b671beb4a5321c60528b0b2add96296f2e68296` from pull request #114. The GitHub Pages mirror was not rebuilt by the 2026-08-25 source-only application change and continues to expose that attributable documentation build.
+- Canonical documentation target: exact source commit `c7ec8cec3b0a6e2754f43b483eb85313fc2e2fe0`. During closeout pull request #117, the unchanged Production evidence job observed that the canonical Cloudflare documentation project had rebuilt from #116 and was serving this source identity at `https://www.webnovel.win/build.json`, while the rendered documentation content remained compatible with the unchanged documentation source. The closeout verifier must observe this identity together with representative canonical, sitemap, RSS, troubleshooting, and content assertions.
 - Current skill submodule: `f42128a3f05c73cf10c786a2711c488bb3a14839`, exactly matching the current `AutoArchive/seo-skill` default branch during the 2026-08-25 cycle.
 - Current analytics export state: the configured Google Drive folder is accessible, but the 2026-08-25 direct non-trashed child listing exposes no matching GA4 or Search Console exports; missing provider data is unavailable rather than zero.
 - Current Cloudflare traffic-analytics state: neither connected Cloudflare account exposes an exact `webnovel.win` zone during the 2026-08-25 cycle; request analytics are unavailable rather than zero.
@@ -34,6 +34,7 @@
 - Runtime analytics remain one GA4 destination, `G-DGH8HNQKE4`. Application output requires `window.location.href` for `page_location` and `window.location.pathname + window.location.search` for `page_path`, while Google signals and ad-personalization signals remain disabled. Documentation uses and publicly discloses the same GA4 destination and full-query-string reporting policy.
 - The configured GA4/Search Console Drive folder exposes no matching export files, and the connected Cloudflare accounts expose no exact `webnovel.win` zone. Those are observation gaps, not zero-valued metrics or a reason to change production analytics.
 - For the 2026-08-25 cycle, the three-day finalization lag makes 2026-08-22 the finalized watermark. The comparable 7-day window is 2026-08-16 through 2026-08-22 versus 2026-08-09 through 2026-08-15; the comparable 28-day window is 2026-07-26 through 2026-08-22 versus 2026-06-28 through 2026-07-25. These windows cannot be scored because matching GA4/GSC/Cloudflare evidence is unavailable.
+- Closeout pull request #117 exposed a production-identity drift rather than a rendered-site regression: Quality run `32876654928` passed Web quality, Documentation quality, and Chromium user journeys, but Production evidence failed because the recorded canonical documentation target was still `7b671beb4a5321c60528b0b2add96296f2e68296` while the live Cloudflare documentation site consistently reported `c7ec8cec3b0a6e2754f43b483eb85313fc2e2fe0`. The verifier repeated the observation across its full retry window. The target is therefore reconciled to the observed attributable canonical build before rerunning the complete Quality workflow.
 - No automated community account, outreach, backlink request, or unsolicited promotion was used in the 2026-08-25 cycle. Bounded community/forum inspection remained contextual evidence rather than a population-level signal.
 - Local TXT reading remains a core supported path. EPUB support and richer remote-source adapters remain future work that must ship with explicit parser, fixture, size, timeout, security, provenance, and rights/access contracts rather than compatibility-by-claim.
 - `scripts/verify-production-builds.mjs` depends on the exact deployment-key labels in this file. Those labels must remain unchanged unless the verifier and its tests are updated in the same reviewed change.
@@ -41,7 +42,7 @@
 
 ## Active focus
 
-1. Preserve exact current production identities: application `c7ec8cec3b0a6e2754f43b483eb85313fc2e2fe0`, documentation mirror `7b671beb4a5321c60528b0b2add96296f2e68296`, and canonical documentation `7b671beb4a5321c60528b0b2add96296f2e68296`; keep exact public-evidence gating for every rendered change.
+1. Preserve exact current production identities: application `c7ec8cec3b0a6e2754f43b483eb85313fc2e2fe0`, documentation mirror `7b671beb4a5321c60528b0b2add96296f2e68296`, and canonical documentation `c7ec8cec3b0a6e2754f43b483eb85313fc2e2fe0`; keep exact public-evidence gating for every rendered change.
 2. Preserve the new link-only Fanfiction Discovery Starter and complete the scheduled 2026-08-26 fanfiction / transformative-serial-fiction research asset using current first-party, academic, archival, and bounded community evidence rather than cadence-only filler.
 3. Continue daily source growth from audited and deferred queues. Commercial/user-generated platform ingestion stays link-only unless an explicit machine interface plus reproducible rights/access, robots, paging, cadence, timeout, provenance, update/deletion, attribution, and account/access fixtures justify a richer capability level.
 4. Preserve exact independent build identities for the reader, canonical documentation site, and documentation mirror; keep all four Quality jobs and the production verifier as permanent release gates.
