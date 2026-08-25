@@ -1,0 +1,47 @@
+fanfiction-discovery/fanfiction-net-search.md:
+  title: FanFiction.Net — Story & Crossover Search
+  author: FanFiction.Net
+  description: FanFiction.Net 的第一方公开搜索入口，可按 fandom、标题/简介关键词以及普通或 crossover 作品寻找同人小说。WebNR 仅保存官方搜索链接和自行撰写的发现说明，不抓取、复制、缓存或重发用户投稿、作者资料、评论、收藏数据或正文。
+  page_url: https://www.fanfiction.net/search/?ready=1
+  source: WebNR Fanfiction Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - FanFiction.Net
+    - Fan fiction
+    - Crossover
+    - Fandom search
+  categories:
+    - Fanfiction discovery
+  region: en
+
+fanfiction-discovery/fimfiction-stories.md:
+  title: Fimfiction — My Little Pony Fanfiction Browse
+  author: Fimfiction
+  description: Fimfiction 的第一方 Stories 目录可按标签、题材、完成状态、篇幅、更新时间与排序方式发现 My Little Pony 同人小说。WebNR 当前只链接官方目录，不调用其 API，也不复制故事元数据、下载文件、封面、评论、评分、账户数据或正文。
+  page_url: https://www.fimfiction.net/stories
+  source: WebNR Fanfiction Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Fimfiction
+    - Fan fiction
+    - My Little Pony
+    - Story discovery
+  categories:
+    - Fanfiction discovery
+  region: en
+
+fanfiction-discovery/scribble-hub-fanfiction.md:
+  title: Scribble Hub — Fanfiction Genre
+  author: Scribble Hub
+  description: Scribble Hub 的第一方 Fanfiction 题材目录，为已在 Scribble Hub 连载的同人作品提供按章节、更新、热度、评分、读者与状态等维度的发现入口。WebNR 仅保存官方题材页链接，不复制用户作品、简介、封面、评分、评论、作者资料或正文。
+  page_url: https://www.scribblehub.com/genre/fanfiction/
+  source: WebNR Fanfiction Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Scribble Hub
+    - Fan fiction
+    - Serialized fiction
+    - Genre discovery
+  categories:
+    - Fanfiction discovery
+  region: en
