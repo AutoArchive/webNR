@@ -45,3 +45,69 @@ fanfiction-discovery/scribble-hub-fanfiction.md:
   categories:
     - Fanfiction discovery
   region: en
+
+fanfiction-discovery/ao3-work-search.md:
+  title: Archive of Our Own (AO3) — Work Search
+  author: Organization for Transformative Works
+  description: AO3 的第一方作品搜索入口，可组合 fandom、关系、角色、附加标签、分级、警告、语言、字数与完成状态等字段发现同人及其他变形创作。WebNR 当前保存官方搜索链接和自行撰写的发现说明；AO3 同时提供部分 canonical tag 的 Atom feed，后续可在 WebNR 具备经过测试的 Atom 运行时后单独审计升级。
+  page_url: https://archiveofourown.org/works/search
+  source: WebNR Fanfiction Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - AO3
+    - Archive of Our Own
+    - Fan fiction
+    - Transformative works
+    - Tag search
+  categories:
+    - Fanfiction discovery
+  region: en
+
+fanfiction-discovery/squidgeworld-work-search.md:
+  title: SquidgeWorld Archive — Work Search
+  author: Squidge.org
+  description: SquidgeWorld Archive 的第一方作品搜索入口，支持按作品字段、fandom、关系与附加标签、完成状态、字数和作品统计等条件发现多 fandom 作品。WebNR 仅保存官方搜索链接与自行撰写的说明，内容、标签元数据、账户和正文继续留在 SquidgeWorld。
+  page_url: https://squidgeworld.org/works/search
+  source: WebNR Fanfiction Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - SquidgeWorld
+    - Fan fiction
+    - Multifandom
+    - Work search
+  categories:
+    - Fanfiction discovery
+  region: en
+
+fanfiction-discovery/fanfiction-lol-fandoms.md:
+  title: fanfiction.lol — Fandom Browse
+  author: fanfiction.lol
+  description: fanfiction.lol 的第一方 Fandoms 目录，为一个仍在主动开发的小型独立 fanwork archive 提供题材发现入口。站点自身明确提示功能与数据仍可能变化；WebNR 因此只链接当前公开目录，并把稳定性风险留给读者可见说明。
+  page_url: https://fanfiction.lol/media
+  source: WebNR Fanfiction Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - fanfiction.lol
+    - Fan fiction
+    - Independent archive
+    - Fandom browse
+  categories:
+    - Fanfiction discovery
+  region: en
+
+fanfiction-discovery/sunset-femslash.md:
+  title: Sunset — Femslash Transformative Fanworks
+  author: Sunset
+  description: Sunset 是由粉丝创建、运营的非营利非商业变形创作档案，重点收录 F/F、F/NB 与 NB/NB fanworks。WebNR 当前链接其第一方公开首页作为专门化 archive 的发现入口；站内标签、作品、账号、合集及正文继续留在 Sunset。
+  page_url: https://sunset.femslash.club/
+  source: WebNR Fanfiction Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Sunset
+    - Fan fiction
+    - Femslash
+    - Transformative works
+    - Independent archive
+  categories:
+    - Fanfiction discovery
+  region: en
