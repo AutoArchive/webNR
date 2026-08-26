@@ -94,3 +94,20 @@ fanfiction-discovery/fanfiction-lol-fandoms.md:
   categories:
     - Fanfiction discovery
   region: en
+
+fanfiction-discovery/sunset-femslash.md:
+  title: Sunset — Femslash Transformative Fanworks
+  author: Sunset
+  description: Sunset 是由粉丝创建、运营的非营利非商业变形创作档案，重点收录 F/F、F/NB 与 NB/NB fanworks。WebNR 当前链接其第一方公开首页作为专门化 archive 的发现入口；站内标签、作品、账号、合集及正文继续留在 Sunset。
+  page_url: https://sunset.femslash.club/
+  source: WebNR Fanfiction Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Sunset
+    - Fan fiction
+    - Femslash
+    - Transformative works
+    - Independent archive
+  categories:
+    - Fanfiction discovery
+  region: en
