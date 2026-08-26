@@ -63,7 +63,7 @@ Tags FAQ 说明 canonical tags 会把相关用户标签连接到可浏览入口�
 
 AO3 的 Terms FAQ 还说明 Archive Warnings 采用一个刻意精简的强制体系，Additional Tags、summary 与 bookmark 信息承担额外补充角色。[P2] 对内容敏感的读者，可以把 warnings、排除标签、summary 与公开书签视为多层筛选。
 
-## 三、排序是导航信号，而不是口味本身
+## 三、排序提供导航信号，口味需要额外判断
 
 在大型 fandom 中，按 kudos 或 bookmarks 排序非常省时间。它会迅速把很多读者曾经互动过的作品推到前面，作为第一次进入 fandom 的候选生成器很有效。近期 r/AO3 讨论里，读者也持续把 kudos、bookmark、作者主页与别人的公开书签组合使用。[P23]-[P27]
 
@@ -139,7 +139,7 @@ Sunset 自我描述为 fan-created、fan-run、nonprofit、noncommercial 的 tra
 
 ### 历史保存与迁移
 
-Ad Astra 的 legacy archive 公开说明旧站作为 read-only snapshot 保留，而当前主站在本次自动化环境中启用了 Anubis anti-bot challenge。[P26] 这说明“旧站可读”“新站活跃”“机器接口可用”是需要分别记录的事实。可靠发现目录应该逐项核验，而不是把普通页面访问自动扩展成批量同步能力。
+Ad Astra 的 legacy archive 公开说明旧站作为 read-only snapshot 保留，而当前主站在本次自动化环境中启用了 Anubis anti-bot challenge。[P26] 这说明“旧站可读”“新站活跃”“机器接口可用”是需要分别记录的事实。可靠发现目录应该逐项核验，并把普通页面访问与批量同步能力分开记录。
 
 ## 八、Open Doors 展示了保存所需的治理层
 
