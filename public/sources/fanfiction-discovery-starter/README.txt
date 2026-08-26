@@ -24,6 +24,7 @@ Included discovery routes
 - Archive of Our Own (AO3) — first-party work search across fanworks and transformative works
 - SquidgeWorld Archive — first-party work search across its independent multifandom archive
 - fanfiction.lol — first-party fandom directory for a small independent archive in active development
+- Sunset — first-party home for a fan-run F/F, F/NB, and NB/NB transformative-work archive
 
 Content and rights boundary
 ---------------------------
@@ -83,6 +84,16 @@ where features may break and data may be accidentally deleted. The WebNR entry
 therefore makes that stability limitation visible and keeps the capability to a
 normal first-party discovery link. No site content is copied into WebNR.
 
+Sunset identifies itself as a fan-created, fan-run, nonprofit, noncommercial
+archive dedicated to F/F, F/NB, and NB/NB transformative works. Its public home,
+collections surface, and current Terms FAQ rendered through ordinary public web
+access during this audit. The currently published Terms FAQ carries the same
+OTW-Archive-style distinction between policy-violating scraping and generally
+permitted non-policy-violating automation while retaining site-level technical
+control. WebNR admits only Sunset's public home as a specialized archive-discovery
+route in this cycle, so no source-side tag vocabulary, work metadata, collection
+membership, account state, or content is replicated.
+
 Current WebNR behavior
 ----------------------
 Selecting an item opens the corresponding first-party discovery page. WebNR does
@@ -98,7 +109,7 @@ reader encounters after following a normal link remain those of the origin.
 
 Audit boundary
 --------------
-The six included HTTPS discovery routes were checked through normal public web
+The seven included HTTPS discovery routes were checked through normal public web
 access on 2026-08-26 or retained from the immediately preceding verified cycle.
 The new source-specific review covered origin identity, public access, current
 terms or content-policy evidence, redistribution boundary, machine-interface
@@ -121,6 +132,12 @@ fanfiction.lol's public fandom directory rendered without an account and exposed
 its current archive categories. Its active-development warning is treated as a
 source-health limitation rather than suppressed.
 
+Sunset's public home rendered without an account and described the archive's
+specialized scope. A current first-party Collections surface also rendered and
+showed active 2026 collections and prompt projects, while account-only creation
+and subscription functions remain origin-owned. This bounded review is complete
+for the single public-home discovery capability admitted here.
+
 The committed `search_index.yml` is the versioned fixture for this discovery
 capability. A richer adapter for any origin requires a separate audit of an
 explicitly permitted machine interface, current terms and robots behavior,
@@ -133,12 +150,9 @@ Candidate review
 ----------------
 Five additional adjacent archive families were screened for this cycle beyond
 the prior starter set: SquidgeWorld Archive, fanfiction.lol, Sunset, Ad Astra,
-and the Comic Fanfiction Authors Archive (CFAA). SquidgeWorld and
-fanfiction.lol passed the complete bounded audit and are admitted above. Sunset
-also exposed a current public first-party home and current Terms FAQ, and remains
-a healthy candidate for a later source expansion once its exact discovery route
-and source-specific differences from the upstream OTW-Archive policy text are
-captured in a versioned audit.
+and the Comic Fanfiction Authors Archive (CFAA). SquidgeWorld, fanfiction.lol,
+and Sunset received complete bounded source-specific review for the exact
+link-only capability considered here and are admitted above.
 
 Ad Astra's legacy archive remains publicly readable and explicitly says the old
 site is a preserved read-only snapshot, while its current primary archive is
@@ -155,8 +169,9 @@ treated as safe for ingestion by assumption.
 
 Rotating health review
 ----------------------
-The existing FanFiction.Net search, Fimfiction Stories browser, and Scribble Hub
-Fanfiction directory remained the retained baseline for this starter. Their
+The existing FanFiction.Net search, Fimfiction Stories/search documentation, and
+Scribble Hub Series Finder/Fanfiction discovery surfaces were rechecked on
+2026-08-26 and remained publicly discoverable in the audited reader path. Their
 capability remains limited to ordinary first-party discovery links; no broader
 machine-access or redistribution permission is inferred from availability.
 
