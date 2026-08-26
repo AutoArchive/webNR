@@ -11,7 +11,7 @@ https://app.webnovel.win/?repos=https%3A%2F%2Fapp.webnovel.win%2Fsources%2Ffanfi
 
 Purpose
 -------
-This WebNR-maintained source is a small link-only directory for readers looking
+This WebNR-maintained source is a small discovery directory for readers looking
 for fan fiction and transformative serial fiction. It points to first-party
 search or browse surfaces while leaving work metadata, fandom ownership,
 accounts, ratings, comments, downloads, and story text at the origin.
@@ -21,6 +21,9 @@ Included discovery routes
 - FanFiction.Net — first-party story and crossover search across its fandom archive
 - Fimfiction — first-party story browse and search for My Little Pony fanfiction
 - Scribble Hub — first-party Fanfiction genre directory for serialized works hosted on Scribble Hub
+- Archive of Our Own (AO3) — first-party work search across fanworks and transformative works
+- SquidgeWorld Archive — first-party work search across its independent multifandom archive
+- fanfiction.lol — first-party fandom directory for a small independent archive in active development
 
 Content and rights boundary
 ---------------------------
@@ -46,11 +49,39 @@ current API/rights review, request bounds, deletion semantics, and versioned
 fixtures.
 
 Scribble Hub exposes a public Series Finder and a first-party Fanfiction genre.
-Its Terms of Service, last observed updated 2026-06-29, describe user-posted works
-as User Content and grant Scribble Hub service-specific hosting/display rights;
-WebNR does not infer a redistribution license from that relationship. The current
-integration therefore links the public Fanfiction directory without copying or
-polling user submissions.
+Its Terms of Service describe user-posted works as User Content and grant
+Scribble Hub service-specific hosting/display rights; WebNR does not infer a
+redistribution license from that relationship. The current integration therefore
+links the public Fanfiction directory without copying or polling user
+submissions.
+
+AO3's current Terms of Service and Terms FAQ distinguish prohibited commercial
+scraping and policy-violating automation from generally permitted noncommercial
+bot or scraping purposes, while reserving the Archive's right to apply
+robots.txt and other technical limits. The official OTW-Archive code repository
+also states that the software currently has no API. AO3 separately documents
+Atom feeds for most canonical tags and expressly describes those feeds as usable
+in personal feed readers or for syndication on other sites. This evidence is
+enough to admit AO3 as a first-party discovery route and to record Atom as a
+future machine-interface candidate. WebNR's current repository runtime consumes
+`search_index.yml`, not arbitrary Atom feeds, so this cycle does not pretend that
+the reader can yet synchronize those feeds. A later Atom adapter must prove
+browser/runtime transport, feed identity, pagination or truncation behavior,
+update semantics, rate limits, response bounds, attribution, and fixtures before
+promotion.
+
+SquidgeWorld Archive exposes a public OTW-Archive-style Work Search. Squidge.org
+states that users own their data and Squidge hosts it, and its current terms
+expressly prohibit scraping or aggregation for AI or machine-learning datasets.
+The admitted WebNR capability makes no origin requests beyond a reader following
+the normal search link and performs no content aggregation, so it stays within a
+narrow discovery boundary.
+
+fanfiction.lol exposes a public fandom directory and current first-party content
+policy. The site prominently identifies itself as an active-development service
+where features may break and data may be accidentally deleted. The WebNR entry
+therefore makes that stability limitation visible and keeps the capability to a
+normal first-party discovery link. No site content is copied into WebNR.
 
 Current WebNR behavior
 ----------------------
@@ -58,7 +89,7 @@ Selecting an item opens the corresponding first-party discovery page. WebNR does
 not call origin APIs, crawl catalog HTML, poll rankings or updates, proxy
 responses, mirror metadata, cache origin assets, automate accounts, submit forms,
 perform downloads, or attempt to bypass age, login, payment, captcha, robots,
-rate-limit, or other access controls.
+rate-limit, anti-bot, or other access controls.
 
 Because the admitted capability is static link-only, the WebNR reader path adds
 no origin-site CORS, cookie, login, pagination, request-cadence, response-size,
@@ -67,33 +98,82 @@ reader encounters after following a normal link remain those of the origin.
 
 Audit boundary
 --------------
-The three included HTTPS discovery routes were checked through normal public web
-access on 2026-08-25. FanFiction.Net's search surface did not require an account
-for the audited reader path. Fimfiction's public Stories page rendered a browse
-and filter surface without requiring an account, while also indicating that some
-site functionality benefits from JavaScript. Scribble Hub's Series Finder and
-Fanfiction genre were publicly discoverable without an account in the audited
-path.
+The six included HTTPS discovery routes were checked through normal public web
+access on 2026-08-26 or retained from the immediately preceding verified cycle.
+The new source-specific review covered origin identity, public access, current
+terms or content-policy evidence, redistribution boundary, machine-interface
+claims, account/access controls, runtime transport, and the exact capability
+shipped.
 
-The committed search index is the versioned fixture for this static link-only
-capability. A richer adapter for any origin would require a separate audit of an
+AO3's first-party Search and Browse FAQ documents work search across tags, title,
+author, words, hits, kudos, published date, and language, and its current Tags
+FAQ documents canonical tags and tag-wrangling behavior. Current first-party
+news from June 2026 confirms that tag wranglers continue to revise canonical
+"No Fandom" tag relationships. The source entry therefore points to search
+rather than encoding a frozen interpretation of AO3's tag taxonomy.
+
+SquidgeWorld's public Work Search rendered without requiring an account for the
+audited reader path and exposed completion, crossover, word-count, language,
+fandom, rating, warning, character, relationship, additional-tag, hit, kudos,
+comment, and bookmark filters.
+
+fanfiction.lol's public fandom directory rendered without an account and exposed
+its current archive categories. Its active-development warning is treated as a
+source-health limitation rather than suppressed.
+
+The committed `search_index.yml` is the versioned fixture for this discovery
+capability. A richer adapter for any origin requires a separate audit of an
 explicitly permitted machine interface, current terms and robots behavior,
 stable work/edition identity, pagination, request cadence, rate limits, timeouts
 and backoff, provenance, attribution, update/deletion semantics, regional and
 age/access boundaries, maximum response size, and representative versioned
 fixtures.
 
-Candidate boundary
-------------------
-Archive of Our Own (AO3) remains a high-value candidate for the scheduled
-fanfiction ecosystem work, but no source capability was admitted in this cycle
-because the operating environment did not provide sufficiently current
-first-party machine-access and policy evidence for a complete source audit.
-Twisting the Hellmouth was also screened but its first-party reader surface was
-not reliably accessible from the operating environment during this cycle. Neither
-candidate is treated as failed, licensed, or safe for automated ingestion by
-assumption; both remain deferred for a later evidence-complete audit.
+Candidate review
+----------------
+Five additional adjacent archive families were screened for this cycle beyond
+the prior starter set: SquidgeWorld Archive, fanfiction.lol, Sunset, Ad Astra,
+and the Comic Fanfiction Authors Archive (CFAA). SquidgeWorld and
+fanfiction.lol passed the complete bounded audit and are admitted above. Sunset
+also exposed a current public first-party home and current Terms FAQ, and remains
+a healthy candidate for a later source expansion once its exact discovery route
+and source-specific differences from the upstream OTW-Archive policy text are
+captured in a versioned audit.
+
+Ad Astra's legacy archive remains publicly readable and explicitly says the old
+site is a preserved read-only snapshot, while its current primary archive is
+protected by an Anubis anti-bot challenge in the operating environment. The
+current primary reader surface therefore remains deferred from a WebNR source
+definition until a normal, reproducible reader route can be verified without
+bypassing that control.
+
+CFAA remains discoverable as an active comics-focused archive through current
+fandom archival references, while its first-party site also presents an Anubis
+anti-bot challenge in the operating environment and current first-party terms
+could not be completed in this cycle. It remains deferred rather than being
+treated as safe for ingestion by assumption.
+
+Rotating health review
+----------------------
+The existing FanFiction.Net search, Fimfiction Stories browser, and Scribble Hub
+Fanfiction directory remained the retained baseline for this starter. Their
+capability remains limited to ordinary first-party discovery links; no broader
+machine-access or redistribution permission is inferred from availability.
+
+Machine-interface upgrade path
+------------------------------
+AO3 is no longer deferred for lack of policy evidence. Current first-party
+evidence supports ordinary discovery and documents an official Atom feed surface
+for canonical tags, while the OTW-Archive repository confirms there is no
+general API. The remaining blocker for a richer AO3 integration is WebNR's
+runtime capability and transport/fixture validation, not an invented claim that
+AO3 has an API or that all scraping is forbidden.
+
+Fimfiction remains the strongest existing official-API upgrade candidate. Its
+next richer integration should be a capability-limited API adapter with explicit
+rate-limit, cache, identity, deletion, pagination, timeout, and fixture behavior,
+rather than a catalog mirror.
 
 Last verified
 -------------
-2026-08-25
+2026-08-26
