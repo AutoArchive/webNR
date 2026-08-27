@@ -25,6 +25,7 @@ Included discovery routes
 - SquidgeWorld Archive — first-party work search across its independent multifandom archive
 - fanfiction.lol — first-party fandom directory for a small independent archive in active development
 - Sunset — first-party home for a fan-run F/F, F/NB, and NB/NB transformative-work archive
+- Asianfanfics — first-party latest-story browse across Asian-pop-culture fandoms and multilingual fanfiction
 
 Content and rights boundary
 ---------------------------
@@ -48,6 +49,19 @@ credentials, OAuth state, background polling, download endpoints, or copied stor
 metadata. A richer adapter would require its own capability-limited design,
 current API/rights review, request bounds, deletion semantics, and versioned
 fixtures.
+
+The 2026-08-27 API audit advanced this from a generic future idea to an exact
+external dependency. Fimfiction's current developer documentation states that all
+API interactions use OAuth2, while its Application Management documentation says
+new API applications must currently be created by Fimfiction after a developer
+contacts the site operator. WebNR has no registered Fimfiction application or
+client credentials in this repository. The documented public `GET /stories`
+endpoint supports search, filtering, sorting and cursor pagination (20 default,
+100 maximum), but it cannot truthfully be promoted as a working WebNR adapter
+until an application identity exists and the resulting transport, rate-limit,
+cache, pagination, identity, timeout, update/deletion and fixture behavior is
+implemented and tested. No credential was invented, embedded, requested through
+a user account, or worked around in this cycle.
 
 Scribble Hub exposes a public Series Finder and a first-party Fanfiction genre.
 Its Terms of Service describe user-posted works as User Content and grant
@@ -94,6 +108,17 @@ control. WebNR admits only Sunset's public home as a specialized archive-discove
 route in this cycle, so no source-side tag vocabulary, work metadata, collection
 membership, account state, or content is replicated.
 
+Asianfanfics exposes a normal public Stories browse surface with Latest, Newest,
+Trending, Completed, One Shots, Series and other reader views. Its current
+first-party Terms of Use explicitly apply to browsing, scraping and crawling,
+state that site and user content remains protected, and prohibit copying or
+storing significant portions outside the allowed personal-use boundary without
+permission from the relevant owner. The public catalog also includes entries that
+are Members Only, Subscribers Only, crowdfunded, or age-restricted. WebNR therefore
+admits only the normal public browse destination: it performs no catalog polling,
+metadata extraction, account automation or access to gated works, and it leaves
+all content and access decisions at Asianfanfics.
+
 Current WebNR behavior
 ----------------------
 Selecting an item opens the corresponding first-party discovery page. WebNR does
@@ -109,12 +134,18 @@ reader encounters after following a normal link remain those of the origin.
 
 Audit boundary
 --------------
-The seven included HTTPS discovery routes were checked through normal public web
-access on 2026-08-26 or retained from the immediately preceding verified cycle.
+The eight included HTTPS discovery routes were checked through normal public web
+access on 2026-08-27 or retained from the immediately preceding verified cycle.
 The new source-specific review covered origin identity, public access, current
 terms or content-policy evidence, redistribution boundary, machine-interface
 claims, account/access controls, runtime transport, and the exact capability
 shipped.
+
+Asianfanfics' public `/browse` surface rendered without requiring an account and
+showed current story discovery together with clearly marked Members Only,
+Subscribers Only and other gated entries. The audit does not treat a visible title
+or public catalog field as permission to copy it into WebNR; the committed entry
+contains only WebNR-authored description text and the first-party browse URL.
 
 AO3's first-party Search and Browse FAQ documents work search across tags, title,
 author, words, hits, kudos, published date, and language, and its current Tags
@@ -146,49 +177,67 @@ and backoff, provenance, attribution, update/deletion semantics, regional and
 age/access boundaries, maximum response size, and representative versioned
 fixtures.
 
-Candidate review
-----------------
-Five additional adjacent archive families were screened for this cycle beyond
-the prior starter set: SquidgeWorld Archive, fanfiction.lol, Sunset, Ad Astra,
-and the Comic Fanfiction Authors Archive (CFAA). SquidgeWorld, fanfiction.lol,
-and Sunset received complete bounded source-specific review for the exact
-link-only capability considered here and are admitted above.
+Candidate review — 2026-08-27
+-----------------------------
+Five new source families were screened in this cycle: Asianfanfics, Quotev,
+FictionPress, MediaMiner and Honeyfeed.
 
-Ad Astra's legacy archive remains publicly readable and explicitly says the old
-site is a preserved read-only snapshot, while its current primary archive is
-protected by an Anubis anti-bot challenge in the operating environment. The
-current primary reader surface therefore remains deferred from a WebNR source
-definition until a normal, reproducible reader route can be verified without
-bypassing that control.
+Asianfanfics received a complete source-specific audit for the exact public-link
+capability admitted above and is the passing integration for this cycle.
 
-CFAA remains discoverable as an active comics-focused archive through current
-fandom archival references, while its first-party site also presents an Anubis
-anti-bot challenge in the operating environment and current first-party terms
-could not be completed in this cycle. It remains deferred rather than being
-treated as safe for ingestion by assumption.
+FictionPress received a complete bounded audit of its current public service and
+first-party Terms of Service. Its terms restrict redistribution, require user
+submissions to be accessed through normal service functionality for personal use,
+and limit automated systems to human-like request rates except the specific
+search-engine indexing exception. It remains a useful original-fiction discovery
+candidate, but it is deferred from this fanfiction-specific starter and no
+metadata crawler or mirror is inferred from public availability.
+
+Honeyfeed received a complete bounded audit of its active English web-novel
+service and current first-party Terms of Service. Its terms similarly reserve
+normal-service access to user submissions, restrict redistribution, and constrain
+automated systems. It remains a candidate for a separate English-serial discovery
+route rather than being folded into this fanfiction-specific source, and no
+crawler is admitted in this cycle.
+
+Quotev's current public Fanfiction Browse rendered and its first-party Terms route
+was reachable, but the operating environment did not yield a reliable text view
+of the current first-party terms body or an explicit supported machine interface.
+It remains deferred instead of being admitted from a third-party copy of policy
+text.
+
+MediaMiner's public fan-fiction archive and current category pages remained
+readable, including recently updated fanfiction, but the bounded review did not
+obtain sufficiently current first-party terms or machine-access policy evidence.
+It remains deferred rather than being classified as safe for polling or
+normalization by assumption.
 
 Rotating health review
 ----------------------
-The existing FanFiction.Net search, Fimfiction Stories/search documentation, and
-Scribble Hub Series Finder/Fanfiction discovery surfaces were rechecked on
-2026-08-26 and remained publicly discoverable in the audited reader path. Their
-capability remains limited to ordinary first-party discovery links; no broader
-machine-access or redistribution permission is inferred from availability.
+The existing FanFiction.Net search, Fimfiction search/documentation, and Scribble
+Hub Series Finder/genre discovery surfaces were rechecked on 2026-08-27 and
+remained publicly discoverable in the audited reader path. Their current admitted
+capability remains ordinary first-party discovery links; no broader machine-access
+or redistribution permission is inferred from availability.
 
 Machine-interface upgrade path
 ------------------------------
 AO3 is no longer deferred for lack of policy evidence. Current first-party
 evidence supports ordinary discovery and documents an official Atom feed surface
 for canonical tags, while the OTW-Archive repository confirms there is no
-general API. The remaining blocker for a richer AO3 integration is WebNR's
-runtime capability and transport/fixture validation, not an invented claim that
-AO3 has an API or that all scraping is forbidden.
+general API. The remaining work for a richer AO3 integration is WebNR runtime
+transport plus identity/update/response-bound fixtures.
 
-Fimfiction remains the strongest existing official-API upgrade candidate. Its
-next richer integration should be a capability-limited API adapter with explicit
-rate-limit, cache, identity, deletion, pagination, timeout, and fixture behavior,
-rather than a catalog mirror.
+Fimfiction remains the strongest official-API upgrade candidate technically, and
+its public `GET /stories` contract is now sufficiently specific to design against.
+The immediate external dependency is application registration: current
+Fimfiction documentation requires a developer to contact the site operator so
+Fimfiction can create the API application. Once an application identity exists,
+WebNR should implement a capability-limited adapter with explicit OAuth handling,
+rate-limit/backoff, cache, stable story identity, sparse field selection,
+cursor pagination, response-size and timeout bounds, deletion behavior,
+provenance, and versioned fixtures instead of mirroring the site.
 
 Last verified
 -------------
-2026-08-26
+2026-08-27

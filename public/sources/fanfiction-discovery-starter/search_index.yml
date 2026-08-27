@@ -111,3 +111,19 @@ fanfiction-discovery/sunset-femslash.md:
   categories:
     - Fanfiction discovery
   region: en
+
+fanfiction-discovery/asianfanfics-browse.md:
+  title: Asianfanfics — Latest Stories Browse
+  author: Asianfanfics
+  description: Asianfanfics 的第一方公开 Stories 目录提供最新、热门、完结、短篇、系列等发现入口，并覆盖多语言与亚洲流行文化相关 fanfiction。WebNR 只保存官方目录链接和自行撰写的发现说明，不抓取、缓存或复制用户作品、简介、标签、角色、评分、评论、订阅、账户资料或正文；会员、订阅者与年龄限制内容继续由来源站点处理。
+  page_url: https://www.asianfanfics.com/browse
+  source: WebNR Fanfiction Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Asianfanfics
+    - Fan fiction
+    - Asian fandoms
+    - Story discovery
+  categories:
+    - Fanfiction discovery
+  region: multilingual
