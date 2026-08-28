@@ -2,7 +2,7 @@
 title: 2026 年 8 月英文网文读者在聊什么？完结、音频、长尾推荐与 AI 来源的 Discussion Radar
 date: 2026-08-28
 slug: web-novel-discussion-radar-2026-08
-summary: 取样 2026 年 8 月公开可检索的 Royal Road、r/ProgressionFantasy、r/litrpg、r/noveltranslations 与 Scribble Hub 讨论，观察英文网文读者如何表达阅读约束、寻找完结作品、挑选音频、挖掘小众作品，以及处理 AI 辅助创作的来源信息。
+description: 取样 2026 年 8 月公开可检索的 Royal Road、r/ProgressionFantasy、r/litrpg、r/noveltranslations 与 Scribble Hub 讨论，观察英文网文读者如何表达阅读约束、寻找完结作品、挑选音频、挖掘小众作品，以及处理 AI 辅助创作的来源信息。
 categories:
   - Reader guides
   - Research
@@ -57,7 +57,7 @@ categories:
 
 r/litrpg 的推荐机器人反复提醒发帖者写明阅读平台，例如 Audible、Royal Road、Kindle。[P15]-[P20] 这种提示非常关键，因为媒介会改变读者真正可接受的候选。
 
-8 月 10 日一条 audiobook 请求把 narrator 精确到 Travis Baldree；[P16] 8 月 4 日另一条帖子手里有 12 个 audiobook credits，并且给出短时间消费窗口；[P17] 8 月 24 日的帖子寻找较少被反复推荐的音频系列；[P18] 8 月 27 日的帖子把“较少长战斗、更多 slice of life、一些 romance、harem 排除”与 Audible 场景组合起来。[P19] 在这些请求里，故事主题、声音表演、购买方式与时间预算属于同一个选择问题。
+8 月 10 日一条 audiobook 请求把 narrator 精确到 Travis Baldree；[P16] 8 月 5 日另一条帖子手里有 12 个 audiobook credits，并且给出短时间消费窗口；[P17] 8 月 23 日的帖子寻找较少被反复推荐的音频系列；[P18] 8 月 27 日的帖子把“较少长战斗、更多 slice of life、一些 romance、harem 排除”与 Audible 场景组合起来。[P19] 在这些请求里，故事主题、声音表演、购买方式与时间预算属于同一个选择问题。
 
 数字阅读研究常把纸本与数字阅读的差异放在设备、场景和习惯中理解，[A13] 数字社会阅读研究进一步把阅读行为看成文本与平台互动的组合。[A1] 对网文来说，这个组合更复杂：Royal Road 提供连载节奏与评论，Kindle Unlimited 提供订阅式商业阅读，Audible 把 narrator、信用点与收听时间带进价值判断。
 
@@ -87,7 +87,7 @@ r/litrpg 的请求更像一组配置项：ensemble cast、humor、harem 排除�
 
 Cradle、Dungeon Crawler Carl、He Who Fights With Monsters、Primal Hunter、Path of Ascension、Mother of Learning 等作品在多个请求里反复充当共同坐标。[P8]-[P20] 用户用“我喜欢这些、放弃那些”快速压缩口味空间。这个动作很像推荐系统里的显式反馈：几个正样本与负样本共同定义下一步候选。[A4]
 
-同时，热门坐标也会制造重复推荐。8 月 24 日一条 r/litrpg 帖子明确寻找 new or unknown series；[P18] Royal Road 的 Recommendations 板块里，“small/underrated fantasy fictions”帖子把低浏览与低评论作品作为目标，并用互评换取更多发现机会。[P2] 另一个长期活跃主题持续收集 smaller authors 的作品。[P1]
+同时，热门坐标也会制造重复推荐。8 月 23 日一条 r/litrpg 帖子明确寻找 new or unknown series；[P18] Royal Road 的 Recommendations 板块里，“small/underrated fantasy fictions”帖子把低浏览与低评论作品作为目标，并用互评换取更多发现机会。[P2] 另一个长期活跃主题持续收集 smaller authors 的作品。[P1]
 
 这形成一条清晰的三层发现网络：
 
