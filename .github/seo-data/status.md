@@ -8,7 +8,7 @@
 - Current application verification target: `8a52de9b25721bf63194942c0195c0de1ad119a5`
 - Last successful attributable documentation deployment: `4c36f66764d458a1a99794017c0074ff4ca41829`
 - Current documentation mirror verification target: `4c36f66764d458a1a99794017c0074ff4ca41829`
-- Last successful canonical Cloudflare documentation deployment: `4c36f66764d458a1a99794017c0074ff4ca41829`
+- Last successful canonical Cloudflare documentation deployment: `8a52de9b25721bf63194942c0195c0de1ad119a5`
 - Current canonical documentation verification target: `8a52de9b25721bf63194942c0195c0de1ad119a5`
 - Latest application deployment artifact branch commit: `5b22c6a7908eb57c3a19aa77640887286ddb749f`
 - Latest documentation mirror artifact branch commit: `83e0aafb7245cace762340b4257cb0448738b0a9`
@@ -17,7 +17,7 @@
 - Working documentation build mirror URL: `https://autoarchive.github.io/webNR/`
 - Reader public-site target: exact source commit `8a52de9b25721bf63194942c0195c0de1ad119a5` from pull request #124. Application workflow run `33263683413` built and published artifact branch commit `5b22c6a7908eb57c3a19aa77640887286ddb749f`; its unchanged exact-production check succeeded against the live application build identity and full-URL GA4 contract.
 - Documentation-mirror target: exact source commit `4c36f66764d458a1a99794017c0074ff4ca41829` from pull request #122. The source-only #124 change did not rebuild the GitHub Pages documentation mirror, whose artifact branch commit remains `83e0aafb7245cace762340b4257cb0448738b0a9`.
-- Canonical documentation target: `8a52de9b25721bf63194942c0195c0de1ad119a5` is the closeout verification target after the non-metadata #124 merge. The unchanged Production evidence gate must directly observe that identity before it may be promoted to the last-successful canonical deployment record.
+- Canonical documentation target: exact source commit `8a52de9b25721bf63194942c0195c0de1ad119a5`. Preliminary closeout Quality run `33264139353` directly passed the unchanged Production evidence check for the application, documentation mirror, canonical site, representative content, sitemap/RSS, and existing analytics assertions; the final closeout head must rerun the entire four-job Quality workflow after this status promotion.
 - Current skill submodule: `f42128a3f05c73cf10c786a2711c488bb3a14839`, exactly matching the current `AutoArchive/seo-skill` default branch during the 2026-08-29 cycle.
 - Current analytics export state: the configured Google Drive folder is accessible, but the 2026-08-29 direct non-trashed child listing exposes no matching GA4 or Search Console exports; missing provider data is unavailable rather than zero.
 - Current Cloudflare traffic-analytics state: a Cloudflare provider-analytics connector exposing the configured account/zone evidence is not available in the 2026-08-29 operating environment. Request metrics are unavailable rather than zero; public deployment evidence remains covered by repository production workflows.
@@ -48,7 +48,7 @@
 
 ## Active focus
 
-1. Reconcile the 2026-08-29 production identities through the unchanged public-evidence gate: application target `8a52de9b25721bf63194942c0195c0de1ad119a5`, documentation mirror target `4c36f66764d458a1a99794017c0074ff4ca41829`, and canonical documentation target `8a52de9b25721bf63194942c0195c0de1ad119a5`.
+1. Preserve the independently verified 2026-08-29 production identities through the unchanged public-evidence gate: application `8a52de9b25721bf63194942c0195c0de1ad119a5`, documentation mirror `4c36f66764d458a1a99794017c0074ff4ca41829`, and canonical documentation `8a52de9b25721bf63194942c0195c0de1ad119a5`.
 2. Preserve the new three-route Classics & Open Reading Discovery Starter and continue StoryWeaver/Project Runeberg only through narrower, reproducible source-specific audits rather than blanket rights or availability assumptions.
 3. Follow the current editorial calendar for the 2026-08-30 Legado compatibility report rather than publishing cadence-only filler.
 4. Preserve the seven-route Web Novel Discussion Radar Starter and repeat its dated community/source basket on a monthly basis so changes remain comparable rather than anecdotal.
