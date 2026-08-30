@@ -103,3 +103,31 @@ test('keeps unsupported files and invalid URL schemes recoverable', async ({ pag
   await page.getByRole('button', { name: 'Import', exact: true }).click();
   await expect(page.locator('div[role="alert"]').filter({ hasText: 'Invalid repository URL' })).toBeVisible();
 });
+
+test('inspects Legado JSON locally without executing source rules', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Import Novel' }).click();
+
+  const source = {
+    bookSourceName: 'Browser fixture source',
+    bookSourceUrl: 'https://fixture.example.invalid/',
+    enabled: true,
+    searchUrl: '/search?q={{key}}',
+    ruleSearch: { bookList: '.book', name: '.title@text' },
+    ruleContent: { content: '<js>/* marker only */</js>' },
+    webView: true,
+    futureField: { keep: 'verbatim' },
+  };
+
+  await page.locator('#legado-definition-file').setInputFiles({
+    name: 'legado-fixture.json',
+    mimeType: 'application/json',
+    buffer: Buffer.from(JSON.stringify(source), 'utf8'),
+  });
+
+  await expect(page.getByText('Inspected 1 source locally.')).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: 'Browser fixture source' })).toBeVisible();
+  await expect(page.getByText(/L5 · Bridge \/ WebView required/)).toBeVisible();
+  await expect(page.getByText(/Unknown but preserved: futureField/)).toBeVisible();
+  await expect(page.locator('body')).not.toContainText('fixture.example.invalid returned');
+});
