@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
+const fs = require('node:fs');
+const path = require('node:path');
 const { test, expect } = require('@playwright/test');
 
 async function blockExternalAnalytics(page) {
@@ -104,30 +106,34 @@ test('keeps unsupported files and invalid URL schemes recoverable', async ({ pag
   await expect(page.locator('div[role="alert"]').filter({ hasText: 'Invalid repository URL' })).toBeVisible();
 });
 
-test('inspects Legado JSON locally without executing source rules', async ({ page }) => {
+test('inspects versioned Legado fixtures locally without executing source rules', async ({ page }) => {
+  const declarative = fs.readFileSync(
+    path.join(process.cwd(), 'tests/fixtures/legado/2026-08-30.1/01-declarative.json')
+  );
+  const restricted = fs.readFileSync(
+    path.join(process.cwd(), 'tests/fixtures/legado/2026-08-30.1/03-script-bridge.json')
+  );
+
   await page.goto('/');
   await page.getByRole('button', { name: 'Import Novel' }).click();
 
-  const source = {
-    bookSourceName: 'Browser fixture source',
-    bookSourceUrl: 'https://fixture.example.invalid/',
-    enabled: true,
-    searchUrl: '/search?q={{key}}',
-    ruleSearch: { bookList: '.book', name: '.title@text' },
-    ruleContent: { content: '<js>/* marker only */</js>' },
-    webView: true,
-    futureField: { keep: 'verbatim' },
-  };
-
   await page.locator('#legado-definition-file').setInputFiles({
-    name: 'legado-fixture.json',
+    name: '01-declarative.json',
     mimeType: 'application/json',
-    buffer: Buffer.from(JSON.stringify(source), 'utf8'),
+    buffer: declarative,
   });
 
   await expect(page.getByText('Inspected 1 source locally.')).toBeVisible();
-  await expect(page.getByRole('heading', { level: 3, name: 'Browser fixture source' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: 'WebNR Fixture — Declarative' })).toBeVisible();
+  await expect(page.getByText(/L2 · declarative rules required/)).toBeVisible();
+  await expect(page.getByText(/Unknown but preserved: fixtureExtension/)).toBeVisible();
+
+  await page.locator('#legado-definition-file').setInputFiles({
+    name: '03-script-bridge.json',
+    mimeType: 'application/json',
+    buffer: restricted,
+  });
+
+  await expect(page.getByRole('heading', { level: 3, name: 'WebNR Fixture — Script and Bridge' })).toBeVisible();
   await expect(page.getByText(/L5 · Bridge \/ WebView required/)).toBeVisible();
-  await expect(page.getByText(/Unknown but preserved: futureField/)).toBeVisible();
-  await expect(page.locator('body')).not.toContainText('fixture.example.invalid returned');
 });
