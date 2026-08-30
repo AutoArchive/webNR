@@ -1,0 +1,17 @@
+{
+  "bookSourceName": "WebNR Fixture — Script and Bridge",
+  "bookSourceUrl": "https://bridge.example.invalid/",
+  "bookSourceGroup": "WebNR fixtures",
+  "bookSourceType": 0,
+  "enabled": true,
+  "loginCheckJs": "<js>/* synthetic marker; never executed */</js>",
+  "webView": true,
+  "webViewDelayTime": 1500,
+  "searchUrl": "/search?q={{key}}",
+  "ruleSearch": {
+    "bookList": "@js:/* synthetic marker; never executed */ []"
+  },
+  "ruleContent": {
+    "content": "<js>/* synthetic marker; never executed */ ''</js>"
+  }
+}
