@@ -9,6 +9,7 @@ strict: true
 
 theme:
   name: material
+  custom_dir: overrides
   font: false
   language: en
   features:
