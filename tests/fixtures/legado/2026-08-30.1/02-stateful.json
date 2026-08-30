@@ -1,0 +1,20 @@
+{
+  "bookSourceName": "WebNR Fixture — Stateful",
+  "bookSourceUrl": "https://stateful.example.invalid/",
+  "bookSourceGroup": "WebNR fixtures",
+  "bookSourceType": 0,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "concurrentRate": "2/1000",
+  "loginUrl": "https://stateful.example.invalid/login",
+  "loginUi": "Synthetic fixture only; no login is performed.",
+  "searchUrl": "/search?q={{key}}",
+  "ruleSearch": {
+    "bookList": ".results .book",
+    "name": ".title@text",
+    "bookUrl": ".title@href"
+  },
+  "ruleContent": {
+    "content": "article@html"
+  }
+}
