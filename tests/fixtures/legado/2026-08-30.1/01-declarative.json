@@ -1,0 +1,35 @@
+{
+  "bookSourceName": "WebNR Fixture — Declarative",
+  "bookSourceUrl": "https://declarative.example.invalid/",
+  "bookSourceGroup": "WebNR fixtures",
+  "bookSourceType": 0,
+  "bookSourceComment": "Synthetic clean-room fixture. No live source is contacted.",
+  "enabled": true,
+  "enabledExplore": true,
+  "searchUrl": "/search?q={{key}}&page={{page}}",
+  "exploreUrl": "/catalog?page={{page}}",
+  "header": "{\"User-Agent\":\"WebNR-Compatibility-Fixture/1.0\"}",
+  "ruleSearch": {
+    "bookList": "$.items[*]",
+    "name": "$.title",
+    "author": "$.author",
+    "bookUrl": "$.url"
+  },
+  "ruleBookInfo": {
+    "name": "h1@text",
+    "author": ".author@text",
+    "tocUrl": ".toc@href"
+  },
+  "ruleToc": {
+    "chapterList": ".chapters a",
+    "chapterName": "text",
+    "chapterUrl": "href"
+  },
+  "ruleContent": {
+    "content": "article",
+    "nextContentUrl": "a.next@href"
+  },
+  "fixtureExtension": {
+    "preserveMe": true
+  }
+}
