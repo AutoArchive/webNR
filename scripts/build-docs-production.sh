@@ -49,3 +49,17 @@ rm -f site/CNAME
 test -f site/index.html
 test -f site/build.json
 grep -Fq "\"commit\": \"${build_sha}\"" site/build.json
+
+# Keep the documentation analytics contract aligned with the reader: one GA4
+# destination, explicit full URL/query reporting, and disabled Google/ad
+# personalization signals. These assertions run in Quality, the GitHub Pages
+# publisher, and Cloudflare Pages because all three use this build script.
+grep -R -Fq 'G-DGH8HNQKE4' site
+grep -R -Fq 'page_location: window.location.href' site
+grep -R -Fq 'page_path: window.location.pathname + window.location.search' site
+grep -R -Fq 'allow_google_signals: false' site
+grep -R -Fq 'allow_ad_personalization_signals: false' site
+if grep -R -Fq 'G-NL0WV2XMJN' site; then
+  echo 'Obsolete secondary GA4 destination found in documentation output' >&2
+  exit 1
+fi
