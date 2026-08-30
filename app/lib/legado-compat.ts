@@ -160,6 +160,7 @@ function inspectionForField(field: string, value: unknown): LegadoFieldInspectio
 function highestCapability(fields: LegadoFieldInspection[]): LegadoCapabilityLevel {
   let highest: LegadoCapabilityLevel = 'phase-1-inspect';
   for (const field of fields) {
+    if (field.capability === 'unknown') continue;
     if (CAPABILITY_ORDER.indexOf(field.capability) > CAPABILITY_ORDER.indexOf(highest)) {
       highest = field.capability;
     }
