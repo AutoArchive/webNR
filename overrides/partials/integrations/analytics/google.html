@@ -1,0 +1,39 @@
+<script id="__analytics">
+function __md_analytics() {
+  function gtag() { dataLayer.push(arguments) }
+  window.dataLayer = window.dataLayer || []
+  gtag("js", new Date())
+  gtag("config", "G-DGH8HNQKE4", {
+    send_page_view: false,
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false
+  })
+
+  function sendPageView() {
+    gtag("event", "page_view", {
+      page_location: window.location.href,
+      page_path: window.location.pathname + window.location.search
+    })
+  }
+
+  if (typeof location$ !== "undefined" && location$ && typeof location$.subscribe === "function") {
+    location$.subscribe(sendPageView)
+  } else {
+    sendPageView()
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (document.forms.search) {
+      document.forms.search.query.addEventListener("blur", function () {
+        if (this.value) gtag("event", "search", { search_term: this.value })
+      })
+    }
+  })
+
+  var script = document.createElement("script")
+  script.async = true
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-DGH8HNQKE4"
+  document.getElementById("__analytics").insertAdjacentElement("afterEnd", script)
+}
+</script>
+<script>"undefined" != typeof __md_analytics && __md_analytics()</script>
