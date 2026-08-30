@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react';
 import { NovelStorage } from '../lib/storage';
 import { Novel } from '../types';
 import { LoadingDialog } from './LoadingDialog';
+import { LegadoCompatibilityInspector } from './LegadoCompatibilityInspector';
 import { useTranslation } from '../contexts/LanguageContext';
 
 interface AddViewProps {
@@ -114,6 +115,8 @@ export const AddView: React.FC<AddViewProps> = ({ onImportComplete }) => {
                         </button>
                     </form>
                 </section>
+
+                <LegadoCompatibilityInspector />
 
                 {error && (
                     <div role="alert" className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800 dark:border-red-900/50 dark:bg-red-950/30 dark:text-red-200">
