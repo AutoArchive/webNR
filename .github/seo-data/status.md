@@ -8,8 +8,8 @@
 - Current application verification target: `61251824a3bef5fa334f7de4b76d5104de5f7711`
 - Last successful attributable documentation deployment: `cfc4df017a03506cbb9415feec36ab132bff398f`
 - Current documentation mirror verification target: `cfc4df017a03506cbb9415feec36ab132bff398f`
-- Last successful canonical Cloudflare documentation deployment: `cfc4df017a03506cbb9415feec36ab132bff398f`
-- Current canonical documentation verification target: `cfc4df017a03506cbb9415feec36ab132bff398f`
+- Last successful canonical Cloudflare documentation deployment: `61251824a3bef5fa334f7de4b76d5104de5f7711`
+- Current canonical documentation verification target: `61251824a3bef5fa334f7de4b76d5104de5f7711`
 - Latest application deployment artifact branch commit: `f45145a2a71c1984f843e99bf8fb2942ff93b48d`
 - Latest documentation mirror artifact branch commit: `962760a005abd563193c95bec35f044d74b25732`
 - Canonical public documentation and editorial URL: `https://www.webnovel.win/`
@@ -17,7 +17,7 @@
 - Working documentation build mirror URL: `https://autoarchive.github.io/webNR/`
 - Reader public-site target: exact source commit `61251824a3bef5fa334f7de4b76d5104de5f7711` from pull request #129. Application workflow run `33415600545` built and published artifact branch commit `f45145a2a71c1984f843e99bf8fb2942ff93b48d`; its exact-production verification succeeded against the live application build identity and full-URL GA4 contract. The published artifact includes all four direct Project Ben-Yehuda TXT entries.
 - Documentation-mirror target: exact source commit `cfc4df017a03506cbb9415feec36ab132bff398f` from pull request #127. Documentation workflow run `33325698870` built and published artifact branch commit `962760a005abd563193c95bec35f044d74b25732` and completed generated-artifact validation plus public mirror/canonical verification. The source-only #129 change did not trigger the GitHub Pages documentation workflow.
-- Canonical documentation target: exact source commit `cfc4df017a03506cbb9415feec36ab132bff398f` at closeout creation. Post-#129 Quality run `33415600547` passed the unchanged Production evidence gate against the recorded documentation targets. If Cloudflare independently rebuilds the canonical site before closeout completes, the unchanged verifier must surface that drift and this operating metadata must be corrected before merge rather than assuming an identity.
+- Canonical documentation target: exact source commit `61251824a3bef5fa334f7de4b76d5104de5f7711`. Preliminary closeout Quality run `33416188064` independently observed `https://www.webnovel.win/build.json` reporting that exact commit from `cloudflare-pages` on every retry while the initial closeout metadata still expected `cfc4df017a03506cbb9415feec36ab132bff398f`; Production evidence therefore failed truthfully while Web quality, Documentation quality, and Chromium user journeys succeeded. The verifier remains unchanged; this metadata correction must complete the entire four-job Quality workflow again before final review and merge.
 - Current skill submodule: `f42128a3f05c73cf10c786a2711c488bb3a14839`, exactly matching the current `AutoArchive/seo-skill` default branch during the 2026-08-31 cycle.
 - Current analytics export state: the configured Google Drive folder is accessible, but the 2026-08-31 direct non-trashed child listing exposes no matching GA4 or Search Console exports; missing provider data is unavailable rather than zero.
 - Current Cloudflare traffic-analytics state: a Cloudflare provider-analytics connector exposing the configured account/zone evidence is not available in the 2026-08-31 operating environment. Request metrics are unavailable rather than zero; public deployment evidence remains covered by repository production workflows.
@@ -55,7 +55,7 @@
 
 ## Active focus
 
-1. Preserve the independently observed 2026-08-31 production identities through the unchanged public-evidence gate: application `61251824a3bef5fa334f7de4b76d5104de5f7711`, documentation mirror `cfc4df017a03506cbb9415feec36ab132bff398f`, and canonical documentation `cfc4df017a03506cbb9415feec36ab132bff398f` unless the closeout verifier independently observes a newer attributable canonical rebuild.
+1. Preserve the independently observed 2026-08-31 production identities through the unchanged public-evidence gate: application `61251824a3bef5fa334f7de4b76d5104de5f7711`, documentation mirror `cfc4df017a03506cbb9415feec36ab132bff398f`, and canonical documentation `61251824a3bef5fa334f7de4b76d5104de5f7711`.
 2. Preserve Legado compatibility suite `2026-08-30.1` as an inspection-only L1 baseline and move the next capability increment toward a bounded clean-room L2 declarative runtime before claiming execution compatibility.
 3. Follow the current editorial calendar for the 2026-09-01 raw-TXT collection/import guide rather than publishing cadence-only filler; use the new Project Ben-Yehuda direct-TXT source as a concrete multilingual example without generalizing its public-domain grant to unrelated archives.
 4. Preserve `Project Ben-Yehuda Public Domain TXT Starter` as a bounded four-entry direct source. Widening to its full catalog requires explicit catalog identity, update/deletion, request/resource, attribution, and rollback semantics even though the upstream dump is public domain.
