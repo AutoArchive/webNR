@@ -130,9 +130,23 @@ jobs:
       - name: Install application dependencies
         run: npm ci
       - name: Install pinned Playwright runner
-        run: npm install --no-save --package-lock=false @playwright/test@1.62.0
+        run: |
+          set -euo pipefail
+          runner_dir="${RUNNER_TEMP}/webnr-playwright"
+          for attempt in 1 2 3; do
+            rm -rf "${runner_dir}"
+            if npm install --prefix "${runner_dir}" --no-save --package-lock=false @playwright/test@1.62.0; then
+              echo "${runner_dir}/node_modules/.bin" >> "${GITHUB_PATH}"
+              echo "NODE_PATH=${runner_dir}/node_modules" >> "${GITHUB_ENV}"
+              exit 0
+            fi
+            if [ "${attempt}" -lt 3 ]; then
+              sleep $((attempt * 5))
+            fi
+          done
+          exit 1
       - name: Install Chromium for Playwright
-        run: npx playwright install --with-deps chromium
+        run: playwright install --with-deps chromium
       - name: Build production application
         run: npm run build
       - name: Run browser user journeys
@@ -156,7 +170,7 @@ jobs:
             exit 1
           fi
 
-          npx playwright test --config=tests/e2e/playwright.config.cjs
+          playwright test --config=tests/e2e/playwright.config.cjs
 
   docs:
     name: Documentation quality
