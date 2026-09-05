@@ -1,0 +1,2 @@
+:HL["/_next/static/chunks/38vnm4n_rzb5k.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4160,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"J4K_q2Q054DxcbxMvqIcu"}
