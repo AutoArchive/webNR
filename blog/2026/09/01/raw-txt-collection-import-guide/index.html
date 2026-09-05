@@ -1,0 +1,2517 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="从单个 TXT、本地文件夹到可重复的 WebNR source，解释文件名、编码、CORS、来源证明、固定版本和失败边界，并给出 Project Ben-Yehuda 与 GITenberg 的真实直接导入案例。">
+      
+      
+        <meta name="author" content="AutoArchive contributors">
+      
+      
+        <link rel="canonical" href="https://www.webnovel.win/blog/2026/09/01/raw-txt-collection-import-guide/">
+      
+      
+        <link rel="prev" href="../../../08/30/legado-compatibility-report/">
+      
+      
+        <link rel="next" href="../../03/first-month-source-directory-health-report/">
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>没有目录的 TXT 小说合集怎么导入 WebNR？文件夹、编码、来源与自建 Source 实战 - WebNR Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../css/timeago.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <script id="__analytics">
+function __md_analytics() {
+  function gtag() { dataLayer.push(arguments) }
+  window.dataLayer = window.dataLayer || []
+  gtag("js", new Date())
+  gtag("config", "G-DGH8HNQKE4", {
+    send_page_view: false,
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false
+  })
+
+  function sendPageView() {
+    gtag("event", "page_view", {
+      page_location: window.location.href,
+      page_path: window.location.pathname + window.location.search
+    })
+  }
+
+  if (typeof location$ !== "undefined" && location$ && typeof location$.subscribe === "function") {
+    location$.subscribe(sendPageView)
+  } else {
+    sendPageView()
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (document.forms.search) {
+      document.forms.search.query.addEventListener("blur", function () {
+        if (this.value) gtag("event", "search", { search_term: this.value })
+      })
+    }
+  })
+
+  var script = document.createElement("script")
+  script.async = true
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-DGH8HNQKE4"
+  document.getElementById("__analytics").insertAdjacentElement("afterEnd", script)
+}
+</script>
+<script>"undefined" != typeof __md_analytics && __md_analytics()</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#txt-webnr-source" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://www.webnovel.win/" title="WebNR Documentation" class="md-header__button md-logo" aria-label="WebNR Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WebNR Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              没有目录的 TXT 小说合集怎么导入 WebNR？文件夹、编码、来源与自建 Source 实战
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AutoArchive/webNR" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AutoArchive/webNR
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  WebNR Documentation / WebNR 文档
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../manual/contributing/" class="md-tabs__link">
+          
+  
+  
+  Manual
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../source/" class="md-tabs__link">
+          
+  
+  
+  Source
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../troubleshooting/txt-import/" class="md-tabs__link">
+          
+  
+  
+  Troubleshooting
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.webnovel.win/" title="WebNR Documentation" class="md-nav__button md-logo" aria-label="WebNR Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WebNR Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AutoArchive/webNR" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AutoArchive/webNR
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WebNR Documentation / WebNR 文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/compatibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/fanfiction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fanfiction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/legado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/reader-guides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reader guides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/reading-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading apps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/recommendations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommendations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/txt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TXT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/webnr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WebNR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/%E5%8F%91%E5%B8%83/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    发布
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Manual
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../manual/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to WebNR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../manual/url-params/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URL parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Source
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WebNR source definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../source/chinese/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三方可用小说源 （中文）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../troubleshooting/txt-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TXT import troubleshooting / TXT 导入排障
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#txt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        先看结论：四种 TXT 情况分别怎么处理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-txt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 单个本地 TXT：最省事，也拥有最好的编码兜底
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 本地文件夹：先决定“私人批量阅读”还是“可维护集合”
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 本地文件夹：先决定“私人批量阅读”还是“可维护集合”">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        少量私人文件：保持简单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        大型或长期收藏：先生成目录
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-webnr-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 最小 WebNR source 长什么样
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-provenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 为什么“可直接下载”仍然要保留 provenance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-gitenberg-direct-txt-starter-defer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 今天新增的 GITenberg Direct TXT Starter：为什么这次值得从 defer 升级
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. URL 导入和本地导入的编码行为并不相同
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cors-txt-webnr-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. CORS：远程 TXT 能在浏览器打开，不代表能被 WebNR fetch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 五个新的开放文本候选告诉我们：格式开放、许可开放、浏览器可运行是三件事
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 五个新的开放文本候选告诉我们：格式开放、许可开放、浏览器可运行是三件事">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openiti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenITI：机器可读的伊斯兰文化文本，但许可与格式都需要显式继承
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folger-shakespeare-txt-cc-by-nc-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folger Shakespeare：官方就有 TXT 下载，但正文采用 CC BY-NC 3.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#celt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CELT：能下载，也明确要求私人、教学和研究用途
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perseus-canonical-cc-by-sa-40-tei-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perseus canonical：仓库总体 CC BY-SA 4.0，但内容以 TEI XML 为主且组件权利有差异
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eebo-tcp-phase-i25363-teixml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EEBO-TCP Phase I：25,363 份转录进入公共领域，但核心发行形态是 TEI/XML
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-txt-source-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 给自己的 TXT 文件夹生成 source：一份可操作 checklist
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 给自己的 TXT 文件夹生成 source：一份可操作 checklist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step A：先冻结一个输入快照
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step B：把明显的临时文件排除
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-c-stable-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step C：建立 stable identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-d-titleauthor-filename" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step D：把 title/author 与 filename 分开
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-e-collection-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step E：抽样检查编码，再声明 collection contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-f-review-search_indexyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step F：生成小而可 review 的 search_index.yml
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 哪些信息绝对不该被目录生成脚本带进去
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. 常见失败与最短修复路径
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. 常见失败与最短修复路径">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        乱码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-webnr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URL 在浏览器能开，WebNR 导入失败
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1342-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导入后标题像 1342-0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一个文件夹里重复了同一本书很多版本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        上游更新了文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-webnr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. WebNR 接下来最值得做什么
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考与复核入口
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="参考与复核入口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webnr-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebNR 实现与当前 source
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direct-txt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本轮 direct-TXT 上游
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        新候选的第一方政策与格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        浏览器文本与网络基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-09-01 00:00:00+00:00" class="md-ellipsis">September 1, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/reader-guides/">Reader guides</a>, 
+                              <a href="../../../../category/txt/">TXT</a>, 
+                              <a href="../../../../category/sources/">Sources</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              7 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+  
+    <a href="https://github.com/AutoArchive/webNR/edit/main/docs/blog/posts/2026-09-01-raw-txt-collection-import-guide.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="txt-webnr-source">没有目录的 TXT 小说合集怎么导入 WebNR？文件夹、编码、来源与自建 Source 实战</h1>
+<p>很多免费小说、历史文本和个人整理档案最后都长成同一种样子：一个文件夹里放着几十、几百个 <code>.txt</code>，有时只有文件名，没有 OPDS、RSS、API、书目页，甚至没有一份像样的目录。对阅读器来说，真正困难的部分通常也不是“能不能把字显示出来”，而是怎样把一堆文件变成<strong>可以重复导入、可以知道来源、可以在上游变化后仍然复现</strong>的阅读集合。</p>
+<p>WebNR 目前有两条成熟路径。第一条是<strong>本地单文件导入</strong>：把 <code>.txt</code> 交给浏览器，正文保存在本地 IndexedDB。第二条是<strong>URL / WebNR source 导入</strong>：source 保存书目与上游地址，读者选择一本书时浏览器直接请求该地址。对“只有一个文件夹，没有目录”的收藏，今天最稳的做法是先决定它属于一次性的私人阅读，还是值得长期维护的公开集合；前者逐个本地导入，后者生成一个小型 <code>search_index.yml</code>，把文件名、标题、来源页、固定版本和下载地址显式写出来。</p>
+<p>本文对应 WebNR 在 <strong>2026-09-01</strong> 的实际实现。今天同时上线了第二个真实 direct-TXT 示例：<strong>GITenberg Direct TXT Starter</strong>，用三本公共领域英文作品演示“Git 仓库里的 TXT 文件怎样变成可重复的一键导入 source”。它与此前的 <strong>Project Ben-Yehuda Public Domain TXT Starter</strong> 一起，形成两个不同语言、不同上游结构、但同样可复核的直接 TXT 路径。</p>
+<p><a class="md-button md-button--primary" href="https://app.webnovel.win/">打开 WebNR 导入页</a></p>
+<h2 id="txt">先看结论：四种 TXT 情况分别怎么处理</h2>
+<table>
+<thead>
+<tr>
+<th>你的 TXT 在哪里</th>
+<th>推荐路径</th>
+<th>标题从哪里来</th>
+<th>编码重点</th>
+<th>来源重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自己电脑上的一个 <code>.txt</code></td>
+<td>本地导入</td>
+<td>文件名去掉扩展名</td>
+<td>WebNR 本地路径会先尝试 UTF-8，再做编码检测</td>
+<td>文件属于你自己的本地资料即可</td>
+</tr>
+<tr>
+<td>自己电脑上的一个文件夹</td>
+<td>目前逐个导入；长期收藏可先生成 WebNR source</td>
+<td>先整理文件名，或在 source 里写正式标题</td>
+<td>文件之间可能混用编码，需要抽样检查</td>
+<td>给整个文件夹保存一份 provenance 说明</td>
+</tr>
+<tr>
+<td>公网上一个稳定的 UTF-8/ASCII TXT</td>
+<td>URL 导入或 WebNR source</td>
+<td>URL 文件名，source 可提供更好的书目事实</td>
+<td>优先选择 UTF-8 或正确声明 charset 的来源</td>
+<td>保存人类可读来源页与精确下载 URL</td>
+</tr>
+<tr>
+<td>公网上一批长期维护的 TXT</td>
+<td>建立版本化 WebNR source</td>
+<td><code>search_index.yml</code> 中明确写 title/author</td>
+<td>把编码当作 source contract 的一部分</td>
+<td>固定 release/commit/hash；记录权利、更新和删除规则</td>
+</tr>
+</tbody>
+</table>
+<p>这里有一个很重要的现实边界：<strong>WebNR 现在还没有“选择一个文件夹后一次导入全部 TXT”的浏览器 UI。</strong> 当前文件选择器读取的是单个 <code>File</code>。因此“导入文件夹”在今天更适合被理解为一个整理工作流：少量文件逐个导入；数量变大、希望重复使用或分享时，就把文件夹变成一个有目录的 WebNR source。这样做比在浏览器里盲目批量吞掉几百个文件更容易检查标题、编码、权利和重复项。</p>
+<h2 id="1-txt">1. 单个本地 TXT：最省事，也拥有最好的编码兜底</h2>
+<p>WebNR 的本地导入代码位于 <a href="https://github.com/AutoArchive/webNR/blob/main/app/lib/storage.ts"><code>app/lib/storage.ts</code></a>。当前 <code>importFromFile()</code> 只接受 <code>.txt</code>。浏览器先以 <code>ArrayBuffer</code> 读取文件，WebNR 再调用自己的 <code>detectAndDecodeText()</code>。</p>
+<p>解码顺序很具体：</p>
+<ol>
+<li>先用 <code>TextDecoder('utf-8', { fatal: true })</code> 尝试严格 UTF-8；</li>
+<li>UTF-8 失败后，让 <code>jschardet</code> 根据字节判断编码；</li>
+<li>对常见结果做浏览器可执行的映射，例如 GB2312 / GBK → <code>gb18030</code>，以及 Big5、EUC-JP、Shift_JIS、EUC-KR；</li>
+<li>如果检测出的编码无法被浏览器 <code>TextDecoder</code> 使用，最后回到 UTF-8 解码并把失败暴露在控制台。</li>
+</ol>
+<p>这意味着一份年代较久的中文、日文或韩文 TXT，<strong>下载到本地再导入</strong>往往比直接贴远程 URL 更稳。尤其是你不知道服务器有没有正确发送 <code>Content-Type</code> / <code>charset</code> 时，本地路径拥有更多字节级信息和 WebNR 自己的编码检测。</p>
+<p>本地导入之后，WebNR 默认把文件名去掉最后一个扩展名作为书名。例如：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>三体.txt            → 三体
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>01_吾輩は猫である.txt → 01_吾輩は猫である
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Pride-and-Prejudice.txt → Pride-and-Prejudice
+</code></pre></div>
+<p>所以一个没有目录的私人 TXT 文件夹，最划算的第一步常常不是写脚本，而是把文件名整理好。推荐至少做到：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>作者 - 书名.txt
+</code></pre></div>
+<p>或者在同一作者很多作品时：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>作者/
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  书名一.txt
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  书名二.txt
+</code></pre></div>
+<p>WebNR 今天不会读取父目录名来补作者，因此真正进入书架的标题仍以文件名为主。目录结构主要帮助你自己管理原始收藏。</p>
+<h2 id="2">2. 本地文件夹：先决定“私人批量阅读”还是“可维护集合”</h2>
+<p>文件夹里有 5 本书和有 5,000 本书，是两个完全不同的问题。</p>
+<h3 id="_1">少量私人文件：保持简单</h3>
+<p>如果只是十几份自己已经拥有的 TXT，逐个导入的优点很明显：</p>
+<ul>
+<li>不需要上传；</li>
+<li>不需要 CORS；</li>
+<li>不需要把私人文件放进任何公开 source；</li>
+<li>每本书都走相同的本地编码检测；</li>
+<li>删除、改名和重新导入都由你控制。</li>
+</ul>
+<p>这条路径最符合 WebNR 的 local-first 设计。阅读正文、书签和进度主要保存在浏览器本地，WebNR 不需要知道你的文件夹来自哪里。</p>
+<h3 id="_2">大型或长期收藏：先生成目录</h3>
+<p>当文件数量变大，真正需要自动化的是<strong>目录生成</strong>，而不是“让浏览器一次点开 500 个文件”。一个可维护目录至少要回答六个问题：</p>
+<ol>
+<li><strong>稳定 ID 是什么？</strong> 文件名、上游作品 ID，还是内容 hash？</li>
+<li><strong>标题和作者从哪里来？</strong> 只靠文件名，还是有 CSV/YAML 元数据？</li>
+<li><strong>正文地址会不会变？</strong> 是本地路径、release URL、固定 commit，还是会漂移的 <code>main</code>？</li>
+<li><strong>编码是什么？</strong> 全部 UTF-8，还是混合 GBK / Big5 / Shift_JIS？</li>
+<li><strong>这些文本能不能被公开列入 source？</strong> “网上能下载”本身不提供再分发许可。</li>
+<li><strong>上游删除或改版时怎么办？</strong> 目录更新不能静默把旧书删掉，也不能用同一个 URL 悄悄换成另一版。</li>
+</ol>
+<p>因此 WebNR source 的价值不是多一个 YAML 格式，而是把这些隐含信息变成可 review 的 contract。</p>
+<h2 id="3-webnr-source">3. 最小 WebNR source 长什么样</h2>
+<p>WebNR 原生目录使用 <code>search_index.yml</code>。对 raw TXT，最有用的字段通常是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">my-collection/book-001.md</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Example Book</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Example Author</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">来源、版本与导入边界的简短说明。</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">filename</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">book-001.txt</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">page_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.org/books/001</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">download_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.org/releases/v1/book-001.txt</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Example Collection</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nt">license</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Public-Domain-or-Exact-License-Identifier</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Raw TXT</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Public domain</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="nt">categories</span><span class="p">:</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Free TXT reading</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en-US</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="nt">chapters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</code></pre></div>
+<p>其中 <code>page_url</code> 和 <code>download_url</code> 最好承担不同职责：</p>
+<ul>
+<li><code>page_url</code> 给人看，应该能解释作品、作者、版本和来源；</li>
+<li><code>download_url</code> 给浏览器取正文，应该直接、稳定、尺寸可控。</li>
+</ul>
+<p>如果上游是 Git 仓库，推荐把下载 URL 固定到 commit：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://raw.githubusercontent.com/ORG/REPO/&lt;commit&gt;/book.txt
+</code></pre></div>
+<p>而不是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>https://raw.githubusercontent.com/ORG/REPO/main/book.txt
+</code></pre></div>
+<p>固定 commit 带来的收益非常实际：今天 review 的字节明天仍然是同一份；上游更新不会让 WebNR 的已发布条目在没有 PR 的情况下改变；出现问题时也有明确 rollback point。</p>
+<h2 id="4-provenance">4. 为什么“可直接下载”仍然要保留 provenance</h2>
+<p>纯文本看起来太简单，很容易让人忘记版本信息。一本经典作品可能同时存在：</p>
+<ul>
+<li>原文和译文；</li>
+<li>现代校订版和旧版；</li>
+<li>有注释版和去注释版；</li>
+<li>OCR 版和人工校对版；</li>
+<li>UTF-8 和旧字符集版；</li>
+<li>公共领域原作与仍受保护的现代翻译。</li>
+</ul>
+<p>所以 source 至少应保存三层身份：</p>
+<p><strong>作品身份 → 版本/数字化身份 → 当前文件快照。</strong></p>
+<p>Project Ben-Yehuda 的做法很适合展示这三层关系：WebNR 保存作品 ID 与官方阅读页；正文来自官方 <code>public_domain_dump</code>；<code>download_url</code> 再固定到经过审核的 dump commit。上游明确声明该 dump 的数据文件属于公共领域，TXT 为 UTF-8，因此 WebNR 可以把它做成真正 direct-TXT，而无需推断“免费访问”等同于授权。</p>
+<p><a href="https://app.webnovel.win/sources/project-ben-yehuda-txt-starter">打开 Project Ben-Yehuda TXT Starter</a></p>
+<h2 id="5-gitenberg-direct-txt-starter-defer">5. 今天新增的 GITenberg Direct TXT Starter：为什么这次值得从 defer 升级</h2>
+<p>GITenberg 在 2026-08-31 的审计里曾经被暂缓。原因不是技术不可用，而是它和 WebNR 已有的 Project Gutenberg <strong>发现入口</strong>重叠很大：再加一个“点进去看 Gutenberg”的目录，对读者价值有限。</p>
+<p>今天的问题换成了“没有目录的 raw TXT 如何形成可重复导入”。在这个问题下，GITenberg 提供了新的价值：<strong>每本书是独立 Git 仓库，纯文本文件、README、LICENSE 和 metadata 可以一起固定到 commit。</strong> 这让它成为 direct-TXT transport 的好样本，而不仅仅是第二个 Gutenberg 链接目录。</p>
+<p>本轮加入三本书：</p>
+<table>
+<thead>
+<tr>
+<th>作品</th>
+<th>上游</th>
+<th>固定 TXT</th>
+<th>审计快照</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Pride and Prejudice</em></td>
+<td>GITenberg / PG #1342</td>
+<td><code>1342-0.txt</code></td>
+<td><code>81db45c9c48c592f0b77f01fc59e677ad0a5634e</code></td>
+</tr>
+<tr>
+<td><em>Frankenstein</em></td>
+<td>GITenberg / PG #84</td>
+<td><code>84-0.txt</code></td>
+<td><code>c98a483bd1f34e7366126b81bcedd1a6faee636e</code></td>
+</tr>
+<tr>
+<td><em>The Adventures of Sherlock Holmes</em></td>
+<td>GITenberg / PG #1661</td>
+<td><code>1661.txt</code></td>
+<td><code>7e5dd2703fbf503c004063e96ab7c61262375e5f</code></td>
+</tr>
+</tbody>
+</table>
+<p>三个仓库的 README 都把对应作品标为 Public Domain，并说明 GITenberg 保存的是 Project Gutenberg 图书的源文件。WebNR 只提交书目、provenance 和固定 raw URL；正文继续留在 GITenberg 上游。三个被选文件都小于 1 MiB，也没有 ZIP、登录、Cookie、JavaScript 或 source-specific parser 的依赖。</p>
+<p><a href="https://app.webnovel.win/sources/gitenberg-direct-txt-starter">打开 GITenberg Direct TXT Starter</a></p>
+<p>这也是一个很有用的运营原则：<strong>defer 是“当前能力/价值证据还不足”，不是永久判决。</strong> 当读者问题、runtime capability 或上游证据变化后，同一个候选可以在新的、边界更窄的能力上重新审计。</p>
+<h2 id="6-url">6. URL 导入和本地导入的编码行为并不相同</h2>
+<p>这点对 raw TXT 特别重要。</p>
+<p>当前本地导入会读取原始字节并执行 WebNR 的编码检测；远程 <code>importFromUrl()</code> 则调用浏览器 <code>fetch()</code> 后使用 <code>response.text()</code>。WebNR 当前没有在 URL 路径上再跑一次与本地文件相同的 <code>jschardet</code> fallback。</p>
+<p>因此远程 direct-TXT source 的优先级应该是：</p>
+<ol>
+<li>UTF-8；</li>
+<li>ASCII（天然也是有效 UTF-8）；</li>
+<li>来源服务器明确且正确声明字符集；</li>
+<li>其他旧编码先下载为本地文件，再使用本地导入路径。</li>
+</ol>
+<p>青空文库就是很典型的反例：许多作品的经典下载形态涉及 ZIP、Shift_JIS 和青空文库注记。WebNR 目前的 Aozora Bunko Starter 因此仍保持作品发现链接，而没有把“有 TXT 下载”直接升级为 direct import。真正升级时至少要同时解决 ZIP 解包、编码、注记处理、单作品权利状态和 fixture，而不是只找到一个 <code>.zip</code> URL。</p>
+<p>这也解释了为什么一个 source 的“格式”不能只写 <code>TXT</code>。更准确的 contract 应写成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>transport = HTTPS direct file
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>container = none
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>encoding = UTF-8
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>max observed size = &lt; 1 MiB
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>identity = immutable commit URL
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>auth = none
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>cookies = none
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>pagination = none
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>update = reviewed PR only
+</code></pre></div>
+<p>这样的描述才足够让未来的测试知道要验证什么。</p>
+<h2 id="7-cors-txt-webnr-fetch">7. CORS：远程 TXT 能在浏览器打开，不代表能被 WebNR fetch</h2>
+<p>WebNR 是浏览器应用。URL import 使用浏览器 <code>fetch()</code>，因此跨域请求要遵守 CORS。一个链接在新标签页里能打开，只说明浏览器能导航到它；这不自动证明 JavaScript 能从 <code>app.webnovel.win</code> 读取响应正文。</p>
+<p>遇到远程 TXT 导入失败，可以按这个顺序排查：</p>
+<ol>
+<li>URL 本身是否返回成功状态；</li>
+<li>是否发生登录、验证码或 anti-bot challenge；</li>
+<li>响应是否允许跨域读取；</li>
+<li>是否发生重定向到 HTML 页面；</li>
+<li>文件尺寸是否异常；</li>
+<li>字符集是否正确；</li>
+<li>URL 是否是可变的“latest”地址。</li>
+</ol>
+<p>WebNR 不应该通过代理、模拟登录、绕 CAPTCHA 或偷带 Cookie 来“修复”一个没有 CORS 的来源。更合适的做法是寻找上游官方 API/feed/download endpoint、固定 release，或者保留 discovery link，让用户从来源站自己下载后进行本地导入。</p>
+<h2 id="8">8. 五个新的开放文本候选告诉我们：格式开放、许可开放、浏览器可运行是三件事</h2>
+<p>今天的 source patrol 额外筛查了五个此前未进入 WebNR 维护集合的开放文本 family。它们非常适合解释为什么 raw text admission 必须逐源判断。</p>
+<h3 id="openiti">OpenITI：机器可读的伊斯兰文化文本，但许可与格式都需要显式继承</h3>
+<p><a href="https://openiti.org/documentation/">OpenITI</a> 提供上万份机器可读文本，主体使用 plain text + OpenITI mARkdown；版本 release 可通过 GitHub/Zenodo 固定。项目文档说明 release 采用 <strong>CC BY-NC-SA 4.0</strong>。它很适合作为研究与本地阅读候选，但一个公共 WebNR source 若要长期维护，就需要把署名、NonCommercial、ShareAlike、mARkdown 显示/清理方式和 release identity 一起设计进去。今天不把它降格成“看起来是 <code>.txt</code>，所以直接接”。</p>
+<h3 id="folger-shakespeare-txt-cc-by-nc-30">Folger Shakespeare：官方就有 TXT 下载，但正文采用 CC BY-NC 3.0</h3>
+<p>Folger 官方提供 Shakespeare 的 PDF、DOC、HTML、TXT、XML、TEI Simple 下载，同时明确数字文本使用 <strong>CC BY-NC 3.0</strong>，要求署名并限制商业用途。对个人阅读它非常友好；对 WebNR 的长期 source admission，则需要先决定如何在产品层持续携带许可与 attribution，并明确未来商业场景。今天保留为强候选，不把 noncommercial 条款隐藏在一个普通 “Free TXT” 标签下面。</p>
+<h3 id="celt">CELT：能下载，也明确要求私人、教学和研究用途</h3>
+<p>University College Cork 的 <a href="https://www.ucc.ie/en/research-sites/celt/">CELT</a> 有大量爱尔兰历史与文学文本。官方 FAQ 明确允许搜索、屏幕阅读、为私人使用/教学/研究下载或打印，同时要求不要把 CELT 文本下载后放到自己的服务器。这里最安全的能力是来源发现和私人导入说明；它不适合被误写成“WebNR 可以自由镜像的开放 TXT 库”。</p>
+<h3 id="perseus-canonical-cc-by-sa-40-tei-xml">Perseus canonical：仓库总体 CC BY-SA 4.0，但内容以 TEI XML 为主且组件权利有差异</h3>
+<p>PerseusDL 的 canonical Greek/Latin GitHub 仓库总体采用 <strong>CC BY-SA 4.0 unless otherwise indicated</strong>，同时 README 提醒具体材料可能具有不同版权状态。它的主要机器格式是 TEI XML，不是 WebNR 当前的 raw TXT。未来若做 adapter，应保存 CTS/版本身份、item-level license 和 XML→阅读文本转换 fixture，而不是把 XML 直接塞进 TXT reader。</p>
+<h3 id="eebo-tcp-phase-i25363-teixml">EEBO-TCP Phase I：25,363 份转录进入公共领域，但核心发行形态是 TEI/XML</h3>
+<p>Text Creation Partnership 的 EEBO Phase I 文本自 2015-01-01 起发布到公共领域；官方/项目 GitHub 分发以结构化 XML/TEI 为核心。这是一个权利条件很强、格式转换工作也很明确的候选。真正的 WebNR integration 应先实现确定性的 TEI→plain-text 派生规则、标题/作者 identity 与 fixture，再决定是否生成 direct-reading catalog。</p>
+<p>这五个候选里，没有一个需要靠“抓网页正文”来证明价值。相反，它们展示了更可持续的来源增长路线：优先找<strong>公开 release、版本标识、机器文件、明确许可</strong>，然后只实现 WebNR 当前能够测试的最窄能力。</p>
+<h2 id="9-txt-source-checklist">9. 给自己的 TXT 文件夹生成 source：一份可操作 checklist</h2>
+<p>如果你手里有一个可以合法公开的 TXT 文件夹，可以按下面的顺序整理。</p>
+<h3 id="step-a">Step A：先冻结一个输入快照</h3>
+<p>不要一边生成目录，一边继续改文件。先给文件夹一个版本：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>my-collection-2026-09-01/
+</code></pre></div>
+<p>如果使用 Git：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git add texts metadata.csv
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>git commit -m "Freeze TXT collection 2026-09-01"
+</code></pre></div>
+<p>之后 source 指向 commit，而不是 <code>main</code>。</p>
+<h3 id="step-b">Step B：把明显的临时文件排除</h3>
+<p>典型排除项：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>.DS_Store
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Thumbs.db
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>*.tmp
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>*.bak
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>README-draft.txt
+</code></pre></div>
+<p>目录生成脚本应该有 allowlist（例如只接受 <code>.txt</code>），而不是“文件夹里有什么就全发出去”。</p>
+<h3 id="step-c-stable-identity">Step C：建立 stable identity</h3>
+<p>优先级通常是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>上游作品 ID &gt; 明确的馆藏 ID &gt; 你自己的永久 slug &gt; 当前文件名
+</code></pre></div>
+<p>文件名可以改，稳定 ID 最好不要随标题标点变化。</p>
+<h3 id="step-d-titleauthor-filename">Step D：把 title/author 与 filename 分开</h3>
+<p>一份中文 CSV 就足够：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>id,title,author,filename,license,page_url
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>001,作品一,作者甲,001.txt,Public Domain,https://example.org/works/001
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>002,作品二,作者乙,002.txt,CC-BY-4.0,https://example.org/works/002
+</code></pre></div>
+<p>生成 YAML 时，展示标题来自 <code>title</code>，文件传输来自 <code>filename</code>。这样以后重命名文件、修正书名、增加原文标题都不会把 identity 搅在一起。</p>
+<h3 id="step-e-collection-contract">Step E：抽样检查编码，再声明 collection contract</h3>
+<p>至少抽取：</p>
+<ul>
+<li>最小文件；</li>
+<li>最大文件；</li>
+<li>含罕见字符/繁体/日文假名/组合字符的文件；</li>
+<li>不同年代生成的文件；</li>
+<li>元数据里标记为不同语言的文件。</li>
+</ul>
+<p>如果全部 UTF-8，就把 UTF-8 写进 source README；如果混合编码，先统一转码通常比让每次阅读都猜编码更稳定。转码必须保留原始文件 hash 和转换脚本版本，避免“清理之后不知道改了什么”。</p>
+<h3 id="step-f-review-search_indexyml">Step F：生成小而可 review 的 <code>search_index.yml</code></h3>
+<p>第一次不要把 20,000 条一次塞进去。先选 3–20 个代表性作品，覆盖：</p>
+<ul>
+<li>不同文件大小；</li>
+<li>不同作者；</li>
+<li>不同字符；</li>
+<li>不同元数据形状。</li>
+</ul>
+<p>先让 CI、浏览器导入和 public source route 都稳定，再讨论分页、sharding 或自动更新。</p>
+<h2 id="10">10. 哪些信息绝对不该被目录生成脚本带进去</h2>
+<p>TXT 目录很容易混入私人信息。生成 source 时要明确丢弃：</p>
+<ul>
+<li>本机绝对路径，例如 <code>/Users/alice/Downloads/...</code>；</li>
+<li>Windows 用户名路径；</li>
+<li>Drive/Dropbox 私有分享 token；</li>
+<li>Cookie、Authorization header；</li>
+<li>个人备注、阅读进度；</li>
+<li>账号邮箱；</li>
+<li>付费站下载 URL 中的临时签名；</li>
+<li>未获授权的正文镜像地址。</li>
+</ul>
+<p>WebNR source 需要的是公开可验证的书目与来源事实，不是你的文件系统快照。</p>
+<h2 id="11">11. 常见失败与最短修复路径</h2>
+<h3 id="_3">乱码</h3>
+<p><strong>本地文件：</strong> 先让 WebNR 的本地检测处理；仍失败时，用文本编辑器确认实际编码，再转换为 UTF-8 后保留原文件备份。</p>
+<p><strong>远程 URL：</strong> 检查服务器 charset。来源没有可靠声明时，下载到本地再导入通常更稳。</p>
+<h3 id="url-webnr">URL 在浏览器能开，WebNR 导入失败</h3>
+<p>优先怀疑 CORS 或重定向。不要用账号 Cookie、代理或验证码绕过作为默认方案。</p>
+<h3 id="1342-0">导入后标题像 <code>1342-0</code></h3>
+<p>这是远程 URL 文件名本身。把作品加入 WebNR source，让 discovery metadata 提供可读标题；底层 raw 文件仍可保持上游原名。</p>
+<h3 id="_4">一个文件夹里重复了同一本书很多版本</h3>
+<p>不要只按标题去重。至少加入版本/来源字段，必要时保留多版，例如：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Frankenstein — 1818 text
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Frankenstein — 1831 text
+</code></pre></div>
+<p>对数字档案来说，“同名”远远不等于“同一字节或同一版”。</p>
+<h3 id="_5">上游更新了文件</h3>
+<p>固定 commit 的 source 不会自动变。先审计新 revision，再通过新的 PR 更新 pin。这是刻意的设计：变化应该是可见事件，而不是后台漂移。</p>
+<h2 id="12-webnr">12. WebNR 接下来最值得做什么</h2>
+<p>raw TXT 路线已经从“只能读本地文件”走到了两个可验证 direct-source 示例：Project Ben-Yehuda 展示多语言 UTF-8 公共领域 dump，GITenberg 展示按作品拆分的 Git-backed 公共领域 TXT。下一阶段有三项价值很高：</p>
+<ol>
+<li><strong>本地批量/文件夹导入 UI</strong>：让用户选择多个 TXT，并在写入前看到标题、编码和冲突预览；</li>
+<li><strong>远程 URL 的字节级编码路径</strong>：让 remote import 与 local import 拥有一致、可测试的编码行为，同时尊重服务器 charset；</li>
+<li><strong>生成式 source tooling</strong>：从授权文件夹或 metadata CSV 生成 bounded <code>search_index.yml</code>，输出重复 ID、缺失许可、超大文件、非 HTTPS、可变 URL 等 lint。</li>
+</ol>
+<p>这些能力一旦落地，“一个文件夹”就能沿着清晰的阶梯变成“可维护 source”，同时继续保持 WebNR 的 local-first 和最小网络权限边界。</p>
+<h2 id="_6">参考与复核入口</h2>
+<h3 id="webnr-source">WebNR 实现与当前 source</h3>
+<ol>
+<li><a href="https://github.com/AutoArchive/webNR/blob/main/app/lib/storage.ts">WebNR <code>NovelStorage</code>：本地与 URL TXT 导入实现</a></li>
+<li><a href="https://app.webnovel.win/sources/project-ben-yehuda-txt-starter">Project Ben-Yehuda Public Domain TXT Starter</a></li>
+<li><a href="https://app.webnovel.win/sources/aozora-starter">Aozora Bunko Starter</a></li>
+<li><a href="https://app.webnovel.win/sources/gitenberg-direct-txt-starter">GITenberg Direct TXT Starter</a></li>
+</ol>
+<h3 id="direct-txt">本轮 direct-TXT 上游</h3>
+<ol>
+<li><a href="https://github.com/GITenberg/Pride-and-Prejudice_1342">GITenberg: Pride and Prejudice #1342</a></li>
+<li><a href="https://github.com/GITenberg/Frankenstein_84">GITenberg: Frankenstein #84</a></li>
+<li><a href="https://github.com/GITenberg/The-Adventures-of-Sherlock-Holmes_1661">GITenberg: The Adventures of Sherlock Holmes #1661</a></li>
+<li><a href="https://github.com/projectbenyehuda/public_domain_dump">Project Ben-Yehuda <code>public_domain_dump</code></a></li>
+</ol>
+<h3 id="_7">新候选的第一方政策与格式</h3>
+<ol>
+<li><a href="https://openiti.org/documentation/">OpenITI documentation</a></li>
+<li><a href="https://github.com/OpenITI/RELEASE">OpenITI releases</a></li>
+<li><a href="https://www.folger.edu/explore/shakespeares-works/download/">Folger Shakespeare download formats</a></li>
+<li><a href="https://www.folger.edu/copyright-policy/">Folger copyright policy</a></li>
+<li><a href="https://www.ucc.ie/en/research-sites/celt/">CELT, University College Cork</a></li>
+<li><a href="https://www.ucc.ie/en/research-sites/celt/faq/">CELT FAQ / copyright and use</a></li>
+<li><a href="https://github.com/PerseusDL/canonical-greekLit">PerseusDL canonical Greek literature</a></li>
+<li><a href="https://github.com/textcreationpartnership/Texts">Text Creation Partnership: EEBO-TCP texts</a></li>
+</ol>
+<h3 id="_8">浏览器文本与网络基础</h3>
+<ol>
+<li><a href="https://developer.mozilla.org/docs/Web/API/TextDecoder">MDN: TextDecoder</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/API/Fetch_API">MDN: Fetch API</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/HTTP/Guides/CORS">MDN: CORS</a></li>
+</ol>
+<hr />
+<p><strong>一句话收尾：</strong> 对没有目录的 TXT 合集，先把“文件能打开”升级成“作品身份、编码、来源、权利和快照都可解释”，再决定逐个本地读还是生成 source。目录本身很小，但它把一堆匿名文件变成了可以维护、可以复现、可以安全扩展的阅读集合。</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="September 1, 2026 16:42:35 UTC"><span class="timeago" datetime="2026-09-01T16:42:35+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="September 1, 2026 16:42:35 UTC">2026-09-01</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="September 1, 2026 16:42:35 UTC"><span class="timeago" datetime="2026-09-01T16:42:35+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="September 1, 2026 16:42:35 UTC">2026-09-01</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+  
+
+
+
+<script src="../../../../../assets/external/giscus.app/client.js" data-repo="project-polymorph/trans-digital-cn" data-repo-id="R_kgDOHD-S9w" data-category="Announcements" data-category-id="DIC_kwDOHD-S984Cjxgx" data-mapping="url" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous" async>
+</script>
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025–2026 AutoArchive contributors
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/AutoArchive/webNR" target="_blank" rel="noopener" title="WebNR source code" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://app.webnovel.win/" target="_blank" rel="noopener" title="Open WebNR reader" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 152a88 88 0 1 0 0-176 88 88 0 1 0 0 176m0 298.7V301.4c16.3-6.8 32.9-13.7 49.7-20.7 39-16.2 80.8-24.6 123.1-24.6H448v160h-19.2c-59.1 0-117.7 11.7-172.3 34.5l-.5.2zm0-218.7-25.1-10.5C184.1 202 133.9 192 83.2 192H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h35.2c50.7 0 100.9 10 147.7 29.5l12.8 5.3c7.9 3.3 16.7 3.3 24.6 0l12.8-5.3c46.8-19.5 97-29.5 147.7-29.5H464c26.5 0 48-21.5 48-48V240c0-26.5-21.5-48-48-48h-35.2c-50.7 0-100.9 10-147.7 29.5z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "search.suggest"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../js/timeago.min.js"></script>
+      
+        <script src="../../../../../js/timeago_mkdocs_material.js"></script>
+      
+    
+  </body>
+</html>

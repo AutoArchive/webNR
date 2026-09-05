@@ -1,0 +1,2963 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="User and developer documentation for the private, local-first WebNR TXT reader">
+      
+      
+        <meta name="author" content="AutoArchive contributors">
+      
+      
+        <link rel="canonical" href="https://www.webnovel.win/blog/category/sources/">
+      
+      
+        <link rel="prev" href="../research/">
+      
+      
+        <link rel="next" href="../txt/">
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Sources - WebNR Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/timeago.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <script id="__analytics">
+function __md_analytics() {
+  function gtag() { dataLayer.push(arguments) }
+  window.dataLayer = window.dataLayer || []
+  gtag("js", new Date())
+  gtag("config", "G-DGH8HNQKE4", {
+    send_page_view: false,
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false
+  })
+
+  function sendPageView() {
+    gtag("event", "page_view", {
+      page_location: window.location.href,
+      page_path: window.location.pathname + window.location.search
+    })
+  }
+
+  if (typeof location$ !== "undefined" && location$ && typeof location$.subscribe === "function") {
+    location$.subscribe(sendPageView)
+  } else {
+    sendPageView()
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (document.forms.search) {
+      document.forms.search.query.addEventListener("blur", function () {
+        if (this.value) gtag("event", "search", { search_term: this.value })
+      })
+    }
+  })
+
+  var script = document.createElement("script")
+  script.async = true
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-DGH8HNQKE4"
+  document.getElementById("__analytics").insertAdjacentElement("afterEnd", script)
+}
+</script>
+<script>"undefined" != typeof __md_analytics && __md_analytics()</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sources" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://www.webnovel.win/" title="WebNR Documentation" class="md-header__button md-logo" aria-label="WebNR Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WebNR Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sources
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AutoArchive/webNR" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AutoArchive/webNR
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  WebNR Documentation / WebNR 文档
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../manual/contributing/" class="md-tabs__link">
+          
+  
+  
+  Manual
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../source/" class="md-tabs__link">
+          
+  
+  
+  Source
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../troubleshooting/txt-import/" class="md-tabs__link">
+          
+  
+  
+  Troubleshooting
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.webnovel.win/" title="WebNR Documentation" class="md-nav__button md-logo" aria-label="WebNR Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WebNR Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AutoArchive/webNR" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AutoArchive/webNR
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WebNR Documentation / WebNR 文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../compatibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../fanfiction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fanfiction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../legado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../reader-guides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reader guides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading apps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../recommendations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommendations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+      
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../txt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TXT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../webnr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WebNR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8F%91%E5%B8%83/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    发布
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Manual
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../manual/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to WebNR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../manual/url-params/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URL parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Source
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WebNR source definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../source/chinese/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三方可用小说源 （中文）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshooting/txt-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TXT import troubleshooting / TXT 导入排障
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="sources">Sources</h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-09-05 00:00:00+00:00">September 5, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../reader-guides/" class="md-meta__link">Reader guides</a>, 
+              <a href="../recommendations/" class="md-meta__link">Recommendations</a>, 
+              <a href="./" class="md-meta__link">Sources</a>, 
+              <a href="../webnr/" class="md-meta__link">WebNR</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              6 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="project-gutenbergstandard-ebooksalice-booksgitenberg-webnr"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/">免费经典小说去哪读？Project Gutenberg、Standard Ebooks、Alice &amp; Books、GITenberg 与 WebNR 怎么选</a></h2>
+<p>先给结论。<strong>如果你只想尽快找到最多的免费经典作品，先去 Project Gutenberg；如果你更在意 EPUB 的排版、校对、语义标记和阅读器体验，优先看 Standard Ebooks；如果你想要一个更小、更直观、无需注册、同时提供 PDF/EPUB/在线阅读的经典书架，可以看 Alice &amp; Books；如果你在意 Git 版本、可复现文件和机器处理，GITenberg 更合适；如果你的目标是把纯文本真正放进浏览器本地阅读，WebNR 当前最顺手的路线仍然是本地 TXT 或已经审计过的 direct-TXT source。</strong></p>
+<p>这五条路线不是“谁取代谁”。它们解决的是不同问题：有的擅长大规模数字化，有的擅长精修电子书，有的擅长视觉发现，有的擅长可复现源文件，而 WebNR 目前更像最后一公里的本地阅读层。把这些角色分清，比只比较“有多少本书”更有用。</p>
+<p>本文核验日期为 <strong>2026-09-05</strong>。这里的“免费”不等于“全球无条件公版”。Project Gutenberg、Standard Ebooks、Alice &amp; Books、GITenberg 等第一方页面都以美国公共领域判断为重要基础；一个作品在美国进入公共领域，不代表它在你所在国家或地区一定也是同样状态。下载、分享或再利用前仍应按自己的司法辖区核对版权期限。</p>
+<p><a class="md-button md-button--primary" href="https://app.webnovel.win/">打开 WebNR Reader</a>
+<a class="md-button" href="https://www.webnovel.win/blog/2026/09/03/first-month-source-directory-health-report/">查看 WebNR 第一个月来源健康报告</a></p>
+<h3 id="_1"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#_1">一张表先选路线</a></h3>
+<table>
+<thead>
+<tr>
+<th>你最在意什么</th>
+<th>更适合的路线</th>
+<th>2026-09-05 核验到的特点</th>
+<th>WebNR 里的位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>馆藏广、搜索经典方便</td>
+<td><strong>Project Gutenberg</strong></td>
+<td>数万本免费电子书；无需注册；在线读、EPUB、纯文本等多种格式</td>
+<td>目前主要作为官方发现入口；部分作品可通过其他经过审计的 TXT 路线进入 WebNR</td>
+</tr>
+<tr>
+<td>排版、校对、现代 EPUB 体验</td>
+<td><strong>Standard Ebooks</strong></td>
+<td>公版作品重新校对、排版、做语义标记；项目自己的电子书工作也放入公共领域</td>
+<td>WebNR 保留官方作品发现入口；当前 WebNR 不把 EPUB 假装成 TXT 直接解析</td>
+</tr>
+<tr>
+<td>想快速浏览漂亮的 PDF/EPUB</td>
+<td><strong>Alice &amp; Books</strong></td>
+<td>小而直观；无需账号；PDF、EPUB、在线阅读；作品页明确提示美国公版与地域差异</td>
+<td>本轮新增 discovery-only starter；遵守其禁止自动化/系统化抓取的站点条款</td>
+</tr>
+<tr>
+<td>Git、版本固定、可复现文本</td>
+<td><strong>GITenberg</strong></td>
+<td>4 万余本 Git 管理的公版书；适合固定 commit 与机器处理</td>
+<td>WebNR 已有 3 本 commit-pinned direct-TXT 小样本，可直接测试浏览器文本导入</td>
+</tr>
+<tr>
+<td>本地 TXT、隐私、本地书架</td>
+<td><strong>WebNR</strong></td>
+<td>正式支持本地 TXT 和允许 CORS 的文本 URL；正文与进度留在浏览器</td>
+<td>阅读层本身；不要求账号，也不把第三方网站变成代理抓取服务</td>
+</tr>
+</tbody>
+</table>
+<p>如果你的问题是“今晚想读《傲慢与偏见》，哪个最省事”，答案可能是 Alice &amp; Books 或 Standard Ebooks；如果问题是“我要一个长期可复现的纯文本测试输入”，答案更可能是 GITenberg；如果问题是“我要把自己已经有的 TXT 放进一个不上传正文的浏览器书架”，则直接打开 WebNR 比继续寻找新的下载站更合理。</p>
+<h3 id="project-gutenberg"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#project-gutenberg">Project Gutenberg：先解决“有没有”和“能不能直接拿到”</a></h3>
+<p>Project Gutenberg 仍然是免费经典电子书最自然的第一站。它的第一方站点在本次核验时列出 <strong>7 万多本免费电子书</strong>，明确强调无需付费、无需注册，并以美国版权已经到期的较老作品为重点。作品通常可以直接在网页中阅读，也提供 EPUB、HTML、plain text 等格式；官方帮助页还把“Read Online”作为最简单的阅读方法之一。</p>
+<p>它最大的优势不是页面最漂亮，而是<strong>覆盖广、历史长、格式朴素且容易迁移</strong>。当你只知道作者或书名，不确定哪里有合法的免费版本，Project Gutenberg 很适合做第一层检索。对研究者、工具作者和长期归档来说，plain text 也有特殊价值：它不依赖某一种电子书容器格式，几十年后仍然容易解析。</p>
+<p>但 WebNR 没有把整个 Project Gutenberg 网站包装成一个自己的大规模 crawler。原因也很简单：一个大型来源的“网页公开可访问”并不自动等于“每天用自己的爬虫扫完整站最合理”。WebNR 现有 Project Gutenberg Starter 保持面向读者的发现能力；需要真正 direct-TXT 的时候，则优先用具有稳定文件身份、明确大小和可复现 fixture 的小型来源进行验证。</p>
+<p><strong>适合谁：</strong></p>
+<ul>
+<li>想先确认一本老书是否有免费版本；</li>
+<li>希望选择 HTML、EPUB、纯文本等不同格式；</li>
+<li>不想注册账号；</li>
+<li>需要一个长期存在、作品覆盖广的公共领域入口；</li>
+<li>愿意自己决定后续用浏览器、Kindle、Calibre、WebNR 或其他工具阅读。</li>
+</ul>
+<p>第一方资料：</p>
+<ul>
+<li><a href="https://www.gutenberg.org/">Project Gutenberg 首页</a></li>
+<li><a href="https://www.gutenberg.org/help/reading_options.html">Project Gutenberg Reading Options</a></li>
+<li><a href="https://www.gutenberg.org/help/public_domain_ebook_submission">Project Gutenberg Public Domain eBook Submission</a></li>
+</ul>
+<h3 id="standard-ebooks-epub"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#standard-ebooks-epub">Standard Ebooks：当“免费”之外，你还在意一本 EPUB 做得好不好</a></h3>
+<p>Standard Ebooks 和 Project Gutenberg 的关系很适合用一句话理解：<strong>Project Gutenberg 往往先解决数字化和可获得性，Standard Ebooks 再把其中适合的公版文本做成经过校对、统一排版、语义结构更完整的现代电子书。</strong> Standard Ebooks 自己也明确把 Project Gutenberg 视为重要文本来源，并说明其目标是做出接近商业电子书质量的免费公版版本。</p>
+<p>本次第一方核验中，Standard Ebooks 明确说明：它选择认为已在美国进入公共领域的文本和封面素材，并把自己新增的排版、markup、封面等工作也通过 CC0 / 公共领域 dedication 放开。它还强调语义 XHTML、现代 typography、详细 metadata、popup footnotes、目录和无 DRM 等特性。</p>
+<p>这意味着，如果你有 Kindle、Kobo、Apple Books、Thorium、Calibre 或其他成熟 EPUB 阅读器，Standard Ebooks 往往比“拿到一份最原始的 TXT”更舒服。它的价值在于<strong>编辑工程</strong>，不是单纯再复制一个免费下载按钮。</p>
+<p>对 WebNR 来说，目前有一个非常现实的边界：<strong>WebNR 正式支持的是 TXT，不会因为 Standard Ebooks 的 EPUB 很好就把 EPUB 当成 TXT 糊弄过去。</strong> 在真正的 EPUB parser、安全审查、渲染策略和 fixtures 完成之前，Standard Ebooks 在 WebNR source 里更适合承担“发现一个高质量版本”的角色，而不是被宣传为 WebNR 已经可以原生读取的容器格式。</p>
+<p><strong>适合谁：</strong></p>
+<ul>
+<li>已经用成熟 EPUB 阅读器；</li>
+<li>介意乱码、奇怪换行、直引号、脚注和目录质量；</li>
+<li>希望一套经典书在不同设备上有比较一致的视觉体验；</li>
+<li>想把开源/公版电子书作为再加工基础；</li>
+<li>不要求“必须在 WebNR 内直接打开 EPUB”。</li>
+</ul>
+<p>第一方资料：</p>
+<ul>
+<li><a href="https://standardebooks.org/">Standard Ebooks 首页</a></li>
+<li><a href="https://standardebooks.org/about">About Standard Ebooks</a></li>
+<li><a href="https://standardebooks.org/about/standard-ebooks-and-the-public-domain">Standard Ebooks and the Public Domain</a></li>
+<li><a href="https://standardebooks.org/about/accessibility">Accessibility</a></li>
+</ul>
+<h3 id="alice-books"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#alice-books">Alice &amp; Books：更像一个“打开就能挑一本”的小型经典书架</a></h3>
+<p>Alice &amp; Books 是本轮新审计的来源。它的首页在 2026-09-05 核验时显示 <strong>1,224 本 classics</strong>，主打 PDF、EPUB、在线阅读、无需注册、DRM-free，并说明馆藏作品在美国属于公共领域或采用开放许可。具体作品页会继续给出版权提示，例如《Pride and Prejudice》《Frankenstein》《White Nights》都明确标注 <code>Public domain (US)</code>，同时提醒美国以外读者核对本地版权期限。</p>
+<p>从纯读者体验看，它的优势很直接：页面比大型档案库更像一个现代书店。你不用先理解文件目录，点开作品就能看到 PDF、EPUB、在线阅读等选项。对于“不想研究格式，只想现在开始读一本经典”的人，这是很好的发现路径。</p>
+<p>不过，本轮 WebNR 对它做了一个刻意的能力限制：<strong>新增的 Alice &amp; Books source 是 discovery-only，不是 crawler、API adapter 或镜像。</strong> 这里不是因为《傲慢与偏见》突然不公版，而是因为 AliceAndBooks 当前 Terms of Use 对“站点内容”和“机器访问”写了明确边界：禁止通过 bot/script 等 automated or non-human means 访问，并禁止系统性提取网站数据去建立 collection/database/directory，也禁止 data-mining/robots 一类自动抽取活动。</p>
+<p>因此 WebNR 只维护四个经过人工审计的第一方目的地：官方 library，以及《Pride and Prejudice》《Frankenstein》《White Nights》三个代表作品页。source 中的说明是 WebNR 自己写的，不复制对方的封面、简介、下载数、热门排行、阅读时长或推荐数据，也不会后台轮询 AliceAndBooks。</p>
+<p>这也是“link-only 是能力等级，不是失败状态”的一个典型例子：<strong>读者可以稳定发现并跳转，WebNR 又没有把普通网页使用权夸大成自动抓取授权。</strong></p>
+<p><a href="https://app.webnovel.win/?repos=https%3A%2F%2Fapp.webnovel.win%2Fsources%2Falice-and-books-public-domain-discovery-starter">添加 Alice &amp; Books Public Domain Discovery Starter</a></p>
+<p>第一方资料：</p>
+<ul>
+<li><a href="https://www.aliceandbooks.com/">Alice &amp; Books</a></li>
+<li><a href="https://www.aliceandbooks.com/terms-of-use">AliceAndBooks Terms of Use</a></li>
+<li><a href="https://www.aliceandbooks.com/book/pride-and-prejudice/jane-austen/7">Pride and Prejudice</a></li>
+<li><a href="https://www.aliceandbooks.com/book/frankenstein/mary-shelley/35">Frankenstein</a></li>
+<li><a href="https://www.aliceandbooks.com/book/white-nights/fyodor-dostoevsky/717">White Nights</a></li>
+</ul>
+<h3 id="gitenberg-git-gutenberg"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#gitenberg-git-gutenberg">GITenberg：真正有意思的是 Git，而不是“又多一个 Gutenberg 镜像”</a></h3>
+<p>GITenberg 的第一方项目页称目前有 <strong>43,000 多本</strong>书，并把项目描述为 free、open、collaborative、scriptable digital library。它的作品来自 Project Gutenberg 等公版基础，但把“每本书如何被维护”变成更适合软件工程的模型：Git repository、commit history、可 fork、可修订。</p>
+<p>这对于普通读者未必比一个漂亮 EPUB 页面更直观，但对 WebNR 这种要做<strong>可复现 source health 和导入 regression</strong> 的工具非常有价值。上游 mutable URL 今天和下个月可能变；一个审核过的 commit 则可以作为明确身份。WebNR 现在的 <code>GITenberg Direct TXT Starter</code> 故意只选三本书，并把具体 TXT 固定到具体 commit。这样一条 source 的“健康”不是“某个网站首页还活着”，而是“这个已审计字节输入仍然可以被同样的 reader 路径读取”。</p>
+<p>这是为什么 GITenberg 在本文里不和 Project Gutenberg 竞争“谁的目录更大”。它更像一座桥：把公共领域电子书的世界连接到 Git、版本化 fixtures、可重复测试和机器处理。</p>
+<p><strong>适合谁：</strong></p>
+<ul>
+<li>想固定一个文本版本；</li>
+<li>做 NLP、文本处理、reader fixture 或回归测试；</li>
+<li>希望看到每本书的修改历史；</li>
+<li>能接受 GitHub/Git 风格的来源结构；</li>
+<li>在 WebNR 中更看重 direct-TXT 的确定性，而不是大而全目录。</li>
+</ul>
+<p>第一方资料：</p>
+<ul>
+<li><a href="https://gitenberg.org/">GITenberg Project</a></li>
+<li><a href="https://app.webnovel.win/sources/gitenberg-direct-txt-starter">WebNR GITenberg Direct TXT Starter</a></li>
+</ul>
+<h3 id="webnr"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#webnr">WebNR：它不是又一个电子书下载站，而是把“我已经选好的文本”留在浏览器里</a></h3>
+<p>把前面四个来源放到一起之后，WebNR 的角色反而更清楚。WebNR 当前不是要复制 Project Gutenberg，也不需要重新做一遍 Standard Ebooks 的编辑工程。它更适合负责这条链的后半段：<strong>你已经知道想读什么、已经拥有 TXT 或找到了允许浏览器读取的文本 URL，然后把正文、书架和进度留在自己的浏览器里。</strong></p>
+<p>截至 2026-09-05，WebNR 正式支持本地 TXT，以及服务器允许浏览器跨域访问的文本 URL。导入内容与阅读进度主要保存在当前浏览器的 IndexedDB，不要求用户注册 WebNR 账号。EPUB 和 PDF 仍然不会被假装成“已经支持”；容器格式需要真正的 parser、安全边界、fixtures 和 E2E 之后才能进入正式能力声明。</p>
+<p>因此，面对一部经典作品，可以按下面的顺序做决策：</p>
+<ol>
+<li><strong>只想读，已经有 TXT：</strong> 直接导入 WebNR，本地文件不需要 CORS。</li>
+<li><strong>想要漂亮 EPUB：</strong> 先看 Standard Ebooks；用专门 EPUB 阅读器通常更合理。</li>
+<li><strong>想快速浏览 PDF/EPUB：</strong> Alice &amp; Books 是一个直观入口，但由原站完成下载/阅读。</li>
+<li><strong>想找最广泛的公版版本：</strong> 从 Project Gutenberg 开始。</li>
+<li><strong>想要稳定、commit-pinned 的文本：</strong> 看 GITenberg/WebNR direct-TXT starter。</li>
+<li><strong>网页上有 TXT，但 WebNR URL 导入失败：</strong> 先查 CORS，而不是找公共代理绕过来源站策略。</li>
+</ol>
+<p>这条分工可以避免一个常见误区：为了让“所有来源都在一个 App 里打开”，最后不得不增加中心化代理、偷偷转发 Cookie、绕过登录或把来源网站的访问策略吃掉。WebNR 当前宁愿让一部分来源保持 discovery-only，也不把这种隐性代理成本伪装成“兼容性”。</p>
+<h3 id="_2"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#_2">五个来源真正的差别：不是数量，而是编辑、身份和权限</a></h3>
+<h4 id="1"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#1">1. “作品公版”与“这个网站可以被自动抓”是两件事</a></h4>
+<p>《Pride and Prejudice》本身进入公共领域，不代表某个网站的封面、简介、排行、页面代码、用户数据和编辑内容也自动进入公共领域。Alice &amp; Books 是今天最清楚的例子：作品页明确写美国公版，但网站 Terms 同时限制自动化和系统化数据提取。</p>
+<p>反过来，Standard Ebooks 不只是告诉你基础作品是公版，还主动把自己制作的 ebook 文件工作也 dedication 到公共领域。这类第一方声明会直接影响一个工具以后能否做更丰富的机器接口。</p>
+<h4 id="2-source"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#2-source">2. “下载地址今天能打开”与“稳定 source”也是两件事</a></h4>
+<p>一个 URL 返回 200，只能说明这一次请求得到响应。WebNR 如果要承诺 direct-TXT，还需要知道稳定 identity、编码、响应大小、超时、更新/删除语义、CORS、失败行为，以及上游是否允许这类访问。GITenberg 的 commit-pinned 文件在这里特别有优势；DBNL 则相反，虽然权利证据很强、源站也提供 TXT，但 WebNR 还没有得到可重复的浏览器 CORS 证据，所以当前仍然只做 discovery。</p>
+<h4 id="3-webnr"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#3-webnr">3. “格式多”不等于“WebNR 都应该解析”</a></h4>
+<p>PDF、EPUB、MOBI、HTML、TXT 各自服务不同阅读器。一个网站提供五种格式是好事，但 WebNR 不应该因为 source 页面写了 EPUB 就在产品里声称 EPUB 已兼容。当前稳定边界还是 TXT；需要 EPUB 时，用 Standard Ebooks + 专门 EPUB reader 往往比在 WebNR 里做一个半成品解析器更好。</p>
+<h3 id="_3"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#_3">今天另外筛查了哪些免费电子书来源</a></h3>
+<p>为了避免这篇比较只围绕已经熟悉的项目，本轮 source program 还筛查了另外四个候选 family，并没有为了“每天必须加一个”把它们全部塞进 maintained set。</p>
+<h4 id="loyal-books"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#loyal-books">Loyal Books：适合音频发现，但与现有公版路线高度重叠</a></h4>
+<p>Loyal Books 的第一方 About 页面说明，它的大量公版内容主要来自 Project Gutenberg，音频则大量来自 LibriVox，并强调 public-domain audiobook；其 App 页面同时列出数千本 audiobook 与数万本 ebook。对读者而言，它的视觉浏览和有声书入口有价值，但对 WebNR 当前的<strong>文本 source</strong> 来说，与 Gutenberg/GITenberg 的覆盖重叠很高，而且本轮没有得到足够细的 item-level ebook provenance 证据来证明“整套 ebook catalog 可以作为一个新的同步接口”。因此本轮不做内容 ingestion，也不为凑数再造一个重复目录。</p>
+<ul>
+<li><a href="https://www.loyalbooks.com/about">About Loyal Books</a></li>
+<li><a href="https://www.loyalbooks.com/app">Loyal Books App</a></li>
+</ul>
+<h4 id="planet-ebook"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#planet-ebook">Planet eBook：澳大利亚版权边界不应该被悄悄改写成全球公版</a></h4>
+<p>Planet eBook 的具体作品页明确写着：这些电子书在澳大利亚发布并在当地 out of copyright，同时提醒读者在下载、阅读或分享前检查自己国家的版权法。这个说明本身很清楚，也正因为清楚，WebNR 不应该把它简化成一个没有地域限定的“全球 public domain TXT source”。当前又没有比现有 Gutenberg/Standard Ebooks 路线更强的 WebNR reader value，因此先 defer 内容集成。</p>
+<ul>
+<li><a href="https://www.planetebook.com/">Planet eBook</a></li>
+</ul>
+<h4 id="manybooks"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#manybooks">ManyBooks：现在已经是“公版经典 + 作者自出版 + 免费/折扣生态”的混合平台</a></h4>
+<p>ManyBooks 的第一方 About 页面说明，早期大量电子书来自 Project Gutenberg，但后来平台也向 self-publishing authors 开放；主页同时展示 public-domain classics 与免费/折扣新书。帮助页还说明，下载电子书通常需要先创建账号。</p>
+<p>这并不是坏事，只是意味着它已经不是一个可以用“全部公版”四个字描述的单一来源。对 WebNR 来说，若以后接入，需要逐项区分公版作品、作者授权 permafree、外部商店促销和账户下载边界，不能把整个站当作统一 license。今天先保持候选状态，比做一个含混的大目录更安全也更可维护。</p>
+<ul>
+<li><a href="https://manybooks.net/about">About ManyBooks</a></li>
+<li><a href="https://manybooks.net/help">ManyBooks Help</a></li>
+</ul>
+<h4 id="better-gutenberg-gutenberggitenberg"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#better-gutenberg-gutenberggitenberg">Better Gutenberg：有意思，但与已有 Gutenberg/GITenberg 路线需要证明“新增价值”</a></h4>
+<p>Better Gutenberg 的第一方 About 页面说明，它把 Project Gutenberg 和其他公版 collection 的文本重新处理成更干净的现代 EPUB；当前站点还提供 6,000 多本 EPUB 的整库下载。它是一个值得继续审计的 formatter/curated library，但 WebNR 已经有 Project Gutenberg 的发现路线和 GITenberg 的版本化 TXT 路线。下一步若要接入，应该先回答“对 WebNR 读者新增了什么能力”，以及其再加工 EPUB、更新、归属和批量获取边界，而不是因为它是新网站就重复一个 catalog。</p>
+<ul>
+<li><a href="https://bettergutenberg.org/about/">About Better Gutenberg</a></li>
+</ul>
+<h3 id="_4"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#_4">推荐路线：按你的真正目标选，不要按“免费站排行榜”选</a></h3>
+<h4 id="a"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#a">场景 A：我只想找一本经典，今晚开始读</a></h4>
+<p>先搜 Project Gutenberg；如果你希望页面和电子书更精致，再看 Standard Ebooks 或 Alice &amp; Books。它们都不要求你先理解 WebNR source 格式。</p>
+<h4 id="b-epub"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#b-epub">场景 B：我想把几十本经典长期放在 EPUB 阅读器</a></h4>
+<p>优先 Standard Ebooks。对那些 Standard Ebooks 没有制作的作品，再回 Project Gutenberg 或其他公版库补齐。WebNR 当前不是 EPUB library manager，不需要硬塞进来。</p>
+<h4 id="c"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#c">场景 C：我做文本分析或阅读器测试，要固定输入</a></h4>
+<p>优先找可固定 revision 的 GITenberg，或者 WebNR 已经审计的 direct-TXT starter。把 commit、文件路径、编码和大小写进 fixture，比记录“今天下载按钮还能点”更可靠。</p>
+<h4 id="d-txt"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#d-txt">场景 D：我手里已经有很多 TXT，只想本地读</a></h4>
+<p>不要继续找下载站。直接导入 WebNR。本地文件不需要来源站 CORS，也不会因为第三方目录结构变化而失效。若以后需要把一个公开、授权的 TXT 文件夹分享成 source，再生成一个小型、带 provenance 的 <code>search_index.yml</code>。</p>
+<h4 id="e-webnr"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#e-webnr">场景 E：我看到一个公版网站，想让 WebNR 全自动同步</a></h4>
+<p>先不要从“能抓”开始，而从六个问题开始：作品或 edition 的权利是什么？站点允许怎样的机器访问？浏览器能否请求？identity 怎么固定？更新和删除怎么处理？失败时是否会偷偷换镜像？这六个问题答完，再决定是 link-only、direct TXT、feed/API adapter，还是根本不应该接入。</p>
+<h3 id="webnr-source"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#webnr-source">本轮 WebNR source 变化</a></h3>
+<p>作为这次比较的一部分，WebNR 新增 <strong>Alice &amp; Books Public Domain Discovery Starter</strong>。它不是把 AliceAndBooks 变成后台数据源，而是把四个经过审核的第一方入口放进 reader 的来源发现层，并明确记录当前站点条款导致的自动化边界。</p>
+<p>这使 maintained source family 从 23 个增加到 <strong>24 个</strong>，同时保持一个重要原则：<strong>source 数量增长不能靠降低 admission 标准。</strong> 本轮审计的 Loyal Books、Planet eBook、ManyBooks、Better Gutenberg 都保留在候选/后续审计队列，而不是为了日目标强行进入 maintained set。</p>
+<p><a href="https://app.webnovel.win/sources/alice-and-books-public-domain-discovery-starter">打开 Alice &amp; Books Starter</a></p>
+<h3 id="_5"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#_5">最后一句话</a></h3>
+<p>免费经典小说的生态已经不缺“下载按钮”，真正值得比较的是：<strong>谁负责确认作品可自由提供，谁负责校对和排版，谁给你稳定版本，谁只是帮你发现，而你的阅读器到底需要哪一种输入。</strong></p>
+<p>Project Gutenberg 是广泛入口；Standard Ebooks 是精修版本；Alice &amp; Books 是现代化的快速发现；GITenberg 把公版文本变成可版本化的软件资产；WebNR 则把经过选择的 TXT 放进本地浏览器书架。按这个分工使用它们，比追求一个“什么都抓、什么都解析、什么都镜像”的超级来源更可靠。</p>
+<h4 id="_6"><a class="toclink" href="../../2026/09/05/free-classic-ebook-reading-routes-compared/#_6">参考与核验资料</a></h4>
+<p>以下页面均于 2026-09-05 重新核验：</p>
+<ol>
+<li>Project Gutenberg — https://www.gutenberg.org/</li>
+<li>Project Gutenberg Reading Options — https://www.gutenberg.org/help/reading_options.html</li>
+<li>Project Gutenberg Public Domain eBook Submission — https://www.gutenberg.org/help/public_domain_ebook_submission</li>
+<li>Standard Ebooks — https://standardebooks.org/</li>
+<li>About Standard Ebooks — https://standardebooks.org/about</li>
+<li>Standard Ebooks and the Public Domain — https://standardebooks.org/about/standard-ebooks-and-the-public-domain</li>
+<li>Standard Ebooks Accessibility — https://standardebooks.org/about/accessibility</li>
+<li>Alice &amp; Books — https://www.aliceandbooks.com/</li>
+<li>AliceAndBooks Terms of Use — https://www.aliceandbooks.com/terms-of-use</li>
+<li>AliceAndBooks: Pride and Prejudice — https://www.aliceandbooks.com/book/pride-and-prejudice/jane-austen/7</li>
+<li>AliceAndBooks: Frankenstein — https://www.aliceandbooks.com/book/frankenstein/mary-shelley/35</li>
+<li>AliceAndBooks: White Nights — https://www.aliceandbooks.com/book/white-nights/fyodor-dostoevsky/717</li>
+<li>GITenberg Project — https://gitenberg.org/</li>
+<li>Loyal Books About — https://www.loyalbooks.com/about</li>
+<li>Loyal Books App — https://www.loyalbooks.com/app</li>
+<li>Planet eBook — https://www.planetebook.com/</li>
+<li>ManyBooks About — https://manybooks.net/about</li>
+<li>ManyBooks Help — https://manybooks.net/help</li>
+<li>Better Gutenberg About — https://bettergutenberg.org/about/</li>
+<li>WebNR 第一个月来源健康报告 — https://www.webnovel.win/blog/2026/09/03/first-month-source-directory-health-report/</li>
+</ol>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-09-03 00:00:00+00:00">September 3, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">Sources</a>, 
+              <a href="../analysis/" class="md-meta__link">Analysis</a>, 
+              <a href="../webnr/" class="md-meta__link">WebNR</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              6 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="webnr-22-maintained-source"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/">第一个月哪些 WebNR 来源真的还健康？22 个 maintained source 的全量复测与下一批候选</a></h2>
+<p>先给结论：<strong>截至 2026-09-03，WebNR 在第一个月维护起来的 21 个既有 source family 全部保留；本轮没有一个需要删除，也没有一个因为访问、版权边界或格式漂移而降级。</strong> 今天另外把上一轮已经完成初审的 <strong>CLiGS Textbox</strong> 从候选推进成一个真实的西班牙语 direct-TXT starter，因此本轮结束后 maintained set 从 21 个增加到 <strong>22 个</strong>。</p>
+<p>这句话有一个必须说明的限定：<strong>“健康”不等于“我们能爬它”。</strong> WebNR 为每个来源承诺的能力不同。一个只被批准为官方发现入口的 source，只要它的第一方页面仍然可用、链接语义没有漂移、WebNR 仍然只保存自写说明和跳转链接，它就是健康的；我们不会因为网页“抓得到”就擅自升级成目录同步。反过来，一个 direct-TXT source 则必须继续满足更严格的条件：正文地址仍指向已审计的第一方或 commit-pinned 文件、格式和体积仍在浏览器导入边界内、稳定身份没有变化、权利与署名说明仍然成立。</p>
+<p>因此这次复测不是一个 HTTP 200 清单，而是一次 <strong>capability-aware health check</strong>：每个 maintained family 都按自己已经公开承诺的能力重新核对代表性路径、来源身份和失败边界。对 immutable Git snapshot，还重新核对 commit 身份；对平台型来源，则重新核对第一方发现入口；对 WebNR 自己维护的内部 TXT，则核对生产 reader 路径与 source definition。</p>
+<p><a class="md-button md-button--primary" href="https://app.webnovel.win/">打开 WebNR Reader</a>
+<a class="md-button" href="https://www.webnovel.win/sources/">查看来源与导入说明</a></p>
+<h3 id="_1"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#_1">这次到底测了什么</a></h3>
+<p>我们把健康检查拆成四层，而不是把所有来源都塞进同一个“可访问/不可访问”二元框：</p>
+<ol>
+<li><strong>身份仍然正确</strong>：维护中的 URL、作品 ID、平台入口或 Git commit 仍然指向预期对象，而不是重定向到无关页面。</li>
+<li><strong>当前批准的能力仍成立</strong>：link-only 就只验证发现入口；direct-TXT 则验证具体 TXT transport、固定版本、大小与来源边界。</li>
+<li><strong>权利与访问边界没有被悄悄扩大</strong>：例如 Folger 的 TXT 仍然保留非商业条件；Project Gutenberg 的发现目录仍不被包装成 WebNR 的批量抓取接口；平台用户投稿也不会因为公开可读就被当作可再分发内容。</li>
+<li><strong>失败时不会偷偷换来源</strong>：如果一个 direct-TXT 上游以后失效，WebNR 应显示导入失败并进入审计，而不是自动去找一个未经审核的镜像顶上。</li>
+</ol>
+<p>这也解释了为什么“link-only”在健康报告里不是黄色警告。它是一种<strong>明确、可验证、风险较低的产品能力</strong>。真正的警告应该是：我们声称某个 adapter 可以读取内容，但实际上没有稳定接口、没有版本化 fixture、没有明确 identity/update/delete 语义，或者需要绕过登录、机器人挑战和付费边界。当前 maintained set 里没有这种情况。</p>
+<h3 id="22-maintained-source2026-09-03"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#22-maintained-source2026-09-03">22 个 maintained source：2026-09-03 全量健康表</a></h3>
+<p>下面的“最后测试”表示这次 monthly health pass 对该 family 的当前能力重新核验日期。对于大型平台和目录，我们测试的是代表性第一方入口和 WebNR 已承诺的能力，而不是把整个站点的每一本书、每一篇帖子重新抓一遍。</p>
+<table>
+<thead>
+<tr>
+<th>Source family</th>
+<th>主要语言</th>
+<th>当前能力 / 格式</th>
+<th>最后测试</th>
+<th>状态</th>
+<th>失败 / 替代说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WebNR Originals</td>
+<td>中文</td>
+<td>WebNR 内部 CC0 TXT，reader 直接导入</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>无失败；作为内部回归基线继续保留</td>
+</tr>
+<tr>
+<td>Aozora Bunko Starter</td>
+<td>日语</td>
+<td>官方图书卡发现；ZIP/Shift_JIS 正文暂不直读</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>图书卡仍可用；无需替代</td>
+</tr>
+<tr>
+<td>Standard Ebooks Starter</td>
+<td>英语</td>
+<td>官方作品页发现；EPUB 等留在来源站</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>目录与作品页可用；无需替代</td>
+</tr>
+<tr>
+<td>Project Madurai Starter</td>
+<td>泰米尔语</td>
+<td>官方 Unicode/UTF-8 页面发现</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>继续按项目原始条款保守发现</td>
+</tr>
+<tr>
+<td>English Serial Platforms Starter</td>
+<td>英语</td>
+<td>Royal Road、Scribble Hub、Wattpad、Tapas、Honeyfeed 官方发现入口</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>Royal Road 等代表性入口可用；不抓正文</td>
+</tr>
+<tr>
+<td>Project Gutenberg Starter</td>
+<td>英语</td>
+<td>官方 ebook 落地页发现</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>仍保持 human-facing discovery，不做 catalog crawler</td>
+</tr>
+<tr>
+<td>Global Grey Starter</td>
+<td>英语</td>
+<td>官方 ebook 落地页发现</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>代表性经典作品页可用</td>
+</tr>
+<tr>
+<td>Online Books Page Starter</td>
+<td>英语</td>
+<td>CC0 curated metadata 对应的稳定书目页发现</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>curated listing 当前可用；正文仍由下游来源负责</td>
+</tr>
+<tr>
+<td>Wolne Lektury Starter</td>
+<td>波兰语</td>
+<td>官方作品目录发现</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>《Lalka》等页面可读，下载/API 能力未被擅自升级</td>
+</tr>
+<tr>
+<td>Wikisource Starter</td>
+<td>英语</td>
+<td>具体版本作品页发现</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>1813 版 <em>Pride and Prejudice</em> 等版本页可用</td>
+</tr>
+<tr>
+<td>English Web-Fiction Discovery Starter</td>
+<td>英语</td>
+<td>Top Web Fiction、SpaceBattles、Sufficient Velocity 等发现入口</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>Top Web Fiction 当前榜单与标签入口仍活跃</td>
+</tr>
+<tr>
+<td>Chinese Web-Fiction Platforms Starter</td>
+<td>中文</td>
+<td>起点、晋江、纵横、17K、七猫官方平台发现</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>维持 link-only；不复制作品、榜单或账户数据</td>
+</tr>
+<tr>
+<td>Japanese Web-Fiction Platforms Starter</td>
+<td>日语</td>
+<td>なろう、カクヨム、エブリスタ、野いちご、ノベマ！官方发现</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>「小説を読もう！」等当前入口可用</td>
+</tr>
+<tr>
+<td>Korean Web-Fiction Platforms Starter</td>
+<td>韩语</td>
+<td>Munpia、NAVER SERIES、RIDI、Novelpia、BritG 官方发现</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>NAVER SERIES / Munpia 等当前入口可用</td>
+</tr>
+<tr>
+<td>Progression &amp; LitRPG Publisher Discovery Starter</td>
+<td>英语</td>
+<td>出版社第一方 catalog / collection 发现</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>Aethon 当前 catalog 可用；不复制商品和书籍数据</td>
+</tr>
+<tr>
+<td>Fanfiction Discovery Starter</td>
+<td>多语言 / 英语为主</td>
+<td>FFN、AO3、Fimfiction、Scribble Hub 等第一方发现</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>保持 link-only；AO3 Atom 仍是后续 richer-interface 候选</td>
+</tr>
+<tr>
+<td>Web Novel Discussion Radar Starter</td>
+<td>英语</td>
+<td>Royal Road / Reddit / Scribble Hub Forum 月度讨论入口</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>Royal Road Recommendations 当前仍有活跃主题；月度快照不做后台轮询</td>
+</tr>
+<tr>
+<td>Classics &amp; Open Reading Discovery Starter</td>
+<td>多语言</td>
+<td>Lit2Go、Alpheios、Scaife 官方开放阅读发现</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>继续保留 item-level rights 差异，不做 blanket redistribution</td>
+</tr>
+<tr>
+<td>Project Ben-Yehuda Public Domain TXT Starter</td>
+<td>希伯来语</td>
+<td>commit-pinned UTF-8 direct TXT</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>官方阅读页与固定 dump 身份仍成立；无镜像替代</td>
+</tr>
+<tr>
+<td>GITenberg Direct TXT Starter</td>
+<td>英语</td>
+<td>commit-pinned raw TXT</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>三个固定 Git snapshot 保持可复现；不跟随 mutable branch</td>
+</tr>
+<tr>
+<td>Folger Shakespeare TXT Starter</td>
+<td>英语</td>
+<td>第一方 TXT direct import</td>
+<td>2026-09-03</td>
+<td>健康</td>
+<td>Folger 仍提供 TXT；继续保留非商业使用边界</td>
+</tr>
+<tr>
+<td><strong>CLiGS Textbox Spanish-American TXT Starter</strong></td>
+<td><strong>西班牙语</strong></td>
+<td><strong>commit-pinned direct TXT</strong></td>
+<td><strong>2026-09-03</strong></td>
+<td><strong>新接入 / 健康</strong></td>
+<td>三个 &lt;1 MiB TXT；PD 文本 + collection CC BY 4.0，固定到审计 commit</td>
+</tr>
+</tbody>
+</table>
+<p>从运营角度看，这次最重要的数字其实不是“22”，而是 <strong>0 个静默失败、0 个为了凑数量而强行降级、0 个未经审计的自动替代</strong>。来源越多，如果没有能力边界，长期维护成本会呈爆炸式增长；反而是每个 family 都有明确的“我到底承诺什么”，才有可能每天自动复测而不把网站变成不可控的抓取器集合。</p>
+<h3 id="txt"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#txt">四个真正能直接读 TXT 的来源，现在有什么不同</a></h3>
+<p>第一个月最明显的进展，是 WebNR 已经不再只有“链接目录”。maintained set 里现在有四类真实 direct-TXT 样本，而且故意选择了不同的来源结构。</p>
+<h4 id="project-ben-yehuda-dump-commit"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#project-ben-yehuda-dump-commit">Project Ben-Yehuda：官方公共领域 dump + 固定 commit</a></h4>
+<p>Project Ben-Yehuda 的优势是来源项目自己同时给出人类可读作品页和公共领域 dump。WebNR 把具体作品 ID 与官方页面留作 provenance，实际 TXT 则固定到审核过的 Git commit。这样上游继续更新不会让已发布的 WebNR 条目在没有 PR 的情况下改变字节内容。</p>
+<p><a href="https://app.webnovel.win/sources/project-ben-yehuda-txt-starter">打开 Project Ben-Yehuda TXT Starter</a></p>
+<h4 id="gitenberg-git"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#gitenberg-git">GITenberg：每本书一个 Git 仓库</a></h4>
+<p>GITenberg 适合演示另一种身份：作品对应独立仓库，WebNR 选择具体纯文本文件并固定到具体 commit。它和 Project Gutenberg Starter 并不重复——后者仍是面向读者的官方发现页，前者用很小的样本验证“一个 Git-backed raw TXT 能否稳定直接导入”。</p>
+<p><a href="https://app.webnovel.win/sources/gitenberg-direct-txt-starter">打开 GITenberg Direct TXT Starter</a></p>
+<h4 id="folger-shakespeare-txt-shakespeare"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#folger-shakespeare-txt-shakespeare">Folger Shakespeare：第一方 TXT，但不是“因为 Shakespeare 公版所以什么都能做”</a></h4>
+<p>Folger 的例子尤其能说明为什么我们不只看原作者死亡年份。Folger 提供自己编辑的高质量数字文本和 TXT 下载，并明确说明相关数字文件可用于非商业目的。WebNR 因此直接链接 Folger 第一方 TXT，但 source 里保留 Folger Digital Texts 的许可与署名信息，没有把“Shakespeare 原作公版”错误扩大成“Folger 编辑版无条件公版”。</p>
+<p><a href="https://app.webnovel.win/sources/folger-shakespeare-txt-starter">打开 Folger Shakespeare TXT Starter</a></p>
+<h4 id="cligs-cc-by-40-collection-commit-pinned-txt"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#cligs-cc-by-40-collection-commit-pinned-txt">今天新增 CLiGS：公共领域文本 + CC BY 4.0 collection + commit-pinned TXT</a></h4>
+<p>CLiGS Textbox 上一轮已经进入候选队列，今天完成了一个真正的小型 pilot。我们没有把整个巨大 Textbox 仓库一口气接进来，而只选择了 <strong>Collection of 19th Century Spanish-American Novels (1880–1916)</strong> 中三个 plain-text 文件：</p>
+<table>
+<thead>
+<tr>
+<th>稳定 ID</th>
+<th>作品</th>
+<th>作者</th>
+<th style="text-align: right;">固定文件大小</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nh0003</code></td>
+<td><em>Laucha</em></td>
+<td>Roberto Payró</td>
+<td style="text-align: right;">72,519 bytes</td>
+</tr>
+<tr>
+<td><code>nh0004</code></td>
+<td><em>Inca</em></td>
+<td>Roberto Payró</td>
+<td style="text-align: right;">136,407 bytes</td>
+</tr>
+<tr>
+<td><code>nh0011</code></td>
+<td><em>Rumbo</em></td>
+<td>Eugenio Cambaceres</td>
+<td style="text-align: right;">200,133 bytes</td>
+</tr>
+</tbody>
+</table>
+<p>上游 collection README 明确说明作者版权已经到期，并把该 collection 以 <strong>CC BY 4.0</strong> 发布；它还给出了建议引用方式。三个条目都固定到 <code>cligs/textbox</code> 的审计 commit <code>1b91e940475c8a7e866457a3953fed5edb0a29f1</code>，而不是跟随 mutable <code>master</code>。浏览器只有在读者明确选择某一本时才请求对应 raw TXT；没有 bulk clone、后台 polling、代理、Cookie、账号，也没有把其他 CLiGS collection 自动推定为相同许可。</p>
+<p><a href="https://app.webnovel.win/sources/cligs-textbox-spanish-american-txt-starter">打开 CLiGS Spanish-American TXT Starter</a>
+<a href="https://github.com/cligs/textbox/tree/1b91e940475c8a7e866457a3953fed5edb0a29f1/spanish/novela-hispanoamericana">查看 CLiGS collection 的来源说明</a></p>
+<p>这就是我们希望以后 richer source 遵循的模式：<strong>先挑一个权利、格式、身份都能说清楚的小样本，把 runtime contract 和失败语义做实，再扩大覆盖。</strong></p>
+<h3 id="14-family-link-only"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#14-family-link-only">为什么 14 个左右的目录型 family 仍然只做 link-only</a></h3>
+<p>平台型来源与公共领域文本库完全不是一个问题。Royal Road、起点、AO3、NAVER SERIES、Fimfiction 等站点上的大量内容由不同作者提交，可能包含账号、评论、评分、付费、年龄或地区边界。即使公开网页今天能被浏览器打开，也不能推出 WebNR 获得了“把整个目录同步过来”的授权，更不能推出每个页面都适合无人值守抓取。</p>
+<p>所以 link-only 的验收标准很明确：</p>
+<ul>
+<li>第一方发现入口仍然存在；</li>
+<li>URL 没有变成无关营销页或登录墙；</li>
+<li>WebNR 的说明没有假装拥有正文或平台 metadata；</li>
+<li>任何有付费、账号、年龄、机器人策略或作者权利差异的部分仍留给原平台；</li>
+<li>如果以后存在官方 API、Atom、OPDS 或可下载 public-domain corpus，则<strong>单独为那个 richer capability 做新的审计</strong>。</li>
+</ul>
+<p>这也是为什么 AO3 已经从“完全 defer”进展到健康的 Work Search discovery，但 canonical-tag Atom feed 仍留在下一层；Fimfiction 的官方 API 也仍然是优先 richer adapter 候选，但新的 API application/client identity 需要站方创建，不能为了自动化运营伪造凭据。它们都不是 WebNR 日常运营 blocker，只是升级能力之前需要满足的独立前提。</p>
+<h3 id="_2"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#_2">本月没有失败来源，所以没有制造“替代源”</a></h3>
+<p>健康报告通常容易诱导出一种错误动作：既然要写“failure / replacement”，就好像必须找一个失败然后换掉。今天的证据不支持这么做。</p>
+<p>21 个既有 maintained family 在自己承诺的能力层都继续成立，因此：</p>
+<ul>
+<li><strong>删除：0</strong></li>
+<li><strong>降级：0</strong></li>
+<li><strong>因为失败而替换：0</strong></li>
+<li><strong>新增：1（CLiGS direct-TXT pilot）</strong></li>
+</ul>
+<p>“没有替代”并不是没做事，而是避免把运营 KPI 变成破坏稳定性的理由。真正需要替代的情况应该有明确证据，例如第一方入口长期消失、内容身份发生不可接受漂移、许可发生变化、TXT 从可读文本变成不受支持的格式、上游开始要求账号/授权，或者来源持续返回不可恢复错误。到那时我们会在同一周期降级、移除或找到经过独立审计的替代；今天没有发生。</p>
+<h3 id="5"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#5">下一批 5 个新候选：谁最值得接</a></h3>
+<p>除了复测 maintained set，今天也继续筛选此前没有进入跟踪表的新 source family。候选不是“搜索结果收藏夹”；至少要把格式、权利、来源身份和 WebNR 能提供的真实用户价值看清楚，才会进入下一阶段。</p>
+<h4 id="1-dbnl-dataset-direct-txt-tei"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#1-dbnl-dataset-direct-txt-tei">1. DBNL dataset：当前最强的下一批 direct-TXT / TEI 候选</a></h4>
+<p>荷兰皇家图书馆（KB）维护的 <a href="https://www.kb.nl/en/research-find/for-researchers/data-services-apis/datasets/dbnl-dataset">DBNL dataset</a> 很值得优先处理。官方资料说明，DBNL 的书/卷数据可提供 full text、TEI XML 和 <code>.txt</code>，并且公共领域文本可作为数据集获取；较新的受版权保护材料则有不同限制。</p>
+<p>这意味着下一步不应该“接整个 DBNL”，而应该选择<strong>明确 public-domain 的小型子集</strong>，保存 dataset/item identity、版本和权利证据，做一个和 CLiGS 类似的 direct-TXT pilot。它现在排在候选队列第一位。</p>
+<h4 id="2-victorian-women-writers-projecttei-header"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#2-victorian-women-writers-projecttei-header">2. Victorian Women Writers Project：TEI 很有价值，但 header 不能丢</a></h4>
+<p><a href="https://tei-c.org/activities/projects/victorian-women-writers-project/">Victorian Women Writers Project</a> 约有两百份文本，原始作品主要属于公共领域；项目记录同时给出了下载、传输、复制、分发原始文本的条件，但要求保留电子文本 header，Indiana 项目贡献本身还有单独的版权边界。</p>
+<p>所以它不是“看到 public domain 就去掉 TEI header 抽正文”。正确路径是先做一个确定性的 TEI fixture：哪些 header/attribution 必须保留、哪些节点转成 reader text、identity 怎样稳定、转换结果怎样 version。完成后才适合 native adapter。</p>
+<h4 id="3-biblioteca-italianareuse-license"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#3-biblioteca-italianareuse-license">3. Biblioteca Italiana：格式很理想，reuse license 还要补齐</a></h4>
+<p>Sapienza 的 <a href="https://bibliotecaitaliana.it/">Biblioteca Italiana</a> 提供超过一千六百份意大利文学文本，并使用 XML-TEI 等结构化格式。对 WebNR 来说，这是一个很好的意大利语覆盖机会。</p>
+<p>但今天的第一方资料核验还没有拿到足够明确、可落到 adapter contract 的 blanket reuse license，所以不会因为“freely accessible/downloadable”就自动解释成“可由 WebNR 批量再发布”。先补权利证据，再做 TEI fixture。</p>
+<h4 id="4-wright-american-fiction-18511875-endpoint"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#4-wright-american-fiction-18511875-endpoint">4. Wright American Fiction 1851–1875：规模大，但先解决 endpoint 与质量层级</a></h4>
+<p><a href="https://tei-c.org/activities/projects/wright-american-fiction-1851-1875/">Wright American Fiction</a> 的历史 corpus 很大，也有 TEI/SGML 和 page images。问题在于不同部分的编辑/校对质量并不完全相同，而且本轮没有获得足够新的第一方 blanket redistribution 与稳定下载接口证据。</p>
+<p>因此当前价值更接近“值得研究的 corpus”，而不是“今天就能变成 source”。下一轮如果能明确 current endpoint、edited/OCR quality boundary 和使用权利，再决定是 discovery 还是 native text adapter。</p>
+<h4 id="5-project-laurens-jansz-coster-legacy-delivery"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#5-project-laurens-jansz-coster-legacy-delivery">5. Project Laurens Jansz. Coster：内容有价值，但 legacy delivery 是风险</a></h4>
+<p>荷兰皇家图书馆对 <a href="https://www.kb.nl/en/discover-and-experience/digital-publications/project-laurens-jansz-coster">Project Laurens Jansz. Coster</a> 的说明显示，它长期提供无版权限制的荷兰经典文学数字文本，但项目本身已经不再更新。</p>
+<p>这并不让它“失败”；只是把问题从抓取变成<strong>长期地址和归档身份</strong>。如果以后接入，应优先寻找 KB 能解释、可长期复现的 archival route，而不是依赖一个多年不维护的旧站点 URL。</p>
+<p>今天这五个候选中，<strong>DBNL 最接近下一次真实 direct-TXT ship；VWWP 最适合推动 TEI runtime；Biblioteca Italiana 和 Wright 需要先补权利/endpoint 证据；Coster 则应当以 archival discovery 的方式处理。</strong></p>
+<h3 id="_3"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#_3">还有哪些已经排队，但今天不应该抢跑</a></h3>
+<p>上一轮进入队列的 <strong>ELTeC</strong> 和 <strong>CoNSSA/TextGrid</strong> 仍然有意义，不过它们更适合作为“把 TEI 转成稳定 reading text”的 fixture，而不是今天为了数量再加两个链接。我们需要先定义：</p>
+<ul>
+<li>选择哪些 TEI 元素进入正文；</li>
+<li>标题、段落、诗行、脚注和舞台说明怎样映射；</li>
+<li>不能识别的节点是报错、保留还是忽略；</li>
+<li>转换前后如何保存 source identity；</li>
+<li>版本更新时如何证明没有把同一个 ID 悄悄换成另一份文本；</li>
+<li>权利与署名怎样从 source manifest 一直保留到 reader。</li>
+</ul>
+<p>这条路线和 8 月 30 日发布的 Legado compatibility work 很像：<strong>先把可验证的最小 runtime 做出来，再扩能力。</strong> 对 source adapter 来说，可复现的转换 fixture 比“支持 TEI”四个字更重要。</p>
+<h3 id="_4"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#_4">这份健康报告没有告诉我们的：真实流量表现</a></h3>
+<p>来源健康和搜索表现是两套证据。今天能够证明 22 个 maintained source 的产品/来源能力，但不能从这里推导“哪个来源带来最多用户”“哪篇文章 CTR 最高”或“新增 CLiGS 会提升多少搜索流量”。</p>
+<p>WebNR 配置的 GA4 / Search Console 导出在本轮仍然没有可用数据文件；这意味着相关指标是<strong>不可用（unavailable），不是 0</strong>。同样，在当前运营连接里没有可用于 <code>webnovel.win</code> 的 Cloudflare provider request-analytics 数据，因此不会拿不存在的请求量填健康报告，也不会为了“优化”而改动已经验证的 GA4 <code>G-DGH8HNQKE4</code>、完整 <code>page_location</code> / query-bearing <code>page_path</code> 或 privacy signals 配置。</p>
+<p>等真实 provider export 恢复后，source health 可以和读者行为结合：例如 source add、导入成功、阅读启动、返回访问、source-specific failure rate。但在那之前，<strong>能测到的就报告能测到的，缺失证据就明确写缺失。</strong></p>
+<h3 id="_5"><a class="toclink" href="../../2026/09/03/first-month-source-directory-health-report/#_5">下一阶段：从“来源多”转向“来源能力更深”</a></h3>
+<p>第一个月已经证明 WebNR 可以每天扩展来源而不把自己变成一个不受控 crawler。第二个月更值得做的不是把 22 变成 100，而是把 capability ladder 向下推进：</p>
+<p><strong>第一层：稳定发现链接</strong> → <strong>第二层：有明确权利和身份的 direct TXT / feed</strong> → <strong>第三层：有 fixtures 的 declarative / structured adapter</strong> → <strong>第四层：明确状态、更新、删除与失败语义的 richer runtime</strong>。</p>
+<p>今天的 CLiGS pilot 是第二层的一个新例子。下一步优先顺序也因此很明确：</p>
+<ol>
+<li><strong>DBNL public-domain direct-TXT 小样本</strong>；</li>
+<li><strong>完成第一套确定性的 TEI→reading-text fixture</strong>，优先为 VWWP / ELTeC / CoNSSA 之类的结构化开放文本服务；</li>
+<li><strong>继续 AO3 Atom 的 transport/identity/update fixture</strong>，不把 Work Search 的 link-only 能力和 feed 能力混为一谈；</li>
+<li><strong>Fimfiction API 在获得官方 application/client identity 后再实现</strong> OAuth、rate limit、cache、pagination、update/delete 和 versioned fixture；</li>
+<li>maintained set 继续轮换复测，任何真实失败在发现当天处理，而不是等下一份月报。</li>
+</ol>
+<p>一个来源真正“健康”的标志，不是今天 curl 成功，而是半年后我们仍然能回答：<strong>它是谁、我们为什么可以这样用、用户点击后发生什么、上游变化会不会静默改内容、失败时怎样回滚。</strong> 这 22 个 maintained family 现在至少都有这个问题的明确答案。</p>
+<p><a href="https://www.webnovel.win/">返回 WebNR 文档首页</a></p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-09-01 00:00:00+00:00">September 1, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../reader-guides/" class="md-meta__link">Reader guides</a>, 
+              <a href="../txt/" class="md-meta__link">TXT</a>, 
+              <a href="./" class="md-meta__link">Sources</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              7 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="txt-webnr-source"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/">没有目录的 TXT 小说合集怎么导入 WebNR？文件夹、编码、来源与自建 Source 实战</a></h2>
+<p>很多免费小说、历史文本和个人整理档案最后都长成同一种样子：一个文件夹里放着几十、几百个 <code>.txt</code>，有时只有文件名，没有 OPDS、RSS、API、书目页，甚至没有一份像样的目录。对阅读器来说，真正困难的部分通常也不是“能不能把字显示出来”，而是怎样把一堆文件变成<strong>可以重复导入、可以知道来源、可以在上游变化后仍然复现</strong>的阅读集合。</p>
+<p>WebNR 目前有两条成熟路径。第一条是<strong>本地单文件导入</strong>：把 <code>.txt</code> 交给浏览器，正文保存在本地 IndexedDB。第二条是<strong>URL / WebNR source 导入</strong>：source 保存书目与上游地址，读者选择一本书时浏览器直接请求该地址。对“只有一个文件夹，没有目录”的收藏，今天最稳的做法是先决定它属于一次性的私人阅读，还是值得长期维护的公开集合；前者逐个本地导入，后者生成一个小型 <code>search_index.yml</code>，把文件名、标题、来源页、固定版本和下载地址显式写出来。</p>
+<p>本文对应 WebNR 在 <strong>2026-09-01</strong> 的实际实现。今天同时上线了第二个真实 direct-TXT 示例：<strong>GITenberg Direct TXT Starter</strong>，用三本公共领域英文作品演示“Git 仓库里的 TXT 文件怎样变成可重复的一键导入 source”。它与此前的 <strong>Project Ben-Yehuda Public Domain TXT Starter</strong> 一起，形成两个不同语言、不同上游结构、但同样可复核的直接 TXT 路径。</p>
+<p><a class="md-button md-button--primary" href="https://app.webnovel.win/">打开 WebNR 导入页</a></p>
+<h3 id="txt"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#txt">先看结论：四种 TXT 情况分别怎么处理</a></h3>
+<table>
+<thead>
+<tr>
+<th>你的 TXT 在哪里</th>
+<th>推荐路径</th>
+<th>标题从哪里来</th>
+<th>编码重点</th>
+<th>来源重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自己电脑上的一个 <code>.txt</code></td>
+<td>本地导入</td>
+<td>文件名去掉扩展名</td>
+<td>WebNR 本地路径会先尝试 UTF-8，再做编码检测</td>
+<td>文件属于你自己的本地资料即可</td>
+</tr>
+<tr>
+<td>自己电脑上的一个文件夹</td>
+<td>目前逐个导入；长期收藏可先生成 WebNR source</td>
+<td>先整理文件名，或在 source 里写正式标题</td>
+<td>文件之间可能混用编码，需要抽样检查</td>
+<td>给整个文件夹保存一份 provenance 说明</td>
+</tr>
+<tr>
+<td>公网上一个稳定的 UTF-8/ASCII TXT</td>
+<td>URL 导入或 WebNR source</td>
+<td>URL 文件名，source 可提供更好的书目事实</td>
+<td>优先选择 UTF-8 或正确声明 charset 的来源</td>
+<td>保存人类可读来源页与精确下载 URL</td>
+</tr>
+<tr>
+<td>公网上一批长期维护的 TXT</td>
+<td>建立版本化 WebNR source</td>
+<td><code>search_index.yml</code> 中明确写 title/author</td>
+<td>把编码当作 source contract 的一部分</td>
+<td>固定 release/commit/hash；记录权利、更新和删除规则</td>
+</tr>
+</tbody>
+</table>
+<p>这里有一个很重要的现实边界：<strong>WebNR 现在还没有“选择一个文件夹后一次导入全部 TXT”的浏览器 UI。</strong> 当前文件选择器读取的是单个 <code>File</code>。因此“导入文件夹”在今天更适合被理解为一个整理工作流：少量文件逐个导入；数量变大、希望重复使用或分享时，就把文件夹变成一个有目录的 WebNR source。这样做比在浏览器里盲目批量吞掉几百个文件更容易检查标题、编码、权利和重复项。</p>
+<h3 id="1-txt"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#1-txt">1. 单个本地 TXT：最省事，也拥有最好的编码兜底</a></h3>
+<p>WebNR 的本地导入代码位于 <a href="https://github.com/AutoArchive/webNR/blob/main/app/lib/storage.ts"><code>app/lib/storage.ts</code></a>。当前 <code>importFromFile()</code> 只接受 <code>.txt</code>。浏览器先以 <code>ArrayBuffer</code> 读取文件，WebNR 再调用自己的 <code>detectAndDecodeText()</code>。</p>
+<p>解码顺序很具体：</p>
+<ol>
+<li>先用 <code>TextDecoder('utf-8', { fatal: true })</code> 尝试严格 UTF-8；</li>
+<li>UTF-8 失败后，让 <code>jschardet</code> 根据字节判断编码；</li>
+<li>对常见结果做浏览器可执行的映射，例如 GB2312 / GBK → <code>gb18030</code>，以及 Big5、EUC-JP、Shift_JIS、EUC-KR；</li>
+<li>如果检测出的编码无法被浏览器 <code>TextDecoder</code> 使用，最后回到 UTF-8 解码并把失败暴露在控制台。</li>
+</ol>
+<p>这意味着一份年代较久的中文、日文或韩文 TXT，<strong>下载到本地再导入</strong>往往比直接贴远程 URL 更稳。尤其是你不知道服务器有没有正确发送 <code>Content-Type</code> / <code>charset</code> 时，本地路径拥有更多字节级信息和 WebNR 自己的编码检测。</p>
+<p>本地导入之后，WebNR 默认把文件名去掉最后一个扩展名作为书名。例如：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>三体.txt            → 三体
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>01_吾輩は猫である.txt → 01_吾輩は猫である
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>Pride-and-Prejudice.txt → Pride-and-Prejudice
+</code></pre></div>
+<p>所以一个没有目录的私人 TXT 文件夹，最划算的第一步常常不是写脚本，而是把文件名整理好。推荐至少做到：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>作者 - 书名.txt
+</code></pre></div>
+<p>或者在同一作者很多作品时：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>作者/
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>  书名一.txt
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>  书名二.txt
+</code></pre></div>
+<p>WebNR 今天不会读取父目录名来补作者，因此真正进入书架的标题仍以文件名为主。目录结构主要帮助你自己管理原始收藏。</p>
+<h3 id="2"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#2">2. 本地文件夹：先决定“私人批量阅读”还是“可维护集合”</a></h3>
+<p>文件夹里有 5 本书和有 5,000 本书，是两个完全不同的问题。</p>
+<h4 id="_1"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#_1">少量私人文件：保持简单</a></h4>
+<p>如果只是十几份自己已经拥有的 TXT，逐个导入的优点很明显：</p>
+<ul>
+<li>不需要上传；</li>
+<li>不需要 CORS；</li>
+<li>不需要把私人文件放进任何公开 source；</li>
+<li>每本书都走相同的本地编码检测；</li>
+<li>删除、改名和重新导入都由你控制。</li>
+</ul>
+<p>这条路径最符合 WebNR 的 local-first 设计。阅读正文、书签和进度主要保存在浏览器本地，WebNR 不需要知道你的文件夹来自哪里。</p>
+<h4 id="_2"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#_2">大型或长期收藏：先生成目录</a></h4>
+<p>当文件数量变大，真正需要自动化的是<strong>目录生成</strong>，而不是“让浏览器一次点开 500 个文件”。一个可维护目录至少要回答六个问题：</p>
+<ol>
+<li><strong>稳定 ID 是什么？</strong> 文件名、上游作品 ID，还是内容 hash？</li>
+<li><strong>标题和作者从哪里来？</strong> 只靠文件名，还是有 CSV/YAML 元数据？</li>
+<li><strong>正文地址会不会变？</strong> 是本地路径、release URL、固定 commit，还是会漂移的 <code>main</code>？</li>
+<li><strong>编码是什么？</strong> 全部 UTF-8，还是混合 GBK / Big5 / Shift_JIS？</li>
+<li><strong>这些文本能不能被公开列入 source？</strong> “网上能下载”本身不提供再分发许可。</li>
+<li><strong>上游删除或改版时怎么办？</strong> 目录更新不能静默把旧书删掉，也不能用同一个 URL 悄悄换成另一版。</li>
+</ol>
+<p>因此 WebNR source 的价值不是多一个 YAML 格式，而是把这些隐含信息变成可 review 的 contract。</p>
+<h3 id="3-webnr-source"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#3-webnr-source">3. 最小 WebNR source 长什么样</a></h3>
+<p>WebNR 原生目录使用 <code>search_index.yml</code>。对 raw TXT，最有用的字段通常是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="nt">my-collection/book-001.md</span><span class="p">:</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Example Book</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">  </span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Example Author</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">来源、版本与导入边界的简短说明。</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="w">  </span><span class="nt">filename</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">book-001.txt</span>
+<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="w">  </span><span class="nt">page_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.org/books/001</span>
+<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="w">  </span><span class="nt">download_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.org/releases/v1/book-001.txt</span>
+<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="w">  </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Example Collection</span>
+<a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a><span class="w">  </span><span class="nt">license</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Public-Domain-or-Exact-License-Identifier</span>
+<a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a><span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
+<a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Raw TXT</span>
+<a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Public domain</span>
+<a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a><span class="w">  </span><span class="nt">categories</span><span class="p">:</span>
+<a id="__codelineno-42-14" name="__codelineno-42-14" href="#__codelineno-42-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Free TXT reading</span>
+<a id="__codelineno-42-15" name="__codelineno-42-15" href="#__codelineno-42-15"></a><span class="w">  </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en-US</span>
+<a id="__codelineno-42-16" name="__codelineno-42-16" href="#__codelineno-42-16"></a><span class="w">  </span><span class="nt">chapters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</code></pre></div>
+<p>其中 <code>page_url</code> 和 <code>download_url</code> 最好承担不同职责：</p>
+<ul>
+<li><code>page_url</code> 给人看，应该能解释作品、作者、版本和来源；</li>
+<li><code>download_url</code> 给浏览器取正文，应该直接、稳定、尺寸可控。</li>
+</ul>
+<p>如果上游是 Git 仓库，推荐把下载 URL 固定到 commit：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>https://raw.githubusercontent.com/ORG/REPO/&lt;commit&gt;/book.txt
+</code></pre></div>
+<p>而不是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>https://raw.githubusercontent.com/ORG/REPO/main/book.txt
+</code></pre></div>
+<p>固定 commit 带来的收益非常实际：今天 review 的字节明天仍然是同一份；上游更新不会让 WebNR 的已发布条目在没有 PR 的情况下改变；出现问题时也有明确 rollback point。</p>
+<h3 id="4-provenance"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#4-provenance">4. 为什么“可直接下载”仍然要保留 provenance</a></h3>
+<p>纯文本看起来太简单，很容易让人忘记版本信息。一本经典作品可能同时存在：</p>
+<ul>
+<li>原文和译文；</li>
+<li>现代校订版和旧版；</li>
+<li>有注释版和去注释版；</li>
+<li>OCR 版和人工校对版；</li>
+<li>UTF-8 和旧字符集版；</li>
+<li>公共领域原作与仍受保护的现代翻译。</li>
+</ul>
+<p>所以 source 至少应保存三层身份：</p>
+<p><strong>作品身份 → 版本/数字化身份 → 当前文件快照。</strong></p>
+<p>Project Ben-Yehuda 的做法很适合展示这三层关系：WebNR 保存作品 ID 与官方阅读页；正文来自官方 <code>public_domain_dump</code>；<code>download_url</code> 再固定到经过审核的 dump commit。上游明确声明该 dump 的数据文件属于公共领域，TXT 为 UTF-8，因此 WebNR 可以把它做成真正 direct-TXT，而无需推断“免费访问”等同于授权。</p>
+<p><a href="https://app.webnovel.win/sources/project-ben-yehuda-txt-starter">打开 Project Ben-Yehuda TXT Starter</a></p>
+<h3 id="5-gitenberg-direct-txt-starter-defer"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#5-gitenberg-direct-txt-starter-defer">5. 今天新增的 GITenberg Direct TXT Starter：为什么这次值得从 defer 升级</a></h3>
+<p>GITenberg 在 2026-08-31 的审计里曾经被暂缓。原因不是技术不可用，而是它和 WebNR 已有的 Project Gutenberg <strong>发现入口</strong>重叠很大：再加一个“点进去看 Gutenberg”的目录，对读者价值有限。</p>
+<p>今天的问题换成了“没有目录的 raw TXT 如何形成可重复导入”。在这个问题下，GITenberg 提供了新的价值：<strong>每本书是独立 Git 仓库，纯文本文件、README、LICENSE 和 metadata 可以一起固定到 commit。</strong> 这让它成为 direct-TXT transport 的好样本，而不仅仅是第二个 Gutenberg 链接目录。</p>
+<p>本轮加入三本书：</p>
+<table>
+<thead>
+<tr>
+<th>作品</th>
+<th>上游</th>
+<th>固定 TXT</th>
+<th>审计快照</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Pride and Prejudice</em></td>
+<td>GITenberg / PG #1342</td>
+<td><code>1342-0.txt</code></td>
+<td><code>81db45c9c48c592f0b77f01fc59e677ad0a5634e</code></td>
+</tr>
+<tr>
+<td><em>Frankenstein</em></td>
+<td>GITenberg / PG #84</td>
+<td><code>84-0.txt</code></td>
+<td><code>c98a483bd1f34e7366126b81bcedd1a6faee636e</code></td>
+</tr>
+<tr>
+<td><em>The Adventures of Sherlock Holmes</em></td>
+<td>GITenberg / PG #1661</td>
+<td><code>1661.txt</code></td>
+<td><code>7e5dd2703fbf503c004063e96ab7c61262375e5f</code></td>
+</tr>
+</tbody>
+</table>
+<p>三个仓库的 README 都把对应作品标为 Public Domain，并说明 GITenberg 保存的是 Project Gutenberg 图书的源文件。WebNR 只提交书目、provenance 和固定 raw URL；正文继续留在 GITenberg 上游。三个被选文件都小于 1 MiB，也没有 ZIP、登录、Cookie、JavaScript 或 source-specific parser 的依赖。</p>
+<p><a href="https://app.webnovel.win/sources/gitenberg-direct-txt-starter">打开 GITenberg Direct TXT Starter</a></p>
+<p>这也是一个很有用的运营原则：<strong>defer 是“当前能力/价值证据还不足”，不是永久判决。</strong> 当读者问题、runtime capability 或上游证据变化后，同一个候选可以在新的、边界更窄的能力上重新审计。</p>
+<h3 id="6-url"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#6-url">6. URL 导入和本地导入的编码行为并不相同</a></h3>
+<p>这点对 raw TXT 特别重要。</p>
+<p>当前本地导入会读取原始字节并执行 WebNR 的编码检测；远程 <code>importFromUrl()</code> 则调用浏览器 <code>fetch()</code> 后使用 <code>response.text()</code>。WebNR 当前没有在 URL 路径上再跑一次与本地文件相同的 <code>jschardet</code> fallback。</p>
+<p>因此远程 direct-TXT source 的优先级应该是：</p>
+<ol>
+<li>UTF-8；</li>
+<li>ASCII（天然也是有效 UTF-8）；</li>
+<li>来源服务器明确且正确声明字符集；</li>
+<li>其他旧编码先下载为本地文件，再使用本地导入路径。</li>
+</ol>
+<p>青空文库就是很典型的反例：许多作品的经典下载形态涉及 ZIP、Shift_JIS 和青空文库注记。WebNR 目前的 Aozora Bunko Starter 因此仍保持作品发现链接，而没有把“有 TXT 下载”直接升级为 direct import。真正升级时至少要同时解决 ZIP 解包、编码、注记处理、单作品权利状态和 fixture，而不是只找到一个 <code>.zip</code> URL。</p>
+<p>这也解释了为什么一个 source 的“格式”不能只写 <code>TXT</code>。更准确的 contract 应写成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>transport = HTTPS direct file
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>container = none
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>encoding = UTF-8
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>max observed size = &lt; 1 MiB
+<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>identity = immutable commit URL
+<a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>auth = none
+<a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a>cookies = none
+<a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a>pagination = none
+<a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a>update = reviewed PR only
+</code></pre></div>
+<p>这样的描述才足够让未来的测试知道要验证什么。</p>
+<h3 id="7-cors-txt-webnr-fetch"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#7-cors-txt-webnr-fetch">7. CORS：远程 TXT 能在浏览器打开，不代表能被 WebNR fetch</a></h3>
+<p>WebNR 是浏览器应用。URL import 使用浏览器 <code>fetch()</code>，因此跨域请求要遵守 CORS。一个链接在新标签页里能打开，只说明浏览器能导航到它；这不自动证明 JavaScript 能从 <code>app.webnovel.win</code> 读取响应正文。</p>
+<p>遇到远程 TXT 导入失败，可以按这个顺序排查：</p>
+<ol>
+<li>URL 本身是否返回成功状态；</li>
+<li>是否发生登录、验证码或 anti-bot challenge；</li>
+<li>响应是否允许跨域读取；</li>
+<li>是否发生重定向到 HTML 页面；</li>
+<li>文件尺寸是否异常；</li>
+<li>字符集是否正确；</li>
+<li>URL 是否是可变的“latest”地址。</li>
+</ol>
+<p>WebNR 不应该通过代理、模拟登录、绕 CAPTCHA 或偷带 Cookie 来“修复”一个没有 CORS 的来源。更合适的做法是寻找上游官方 API/feed/download endpoint、固定 release，或者保留 discovery link，让用户从来源站自己下载后进行本地导入。</p>
+<h3 id="8"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#8">8. 五个新的开放文本候选告诉我们：格式开放、许可开放、浏览器可运行是三件事</a></h3>
+<p>今天的 source patrol 额外筛查了五个此前未进入 WebNR 维护集合的开放文本 family。它们非常适合解释为什么 raw text admission 必须逐源判断。</p>
+<h4 id="openiti"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#openiti">OpenITI：机器可读的伊斯兰文化文本，但许可与格式都需要显式继承</a></h4>
+<p><a href="https://openiti.org/documentation/">OpenITI</a> 提供上万份机器可读文本，主体使用 plain text + OpenITI mARkdown；版本 release 可通过 GitHub/Zenodo 固定。项目文档说明 release 采用 <strong>CC BY-NC-SA 4.0</strong>。它很适合作为研究与本地阅读候选，但一个公共 WebNR source 若要长期维护，就需要把署名、NonCommercial、ShareAlike、mARkdown 显示/清理方式和 release identity 一起设计进去。今天不把它降格成“看起来是 <code>.txt</code>，所以直接接”。</p>
+<h4 id="folger-shakespeare-txt-cc-by-nc-30"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#folger-shakespeare-txt-cc-by-nc-30">Folger Shakespeare：官方就有 TXT 下载，但正文采用 CC BY-NC 3.0</a></h4>
+<p>Folger 官方提供 Shakespeare 的 PDF、DOC、HTML、TXT、XML、TEI Simple 下载，同时明确数字文本使用 <strong>CC BY-NC 3.0</strong>，要求署名并限制商业用途。对个人阅读它非常友好；对 WebNR 的长期 source admission，则需要先决定如何在产品层持续携带许可与 attribution，并明确未来商业场景。今天保留为强候选，不把 noncommercial 条款隐藏在一个普通 “Free TXT” 标签下面。</p>
+<h4 id="celt"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#celt">CELT：能下载，也明确要求私人、教学和研究用途</a></h4>
+<p>University College Cork 的 <a href="https://www.ucc.ie/en/research-sites/celt/">CELT</a> 有大量爱尔兰历史与文学文本。官方 FAQ 明确允许搜索、屏幕阅读、为私人使用/教学/研究下载或打印，同时要求不要把 CELT 文本下载后放到自己的服务器。这里最安全的能力是来源发现和私人导入说明；它不适合被误写成“WebNR 可以自由镜像的开放 TXT 库”。</p>
+<h4 id="perseus-canonical-cc-by-sa-40-tei-xml"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#perseus-canonical-cc-by-sa-40-tei-xml">Perseus canonical：仓库总体 CC BY-SA 4.0，但内容以 TEI XML 为主且组件权利有差异</a></h4>
+<p>PerseusDL 的 canonical Greek/Latin GitHub 仓库总体采用 <strong>CC BY-SA 4.0 unless otherwise indicated</strong>，同时 README 提醒具体材料可能具有不同版权状态。它的主要机器格式是 TEI XML，不是 WebNR 当前的 raw TXT。未来若做 adapter，应保存 CTS/版本身份、item-level license 和 XML→阅读文本转换 fixture，而不是把 XML 直接塞进 TXT reader。</p>
+<h4 id="eebo-tcp-phase-i25363-teixml"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#eebo-tcp-phase-i25363-teixml">EEBO-TCP Phase I：25,363 份转录进入公共领域，但核心发行形态是 TEI/XML</a></h4>
+<p>Text Creation Partnership 的 EEBO Phase I 文本自 2015-01-01 起发布到公共领域；官方/项目 GitHub 分发以结构化 XML/TEI 为核心。这是一个权利条件很强、格式转换工作也很明确的候选。真正的 WebNR integration 应先实现确定性的 TEI→plain-text 派生规则、标题/作者 identity 与 fixture，再决定是否生成 direct-reading catalog。</p>
+<p>这五个候选里，没有一个需要靠“抓网页正文”来证明价值。相反，它们展示了更可持续的来源增长路线：优先找<strong>公开 release、版本标识、机器文件、明确许可</strong>，然后只实现 WebNR 当前能够测试的最窄能力。</p>
+<h3 id="9-txt-source-checklist"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#9-txt-source-checklist">9. 给自己的 TXT 文件夹生成 source：一份可操作 checklist</a></h3>
+<p>如果你手里有一个可以合法公开的 TXT 文件夹，可以按下面的顺序整理。</p>
+<h4 id="step-a"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#step-a">Step A：先冻结一个输入快照</a></h4>
+<p>不要一边生成目录，一边继续改文件。先给文件夹一个版本：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>my-collection-2026-09-01/
+</code></pre></div>
+<p>如果使用 Git：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>git add texts metadata.csv
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>git commit -m "Freeze TXT collection 2026-09-01"
+</code></pre></div>
+<p>之后 source 指向 commit，而不是 <code>main</code>。</p>
+<h4 id="step-b"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#step-b">Step B：把明显的临时文件排除</a></h4>
+<p>典型排除项：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>.DS_Store
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>Thumbs.db
+<a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>*.tmp
+<a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>*.bak
+<a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>README-draft.txt
+</code></pre></div>
+<p>目录生成脚本应该有 allowlist（例如只接受 <code>.txt</code>），而不是“文件夹里有什么就全发出去”。</p>
+<h4 id="step-c-stable-identity"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#step-c-stable-identity">Step C：建立 stable identity</a></h4>
+<p>优先级通常是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>上游作品 ID &gt; 明确的馆藏 ID &gt; 你自己的永久 slug &gt; 当前文件名
+</code></pre></div>
+<p>文件名可以改，稳定 ID 最好不要随标题标点变化。</p>
+<h4 id="step-d-titleauthor-filename"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#step-d-titleauthor-filename">Step D：把 title/author 与 filename 分开</a></h4>
+<p>一份中文 CSV 就足够：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>id,title,author,filename,license,page_url
+<a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>001,作品一,作者甲,001.txt,Public Domain,https://example.org/works/001
+<a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>002,作品二,作者乙,002.txt,CC-BY-4.0,https://example.org/works/002
+</code></pre></div>
+<p>生成 YAML 时，展示标题来自 <code>title</code>，文件传输来自 <code>filename</code>。这样以后重命名文件、修正书名、增加原文标题都不会把 identity 搅在一起。</p>
+<h4 id="step-e-collection-contract"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#step-e-collection-contract">Step E：抽样检查编码，再声明 collection contract</a></h4>
+<p>至少抽取：</p>
+<ul>
+<li>最小文件；</li>
+<li>最大文件；</li>
+<li>含罕见字符/繁体/日文假名/组合字符的文件；</li>
+<li>不同年代生成的文件；</li>
+<li>元数据里标记为不同语言的文件。</li>
+</ul>
+<p>如果全部 UTF-8，就把 UTF-8 写进 source README；如果混合编码，先统一转码通常比让每次阅读都猜编码更稳定。转码必须保留原始文件 hash 和转换脚本版本，避免“清理之后不知道改了什么”。</p>
+<h4 id="step-f-review-search_indexyml"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#step-f-review-search_indexyml">Step F：生成小而可 review 的 <code>search_index.yml</code></a></h4>
+<p>第一次不要把 20,000 条一次塞进去。先选 3–20 个代表性作品，覆盖：</p>
+<ul>
+<li>不同文件大小；</li>
+<li>不同作者；</li>
+<li>不同字符；</li>
+<li>不同元数据形状。</li>
+</ul>
+<p>先让 CI、浏览器导入和 public source route 都稳定，再讨论分页、sharding 或自动更新。</p>
+<h3 id="10"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#10">10. 哪些信息绝对不该被目录生成脚本带进去</a></h3>
+<p>TXT 目录很容易混入私人信息。生成 source 时要明确丢弃：</p>
+<ul>
+<li>本机绝对路径，例如 <code>/Users/alice/Downloads/...</code>；</li>
+<li>Windows 用户名路径；</li>
+<li>Drive/Dropbox 私有分享 token；</li>
+<li>Cookie、Authorization header；</li>
+<li>个人备注、阅读进度；</li>
+<li>账号邮箱；</li>
+<li>付费站下载 URL 中的临时签名；</li>
+<li>未获授权的正文镜像地址。</li>
+</ul>
+<p>WebNR source 需要的是公开可验证的书目与来源事实，不是你的文件系统快照。</p>
+<h3 id="11"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#11">11. 常见失败与最短修复路径</a></h3>
+<h4 id="_3"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#_3">乱码</a></h4>
+<p><strong>本地文件：</strong> 先让 WebNR 的本地检测处理；仍失败时，用文本编辑器确认实际编码，再转换为 UTF-8 后保留原文件备份。</p>
+<p><strong>远程 URL：</strong> 检查服务器 charset。来源没有可靠声明时，下载到本地再导入通常更稳。</p>
+<h4 id="url-webnr"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#url-webnr">URL 在浏览器能开，WebNR 导入失败</a></h4>
+<p>优先怀疑 CORS 或重定向。不要用账号 Cookie、代理或验证码绕过作为默认方案。</p>
+<h4 id="1342-0"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#1342-0">导入后标题像 <code>1342-0</code></a></h4>
+<p>这是远程 URL 文件名本身。把作品加入 WebNR source，让 discovery metadata 提供可读标题；底层 raw 文件仍可保持上游原名。</p>
+<h4 id="_4"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#_4">一个文件夹里重复了同一本书很多版本</a></h4>
+<p>不要只按标题去重。至少加入版本/来源字段，必要时保留多版，例如：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>Frankenstein — 1818 text
+<a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>Frankenstein — 1831 text
+</code></pre></div>
+<p>对数字档案来说，“同名”远远不等于“同一字节或同一版”。</p>
+<h4 id="_5"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#_5">上游更新了文件</a></h4>
+<p>固定 commit 的 source 不会自动变。先审计新 revision，再通过新的 PR 更新 pin。这是刻意的设计：变化应该是可见事件，而不是后台漂移。</p>
+<h3 id="12-webnr"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#12-webnr">12. WebNR 接下来最值得做什么</a></h3>
+<p>raw TXT 路线已经从“只能读本地文件”走到了两个可验证 direct-source 示例：Project Ben-Yehuda 展示多语言 UTF-8 公共领域 dump，GITenberg 展示按作品拆分的 Git-backed 公共领域 TXT。下一阶段有三项价值很高：</p>
+<ol>
+<li><strong>本地批量/文件夹导入 UI</strong>：让用户选择多个 TXT，并在写入前看到标题、编码和冲突预览；</li>
+<li><strong>远程 URL 的字节级编码路径</strong>：让 remote import 与 local import 拥有一致、可测试的编码行为，同时尊重服务器 charset；</li>
+<li><strong>生成式 source tooling</strong>：从授权文件夹或 metadata CSV 生成 bounded <code>search_index.yml</code>，输出重复 ID、缺失许可、超大文件、非 HTTPS、可变 URL 等 lint。</li>
+</ol>
+<p>这些能力一旦落地，“一个文件夹”就能沿着清晰的阶梯变成“可维护 source”，同时继续保持 WebNR 的 local-first 和最小网络权限边界。</p>
+<h3 id="_6"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#_6">参考与复核入口</a></h3>
+<h4 id="webnr-source"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#webnr-source">WebNR 实现与当前 source</a></h4>
+<ol>
+<li><a href="https://github.com/AutoArchive/webNR/blob/main/app/lib/storage.ts">WebNR <code>NovelStorage</code>：本地与 URL TXT 导入实现</a></li>
+<li><a href="https://app.webnovel.win/sources/project-ben-yehuda-txt-starter">Project Ben-Yehuda Public Domain TXT Starter</a></li>
+<li><a href="https://app.webnovel.win/sources/aozora-starter">Aozora Bunko Starter</a></li>
+<li><a href="https://app.webnovel.win/sources/gitenberg-direct-txt-starter">GITenberg Direct TXT Starter</a></li>
+</ol>
+<h4 id="direct-txt"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#direct-txt">本轮 direct-TXT 上游</a></h4>
+<ol>
+<li><a href="https://github.com/GITenberg/Pride-and-Prejudice_1342">GITenberg: Pride and Prejudice #1342</a></li>
+<li><a href="https://github.com/GITenberg/Frankenstein_84">GITenberg: Frankenstein #84</a></li>
+<li><a href="https://github.com/GITenberg/The-Adventures-of-Sherlock-Holmes_1661">GITenberg: The Adventures of Sherlock Holmes #1661</a></li>
+<li><a href="https://github.com/projectbenyehuda/public_domain_dump">Project Ben-Yehuda <code>public_domain_dump</code></a></li>
+</ol>
+<h4 id="_7"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#_7">新候选的第一方政策与格式</a></h4>
+<ol>
+<li><a href="https://openiti.org/documentation/">OpenITI documentation</a></li>
+<li><a href="https://github.com/OpenITI/RELEASE">OpenITI releases</a></li>
+<li><a href="https://www.folger.edu/explore/shakespeares-works/download/">Folger Shakespeare download formats</a></li>
+<li><a href="https://www.folger.edu/copyright-policy/">Folger copyright policy</a></li>
+<li><a href="https://www.ucc.ie/en/research-sites/celt/">CELT, University College Cork</a></li>
+<li><a href="https://www.ucc.ie/en/research-sites/celt/faq/">CELT FAQ / copyright and use</a></li>
+<li><a href="https://github.com/PerseusDL/canonical-greekLit">PerseusDL canonical Greek literature</a></li>
+<li><a href="https://github.com/textcreationpartnership/Texts">Text Creation Partnership: EEBO-TCP texts</a></li>
+</ol>
+<h4 id="_8"><a class="toclink" href="../../2026/09/01/raw-txt-collection-import-guide/#_8">浏览器文本与网络基础</a></h4>
+<ol>
+<li><a href="https://developer.mozilla.org/docs/Web/API/TextDecoder">MDN: TextDecoder</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/API/Fetch_API">MDN: Fetch API</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/HTTP/Guides/CORS">MDN: CORS</a></li>
+</ol>
+<hr />
+<p><strong>一句话收尾：</strong> 对没有目录的 TXT 合集，先把“文件能打开”升级成“作品身份、编码、来源、权利和快照都可解释”，再决定逐个本地读还是生成 source。目录本身很小，但它把一堆匿名文件变成了可以维护、可以复现、可以安全扩展的阅读集合。</p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-08 00:00:00+00:00">August 8, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../reader-guides/" class="md-meta__link">Reader guides</a>, 
+              <a href="./" class="md-meta__link">Sources</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              3 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="2026-txt"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/">2026 年哪里能合法免费看小说？公版、作者授权与 TXT/电子书资源目录</a></h2>
+<p><strong>直接答案：</strong> 想找长期稳定、来源清楚的免费小说，优先顺序可以很简单：先看明确公版或由作者授权的数字图书馆，再看开放电子书项目和机构馆藏，最后才把搜索引擎、镜像站和社区分享当作发现线索。对 WebNR 用户而言，当前最容易直接阅读的是明确允许分发的 TXT；EPUB、扫描 PDF、特殊编码文本和只提供作品页的馆藏，应该先作为发现链接，等阅读器具备对应解析器和逐本权利判断后再开放直接导入。</p>
+<p>本文于 <strong>2026 年 8 月 8 日</strong>重新核验来源项目的官方页面、版权说明、访问方式和 WebNR 当前能力。今天同时上线一个新的 <strong>Standard Ebooks Starter</strong> 发现源，读者可以把四部经典小说的官方作品页加入 WebNR 来源列表：</p>
+<p><a class="md-button md-button--primary" href="https://app.webnovel.win/?repos=https%3A%2F%2Fapp.webnovel.win%2Fsources%2Fstandard-ebooks-starter">添加 Standard Ebooks Starter</a></p>
+<p>这个源只提供官方作品页链接，不复制 EPUB，也不把电子书下载地址伪装成 TXT。此前已经上线的 <a href="../../2026/08/06/legado-source-guide/">Legado 书源查找与验源指南</a> 解释了为什么“规则文件公开”与“内容可以合法获取”必须分开判断；本文把重点放在读者真正可以使用的免费阅读路线。</p>
+<h3 id="_1"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#_1">先看一张表：不同“免费来源”其实不是同一种东西</a></h3>
+<table>
+<thead>
+<tr>
+<th>来源类型</th>
+<th>读者能得到什么</th>
+<th>WebNR 当前适合的方式</th>
+<th>最容易忽略的边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>作者授权或项目原创 TXT</td>
+<td>直接文本文件</td>
+<td>可以直接导入或建立静态目录</td>
+<td>授权范围是否允许再分发</td>
+</tr>
+<tr>
+<td>公版电子书项目</td>
+<td>在线阅读、EPUB、作品页、目录 Feed</td>
+<td>先做作品发现；TXT 可直接读，EPUB 等解析器完成后再接入</td>
+<td>公版状态随国家/地区而变化</td>
+</tr>
+<tr>
+<td>国家图书馆与数字馆藏</td>
+<td>作品页、扫描件、全文或元数据</td>
+<td>作品发现和跳转</td>
+<td>“可查看”不等于“可批量下载或再分发”</td>
+</tr>
+<tr>
+<td>Wikisource 等协作文本库</td>
+<td>网页正文、导出文件、版本历史</td>
+<td>语言/作品级 adapter</td>
+<td>页面许可、原作版权和译文版权可能不同</td>
+</tr>
+<tr>
+<td>搜索与聚合 API</td>
+<td>元数据、可读状态、落地页</td>
+<td>发现层，不当作内容许可证</td>
+<td>API 返回“可见”不代表内容可自由复制</td>
+</tr>
+</tbody>
+</table>
+<p>这里最关键的判断是：<strong>免费访问、公共领域、开放许可、机构允许下载、允许机器访问、允许第三方再分发，是六个不同问题。</strong> 一个页面在浏览器里免费打开，只说明此刻可以访问；WebNR 若要把它变成长期可维护的书源，还需要知道来源是谁、作品权利状态、请求方式、格式、编码和失败边界。</p>
+<h3 id="_2"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#_2">第一组：最适合普通读者长期收藏的免费项目</a></h3>
+<h4 id="standard-ebooks"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#standard-ebooks">Standard Ebooks：适合想要排版精良英文经典的人</a></h4>
+<p><a href="https://standardebooks.org/">Standard Ebooks</a> 把公版文学制作成高质量电子书，并提供在线阅读、兼容 EPUB、Kindle/Kobo 格式以及作品源码。项目说明由 Standard Ebooks 制作的内容采用 <strong>CC0 1.0</strong>；每本书的页面又单独提示作品在美国是否被认为已经没有版权限制，并提醒美国以外读者核对所在地法律。</p>
+<p>今天核验的四个官方页面是：</p>
+<ul>
+<li><a href="https://standardebooks.org/ebooks/jane-austen/pride-and-prejudice">Pride and Prejudice — Jane Austen</a></li>
+<li><a href="https://standardebooks.org/ebooks/mary-shelley/frankenstein">Frankenstein — Mary Shelley</a></li>
+<li><a href="https://standardebooks.org/ebooks/oscar-wilde/the-picture-of-dorian-gray">The Picture of Dorian Gray — Oscar Wilde</a></li>
+<li><a href="https://standardebooks.org/ebooks/h-g-wells/the-time-machine">The Time Machine — H. G. Wells</a></li>
+</ul>
+<p>这些页面都能直接在线阅读，也提供电子书下载。WebNR 目前仍以 TXT 为正式支持格式，因此今天的集成选择“<strong>链接到官方作品页</strong>”，而不是做一个看似方便、实际没有经过 EPUB 安全测试的下载按钮。这样读者马上获得稳定入口，同时阅读器不会虚假宣称已经支持一种格式。</p>
+<p>Standard Ebooks 还提供 OPDS/Atom/RSS 形式的电子书 Feed，不过完整 Feed 存在不同访问路径。今天的 Starter 不依赖这些 Feed；后续只有在明确符合公开或开源项目访问条件并建立固定测试后，才会升级为自动目录 adapter。</p>
+<h4 id="project-gutenberg"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#project-gutenberg">Project Gutenberg：目录巨大，但机器访问要走机器路线</a></h4>
+<p><a href="https://www.gutenberg.org/">Project Gutenberg</a> 是最常见的英文免费电子书入口之一。它的目录以美国版权判断为基础，既有美国公共领域作品，也可能保留历史上经权利人授权发布的条目。因此“Gutenberg 上有”并不适合被简化成“全世界都属于公版”。</p>
+<p>对普通读者，直接打开作品落地页最清楚。对程序和书源，项目明确区分主网站的人类访问与机器人/批量访问，并提供机器可读目录、镜像和离线元数据路线。WebNR 后续的 Gutenberg adapter 应当使用这些官方机器入口、缓存目录结果、保持低频，并尽量链接作品页，而不是让每个客户端反复抓取主站网页或把第三方镜像当作权威来源。</p>
+<p>Gutenberg 因此很适合作为“大目录发现层”：它能回答“这本经典有没有合法免费版本”，但具体下载、再分发以及所在法域是否已进入公共领域，仍需要看单本作品与当地法律。</p>
+<h4 id="webnr"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#webnr">青空文库：日文经典入口已经可以在 WebNR 里发现</a></h4>
+<p><a href="https://www.aozora.gr.jp/">青空文库</a> 是日本文学的重要免费数字项目。WebNR 已经上线 <strong>Aozora Bunko Starter</strong>，当前包含《吾輩は猫である》《羅生門》《走れメロス》《よだかの星》四个经过核验的官方图书卡链接。</p>
+<p>青空文库的图书卡/书架数据有明确的再利用条件，但具体作品仍需考虑原作、译文等权利状态；文件格式还常见 ZIP、Shift_JIS、青空文库注记和 XHTML。WebNR 因此先把它做成作品发现源。等 ZIP、编码和 ruby 注记解析有版本化测试后，才适合讨论直接阅读。</p>
+<p>这个策略对其他区域图书馆同样适用：<strong>先把稳定、官方、可解释的作品入口交给读者，再逐步增加格式能力。</strong></p>
+<h4 id="project-madurai"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#project-madurai">Project Madurai：泰米尔语电子文本的区域性宝库</a></h4>
+<p><a href="https://www.projectmadurai.org/">Project Madurai</a> 是一个长期运行的志愿数字化项目，目标是制作并免费发布泰米尔文学电子文本。官方说明称收藏中的作品来自公共领域，或已经得到相应作者/权利方许可；其档案同时保留早期 TSCII 编码和较新的 Unicode HTML/PDF 版本。</p>
+<p>它非常适合成为 WebNR 的区域来源候选，不过接入方式需要比“抓一个 TXT 链接”更细：不同年代文件的字符编码、HTML 结构、PDF 与纯文本能力不一致，早期档案还带有个人使用措辞。今天的决定是保留为高价值 adapter 候选，优先从明确 Unicode、作品状态和下载条件的条目建立 fixture，而不是一口气索引整个档案。</p>
+<h4 id="project-ben-yehuda"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#project-ben-yehuda">Project Ben-Yehuda：公版与明确授权并存的希伯来语数字图书馆</a></h4>
+<p><a href="https://benyehuda.org/">Project Ben-Yehuda</a> 把希伯来文学制作成免费、可搜索的数字版本。项目自己的介绍明确说明，站内作品主要来自版权已经到期的内容，或取得了出版许可；作品列表还把“公共领域”“经授权发布”等权利状态直接作为筛选条件，并提供文本/电子书导出能力。</p>
+<p>这类站点对 WebNR 很有价值，因为“作品为什么能公开”本身就是目录数据的一部分。今天把它加入区域来源队列，下一步应使用官方作品状态与导出接口做小规模 fixture，确保每个条目都保留原始作品页和权利标签。</p>
+<h3 id="_3"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#_3">第二组：非常有用，但更适合作为发现层</a></h3>
+<h4 id="wikisource"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#wikisource">Wikisource：适合从网页和导出开始，不适合把整个站视为一种许可证</a></h4>
+<p><a href="https://wikisource.org/">Wikisource</a> 的不同语言项目拥有大量可阅读文本，并有 EPUB/PDF 等导出能力。它的优势是版本历史、校对和页面级来源清楚；复杂之处是原作、译文、编辑贡献以及不同语言项目的具体信息需要逐项处理。</p>
+<p>WebNR 已把 Wikisource 留在 adapter 队列。合理设计是保存语言、作品页、导出方式和许可/版权模板，而不是只根据“Wikimedia”这个品牌给整站贴一个统一权利标签。</p>
+<h4 id="project-runeberg"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#project-runeberg">Project Runeberg：北欧文学很强，法域判断必须跟着作者和译者走</a></h4>
+<p><a href="https://runeberg.org/">Project Runeberg</a> 长期数字化北欧文学，并明确说明它按照版权期限谨慎发布作品。对于北欧经典发现，它提供了独特价值；对于全球读者，作者、译者、版本和所在地版权期限仍可能产生差异。</p>
+<p>因此它适合做区域发现与逐本链接，不适合生成“整个 Runeberg 都可以任意再分发”的结论。</p>
+<h4 id="hathitrustfull-view"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#hathitrustfull-view">HathiTrust：Full View 很有价值，下载权限仍要看条目和数字化来源</a></h4>
+<p><a href="https://www.hathitrust.org/">HathiTrust Digital Library</a> 汇集大量图书馆数字化内容。没有登录的用户也能阅读许多 <strong>Full View</strong> 条目；但整本下载能力受作品状态、登录资格以及数字化来源影响，Google 扫描的条目尤其可能有下载限制。</p>
+<p>对 WebNR 来说，HathiTrust 很适合作为“是否存在机构完整视图”的发现信号，暂时不适合作为统一直链下载源。一个未来 adapter 应明确区分 Full View、Search-only、下载限制和作品落地页。</p>
+<h3 id="_4"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#_4">第三组：搜索能力很强，但元数据本身不是内容授权</a></h3>
+<p>今天还新增核验了几类发现候选：</p>
+<ul>
+<li><strong>Digital Public Library of America (DPLA)</strong>：聚合元数据采用非常宽松的开放政策，很适合发现美国机构收藏；实际图片、扫描件或文本仍由各提供机构的 rights statement 决定。</li>
+<li><strong>Library of Congress JSON API</strong>：不需要 API key 就能查询大量公开元数据，适合低频目录发现；条目格式与权利状态具有异质性，需要保留作品页和逐项 rights 信息。</li>
+<li><strong>Google Books API / Full View</strong>：能提供书目、预览/可读状态和购买/落地信息；Full View 与下载能力会随作品权利和用户所在地变化，所以应把 <code>accessInfo</code> 当成“当前可读性信号”，而不是全局公版证明。</li>
+<li><strong>Internet Archive Texts</strong>：拥有庞大文本与元数据集合，但不同项目、借阅模型和单本作品的权利状态差异很大。WebNR 可以研究元数据/明确开放集合，通用“Internet Archive 全站下载源”则缺少足够窄的权利边界。</li>
+</ul>
+<p>这些来源证明了一件很实用的事：一个好的阅读器目录不必把所有书都自己托管。<strong>发现层负责告诉读者哪里有可靠版本；导入层只处理已经满足格式、访问和权利条件的内容。</strong></p>
+<h3 id="_5"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#_5">如果你只想“找一本文本马上读”，怎么选</a></h3>
+<p>可以按下面的顺序降低踩坑概率：</p>
+<ol>
+<li><strong>先搜索作者或项目官方页面。</strong> 作者自己发布的 TXT、明确授权下载页、项目原创内容最容易判断。</li>
+<li><strong>再找公版项目的作品页。</strong> Standard Ebooks、Project Gutenberg、青空文库、Project Madurai、Project Ben-Yehuda、Project Runeberg 都比无来源 TXT 打包站更容易追溯。</li>
+<li><strong>需要更多版本时再去机构馆藏。</strong> Wikisource、HathiTrust、DPLA、Library of Congress、Google Books 可以帮助确定版本、扫描件和可读状态。</li>
+<li><strong>看到“TXT 全集”“万能书源”先检查来源。</strong> 文件名、网盘地址和“免费”标签本身不能回答作者、版本、授权和法域问题。</li>
+<li><strong>给 WebNR 导入时看格式。</strong> 当前可靠路径是 TXT 与已验证的文本 URL；EPUB、ZIP、特殊编码和复杂网页规则应该等对应能力通过测试。</li>
+</ol>
+<p>一个来源如果只有文件、没有作者和 metadata，并不必然不能用。WebNR 的规则是：可以从文件名生成展示标题，未知作者保持 Unknown；但<strong>绝不通过猜测补作者、许可、发布日期或热度</strong>。比起漂亮但虚构的目录，一个诚实的“未知”更容易在以后被纠正。</p>
+<h3 id="_6"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#_6">今天的来源审计与接入结果</a></h3>
+<p>本轮重新核验了现有 WebNR Originals 和 Aozora Bunko Starter，并扩展了免费阅读候选池。新增发现方向包括 HathiTrust、DPLA、Google Books Full View、Internet Archive Texts、Project Madurai 和 Project Ben-Yehuda。</p>
+<p>深入审计后形成三个直接结论：</p>
+<ul>
+<li><strong>Standard Ebooks：通过，今天接入。</strong> 使用官方作品页和项目自己的 CC0/版权说明，只做 link-based discovery，不使用受条件约束的完整 Feed，也不复制 EPUB。</li>
+<li><strong>Project Madurai：通过读者价值审计，等待编码/权利 fixture。</strong> 免费电子文本价值高，先从 Unicode 和权利说明明确的条目做 adapter。</li>
+<li><strong>Project Ben-Yehuda：通过读者价值审计，等待权利状态/导出 fixture。</strong> 站点直接区分公版和授权发布，适合做保留权利标签的区域目录。</li>
+</ul>
+<p>新的 <strong>Standard Ebooks Starter</strong> 因此成为 WebNR 第三个正式来源。它的作用不是取代 Standard Ebooks，而是给 WebNR 用户一个可验证的作品发现入口；任何阅读和下载仍回到官方作品页。</p>
+<h3 id="txt"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#txt">为什么今天没有直接接一个“大型 TXT 合集”</a></h3>
+<p>TXT 合集非常适合 WebNR，但“没有 metadata”与“没有来源依据”是两回事。前者可以解决：文件名就能先成为标题，未知字段保持未知。后者不能靠技术补齐：如果不知道文本来自哪里、是否公版或获授权，就不能因为文件格式方便而把它包装成官方推荐源。</p>
+<p>所以接下来的 TXT 工作会优先寻找三类集合：作者明确授权发布、项目自身原创/开放许可、公共领域项目明确允许分发的文本包。Project Madurai、Project Ben-Yehuda 和部分区域数字项目都可能提供这样的材料，但要先逐项把许可措辞、编码和文件入口做成可重复测试。</p>
+<h3 id="_7"><a class="toclink" href="../../2026/08/08/legal-free-novels-txt-collections/#_7">下一步</a></h3>
+<p>今天之后，免费阅读目录会持续更新来源健康和接入能力，而不是停在一篇“资源推荐”。接下来最值得做的是：</p>
+<ul>
+<li>为 Project Gutenberg 建立目录缓存、作品落地页优先的低频 adapter；</li>
+<li>为 Wikisource 固定语言、导出与归属 fixture；</li>
+<li>为 Project Madurai 测试 Unicode/TSCII 编码边界；</li>
+<li>为 Project Ben-Yehuda 保留公版/授权状态并测试文本导出；</li>
+<li>等 WebNR 的 EPUB 安全解析器完成后，把 Standard Ebooks 从发现源升级为真正可读的格式适配器。</li>
+</ul>
+<p>免费小说资源的长期价值来自三件事同时成立：<strong>读者找得到，来源讲得清，阅读器真的能稳定处理。</strong> WebNR 会把这三件事分别验证，再把通过的部分逐步连起来。</p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-06 00:00:00+00:00">August 6, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../reader-guides/" class="md-meta__link">Reader guides</a>, 
+              <a href="./" class="md-meta__link">Sources</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              3 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="2026-legado"><a class="toclink" href="../../2026/08/06/legado-source-guide/">2026 年 Legado 书源在哪里找？一份面向读者的查找与验源指南</a></h2>
+<p><strong>直接答案：</strong> 2026 年寻找 Legado 书源时，最可靠的顺序是先找作者授权、公共领域、开放目录和自己维护的来源，再把社区分享的 JSON 当作待审计的规则文件。一个 GitHub 仓库公开可见，只能证明规则文件能够下载；它不能自动证明目标小说站允许抓取、内容可以再分发，或这条规则今天仍然可用。</p>
+<p>本文于 <strong>2026 年 8 月 6 日</strong>核验公开页面、项目公告和目录政策。WebNR 今天同时发布了一个完全由项目维护、以 CC0 1.0 提供的示例书源，读者可以先用它确认“添加书源—浏览目录—导入 TXT—开始阅读”这一条链路是否正常：</p>
+<p><a class="md-button md-button--primary" href="https://app.webnovel.win/?repos=https%3A%2F%2Fapp.webnovel.win%2Fsources%2Fwebnr-originals">把 WebNR Originals 添加到阅读器</a></p>
+<p>这个示例源只包含 WebNR 原创文本，不代理第三方网站，也不依赖登录、验证码、付费墙或跨域绕过。它适合排除阅读器本身的问题：若示例源可以导入，而某个社区书源失败，问题通常位于目标网站、规则、权限、编码或网络边界。</p>
+<h3 id="_1"><a class="toclink" href="../../2026/08/06/legado-source-guide/#_1">先分清三件不同的东西</a></h3>
+<p>读者口中的“书源”常常混合了三个对象：</p>
+<ol>
+<li><strong>阅读器或规则引擎。</strong> Legado 曾提供可以执行自定义来源规则的 Android 阅读器。</li>
+<li><strong>来源定义。</strong> JSON、JavaScript 或其他规则文件，描述搜索、详情、目录和正文怎样提取。</li>
+<li><strong>内容与目标网站。</strong> 小说站、作者页面、公共领域图书馆、RSS、OPDS 或下载目录。</li>
+</ol>
+<p>来源定义的开源许可只覆盖规则文件本身。目标网站的条款、robots、账号要求、作品版权和分发许可仍然需要单独判断。这个区分能解释一个常见现象：同一份规则仓库可能采用 GPL，但里面每条规则指向的网站具有完全不同的访问和版权条件。</p>
+<h3 id="2026"><a class="toclink" href="../../2026/08/06/legado-source-guide/#2026">2026 年最重要的变化：官方仓库已不再是书源入口</a></h3>
+<p><code>gedoor/legado</code> 的 GitHub 首页目前只保留一份公告。公告写明项目内容已经删除，并明确规劝停止侵权相关行为。这个页面因此可以用于理解当前项目状态，却已经不能继续充当稳定的软件下载、规则文档或官方书源目录。</p>
+<p>对读者最实际的影响有三点：</p>
+<ul>
+<li>旧教程中的官方仓库、Release 和示例路径可能已经失效；</li>
+<li>“来自 Legado 社区”不等于“经过官方审核”；</li>
+<li>搜索结果里出现的镜像、旧发布页和第三方规则集合需要重新核对日期、维护者与法律边界。</li>
+</ul>
+<p>WebNR 不会复制已经删除的项目内容，也不会把第三方站点抓取规则直接包装成“官方书源”。我们的兼容工作采用 clean-room fixtures：只根据公开格式和自建测试页面验证字段行为，并把真实第三方定义放入隔离的兼容语料库审查。</p>
+<h3 id="_2"><a class="toclink" href="../../2026/08/06/legado-source-guide/#_2">五类常见查找路径，风险差异很大</a></h3>
+<h4 id="1"><a class="toclink" href="../../2026/08/06/legado-source-guide/#1">1. 作者、公版机构和开放目录</a></h4>
+<p>这是优先级最高的一类。作者自己发布的 TXT、RSS 或下载页，明确公共领域的馆藏，以及带有公开使用条件的 OPDS 目录，都能提供清楚的来源依据。</p>
+<p>Project Gutenberg 提供机器可读目录和 OPDS。它目前的新入库政策聚焦美国公版作品，但目录中仍可能保留历史授权条目；其版权判断以美国法为准，其他法域的读者还要核对所在地法律和单本电子书内的许可。其网站政策要求应用使用可联系的 User-Agent、保持接近人工浏览的请求频率，并避免大规模直接链接到电子书文件。适合的做法是使用官方目录、链接到作品落地页，或下载公开目录后建立自己的低频索引；把它当作无限带宽的文件代理并不合适。</p>
+<p>Standard Ebooks 也提供 OPDS 1.2/2.0、Atom 和 RSS。它的“新书发布”Feed 面向所有人，而完整电子书 Feed 的访问包含赞助、贡献者或符合条件的开源项目等路径。WebNR 已把它列为值得接入的候选，但在获得适用访问方式并完成测试前，不会把受限 Feed 伪装成公开源。</p>
+<h4 id="2-webnr"><a class="toclink" href="../../2026/08/06/legado-source-guide/#2-webnr">2. WebNR 自建来源</a></h4>
+<p>当原始集合有合法分发依据，却没有 WebNR 所需的目录格式时，我们可以建立自己的 adapter 或静态 catalog。来源不必提供完整 metadata：文件名可以成为显示标题，作者和更新时间缺失时保持 <code>Unknown</code>，绝不以当前时间或猜测值填空。</p>
+<p>今天上线的 <strong>WebNR Originals</strong> 就是第一例。它的目录地址是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://app.webnovel.win/sources/webnr-originals
+</code></pre></div>
+<p>目录中的原创短篇《灯下索引》和来源定义均以 CC0 1.0 发布。这个源也作为版本化健康检查样本，后续会持续验证 YAML 解析、明确链接、TXT 导入、IndexedDB 保存和离线阅读。</p>
+<h4 id="3-legado"><a class="toclink" href="../../2026/08/06/legado-source-guide/#3-legado">3. 社区维护的 Legado 规则仓库</a></h4>
+<p>GitHub 上仍能找到 <code>XIU2/Yuedu</code>、<code>yolo52/Yuedu</code> 等社区集合。它们对于研究字段、错误模式和规则兼容很有价值，也常常包含维护者记录的失效反馈。与此同时，规则文件许可不能替代目标站授权，规则可导入也不能证明搜索、目录和正文仍然稳定。</p>
+<p>WebNR 对这类集合采用两层处理：</p>
+<ul>
+<li><strong>兼容语料库：</strong> 保存最小、脱敏、可复现的字段样本，用来测试解析器；</li>
+<li><strong>推荐目录：</strong> 只有逐条完成目标站条款、robots、登录、限速、版权与健康检查的来源才可能进入。</li>
+</ul>
+<p>因此，社区仓库可以成为“哪里能学习规则”的答案，却不是“一键全部导入”的推荐。</p>
+<h4 id="4"><a class="toclink" href="../../2026/08/06/legado-source-guide/#4">4. 公共文本馆和区域性数字图书馆</a></h4>
+<p>青空文库、Wikisource、各国公共领域项目和大学数字馆藏是很重要的候选。它们的作品状态通常按作者、版本、编辑贡献和所在法域分别判断。接入时应保留作品页、作者、许可模板或公共领域依据，并为不同国家的读者提示版权期限差异。</p>
+<p>这类来源通常比小说抓取站稳定，也更适合建立 OPDS、RSS 或 WebNR 自有索引。代价是需要逐项处理编码、竖排标记、注释、扫描 OCR 和不同许可。</p>
+<h4 id="5"><a class="toclink" href="../../2026/08/06/legado-source-guide/#5">5. 聚合站、镜像和“万能书源”分享页</a></h4>
+<p>这一类最容易短期可用，也最容易突然失效。常见问题包括域名频繁更换、搜索接口从 GET 改为 POST、验证码、Cloudflare 挑战、Cookie、登录、付费内容、编码变动和移动端脚本依赖。规则作者可能及时修复，也可能停止维护。</p>
+<p>WebNR 不会通过绕过验证码、登录、付费、DRM、robots 或访问控制来维持兼容。面对这类候选，最有用的输出是明确写出“需要 Bridge”“只适合用户本地导入”“进入隔离语料库”或“拒绝接入”，而不是用一个绿色图标掩盖风险。</p>
+<h3 id="_3"><a class="toclink" href="../../2026/08/06/legado-source-guide/#_3">一条书源至少要通过哪些检查</a></h3>
+<p>读者可以用下面的顺序快速判断：</p>
+<table>
+<thead>
+<tr>
+<th>检查</th>
+<th>要回答的问题</th>
+<th>失败时怎么做</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>来源</td>
+<td>谁维护规则，最后一次更新是什么时候？</td>
+<td>找维护记录或换源</td>
+</tr>
+<tr>
+<td>分发依据</td>
+<td>内容属于公版、作者授权、正规平台，还是未经说明的转载？</td>
+<td>只保留链接或拒绝接入</td>
+</tr>
+<tr>
+<td>访问条件</td>
+<td>是否需要账号、Cookie、验证码、付费或地区权限？</td>
+<td>使用官方 App，或标明 Bridge/账号边界</td>
+</tr>
+<tr>
+<td>网站政策</td>
+<td>robots、条款和请求频率允许什么？</td>
+<td>降低频率、使用官方 Feed，或停止自动访问</td>
+</tr>
+<tr>
+<td>健康</td>
+<td>搜索、详情、目录和正文是否都能完成？</td>
+<td>区分局部失败与全源失效</td>
+</tr>
+<tr>
+<td>安全</td>
+<td>规则是否执行任意 JavaScript、请求额外域名或读取敏感状态？</td>
+<td>进入受限运行环境或拒绝</td>
+</tr>
+<tr>
+<td>可重复性</td>
+<td>是否有固定样本和可再次运行的测试？</td>
+<td>先建立 fixture 再宣称兼容</td>
+</tr>
+</tbody>
+</table>
+<p>一个真正可维护的来源还应公开“最后测试日期”和“已知限制”。只写“可用”无法帮助下一位读者判断问题发生在什么时候。</p>
+<h3 id="_4"><a class="toclink" href="../../2026/08/06/legado-source-guide/#_4">今天的候选审计结果</a></h3>
+<p>本轮发现并核对了六个候选方向，完成了三项深入审计，并交付一个通过者：</p>
+<table>
+<thead>
+<tr>
+<th>候选</th>
+<th>当前决定</th>
+<th>主要依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WebNR Originals</td>
+<td><strong>已接入</strong></td>
+<td>项目原创、CC0、同源静态目录、固定 TXT 和健康检查入口</td>
+</tr>
+<tr>
+<td>Project Gutenberg OPDS</td>
+<td><strong>通过目录价值审计，等待专用 adapter</strong></td>
+<td>机器目录有价值；需要逐本核对许可和法域，并遵守 User-Agent、低频请求与落地页链接政策</td>
+</tr>
+<tr>
+<td>Standard Ebooks OPDS</td>
+<td><strong>延期</strong></td>
+<td>完整 Feed 存在访问条件；需确认开源项目访问方式</td>
+</tr>
+<tr>
+<td><code>gedoor/legado</code> 当前仓库</td>
+<td><strong>仅作状态与公告引用</strong></td>
+<td>项目内容已删除，首页发布侵权相关公告</td>
+</tr>
+<tr>
+<td><code>XIU2/Yuedu</code></td>
+<td><strong>隔离兼容语料候选</strong></td>
+<td>有规则和失效反馈价值；目标站许可需逐条复核</td>
+</tr>
+<tr>
+<td>青空文库及其他区域馆藏</td>
+<td><strong>继续审计</strong></td>
+<td>读者价值高；需处理逐作版权、格式和编码</td>
+</tr>
+</tbody>
+</table>
+<p>这个表不会把“延期”写成失败，也不会把“没有数据”写成零价值。下一轮将继续审计公共领域和作者授权目录，并建立 Project Gutenberg 的低频、落地页优先 adapter 设计。</p>
+<h3 id="webnr-legado"><a class="toclink" href="../../2026/08/06/legado-source-guide/#webnr-legado">WebNR 与 Legado 的当前兼容边界</a></h3>
+<p>WebNR 今天原生读取的是 <code>search_index.yml</code> 目录，而不是直接执行 Legado JSON。此次更新增加了显式标题、作品页和下载链接字段，限制目录大小，拒绝非 HTTP(S) 链接，并停止用当前时间伪装缺失日期。</p>
+<p>Legado 兼容将分阶段推进：</p>
+<ol>
+<li>导入 JSON 并报告支持、忽略和未知字段；</li>
+<li>在自建 fixtures 上实现常见搜索、详情、目录、正文与分页规则；</li>
+<li>增加受控 Cookie、变量和权限；</li>
+<li>在限时、限内存、限能力环境中处理必要脚本；</li>
+<li>把普通网页无法完成的 WebView 与跨域行为放进可选 Bridge。</li>
+</ol>
+<p>每个公开兼容结论都会附带 capability level 和 fixture-suite 版本。WebNR 会尽可能读取现有定义，但不会用“兼容”三个字承诺绕过网站本身的限制。</p>
+<h3 id="_5"><a class="toclink" href="../../2026/08/06/legado-source-guide/#_5">读者接下来可以怎么做</a></h3>
+<p>先添加 <strong>WebNR Originals</strong>，确认阅读器的书源和 TXT 导入链路。随后检查目标来源的维护日期、授权依据、访问条件和健康状态。遇到失败时，记录具体阶段：添加失败、搜索失败、详情失败、目录失败还是正文失败。这样的报告比“书源不能用”更容易被复现和修复。</p>
+<p>后续来源目录会为每个通过者提供语言、格式、访问条件、最后测试日期、健康状态和替代来源。读者也可以通过 WebNR GitHub issue 提交公开目录、作者授权 Feed、失效报告或兼容 fixture；提交一个链接即可，缺失 metadata 可以在审计中保持未知。</p>
+<h3 id="_6"><a class="toclink" href="../../2026/08/06/legado-source-guide/#_6">参考与核验页面</a></h3>
+<ul>
+<li><a href="https://github.com/gedoor/legado">Legado 当前 GitHub 公告</a></li>
+<li><a href="https://www.gutenberg.org/policy/robot_access.html">Project Gutenberg 自动访问政策</a></li>
+<li><a href="https://www.gutenberg.org/policy/terms_of_use.html">Project Gutenberg 使用条款与 OPDS 要求</a></li>
+<li><a href="https://www.gutenberg.org/policy/linking.html">Project Gutenberg 链接政策</a></li>
+<li><a href="https://www.gutenberg.org/policy/license.html">Project Gutenberg 许可说明</a></li>
+<li><a href="https://standardebooks.org/feeds">Standard Ebooks Feed 与访问方式</a></li>
+<li><a href="https://wikisource.org/wiki/Wikisource:Copyright_policy">Wikisource 版权政策</a></li>
+<li><a href="https://app.webnovel.win/sources/webnr-originals/README.txt">WebNR Originals 来源说明</a></li>
+</ul>
+<p>核验日期：2026-08-06。平台公告、访问政策和社区规则会变化；WebNR 的来源目录将以最近健康检查和公开依据更新。</p>
+    
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025–2026 AutoArchive contributors
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/AutoArchive/webNR" target="_blank" rel="noopener" title="WebNR source code" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://app.webnovel.win/" target="_blank" rel="noopener" title="Open WebNR reader" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 152a88 88 0 1 0 0-176 88 88 0 1 0 0 176m0 298.7V301.4c16.3-6.8 32.9-13.7 49.7-20.7 39-16.2 80.8-24.6 123.1-24.6H448v160h-19.2c-59.1 0-117.7 11.7-172.3 34.5l-.5.2zm0-218.7-25.1-10.5C184.1 202 133.9 192 83.2 192H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h35.2c50.7 0 100.9 10 147.7 29.5l12.8 5.3c7.9 3.3 16.7 3.3 24.6 0l12.8-5.3c46.8-19.5 97-29.5 147.7-29.5H464c26.5 0 48-21.5 48-48V240c0-26.5-21.5-48-48-48h-35.2c-50.7 0-100.9 10-147.7 29.5z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../js/timeago.min.js"></script>
+      
+        <script src="../../../js/timeago_mkdocs_material.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2347 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="User and developer documentation for the private, local-first WebNR TXT reader">
+      
+      
+        <meta name="author" content="AutoArchive contributors">
+      
+      
+        <link rel="canonical" href="https://www.webnovel.win/blog/category/research/">
+      
+      
+        <link rel="prev" href="../release/">
+      
+      
+        <link rel="next" href="../sources/">
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Research - WebNR Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/timeago.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <script id="__analytics">
+function __md_analytics() {
+  function gtag() { dataLayer.push(arguments) }
+  window.dataLayer = window.dataLayer || []
+  gtag("js", new Date())
+  gtag("config", "G-DGH8HNQKE4", {
+    send_page_view: false,
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false
+  })
+
+  function sendPageView() {
+    gtag("event", "page_view", {
+      page_location: window.location.href,
+      page_path: window.location.pathname + window.location.search
+    })
+  }
+
+  if (typeof location$ !== "undefined" && location$ && typeof location$.subscribe === "function") {
+    location$.subscribe(sendPageView)
+  } else {
+    sendPageView()
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (document.forms.search) {
+      document.forms.search.query.addEventListener("blur", function () {
+        if (this.value) gtag("event", "search", { search_term: this.value })
+      })
+    }
+  })
+
+  var script = document.createElement("script")
+  script.async = true
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-DGH8HNQKE4"
+  document.getElementById("__analytics").insertAdjacentElement("afterEnd", script)
+}
+</script>
+<script>"undefined" != typeof __md_analytics && __md_analytics()</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#research" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://www.webnovel.win/" title="WebNR Documentation" class="md-header__button md-logo" aria-label="WebNR Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WebNR Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Research
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AutoArchive/webNR" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AutoArchive/webNR
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  WebNR Documentation / WebNR 文档
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../manual/contributing/" class="md-tabs__link">
+          
+  
+  
+  Manual
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../source/" class="md-tabs__link">
+          
+  
+  
+  Source
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../troubleshooting/txt-import/" class="md-tabs__link">
+          
+  
+  
+  Troubleshooting
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.webnovel.win/" title="WebNR Documentation" class="md-nav__button md-logo" aria-label="WebNR Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WebNR Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AutoArchive/webNR" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AutoArchive/webNR
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WebNR Documentation / WebNR 文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../compatibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../fanfiction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fanfiction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../legado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../reader-guides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reader guides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading apps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../recommendations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommendations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+      
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../txt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TXT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../webnr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WebNR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8F%91%E5%B8%83/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    发布
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Manual
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../manual/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing to WebNR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../manual/url-params/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URL parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Source
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WebNR source definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../source/chinese/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三方可用小说源 （中文）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshooting/txt-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TXT import troubleshooting / TXT 导入排障
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="research">Research</h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-28 00:00:00+00:00">August 28, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../reader-guides/" class="md-meta__link">Reader guides</a>, 
+              <a href="./" class="md-meta__link">Research</a>, 
+              <a href="../community/" class="md-meta__link">Community</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              10 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="2026-8-ai-discussion-radar"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/">2026 年 8 月英文网文读者在聊什么？完结、音频、长尾推荐与 AI 来源的 Discussion Radar</a></h2>
+<p><strong>直接答案：</strong>2026 年 8 月的英文网文公开讨论里，最稳定的阅读信号集中在五件事：<strong>读者越来越常把“完结状态”写进推荐条件；平台与媒介已经成为口味的一部分，Kindle Unlimited、Royal Road 与 Audible 会直接改变候选集；读者用“少 stat block、群像、harem 排除、更多 romance、更多 slice of life、特定 narrator”一类细粒度约束表达需求；大型热门系列继续承担共同坐标，小作者与低曝光作品则依赖人工策展获得第二次发现机会；AI 辅助创作正在从抽象争论进入来源披露、筛选规则与推荐资格的具体讨论。</strong>[P1]-[P21]</p>
+<p>这份 Radar 的实用方式很简单：先把自己的需求写成 <strong>完成度 × 阅读媒介 × 内容机制 × 社交信号 × 来源偏好</strong> 五个字段，再去相应社区寻找讨论。想要完整结局时优先搜索 completed / finished；主要听书时把 narrator 和 Audible 价格写进请求；想避开高频数值面板时直接写 stat-block tolerance；想找长尾作品时进入 Royal Road 的 Recommendations、小作者互评帖与社区书单；在意 AI 辅助范围时查看平台标签、作者披露与社区规则。[P2][P3][P8][P14][P16][P19]</p>
+<p><a class="md-button md-button--primary" href="https://app.webnovel.win/?repos=https%3A%2F%2Fapp.webnovel.win%2Fsources%2Fweb-novel-discussion-radar-starter">在 WebNR 添加 Web Novel Discussion Radar Starter</a></p>
+<h3 id="_1"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#_1">摘要</a></h3>
+<p>本文观察 2026 年 8 月 1 日至 8 月 28 日公开可检索的英文网文讨论，主要样本来自 Royal Road Recommendations 与 Debate、Reddit 的 r/ProgressionFantasy、r/litrpg、r/noveltranslations，以及 Scribble Hub Forum。研究问题包括：读者如何描述“下一本想读什么”；哪些约束反复出现；不同社区怎样组织推荐；完结、音频、长尾发现与 AI 来源信息为何在同一个月同时变得显眼。[P1]-[P27]</p>
+<p>本文提出“<strong>五字段需求卡 + 三层发现网络 + 月度快照</strong>”框架。五字段需求卡记录完成度、媒介/平台、内容机制、社交信号与来源偏好；三层发现网络依次由平台目录、社区策展与个人关系构成；月度快照把每次观察固定到明确日期范围和公开页面。数字社会阅读研究、推荐系统研究、在线口碑研究与 fan-based affinity spaces 研究共同说明：阅读发现本来就同时包含检索、社会证明、关系网络与平台可见度机制。[A1]-[A10]</p>
+<p><strong>关键词：</strong> web novel；progression fantasy；LitRPG；Royal Road；Reddit；social reading；recommendation；audiobook；completed series；long tail；AI-assisted fiction；community radar</p>
+<h3 id="_2"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#_2">一、方法：这是一张公开讨论地图</a></h3>
+<p>本次样本窗口固定为 <strong>2026-08-01 至 2026-08-28</strong>。采样单位包括公开推荐帖、月度书单、论坛分类页、讨论帖、平台条款与平台说明。每个社区都保留原始 URL、观察日期、主题标签与采样原因。社区帖子承担“某类问题确实在公开讨论中出现”的证据角色；平台条款与官方页面承担访问边界、内容归属与功能事实的证据角色。[P1]-[P27]</p>
+<p>分析采用定性内容分析的方式，把帖子中的请求条件拆成可复查字段，再比较多个社区中重复出现的模式。[A11] 这类方法适合回答“公开讨论怎样组织问题”和“哪些表达方式反复出现”。总体读者比例需要独立概率抽样、平台内部日志或代表性调查，因此本文把结论限定在公开可检索样本的结构上。</p>
+<p>社会阅读研究提供另一个重要背景：数字阅读经常由文本、平台界面、标签、评论、朋友推荐、公开书签与社交媒体共同构成。[A1][A2][A3] 推荐系统研究则提醒我们，热门度、曝光和历史交互会持续影响候选集，[A4][A5] 网络可见度指标研究也提示，公开网页上的可见痕迹需要按其生成机制解释。[A12] 因此“讨论很多”更接近注意力信号；作品质量需要另一套证据量尺。</p>
+<h3 id="radar"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#radar">二、怎样读这张 Radar：先看“重复出现”，再看“社区差异”</a></h3>
+<p>月度讨论很容易给人一种“某个帖子很热，所以整个类型都在谈它”的错觉。更稳妥的阅读方式，是先寻找<strong>跨日期、跨社区重复出现的需求字段</strong>。例如 completed 同时出现在多条 progression fantasy 与 LitRPG 请求里；audiobook、KU、RR 也在多个帖子里反复出现；small/underrated、unknown diamonds 则在 Reddit 与 Royal Road 两种社区结构里都出现。[P2][P8]-[P20] 这些重复更适合进入长期产品字段。</p>
+<p>第二步再看<strong>社区差异</strong>。Royal Road 的讨论直接嵌在作品发布平台里，因此作者自荐、互评与推荐经常交织；r/litrpg 更常把购买平台、音频与系统机制写进请求；r/ProgressionFantasy 更常围绕类型边界、完成度与叙事机制组织语言；r/noveltranslations 的月度线程通过固定规则把分散推荐集中起来。[P1][P8]-[P21] 同一个“推荐”动作，在不同社区里承担的社会功能各有侧重。</p>
+<p>第三步看<strong>时间语义</strong>。completed 属于作品状态；audiobook sale 或月底新书清单属于短期事件；AI-assisted 讨论兼具平台规则与月度议题；small-author discovery 更像长期结构性需求。把这几种时间尺度分开，月度 Radar 就能同时服务“今天读什么”和“产品长期该记住什么”。</p>
+<p>第四步看<strong>可操作性</strong>。一个讨论主题只有在读者能够把它转成搜索条件、来源入口或选择标准时，才值得进入 WebNR 的长期发现模型。completed 可以转成状态筛选；audiobook 可以转成媒介字段；narrator 可以转成音频元数据；small/underrated 可以转成长尾入口；AI disclosure 可以转成来源标签。这样，Radar 的输出从“这个月社区很热闹”变成一组可以复用的发现工具。</p>
+<h3 id="_3"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#_3">三、第一条高频信号：读者开始把“结局”当成推荐字段</a></h3>
+<p>8 月 23 日，r/ProgressionFantasy 一条寻找 finished progression fantasy 的帖子获得明显互动。发帖者已经读过 Dungeon Crawler Carl、He Who Fights With Monsters 与 Cradle，并把“系列已经完成”放到请求核心；同一请求还写明自己偏好 Cradle 较少 stat blocks 的体验。[P8] 8 月 5 日另一条 finished LitRPG 请求也把“lack of endings”带来的连续追更压力写成推荐动机。[P10] 8 月 14 日的另一条推荐请求也把 completed 作为偏好条件之一。[P9]</p>
+<p>这些帖子反映的是<strong>阅读承诺管理</strong>。长篇网文把读者投入拆成数十小时音频、数百万字追更、跨平台连载与多年等待。完结状态因此从书目属性变成风险预算。读者询问 completed series 时，实际同时询问“我现在投入时间后，何时能够获得一个完整叙事闭环”。</p>
+<p>这一点会直接改变推荐产品设计。一个只按点击、评分或热度排序的列表会把“完成度”放在次要位置；社区推荐会让用户把完成度提到第一句。WebNR 的发现层因此值得把 completed / ongoing、最新更新时间、平台可用性与本地保存路径放到同一张作品卡里。社会阅读与推荐研究长期说明，用户对候选的评价包含内容本身，也包含访问成本、情境和社会线索。[A1][A4][A6]</p>
+<p>完结信号还会与出版迁移发生交叉。8 月 23 日的讨论里，读者进一步核对某些作品在 Patreon、Royal Road 与正式出版版本之间的完成状态和章节差异。[P8] 这说明一个“completed”标签可能对应多个发行层：作者先在订阅层完成，免费连载稍后追上，商业版又按新卷次重新发布。月度 Radar 记录这种状态变化，比永久静态榜单更适合帮助读者判断当下入口。</p>
+<h3 id="_4"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#_4">四、第二条高频信号：平台与媒介已经进入“口味”本身</a></h3>
+<p>r/litrpg 的推荐机器人反复提醒发帖者写明阅读平台，例如 Audible、Royal Road、Kindle。[P15]-[P20] 这种提示非常关键，因为媒介会改变读者真正可接受的候选。</p>
+<p>8 月 10 日一条 audiobook 请求把 narrator 精确到 Travis Baldree；[P16] 8 月 5 日另一条帖子手里有 12 个 audiobook credits，并且给出短时间消费窗口；[P17] 8 月 23 日的帖子寻找较少被反复推荐的音频系列；[P18] 8 月 27 日的帖子把“较少长战斗、更多 slice of life、一些 romance、harem 排除”与 Audible 场景组合起来。[P19] 在这些请求里，故事主题、声音表演、购买方式与时间预算属于同一个选择问题。</p>
+<p>数字阅读研究常把纸本与数字阅读的差异放在设备、场景和习惯中理解，[A13] 数字社会阅读研究进一步把阅读行为看成文本与平台互动的组合。[A1] 对网文来说，这个组合更复杂：Royal Road 提供连载节奏与评论，Kindle Unlimited 提供订阅式商业阅读，Audible 把 narrator、信用点与收听时间带进价值判断。</p>
+<p>所以“喜欢某本书的人还喜欢什么”只覆盖了一部分需求。更实用的推荐请求往往是：“我在 KU 读”“我开车时听”“我手里有 Audible credits”“我愿意追 Royal Road”“我只想要已经完成的系列”。这些约束可以在 WebNR 中形成显式筛选字段，让推荐结果解释自己为何进入候选集。</p>
+<h3 id="_5"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#_5">五、第三条高频信号：读者正在使用更细的“机制词汇”表达口味</a></h3>
+<p>8 月的帖子里，类型名依然常见，但真正决定推荐质量的词往往更细。r/ProgressionFantasy 的 finished-series 请求同时写出“少 stat blocks”；[P8] 一条新系列请求写出对 non-humanoid protagonist 的犹豫；[P9] 另一条请求想要 fantasy slice of life 与 female MC；[P12] romance 请求把工作时听书场景也带了进来。[P11]</p>
+<p>r/litrpg 的请求更像一组配置项：ensemble cast、humor、harem 排除、KU/RR；[P18] good narrator、MC personality、power curve、humor、supporting characters、worldbuilding；[P17] 较短战斗、日常感、romance、harem 排除。[P19] 这些表达说明类型标签承担入口作用，真正的个人口味由叙事机制、角色结构、节奏、关系形态和媒介共同组成。</p>
+<p>推荐系统综述通常把用户—物品交互、相似度、内容特征和协同信号视为主要输入。[A4] 社交阅读环境又会不断产生自然语言偏好描述。[A1][A2] 对 WebNR 这类本地优先阅读器而言，一个机会是把社区里的自然语言约束整理成用户可操作的筛选模板，同时保留原始来源链接。这样，社区讨论负责发现新的偏好词汇，产品字段负责把这些词汇转成可重复检索。</p>
+<p>本月最有代表性的需求卡可以写成：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>公开讨论中出现的表达</th>
+<th>对发现系统的意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>完成度</td>
+<td>finished / completed / up to date</td>
+<td>估计阅读承诺与追更风险</td>
+</tr>
+<tr>
+<td>平台与媒介</td>
+<td>KU / RR / Audible / audiobook</td>
+<td>约束实际可访问候选</td>
+</tr>
+<tr>
+<td>系统强度</td>
+<td>stat blocks / RPG system / progression</td>
+<td>区分数值机制与成长叙事</td>
+</tr>
+<tr>
+<td>角色与关系</td>
+<td>ensemble / female MC / romance / no harem</td>
+<td>表达群像、主角与关系偏好</td>
+</tr>
+<tr>
+<td>节奏</td>
+<td>slice of life / short combat / slow burn</td>
+<td>表达阅读体验与场景</td>
+</tr>
+<tr>
+<td>发现目标</td>
+<td>underrated / small authors / unknown diamonds</td>
+<td>主动进入长尾</td>
+</tr>
+<tr>
+<td>来源偏好</td>
+<td>human-written / AI-assisted disclosure</td>
+<td>记录创作来源条件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#_6">六、第四条高频信号：热门系列负责“坐标”，社区策展负责“长尾”</a></h3>
+<p>Cradle、Dungeon Crawler Carl、He Who Fights With Monsters、Primal Hunter、Path of Ascension、Mother of Learning 等作品在多个请求里反复充当共同坐标。[P8]-[P20] 用户用“我喜欢这些、放弃那些”快速压缩口味空间。这个动作很像推荐系统里的显式反馈：几个正样本与负样本共同定义下一步候选。[A4]</p>
+<p>同时，热门坐标也会制造重复推荐。8 月 23 日一条 r/litrpg 帖子明确寻找 new or unknown series；[P18] Royal Road 的 Recommendations 板块里，“small/underrated fantasy fictions”帖子把低浏览与低评论作品作为目标，并用互评换取更多发现机会。[P2] 另一个长期活跃主题持续收集 smaller authors 的作品。[P1]</p>
+<p>这形成一条清晰的三层发现网络：</p>
+<ol>
+<li><strong>平台目录层</strong>：Trending、Latest、Complete、标签与搜索负责大规模候选生成；</li>
+<li><strong>社区策展层</strong>：推荐帖、月度书单、互评帖、主题合集负责解释口味和拉起长尾；</li>
+<li><strong>关系层</strong>：熟悉的作者、评论者、书单维护者和固定社区成员提供持续的信任路径。</li>
+</ol>
+<p>Goodreads、BookTok 与数字社会阅读研究都观察到类似结构：读者选择同时受平台可见度、社区关系、内容标签和社会证明影响。[A2][A3][A14]-[A21] 热门作品擅长建立共同语言，长尾作品需要额外策展成本。对 WebNR 来说，Discussion Radar 的价值就在于把这些策展入口保留下来，让用户从作品搜索跳到“谁正在用什么条件找书”。</p>
+<h3 id="ai"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#ai">七、第五条高频信号：AI 讨论进入“来源与资格”层</a></h3>
+<p>Royal Road 8 月 22 日出现专门寻找 AI-generated / AI-assisted stories 的推荐帖，[P3] 同一 Recommendations 板块的“小众幻想互评”帖子则明确偏好 human-written 作品。[P2] r/litrpg 的 8 月电子书清单评论区也围绕 AI 作品数量、筛选成本和有披露的 AI 辅助创作展开讨论。[P14] Scribble Hub 的反馈帖同样出现作者/读者对 AI 使用范围的明确要求。[P27]</p>
+<p>这些例子呈现的是<strong>来源偏好字段化</strong>。社区成员会把 AI 辅助范围当作推荐条件、互评条件或书单整理条件。平台与社区因此需要同时处理两件事：作品本身的阅读价值，以及创作来源信息的可见性。</p>
+<p>线上社区治理研究说明，自我管理、版主规则和成员规范会共同决定什么内容容易获得反馈。[A9] fan-based affinity spaces 研究也强调，参与者通过共享规范和反馈形成学习与身份关系。[A7][A8] 2026 年 8 月的公开样本把这些抽象机制变得非常具体：某些读者主动寻找 AI-assisted fiction，另一些读者主动筛选 human-written fiction。一个透明的发现系统可以把来源信息作为用户控制项，让不同偏好在同一个索引里保持可解释。</p>
+<p>这里还有平台边界。Royal Road 条款明确由用户保有其上传内容，并向 Royal Road 授予平台服务所需许可；[P6] Scribble Hub 的条款也把用户内容授权限定在其服务范围。[P24] Reddit 的 2026 年用户协议与 Data API Terms 对服务访问和 API 使用建立单独规则。[P22][P23] WebNR 本月的 Discussion Radar Starter 因此只保存 WebNR 自写标签、简述与第一方公开链接，用户帖子正文、评论、账号数据与完整社区元数据继续留在原平台。</p>
+<h3 id="_7"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#_7">八、社区之间的差异：同样是“推荐”，组织方式各有侧重</a></h3>
+<h4 id="royal-road"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#royal-road">Royal Road：推荐与创作现场连在一起</a></h4>
+<p>Royal Road 的 Recommendations 是站内论坛分类，页面同时出现找书、分享、自荐、小作者互评与题材讨论。[P1] 因为读者和作者共享同一平台，推荐经常直接连接作品页、作者签名、反馈与发布节奏。“small/underrated”帖子里，发帖者愿意以 review 作为交换，[P2] 这让推荐行为同时承担发现和创作者反馈功能。</p>
+<p>Royal Road 的 Debate 又提供另一种语境。8 月中旬以来，“If you don't read on RR, don't write on RR”持续获得大量回复与浏览，[P5] 讨论焦点从单本作品扩展到作者是否理解平台读者文化。推荐系统因此可以把“社区归属”和“平台阅读实践”看成内容发现的一部分。</p>
+<h4 id="rprogressionfantasy"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#rprogressionfantasy">r/ProgressionFantasy：类型边界与完成度语言更突出</a></h4>
+<p>r/ProgressionFantasy 的 8 月样本经常用 Cradle、DCC、Mother of Learning 等熟悉作品做坐标，再追加 completed、stat blocks、female MC、romance、slice of life 等条件。[P8]-[P13] 这种讨论很适合提取“偏好词典”：读者先给已读列表，再用一两个机制词收窄结果。</p>
+<h4 id="rlitrpg"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#rlitrpg">r/litrpg：平台、音频与消费场景更显眼</a></h4>
+<p>r/litrpg 的推荐机器人直接要求用户说明读过什么、喜欢什么、使用什么平台。[P15]-[P20] 本月帖子里 Kindle Unlimited、Audible credits、narrator、长战斗、slice of life 与 series backlog 高频出现。月度电子书清单又把发布日期、子类型与社区维护结合在一起。[P14] 这类社区为“阅读场景字段”提供了丰富素材。</p>
+<h4 id="rnoveltranslations"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#rnoveltranslations">r/noveltranslations：集中式推荐线程减少碎片</a></h4>
+<p>8 月 9 日的 Monthly Recommendation Thread 明确把越来越具体的推荐需求集中到固定线程，并鼓励用户描述想找的书；规则同时把聚合站与盗版站请求排除在推荐讨论之外。[P21] 这种结构适合月度 Radar：固定线程提供稳定采样入口，具体评论提供偏好表达样本。</p>
+<h4 id="scribble-hub-forum"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#scribble-hub-forum">Scribble Hub Forum：可见度本身也是讨论主题</a></h4>
+<p>Scribble Hub Forum 的公开讨论会直接比较 visibility、recommendations 与 rankings 三种发现逻辑，[P25] 也有大量作品反馈与作者互助帖。[P27] 平台 About 页面则把 reader discovery、filter、reviews 与 social tools 列为读者功能。[P26] 这提醒我们，社区成员既在寻找作品，也在讨论“平台怎样决定谁被看见”。</p>
+<h3 id="_8"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#_8">九、一个可复查的月度采样方法</a></h3>
+<p>后续 Discussion Radar 可以固定使用以下流程：</p>
+<ol>
+<li><strong>固定窗口</strong>：每月记录 1 日到观察日，下一期保留完整自然月；</li>
+<li><strong>固定社区篮子</strong>：Royal Road Recommendations / Debate、r/ProgressionFantasy、r/litrpg、r/noveltranslations、Scribble Hub Forum；</li>
+<li><strong>固定查询族</strong>：recommend、finished/completed、audiobook、underrated/small authors、AI-assisted、slice of life、romance、stat blocks；</li>
+<li><strong>固定证据字段</strong>：URL、发布日期、社区、帖子目的、请求条件、回复规模或论坛可见统计、观察时间；</li>
+<li><strong>固定解读边界</strong>：公开讨论说明“出现了什么问题与表达”，平台总体比例交给代表性数据；</li>
+<li><strong>固定产品回路</strong>：把新出现的稳定偏好词加入 WebNR 发现标签候选，把平台/来源边界写进 source audit，把可重复的社区入口加入 Discussion Radar Starter。</li>
+</ol>
+<p>这套方法的重点是<strong>可复查</strong>。一个月后，读者可以重新打开同一类入口，看 finished、audiobook、AI-assisted、small authors 等主题是否延续、转弱或迁移到新的词汇。研究方法上的定性内容分析强调清晰编码单位和可追踪过程，[A11] 数字社会阅读研究则提醒我们把阅读放进平台和社交关系里理解。[A1]</p>
+<h3 id="_9"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#_9">十、反向证据：热门讨论与稳定偏好存在时间尺度差</a></h3>
+<p>月度 Radar 很容易被一个突然爆发的话题带走。Royal Road 的 AI-assisted 推荐帖、Reddit 的 AI 书目争论都具有较强时效性；[P3][P14] completed、audiobook、platform availability、small/underrated discovery 则在多个日期和社区重复出现。[P2][P8]-[P21]</p>
+<p>因此本文把信号分成两类：</p>
+<ul>
+<li><strong>结构性需求</strong>：完成度、平台、媒介、角色与节奏、长尾发现；这些字段跨帖子重复出现，适合进入长期产品模型；</li>
+<li><strong>月度议题</strong>：AI 来源、某个热门系列的发布节点、某个社区争论；这些议题适合保留时间戳和来源，下一期重新确认。</li>
+</ul>
+<p>流行度预测研究指出，早期曝光与社会影响会放大后续注意力，[A5] 在线口碑研究也说明信任与关系会改变信息权重。[A6] 所以 Radar 的目标是把“这个月很多人看见了什么”与“读者长期怎样描述需求”分开记录。</p>
+<h3 id="_10"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#_10">十一、原创综合：把社区语言变成“需求卡”，再把需求卡送回本地阅读</a></h3>
+<p>本月样本给出一个很实用的产品方向：WebNR 可以让用户从社区讨论里带走一张结构化需求卡，同时把完整社区内容继续留在原始平台。</p>
+<p>例如，一张需求卡可以写成：</p>
+<blockquote>
+<p>completed；KU 或 RR；少 stat blocks；群像；有 humor；harem 排除；支持 audiobook；优先小众作品。</p>
+</blockquote>
+<p>另一张可以写成：</p>
+<blockquote>
+<p>ongoing 可接受；Audible；特定 narrator；slice of life 权重大；romance 权重中等；战斗篇幅短；来源披露清晰。</p>
+</blockquote>
+<p>这些卡片同时兼容人工推荐与本地搜索。用户在社区里发现新作品，回到 WebNR 后保存第一方链接、自己拥有的 TXT 或合法下载文件，再用同一组标签管理本地书库。社区负责产生丰富语言，本地阅读器负责稳定保存个人偏好与来源上下文。</p>
+<p>这也解释了为什么 Discussion Radar Starter 采用“<strong>公开讨论路线 + WebNR 自写摘要 + 原始链接</strong>”的形式。Royal Road、Reddit、Scribble Hub 上的用户内容继续由原站与作者控制；WebNR 保存可复查的发现路线。未来若某个平台提供明确许可、稳定 API/feed、速率边界、更新/删除语义与可测试 fixture，source capability 可以继续升级到更丰富的机器接口。</p>
+<h3 id="_11"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#_11">结论</a></h3>
+<p>2026 年 8 月的英文网文公开讨论展示出一个很清晰的变化：推荐请求正在从宽泛类型名转向<strong>约束组合</strong>。读者会同时说出 finished、KU/RR/Audible、stat-block tolerance、ensemble、romance、slice of life、narrator、small authors 与 AI disclosure。热门系列继续提供共同坐标，社区策展负责把视线拉向长尾，平台规则则决定哪些发现路径能够稳定存在。[P1]-[P27]</p>
+<p>对读者，最有效的做法是把下一次找书请求写成五字段需求卡。对 WebNR，最值得沉淀的是可复查的社区入口、时间戳、来源边界与可搜索偏好词。下一期 Radar 可以沿同一采样篮子复测这些信号，再观察新词汇、新发布节点与社区规则变化。</p>
+<h3 id="_12"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#_12">参考文献</a></h3>
+<h4 id="_13"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#_13">学术与研究来源</a></h4>
+<p>[A1] Simone Rebora, P. Boot, Federico Pianzola, et al. “Digital humanities and digital social reading.” <em>Digital Scholarship in the Humanities</em>. https://academic.oup.com/dsh/article-pdf/36/Supplement_2/ii230/41091194/fqab020.pdf</p>
+<p>[A2] Marianne Martens, Gitte Balling, Kristen A. Higgason. “#BookTokMadeMeReadIt: young adult reading communities across an international, sociotechnical landscape.” https://curis.ku.dk/ws/files/336131033/Preprint.pdf</p>
+<p>[A3] Barry Trott, Yesha Naik. “Finding Good Reads on Goodreads.” <em>Reference &amp; User Services Quarterly</em>. https://journals.ala.org/index.php/rusq/article/download/3896/4346</p>
+<p>[A4] Linyuan Lü, Matúš Medo, Chi Ho Yeung, Yicheng Zhang, Zi-Ke Zhang, Tao Zhou. “Recommender systems.” https://arxiv.org/pdf/1202.1112</p>
+<p>[A5] Benjamin Shulman, Amit Sharma, Dan Cosley. “Predictability of Popularity: Gaps between Prediction and Understanding.” https://arxiv.org/pdf/1603.09436</p>
+<p>[A6] Jaakko Pihlaja, Hannu Saarijärvi, Mark T. Spence, Mika Yrjölä. “From Electronic WOM to Social eWOM: Bridging the Trust Deficit.” https://trepo.tuni.fi/bitstream/10024/102472/1/from_electronic_wom_2017.pdf</p>
+<p>[A7] Jen Scott Curwood, Alecia Marie Magnifico, Jayne C. Lammers. “Writing in the Wild: Writers’ Motivation in Fan-Based Affinity Spaces.” https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/JAAL.192</p>
+<p>[A8] Christine Greenhow, Beth Robelia. “Old Communication, New Literacies: Social Network Sites as Social Learning Resources.” https://academic.oup.com/jcmc/article-pdf/14/4/1130/22318194/jjcmcom1130.pdf</p>
+<p>[A9] Joseph Seering. “Reconsidering Self-Moderation.” https://dl.acm.org/doi/pdf/10.1145/3415178</p>
+<p>[A10] Carlos Alberto Scolari, María-José Masanet, Mar Guerrero-Pico, María-José Establés. “Transmedia literacy in the new media ecology: Teens’ transmedia skills and informal learning strategies.” https://recyt.fecyt.es/index.php/EPI/article/download/epi.2018.jul.09/40580</p>
+<p>[A11] Satu Elo, Helvi Kyngäs. “The qualitative content analysis process.” https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1365-2648.2007.04569.x</p>
+<p>[A12] Kayvan Kousha, Mike Thelwall. “Web indicators for research evaluation. Part 3: books and non standard outputs.” https://recyt.fecyt.es/index.php/EPI/article/download/epi.2015.nov.04/23764</p>
+<p>[A13] Chin Ee Loh, Baoqi Sun. “I’d Still Prefer to Read the Hard Copy: Adolescents’ Print and Digital Reading Habits.” https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jaal.904</p>
+<p>[A14] Kathi Inman Berens, Rachel Noorda. “How Gen Z Discover and Consume Books.” https://www.cambridge.org/core/services/aop-cambridge-core/content/view/070F92C1F5A86ECC181F192C898B692F/9781009732833AR.pdf/how-gen-z-discover-and-consume-books.pdf</p>
+<p>[A15] Jami Walters. “Exploring Uses and Gratifications of BookTok: Applying the MAIN Model to Understand User Engagement and Trust in Digital Reading Communities.” https://vtechworks.lib.vt.edu/bitstreams/99d5c5b9-ba53-4135-97df-19b06a37b8cf/download</p>
+<p>[A16] Courtney B. Thompson. “Social Reading and #BookTok: Exploring Emotion, Community, and Book Promotion on TikTok.” https://dc.etsu.edu/context/etd/article/6252/viewcontent/ThompsonC042826f.pdf</p>
+<p>[A17] Mira Mansikkaniemi. “Protecting presence: Sustaining status and visibility in algorithmically mediated communities, with Bookstagram as the empirical context.” https://aaltodoc.aalto.fi/bitstreams/5400c21d-9833-4e4c-a97b-cfedadcfaedf/download</p>
+<p>[A18] Nicoleta Hincu. “Visibility in Self-Publishing: A Study of How Authors and Readers Influence Book Discoverability.” https://rucforsk.ruc.dk/ws/files/124843019/Bachelor_project.pdf</p>
+<p>[A19] Joanna Sobura. “Social Media and the Reading Decisions of Generation Z.” https://czasopisma.tnkul.pl/index.php/rns/article/download/4165/3797</p>
+<p>[A20] Saku Peltomaa. “An enjoyable read with well-written characters: Investigating Goodreads reviews of two standalone fantasy novels.” https://jyx.jyu.fi/bitstreams/0f26484e-59b4-4656-b3f1-ffdecabe3942/download</p>
+<p>[A21] Emma Kulmala. “Reading, Buying, Belonging: How Reader Identity and Community Dynamics Shape Informal Book Marketing and Overconsumption on BookTok.” https://aaltodoc.aalto.fi/bitstreams/02498324-3fa7-4cd6-9b77-b0e1562fff88/download</p>
+<h4 id="_14"><a class="toclink" href="../../2026/08/28/web-novel-discussion-radar-2026-08/#_14">平台、社区与第一方来源</a></h4>
+<p>[P1] Royal Road. “Recommendations” forum. https://www.royalroad.com/forums/5850</p>
+<p>[P2] Royal Road Forum. “Looking for small/underrated fantasy fictions — happy to give reviews in return!” 2026-08-26. https://www.royalroad.com/forums/thread/175306</p>
+<p>[P3] Royal Road Forum. “Recommend some good AI-Gen/Assisted Stories!” 2026-08-22. https://www.royalroad.com/forums/thread/175024</p>
+<p>[P4] Royal Road Forum. “What are you reading right now?” 2026-08-25. https://www.royalroad.com/forums/thread/175252</p>
+<p>[P5] Royal Road. “Debate” forum; includes “If you don't read on RR, don't write on RR.” Observed 2026-08-28. https://www.royalroad.com/forums/245</p>
+<p>[P6] Royal Road. “Terms of Service.” Last updated 2025-03-03. https://www.royalroad.com/tos</p>
+<p>[P7] Royal Road. “Forums / About.” Observed 2026-08-28. https://www.royalroad.com/forums</p>
+<p>[P8] r/ProgressionFantasy. “Recommendations for FINISHED progression fantasy series?” 2026-08-23. https://www.reddit.com/r/ProgressionFantasy/comments/1vwhitk/recommendations_for_finished_progression_fantasy/</p>
+<p>[P9] r/ProgressionFantasy. “I need a new series please.” 2026-08-14. https://www.reddit.com/r/ProgressionFantasy/comments/1vomfbu/i_need_a_new_series_please/</p>
+<p>[P10] r/ProgressionFantasy. “Finished litrpg?” 2026-08-05. https://www.reddit.com/r/ProgressionFantasy/comments/1vgeowx/finished_litrpg/</p>
+<p>[P11] r/ProgressionFantasy. “I need some recommendations for some titles that have decent romance.” 2026-08-04. https://www.reddit.com/r/ProgressionFantasy/comments/1vex9mf/i_need_some_recommendations_for_some_titles_that/</p>
+<p>[P12] r/ProgressionFantasy. “Anybody know books about fantasy slice of life with female mc?” 2026-08-14. https://www.reddit.com/r/ProgressionFantasy/comments/1vo1s0v/anybody_know_books_about_fantasy_slice_of_life/</p>
+<p>[P13] r/ProgressionFantasy. “Well, my turn to ask for your recommendations based on my tier list!” 2026-08-26. https://www.reddit.com/r/ProgressionFantasy/comments/1vzbp66/well_my_turn_to_ask_for_your_recommendations/</p>
+<p>[P14] r/litrpg. “August 2026 LitRPG E-Book List.” 2026-08-01. https://www.reddit.com/r/litrpg/comments/1vcsgci/august_2026_litrpg_ebook_list/</p>
+<p>[P15] r/litrpg. “Litrpgs on kindle unlimited.” 2026-08-02. https://www.reddit.com/r/litrpg/comments/1vdr5ky/litrpgs_on_kindle_unlimited/</p>
+<p>[P16] r/litrpg. “Audiobook recommendations.” 2026-08-10. https://www.reddit.com/r/litrpg/comments/1vl0yhf/audiobook_recommendations/</p>
+<p>[P17] r/litrpg. “Recommend my next LitRPG listen.” 2026-08-05. https://www.reddit.com/r/litrpg/comments/1vfycn8/recommend_my_next_litrpg_listen/</p>
+<p>[P18] r/litrpg. “Looking for recommendations.” 2026-08-23. https://www.reddit.com/r/litrpg/comments/1vwin1c/looking_for_recommendations/</p>
+<p>[P19] r/litrpg. “Audible recommendations.” 2026-08-27. https://www.reddit.com/r/litrpg/comments/1vzzw40/audible_recommendations/</p>
+<p>[P20] r/litrpg. “Looking for recommendations.” 2026-08-28. https://www.reddit.com/r/litrpg/comments/1w0v6rm/looking_for_recommendations/</p>
+<p>[P21] r/noveltranslations. “Monthly Recommendation Thread - August 09, 2026.” 2026-08-09. https://www.reddit.com/r/noveltranslations/comments/1vjx4jf/monthly_recommendation_thread_august_09_2026/</p>
+<p>[P22] Reddit. “User Agreement.” Effective 2026-07-01; revised 2026-05-26. https://redditinc.com/policies/user-agreement</p>
+<p>[P23] Reddit. “Data API Terms.” Last revised 2026-07-20. https://redditinc.com/policies/data-api-terms</p>
+<p>[P24] Scribble Hub. “Terms of Service.” Updated 2026-06-29. https://www.scribblehub.com/terms-of-service/</p>
+<p>[P25] Scribble Hub Forum. “Visibility vs. Recommendations vs. Rankings: Which platform's approach to promoting your fiction do you prefer?” 2026-01-19. https://forum.scribblehub.com/threads/visibility-vs-recommendations-vs-rankings-which-platforms-approach-to-promoting-your-fiction-do-you-prefer.26416/</p>
+<p>[P26] Scribble Hub. “About Us.” https://www.scribblehub.com/about-us/</p>
+<p>[P27] Scribble Hub Forum. “Offering feedback on your first chapter.” 2026-02-11. https://forum.scribblehub.com/threads/offering-feedback-on-your-first-chapter.26785/</p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-26 00:00:00+00:00">August 26, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../reader-guides/" class="md-meta__link">Reader guides</a>, 
+              <a href="./" class="md-meta__link">Research</a>, 
+              <a href="../fanfiction/" class="md-meta__link">Fanfiction</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              10 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="2026-ao3"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/">2026 同人小说与变形创作怎么找？AO3 标签、书签、合集、社区与本地阅读路线</a></h2>
+<p><strong>直接答案：</strong>寻找同人小说时，可以把“看总榜挑高分”换成一条五层路线：<strong>先用 fandom / relationship / character / additional tags 表达内容语义，再用完结状态、字数、语言、更新时间与 warnings 表达阅读成本；接着沿作者、公开书签、推荐、合集与社区讨论扩展候选；随后去独立档案补齐 AO3 之外的生态；最后把自己有权保存的文本或下载文件带进本地阅读器，并保留原始链接与来源信息。</strong> AO3 更接近一套由用户标签与 tag wrangling 共同维护的档案检索系统，而个性化推荐通常来自读者和作者组成的策展网络。[A10][A14][A15][A16][P3][P4]</p>
+<p><a class="md-button md-button--primary" href="https://app.webnovel.win/?repos=https%3A%2F%2Fapp.webnovel.win%2Fsources%2Ffanfiction-discovery-starter">在 WebNR 添加 Fanfiction Discovery Starter</a></p>
+<h3 id="_1"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#_1">摘要</a></h3>
+<p>本文以 <strong>2026 年 8 月 26 日</strong>仍可公开核验的 AO3 搜索、标签、书签、合集、订阅与 Atom feed 说明，OTW Open Doors 的保存实践，FanFiction.Net、Fimfiction、Scribble Hub、SquidgeWorld、fanfiction.lol、Sunset 等第一方发现入口，以及近期读者社区讨论与 fan studies、信息组织、数字阅读研究为材料，回答三个读者问题：<strong>怎样更稳定地找到真正合口味的同人小说；AO3 的标签、书签、合集与社区推荐分别解决什么问题；本地阅读怎样接在发现链路之后，同时保持来源与作者控制边界清晰。</strong>[A1]-[A24][P1]-[P27]</p>
+<p>本文提出“<strong>双轴查询 + 五层发现 + 三种时间语义</strong>”框架。双轴查询把“作品讲什么”与“我愿意投入怎样的阅读成本”分开；五层发现依次是档案检索、二阶人工策展、作者/读者网络、跨档案补集、本地个人图书馆；三种时间语义分别是“新作品出现”“连载章节更新”“档案或标签关系变化”。核心目标是让读者能解释自己为什么看到某篇作品、为什么继续沿某条路径扩展，以及何时需要回到第一方页面重新核验。[A2][A9][A12][A17][P3][P5]</p>
+<p><strong>关键词：</strong> AO3；Archive of Our Own；fanfiction；同人小说；transformative works；tag wrangling；folksonomy；bookmarks；collections；Atom feed；Open Doors；本地阅读</p>
+<h3 id="_2"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#_2">一、先区分“检索”与“推荐”</a></h3>
+<p>AO3 的 Work Search、tag browsing 与过滤器让用户主动指定 fandom、关系、角色、附加标签、分级、Archive Warnings、语言、字数、完结状态、发布日期等条件。[P3][P4] 关于 AO3 标签结构的研究很早就注意到，这套系统的价值来自用户生成词汇、canonical tags 与人工 tag wrangling 的组合；后续知识组织研究则把它放进 folksonomy、受控词汇与分类后果的更广背景中。[A14][A15][A16] 因此，一个更准确的理解是：<strong>AO3 帮你把一个巨大档案切成“符合一组可声明条件的候选集”。</strong></p>
+<p>推荐解决的是另一个问题：候选很多、偏好只表达了一部分时，哪个更值得先读。在同人生态里，这一层经常由作者关系、公开书签、rec 标记、合集、Tumblr/Reddit/Discord 等社区讨论、朋友之间的 fic rec 承担。fan-based affinity spaces 与 collective literacies 研究长期说明，参与式社群会围绕创作、反馈、身份与知识分享形成非正式学习和策展网络。[A1][A2][A3][A6] 对读者来说，这些网络补足了结构化字段里很难写清的“为什么这篇适合某种口味”。</p>
+<p>所以第一条实用原则是：<strong>先让档案检索做集合缩减，再让人际策展做细腻判断。</strong> 这样既能利用 kudos、hits、bookmarks 等社会信号，也能继续保留更具体的个人条件。</p>
+<h3 id="_3"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#_3">二、双轴查询：内容语义与阅读成本分开写</a></h3>
+<h4 id="1"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#1">1. 内容语义轴</a></h4>
+<p>这条轴可以从四类标签逐层表达：</p>
+<ul>
+<li><strong>Fandom</strong>：原作、系列或 crossover 范围；</li>
+<li><strong>Relationship</strong>：想看的关系组合；</li>
+<li><strong>Character</strong>：希望放在中心的角色；</li>
+<li><strong>Additional Tags</strong>：trope、AU、情绪、剧情机制、身份主题、叙事形式、内容提示等。</li>
+</ul>
+<p>Tags FAQ 说明 canonical tags 会把相关用户标签连接到可浏览入口，tag wrangling 仍是持续维护工作。[P4] 2026 年 AO3 对 “No Fandom” Additional Tags 的持续更新也展示了这种动态性：某些标签与 fandom 的关系会随规则和使用变化被重新整理。[P11]</p>
+<p>标签既是分类材料，也是社群实践。关于 fan-generated metadata 的研究指出，genre、trope、identity 等边界会被具体使用情境塑造。[A11][A13][A16] 实际搜索时，可以把最关键的 2–4 个语义条件放在主查询里，再用 summary、notes 与作者其他作品确认剩余细节。</p>
+<h4 id="2"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#2">2. 阅读成本轴</a></h4>
+<p>第二条轴描述一次阅读承诺：</p>
+<ul>
+<li>completed / work in progress；</li>
+<li>最小与最大字数；</li>
+<li>语言；</li>
+<li>更新时间或首次发布日期；</li>
+<li>single chapter / multi-chapter；</li>
+<li>crossover 接受度；</li>
+<li>分级与 Archive Warnings；</li>
+<li>需要登录才能查看的作品是否进入候选。</li>
+</ul>
+<p>同一个 trope 在 3,000 字 one-shot 与 400,000 字长篇里的体验差异很大。把“我想看 slow burn”与“我今晚只想读完一篇”同时表达，会比单独按 kudos 排序更接近真实需求。</p>
+<p>AO3 的 Terms FAQ 还说明 Archive Warnings 采用一个刻意精简的强制体系，Additional Tags、summary 与 bookmark 信息承担额外补充角色。[P2] 对内容敏感的读者，可以把 warnings、排除标签、summary 与公开书签视为多层筛选。</p>
+<h3 id="_4"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#_4">三、排序提供导航信号，口味需要额外判断</a></h3>
+<p>在大型 fandom 中，按 kudos 或 bookmarks 排序非常省时间。它会迅速把很多读者曾经互动过的作品推到前面，作为第一次进入 fandom 的候选生成器很有效。近期 r/AO3 讨论里，读者也持续把 kudos、bookmark、作者主页与别人的公开书签组合使用。[P23]-[P27]</p>
+<p>这些数字同时混合了发布时间、fandom 规模、ship 热度、作者既有读者群、更新时间策略和跨平台传播。Lauren Moore 对 AO3 发布趋势的分析与数字阅读研究都提醒我们，可见度指标需要放进时间和社群背景理解。[A9][A19]</p>
+<p>一个实用做法是采用 <strong>两轮排序</strong>：</p>
+<ol>
+<li>第一轮用 kudos / bookmarks / hits 快速看 fandom 的“公共记忆”；</li>
+<li>第二轮切回 date updated、word count、complete status 或更具体标签，主动寻找进入时间较晚、体量较小、或者属于小众 pairing 的作品。</li>
+</ol>
+<p>这种切换同时利用“社会证明”和“长尾探索”，也解释了为什么社区里常有人把作者书签、较新条目、冷门 tag 或朋友推荐当成第二层入口。[P23]-[P27]</p>
+<h3 id="_5"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#_5">四、书签是“二阶元数据”</a></h3>
+<p>作品页上的 creator tags 描述作者选择公开的作品信息；公开 bookmark 可以附加另一个读者自己的 tags、notes 与 recommendation 状态。于是，书签形成了一层<strong>作品之外的读者策展元数据</strong>。[P7]</p>
+<p>第一种用途是<strong>个人阅读记忆</strong>。读者会用 bookmark note 记录读到哪一章、想重读的原因、情绪关键词，或者建立 “To Read”“Favorites”“Research” 一类个人标签。近期 r/AO3 讨论清楚显示，同一个 bookmarks 功能在不同用户手里有多种语义：有人只收藏最喜欢的作品，有人把它当阅读历史，有人配合 subscriptions 追更。[P23][P25]</p>
+<p>第二种用途是<strong>公开推荐网络</strong>。如果一个作者或读者的口味与你高度重合，他们公开 bookmarks 的边际价值可能高于整个 fandom 的全站排序。你已经知道这个人喜欢什么，因此浏览其 bookmarks 相当于把“相似用户”人工引入推荐过程。这与 affinity spaces、fan information behaviour、collective literacies 的研究很一致。[A2][A3][A12]</p>
+<p>第三种用途是<strong>补充风险信息</strong>。AO3 Terms FAQ 明确建议，想进一步判断作品内容的读者可以参考其他用户用于组织作品的 bookmarks。[P2] WebNR 的发现目录只链接第一方入口，个人 bookmark 数据继续留在来源站点。</p>
+<h3 id="_6"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#_6">五、合集与书签承担不同工作</a></h3>
+<p>AO3 collections 还包含 challenge、exchange、anonymous/unrevealed 等社区协作语义，维护者与作者之间存在专门工作流。[P6] 近期社区问题也反复出现“private collection 和 private bookmark 行为为什么不同”的困惑。[P24]</p>
+<p>可以这样记：</p>
+<ul>
+<li><strong>Bookmarks</strong> 更适合“我如何保存、标注、推荐这篇作品”；</li>
+<li><strong>Collections</strong> 更适合“这些作品为什么在一个活动、主题、交换、策展项目里被组织到一起”。</li>
+</ul>
+<p>合集的推荐价值来自“策展上下文”。一个 exchange collection、fandom challenge 或主题项目，能提供一组共享约束下的作品；个人 bookmark 更像读者品味轨迹。两者同时使用，接近“图书馆目录 + 书友推荐”的组合。</p>
+<p>Sunset 当前公开 collections 页面也能看到相似组织方式：2026 年仍有 prompt meme、seasonal challenge 与 fandom-oriented collection 在活动。[P19] 这说明 OTW-Archive 风格的软件可以承载相似集合机制，而每个独立站点仍拥有自己的治理与内容范围。</p>
+<h3 id="_7"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#_7">六、把发现过程变成一张人际图</a></h3>
+<p>当你读到一篇真正喜欢的作品时，下一步常常可以沿社会关系走：</p>
+<p><strong>作品 → 作者 → 作者的其他作品 → 作者公开书签 → 同一 pairing/tag 下常出现的其他作者 → collection/challenge → 社区讨论。</strong></p>
+<p>这条路径的上下文会逐层增加。第一篇作品给出一个偏好样本；作者的其他作品告诉你这个样本是否代表其稳定风格；书签暴露作者作为读者的口味；collection 揭示参与的社群项目；论坛、Reddit、Tumblr 或 Discord 讨论再补充自然语言评价。</p>
+<p>fan studies 与数字素养研究长期观察到，fanfiction communities 同时是写作、阅读、反馈、学习与身份协商空间。[A1][A3][A6][A7][A17] Price 对 fan communities 的信息行为研究也把“找信息”放在 serious leisure 与社群实践中理解。[A12]</p>
+<p>社区材料需要明确证据等级。Reddit 上的讨论可以证明“有人这样找 fic”，却不适合直接推导总体比例。本文使用社区帖子观察策略、困惑和术语，把 AO3 功能、政策和接口事实交给第一方 FAQ、TOS 与代码仓库确认。[P1]-[P8][P23]-[P27]</p>
+<h3 id="ao3"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#ao3">七、AO3 之外：同人生态一直是多档案的</a></h3>
+<h4 id="fanfictionnet"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#fanfictionnet">FanFiction.Net</a></h4>
+<p>FanFiction.Net 仍公开提供 Story / Writer / Forum / Community 搜索与 fandom、crossover 浏览入口。[P20] 对一些老 fandom 来说，它保留了与 AO3 不同的历史层。WebNR 当前只把第一方搜索页作为发现入口，因为来源的公开条款与 crawler policy 对自动化和再分发设有来源侧约束。</p>
+<h4 id="fimfiction"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#fimfiction">Fimfiction</a></h4>
+<p>Fimfiction 是 My Little Pony 同人生态里的专门化 archive。它当前公开的 Story Search 文档支持标签、布尔表达式、标题/描述字段、字数、views、rating、likes、发布时间、更新时间与完成状态等查询。[P21] 它同时拥有官方 API，因此比多数大型同人站更适合未来做经过限流、缓存和删除语义审计的机器接口。WebNR 当前仍采用第一方链接，下一步 richer adapter 的升级条件包括调用边界、身份、分页、缓存、删除、超时与版本化 fixtures。</p>
+<h4 id="scribble-hub"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#scribble-hub">Scribble Hub</a></h4>
+<p>Scribble Hub 的 Series Finder 与 Genre 体系把 Fanfiction 和 LitRPG、Isekai、Romance、Girls Love 等连载小说标签放在同一发现空间里。[P22] 这类平台对“同人 + 原创 Web serial”交叉读者很有价值，也说明同人发现有时嵌在更广的连载平台里。</p>
+<h4 id="squidgeworld"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#squidgeworld">SquidgeWorld</a></h4>
+<p>SquidgeWorld 提供 OTW-Archive 风格的公开 Work Search，可以按 fandom、relationships、additional tags、completion、word count、language、ratings、warnings 与互动统计过滤。[P12][P13] Squidge.org 对用户数据所有权和站点托管边界有自己的政策。WebNR 当前只提供第一方搜索链接，保留独立 archive 的政策自主性。</p>
+<h4 id="fanfictionlol"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#fanfictionlol">fanfiction.lol</a></h4>
+<p>fanfiction.lol 是一个规模较小、仍主动开发的独立 archive，公开 Fandoms 目录。[P14][P15] 站点直接提示功能与数据稳定性仍可能变化，并在 2026-08-18 生效的 Content Policy 里说明其当前内容和治理边界。[P16] 对读者来说，小型 archive 的价值常在于社区密度和新实验；发现系统则需要把成熟度与稳定性信息显式暴露。</p>
+<h4 id="sunset"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#sunset">Sunset</a></h4>
+<p>Sunset 自我描述为 fan-created、fan-run、nonprofit、noncommercial 的 transformative fanworks archive，聚焦 F/F、F/NB 与 NB/NB。[P17] 2026 年 8 月仍有新的站点更新与 active collections。[P19] WebNR 当前把其第一方首页作为专门化发现入口，作品与合集数据继续由 Sunset 自己维护。[P18]</p>
+<h4 id="_8"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#_8">历史保存与迁移</a></h4>
+<p>Ad Astra 的 legacy archive 公开说明旧站作为 read-only snapshot 保留，而当前主站在本次自动化环境中启用了 Anubis anti-bot challenge。[P26] 这说明“旧站可读”“新站活跃”“机器接口可用”是需要分别记录的事实。可靠发现目录应该逐项核验，并把普通页面访问与批量同步能力分开记录。</p>
+<h3 id="open-doors"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#open-doors">八、Open Doors 展示了保存所需的治理层</a></h3>
+<p>OTW Open Doors 展示了一套比“批量下载网页”更完整的 archive migration 实践：联系 archivists、向创作者说明迁移、保留作者身份，并提供 claim / orphan / delete 等控制路径。[P9][P10]</p>
+<p>这对 WebNR 很重要。一个本地阅读器最适合承担的是<strong>读者个人控制层</strong>：用户已经合法获得的 TXT、下载文件、自己拥有的文本或明确允许保存的内容，可以在本地建立阅读进度、主题与离线体验。平台级 archive preservation 则同时涉及作者权利、账户、删除、归属、公开传播和长期治理。</p>
+<p>Jacobs 与 Lowe 关于 fanbinding 的案例、Pilati 等关于 fanfiction forums 作为 digital heritage communities 的研究，也说明“保存”同时具有物质、社群与文化层面。[A17][A24] 对发现产品而言，保留来源 URL、作品身份和 provenance，可以让个人保存与公共再分发维持清晰区分。</p>
+<h3 id="ao3-atom-feed"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#ao3-atom-feed">九、AO3 Atom feed 的真实用途：关注“新出现”</a></h3>
+<p>AO3 官方 Subscriptions and Feeds FAQ 提供了一个很有价值的机器入口：多数 canonical tag 和 metatag 可以订阅 Atom feed，relationship / character tag 也可用。[P5] 官方还明确说明这些 feeds 可以放进个人 feed reader，也可以 syndicate 到其他网站。</p>
+<p>这里有一个关键时间语义：<strong>feed 在 work 原始发布时加入条目，后续 chapter update 不会把同一作品当成新 feed item 重新推送。</strong>[P5] 因此 Atom 更适合回答“这个 canonical tag 最近有什么新作品”，章节更新则更适合使用 AO3 subscription 或回到作品/作者层。</p>
+<p>可以把时间问题分成三类：</p>
+<ol>
+<li><strong>new-work time</strong>：一个 tag 下出现新 work；Atom 很合适；</li>
+<li><strong>update time</strong>：已有 work 新增章节；subscription / work page 更合适；</li>
+<li><strong>taxonomy time</strong>：canonical relation、wrangling 或 archive policy 变化；需要重新核验 FAQ/news。[P4][P5][P11]</li>
+</ol>
+<p>OTW-Archive 官方代码仓库目前明确说明“there is currently no API for OTW-Archive”。[P8] 因此 AO3 Atom feed 与“AO3 通用 API”是两个概念。WebNR 当前 repository loader 读取 <code>search_index.yml</code>，还没有通用 Atom parser。今天把 AO3 从 defer 升级为第一方 discovery route，是基于最新政策与接口证据；把 canonical-tag feed 升级成动态来源，则还需要浏览器传输/CORS、feed identity、response bounds、截断/分页、更新时间、失败重试和版本化 fixtures 的工程验证。</p>
+<h3 id="20"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#20">十、一条可以直接照做的 20 分钟找文流程</a></h3>
+<p><strong>第 1–3 分钟：定义双轴。</strong> 写下 fandom / ship / character / trope，再写 complete 状态、字数、语言、warnings、更新时间等阅读成本。</p>
+<p><strong>第 4–7 分钟：AO3 生成候选。</strong> 用 Work Search 或 tag page 建立初始集合；先看与你目标直接相关的 tags 与 summary；如果列表很大，先用 kudos/bookmarks 看一遍公共记忆，再切 date updated 或更窄标签看长尾。</p>
+<p><strong>第 8–11 分钟：沿人际图扩展。</strong> 选 2–3 篇真正喜欢的作品，打开作者其他作品与公开 bookmarks；观察哪些作者、tags、collections 反复出现。</p>
+<p><strong>第 12–15 分钟：去社区找“为什么”。</strong> 用具体需求搜索既有 Reddit/Tumblr/Discord 讨论，例如“30k–100k、completed、某 pairing、偏角色研究、低 angst”。自然语言条件越具体，社区推荐越有信息量。</p>
+<p><strong>第 16–18 分钟：跨 archive 补集。</strong> 老 fandom 看 FanFiction.Net；MLP 看 Fimfiction；Web serial 交叉口看 Scribble Hub；多 fandom 独立 archive 看 SquidgeWorld；专门化 queer/femslash archive 看 Sunset；同时记录每个平台的成熟度与治理差异。</p>
+<p><strong>第 19–20 分钟：建立个人阅读队列。</strong> 把第一方链接保存下来；对来源明确允许下载或由你合法拥有的文件，再导入 WebNR 等本地阅读器。保留原始 URL、作者与来源备注，后续遇到版本变化时还能回到源站复查。</p>
+<h3 id="_9"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#_9">十一、五个常见判断误区</a></h3>
+<h4 id="1_1"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#1_1">1. 把高热度当成稳定质量排序</a></h4>
+<p>热度包含暴露量和时间效应。更稳妥的方式是把它作为第一轮入口，再用窄标签、更新时间与人际策展做第二轮。[A9][A19]</p>
+<h4 id="2-tags"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#2-tags">2. 把 tags 当成完整内容承诺</a></h4>
+<p>AO3 的 mandatory warnings 与 additional tags 承担的责任层级不同；用户标签还会随 wrangling 发生 canonical 关系变化。[P2][P4][P11] 对重要内容约束，summary、notes、warnings 与公开 bookmarks 可以交叉参考。</p>
+<h4 id="3-collections"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#3-collections">3. 把 collections 当私人文件夹</a></h4>
+<p>Collections 带有策展、挑战、匿名/未公开等 archive 工作流；个人整理通常更适合用 bookmarks 与 bookmark tags。[P6][P7][P24]</p>
+<h4 id="4-feed-api"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#4-feed-api">4. 把“有 feed”理解成“有完整 API”</a></h4>
+<p>AO3 canonical-tag Atom feed 是官方说明的 syndication surface；OTW-Archive 代码仓库同时明确当前没有通用 API。[P5][P8] 两个事实可以同时成立。</p>
+<h4 id="5"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#5">5. 把“可打开网页”直接扩展成“适合自动抓取”</a></h4>
+<p>来源接入需要把普通浏览、API/feed、批量抓取、再分发、账户自动化分别审计。FanFiction.Net、Fimfiction、SquidgeWorld、AO3 的政策与接口条件都不同。WebNR 当前 Fanfiction Discovery Starter 选择窄的 link-only 能力，是为了只声明已经有第一方证据和运行时验证的行为；下一步优先把 Fimfiction official API 与 AO3 canonical-tag Atom 作为机器接口候选分别做 capability-limited adapter，而 link-only 只是当前能力层级。</p>
+<h3 id="_10"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#_10">十二、结论：核心是可解释的发现路径</a></h3>
+<p>同人小说生态很难被压进单一推荐分数，因为作品本身、标签体系、读者社群、作者关系、archive 治理与平台历史共同决定“你会在哪里遇到一篇作品”。AO3 的强项是可组合档案检索与标签治理；公开书签和合集提供二阶策展；社区讨论提供自然语言理由；独立 archive 保存不同社群与年代；本地阅读器则把最后一公里交回读者。</p>
+<p>如果只保留一句操作原则，可以记住：<strong>先用标签说清“我要什么”，再用状态说清“我愿意怎么读”，随后沿人际策展找相似口味，跨 archive 补齐生态，最后把个人有权保存的文件带回本地。</strong></p>
+<p>从产品角度看，这也给 WebNR 一条清楚的演进路线：第一阶段提供经过来源审计的第一方发现入口；第二阶段为明确允许的 API/feed 实现带速率、身份、更新与删除语义的适配器；第三阶段把这些来源与本地个人图书馆连接，同时保留 provenance。今天 AO3 已从“缺少当前政策证据的 defer”升级为正式 discovery route；canonical-tag Atom 与 Fimfiction official API 则进入下一层机器接口验证队列。</p>
+<h3 id="_11"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#_11">学术与研究文献</a></h3>
+<p>[A1] Jen Scott Curwood, Alecia Marie Magnifico, Jayne C. Lammers. <em>Writing in the Wild: Writers’ Motivation in Fan-Based Affinity Spaces</em>. https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/JAAL.192</p>
+<p>[A2] Jayne C. Lammers, Jen Scott Curwood, Alecia Marie Magnifico. <em>Toward an Affinity Space Methodology: Considerations for Literacy Research</em>. http://hdl.handle.net/1802/27489</p>
+<p>[A3] Henry Jenkins. <em>“Art Happens not in Isolation, But in Community”: The Collective Literacies of Media Fandom</em>. https://www.sciendo.com/pdf/10.5334/csci.125</p>
+<p>[A4] Kathy A. Mills. <em>A Review of the “Digital Turn” in the New Literacy Studies</em>. https://eprints.qut.edu.au/32979/1/32979.pdf</p>
+<p>[A5] Christine Greenhow, Beth Robelia. <em>Old Communication, New Literacies: Social Network Sites as Social Learning Resources</em>. https://academic.oup.com/jcmc/article-pdf/14/4/1130/22318194/jjcmcom1130.pdf</p>
+<p>[A6] Carlos A. Scolari et al. <em>Transmedia literacy in the new media ecology: Teens’ transmedia skills and informal learning strategies</em>. https://recyt.fecyt.es/index.php/EPI/article/download/epi.2018.jul.09/40580</p>
+<p>[A7] Boris Vázquez-Calvo, Leticia-Tian Zhang, Mariona Pascual, Daniel Cassany. <em>Fan translation of games, anime, and fanfiction</em>. https://scholarspace.manoa.hawaii.edu/bitstreams/13af851a-696a-4132-ae63-f2b0e5c4caf3/download</p>
+<p>[A8] Brianna Dym, Casey Fiesler. <em>Social Norm Vulnerability and its Consequences for Privacy and Safety in an Online Community</em>. https://dl.acm.org/doi/pdf/10.1145/3415226</p>
+<p>[A9] Simone Rebora et al. <em>Digital humanities and digital social reading</em>. https://academic.oup.com/dsh/article-pdf/36/Supplement_2/ii230/41091194/fqab020.pdf</p>
+<p>[A10] Federico Pianzola. <em>Digital Social Reading</em>. https://direct.mit.edu/books/oa-monograph-pdf/2498089/book_9780262381352.pdf</p>
+<p>[A11] Adrienne E. Raw. <em>Normalizing Disability: Tagging and Disability Identity Construction through Marvel Cinematic Universe Fanfiction</em>. https://cjds.uwaterloo.ca/index.php/cjds/article/download/498/751</p>
+<p>[A12] Ludi Price. <em>Serious leisure in the digital world: exploring the information behaviour of fan communities</em>. https://openaccess.city.ac.uk/id/eprint/19090/1/Price%2C%20Ludovica%20%28Redacted%29.pdf</p>
+<p>[A13] Kristina Busse. <em>Fan Fiction Tropes as Literary and Cultural Practices</em>. https://www.vr-elibrary.de/doi/pdf/10.14220/9783737007450.127</p>
+<p>[A14] Kelly Lynn Dalton. <em>Searching the archive of our own: The usefulness of the tagging structure</em>. https://dc.uwm.edu/etd/26</p>
+<p>[A15] Julia Amber Bullard. <em>Classification design: understanding the decisions between theory and consequence</em>. http://hdl.handle.net/2152/63497</p>
+<p>[A16] Melissa K. Nelson, Julia Bullard. <em>When Is It Genre? Complicating the Categorization of Fan-Generated Metadata</em>. https://muse.jhu.edu/pub/1/article/970680/pdf</p>
+<p>[A17] Federico Pilati, Maria Tartari, Antoine Houssard, Pier Luigi Sacco. <em>From fandoms to heritage. Understanding fanfiction forums as Digital Heritage Communities</em>. https://journals.sagepub.com/doi/pdf/10.1177/13548565241302245?download=true</p>
+<p>[A18] Veronica Koven-Matasy. <em>Fannish Librarians: The Intersection of Fandom and Library and Information Science</em>. https://cdr.lib.unc.edu/record/uuid:88807062-7aa9-4ea8-b5ba-f9f6b24cf205</p>
+<p>[A19] Lauren Moore. <em>Fanfiction today: An analysis of publishing trends on Archive of Our Own</em>. https://aquila.usm.edu/cgi/viewcontent.cgi?article=1265&amp;context=slisconnecting</p>
+<p>[A20] Roi Alfassi et al. <em>Fanfiction in the Age of AI: Community Perspectives on Creativity, Authenticity and Adoption</em>. https://www.tandfonline.com/doi/pdf/10.1080/10447318.2025.2531272?needAccess=true</p>
+<p>[A21] Alexandra Xanthoudakis. <em>Mushroom for improvement: a model for the circulation of fanfiction sub-genres</em>. http://summit.sfu.ca/item/21406</p>
+<p>[A22] Suzanne Black. <em>From novel to network: digital intertextuality in twenty-first-century fiction and fanfiction</em>. https://hdl.handle.net/1842/37850</p>
+<p>[A23] Alison Harding. <em>“I’m mixing comic book canon and MCU canon to suit my own needs”: Information Sharing as Community Building in a Fandom in Flux</em>. https://ideaexchange.uakron.edu/cgi/viewcontent.cgi?article=1220&amp;context=docam</p>
+<p>[A24] Naomi Jacobs, JSA Lowe. <em>The Design of Printed Fanfiction: A Case Study of Down to Agincourt Fanbinding</em>. https://ideaexchange.uakron.edu/cgi/viewcontent.cgi?article=1192&amp;context=docam</p>
+<h3 id="_12"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#_12">第一方、平台与社区来源</a></h3>
+<p>[P1] Archive of Our Own. <em>Terms of Service</em>. https://archiveofourown.org/tos</p>
+<p>[P2] Archive of Our Own. <em>Terms of Service FAQ</em>. https://archiveofourown.org/tos_faq</p>
+<p>[P3] Archive of Our Own. <em>Search and Browse FAQ</em>. https://archiveofourown.org/faq/search-and-browse</p>
+<p>[P4] Archive of Our Own. <em>Tags FAQ</em>. https://archiveofourown.org/faq/tags</p>
+<p>[P5] Archive of Our Own. <em>Subscriptions and Feeds FAQ</em>. https://archiveofourown.org/faq/subscriptions-and-feeds</p>
+<p>[P6] Archive of Our Own. <em>Collections FAQ</em>. https://archiveofourown.org/faq/collections</p>
+<p>[P7] Archive of Our Own. <em>Bookmarks FAQ</em>. https://archiveofourown.org/faq/bookmarks</p>
+<p>[P8] Organization for Transformative Works. <em>OTW-Archive source repository</em>. https://github.com/otwcode/otwarchive</p>
+<p>[P9] Organization for Transformative Works, Open Doors. <em>FAQ</em>. https://opendoors.transformativeworks.org/en/faq/</p>
+<p>[P10] Organization for Transformative Works, Open Doors. <em>Online Archives</em>. https://opendoors.transformativeworks.org/en/online-archives/</p>
+<p>[P11] Archive of Our Own. <em>Admin/news posts on tag wrangling and “No Fandom” changes</em>. https://archiveofourown.org/admin_posts</p>
+<p>[P12] SquidgeWorld Archive. <em>Home</em>. https://squidgeworld.org/</p>
+<p>[P13] SquidgeWorld Archive. <em>Work Search</em>. https://squidgeworld.org/works/search</p>
+<p>[P14] fanfiction.lol. <em>Home</em>. https://fanfiction.lol/</p>
+<p>[P15] fanfiction.lol. <em>Fandoms</em>. https://fanfiction.lol/media</p>
+<p>[P16] fanfiction.lol. <em>Content Policy</em>. https://fanfiction.lol/content</p>
+<p>[P17] Sunset. <em>Home</em>. https://sunset.femslash.club/</p>
+<p>[P18] Sunset. <em>Terms of Service FAQ</em>. https://sunset.femslash.club/tos_faq</p>
+<p>[P19] Sunset. <em>Collections</em>. https://sunset.femslash.club/collections</p>
+<p>[P20] FanFiction.Net. <em>Story / Writer / Forum / Community Search</em>. https://www.fanfiction.net/search/?ready=1</p>
+<p>[P21] Fimfiction. <em>Story Search</em>. https://www.fimfiction.net/articles/story-search</p>
+<p>[P22] Scribble Hub. <em>Series Finder</em>. https://www.scribblehub.com/series-finder/</p>
+<p>[P23] r/AO3. <em>Do you use bookmarks or subscriptions? Also why?</em> 2026-05-30. https://www.reddit.com/r/AO3/comments/1trsxq0/do_you_use_bookmarks_or_subscriptions_also_why/</p>
+<p>[P24] r/AO3. <em>Bookmark Collections??</em> 2026-01-24. https://www.reddit.com/r/AO3/comments/1ql91wm/bookmark_collections/</p>
+<p>[P25] r/AO3. <em>How do you personally use bookmarks?</em> 2026-07-11. https://www.reddit.com/r/AO3/comments/1ut863f/how_do_you_personally_use_bookmarks/</p>
+<p>[P26] Ad Astra. <em>Legacy archive</em>. https://classic.adastrafanfic.com/</p>
+<p>[P27] r/FanFiction. <em>what's your browsing habit on Ao3?</em> 2026-01-06. https://www.reddit.com/r/FanFiction/comments/1q52o99/whats_your_browsing_habit_on_ao3/</p>
+<h3 id="_13"><a class="toclink" href="../../2026/08/26/fanfiction-transformative-serial-discovery-guide/#_13">核验说明</a></h3>
+<p>平台功能、接口、条款与 archive 状态按 2026-08-26 可访问的第一方公开材料核验；动态计数、排序与社区帖子会随时间变化。社区讨论只作为读者策略的定性样本。WebNR 的 Fanfiction Discovery Starter 在本轮只保存第一方 URL 和 WebNR 自行撰写的发现说明，不复制来源站作品、作者资料、评分、评论、书签、合集成员、封面或正文；AO3 canonical-tag Atom 与 Fimfiction official API 则作为后续 capability-limited adapter 的独立工程审计对象。</p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-24 00:00:00+00:00">August 24, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../reader-guides/" class="md-meta__link">Reader guides</a>, 
+              <a href="../recommendations/" class="md-meta__link">Recommendations</a>, 
+              <a href="./" class="md-meta__link">Research</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              10 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="2026-progression-fantasy-litrpg"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/">2026 Progression Fantasy 与 LitRPG 推荐怎么找？从标签、社区到完结状态的选择方法</a></h2>
+<p><strong>直接答案：</strong>寻找 Progression Fantasy 与 LitRPG 推荐时，先把自己的需求写成六个维度：<strong>机制密度、成长路径、连载状态、阅读格式、叙事质感、个人约束</strong>；随后用 Royal Road 一类平台标签生成候选，用 r/ProgressionFantasy 与 r/litrpg 一类读者社区寻找“相似口味的人”，再用出版社、作者页与作品原页核对版本、完结状态和当前可读入口。这样得到的是一组可解释的“适配推荐”，重点落在个人条件与证据链，而总榜只承担候选入口。[A1][A2][A5][A6][P2][P6][P10]</p>
+<p><a class="md-button md-button--primary" href="https://app.webnovel.win/?repos=https%3A%2F%2Fapp.webnovel.win%2Fsources%2Fprogression-litrpg-publisher-discovery-starter">在 WebNR 添加 Progression &amp; LitRPG Publisher Discovery Starter</a></p>
+<h3 id="_1"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_1">摘要</a></h3>
+<p>本文以 <strong>2026 年 8 月 24 日</strong>可公开访问的 Royal Road 搜索与榜单、Progression Fantasy 与 LitRPG 读者社区、类型目录、出版社目录、近期讨论，以及推荐系统、社会标签、在线书评和读者元数据研究为证据，回答一个非常具体的读者问题：<strong>怎样稳定找到符合自己口味的 Progression Fantasy 与 LitRPG，而又能看清连载状态、平台差异与推荐偏差？</strong></p>
+<p>核心结论是一套“<strong>六维需求向量 + 四层证据链</strong>”。六维需求向量记录机制密度、成长路径、连载状态、阅读格式、叙事质感与个人约束；四层证据链依次使用平台结构化标签、社区自然语言经验、专业目录的交叉标签、第一方作品或出版信息。推荐系统研究长期强调准确率之外的多样性、情境、解释性与用户体验；社会标签研究说明读者自发词汇能够补充受控分类；Goodreads 与 Amazon 的比较研究又展示评价环境会改变读者表达。[A2][A4][A5][A6][A12][A13][A17][A18][A19] 对类型小说读者来说，这些研究共同指向一个实用原则：<strong>推荐的价值来自“与你的阅读目标匹配”，并由多个独立来源共同支撑。</strong></p>
+<p><strong>关键词：</strong> Progression Fantasy；LitRPG；Royal Road；r/ProgressionFantasy；r/litrpg；推荐系统；社会标签；完结状态；有声书；连载小说；读者社区</p>
+<h3 id="_2"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_2">研究问题、材料与方法</a></h3>
+<p>本文研究的问题是：<strong>当同一类作品同时存在 Web 连载、Kindle/纸书、有声书、出版社版本、社区口碑和多个标签体系时，读者怎样构建一条可复查的推荐路径？</strong></p>
+<p>材料分成四组。第一组是 Royal Road 的 Advanced Search、Rising Stars、Best Rated、Completed 与当前 Trending 页面，用于观察平台直接暴露的标签、状态、页数、更新时间和排序入口。[P2]-[P5][P23] 第二组是 r/ProgressionFantasy 与 r/litrpg 的近期公开讨论，用于观察读者实际提出推荐请求时会主动报告哪些偏好。[P6]-[P10][P24] 第三组是 ProgressionFantasy.co.uk、Ascendant Reads、LitRPG Toolkit 等类型目录，以及 Aethon、Mountaindale、Portal、Wraithmarked、Shadow Alley、Timeless Wind 等第一方出版或系列入口，用于交叉核对标签、格式与出版状态。[P11]-[P20] 第四组是推荐系统、社会标签、在线书评和游戏化叙事研究，用于解释为什么单一排行榜经常压缩掉真正决定阅读满意度的条件。[A1]-[A22]</p>
+<p>研究方法采用“候选生成—口味匹配—状态核验—时间核验”四步。平台标签负责候选生成；社区讨论负责口味匹配；第一方作品或出版社页面负责版本与状态核验；最后记录核验日期，为后续重查保留时间坐标。社区材料只承担“读者怎样表达偏好”与“某种推荐理由是否真实出现”这类观察性任务，作品身份、出版关系与可读入口交给第一方来源确认。[A16][A17][P6]-[P10]</p>
+<h3 id="_3"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_3">一、先把“想看什么”写成六维需求向量</a></h3>
+<p>推荐系统研究从早期协同过滤一路发展到情境感知、用户体验、解释性、多样性与公平性，核心变化是把“给出一个高分项目”扩展成“在具体用户、具体场景和具体目标下提供有用选择”。[A1]-[A11] Progression Fantasy 与 LitRPG 特别适合这种思路，因为读者对“成长”二字内部的偏好差异很大。</p>
+<p>本文建议每次找书先写六个字段。</p>
+<h4 id="1"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#1">1. 机制密度：你希望看到多少“系统”</a></h4>
+<p>这一维记录读者对显式游戏机制的接受度。可以分成：</p>
+<ul>
+<li><strong>高机制密度</strong>：等级、属性、技能树、职业、任务、掉落、装备、系统提示持续参与叙事；</li>
+<li><strong>中机制密度</strong>：存在明确等级或能力框架，数字展示相对克制；</li>
+<li><strong>低机制密度</strong>：成长路径清晰，主要通过训练、境界、技巧、知识或资源呈现。</li>
+</ul>
+<p>这项区分直接解释了近期社区里反复出现的一类请求：读者喜欢成长与战斗，同时希望世界构建、角色关系和目标感占据更大比重；另一些读者明确寻找带成长感、同时把电子游戏界面式机制降到很低比例的作品。[P8][P9] “Progression Fantasy”这个标签本身也源于作者与读者寻找更精确类型语言的过程，Andrew Rowe 2019 年的类型概念说明把“角色力量与技能随时间增长”放在中心位置。[P1]</p>
+<h4 id="2"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#2">2. 成长路径：你想看哪一种“变强”</a></h4>
+<p>成长路径可以写成多选标签，例如：</p>
+<ul>
+<li>cultivation / realm advancement；</li>
+<li>level / class / skill build；</li>
+<li>crafting / economy / settlement；</li>
+<li>dungeon / tower / challenge ladder；</li>
+<li>time loop / regression；</li>
+<li>academy / training；</li>
+<li>monster evolution；</li>
+<li>kingdom building / leadership；</li>
+<li>knowledge / research / magic-system mastery。</li>
+</ul>
+<p>Royal Road 当前 Advanced Search 已把许多这类信号放进标签体系；Rising Stars 与 Trending 页面也会同时展示 LitRPG、Progression、Cultivation、Time Loop、Crafting、Dungeon Crawler 等组合。[P2][P3][P23] 社会标签研究说明，自发标签能够补充正式分类体系，并把用户真正关心的主题词带进发现过程。[A12]-[A14][A19] 对读者而言，成长路径比宽泛的“Fantasy”标签更接近阅读体验。</p>
+<h4 id="3"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#3">3. 连载状态：你愿意承担多少追更风险</a></h4>
+<p>建议记录四类状态：</p>
+<ul>
+<li><strong>completed</strong>：作品页面显示完结；</li>
+<li><strong>ongoing</strong>：持续更新；</li>
+<li><strong>book/arc complete</strong>：当前卷或阶段完成，整体系列继续；</li>
+<li><strong>edition transition</strong>：Web 连载与商业电子书/有声书之间发生版本迁移。</li>
+</ul>
+<p>Royal Road 的搜索页允许直接设置 Completed，作品条目同时显示状态、章节与更新时间。[P2][P5] Best Rated 页面也大量包含已经完结的长篇。[P4] 对长篇类型小说来说，状态信息会显著改变推荐价值：一个偏好一次读完十卷的读者，与一个喜欢每天追更并参与评论区的读者，对同一作品会形成两套截然分开的满意度预期。</p>
+<h4 id="4-web"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#4-web">4. 阅读格式：Web、电子书、有声书还是多格式</a></h4>
+<p>Progression Fantasy 与 LitRPG 的发行链经常跨越 Royal Road、Kindle、Kindle Unlimited、有声书、纸书和出版社自有目录。Aethon 的当前目录把 GameLit/LitRPG 单列为类型，并同时收录 Progression Fantasy 作品；Mountaindale、Portal、Shadow Alley、Timeless Wind 等出版社也持续经营相关类型。[P15]-[P19] Wraithmarked 的系列集合则展示 Arcane Ascension、Mother of Learning、Warformed 等与 progression 读者高度重叠的系列。[P14]</p>
+<p>因此推荐卡里建议明确写“想读 Web 连载 / Kindle / 音频 / 纸书 / 任意格式”。音频用户还可以继续记录 narrator 偏好。社区推荐请求里，平台与格式本来就是读者常用的条件字段；2026 年 6 月一条 r/litrpg 推荐帖的自动提醒直接要求提问者说明自己使用 Audible、Royal Road、Kindle 等哪个平台。[P9]</p>
+<h4 id="5"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#5">5. 叙事质感：你希望成长故事怎样“读起来”</a></h4>
+<p>这一维建议用自然语言写，让多个描述共同保留读感：</p>
+<ul>
+<li>快节奏战斗 / 慢热探索；</li>
+<li>重世界构建 / 重角色关系；</li>
+<li>轻松 / 黑暗 / 温暖；</li>
+<li>单主角 / 群像；</li>
+<li>强情节 / slice of life；</li>
+<li>清晰目标 / 开放式漫游；</li>
+<li>强策略 / 强情绪 / 强幽默。</li>
+</ul>
+<p>近期 r/litrpg 的讨论里，有读者把“战斗依然重要、同时需要更多世界与角色时间”作为核心条件；r/ProgressionFantasy 的 tier list 讨论也会根据慢热、主题层次、角色复杂度等线索推断口味相似性。[P7][P8] 星级平均分只能覆盖其中一部分，社区自然语言与书评文本能保留更多细节。[A17][A18][A20]</p>
+<h4 id="6"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#6">6. 个人约束：提前写出会直接决定弃书的条件</a></h4>
+<p>个人约束常见于 romance 比例、harem、暴力强度、主角年龄、POV、性别视角、更新时间、篇幅、AI 内容标记、地区可用性等。Royal Road Advanced Search 当前已经提供类型、Additional Tags、Content Warnings、页数、评分、状态、排序和作品类型等字段。[P2] 这类约束越明确，社区回答越容易从“热门书单”进入真正的适配推荐。</p>
+<p>把六个字段合在一起，一条可直接使用的请求会长成这样：</p>
+<blockquote>
+<p>高成长感；中低系统密度；偏 cultivation 或 training；希望至少一卷完成；Web 或 Kindle 均可；重世界构建与角色关系；节奏中等；偏好单主角；希望 romance 占比较低。</p>
+</blockquote>
+<p>这种写法给推荐者提供了足够多的匹配坐标，也给自己留下了核对依据。</p>
+<h3 id="_4"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_4">二、四类入口各自解决一种问题</a></h3>
+<h4 id="royal-road"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#royal-road">第一层：Royal Road 一类平台解决“候选生成”</a></h4>
+<p>Royal Road 目前为类型发现提供三种互补入口。<strong>Advanced Search</strong> 适合从零开始，用 genre、tag、status、page count、rating 等条件缩小集合；<strong>Rising Stars / Trending</strong> 适合观察近期增长与活跃作品；<strong>Best Rated / Completed</strong> 适合寻找已经积累大量反馈或已经完成的作品。[P2]-[P5][P23]</p>
+<p>这里的关键动作是“先筛选，再看榜”。例如，读者只接受完结 LitRPG，可以直接用 Completed + LitRPG；偏好 time loop、cultivation、crafting，也可以继续叠加标签。平台自身的标签与状态属于第一方结构化信息，适合作为候选生成器。</p>
+<p>推荐系统研究里，多样性与新颖性研究提醒我们，单纯沿排行榜头部浏览会反复遇到同一批高曝光项目。[A5][A6] 搜索过滤器的价值就在于先定义兴趣空间，再在空间内部排序。</p>
+<h4 id="rprogressionfantasy-rlitrpg"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#rprogressionfantasy-rlitrpg">第二层：r/ProgressionFantasy 与 r/litrpg 解决“口味匹配”</a></h4>
+<p>社区最强的信号来自“为什么这个人喜欢这本书”。近期公开讨论清楚展示了这种信息密度：</p>
+<ul>
+<li>有人寻找较少数值、较多世界构建与角色时间的 LitRPG / progression fantasy；[P8]</li>
+<li>有人明确寻找带成长元素、同时把电子游戏式机制降到较低比例的作品；[P9]</li>
+<li>有人把自己正在追的几十部 Royal Road Web 小说做成 tier list，评论者再从慢热、主题、人物复杂度推断相似口味；[P7]</li>
+<li>r/ProgressionFantasy 的 Weekly Reading Roundup 让读者持续交流正在阅读的作品、短评和相邻推荐；[P6]</li>
+<li>2026 年 8 月还有社区成员把公开 tier lists 聚合成协同过滤式 LitRPG 推荐器，直接说明“相似读者”思路已经进入该社区的自发工具实践。[P10]</li>
+</ul>
+<p>协同过滤的经典思想正是从相似用户行为推导候选；用户体验研究又强调推荐理由与交互场景的重要性。[A1][A2] 对读者来说，社区的高价值字段是“我喜欢 A 的什么，也讨厌 B 的什么”。只要这个理由与自己的六维需求向量相似，这条推荐的解释力通常高于单纯“五星”。</p>
+<h4 id="_5"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_5">第三层：专业目录解决“交叉标签与长尾发现”</a></h4>
+<p>ProgressionFantasy.co.uk 提供类型定义与大量细粒度标签；Ascendant Reads 的 Atlas 页面把 progression system、trope、genre、audio 等字段做成可检查的目录统计；LitRPG Toolkit 当前提供跨 Royal Road 与 Kindle 的大规模书目浏览与多条件过滤。[P11]-[P13]</p>
+<p>这些目录很适合做第二候选集。它们把平台特定标签重新组织成读者语言，也容易暴露长尾作品。社会标签与文学元数据研究说明，用户贡献词汇常能补充传统主题词表，尤其适合文学作品的“氛围、母题、关系、读感”这类检索需求。[A12][A13][A18][A19]</p>
+<p>使用目录时建议保留来源意识：查看“数据更新时间”“字段来源”“未知值怎样处理”“完成状态怎样定义”。Ascendant Reads 的 Atlas 当前明确说明其统计来自自身目录，未知字段保留为未知，并提醒数字会随目录更新。[P12] 这种边界声明本身就是高质量推荐资料的重要特征。</p>
+<h4 id="_6"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_6">第四层：出版社、作者与作品原页解决“版本和可用性核验”</a></h4>
+<p>最后一层回答三个事实问题：<strong>现在从哪里读、这一版是谁发布、系列处于什么状态。</strong></p>
+<p>Aethon 当前第一方目录明确提供 GameLit/LitRPG 分类，并展示 progression fantasy 作品；Mountaindale 的当前目录集中展示其 LitRPG 书目；Portal 公开书目覆盖 LitRPG、progression fantasy 与 cultivation；Shadow Alley 的 Library 与近期发行页包含 LitRPG、cultivation、isekai 等作品；Timeless Wind 的第一方站点直接列出 progression fantasy、LitRPG、time loop、cultivation、system apocalypse 等出版方向。[P15]-[P19] Wraithmarked 的系列集合适合核对其实际发行与收藏版本。[P14]</p>
+<p>第一方页面承担“当前状态”的最后确认。社区帖适合解释读感，目录适合检索，出版社与作品原页适合确认版本。把职责分开，推荐链就会稳定很多。</p>
+<h3 id="_7"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_7">三、把每条推荐写成一张“可解释卡片”</a></h3>
+<p>本文建议保存七个字段：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>记录内容</th>
+<th>主要来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>作品身份</td>
+<td>标题、作者、系列</td>
+<td>作品原页 / 出版社</td>
+</tr>
+<tr>
+<td>机制密度</td>
+<td>高 / 中 / 低 + 一句理由</td>
+<td>平台标签 + 读者讨论</td>
+</tr>
+<tr>
+<td>成长路径</td>
+<td>cultivation、skills、crafting、time loop 等</td>
+<td>平台标签 + 目录</td>
+</tr>
+<tr>
+<td>当前状态</td>
+<td>completed / ongoing / book complete / 版本迁移</td>
+<td>作品原页</td>
+</tr>
+<tr>
+<td>格式入口</td>
+<td>Web、ebook、audio、print</td>
+<td>第一方出版页</td>
+</tr>
+<tr>
+<td>口味证据</td>
+<td>与哪类读者偏好相似、推荐理由是什么</td>
+<td>社区讨论</td>
+</tr>
+<tr>
+<td>核验日期</td>
+<td>YYYY-MM-DD</td>
+<td>自己记录</td>
+</tr>
+</tbody>
+</table>
+<p>例如，一条“适合偏爱低数值、强世界构建、希望至少一卷完成的读者”的推荐，至少需要三类证据：平台或作者页显示作品的类型与状态；社区评论描述世界构建与机制密度；第一方出版信息确认当前可读格式。每一类证据只承担自己擅长的字段。</p>
+<p>解释性推荐研究强调透明度与信任之间存在紧密关系；推荐系统评价框架也要求把系统目标、数据、方法和指标一起考虑。[A6][A8][A15] 对个人找书而言，“为什么推荐给我”就是最实用的解释层。</p>
+<h3 id="15"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#15">四、一个 15 分钟可重复的找书流程</a></h3>
+<h4 id="13"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#13">第 1—3 分钟：写需求</a></h4>
+<p>写下六维需求向量，优先写三项最关键条件。例：低系统密度、完结优先、世界构建强。</p>
+<h4 id="47"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#47">第 4—7 分钟：结构化筛选</a></h4>
+<p>在 Royal Road Advanced Search 或一个专业目录里组合标签与状态，保存 5—10 个候选。[P2][P11]-[P13]</p>
+<h4 id="811"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#811">第 8—11 分钟：社区匹配</a></h4>
+<p>搜索“候选名 + subreddit”，再搜索自己的条件词，例如：</p>
+<ul>
+<li><code>site:reddit.com/r/ProgressionFantasy completed slow burn progression</code></li>
+<li><code>site:reddit.com/r/litrpg low stats worldbuilding</code></li>
+<li><code>site:reddit.com/r/litrpg audiobook crafting</code></li>
+</ul>
+<p>关注评论里的比较句：喜欢 X 的人为什么喜欢 Y；弃掉某作品的人卡在哪个机制；读者怎样描述成长速度、角色关系、幽默、战斗比例。近期讨论已经显示这些变量会直接进入真实推荐请求。[P6]-[P10][P24]</p>
+<h4 id="1214"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#1214">第 12—14 分钟：第一方核验</a></h4>
+<p>打开作品原页、作者页或出版社页，确认状态、卷次、格式和当前入口。Web 连载与商业版并行时，把两者分别记录。</p>
+<h4 id="15_1"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#15_1">第 15 分钟：做三选一</a></h4>
+<p>给候选写一句“匹配理由”，再从三个不同方向各留一个：</p>
+<ol>
+<li><strong>最贴合</strong>：六维匹配度最高；</li>
+<li><strong>相邻探索</strong>：保留主要偏好，同时改变一个维度；</li>
+<li><strong>长尾候选</strong>：热度较低，解释证据仍然完整。</li>
+</ol>
+<p>这种三选一结构把准确性、多样性和新颖性同时带进个人决策。[A5][A6]</p>
+<h3 id="_8"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_8">五、为什么“社区最热门”会漏掉你的最佳下一本</a></h3>
+<h4 id="1_1"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#1_1">1. 热度带来头部重复</a></h4>
+<p>推荐系统里的 popularity bias 会让高曝光项目继续获得更多曝光；多样性研究因此把 novelty 与 diversity 作为独立目标。[A5][A6][A9][A10] 类型社区里也存在类似结构：新读者频繁提出相近问题，热门系列持续进入回答，长尾作品需要更细的条件才能浮现。[P7][P24]</p>
+<p>应对方式很简单：先筛选，再排行；每次至少加入一个“相邻探索”与一个“长尾候选”。</p>
+<h4 id="2_1"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#2_1">2. 同一个评分在不同平台里含义会变化</a></h4>
+<p>Dimitrov 等人比较 Goodreads 与 Amazon 的同类书评后发现，评论环境与商业语境会改变评价行为。[A17] Trott 与 Naik 对 Goodreads 的讨论也强调读者自发语言在 readers’ advisory 中的价值。[A18] 因此星级适合做辅助信号，具体评论理由更适合做口味匹配。</p>
+<h4 id="3_1"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#3_1">3. 标签很强，同时带着社区语境</a></h4>
+<p>folksonomy 研究表明社会标签能够提升检索和发现，同时也会形成自己的词汇习惯与语义结构。[A12]-[A14] Progression Fantasy 的标签生态尤其活跃：LitRPG、GameLit、cultivation、system apocalypse、time loop、regression、dungeon core、crafting 等词在不同站点存在粒度差异。[P2][P11][P12]</p>
+<p>应对方式是给每个标签配一个自己的短定义。例如“low stats = 系统存在，正文很少展示数字面板”。这样跨平台时依然能保持一致。</p>
+<h4 id="4"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#4">4. 连载状态具有时间性</a></h4>
+<p>Web 小说会更新、完结、迁移版本、下架章节或进入商业出版阶段。Royal Road 当前页面直接显示更新时间与状态，部分作品简介还会说明卷次完成、Amazon/Audible 版本等信息。[P3]-[P5] 推荐卡保留核验日期，就能把“当时真实”与“现在真实”分开。</p>
+<h4 id="5_1"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#5_1">5. 社区样本反映参与讨论者的表达</a></h4>
+<p>社交数据研究持续提醒研究者关注自选择、平台人口结构、可见性和采集边界。[A16] Reddit 公开讨论适合观察活跃社区成员怎样表达偏好，适合给个人找书提供丰富解释。它们承担“口味语料”的角色，适合描述参与讨论者表达出的阅读需求。</p>
+<h3 id="_9"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_9">六、反例与边界：什么时候另一种方法更合适</a></h3>
+<p>有几种阅读任务适合更直接的入口。</p>
+<p><strong>新入门读者</strong>希望先建立类型坐标时，可以从作者提出的 progression fantasy 定义、Royal Road Best Rated、出版社代表目录开始，先读一两部典型作品，再细化六维向量。[P1][P4][P15]</p>
+<p><strong>音频优先读者</strong>的约束通常集中在 narrator、时长、系列音频进度和地区可用性。此时第一方出版社与音频零售页应提前到第二步，社区用于判断 narration 风格与系列体验。</p>
+<p><strong>追更型读者</strong>关注更新频率和当前活跃度。Rising Stars、Trending、Latest Updates 这类时间敏感入口更有价值。[P3][P23]</p>
+<p><strong>研究型读者</strong>关注类型边界与媒介形式。LitRPG 把游戏机制直接嵌入小说叙事，相关研究已经从游戏与文学的跨媒介关系、角色能动性和身份等角度展开。[A21][A22] 这类读者可以把“机制如何进入叙事”本身设为搜索维度。</p>
+<p>这些路径说明推荐方法应随任务切换。推荐系统评价研究把场景、目标与用户体验放在同一框架中，个人阅读选择也适用相同思想。[A2][A4][A6]</p>
+<h3 id="_10"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_10">七、原创综合：把推荐可信度拆成四个可检查因素</a></h3>
+<p>综合平台结构、社区语言与推荐系统研究，本文提出一个面向类型小说的“<strong>四因素推荐可信度</strong>”框架：</p>
+<p><strong>推荐可信度 = 口味贴合 × 证据多样性 × 信息新鲜度 × 状态确定性</strong></p>
+<p>这里的乘法是概念表达，用来提醒读者四项中任何一项很弱时都值得继续核验。</p>
+<h4 id="_11"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_11">口味贴合</a></h4>
+<p>候选与六维需求向量重合多少。最重要的是你的前三项硬条件。</p>
+<h4 id="_12"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_12">证据多样性</a></h4>
+<p>同一判断是否由不同类型来源支持。平台标签、社区评论、专业目录、第一方出版页分别承担不同字段时，证据结构最清晰。</p>
+<h4 id="_13"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_13">信息新鲜度</a></h4>
+<p>更新时间、版本与可读入口距离今天有多近。推荐帖可以长期保留读感价值，状态字段则需要重新核对。</p>
+<h4 id="_14"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_14">状态确定性</a></h4>
+<p>completed、ongoing、卷完成、Web 版迁移、音频进度等字段是否有第一方页面支撑。</p>
+<p>这套框架带来一个很实用的排序变化：<strong>一部热度中等、与你高度贴合、状态明确、多个来源都能解释其特点的作品，常常比“社区总榜第一名”更适合作为你的下一本。</strong> 推荐从“谁最有名”变成“哪一部最适合当前这次阅读”。</p>
+<h3 id="webnr"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#webnr">八、WebNR 在这条发现链里适合做什么</a></h3>
+<p>WebNR 的价值适合放在“来源导航与证据保留”一侧。当前 Progression &amp; LitRPG Publisher Discovery Starter 已收录 Aethon Books、Mountaindale Press、Portal Books，并在 2026 年 8 月 24 日增加 Wraithmarked Creative、Shadow Alley Press 与 Timeless Wind Publishing 的第一方发现入口。[P14]-[P19]</p>
+<p>这些入口采用 link-only 方式：WebNR 保存第一方目标 URL 与自行撰写的发现标签，书籍简介、封面、价格、评分、零售数据、账户状态和正文继续留在原站。这样，读者可以把 WebNR 当作一张稳定的“去哪里核验”地图，再回到第一方页面完成版本确认。</p>
+<p>对推荐方法来说，这也对应本文的最后一层证据：平台和社区负责发现与解释，第一方来源负责当前事实。</p>
+<h3 id="_15"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_15">结论</a></h3>
+<p>Progression Fantasy 与 LitRPG 的推荐质量，取决于读者能否把“我想看一个好看的”转换成一组可检查条件。最实用的做法是：</p>
+<ol>
+<li>用<strong>机制密度、成长路径、连载状态、阅读格式、叙事质感、个人约束</strong>建立六维需求向量；</li>
+<li>用 Royal Road 一类平台的标签与状态生成候选；</li>
+<li>用 r/ProgressionFantasy、r/litrpg 等社区寻找口味相似与具体推荐理由；</li>
+<li>用专业目录扩展长尾与交叉标签；</li>
+<li>用作品原页、作者页、出版社页确认当前版本与可读入口；</li>
+<li>保存核验日期，并用“口味贴合、证据多样性、信息新鲜度、状态确定性”检查每条推荐。</li>
+</ol>
+<p>这套方法把排行榜转化成搜索入口，把社区口碑转化成解释证据，把出版社页面转化成状态锚点。最终得到的是一套可复用、可更新、可说明理由的个人推荐系统。</p>
+<h3 id="_16"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_16">参考文献</a></h3>
+<h4 id="_17"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_17">学术研究</a></h4>
+<p>[A1] Resnick, P.; Varian, H. R. (1997). <strong>Recommender Systems.</strong> <em>Communications of the ACM</em>, 40(3). https://doi.org/10.1145/245108.245121</p>
+<p>[A2] Konstan, J. A.; Riedl, J. (2012). <strong>Recommender systems: from algorithms to user experience.</strong> <em>User Modeling and User-Adapted Interaction</em>, 22, 101–123. https://doi.org/10.1007/s11257-011-9112-x</p>
+<p>[A3] Lü, L.; Medo, M.; Yeung, C. H.; Zhang, Y.-C.; Zhang, Z.-K.; Zhou, T. (2012). <strong>Recommender systems.</strong> <em>Physics Reports</em>, 519(1), 1–49. https://arxiv.org/abs/1202.1112</p>
+<p>[A4] Adomavicius, G.; Mobasher, B.; Ricci, F.; Tuzhilin, A. (2011). <strong>Context-Aware Recommender Systems.</strong> <em>AI Magazine</em>, 32(3). https://ojs.aaai.org/index.php/aimagazine/article/view/2364</p>
+<p>[A5] Vargas, S.; Castells, P. (2011). <strong>Rank and relevance in novelty and diversity metrics for recommender systems.</strong> <em>Proceedings of RecSys 2011</em>. https://doi.org/10.1145/2043932.2043955</p>
+<p>[A6] Zangerle, E.; Bauer, C. (2022). <strong>Evaluating Recommender Systems: Survey and Framework.</strong> <em>ACM Computing Surveys</em>, 55(8), Article 170. https://doi.org/10.1145/3556536</p>
+<p>[A7] Silveira, T.; Zhang, M.; Lin, X.; Liu, Y.; Ma, S. (2019). <strong>How good your recommender system is? A survey on evaluations in recommendation.</strong> <em>International Journal of Machine Learning and Cybernetics</em>. https://doi.org/10.1007/s13042-017-0762-9</p>
+<p>[A8] Zhang, Y.; Chen, X. (2020). <strong>Explainable Recommendation: A Survey and New Perspectives.</strong> <em>Foundations and Trends in Information Retrieval</em>, 14(1). https://arxiv.org/abs/1804.11192</p>
+<p>[A9] Milano, S.; Taddeo, M.; Floridi, L. (2020). <strong>Recommender systems and their ethical challenges.</strong> <em>AI &amp; Society</em>, 35, 957–967. https://doi.org/10.1007/s00146-020-00950-y</p>
+<p>[A10] Wang, Y.; Ma, W.; Zhang, M.; Liu, Y.; Ma, S. (2023). <strong>A Survey on the Fairness of Recommender Systems.</strong> <em>ACM Transactions on Information Systems</em>. https://doi.org/10.1145/3547333</p>
+<p>[A11] Schedl, M.; Zamani, H.; Chen, C.-W.; Deldjoo, Y.; Elahi, M. (2018). <strong>Current challenges and visions in music recommender systems research.</strong> <em>International Journal of Multimedia Information Retrieval</em>, 7, 95–116. https://doi.org/10.1007/s13735-018-0154-2</p>
+<p>[A12] Hotho, A.; Jäschke, R.; Schmitz, C.; Stumme, G. (2006). <strong>Information Retrieval in Folksonomies: Search and Ranking.</strong> <em>ESWC 2006</em>. https://link.springer.com/chapter/10.1007/11762256_31</p>
+<p>[A13] Jäschke, R.; Marinho, L. B.; Hotho, A.; Schmidt-Thieme, L.; Stumme, G. (2007). <strong>Tag Recommendations in Folksonomies.</strong> <em>PKDD 2007</em>. https://link.springer.com/chapter/10.1007/978-3-540-74976-9_52</p>
+<p>[A14] Mika, P. (2005). <strong>Ontologies Are Us: A Unified Model of Social Networks and Semantics.</strong> <em>ISWC 2005</em>. https://link.springer.com/chapter/10.1007/11574620_38</p>
+<p>[A15] Cramer, H.; Evers, V.; Ramlal, S.; van Someren, M.; Rutledge, L.; Stash, N.; Aroyo, L.; Wielinga, B. (2008). <strong>The effects of transparency on trust in and acceptance of a content-based art recommender.</strong> <em>User Modeling and User-Adapted Interaction</em>. https://doi.org/10.1007/s11257-008-9051-3</p>
+<p>[A16] Olteanu, A.; Castillo, C.; Diaz, F.; Kıcıman, E. (2019). <strong>Social Data: Biases, Methodological Pitfalls, and Ethical Boundaries.</strong> <em>Frontiers in Big Data</em>, 2:13. https://doi.org/10.3389/fdata.2019.00013</p>
+<p>[A17] Dimitrov, S.; Zamal, F. A.; Piper, A.; Ruths, D. (2015). <strong>Goodreads versus Amazon: The Effect of Decoupling Book Reviewing and Book Selling.</strong> <em>Proceedings of ICWSM 2015</em>. https://ojs.aaai.org/index.php/ICWSM/article/view/14662</p>
+<p>[A18] Trott, B.; Naik, Y. (2012). <strong>Finding Good Reads on Goodreads: Readers Take RA into Their Own Hands.</strong> <em>Reference &amp; User Services Quarterly</em>, 51(4), 319–323. https://doi.org/10.5860/rusq.51n4.319</p>
+<p>[A19] DeZelar-Tiedman, C. (2011). <strong>Exploring User-Contributed Metadata's Potential to Enhance Access to Literary Works: Social Tagging in Academic Library Catalogs.</strong> <em>Library Resources &amp; Technical Services</em>, 55(4), 221–233. https://doi.org/10.5860/lrts.55n4.221</p>
+<p>[A20] Shahsavari, S.; Ebrahimzadeh, E.; Shahbazi, B.; Falahi, M.; Holur, P.; Bandari, R.; Tangherlini, T. R.; Roychowdhury, V. (2020). <strong>An Automated Pipeline for Character and Relationship Extraction from Readers' Literary Book Reviews on Goodreads.com.</strong> <em>WebSci 2020</em>. https://doi.org/10.1145/3394231.3397918</p>
+<p>[A21] Wenig, N. (2024). <strong>[New self obtained - level up!]: the impact of ludic elements on the agency and identity of LitRPG protagonists.</strong> University of Vienna Master's thesis. https://doi.org/10.25365/thesis.77524</p>
+<p>[A22] Caracciolo, M. (2023). <strong>Remediating Video Games in Contemporary Fiction: Literary Form and Intermedial Transfer.</strong> https://biblio.ugent.be/publication/8763602</p>
+<h4 id="_18"><a class="toclink" href="../../2026/08/24/progression-fantasy-litrpg-recommendation-method/#_18">平台、社区、目录与第一方来源</a></h4>
+<p>[P1] Andrew Rowe. <strong>Progression Fantasy – A New Subgenre Concept.</strong> 2019-02-26. https://andrewkrowe.wordpress.com/2019/02/26/progression-fantasy-a-new-subgenre-concept/</p>
+<p>[P2] Royal Road. <strong>Advanced Search.</strong> Accessed 2026-08-24. https://www.royalroad.com/fictions/search?advanced=True&amp;globalFilters=true</p>
+<p>[P3] Royal Road. <strong>Rising Stars.</strong> Accessed 2026-08-24. https://www.royalroad.com/fictions/rising-stars</p>
+<p>[P4] Royal Road. <strong>Best Rated.</strong> Accessed 2026-08-24. https://www.royalroad.com/fictions/best-rated</p>
+<p>[P5] Royal Road. <strong>Completed LitRPG search example.</strong> Accessed 2026-08-24. https://www.royalroad.com/fictions/search?globalFilters=true&amp;status=COMPLETED&amp;tagsAdd=litrpg</p>
+<p>[P6] r/ProgressionFantasy. <strong>New Weekly Reading Roundup.</strong> 2026-08-21. https://www.reddit.com/r/ProgressionFantasy/comments/1vuee6f/new_weekly_reading_roundup/</p>
+<p>[P7] r/ProgressionFantasy. <strong>Updated tierlist from all the (progression fantasy) webnovels I am reading at RR, recommendations welcome!</strong> 2026-08-20. https://www.reddit.com/r/ProgressionFantasy/comments/1vtcvmn/updated_tierlist_from_all_the_progression_fantasy/</p>
+<p>[P8] r/litrpg. <strong>I want litrpg/progression fantasy… just a little less “number go brrr”.</strong> 2026-08-01. https://www.reddit.com/r/litrpg/comments/1vc8htj/i_want_litrpgprogression_fantasy_just_a_little/</p>
+<p>[P9] r/litrpg. <strong>Anyone have any progression fantasy … recommendations that AREN'T a video game mechanic lit RPG?</strong> 2026-06-10. https://www.reddit.com/r/litrpg/comments/1u2g6wl/anyone_have_any_progression_fantasy_or_fantasy/</p>
+<p>[P10] r/litrpg. <strong>r/LitRPG Specific Recommender System.</strong> 2026-08-01. https://www.reddit.com/r/litrpg/comments/1vcrveo/rlitrpg_specific_recommender_system/</p>
+<p>[P11] Progression Fantasy &amp; LitRPG Database. <strong>Definitions.</strong> Accessed 2026-08-24. https://progressionfantasy.co.uk/definitions/</p>
+<p>[P12] Ascendant Reads. <strong>Progression Fantasy Atlas Data.</strong> Updated 2026-08-20; accessed 2026-08-24. https://ascendantreads.com/atlas-data</p>
+<p>[P13] LitRPG Toolkit. <strong>Browse books.</strong> Accessed 2026-08-24. https://litrpgtoolkit.com/books</p>
+<p>[P14] Wraithmarked Creative. <strong>Collections.</strong> Accessed 2026-08-24. https://wraithmarked.com/collections</p>
+<p>[P15] Aethon Books. <strong>Our Catalog.</strong> Accessed 2026-08-24. https://aethonbooks.com/catalog/</p>
+<p>[P16] Mountaindale Press. <strong>Catalog.</strong> Accessed 2026-08-24. https://www.mountaindalepress.store/pages/catalog</p>
+<p>[P17] Portal Books. <strong>Browse Our Books.</strong> Accessed 2026-08-24. https://portal-books.com/our-books/</p>
+<p>[P18] Shadow Alley Press. <strong>Library.</strong> Accessed 2026-08-24. https://shadowalleypress.com/library/</p>
+<p>[P19] Timeless Wind Publishing. <strong>Home / catalog discovery.</strong> Accessed 2026-08-24. https://www.timelesswind.com/</p>
+<p>[P20] Podium Entertainment. <strong>Browse Titles / LitRPG &amp; GameLit genre entry.</strong> Accessed 2026-08-24. https://podiumentertainment.com/titles</p>
+<p>[P21] Royal Guard Publishing. <strong>Publisher home and current eBook/audiobook discovery links.</strong> Accessed 2026-08-24. https://royalguardpublishing.com/</p>
+<p>[P22] The Legion Publishers. <strong>Contact and Submissions.</strong> Accessed 2026-08-24. https://www.legionpublishers.com/contact-and-submissions</p>
+<p>[P23] Royal Road. <strong>Trending.</strong> Accessed 2026-08-24. https://www.royalroad.com/fictions/trending?genre=fantasy</p>
+<p>[P24] r/ProgressionFantasy. <strong>What qualifies as progression fantasy?</strong> 2026-04-02. https://www.reddit.com/r/ProgressionFantasy/comments/1sa9kur/what_qualifies_as_progression_fantasy/</p>
+    
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025–2026 AutoArchive contributors
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/AutoArchive/webNR" target="_blank" rel="noopener" title="WebNR source code" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://app.webnovel.win/" target="_blank" rel="noopener" title="Open WebNR reader" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 152a88 88 0 1 0 0-176 88 88 0 1 0 0 176m0 298.7V301.4c16.3-6.8 32.9-13.7 49.7-20.7 39-16.2 80.8-24.6 123.1-24.6H448v160h-19.2c-59.1 0-117.7 11.7-172.3 34.5l-.5.2zm0-218.7-25.1-10.5C184.1 202 133.9 192 83.2 192H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h35.2c50.7 0 100.9 10 147.7 29.5l12.8 5.3c7.9 3.3 16.7 3.3 24.6 0l12.8-5.3c46.8-19.5 97-29.5 147.7-29.5H464c26.5 0 48-21.5 48-48V240c0-26.5-21.5-48-48-48h-35.2c-50.7 0-100.9 10-147.7 29.5z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../js/timeago.min.js"></script>
+      
+        <script src="../../../js/timeago_mkdocs_material.js"></script>
+      
+    
+  </body>
+</html>
