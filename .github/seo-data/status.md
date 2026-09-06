@@ -8,7 +8,7 @@
 - Current application verification target: `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c`
 - Last successful attributable documentation deployment: `85342ba1f37b9b2f0d341b146378d13f5412c944`
 - Current documentation mirror verification target: `85342ba1f37b9b2f0d341b146378d13f5412c944`
-- Last successful canonical Cloudflare documentation deployment: `85342ba1f37b9b2f0d341b146378d13f5412c944`
+- Last successful canonical Cloudflare documentation deployment: `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c`
 - Current canonical documentation verification target: `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c`
 - Latest application deployment artifact branch commit: `c426e6d2166327e4b616b2162ef40570dc2af7a1`
 - Latest documentation mirror artifact branch commit: `17f73d915dd1e0e12d6a6985b3014fcde539c405`
@@ -17,7 +17,7 @@
 - Working documentation build mirror URL: `https://autoarchive.github.io/webNR/`
 - Reader public-site target: exact source commit `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c` from pull request #145. Application workflow run `34047678054` built and validated the static reader, published `app-pages` artifact commit `c426e6d2166327e4b616b2162ef40570dc2af7a1`, and completed its unchanged exact-production check successfully. The deployed artifact `build.json` names the same source commit and contains all three Open Medieval French direct-TXT entries.
 - Documentation-mirror target: exact source commit `85342ba1f37b9b2f0d341b146378d13f5412c944`, artifact commit `17f73d915dd1e0e12d6a6985b3014fcde539c405`. Pull request #145 is source-only, so the GitHub Pages documentation mirror did not rebuild.
-- Canonical Cloudflare documentation: the last already-proven identity remains `85342ba1f37b9b2f0d341b146378d13f5412c944`; the current verification target is `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c`. The unchanged Production evidence gate must prove the independent Cloudflare rebuild before the last-successful label is advanced.
+- Canonical Cloudflare documentation target: exact source commit `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c`. Preliminary closeout Quality run `34048125384` directly verified the independent canonical build through the unchanged Production evidence job before this last-successful label was advanced. The full four-job Quality workflow must run again on the finalized metadata head before merge.
 - Pull-request Quality run `34047508228` for #145 completed Web quality, Documentation quality, Production evidence, and Chromium user journeys successfully before exact-head squash merge. Post-merge Quality run `34047677992` also completed all four jobs successfully.
 - Current skill submodule: `f42128a3f05c73cf10c786a2711c488bb3a14839`, exactly matching the current `AutoArchive/seo-skill` default branch during the 2026-09-06 cycle.
 - Current analytics export state: the configured Google Drive folder is accessible, but the 2026-09-06 direct non-trashed child listing exposes no matching GA4 or Search Console exports; missing provider data is unavailable rather than zero.
@@ -47,7 +47,7 @@
 
 ## Active focus
 
-1. Preserve independently verified production identities through the unchanged public-evidence gate: application target `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c`, documentation mirror `85342ba1f37b9b2f0d341b146378d13f5412c944`, and canonical documentation target `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c`. Advance the canonical last-successful label only after the gate proves that target.
+1. Preserve the independently verified production identities through the unchanged public-evidence gate: application `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c`, documentation mirror `85342ba1f37b9b2f0d341b146378d13f5412c944`, and canonical documentation `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c` unless exact attributable evidence later proves a different current identity.
 2. Preserve all 25 maintained source families and continue rotating health checks; remove, downgrade, or replace only reproducible failures rather than manufacturing source churn.
 3. Keep Open Medieval French bounded to the three audited commit-pinned files and preserve upstream CC BY-NC-SA 4.0 provenance/noncommercial/share-alike language. Expand only after file-level review.
 4. Keep Alice & Books discovery-only under its current site-access terms and DBNL discovery-only until a real browser CORS fixture proves direct-TXT transport.
