@@ -1,0 +1,25 @@
+{# Reader-first blog index card. Keep full post bodies on their stable URLs. #}
+<article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="{{ post.config.date.created }}">{{- post.config.date.created | date -}}</time>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2><a href="{{ post.url | url }}">{{ post.title }}</a></h2>
+    {% if post.config.description %}
+      <p>{{ post.config.description }}</p>
+    {% elif post.config._description %}
+      <p>{{ post.config._description }}</p>
+    {% else %}
+      <p>打开文章查看完整内容、方法与来源。</p>
+    {% endif %}
+    <nav class="md-post__action">
+      <a href="{{ post.url | url }}">阅读全文</a>
+    </nav>
+  </div>
+</article>
