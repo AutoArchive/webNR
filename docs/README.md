@@ -52,6 +52,7 @@
 <h3>🌐 Sources & Compatibility 书源与兼容</h3>
 
 - Curated discovery and direct-TXT starters where verified<br/>提供经验证的发现入口与 direct-TXT 来源
+- Legado 用户可使用已经测试并版本化记录的兼容能力；WebNR 不是 Legado 官方网页端
 - Versioned Legado compatibility work where tested<br/>对已测试能力提供版本化 Legado 兼容说明
 - Source definitions do not grant a content license<br/>书源定义本身不代表内容授权
 - No bypass of login, payment, DRM or access controls<br/>不绕过登录、付费、DRM 或访问控制
