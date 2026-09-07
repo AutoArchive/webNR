@@ -48,7 +48,11 @@ rm -f site/CNAME
 
 test -f site/index.html
 test -f site/build.json
+test -f site/_redirects
 grep -Fq "\"commit\": \"${build_sha}\"" site/build.json
+grep -Fxq '/blog/2025/02/27/7-web-novel-readers-compared-open-source-vs-commercial--2024-technical-deep-dive/ /blog/2025/02/27/archive--web-novel-reader-comparison-february-2025-snapshot/ 301' site/_redirects
+grep -Fxq '/blog/archive/* /blog/ 301' site/_redirects
+grep -Fxq '/blog/category/* /blog/ 301' site/_redirects
 
 # Keep the documentation analytics contract aligned with the reader: one GA4
 # destination, explicit full URL/query reporting, and disabled Google/ad

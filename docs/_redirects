@@ -1,0 +1,4 @@
+# Preserve public URLs retired from navigation by the reader-first Blog cleanup.
+/blog/2025/02/27/7-web-novel-readers-compared-open-source-vs-commercial--2024-technical-deep-dive/ /blog/2025/02/27/archive--web-novel-reader-comparison-february-2025-snapshot/ 301
+/blog/archive/* /blog/ 301
+/blog/category/* /blog/ 301
