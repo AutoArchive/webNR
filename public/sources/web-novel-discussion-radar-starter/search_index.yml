@@ -123,3 +123,39 @@ scribble-hub-discoverability-202608:
   region: Global / English
   page_url: https://forum.scribblehub.com/threads/visibility-vs-recommendations-vs-rankings-which-platforms-approach-to-promoting-your-fiction-do-you-prefer.26416/
   license: Link-only-WebNR-editorial
+
+spacebattles-story-recommendations-202609:
+  title: SpaceBattles 故事推荐与 Fic Search — 2026 年 9 月
+  author: WebNR editorial
+  description: WebNR 记录的 SpaceBattles Story Ideas & Recommendations 第一方公开入口，适合 story recommendations、reviews、requests、fic search 与按 fandom 继续细分的讨论。
+  categories:
+    - Community discussion
+    - Fanfiction discovery
+  tags:
+    - SpaceBattles
+    - recommendations
+    - fic search
+    - fanfiction
+  date: '2026-09-07'
+  archived date: '2026-09-07'
+  region: Global / English
+  page_url: https://forums.spacebattles.com/forums/story-ideas-recommendations.63/
+  license: Link-only-WebNR-editorial
+
+rational-weekly-recommendations-20260907:
+  title: r/rational 周一请求与推荐线程 — 2026-09-07
+  author: WebNR editorial
+  description: WebNR 记录的当周 r/rational 第一方公开推荐线程，适合 rational / rational-adjacent、web serial、fanfiction 与其他窄条件的找书请求。
+  categories:
+    - Community discussion
+    - Reader recommendations
+  tags:
+    - r/rational
+    - recommendations
+    - web serial
+    - Reddit
+  date: '2026-09-07'
+  archived date: '2026-09-07'
+  region: Global / English
+  page_url: https://www.reddit.com/r/rational/comments/1w9syy3/d_monday_request_and_recommendation_thread/
+  license: Link-only-WebNR-editorial
