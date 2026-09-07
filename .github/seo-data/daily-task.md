@@ -86,6 +86,27 @@ Every public asset needs a stable descriptive URL, direct answer, verification
 date, method, internal links, canonical, sitemap entry, static indexable output,
 and exact production verification.
 
+#### Public presentation guardrails
+
+- `docs/README.md` is the compact public WebNR product landing page. Preserve its
+  recognizable product-first composition: short bilingual introduction, primary
+  reader/source/blog actions, screenshot gallery, and concise feature overview.
+  Do not turn the root page into an operations log, analytics report, source-audit
+  ledger, compatibility changelog, or long technical manual.
+- Detailed privacy disclosures, analytics behavior, compatibility notes, source
+  audits, troubleshooting, and developer material must remain truthful but belong
+  in concise expandable sections or dedicated pages rather than dominating the
+  landing page.
+- Blog publication must not expand the site's top-level navigation with per-topic
+  or per-post category sprawl. Keep blog categories out of global navigation and
+  prefer article metadata, search, archives, and contextual internal links for
+  discovery.
+- Do not replace or substantially redesign the established landing/blog shell as a
+  routine SEO or content change. A deliberate visual or information-architecture
+  redesign requires an explicit owner instruction. New content should fit the
+  existing shell instead of progressively accumulating navigation or homepage
+  sections.
+
 ### 5. Verify analytics and production
 
 Use `site.md` and `$ensure-site-analytics`. Both production sites must retain the
