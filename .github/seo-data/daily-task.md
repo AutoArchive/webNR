@@ -97,10 +97,25 @@ and exact production verification.
   audits, troubleshooting, and developer material must remain truthful but belong
   in concise expandable sections or dedicated pages rather than dominating the
   landing page.
+- `docs/blog/index.md` is a curated reader hub, not a chronological operations
+  dashboard. Keep a small number of durable reader routes (starting/compatibility,
+  legal/free reading, web-fiction discovery, community/recommendations) and make
+  new posts fit one of those routes before publishing them.
+- Blog index cards must remain concise title + description summaries. Do not render
+  complete long posts, references, source-audit tables, category clouds, archive
+  trees, or internal status text into the Blog listing.
+- Every reader-facing article starts with a direct answer or decision summary,
+  followed by the minimum evidence needed to act. Put methodology and references
+  after the useful answer. A source-health article may explain user-visible
+  capability states, but daily candidate sweeps, rejected-candidate ledgers, CI
+  runs, deployment hashes, analytics availability notes, PR closeout details, and
+  future operating queues belong in `.github/seo-data/**`, not in Blog prose.
+- Historical posts containing superseded product claims must be rewritten as
+  clearly labeled archives or updated to current evidence. Never leave speculative
+  roadmap language searchable as if it described shipping WebNR behavior.
 - Blog publication must not expand the site's top-level navigation with per-topic
-  or per-post category sprawl. Keep blog categories out of global navigation and
-  prefer article metadata, search, archives, and contextual internal links for
-  discovery.
+  or per-post category/archive sprawl. Prefer the curated Blog hub, article
+  metadata, site search, and contextual internal links for discovery.
 - Do not replace or substantially redesign the established landing/blog shell as a
   routine SEO or content change. A deliberate visual or information-architecture
   redesign requires an explicit owner instruction. New content should fit the
