@@ -115,7 +115,7 @@ WebNR 的 Discussion Radar 只保存 WebNR 自写的发现标签和第一方公�
 
 ## 和 8 月 Radar 怎么配合使用
 
-如果你还没确定应该写哪些筛选条件，可以先看 [2026 年 8 月英文网文读者在聊什么](../2026/08/28/web-novel-discussion-radar-2026-08/)。那篇文章总结了 completed、媒介/平台、stat blocks、slice of life、长尾发现和 AI 披露等常见条件；本文解决下一步问题：**条件写好了，到哪里问最合适。**
+如果你还没确定应该写哪些筛选条件，可以先看 [2026 年 8 月英文网文读者在聊什么](https://www.webnovel.win/blog/2026/08/28/web-novel-discussion-radar-2026-08/)。那篇文章总结了 completed、媒介/平台、stat blocks、slice of life、长尾发现和 AI 披露等常见条件；本文解决下一步问题：**条件写好了，到哪里问最合适。**
 
 ## 验证方法与边界
 
