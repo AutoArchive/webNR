@@ -3,22 +3,22 @@
 ## Current state
 
 - Last merged product/source change: pull request #145, squash merge `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c`
-- Latest merged reader-content change: pull request #143, squash merge `85342ba1f37b9b2f0d341b146378d13f5412c944`
-- Last successful attributable application deployment: `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c`
-- Current application verification target: `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c`
-- Last successful attributable documentation deployment: `85342ba1f37b9b2f0d341b146378d13f5412c944`
-- Current documentation mirror verification target: `85342ba1f37b9b2f0d341b146378d13f5412c944`
-- Last successful canonical Cloudflare documentation deployment: `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c`
-- Current canonical documentation verification target: `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c`
-- Latest application deployment artifact branch commit: `c426e6d2166327e4b616b2162ef40570dc2af7a1`
-- Latest documentation mirror artifact branch commit: `17f73d915dd1e0e12d6a6985b3014fcde539c405`
+- Latest merged reader-content change: pull request #147, squash merge `0359bae0d3c8dc1a1725975faf294b81bc123620`
+- Last successful attributable application deployment: `0359bae0d3c8dc1a1725975faf294b81bc123620`
+- Current application verification target: `0359bae0d3c8dc1a1725975faf294b81bc123620`
+- Last successful attributable documentation deployment: `0359bae0d3c8dc1a1725975faf294b81bc123620`
+- Current documentation mirror verification target: `0359bae0d3c8dc1a1725975faf294b81bc123620`
+- Last successful canonical Cloudflare documentation deployment: `0359bae0d3c8dc1a1725975faf294b81bc123620`
+- Current canonical documentation verification target: `0359bae0d3c8dc1a1725975faf294b81bc123620`
+- Latest application deployment artifact branch commit: `fdf00ad236feaaa5220622d3a4087f2f653b9e71`
+- Latest documentation mirror artifact branch commit: `cd94f6aa92ee4b07be16def647dc0ad19ff0fcf8`
 - Canonical public documentation and editorial URL: `https://www.webnovel.win/`
 - Working reader URL: `https://app.webnovel.win/`
 - Working documentation build mirror URL: `https://autoarchive.github.io/webNR/`
-- Reader public-site target: exact source commit `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c` from pull request #145. Application workflow run `34047678054` built and validated the static reader, published `app-pages` artifact commit `c426e6d2166327e4b616b2162ef40570dc2af7a1`, and completed its unchanged exact-production check successfully. The deployed artifact `build.json` names the same source commit and contains all three Open Medieval French direct-TXT entries.
-- Documentation-mirror target: exact source commit `85342ba1f37b9b2f0d341b146378d13f5412c944`, artifact commit `17f73d915dd1e0e12d6a6985b3014fcde539c405`. Pull request #145 is source-only, so the GitHub Pages documentation mirror did not rebuild.
-- Canonical Cloudflare documentation target: exact source commit `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c`. Preliminary closeout Quality run `34048125384` directly verified the independent canonical build through the unchanged Production evidence job before this last-successful label was advanced. The full four-job Quality workflow must run again on the finalized metadata head before merge.
-- Pull-request Quality run `34047508228` for #145 completed Web quality, Documentation quality, Production evidence, and Chromium user journeys successfully before exact-head squash merge. Post-merge Quality run `34047677992` also completed all four jobs successfully.
+- Reader public-site target: exact source commit `0359bae0d3c8dc1a1725975faf294b81bc123620` from pull request #147. Application workflow run `34074127475` completed successfully and published `app-pages` artifact commit `fdf00ad236feaaa5220622d3a4087f2f653b9e71`; the deployed `build.json` names the same source commit. Pull request #147 does not change reader runtime/source behavior, so the rebuild preserves the previously reviewed application/source contracts while aligning the public artifact with the homepage/blog repair commit.
+- Documentation-mirror target: exact source commit `0359bae0d3c8dc1a1725975faf294b81bc123620`, artifact commit `cd94f6aa92ee4b07be16def647dc0ad19ff0fcf8`. Documentation workflow run `34074127481` built, validated, published, and verified the generated mirror successfully.
+- Canonical Cloudflare documentation target: exact source commit `0359bae0d3c8dc1a1725975faf294b81bc123620`. Documentation workflow run `34074127481` completed its `Wait for legacy Pages mirror and verify canonical output` step successfully, independently confirming the canonical public documentation after the #147 presentation repair.
+- Pull-request Quality run `34073977510` for #147 completed Web quality, Documentation quality, Production evidence, and Chromium user journeys successfully before exact-head squash merge. Post-merge Quality run `34074127477` also completed successfully, and the exact application/documentation publication workflows above finished successfully.
 - Current skill submodule: `f42128a3f05c73cf10c786a2711c488bb3a14839`, exactly matching the current `AutoArchive/seo-skill` default branch during the 2026-09-06 cycle.
 - Current analytics export state: the configured Google Drive folder is accessible, but the 2026-09-06 direct non-trashed child listing exposes no matching GA4 or Search Console exports; missing provider data is unavailable rather than zero.
 - Current Cloudflare traffic-analytics state: a Cloudflare provider request-analytics connector exposing the configured zone is not available in the 2026-09-06 operating environment. Request metrics are unavailable rather than zero; exact build/deployment evidence remains covered by repository production workflows.
@@ -26,6 +26,7 @@
 ## Current signals
 
 - WebNR remains a local-first browser TXT reader. Imported book content and reading progress stay in the current browser profile; the reader and documentation site intentionally send page views to the single GA4 destination `G-DGH8HNQKE4` using full `page_location: window.location.href` and query-bearing `page_path: window.location.pathname + window.location.search`. Google signals and ad-personalization signals remain disabled.
+- Pull request #147 restores the public documentation root to the compact product-first WebNR landing structure, turns `/blog/` into a curated reader hub with concise post cards, disables archive/category navigation sprawl, rewrites the most confusing reader posts, and adds durable presentation guardrails. Stable public article URLs remain in place; the repair does not delete maintained source families or roll back reader/runtime capability.
 - Pull request #145 admits **Open Medieval French Direct TXT Starter** as the 25th maintained source family. It exposes three commit-pinned raw TXT files — `Cliges.txt`, `Yvain.txt`, and `PercevalKu.txt` — from `OpenMedFr/texts` commit `0d3112783556775fa30ab4bdac84a4c383cc0217`. The upstream repository publishes under CC BY-NC-SA 4.0 and uses good-faith rights/takedown language for underlying editions. WebNR preserves that attribution/noncommercial/share-alike boundary, does not claim blanket rights over every critical edition, and does not mirror, crawl, poll, proxy, bulk clone, use credentials, or silently substitute other copies.
 - The 2026-09-06 candidate pass also screened NeoLatDraCor, UW EMDrama, Digital Parisian Stage Corpus, and Corpus-DB. NeoLatDraCor is a strong CC0 TEI candidate but waits on deterministic TEI-to-reading-text fixtures; EMDrama is CC0 but metadata joining and incremental reader value are not yet strong enough for admission; Digital Parisian Stage is promising but requires exact cleaned-file/runtime/attribution review; Corpus-DB substantially duplicates Gutenberg/GITenberg and its REST API remains incomplete.
 - Rotating health checks on GITenberg direct TXT, CLiGS Spanish-American direct TXT, and Alice & Books discovery passed at their current admitted capability levels. No reproducible failure required removal or downgrade.
@@ -47,7 +48,7 @@
 
 ## Active focus
 
-1. Preserve the independently verified production identities through the unchanged public-evidence gate: application `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c`, documentation mirror `85342ba1f37b9b2f0d341b146378d13f5412c944`, and canonical documentation `b2f317c70dfd4bad8e195dcd75f97a7ddfbbb45c` unless exact attributable evidence later proves a different current identity.
+1. Preserve the independently verified production identities through the unchanged public-evidence gate: application `0359bae0d3c8dc1a1725975faf294b81bc123620`, documentation mirror `0359bae0d3c8dc1a1725975faf294b81bc123620`, and canonical documentation `0359bae0d3c8dc1a1725975faf294b81bc123620` unless exact attributable evidence later proves a different current identity.
 2. Preserve all 25 maintained source families and continue rotating health checks; remove, downgrade, or replace only reproducible failures rather than manufacturing source churn.
 3. Keep Open Medieval French bounded to the three audited commit-pinned files and preserve upstream CC BY-NC-SA 4.0 provenance/noncommercial/share-alike language. Expand only after file-level review.
 4. Keep Alice & Books discovery-only under its current site-access terms and DBNL discovery-only until a real browser CORS fixture proves direct-TXT transport.
