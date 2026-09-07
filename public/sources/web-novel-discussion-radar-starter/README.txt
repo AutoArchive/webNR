@@ -35,8 +35,8 @@ Screening and source-specific audit
    Access/runtime: the board is publicly readable over HTTPS without a WebNR credential. The WebNR source does not request SpaceBattles during synchronization, does not use an account or API, and does not depend on forum pagination, filters, cookies, JavaScript, or rate-limit behavior. A reader choosing the result navigates to SpaceBattles under its own controls.
    Update/deletion: the 2026-09-07 audit verified the public board and current first-party terms. A moved, removed, or access-restricted destination will be corrected or downgraded through normal review rather than followed by a crawler or silently replaced.
 
-Candidates screened on 2026-09-07 but not admitted
----------------------------------------------------
+Candidate routes screened on 2026-09-07
+---------------------------------------
 - SpaceBattles Creative Library — useful first-party browsing surface for stories and quests, and current staff documentation describes it as a content-discovery interface. It is not added separately in this refresh because Story Ideas & Recommendations more directly answers the current reader task and avoids duplicating two routes from the same platform before usage value is demonstrated.
 - Sufficient Velocity Story Library — first-party public browsing surface for user-written stories. Deferred because the current source refresh is about recommendation/request routes; a later source can admit it only if the catalog role is distinct from existing fiction/discovery sources and its link-only reader value is demonstrated.
 - Sufficient Velocity Creative Discussion & Worldbuilding — public first-party creative discussion area. Deferred because its current purpose is broader creation/worldbuilding discussion rather than a dedicated reader recommendation queue.
