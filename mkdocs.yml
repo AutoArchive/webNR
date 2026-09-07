@@ -49,8 +49,10 @@ plugins:
   - search
   - privacy
   - blog:
+      archive: false
       categories: false
       post_excerpt_max_categories: 0
+      post_readtime: false
       pagination_per_page: 6
   - rss:
       match_path: "blog/posts/.*"
