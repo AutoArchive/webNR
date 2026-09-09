@@ -1,0 +1,79 @@
+name: Record security production identity
+
+on:
+  push:
+    branches:
+      - seo/community-routes-20260909
+
+permissions:
+  contents: write
+
+jobs:
+  record:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout operating branch
+        uses: actions/checkout@v5
+        with:
+          ref: seo/community-routes-20260909
+          fetch-depth: 0
+      - name: Reconcile current application production identity
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('.github/seo-data/status.md')
+          text = path.read_text()
+          text = text.replace(
+              '- Last successful attributable application deployment: `aeb0db00d41ba62cd9dd0e35e0bbc0370100b799`',
+              '- Last successful attributable application deployment: `a41d99e872f72467c4186bd17a5871623975d4a2`',
+          )
+          text = text.replace(
+              '- Current application verification target: `aeb0db00d41ba62cd9dd0e35e0bbc0370100b799`',
+              '- Current application verification target: `a41d99e872f72467c4186bd17a5871623975d4a2`',
+          )
+          text = text.replace(
+              '- Latest application deployment artifact branch commit: `7272bde863944999563b01f02d76347ef9ab2dd2`',
+              '- Latest application deployment artifact branch commit: `4591417820083f0a02a5d067d24f18568bbe6bac`',
+          )
+          lines = text.splitlines()
+          for i, line in enumerate(lines):
+              if line.startswith('- Reader public-site target:'):
+                  lines[i] = ('- Reader public-site target: exact source commit `a41d99e872f72467c4186bd17a5871623975d4a2` from pull request #157. '
+                              'Application workflow run `34382209619` completed successfully, published `app-pages` artifact commit '
+                              '`4591417820083f0a02a5d067d24f18568bbe6bac`, and its exact-production verifier completed successfully. '
+                              '`app-pages/build.json` names source commit `a41d99e872f72467c4186bd17a5871623975d4a2`, build time '
+                              '`2026-09-09T17:19:55.840Z`, and `source: github-actions`; the security repair changed dependency manifests/lock state '
+                              'without removing the reviewed reader or maintained-source output.')
+                  break
+          else:
+              raise SystemExit('Reader public-site target line not found')
+
+          marker = '- Pull request #154 admitted `Bokselskap Norwegian Literature Discovery Starter` as the 26th maintained source family.'
+          security = ('- Pull request #157 repaired the September 9 dependency-audit regression: final reviewed head '
+                      '`8cb3b218fa79cffdc035dbf7113abdd93bde2201` passed Quality run `34381941437`, exact-head squash merge '
+                      '`a41d99e872f72467c4186bd17a5871623975d4a2` landed on `main`, post-merge Quality run `34382209631` passed all '
+                      'four expected jobs, and application deployment run `34382209619` verified the exact production commit. '
+                      'The final change was limited to package manifests/lock state for patched `postcss-selector-parser`, Next.js, '
+                      '`eslint-config-next`, and direct/nested `js-yaml` paths.')
+          if security not in lines:
+              idx = next((i for i, line in enumerate(lines) if line.startswith(marker)), None)
+              if idx is None:
+                  raise SystemExit('Insertion marker not found')
+              lines.insert(idx, security)
+
+          text = '\n'.join(lines) + '\n'
+          path.write_text(text)
+          PY
+      - name: Commit reconciled status and remove helper
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/record-security-production-20260909.yml
+          git add .github/seo-data/status.md
+          git commit -m 'ops: record security production identity'
+          git push origin HEAD:seo/community-routes-20260909
