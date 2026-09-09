@@ -1,0 +1,37 @@
+name: Repair js-yaml lockfile
+
+on:
+  push:
+    branches:
+      - fix/npm-audit-postcss-selector-20260909
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repair branch
+        uses: actions/checkout@v5
+        with:
+          ref: fix/npm-audit-postcss-selector-20260909
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 20
+          cache: npm
+      - name: Regenerate patched js-yaml lockfile
+        run: npm install --package-lock-only --ignore-scripts 'js-yaml@^4.3.2'
+      - name: Commit regenerated manifests and remove helper
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/repair-js-yaml-lock-20260909.yml
+          git add package.json package-lock.json
+          git commit -m 'fix: update js-yaml to patched release'
+          git push origin HEAD:fix/npm-audit-postcss-selector-20260909
