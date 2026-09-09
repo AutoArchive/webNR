@@ -146,7 +146,18 @@ jobs:
           done
           exit 1
       - name: Install Chromium for Playwright
-        run: playwright install --with-deps chromium
+        run: |
+          set -euo pipefail
+          # Playwright's distro dependencies do not require the preinstalled
+          # Google Chrome apt source. Disable only that unrelated runner source
+          # so a transient Chrome repository metadata mismatch cannot block E2E.
+          for source_file in /etc/apt/sources.list.d/*; do
+            [ -f "${source_file}" ] || continue
+            if grep -q 'dl.google.com/linux/chrome' "${source_file}" 2>/dev/null; then
+              sudo rm -f "${source_file}"
+            fi
+          done
+          playwright install --with-deps chromium
       - name: Build production application
         run: npm run build
       - name: Run browser user journeys
