@@ -1,0 +1,31 @@
+name: Generate Next lockfile 20260909
+
+on:
+  push:
+    branches:
+      - fix/npm-audit-postcss-selector-20260909
+
+permissions:
+  contents: read
+
+jobs:
+  lockfile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Generate patched lockfile
+        run: npm install --package-lock-only --ignore-scripts --save-exact next@16.3.3 eslint-config-next@16.3.3
+      - name: Upload generated files
+        uses: actions/upload-artifact@v4
+        with:
+          name: next-16.3.3-lockfiles
+          path: |
+            package.json
+            package-lock.json
+          if-no-files-found: error
+          retention-days: 1
