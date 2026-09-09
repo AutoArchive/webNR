@@ -1,0 +1,44 @@
+name: Repair nested js-yaml lock path
+
+on:
+  push:
+    branches:
+      - fix/npm-audit-postcss-selector-20260909
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repair branch
+        uses: actions/checkout@v5
+        with:
+          ref: fix/npm-audit-postcss-selector-20260909
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 20
+          cache: npm
+      - name: Refresh all js-yaml lock paths
+        run: npm update js-yaml --package-lock-only --ignore-scripts
+      - name: Validate regenerated dependency tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm ci
+          npm audit --json > "${RUNNER_TEMP}/npm-audit.json" || true
+          node scripts/validate-npm-audit.mjs "${RUNNER_TEMP}/npm-audit.json"
+      - name: Commit validated lockfile and remove helper
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/repair-nested-js-yaml-20260909.yml
+          git add package.json package-lock.json
+          git commit -m 'fix: refresh nested js-yaml dependency'
+          git push origin HEAD:fix/npm-audit-postcss-selector-20260909
