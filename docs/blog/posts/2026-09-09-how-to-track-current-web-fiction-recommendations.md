@@ -1,6 +1,6 @@
 ---
 title: 英文网文这周有什么值得读？用月度新书表、Reading Roundup 和每日推荐帖找下一本
- date: 2026-09-09
+date: 2026-09-09
 slug: how-to-track-current-web-fiction-recommendations
 summary: 想找“这个月刚出的书”“这周大家正在读什么”或“按我的条件求一本”，应该看三种完全不同的社区入口。本文用 2026 年 9 月的 LitRPG、Progression Fantasy、r/Fantasy 与 Royal Road 公开页面给出一条可直接照做的路线。
 description: 2026 年 9 月实测 r/litrpg 月度新书表、r/ProgressionFantasy 发布日历与 Weekly Reading Roundup、r/Fantasy 每日推荐帖和 Royal Road Recommendations，说明怎样区分发布日期、读者短评与个性化求书，并给出最省时间的使用顺序。
