@@ -5,7 +5,7 @@ Purpose
 -------
 This WebNR-owned source is a monthly, reader-facing directory of public discussion routes for web-novel discovery. It is designed to answer “where are readers discussing this kind of recommendation question?” while keeping community posts, comments, account state, story text, ratings, votes, and platform-owned metadata on the originating service.
 
-Capability admitted on 2026-08-28; refreshed 2026-09-09
+Capability admitted on 2026-08-28; refreshed 2026-09-10
 -------------------------------------------------------
 - Native WebNR search_index.yml served from app.webnovel.win.
 - Ten WebNR-authored catalog entries covering eight screened community/collection candidates: Royal Road Recommendations, r/ProgressionFantasy recommendation threads, r/litrpg monthly/recommendation threads, r/noveltranslations monthly recommendations, Scribble Hub Forum discoverability discussions, SpaceBattles Story Ideas & Recommendations, r/rational weekly request/recommendation threads, and r/Fantasy daily recommendation threads.
@@ -23,7 +23,7 @@ Screening and source-specific audit
 2. Reddit r/ProgressionFantasy, r/litrpg, r/noveltranslations, r/rational, and r/Fantasy public discussion collections — admitted at bounded link-only editorial capability.
    Origin: public Reddit community pages, Reddit User Agreement effective 2026-07-01, and Reddit Data API Terms last revised 2026-07-20. The current source does not call Reddit APIs and does not register or impersonate an API client. It stores WebNR-authored labels and links to public threads only.
    Access/runtime: no Reddit request occurs when WebNR synchronizes the source. Readers choosing a result navigate to Reddit under Reddit’s own access controls. No pagination, rate-limit, OAuth, cookie, account, moderation, deletion, or API-response semantics are claimed by WebNR.
-   Update/deletion: each sampled route is date-stamped. The 2026-09-07 refresh added that day’s r/rational Monday Request and Recommendation Thread. The 2026-09-09 refresh added that day’s r/Fantasy Daily Recommendations and Simple Questions Thread after public first-party verification. Future radar cycles can add new public routes through review while preserving earlier provenance in repository history.
+   Update/deletion: each sampled route is date-stamped. The 2026-09-07 refresh added that day’s r/rational Monday Request and Recommendation Thread. The 2026-09-09 refresh added that day’s r/Fantasy Daily Recommendations and Simple Questions Thread after public first-party verification. The 2026-09-10 refresh replaced the August representative r/noveltranslations monthly recommendation route with the current 2026-09-09 thread rather than accumulating duplicate monthly rows. Future radar cycles can refresh or add public routes through review while preserving earlier provenance in repository history.
 
 3. Scribble Hub Forum discoverability discussion — admitted at bounded link-only editorial capability.
    Origin: Scribble Hub first-party Terms of Service updated 2026-06-29 and its public forum. The Terms describe user content as user-posted material and grant Scribble Hub service-scoped rights to host/display/distribute it. WebNR therefore keeps the discussion itself on Scribble Hub and stores only a WebNR-authored discovery label and first-party URL.
@@ -40,6 +40,12 @@ Screening and source-specific audit
    Reader value: this route is intentionally broader than WebNR-specific or Progression Fantasy communities. It provides a useful cross-platform fallback when a reader’s request spans web serials, ebooks, audiobooks, series, and traditionally published fantasy rather than one source platform.
    Access/runtime: the admitted WebNR capability is one date-stamped first-party link plus WebNR-authored metadata. WebNR makes no Reddit API request, copies no post/comment/user data, and makes no claim about vote counts, community consensus, or recommendation quality.
    Update/deletion: daily threads are ephemeral by design, so the catalog records the exact 2026-09-09 observed thread and date. Later radar refreshes may add or replace a current representative route through normal review without inventing a permanent API or feed.
+
+6. r/noveltranslations Monthly Recommendation Thread — current representative refreshed on 2026-09-10 at bounded link-only editorial capability.
+   Origin: the first-party 2026-09-09 monthly thread concentrates recommendation requests and direct replies, asks readers to describe the kind of book sought, and explicitly disallows requests for aggregator or pirate sites. The same current Reddit User Agreement and Data API Terms boundary applies.
+   Reader value: this is the current monthly representative for translated-novel recommendation requests already covered by the Discussion Radar. Refreshing the representative thread improves freshness without creating one catalog row for every month.
+   Access/runtime: WebNR stores only the current first-party public URL and WebNR-authored metadata. No Reddit API, login, post copy, user data, vote data, comments, crawler, or background synchronization is used.
+   Update/deletion: the prior August representative remains recoverable in Git history. Later monthly refreshes replace the representative only after a current first-party check; no redirect or silently substituted copy is assumed.
 
 Candidate routes screened on 2026-09-07
 ---------------------------------------
@@ -58,6 +64,15 @@ Five route/collection candidates not previously recorded under these exact curre
 - Royal Road Top 3 recommendations [Sept 2026] — screened as a current public first-party forum thread. Deferred because the maintained Royal Road Recommendations board already covers this reader task and preserves a more stable route than one personal favorites thread.
 - Royal Road September Thread - Promote your Story — screened as a current public first-party promotion thread. Rejected for this reader-recommendation directory because its primary purpose is creator self-promotion rather than reader requests or independent recommendation discussion.
 
+Candidate routes screened on 2026-09-10
+---------------------------------------
+Five route/collection candidates not previously recorded under these exact September 10 identities were checked against repository history:
+- r/noveltranslations Monthly Recommendation Thread — September 09, 2026 — fully audited and integrated as a freshness replacement for the August representative. It keeps the existing translated-fiction recommendation task current without increasing the catalog row count.
+- Royal Road “I forgot the title...” — fully audited as a stable public first-party subforum with the explicit purpose of helping readers identify stories they previously read. Royal Road Terms last updated 2026-09-01 permit ordinary reading without signup while restricting unauthorized copying, scraping, crawling, bots, and competitive use. It passes a bounded link-only capability but is deferred because adding this distinct task is a taxonomy expansion separate from today’s smallest freshness change.
+- Royal Road “What are your top 5 Fictions in Royal Road?” — fully audited as a current public first-party recommendations thread. It is useful for editorial listening but deferred from the catalog because the maintained Royal Road Recommendations board already covers personal favorites and recommendation requests. Reply/view counts and individual lists are not copied or treated as a population ranking.
+- Scribble Hub “I'm looking for a forgotten novel.” — screened as public evidence of the forgotten-title task on another platform. It is a single 2022 thread rather than a stable route, so it is deferred in favor of the stronger Royal Road category candidate for any later task-level expansion.
+- r/OtomeIsekai “What are you currently reading?” — screened as a current public reader-discussion thread. It spans manga/manhwa and adjacent media beyond the current web-fiction route, so it is deferred rather than widening the maintained source taxonomy from one small sample.
+
 Why this source is a native integration rather than a copied discussion feed
 --------------------------------------------------------------------------
 The WebNR repository interface currently consumes bounded search_index.yml catalogs. The audited platforms expose user discussions under platform-specific rights and access rules, while Reddit’s programmatic API carries its own registration/terms boundary. This source uses WebNR’s native catalog format to make community discovery searchable without importing community text. A future richer adapter requires a source-specific machine interface, explicit access/redistribution bounds, stable identity, pagination or cursor behavior where applicable, rate-limit/backoff rules, update/deletion semantics, response-size/timeout bounds, and versioned fixtures before promotion.
@@ -68,7 +83,9 @@ The 2026-08 radar used a fixed 2026-08-01 through 2026-08-28 observation window 
 
 The 2026-09-07 refresh re-checked that maintained basket and screened six additional public collection/routes for the next community slot: SpaceBattles Story Ideas & Recommendations, SpaceBattles Creative Library, Sufficient Velocity Story Library, Sufficient Velocity Creative Discussion & Worldbuilding, Tapas Writing | Novels, and the current r/rational Monday Request and Recommendation Thread. SpaceBattles Story Ideas & Recommendations and r/rational passed as bounded additions.
 
-The 2026-09-09 refresh compared three current route shapes — monthly release index, weekly reading roundup, and daily recommendation request — and screened the five exact candidates listed above. r/Fantasy Daily Recommendations and Simple Questions was admitted as the only new catalog route because it adds a genuinely broader cross-platform request task. The other current threads remain direct editorial references or deferrals rather than duplicate catalog rows. The source still stores only a small set of representative reader routes; companion reader articles explain sampling limits and treat public posts as examples of discussion structure rather than population estimates.
+The 2026-09-09 refresh compared three current route shapes — monthly release index, weekly reading roundup, and daily recommendation request — and screened the five exact candidates listed above. r/Fantasy Daily Recommendations and Simple Questions was admitted as the only new catalog route because it adds a genuinely broader cross-platform request task. The other current threads remain direct editorial references or deferrals rather than duplicate catalog rows.
+
+The 2026-09-10 refresh concentrated on route freshness and the distinct “find a forgotten title” task. The current r/noveltranslations monthly thread replaced the August representative in place. Royal Road's stable forgotten-title subforum passed a bounded link-only audit but was intentionally left for a separate task-taxonomy decision. A current Royal Road favorites thread, a historical Scribble Hub forgotten-title thread, and an adjacent-media r/OtomeIsekai reading thread were retained as listening evidence or deferrals rather than used to inflate the maintained catalog. The source continues to store only a small set of representative reader routes; companion reader articles explain sampling limits and treat public posts as examples of discussion structure rather than population estimates.
 
 Compatibility and health
 ------------------------
@@ -78,7 +95,7 @@ Compatibility and health
 - Credentials: none.
 - External synchronization requests: none.
 - WebNR index size: intentionally tiny and far below the 5 MiB repository-index limit.
-- Last source-specific audit: 2026-09-09.
+- Last source-specific audit: 2026-09-10.
 
 Reader value
 ------------
