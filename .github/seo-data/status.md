@@ -60,3 +60,18 @@
 - A bounded 2026-09-11 off-site visibility patrol did not verify a new attributable external mention requiring repository action. Search-index absence in a bounded sample is not treated as zero visibility.
 - Dependabot pull requests #158 and #138 remain contributor-owned dependency work rather than WebNR automation PRs. The operating cycle does not take them over or create duplicate changes.
 - `scripts/verify-production-builds.mjs` depends on the exact deployment-key labels in this file. Those labels remain unchanged.
+- Pure `.github/seo-data/**` closeout changes are operating metadata and do not require a new rendered-site deployment; they still require the normal non-draft PR, complete expected CI, fresh final review, and exact-head squash merge.
+
+## Active focus
+
+1. Preserve the independently verified production identities through the unchanged public-evidence gate: application `44f2b1b284c9b2bca42e68459a93fc6bebc09259`, documentation mirror `91ecc4a0cf9aa9697726bac3f6316cef799e64cc`, and canonical Cloudflare documentation `44f2b1b284c9b2bca42e68459a93fc6bebc09259` unless separate exact-provider evidence proves a later identity.
+2. Preserve the reader-first landing and Blog information architecture introduced by #147–#148. New public content must fit the curated reader routes and must not reintroduce daily audit ledgers, PR/CI/deployment narration, provider-metric gaps, candidate queues, archive/category navigation sprawl, or speculative roadmap claims into reader pages.
+3. Preserve all 26 maintained source families and continue rotating health checks; remove, downgrade, or replace only reproducible failures rather than manufacturing source churn. Keep Bokselskap bounded to its three reviewed first-party link-only routes unless a later source-specific endpoint/rights/transport/update/deletion/fixture audit supports a richer capability. Keep the eleven-row Discussion Radar link-only and add a new route only when its reader task is distinct and the link/access boundary is explicitly reviewed.
+4. Keep Open Medieval French bounded to the three audited commit-pinned files and preserve upstream CC BY-NC-SA 4.0 provenance/noncommercial/share-alike language. Expand only after file-level review.
+5. Keep Alice & Books discovery-only under its current site-access terms and DBNL discovery-only until a real browser CORS fixture proves direct-TXT transport.
+6. Build the smallest deterministic TEI-to-reading-text runtime/fixture before advancing NeoLatDraCor, DutchDraCor, First1KGreek, VWWP, ELTeC, or CoNSSA/TextGrid beyond research status.
+7. Preserve Legado suite `2026-08-30.1` as the L1 baseline and move the next compatibility increment toward the smallest bounded clean-room L2 declarative runtime before claiming execution compatibility.
+8. Advance raw-TXT usability through previewed multi-file/folder import, remote byte-level encoding handling, generated-source linting, and explicit resource/failure fixtures.
+9. Preserve the eight-route Fanfiction Discovery Starter and move richer interfaces forward only with explicit capability evidence; do not fabricate Fimfiction credentials or assume AO3 Atom synchronization semantics.
+10. Continue collecting GA4, Search Console, and Cloudflare evidence only when provider data is actually available and safely scoped; never convert missing exports, ambiguous account scope, or unavailable provider access into zero-valued metrics.
+11. Keep exact independent build identities, all four Quality jobs, and the production verifier as permanent release gates.
