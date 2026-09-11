@@ -5,10 +5,10 @@ Purpose
 -------
 This WebNR-owned source is a monthly, reader-facing directory of public discussion routes for web-novel discovery. It is designed to answer “where are readers discussing this kind of recommendation question?” while keeping community posts, comments, account state, story text, ratings, votes, and platform-owned metadata on the originating service.
 
-Capability admitted on 2026-08-28; refreshed 2026-09-10
+Capability admitted on 2026-08-28; refreshed 2026-09-11
 -------------------------------------------------------
 - Native WebNR search_index.yml served from app.webnovel.win.
-- Ten WebNR-authored catalog entries covering eight screened community/collection candidates: Royal Road Recommendations, r/ProgressionFantasy recommendation threads, r/litrpg monthly/recommendation threads, r/noveltranslations monthly recommendations, Scribble Hub Forum discoverability discussions, SpaceBattles Story Ideas & Recommendations, r/rational weekly request/recommendation threads, and r/Fantasy daily recommendation threads.
+- Eleven WebNR-authored catalog entries across the maintained Royal Road, Reddit, Scribble Hub, and SpaceBattles discovery basket: Royal Road Recommendations and forgotten-title discovery, r/ProgressionFantasy recommendation threads, r/litrpg monthly/recommendation threads, r/noveltranslations monthly recommendations, Scribble Hub Forum discoverability discussions, SpaceBattles Story Ideas & Recommendations, r/rational weekly request/recommendation threads, and r/Fantasy daily recommendation threads.
 - Each entry stores only a first-party public destination URL, WebNR-authored title/description/tags, the observed/publication date used for the radar, and a link-only editorial license marker.
 - No remote post body, comment, username, vote count, story text, cover, rating, account state, or private/personal data is copied into the source.
 - No API credential, login cookie, crawler, CAPTCHA bypass, robots bypass, paid access, or background synchronization is used.
@@ -47,6 +47,12 @@ Screening and source-specific audit
    Access/runtime: WebNR stores only the current first-party public URL and WebNR-authored metadata. No Reddit API, login, post copy, user data, vote data, comments, crawler, or background synchronization is used.
    Update/deletion: the prior August representative remains recoverable in Git history. Later monthly refreshes replace the representative only after a current first-party check; no redirect or silently substituted copy is assumed.
 
+7. Royal Road “I forgot the title...” — admitted on 2026-09-11 at bounded link-only editorial capability.
+   Origin and purpose: Royal Road’s first-party Fictions forum exposes a stable subforum named “I forgot the title...” whose public description is specifically for readers who need help finding a story they read before. Royal Road’s Terms of Service state that content can be read without an account, that users retain ownership of content they upload, and that Royal Road receives the service licenses required to host and publish it. The Terms also prohibit unauthorized scraping/crawling and copying beyond permitted use. WebNR therefore stores only its own discovery label and the stable first-party subforum URL; it does not copy forum topics, posts, usernames, replies, view counts, story metadata, or story text.
+   Reader value: story identification is a different task from “recommend me something similar.” A reader may remember a protagonist, setting, scene, mechanic, or old reading context but not the title. A dedicated stable route makes that task searchable inside WebNR without accumulating individual lost-story threads.
+   Access/runtime: ordinary readers can open the public forum route without a WebNR credential. Source synchronization remains entirely local YAML and sends no background request to Royal Road. No crawler, bot, login, cookie, forum pagination, or API behavior is relied upon.
+   Update/deletion: the stable category is rechecked during radar health reviews. If Royal Road moves, removes, or restricts the category, WebNR will correct or remove the link through normal review rather than crawl for a substitute. Git history retains the admitted identity and audit trail.
+
 Candidate routes screened on 2026-09-07
 ---------------------------------------
 - SpaceBattles Creative Library — useful first-party browsing surface for stories and quests, and current staff documentation describes it as a content-discovery interface. It is not added separately in this refresh because Story Ideas & Recommendations more directly answers the current reader task and avoids duplicating two routes from the same platform before usage value is demonstrated.
@@ -68,10 +74,19 @@ Candidate routes screened on 2026-09-10
 ---------------------------------------
 Five route/collection candidates not previously recorded under these exact September 10 identities were checked against repository history:
 - r/noveltranslations Monthly Recommendation Thread — September 09, 2026 — fully audited and integrated as a freshness replacement for the August representative. It keeps the existing translated-fiction recommendation task current without increasing the catalog row count.
-- Royal Road “I forgot the title...” — fully audited as a stable public first-party subforum with the explicit purpose of helping readers identify stories they previously read. Royal Road Terms last updated 2026-09-01 permit ordinary reading without signup while restricting unauthorized copying, scraping, crawling, bots, and competitive use. It passes a bounded link-only capability but is deferred because adding this distinct task is a taxonomy expansion separate from today’s smallest freshness change.
+- Royal Road “I forgot the title...” — fully audited as a stable public first-party subforum with the explicit purpose of helping readers identify stories they previously read. Royal Road Terms last updated 2025-03-03 permit ordinary reading without signup while restricting unauthorized copying, scraping, crawling, bots, and competitive use. It passes a bounded link-only capability but is deferred because adding this distinct task is a taxonomy expansion separate from today’s smallest freshness change.
 - Royal Road “What are your top 5 Fictions in Royal Road?” — fully audited as a current public first-party recommendations thread. It is useful for editorial listening but deferred from the catalog because the maintained Royal Road Recommendations board already covers personal favorites and recommendation requests. Reply/view counts and individual lists are not copied or treated as a population ranking.
 - Scribble Hub “I'm looking for a forgotten novel.” — screened as public evidence of the forgotten-title task on another platform. It is a single 2022 thread rather than a stable route, so it is deferred in favor of the stronger Royal Road category candidate for any later task-level expansion.
 - r/OtomeIsekai “What are you currently reading?” — screened as a current public reader-discussion thread. It spans manga/manhwa and adjacent media beyond the current web-fiction route, so it is deferred rather than widening the maintained source taxonomy from one small sample.
+
+Candidate routes screened on 2026-09-11
+---------------------------------------
+Five current route identities not already maintained as Discussion Radar entries were checked against repository history and current first-party/public evidence:
+- Royal Road “I forgot the title...” stable subforum — the previously audited September 10 candidate was re-opened on the current first-party Fictions forum and remained explicitly dedicated to finding a story a reader remembers but cannot name. It is admitted today as the eleventh route because it adds the distinct story-identification task without copying individual threads.
+- Royal Road “LOTM inspired novels” — fully audited as a current first-party recommendation request about specific power-system/secret-organization qualities. It passes the existing Royal Road link-only rights/access boundary but is deferred because the stable Recommendations board already handles this task; keeping one topical thread would duplicate route semantics.
+- Royal Road “Epic/ High Fantasy Recommendations?” — fully audited as a current first-party request for epic/high-fantasy reading suggestions. It passes the same bounded link-only capability but is deferred because the stable Recommendations board remains a better durable route than one genre-specific thread.
+- Royal Road “Give me your crush, yourself and [whatever else]” — screened as a current character/favorites conversation. It can incidentally surface fiction, but its primary task is character discussion rather than recommendation or story identification, so it is rejected from the maintained reader-route catalog.
+- Royal Road “Looking for traditional fantasy recommendations” — screened as a current first-party recommendation request. It is useful listening evidence but deferred because the existing Recommendations board already provides the same durable task without accumulating single-topic threads.
 
 Why this source is a native integration rather than a copied discussion feed
 --------------------------------------------------------------------------
@@ -87,6 +102,8 @@ The 2026-09-09 refresh compared three current route shapes — monthly release i
 
 The 2026-09-10 refresh concentrated on route freshness and the distinct “find a forgotten title” task. The current r/noveltranslations monthly thread replaced the August representative in place. Royal Road's stable forgotten-title subforum passed a bounded link-only audit but was intentionally left for a separate task-taxonomy decision. A current Royal Road favorites thread, a historical Scribble Hub forgotten-title thread, and an adjacent-media r/OtomeIsekai reading thread were retained as listening evidence or deferrals rather than used to inflate the maintained catalog. The source continues to store only a small set of representative reader routes; companion reader articles explain sampling limits and treat public posts as examples of discussion structure rather than population estimates.
 
+The 2026-09-11 refresh converted the previously audited forgotten-title task into one stable Royal Road category route after a fresh first-party check confirmed that the category still exists and explicitly serves story identification. Four additional current Royal Road discussion candidates were screened to test whether the catalog should expand by topical threads; none justified a duplicate row. The resulting change is therefore one task-level addition rather than a scrape or bulk forum import.
+
 Compatibility and health
 ------------------------
 - WebNR native YAML catalog: yes.
@@ -95,8 +112,8 @@ Compatibility and health
 - Credentials: none.
 - External synchronization requests: none.
 - WebNR index size: intentionally tiny and far below the 5 MiB repository-index limit.
-- Last source-specific audit: 2026-09-10.
+- Last source-specific audit: 2026-09-11.
 
 Reader value
 ------------
-A user can add one WebNR repository URL, search phrases such as completed, audiobook, underrated, fic search, rational, fantasy, rankings, or translated novels, and jump to a public community route where that recommendation pattern is discussed. The local index supplies stable WebNR-owned discovery labels while the originating community retains the discussion and its governance.
+A user can add one WebNR repository URL, search phrases such as completed, audiobook, underrated, fic search, forgotten title, story identification, rational, fantasy, rankings, or translated novels, and jump to a public community route where that recommendation or story-identification pattern is discussed. The local index supplies stable WebNR-owned discovery labels while the originating community retains the discussion and its governance.
