@@ -1,0 +1,63 @@
+global-grey/the-woman-in-white.md:
+  title: The Woman in White
+  author: Wilkie Collins
+  description: Global Grey 的《The Woman in White》官方 ebook 落地页。WebNR 仅提供经过核验的发现链接；格式选择、在线阅读和下载继续由来源站处理。
+  page_url: https://www.globalgreyebooks.com/woman-in-white-ebook.html
+  source: Global Grey
+  license: Link-only-WebNR-editorial
+  tags:
+    - Global Grey
+    - Public-domain classics
+    - Victorian fiction
+    - Gothic fiction
+  categories:
+    - Free reading discovery
+  region: en-GB
+
+global-grey/the-castle-of-otranto.md:
+  title: The Castle of Otranto
+  author: Horace Walpole
+  description: Global Grey 的《The Castle of Otranto》官方 ebook 落地页。来源页标记作品为 public domain，并提供 PDF、EPUB、AZW3 与在线阅读；WebNR 保留来源落地页而不重托管文件。
+  page_url: https://www.globalgreyebooks.com/castle-of-otranto-ebook.html
+  source: Global Grey
+  license: Link-only-WebNR-editorial
+  tags:
+    - Global Grey
+    - Public-domain classics
+    - Gothic fiction
+    - Horror
+  categories:
+    - Free reading discovery
+  region: en-GB
+
+global-grey/north-and-south.md:
+  title: North and South
+  author: Elizabeth Gaskell
+  description: Global Grey 的《North and South》官方 ebook 落地页。WebNR 保存人工核验的发现入口，并把来源站自己的版本说明、格式与下载行为留在来源站。
+  page_url: https://www.globalgreyebooks.com/north-and-south-ebook.html
+  source: Global Grey
+  license: Link-only-WebNR-editorial
+  tags:
+    - Global Grey
+    - Public-domain classics
+    - Victorian fiction
+    - Social novel
+  categories:
+    - Free reading discovery
+  region: en-GB
+
+global-grey/the-beetle.md:
+  title: The Beetle
+  author: Richard Marsh
+  description: Global Grey 的《The Beetle》官方 ebook 落地页。WebNR 当前只做经典小说发现与跳转，不复制来源站的电子书文件、封面或在线正文。
+  page_url: https://www.globalgreyebooks.com/beetle-richard-marsh-ebook.html
+  source: Global Grey
+  license: Link-only-WebNR-editorial
+  tags:
+    - Global Grey
+    - Public-domain classics
+    - Gothic fiction
+    - Horror
+  categories:
+    - Free reading discovery
+  region: en-GB

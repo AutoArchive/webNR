@@ -1,0 +1,70 @@
+alice-and-books/library.md:
+  title: Alice & Books — Public Domain Classic Library
+  author: AliceAndBooks
+  description: AliceAndBooks 的第一方首页说明其馆藏作品均为美国公共领域或开放许可作品，可免注册阅读或下载 PDF/EPUB；WebNR 仅保存这个官方发现入口与自行撰写的说明，不抓取目录、排行、下载量、封面或站点元数据。
+  page_url: https://www.aliceandbooks.com/
+  source: WebNR Alice & Books Public Domain Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - AliceAndBooks
+    - Classics
+    - Public domain
+    - EPUB
+    - PDF
+  categories:
+    - Public-domain discovery
+  region: en-US
+
+alice-and-books/pride-and-prejudice.md:
+  title: Pride and Prejudice
+  author: Jane Austen
+  description: AliceAndBooks 将该《Pride and Prejudice》版本明确标为 Public domain (US)、无需注册且 DRM-free，并提醒美国以外读者核对当地版权期限。WebNR 只链接第一方作品页，不复制电子书、封面、简介、下载统计或相关推荐。
+  page_url: https://www.aliceandbooks.com/book/pride-and-prejudice/jane-austen/7
+  source: WebNR Alice & Books Public Domain Discovery Directory
+  license: Link-only-WebNR-editorial-public-domain-origin
+  tags:
+    - AliceAndBooks
+    - English
+    - Public domain US
+    - Novel
+    - EPUB available at origin
+    - PDF available at origin
+  categories:
+    - Public-domain discovery
+  region: en-US
+
+alice-and-books/frankenstein.md:
+  title: Frankenstein
+  author: Mary Shelley
+  description: AliceAndBooks 将该《Frankenstein》版本明确标为 Public domain (US)、无需注册且 DRM-free，并在第一方页面提供在线阅读与 PDF/EPUB。WebNR 当前只保存官方作品入口，不把普通下载页面当成自动化目录接口。
+  page_url: https://www.aliceandbooks.com/book/frankenstein/mary-shelley/35
+  source: WebNR Alice & Books Public Domain Discovery Directory
+  license: Link-only-WebNR-editorial-public-domain-origin
+  tags:
+    - AliceAndBooks
+    - English
+    - Public domain US
+    - Gothic
+    - EPUB available at origin
+    - PDF available at origin
+  categories:
+    - Public-domain discovery
+  region: en-US
+
+alice-and-books/white-nights.md:
+  title: White Nights
+  author: Fyodor Dostoevsky; translation attributed by origin to Constance Garnett
+  description: AliceAndBooks 的《White Nights》第一方页面将此版本标为 Public domain (US)，并注明采用 Constance Garnett 译本；WebNR 保留这一来源边界，只提供导航，不复制正文、站点编辑说明、排行或下载数据。
+  page_url: https://www.aliceandbooks.com/book/white-nights/fyodor-dostoevsky/717
+  source: WebNR Alice & Books Public Domain Discovery Directory
+  license: Link-only-WebNR-editorial-public-domain-origin
+  tags:
+    - AliceAndBooks
+    - English translation
+    - Public domain US
+    - Short story
+    - EPUB available at origin
+    - PDF available at origin
+  categories:
+    - Public-domain discovery
+  region: en-US

@@ -1,0 +1,79 @@
+english-web-fiction-discovery/top-web-fiction.md:
+  title: Top Web Fiction — Popular & New Listings
+  author: Top Web Fiction
+  description: WebNR 核验的跨平台英文网文发现入口。Top Web Fiction 由社区维护，读者 boost 影响周榜与长期榜，同时提供新收录与标签浏览。此条目仅跳转原站，不复制排行、简介或小说正文。
+  page_url: https://topwebfiction.com/
+  source: WebNR English Web-Fiction Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Top Web Fiction
+    - English web fiction
+    - Cross-platform discovery
+    - Reader ranking
+  categories:
+    - Discovery directory
+  region: en
+
+english-web-fiction-discovery/spacebattles-library.md:
+  title: SpaceBattles — Discover Stories
+  author: SpaceBattles
+  description: SpaceBattles 的公开故事库，覆盖原创与同人作品，并提供标签、状态与 library 视图。WebNR 仅提供发现链接；具体作品类型、内容警告、作者信息与阅读规则以原站为准。
+  page_url: https://forums.spacebattles.com/library/stories/
+  source: WebNR English Web-Fiction Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - SpaceBattles
+    - English web fiction
+    - Original fiction
+    - Fan fiction
+  categories:
+    - Community library
+  region: en
+
+english-web-fiction-discovery/sufficient-velocity-library.md:
+  title: Sufficient Velocity — Story Library
+  author: Sufficient Velocity
+  description: Sufficient Velocity 的公开 User Fiction 故事库，可按标签、字数、状态、论坛与原创作品等维度筛选。此 WebNR 条目只链接到公开目录，不抓取或重新发布用户作品与讨论。
+  page_url: https://forums.sufficientvelocity.com/library/stories/
+  source: WebNR English Web-Fiction Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Sufficient Velocity
+    - English web fiction
+    - User fiction
+    - Original fiction
+  categories:
+    - Community library
+  region: en
+
+english-web-fiction-discovery/reddit-serials-directory.md:
+  title: Reddit Serials — Ongoing Story Directory
+  author: Reddit Serials community
+  description: Reddit Serials 社区维护的 Ongoing Serials 目录，按题材与作者组织连载入口。目录元数据可能随社区维护节奏变化，WebNR 仅保存发现页链接，并建议在阅读前核验目标故事的当前状态与来源。
+  page_url: https://redditserials.wordpress.com/
+  source: WebNR English Web-Fiction Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Reddit Serials
+    - English web fiction
+    - Serialized fiction
+    - Community directory
+  categories:
+    - Community directory
+  region: en
+
+english-web-fiction-discovery/hfy.md:
+  title: Reddit r/HFY — Original & Serialized Fiction
+  author: r/HFY community
+  description: r/HFY 是公开的科幻与奇幻写作社区，使用 OC-OneShot、OC-FirstOfSeries、OC-Series 等分类，并维护作者、系列与找书索引。WebNR 只链接社区入口，不复制帖子、评论或故事正文。
+  page_url: https://www.reddit.com/r/HFY/
+  source: WebNR English Web-Fiction Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - HFY
+    - Reddit
+    - English web fiction
+    - Serialized fiction
+  categories:
+    - Community discovery
+  region: en
