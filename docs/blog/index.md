@@ -20,7 +20,7 @@
 
 -   :material-compass-outline: **我想找网文、连载或同人**
 
-    英文平台从 [英文连载小说平台怎么选](posts/2026-08-10-english-serial-fiction-platforms.md) 开始；区域生态可分别看 [中文](posts/2026-08-18-chinese-online-fiction-ecosystem.md)、[日文](posts/2026-08-20-japanese-web-novel-discovery.md)、[韩文](posts/2026-08-22-korean-web-novel-discovery.md)；同人看 [Fanfiction / transformative serial guide](posts/2026-08-26-fanfiction-transformative-serial-discovery-guide.md)。
+    英文平台从 [英文连载小说平台怎么选](posts/2026-08-10-english-serial-fiction-platforms.md) 开始；忘记以前读过的网文或同人标题时，看 [忘记英文网文书名怎么找回](posts/2026-09-12-how-to-find-a-forgotten-web-novel.md)；区域生态可分别看 [中文](posts/2026-08-18-chinese-online-fiction-ecosystem.md)、[日文](posts/2026-08-20-japanese-web-novel-discovery.md)、[韩文](posts/2026-08-22-korean-web-novel-discovery.md)；同人看 [Fanfiction / transformative serial guide](posts/2026-08-26-fanfiction-transformative-serial-discovery-guide.md)。
 
 </div>
 
@@ -30,6 +30,7 @@
 
 | 你要解决的问题 | 建议先读 |
 | --- | --- |
+| 忘记以前读过的网文 / 同人标题 | [忘记英文网文书名怎么找回](posts/2026-09-12-how-to-find-a-forgotten-web-novel.md) |
 | 英文连载平台差别是什么 | [英文连载小说平台怎么选](posts/2026-08-10-english-serial-fiction-platforms.md) |
 | Progression Fantasy / LitRPG 怎么筛 | [Progression Fantasy 与 LitRPG 推荐方法](posts/2026-08-24-progression-fantasy-litrpg-recommendation-method.md) |
 | 同人小说去哪里找 | [Fanfiction / transformative serial discovery guide](posts/2026-08-26-fanfiction-transformative-serial-discovery-guide.md) |

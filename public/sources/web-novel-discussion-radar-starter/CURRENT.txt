@@ -1,0 +1,16 @@
+Web Novel Discussion Radar Starter — current capability
+=====================================================
+
+Last verified: 2026-09-12
+
+The current native `search_index.yml` contains twelve WebNR-authored link-only reader routes. The September 12 change adds the stable SpaceBattles Fic Search Thread as a distinct story-identification route for fics a reader previously encountered but can no longer locate. This is separate from the broader SpaceBattles Story Ideas & Recommendations board and from Royal Road's platform-specific `I forgot the title...` route.
+
+Runtime boundary
+----------------
+- WebNR synchronizes only this local source directory.
+- Catalog rows contain first-party destination URLs plus WebNR-authored titles, descriptions, tags, dates, and link-only license markers.
+- No community post, comment, username, vote/reaction, story text, rating, account state, or private/personal data is copied.
+- No background request to Royal Road, Reddit, Scribble Hub, SpaceBattles, Stack Exchange, Goodreads, or LibraryThing is made by this source.
+- No credential, API client, crawler, CAPTCHA bypass, robots bypass, paid access, or login/session state is used.
+
+The cumulative historical audit through 2026-09-11 remains in `README.txt`. The September 12 candidate screening, three full audits, admission decision, rights/access boundary, identity/update semantics, and deferrals are recorded in `audit-2026-09-12.txt`.

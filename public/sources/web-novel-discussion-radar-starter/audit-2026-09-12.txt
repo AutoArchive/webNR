@@ -1,0 +1,52 @@
+Web Novel Discussion Radar — 2026-09-12 story-identification audit
+=================================================================
+
+Scope
+-----
+This audit extends the existing Discussion Radar with one distinct reader task: finding a story or fic that the reader knows they previously read but can no longer identify or locate. It does not widen WebNR into mirroring community posts, user profiles, ratings, vote counts, book metadata, or story text.
+
+Candidate screening
+-------------------
+Five public routes not already maintained under these exact identities were screened on 2026-09-12:
+
+1. SpaceBattles Fic Search Thread — fully audited and admitted as a twelfth Discussion Radar route.
+2. Science Fiction & Fantasy Stack Exchange `story-identification` — fully audited and deferred from the source catalog; useful as an editorial fallback for SF/F identification, but it covers many media types and is not sufficiently web-fiction-specific to justify another maintained catalog row today.
+3. LibraryThing `Name that Book` — fully audited and deferred. It is a strong human-operated book-identification route, but the current LibraryThing Terms expressly prohibit automated/systematic access, scraping, headless/AI-agent access, and derivative database use except through authorized interfaces. WebNR therefore does not create a background adapter or health-fetch dependency for it.
+4. Goodreads `What's the Name of That Book???` — screened as a public general-book identification group and deferred because its task is broader than web fiction and the current change already has a platform-specific passing route.
+5. r/whatsthatbook — screened as a public Reddit story/book-identification community and deferred because the Radar already carries several bounded Reddit routes, while this cycle's smallest non-duplicative addition is the SpaceBattles fic-specific route.
+
+Admitted route: SpaceBattles Fic Search Thread
+----------------------------------------------
+Origin and purpose: The first-party SpaceBattles thread at `https://forums.spacebattles.com/threads/fic-search-thread.134658/` is specifically for stories/fics that a reader knows existed and previously encountered but can no longer find. The current visible thread guidance distinguishes that task from general recommendations and redirects recommendation-seeking elsewhere.
+
+Rights and terms: SpaceBattles' first-party Terms of Service state that submitted user content expresses its author's views, that users retain copyright over submitted content, and that SpaceBattles receives the service license needed to use/publish/re-publish that content. This admission therefore remains link-only. WebNR copies no forum post, username, thread statistics, story text, review, attachment, or user metadata.
+
+Access/runtime: The first-party route remains indexed and readable to ordinary visitors, while automated direct fetching may be challenged by the forum. That is not a WebNR runtime dependency: source synchronization reads only the local `search_index.yml`. A reader who chooses the result navigates to SpaceBattles under SpaceBattles' own controls. No WebNR crawler, login, cookie, API client, CAPTCHA bypass, pagination walker, or rate-limit workaround is introduced.
+
+Format and capability: one stable HTTPS destination represented as a WebNR-authored native catalog row with title, description, categories, tags, observed/archive date, region, and `Link-only-WebNR-editorial` license marker. There is no remote schema, pagination contract, content extraction, or update feed to normalize.
+
+Identity/update/deletion: the stable thread URL is the admitted identity. Health review checks whether it still represents the same fic-search task. If it is moved, removed, restricted, or repurposed, WebNR corrects or removes the local link through normal review; it does not crawl for a replacement. Git history preserves the previous identity.
+
+Duplication and reader value: the existing SpaceBattles Story Ideas & Recommendations row is a broad recommendations/discussion board. The new row is deliberately narrower: it is for recovering a specific fic known to have existed. This mirrors the task distinction already established by Royal Road's `I forgot the title...` route while covering a different platform/community and fanfiction corpus.
+
+Fully audited defer: SFF Stack Exchange story-identification
+------------------------------------------------------------
+Origin/purpose: the first-party `story-identification` tag is explicitly for identifying a specific science-fiction or fantasy work when the name or creator is forgotten, including novels, websites, and fanfic. Its guidance asks for media, approximate reading/publication period, plot, setting, characters, language, and ruled-out candidates, and states that the tag is not for general recommendations.
+
+Rights/access: public Stack Exchange contributions carry the applicable CC BY-SA version documented by Stack Exchange. WebNR would not need that reuse license for a link-only route, because it would store only its own label and the first-party URL. No account or API is required for the proposed local catalog representation.
+
+Decision: defer. It is useful enough to cite in the companion reader guide, but it spans film, television, games, comics and other SF/F media. Adding it to the maintained Web Novel Discussion Radar today would broaden the catalog beyond the smallest task-specific change.
+
+Fully audited defer: LibraryThing Name that Book
+-------------------------------------------------
+Origin/purpose: the first-party public group says it exists to help readers find a book whose name they have forgotten and maintains posting guidance plus a Found convention.
+
+Terms/access: current LibraryThing Terms distinguish ordinary human browsing from automated access and expressly prohibit unauthorized crawling, scraping, automated systematic collection, headless/AI-agent access and derivative database use. Authorized APIs are separate. WebNR therefore does not attempt to make LibraryThing a synchronized source, does not use a crawler for health checks, and does not copy the group's topics or member data.
+
+Decision: defer from the maintained source catalog. The companion guide may point human readers to the public route as a manual fallback, with the automation boundary stated explicitly.
+
+Runtime and privacy boundary
+----------------------------
+After this audit the Discussion Radar contains twelve WebNR-authored link-only catalog rows. Maintained source-family count is unchanged. The source remains local YAML: no community request is made during WebNR synchronization, no credential is added, no personal data is stored, and no external discussion content is mirrored.
+
+Verified: 2026-09-12.
