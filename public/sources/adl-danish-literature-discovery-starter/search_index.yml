@@ -1,0 +1,50 @@
+adl-danish-literature/project.md:
+  title: Arkiv for Dansk Litteratur — 丹麦经典文学档案
+  author: Det Kgl. Bibliotek / Det Danske Sprog- og Litteraturselskab
+  description: ADL 的官方项目说明入口。项目由丹麦皇家图书馆与丹麦语言文学学会合作，覆盖 78 位作者的经典丹麦文学，并提供影印版与可检索文本。WebNR 当前仅链接第一方说明，不复制正文、影印、编辑导言或目录元数据。
+  page_url: https://dsl.dk/projekter/arkiv-for-dansk-litteratur
+  source: WebNR ADL Danish Literature Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Arkiv for Dansk Litteratur
+    - Danish literature
+    - 丹麦文学
+    - classic literature
+    - digital library
+  categories:
+    - Official literature discovery
+  region: dk
+
+adl-danish-literature/open-repository.md:
+  title: Det Kgl. Bibliotek — ADL Open Repository Collection
+  author: Det Kgl. Bibliotek / Det Danske Sprog- og Litteraturselskab
+  description: 丹麦皇家图书馆 LOAR 中的 ADL 馆藏入口，明确区分开放数据集与更广的 ADL 阅读材料。WebNR 只保存该第一方馆藏链接和自写说明，不抓取 ZIP、XML、TEI、PDF 或馆藏元数据。
+  page_url: https://loar.kb.dk/collections/bd32ee7e-d78d-413b-9639-e157735010c6
+  source: WebNR ADL Danish Literature Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Det Kgl. Bibliotek
+    - Arkiv for Dansk Litteratur
+    - Danish literature
+    - open repository
+    - discovery
+  categories:
+    - Official literature discovery
+  region: dk
+
+adl-danish-literature/public-domain-dataset.md:
+  title: ADL — 156 部已明确标记为 Public Domain 的丹麦文学作品数据集
+  author: Det Kgl. Bibliotek / Det Danske Sprog- og Litteraturselskab
+  description: 丹麦皇家图书馆明确标记为 Public Domain Mark 1.0 的 ADL 数据集条目，包含 156 部 1851–1945 年作品。WebNR 当前只链接其第一方说明与下载入口，不自动下载、解压或解析数据集，也不把这一权利标记外推到整个 ADL 网站。
+  page_url: https://loar.kb.dk/items/4eccf49e-ba91-43f0-bb39-81f7b1069d1e
+  source: WebNR ADL Danish Literature Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Arkiv for Dansk Litteratur
+    - public domain
+    - Public Domain Mark 1.0
+    - Danish literature
+    - dataset
+  categories:
+    - Public-domain literature discovery
+  region: dk
