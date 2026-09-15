@@ -1,0 +1,50 @@
+baekur-icelandic-books/search.md:
+  title: Bækur.is — 冰岛国家与大学图书馆数字书籍检索
+  author: National and University Library of Iceland
+  description: Bækur.is 的第一方检索入口，可搜索冰岛国家与大学图书馆数字化的冰岛出版物。WebNR 当前只提供链接与自写说明，不抓取搜索结果、OCR、扫描页、目录元数据或书籍文件。
+  page_url: https://baekur.is/search?language=en
+  source: WebNR Bækur.is Icelandic Books Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Bækur.is
+    - Icelandic literature
+    - 冰岛文学
+    - digital library
+    - discovery
+  categories:
+    - Official literature discovery
+  region: is
+
+baekur-icelandic-books/titles.md:
+  title: Bækur.is — 冰岛数字书籍标题索引
+  author: National and University Library of Iceland
+  description: Bækur.is 的第一方标题目录，当前展示数千种数字化图书并可按标题浏览。馆藏同时包含早期历史出版物与经版权方许可加入的较新作品，因此 WebNR 不把免费在线访问外推为统一再分发许可。
+  page_url: https://baekur.is/titles/%2A?language=en
+  source: WebNR Bækur.is Icelandic Books Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Bækur.is
+    - Icelandic books
+    - 冰岛图书
+    - title index
+    - discovery
+  categories:
+    - Official literature discovery
+  region: is
+
+baekur-icelandic-books/about.md:
+  title: Bækur.is — 官方项目与馆藏范围说明
+  author: National and University Library of Iceland
+  description: Bækur.is 官方说明页介绍项目由冰岛国家与大学图书馆运营，并明确指出馆藏既包含早期冰岛出版物，也包含经版权方许可加入的较新作品。WebNR 以此页面作为来源、范围和权利边界的第一方说明，不复制原站内容。
+  page_url: https://baekur.is/about?language=en
+  source: WebNR Bækur.is Icelandic Books Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Bækur.is
+    - National and University Library of Iceland
+    - Icelandic literature
+    - collection scope
+    - rights boundary
+  categories:
+    - Official literature discovery
+  region: is
