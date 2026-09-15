@@ -1,0 +1,59 @@
+openmedfr/cliges.md:
+  title: Cligès
+  author: Chrétien de Troyes
+  description: Open Medieval French 的中世纪法语 romance 纯文本。标题与作者来自该文件自己的 metadata header；WebNR 把下载地址固定到已审计的 OpenMedFr commit，读者明确选择后才直接请求上游 raw TXT，不镜像整个语料库。
+  filename: Cliges.txt
+  page_url: https://github.com/OpenMedFr/texts/blob/0d3112783556775fa30ab4bdac84a4c383cc0217/Cliges.txt
+  download_url: https://raw.githubusercontent.com/OpenMedFr/texts/0d3112783556775fa30ab4bdac84a4c383cc0217/Cliges.txt
+  source: Open Medieval French / OpenMedFr texts
+  license: Origin-CC-BY-NC-SA-4.0-OpenMedFr
+  tags:
+    - Open Medieval French
+    - Medieval French
+    - CC BY-NC-SA 4.0
+    - Raw TXT
+    - Romance
+  categories:
+    - Free TXT reading
+  region: fr-FR
+  chapters: 1
+
+openmedfr/yvain.md:
+  title: Yvain — Le Chevalier au Lion
+  author: Chrétien de Troyes
+  description: OpenMedFr 的 Yvain 中世纪法语纯文本；上游 metadata 将标题记为 Yvain、副标题记为 Le Chevalier au Lion。WebNR 只维护这一版本化入口，并保留 Open Medieval French 来源与 CC BY-NC-SA 4.0 仓库边界。
+  filename: Yvain.txt
+  page_url: https://github.com/OpenMedFr/texts/blob/0d3112783556775fa30ab4bdac84a4c383cc0217/Yvain.txt
+  download_url: https://raw.githubusercontent.com/OpenMedFr/texts/0d3112783556775fa30ab4bdac84a4c383cc0217/Yvain.txt
+  source: Open Medieval French / OpenMedFr texts
+  license: Origin-CC-BY-NC-SA-4.0-OpenMedFr
+  tags:
+    - Open Medieval French
+    - Medieval French
+    - CC BY-NC-SA 4.0
+    - Raw TXT
+    - Romance
+  categories:
+    - Free TXT reading
+  region: fr-FR
+  chapters: 1
+
+openmedfr/perceval.md:
+  title: Perceval — Le Conte du Graal
+  author: Chrétien de Troyes
+  description: OpenMedFr 的 Perceval 中世纪法语纯文本；标题、作者与副标题来自 commit-pinned 文件头。WebNR 不复制正文，只让现有浏览器 URL-import 在用户明确导入时读取这一条上游 raw 文件。
+  filename: PercevalKu.txt
+  page_url: https://github.com/OpenMedFr/texts/blob/0d3112783556775fa30ab4bdac84a4c383cc0217/PercevalKu.txt
+  download_url: https://raw.githubusercontent.com/OpenMedFr/texts/0d3112783556775fa30ab4bdac84a4c383cc0217/PercevalKu.txt
+  source: Open Medieval French / OpenMedFr texts
+  license: Origin-CC-BY-NC-SA-4.0-OpenMedFr
+  tags:
+    - Open Medieval French
+    - Medieval French
+    - CC BY-NC-SA 4.0
+    - Raw TXT
+    - Grail romance
+  categories:
+    - Free TXT reading
+  region: fr-FR
+  chapters: 1

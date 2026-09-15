@@ -1,0 +1,50 @@
+cervantesvirtual-spanish-literature/catalog.md:
+  title: Biblioteca Virtual Miguel de Cervantes — 西语数字图书馆
+  author: Centro Biblioteca Virtual Miguel de Cervantes, Universidad de Alicante
+  description: Biblioteca Virtual Miguel de Cervantes 的第一方数字图书馆入口，覆盖西班牙语与伊比利亚美洲文学、语言、历史、档案等数字馆藏。WebNR 当前只保存官方入口与自行撰写的发现说明，不复制正文、PDF、目录记录、图片、音视频或原站元数据。
+  page_url: https://www.cervantesvirtual.com/
+  source: WebNR Biblioteca Virtual Miguel de Cervantes Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Biblioteca Virtual Miguel de Cervantes
+    - Spanish literature
+    - 西班牙语文学
+    - digital library
+    - official library
+  categories:
+    - Official literature discovery
+  region: es
+
+cervantesvirtual-spanish-literature/literature.md:
+  title: Biblioteca Virtual Miguel de Cervantes — Literatura 文学区
+  author: Centro Biblioteca Virtual Miguel de Cervantes, Universidad de Alicante
+  description: BVMC 的第一方 Literatura 区域汇集西班牙与伊比利亚美洲文学的作者、作品与专题入口，覆盖小说、戏剧、诗歌、文学批评和文学史。WebNR 仅链接该官方发现页，不抓取搜索结果、作者资料、作品正文或站点目录。
+  page_url: https://www.cervantesvirtual.com/areas/literatura/
+  source: WebNR Biblioteca Virtual Miguel de Cervantes Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Biblioteca Virtual Miguel de Cervantes
+    - Literatura
+    - Spanish literature
+    - Ibero-American literature
+    - discovery
+  categories:
+    - Official literature discovery
+  region: es
+
+cervantesvirtual-spanish-literature/biblioteca-americana.md:
+  title: Biblioteca Virtual Miguel de Cervantes — Biblioteca Americana
+  author: Centro Biblioteca Virtual Miguel de Cervantes, Universidad de Alicante
+  description: BVMC 的第一方 Biblioteca Americana 区域提供美洲文学与文化馆藏的专题发现入口。WebNR 只保存导航链接和自写说明，不复制馆藏对象、目录数据、数字化文件或编辑内容；具体作品与版本的权利边界以原站记录为准。
+  page_url: https://www.cervantesvirtual.com/areas/bib-americana/
+  source: WebNR Biblioteca Virtual Miguel de Cervantes Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Biblioteca Virtual Miguel de Cervantes
+    - Biblioteca Americana
+    - Latin American literature
+    - 拉丁美洲文学
+    - discovery
+  categories:
+    - Official literature discovery
+  region: es-419

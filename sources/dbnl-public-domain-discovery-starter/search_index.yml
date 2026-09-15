@@ -1,0 +1,67 @@
+dbnl-public-domain/collection.md:
+  title: DBNL — Collectie publiek domein
+  author: Digitale Bibliotheek voor de Nederlandse Letteren
+  description: DBNL 的第一方公共领域合集明确说明本页所列标题均为公版，并同时提供 XML 与 TXT 下载。WebNR 当前只保存这个官方合集入口与自行撰写的说明，不批量下载 ZIP、不镜像文本，也不把 DBNL 其他栏目默认视为公版。
+  page_url: https://www.dbnl.org/letterkunde/pd/
+  source: WebNR DBNL Public Domain Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - DBNL
+    - Dutch
+    - Public domain
+    - TXT
+    - XML
+  categories:
+    - Public-domain discovery
+  region: nl-NL
+
+dbnl-public-domain/brieven-aan-sophie.md:
+  title: Brieven aan Sophie
+  author: Rhijnvis Feith
+  description: DBNL 将 1806 年《Brieven aan Sophie》的该数字版本明确标记为 Auteursrechtvrij，并在第一方作品页提供 tekstbestand 下载。WebNR 只链接官方作品页；虽然 DBNL 暴露直接 TXT 端点，本轮没有把它声明为浏览器 direct-TXT source，因为尚未取得可重复的跨域 CORS 证据。
+  page_url: https://www.dbnl.org/tekst/feit007brie07_01/
+  source: WebNR DBNL Public Domain Discovery Directory
+  license: Link-only-WebNR-editorial-public-domain-origin
+  tags:
+    - DBNL
+    - Dutch
+    - Public domain
+    - Poetry
+    - TXT available at origin
+  categories:
+    - Public-domain discovery
+  region: nl-NL
+
+dbnl-public-domain/camera-obscura.md:
+  title: Camera Obscura
+  author: Nicolaas Beets
+  description: DBNL 将 1871 年《Camera Obscura》的该数字版本明确标记为 Auteursrechtvrij，并在第一方作品页提供 XML 与 tekstbestand 下载。WebNR 只保存官方作品入口，不复制正文、电子书、图片或 DBNL 元数据集，也不把当前可下载状态推断成跨域导入已经通过。
+  page_url: https://www.dbnl.org/tekst/beet005came07_01/
+  source: WebNR DBNL Public Domain Discovery Directory
+  license: Link-only-WebNR-editorial-public-domain-origin
+  tags:
+    - DBNL
+    - Dutch
+    - Public domain
+    - Novel
+    - TXT available at origin
+  categories:
+    - Public-domain discovery
+  region: nl-NL
+
+dbnl-public-domain/sara-burgerhart.md:
+  title: Historie van mejuffrouw Sara Burgerhart
+  author: Aagje Deken; Betje Wolff
+  description: DBNL 将 1782 年《Historie van mejuffrouw Sara Burgerhart》的该版本标记为 Auteursrechtvrij，并提供第一方 tekstbestand。WebNR 当前只链接作品页并保留作者与公版状态的来源边界；后续若要升级 direct-TXT，需要单独验证浏览器 CORS、稳定身份、响应上限与失败语义。
+  page_url: https://www.dbnl.org/tekst/wolf016hist01_01/
+  source: WebNR DBNL Public Domain Discovery Directory
+  license: Link-only-WebNR-editorial-public-domain-origin
+  tags:
+    - DBNL
+    - Dutch
+    - Public domain
+    - Epistolary novel
+    - TXT available at origin
+  categories:
+    - Public-domain discovery
+  region: nl-NL
