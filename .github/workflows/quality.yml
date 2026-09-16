@@ -208,7 +208,7 @@ jobs:
           bash scripts/build-docs-production.sh
       - name: Validate documentation output
         run: |
-          set -eux
+          set -eu
           test -f site/index.html
           test -f site/build.json
           test -f site/sitemap.xml
@@ -241,7 +241,7 @@ jobs:
           grep -Fq 'https://www.webnovel.win/blog/2026/08/09/webnr-legado-web-alternative/' site/sitemap.xml
           grep -Fq 'https://www.webnovel.win/blog/2026/08/10/english-serial-fiction-platforms/' site/sitemap.xml
           grep -Fq 'https://www.webnovel.win/blog/2026/09/16/portuguese-free-classic-ebooks-brazil-portugal/' site/sitemap.xml
-          latest_post="$(find docs/blog/posts -maxdepth 1 -type f -name '*.md' -printf '%f\n' | sort | tail -n 1)"
+          latest_post="$(find docs/blog/posts -maxdepth 1 -type f -name '20??-??-??-*.md' -printf '%f\n' | sort | tail -n 1)"
           latest_date="$(printf '%s' "${latest_post}" | cut -c1-10 | tr '-' '/')"
           latest_slug="${latest_post#???????????}"
           latest_slug="${latest_slug%.md}"
