@@ -208,7 +208,7 @@ jobs:
           bash scripts/build-docs-production.sh
       - name: Validate documentation output
         run: |
-          set -eu
+          set -eux
           test -f site/index.html
           test -f site/build.json
           test -f site/sitemap.xml
