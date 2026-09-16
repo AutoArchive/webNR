@@ -110,7 +110,12 @@ jobs:
           grep -Fq 'https://www.webnovel.win/blog/2026/08/06/legado-source-guide/' site/blog/2026/08/06/legado-source-guide/index.html
           grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/' site/blog/2026/08/08/legal-free-novels-txt-collections/index.html
           grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/' site/sitemap.xml
-          grep -Fq 'https://www.webnovel.win/blog/2026/08/08/legal-free-novels-txt-collections/' site/feed_rss_created.xml
+          latest_post="$(find docs/blog/posts -maxdepth 1 -type f -name '20??-??-??-*.md' -printf '%f\n' | sort | tail -n 1)"
+          latest_date="$(printf '%s' "${latest_post}" | cut -c1-10 | tr '-' '/')"
+          latest_slug="${latest_post#???????????}"
+          latest_slug="${latest_slug%.md}"
+          latest_url="https://www.webnovel.win/blog/${latest_date}/${latest_slug}/"
+          grep -Fq "${latest_url}" site/feed_rss_created.xml
           grep -R -Fq 'G-DGH8HNQKE4' site
           if grep -R -Fq 'G-NL0WV2XMJN' site; then
             echo 'Obsolete secondary GA4 destination found in documentation output' >&2
