@@ -16,7 +16,7 @@
 
 -   :material-bookshelf: **我想找合法免费的经典小说**
 
-    直接看 [Project Gutenberg、Standard Ebooks、Alice & Books、GITenberg 与 WebNR 怎么选](posts/2026-09-05-free-classic-ebook-reading-routes-compared.md)。需要更广的 TXT / 开放馆藏入口，再看 [合法免费小说与 TXT 集合指南](posts/2026-08-08-legal-free-novels-txt-collections.md)；想找丹麦、捷克或匈牙利的小语种经典，可看 [ADL、MLP、MEK 怎么选](posts/2026-09-14-european-minority-language-free-ebooks-adl-mlp-mek.md)；想找巴西或葡萄牙的葡语经典与数字馆藏，看 [BNDigital、BBM、Domínio Público、Camões 怎么选](posts/2026-09-16-portuguese-free-classic-ebooks-brazil-portugal.md)。
+    直接看 [Project Gutenberg、Standard Ebooks、Alice & Books、GITenberg 与 WebNR 怎么选](posts/2026-09-05-free-classic-ebook-reading-routes-compared.md)。需要更广的 TXT / 开放馆藏入口，再看 [合法免费小说与 TXT 集合指南](posts/2026-08-08-legal-free-novels-txt-collections.md)；想找丹麦、捷克或匈牙利的小语种经典，可看 [ADL、MLP、MEK 怎么选](posts/2026-09-14-european-minority-language-free-ebooks-adl-mlp-mek.md)；想找巴西或葡萄牙的葡语经典与数字馆藏，看 [BNDigital、BBM、Domínio Público、Camões 怎么选](posts/2026-09-16-portuguese-free-classic-ebooks-brazil-portugal.md)；想找意大利语经典、数字馆藏与历史版本，看 [BEIC、Liber Liber、Internet Culturale 怎么选](posts/2026-09-18-italian-free-classic-ebooks-beic-liberliber-internet-culturale.md)。
 
 -   :material-compass-outline: **我想找网文、连载或同人**
 
@@ -41,6 +41,7 @@
 
 | 你要解决的问题 | 建议先读 |
 | --- | --- |
+| 意大利语经典、数字馆藏与历史版本去哪找 | [BEIC、Liber Liber、Internet Culturale 怎么选](posts/2026-09-18-italian-free-classic-ebooks-beic-liberliber-internet-culturale.md) |
 | 巴西 / 葡萄牙的葡语经典与数字馆藏去哪找 | [BNDigital、BBM、Domínio Público、Camões 怎么选](posts/2026-09-16-portuguese-free-classic-ebooks-brazil-portugal.md) |
 | 丹麦、捷克、匈牙利的免费 / 公版电子书去哪找 | [ADL、MLP、MEK 怎么选](posts/2026-09-14-european-minority-language-free-ebooks-adl-mlp-mek.md) |
 | TXT 文件、文件夹、编码与网址导入 | [Raw TXT collection / import guide](posts/2026-09-01-raw-txt-collection-import-guide.md) |
