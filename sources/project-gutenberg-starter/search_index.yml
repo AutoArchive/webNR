@@ -1,0 +1,60 @@
+project-gutenberg/alices-adventures-in-wonderland.md:
+  title: Alice's Adventures in Wonderland
+  author: Lewis Carroll
+  description: Project Gutenberg 官方 ebook #11 落地页。来源页标记该作品在美国属于公有领域；WebNR 仅提供稳定落地页发现链接，不深链、缓存或重新分发来源文件。
+  page_url: https://www.gutenberg.org/ebooks/11
+  source: Project Gutenberg
+  license: Link-only-WebNR-editorial
+  tags:
+    - Project Gutenberg
+    - Public domain in the USA
+    - Fantasy
+  categories:
+    - Free reading discovery
+  region: en-US
+
+project-gutenberg/the-adventures-of-sherlock-holmes.md:
+  title: The Adventures of Sherlock Holmes
+  author: Arthur Conan Doyle
+  description: Project Gutenberg 官方 ebook #1661 落地页。来源页标记该作品在美国属于公有领域；WebNR 保留官方落地页而不把 Plain Text 或 EPUB 文件包装成自己的下载地址。
+  page_url: https://www.gutenberg.org/ebooks/1661
+  source: Project Gutenberg
+  license: Link-only-WebNR-editorial
+  tags:
+    - Project Gutenberg
+    - Public domain in the USA
+    - Detective fiction
+  categories:
+    - Free reading discovery
+  region: en-US
+
+project-gutenberg/dracula.md:
+  title: Dracula
+  author: Bram Stoker
+  description: Project Gutenberg 官方 ebook #345 落地页。来源页标记该作品在美国属于公有领域；WebNR 当前只做发现与跳转，并提醒美国以外读者自行确认适用法域。
+  page_url: https://www.gutenberg.org/ebooks/345
+  source: Project Gutenberg
+  license: Link-only-WebNR-editorial
+  tags:
+    - Project Gutenberg
+    - Public domain in the USA
+    - Gothic fiction
+    - Horror
+  categories:
+    - Free reading discovery
+  region: en-US
+
+project-gutenberg/moby-dick.md:
+  title: Moby Dick; Or, The Whale
+  author: Herman Melville
+  description: Project Gutenberg 官方 ebook #2701 落地页。来源页标记该作品在美国属于公有领域；WebNR 仅保存人工核验的发现链接，不抓取或同步来源正文。
+  page_url: https://www.gutenberg.org/ebooks/2701
+  source: Project Gutenberg
+  license: Link-only-WebNR-editorial
+  tags:
+    - Project Gutenberg
+    - Public domain in the USA
+    - Adventure fiction
+  categories:
+    - Free reading discovery
+  region: en-US

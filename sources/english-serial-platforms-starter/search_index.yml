@@ -1,0 +1,75 @@
+english-serial-platforms/royal-road.md:
+  title: Royal Road — Complete & Rising Stars
+  author: Royal Road
+  description: WebNR 核验的 Royal Road 官方发现入口，适合按连载状态、Rising Stars、Complete 等信号寻找英文连载小说。此条目仅跳转原站，不抓取、缓存或重新发布小说正文。
+  page_url: https://www.royalroad.com/fictions/complete
+  source: WebNR English Serial Platform Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Royal Road
+    - English serial fiction
+    - LitRPG
+    - Progression fantasy
+  categories:
+    - Platform discovery
+  region: en
+
+english-serial-platforms/scribble-hub.md:
+  title: Scribble Hub — Series Finder
+  author: Scribble Hub
+  description: WebNR 核验的 Scribble Hub Series Finder 官方入口，可按题材、章节、字数、更新、读者、评论和状态等条件筛选。此条目仅提供官方页面链接。
+  page_url: https://www.scribblehub.com/series-finder/
+  source: WebNR English Serial Platform Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Scribble Hub
+    - English serial fiction
+    - Series finder
+  categories:
+    - Platform discovery
+  region: en
+
+english-serial-platforms/wattpad.md:
+  title: Wattpad — Stories
+  author: Wattpad
+  description: Wattpad 官方阅读入口，面向重视社交阅读、评论、阅读列表和移动端体验的读者。WebNR 不复制 Wattpad 用户投稿，也不尝试绕过账号、广告、付费或平台访问限制。
+  page_url: https://www.wattpad.com/
+  source: WebNR English Serial Platform Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Wattpad
+    - English serial fiction
+    - Social reading
+  categories:
+    - Platform discovery
+  region: en
+
+english-serial-platforms/tapas.md:
+  title: Tapas — Novels
+  author: Tapas
+  description: Tapas 官方 Novels 发现入口，包含 Community、Free Access 与 Premium 等不同内容层级。WebNR 仅做跳转发现，不复制内容或绕过登录、年龄验证和付费边界。
+  page_url: https://tapas.io/collection/novels
+  source: WebNR English Serial Platform Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Tapas
+    - English serial fiction
+    - Community novels
+  categories:
+    - Platform discovery
+  region: en
+
+english-serial-platforms/honeyfeed.md:
+  title: Honeyfeed — Novels
+  author: Honeyfeed
+  description: Honeyfeed 官方小说目录，提供 Ongoing/Finished、章节数、题材与活动等发现维度。根据官方条款，WebNR 仅保留人工核验的跳转链接，不运行正文抓取或后台同步。
+  page_url: https://www.honeyfeed.fm/novels
+  source: WebNR English Serial Platform Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Honeyfeed
+    - English serial fiction
+    - Light novel
+  categories:
+    - Platform discovery
+  region: en

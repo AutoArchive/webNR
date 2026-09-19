@@ -1,0 +1,63 @@
+online-books-page/the-yellow-wallpaper.md:
+  title: The Yellow Wallpaper
+  author: Charlotte Perkins Gilman
+  description: The Online Books Page 的《The Yellow Wallpaper》稳定书目页。WebNR 保存经过核验的发现入口与 CC0 书目事实；正文与具体版本继续由来源页所指向的外部站点提供。
+  page_url: https://onlinebooks.library.upenn.edu/webbin/book/lookupid?key=olbp17890
+  source: The Online Books Page
+  license: CC0-1.0-OBP-curated-metadata
+  tags:
+    - The Online Books Page
+    - Curated catalog
+    - Feminist fiction
+    - Short fiction
+  categories:
+    - Free reading discovery
+  region: en-US
+
+online-books-page/herland.md:
+  title: Herland
+  author: Charlotte Perkins Gilman
+  description: The Online Books Page 的《Herland》稳定书目页。该 curated listing 的目录数据标记为 CC0；WebNR 仅做发现与跳转，不复制下游电子书正文。
+  page_url: https://onlinebooks.library.upenn.edu/webbin/book/lookupid?key=olbp17884
+  source: The Online Books Page
+  license: CC0-1.0-OBP-curated-metadata
+  tags:
+    - The Online Books Page
+    - Curated catalog
+    - Utopian fiction
+    - Feminist fiction
+  categories:
+    - Free reading discovery
+  region: en-US
+
+online-books-page/the-enchanted-april.md:
+  title: The Enchanted April
+  author: Elizabeth von Arnim
+  description: The Online Books Page 的《The Enchanted April》稳定书目页。WebNR 使用来源站明确提供的稳定记录作为发现层，把版本选择、阅读和下载留在来源链路。
+  page_url: https://onlinebooks.library.upenn.edu/webbin/book/lookupid?key=olbp10894
+  source: The Online Books Page
+  license: CC0-1.0-OBP-curated-metadata
+  tags:
+    - The Online Books Page
+    - Curated catalog
+    - British fiction
+    - Female friendship
+  categories:
+    - Free reading discovery
+  region: en-US
+
+online-books-page/the-awakening.md:
+  title: The Awakening
+  author: Kate Chopin
+  description: The Online Books Page 的《The Awakening》稳定书目页。WebNR 保存人工核验的目录入口与基础书目信息，不抓取、缓存或重托管来源页链接的文本。
+  page_url: https://onlinebooks.library.upenn.edu/webbin/book/lookupid?key=olbp14181
+  source: The Online Books Page
+  license: CC0-1.0-OBP-curated-metadata
+  tags:
+    - The Online Books Page
+    - Curated catalog
+    - American fiction
+    - Women in literature
+  categories:
+    - Free reading discovery
+  region: en-US

@@ -1,0 +1,50 @@
+bndigital-brazil/acervo-digital.md:
+  title: BNDigital — 巴西国家图书馆数字馆藏
+  author: Fundação Biblioteca Nacional — Brasil
+  description: 巴西 Fundação Biblioteca Nacional 的 BNDigital 第一方数字馆藏入口，可发现图书、手稿、地图、图像、期刊等数字化资料。WebNR 当前只提供链接与自写说明，不抓取搜索结果、目录记录、扫描、OCR、PDF、图片或其他馆藏文件。
+  page_url: https://bndigital.bn.gov.br/acervodigital/
+  source: WebNR BNDigital Brazil Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - BNDigital
+    - Brazilian literature
+    - Portuguese
+    - digital library
+    - discovery
+  categories:
+    - Official literature discovery
+  region: pt-BR
+
+bndigital-brazil/dominio-publico.md:
+  title: BNDigital — Domínio Público 公版发现入口
+  author: Fundação Biblioteca Nacional — Brasil
+  description: BNDigital 的第一方 Domínio Público 页面。BNDigital 当前说明其在线馆藏以公共领域资料为主，也包含经权利人授权发布的内容；WebNR 不把整个站点外推为统一许可，只保留第一方发现链接。
+  page_url: https://bndigital.bn.gov.br/bnds/brasil-dominio-publico/
+  source: WebNR BNDigital Brazil Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - BNDigital
+    - public domain
+    - Brazilian literature
+    - Portuguese
+    - discovery
+  categories:
+    - Official literature discovery
+  region: pt-BR
+
+bndigital-brazil/reuse-guidance.md:
+  title: BNDigital — 数字文件使用与再利用说明
+  author: Fundação Biblioteca Nacional — Brasil
+  description: BNDigital 第一方使用说明区分公共领域、仍受版权保护以及合作机构馆藏的再利用条件。WebNR 把这条目作为权利边界说明，不复制原站内容，也不据此声称所有数字馆藏都可无条件镜像或再分发。
+  page_url: https://bndigital.bn.gov.br/orientacoes-de-uso-de-arquivos-digitais/
+  source: WebNR BNDigital Brazil Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - BNDigital
+    - reuse guidance
+    - copyright
+    - public domain
+    - provenance
+  categories:
+    - Official literature discovery
+  region: pt-BR

@@ -1,0 +1,59 @@
+folger-shakespeare/macbeth.md:
+  title: Macbeth
+  author: William Shakespeare
+  description: Folger Shakespeare Library 提供的官方 Macbeth 纯文本下载。WebNR 只保存 Folger 作品页、第一方 TXT 地址与许可/来源说明；读者明确选择该条目时由浏览器直接请求 Folger 的公开文本文件，WebNR 不代理或镜像正文。
+  filename: macbeth_TXT_FolgerShakespeare.txt
+  page_url: https://www.folger.edu/explore/shakespeares-works/macbeth/read/
+  download_url: https://folger-main-site-assets.s3.amazonaws.com/uploads/2022/11/macbeth_TXT_FolgerShakespeare.txt
+  source: Folger Shakespeare Library / Folger Digital Texts
+  license: CC-BY-NC-3.0-Folger-Digital-Texts
+  tags:
+    - Folger Shakespeare
+    - English
+    - Direct TXT
+    - Drama
+    - CC BY-NC 3.0
+  categories:
+    - Authorized TXT reading
+  region: en-US
+  chapters: 1
+
+folger-shakespeare/hamlet.md:
+  title: Hamlet
+  author: William Shakespeare
+  description: Folger Shakespeare Library 提供的官方 Hamlet 纯文本下载。文本的编辑与数字版本来源归属 Folger Digital Texts；WebNR 仅维护一个小型目录并指向 Folger 第一方下载资产，不复制评论、注释、账号状态或正文缓存。
+  filename: hamlet_TXT_FolgerShakespeare.txt
+  page_url: https://www.folger.edu/explore/shakespeares-works/hamlet/read/
+  download_url: https://folger-main-site-assets.s3.amazonaws.com/uploads/2022/11/hamlet_TXT_FolgerShakespeare.txt
+  source: Folger Shakespeare Library / Folger Digital Texts
+  license: CC-BY-NC-3.0-Folger-Digital-Texts
+  tags:
+    - Folger Shakespeare
+    - English
+    - Direct TXT
+    - Drama
+    - CC BY-NC 3.0
+  categories:
+    - Authorized TXT reading
+  region: en-US
+  chapters: 1
+
+folger-shakespeare/romeo-and-juliet.md:
+  title: Romeo and Juliet
+  author: William Shakespeare
+  description: Folger Shakespeare Library 提供的官方 Romeo and Juliet TXT。2026-09-02 审计确认 Folger 的 TXT 下载重定向到该第一方公开资产；文件自身标明 Folger Shakespeare Library 与编辑者信息。WebNR 不改写文本，也不把非商业许可扩大解释为一般公版授权。
+  filename: romeo-and-juliet_TXT_FolgerShakespeare.txt
+  page_url: https://www.folger.edu/explore/shakespeares-works/romeo-and-juliet/read/
+  download_url: https://folger-main-site-assets.s3.amazonaws.com/uploads/2022/11/romeo-and-juliet_TXT_FolgerShakespeare.txt
+  source: Folger Shakespeare Library / Folger Digital Texts
+  license: CC-BY-NC-3.0-Folger-Digital-Texts
+  tags:
+    - Folger Shakespeare
+    - English
+    - Direct TXT
+    - Drama
+    - CC BY-NC 3.0
+  categories:
+    - Authorized TXT reading
+  region: en-US
+  chapters: 1

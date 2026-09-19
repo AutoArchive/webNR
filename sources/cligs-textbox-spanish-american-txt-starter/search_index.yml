@@ -1,0 +1,62 @@
+cligs-textbox/nh0003.md:
+  title: Laucha
+  author: Roberto Payró
+  description: CLiGS Textbox 的 19 世纪西语美洲小说语料中的纯文本版本。来源项目说明作者版权已经到期、该 collection 以 CC BY 4.0 发布；WebNR 固定到已审计的上游 commit，并在读者明确导入时直接请求该 TXT，不镜像整套语料。
+  filename: nh0003.txt
+  page_url: https://github.com/cligs/textbox/blob/1b91e940475c8a7e866457a3953fed5edb0a29f1/spanish/novela-hispanoamericana/txt_id/nh0003.txt
+  download_url: https://raw.githubusercontent.com/cligs/textbox/1b91e940475c8a7e866457a3953fed5edb0a29f1/spanish/novela-hispanoamericana/txt_id/nh0003.txt
+  source: CLiGS Textbox — Collection of 19th Century Spanish-American Novels
+  license: Public-Domain-text-CC-BY-4.0-CLiGS-collection
+  tags:
+    - CLiGS Textbox
+    - Spanish
+    - Public domain
+    - CC BY 4.0
+    - Raw TXT
+    - Novel
+  categories:
+    - Free TXT reading
+  region: es-419
+  chapters: 1
+
+cligs-textbox/nh0004.md:
+  title: Inca
+  author: Roberto Payró
+  description: CLiGS Textbox 的 19 世纪西语美洲小说语料中的纯文本版本。该条目使用 collection 元数据中的稳定 nh0004 身份，并把正文 URL 固定到审计过的 Git commit，避免上游默认分支变化静默替换 WebNR 的导入目标。
+  filename: nh0004.txt
+  page_url: https://github.com/cligs/textbox/blob/1b91e940475c8a7e866457a3953fed5edb0a29f1/spanish/novela-hispanoamericana/txt_id/nh0004.txt
+  download_url: https://raw.githubusercontent.com/cligs/textbox/1b91e940475c8a7e866457a3953fed5edb0a29f1/spanish/novela-hispanoamericana/txt_id/nh0004.txt
+  source: CLiGS Textbox — Collection of 19th Century Spanish-American Novels
+  license: Public-Domain-text-CC-BY-4.0-CLiGS-collection
+  tags:
+    - CLiGS Textbox
+    - Spanish
+    - Public domain
+    - CC BY 4.0
+    - Raw TXT
+    - Historical fiction
+  categories:
+    - Free TXT reading
+  region: es-419
+  chapters: 1
+
+cligs-textbox/nh0011.md:
+  title: Rumbo
+  author: Eugenio Cambaceres
+  description: CLiGS Textbox 的 19 世纪西语美洲小说语料中的纯文本版本。WebNR 保留 CLiGS collection 的 CC BY 4.0 来源与署名边界，只维护一个小型版本化目录；正文仍由 cligs/textbox 的 commit-pinned raw 文件提供。
+  filename: nh0011.txt
+  page_url: https://github.com/cligs/textbox/blob/1b91e940475c8a7e866457a3953fed5edb0a29f1/spanish/novela-hispanoamericana/txt_id/nh0011.txt
+  download_url: https://raw.githubusercontent.com/cligs/textbox/1b91e940475c8a7e866457a3953fed5edb0a29f1/spanish/novela-hispanoamericana/txt_id/nh0011.txt
+  source: CLiGS Textbox — Collection of 19th Century Spanish-American Novels
+  license: Public-Domain-text-CC-BY-4.0-CLiGS-collection
+  tags:
+    - CLiGS Textbox
+    - Spanish
+    - Public domain
+    - CC BY 4.0
+    - Raw TXT
+    - Naturalism
+  categories:
+    - Free TXT reading
+  region: es-419
+  chapters: 1

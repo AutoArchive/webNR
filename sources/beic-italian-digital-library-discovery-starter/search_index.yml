@@ -1,0 +1,50 @@
+beic-italian-digital-library/home.md:
+  title: BEIC — 意大利数字图书馆
+  author: Fondazione Biblioteca Europea di Informazione e Cultura
+  description: Fondazione BEIC 的第一方数字图书馆入口，收录欧洲人文与科学文化的数字化作品与专题馆藏。WebNR 当前只保存发现链接与自写说明，不抓取目录记录、图像、扫描、PDF、元数据、OAI-PMH 数据或其他馆藏文件。
+  page_url: https://digital.beic.it/
+  source: WebNR BEIC Italian Digital Library Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - BEIC
+    - Italian literature
+    - digital library
+    - cultural heritage
+    - discovery
+  categories:
+    - Official literature discovery
+  region: it-IT
+
+beic-italian-digital-library/catalog.md:
+  title: BEIC — 数字馆藏检索目录
+  author: Fondazione Biblioteca Europea di Informazione e Cultura
+  description: BEIC 第一方 Primo VE 检索入口，可发现数字馆藏中的作者、作品与资源。WebNR 不代理检索、不保存结果行，也不把可浏览目录改写成已经完成审计的自动抓取或 TXT 导入接口。
+  page_url: https://catalogue.beic.it/discovery/search?vid=39BEIC_INST:39BEIC_INST
+  source: WebNR BEIC Italian Digital Library Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - BEIC
+    - catalog search
+    - Italian literature
+    - books
+    - discovery
+  categories:
+    - Official literature discovery
+  region: it-IT
+
+beic-italian-digital-library/rights-guidance.md:
+  title: BEIC — 使用与再利用条款
+  author: Fondazione Biblioteca Europea di Informazione e Cultura
+  description: BEIC 第一方条款说明数字馆藏图像可免费访问、下载和再利用，并区分公共领域作品、CC BY-SA 作品、CC0 目录数据与 BEIC 自制内容的许可。WebNR 仅把该页面作为权利边界说明，不复制或重发布馆藏内容。
+  page_url: https://digital.beic.it/termini-duso/
+  source: WebNR BEIC Italian Digital Library Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - BEIC
+    - copyright
+    - Creative Commons
+    - public domain
+    - reuse guidance
+  categories:
+    - Official literature discovery
+  region: it-IT

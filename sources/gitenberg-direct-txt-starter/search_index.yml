@@ -1,0 +1,63 @@
+gitenberg/pride-and-prejudice-1342.md:
+  title: Pride and Prejudice
+  author: Jane Austen
+  description: GITenberg 中 Project Gutenberg #1342 的公共领域英文纯文本。WebNR 保留 GITenberg 仓库作为 provenance，并把下载地址固定到已审计的仓库 commit；读者选择该条目时直接从上游 GitHub raw 文件导入，不经过 WebNR 代理。
+  filename: 1342-0.txt
+  page_url: https://github.com/GITenberg/Pride-and-Prejudice_1342
+  download_url: https://raw.githubusercontent.com/GITenberg/Pride-and-Prejudice_1342/81db45c9c48c592f0b77f01fc59e677ad0a5634e/1342-0.txt
+  source: GITenberg / Project Gutenberg
+  license: Public-Domain-GITenberg-Project-Gutenberg
+  tags:
+    - GITenberg
+    - Project Gutenberg
+    - English
+    - Public domain
+    - Raw TXT
+    - Novel
+  categories:
+    - Free TXT reading
+  region: en-US
+  chapters: 1
+
+gitenberg/frankenstein-84.md:
+  title: Frankenstein
+  author: Mary Wollstonecraft Shelley
+  description: GITenberg 中 Project Gutenberg #84 的公共领域英文 UTF-8 纯文本。下载 URL 固定到审计过的上游 commit，使内容身份、回滚和来源核验都可以重复；WebNR 不抓取 GITenberg 目录，也不镜像该文件。
+  filename: 84-0.txt
+  page_url: https://github.com/GITenberg/Frankenstein_84
+  download_url: https://raw.githubusercontent.com/GITenberg/Frankenstein_84/c98a483bd1f34e7366126b81bcedd1a6faee636e/84-0.txt
+  source: GITenberg / Project Gutenberg
+  license: Public-Domain-GITenberg-Project-Gutenberg
+  tags:
+    - GITenberg
+    - Project Gutenberg
+    - English
+    - Public domain
+    - Raw TXT
+    - Gothic
+    - Novel
+  categories:
+    - Free TXT reading
+  region: en-US
+  chapters: 1
+
+gitenberg/sherlock-holmes-1661.md:
+  title: The Adventures of Sherlock Holmes
+  author: Arthur Conan Doyle
+  description: GITenberg 中 Project Gutenberg #1661 的公共领域英文纯文本。该条目使用固定 commit 的 1661.txt，避免默认分支后续变化悄悄改变 WebNR 的已审计导入目标。
+  filename: 1661.txt
+  page_url: https://github.com/GITenberg/The-Adventures-of-Sherlock-Holmes_1661
+  download_url: https://raw.githubusercontent.com/GITenberg/The-Adventures-of-Sherlock-Holmes_1661/7e5dd2703fbf503c004063e96ab7c61262375e5f/1661.txt
+  source: GITenberg / Project Gutenberg
+  license: Public-Domain-GITenberg-Project-Gutenberg
+  tags:
+    - GITenberg
+    - Project Gutenberg
+    - English
+    - Public domain
+    - Raw TXT
+    - Detective fiction
+  categories:
+    - Free TXT reading
+  region: en-US
+  chapters: 1
