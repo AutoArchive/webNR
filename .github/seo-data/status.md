@@ -8,7 +8,7 @@ This file records only the current durable operating state and active focus. His
 - Latest merged reader-content change: pull request #178, squash merge `28ffcbbec808b75a5e13952b3ec45f7516d81e67`
 - Last successful attributable application deployment: `02cfa3da7f6c6c3acd0d47f5c4fa6de5a0a9935f`
 - Current application verification target: `02cfa3da7f6c6c3acd0d47f5c4fa6de5a0a9935f`
-- Last successful attributable documentation-mirror deployment: `28ffcbbec808b75a5e13952b3ec45f7516d81e67`
+- Last successful attributable documentation deployment: `28ffcbbec808b75a5e13952b3ec45f7516d81e67`
 - Current documentation mirror verification target: `28ffcbbec808b75a5e13952b3ec45f7516d81e67`
 - Last successful canonical Cloudflare documentation deployment: `02cfa3da7f6c6c3acd0d47f5c4fa6de5a0a9935f`
 - Current canonical documentation verification target: `02cfa3da7f6c6c3acd0d47f5c4fa6de5a0a9935f`
