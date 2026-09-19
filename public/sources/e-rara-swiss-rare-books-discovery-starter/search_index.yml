@@ -1,0 +1,50 @@
+e-rara-swiss-rare-books/home.md:
+  title: e-rara — 瑞士古籍与历史印刷品
+  author: e-rara.ch participating Swiss libraries
+  description: e-rara.ch 第一方入口，提供瑞士图书馆馆藏古籍、地图与图像化历史印刷品的数字访问。WebNR 当前只保存发现链接与自写说明，不抓取目录、PDF、OCR、图像、元数据、OAI-PMH、RSS 或 IIIF 数据。
+  page_url: https://www.e-rara.ch/
+  source: WebNR e-rara Swiss Rare Books Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - e-rara
+    - Swiss libraries
+    - rare books
+    - public domain
+    - discovery
+  categories:
+    - Official literature discovery
+  region: ch-CH
+
+e-rara-swiss-rare-books/interfaces.md:
+  title: e-rara — 数据接口与下载说明
+  author: e-rara.ch participating Swiss libraries
+  description: e-rara 第一方接口说明记录 OAI-PMH、全文/PDF、RIS 与 IIIF 等机器接口。WebNR 仅把它作为能力与未来审计入口，不执行 harvest、轮询、批量下载或内容转换。
+  page_url: https://www.e-rara.ch/wiki/apiinfo
+  source: WebNR e-rara Swiss Rare Books Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - e-rara
+    - OAI-PMH
+    - IIIF
+    - OCR
+    - discovery
+  categories:
+    - Official literature discovery
+  region: ch-CH
+
+e-rara-swiss-rare-books/rights-guidance.md:
+  title: e-rara — 使用与再利用条款
+  author: e-rara.ch participating Swiss libraries
+  description: e-rara 第一方条款要求以每条文献的许可为准，并区分 Public Domain Mark 公版文献与由参与机构持有使用权、以 CC BY-SA 4.0 提供的文献。WebNR 仅保存权利边界入口，不据此复制或重新发布馆藏内容。
+  page_url: https://www.e-rara.ch/wiki/termsOfUse?lang=en
+  source: WebNR e-rara Swiss Rare Books Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - e-rara
+    - copyright
+    - public domain
+    - Creative Commons
+    - reuse guidance
+  categories:
+    - Official literature discovery
+  region: ch-CH
