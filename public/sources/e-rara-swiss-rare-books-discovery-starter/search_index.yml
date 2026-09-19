@@ -13,7 +13,7 @@ e-rara-swiss-rare-books/home.md:
     - discovery
   categories:
     - Official literature discovery
-  region: ch-CH
+  region: de-CH
 
 e-rara-swiss-rare-books/interfaces.md:
   title: e-rara — 数据接口与下载说明
@@ -30,7 +30,7 @@ e-rara-swiss-rare-books/interfaces.md:
     - discovery
   categories:
     - Official literature discovery
-  region: ch-CH
+  region: de-CH
 
 e-rara-swiss-rare-books/rights-guidance.md:
   title: e-rara — 使用与再利用条款
@@ -47,4 +47,4 @@ e-rara-swiss-rare-books/rights-guidance.md:
     - reuse guidance
   categories:
     - Official literature discovery
-  region: ch-CH
+  region: de-CH
