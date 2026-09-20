@@ -1,10 +1,19 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { resolve4, resolve6, resolveCname } from 'node:dns/promises';
 
 const statusPath = '.github/seo-data/status.md';
 const status = readFileSync(statusPath, 'utf8');
 const maxAttempts = 42;
 const retryDelayMs = 10_000;
+
+const latestPost = readdirSync('docs/blog/posts')
+  .filter(name => /^20\d{2}-\d{2}-\d{2}-.+\.md$/.test(name))
+  .sort()
+  .at(-1);
+if (!latestPost) throw new Error('No dated reader posts found under docs/blog/posts');
+const latestPostDate = latestPost.slice(0, 10).replaceAll('-', '/');
+const latestPostSlug = latestPost.slice(11, -3);
+const latestReaderUrl = `https://www.webnovel.win/blog/${latestPostDate}/${latestPostSlug}/`;
 
 const targets = [
   {
@@ -66,14 +75,20 @@ const targets = [
         needles: ['2026 英文连载小说平台怎么选', 'English Serial Platforms Starter'],
       },
       {
+        url: latestReaderUrl,
+        accept: 'text/html',
+        expectedCanonical: latestReaderUrl,
+        needles: ['G-DGH8HNQKE4'],
+      },
+      {
         url: 'https://www.webnovel.win/sitemap.xml',
         accept: 'application/xml,text/xml',
-        needles: ['https://www.webnovel.win/blog/2026/08/10/english-serial-fiction-platforms/'],
+        needles: [latestReaderUrl],
       },
       {
         url: 'https://www.webnovel.win/feed_rss_created.xml',
         accept: 'application/rss+xml,application/xml,text/xml',
-        needles: ['https://www.webnovel.win/blog/2026/08/10/english-serial-fiction-platforms/'],
+        needles: [latestReaderUrl],
       },
     ],
   },
