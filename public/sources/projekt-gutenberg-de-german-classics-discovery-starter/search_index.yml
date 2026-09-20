@@ -1,0 +1,50 @@
+projekt-gutenberg-de/home.md:
+  title: Projekt Gutenberg — 德语经典文学在线阅读
+  author: Projekt Gutenberg
+  description: Projekt Gutenberg 第一方入口，提供德语经典文学的在线阅读、站内搜索与当前 EPUB 下载入口。WebNR 当前仅保存发现链接与自写说明，不抓取章节、全文、EPUB、目录数据或站点元数据。
+  page_url: https://projekt-gutenberg.org/
+  source: WebNR Projekt Gutenberg-DE German Classics Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Projekt Gutenberg
+    - German literature
+    - classics
+    - public domain
+    - discovery
+  categories:
+    - Official literature discovery
+  region: de-DE
+
+projekt-gutenberg-de/library.md:
+  title: Projekt Gutenberg — 作品目录与作者发现
+  author: Projekt Gutenberg
+  description: Projekt Gutenberg 当前第一方 A-Z 作品目录，适合按题名进入经典文本与作者页面。WebNR 只提供浏览入口，不镜像目录、搜索结果、章节文本或 EPUB 文件。
+  page_url: https://projekt-gutenberg.org/bibliothek/
+  source: WebNR Projekt Gutenberg-DE German Classics Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Projekt Gutenberg
+    - bibliography
+    - German classics
+    - catalogue
+    - discovery
+  categories:
+    - Official literature discovery
+  region: de-DE
+
+projekt-gutenberg-de/terms.md:
+  title: Projekt Gutenberg — 当前使用条款与文本再利用边界
+  author: Projekt Gutenberg
+  description: 第一方使用条款说明，站点称文学作品按其最佳认知作为公版提供，同时把站内提供文本的使用限定为私人用途，并限制复制、再发布与改编。WebNR 因而保持 link-only，不把底层作品公版状态等同于网站数字版本的再分发许可。
+  page_url: https://projekt-gutenberg.org/nutzungsbedingungen/
+  source: WebNR Projekt Gutenberg-DE German Classics Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Projekt Gutenberg
+    - copyright
+    - public domain
+    - terms of use
+    - reuse guidance
+  categories:
+    - Official literature discovery
+  region: de-DE
