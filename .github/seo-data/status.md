@@ -6,11 +6,14 @@ This file records only the current durable operating state and active focus. His
 
 - Last merged product/source change: pull request #185, squash merge `71dc7bab829835806e04eb07b670078f385bfd21`.
 - Latest merged reader-content change: pull request #182, squash merge `4c26b0c1da74c7201d45c7dbe2f32aba68847635`.
-- Last successful attributable application deployment and current application verification target: `71dc7bab829835806e04eb07b670078f385bfd21`.
+- Last successful attributable application deployment: `71dc7bab829835806e04eb07b670078f385bfd21`
+- Current application verification target: `71dc7bab829835806e04eb07b670078f385bfd21`
+- Last successful attributable documentation deployment: `4c26b0c1da74c7201d45c7dbe2f32aba68847635`
+- Current documentation mirror verification target: `4c26b0c1da74c7201d45c7dbe2f32aba68847635`
+- Last successful canonical Cloudflare documentation deployment: `71dc7bab829835806e04eb07b670078f385bfd21`
+- Current canonical documentation verification target: `71dc7bab829835806e04eb07b670078f385bfd21`
 - Latest application deployment artifact branch commit: `89d8a786be2f329edfd9880df2ddd0bfeb2e7e33`; its `build.json` names source commit `71dc7bab829835806e04eb07b670078f385bfd21`.
-- Last successful attributable GitHub Pages documentation-mirror deployment and current mirror verification target: `4c26b0c1da74c7201d45c7dbe2f32aba68847635`.
-- Latest documentation-mirror artifact branch commit: `e72b3d80d495071faeb83780f459cbbe1c8b608a`.
-- Last successful canonical Cloudflare documentation deployment and current canonical documentation verification target: `71dc7bab829835806e04eb07b670078f385bfd21`.
+- Latest documentation mirror artifact branch commit: `e72b3d80d495071faeb83780f459cbbe1c8b608a`.
 - Canonical public documentation/editorial URL: `https://www.webnovel.win/`.
 - Working reader URL: `https://app.webnovel.win/`.
 - Working documentation build mirror URL: `https://autoarchive.github.io/webNR/`.
