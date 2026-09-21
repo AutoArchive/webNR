@@ -1,0 +1,50 @@
+memoria-chilena/literature.md:
+  title: Memoria Chilena — 智利文学主题与数字馆藏发现
+  author: Biblioteca Nacional de Chile
+  description: 智利国家图书馆 Memoria Chilena 的第一方文学主题入口，汇集作家、文学批评、体裁、阅读与出版史等专题，并链接书籍、期刊、手稿与其他数字化文献。WebNR 仅保存发现链接与自写说明，不抓取、镜像或重新分发数字对象。
+  page_url: https://www.memoriachilena.gob.cl/602/w3-propertyvalue-137759.html
+  source: WebNR Memoria Chilena Literature Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Memoria Chilena
+    - Chilean literature
+    - Biblioteca Nacional de Chile
+    - digital collections
+    - discovery
+  categories:
+    - Official literature discovery
+  region: es-CL
+
+memoria-chilena/about-rights.md:
+  title: Memoria Chilena — 项目范围与著作权说明
+  author: Biblioteca Nacional de Chile
+  description: 第一方项目介绍与权利说明。Memoria Chilena 优先数字化公共领域或智利“共同文化遗产”作品，但馆藏也包含受保护材料；网站平台、设计与原创编辑内容另受保护。WebNR 因此不把免费在线访问或馆藏级描述当作整站再利用许可。
+  page_url: https://www.memoriachilena.gob.cl/602/w3-article-123834.html
+  source: WebNR Memoria Chilena Literature Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Memoria Chilena
+    - copyright
+    - public domain
+    - cultural heritage
+    - reuse guidance
+  categories:
+    - Official literature discovery
+  region: es-CL
+
+memoria-chilena/faq-rights.md:
+  title: Memoria Chilena — 知识产权、引用与复制 FAQ
+  author: Biblioteca Nacional de Chile
+  description: 第一方 FAQ 说明知识产权、引用与数字化材料复制边界，并要求按具体材料的权利状态处理。WebNR 只把它作为读者核验入口，不下载 RDF、图片、扫描件、PDF、音视频或其他数字对象。
+  page_url: https://www.memoriachilena.gob.cl/602/w3-article-123838.html
+  source: WebNR Memoria Chilena Literature Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Memoria Chilena
+    - intellectual property
+    - citation
+    - reproduction
+    - rights guidance
+  categories:
+    - Official literature discovery
+  region: es-CL
