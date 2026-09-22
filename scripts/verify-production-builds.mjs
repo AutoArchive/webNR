@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { resolve4, resolve6, resolveCname } from 'node:dns/promises';
 
 const statusPath = '.github/seo-data/status.md';
@@ -6,14 +6,13 @@ const status = readFileSync(statusPath, 'utf8');
 const maxAttempts = 42;
 const retryDelayMs = 10_000;
 
-const latestPost = readdirSync('docs/blog/posts')
-  .filter(name => /^20\d{2}-\d{2}-\d{2}-.+\.md$/.test(name))
-  .sort()
-  .at(-1);
-if (!latestPost) throw new Error('No dated reader posts found under docs/blog/posts');
-const latestPostDate = latestPost.slice(0, 10).replaceAll('-', '/');
-const latestPostSlug = latestPost.slice(11, -3);
-const latestReaderUrl = `https://www.webnovel.win/blog/${latestPostDate}/${latestPostSlug}/`;
+const latestReaderMatch = status.match(
+  /^- Latest substantial reader asset: .* at `(https:\/\/www\.webnovel\.win\/blog\/[^`]+\/)`\.$/m,
+);
+if (!latestReaderMatch) {
+  throw new Error(`Missing recorded latest substantial reader asset URL in ${statusPath}`);
+}
+const latestReaderUrl = latestReaderMatch[1];
 
 const targets = [
   {
