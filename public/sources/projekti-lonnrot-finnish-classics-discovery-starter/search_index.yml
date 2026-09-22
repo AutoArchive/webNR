@@ -1,0 +1,50 @@
+projekti-lonnrot/overview.md:
+  title: Projekti Lönnrot — 芬兰与瑞典语经典电子书项目
+  author: Projekti Lönnrot
+  description: Projekti Lönnrot 的第一方项目入口。项目说明其按欧盟作者逝世后 70 年规则选择已脱离版权的芬兰语与瑞典语作品，并将数字化电子书提供给公众。WebNR 当前只保存发现链接与自写说明，不复制上游文本。
+  page_url: https://www.lonnrot.net/
+  source: WebNR Projekti Lönnrot Finnish Classics Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Projekti Lönnrot
+    - Finnish literature
+    - Swedish literature
+    - public domain
+    - Nordic classics
+  categories:
+    - Official literature discovery
+  region: fi-FI
+
+projekti-lonnrot/authors.md:
+  title: Projekti Lönnrot — 按作者浏览电子书
+  author: Projekti Lönnrot
+  description: 第一方作者索引可按字母浏览项目已数字化的作者与作品。项目说明成书通常以纯文本形式提供。WebNR 当前只链接该索引，不同步作者目录或电子书文件。
+  page_url: https://www.lonnrot.net/etext.html
+  source: WebNR Projekti Lönnrot Finnish Classics Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Projekti Lönnrot
+    - Finnish authors
+    - public-domain ebooks
+    - plain text
+    - discovery
+  categories:
+    - Official literature discovery
+  region: fi-FI
+
+projekti-lonnrot/completed.md:
+  title: Projekti Lönnrot — 已完成电子书列表
+  author: Projekti Lönnrot
+  description: 第一方已完成电子书列表按制作完成顺序展示项目内容，适合发现新近整理的芬兰语与瑞典语经典。WebNR 当前只提供跳转，不同步或重新分发上游电子书文件。
+  page_url: https://www.lonnrot.net/valmiit.html
+  source: WebNR Projekti Lönnrot Finnish Classics Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Projekti Lönnrot
+    - completed ebooks
+    - Finnish literature
+    - Swedish literature
+    - discovery
+  categories:
+    - Official literature discovery
+  region: fi-FI
