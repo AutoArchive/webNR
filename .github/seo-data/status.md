@@ -10,8 +10,8 @@ This file records only the current durable operating state and active focus. His
 - Current application verification target: `d053b34b2ae6edd343d50452b6a194ef50ae351c`
 - Last successful attributable documentation deployment: `2ebd54164b696c68433ab843cc16846daae962bb`
 - Current documentation mirror verification target: `2ebd54164b696c68433ab843cc16846daae962bb`
-- Last successful canonical Cloudflare documentation deployment: `2ebd54164b696c68433ab843cc16846daae962bb`
-- Current canonical documentation verification target: `2ebd54164b696c68433ab843cc16846daae962bb`
+- Last successful canonical Cloudflare documentation deployment: `d053b34b2ae6edd343d50452b6a194ef50ae351c`
+- Current canonical documentation verification target: `d053b34b2ae6edd343d50452b6a194ef50ae351c`
 - Latest application deployment artifact branch commit: `d07034d1d23846a991c5d7333593612a172adc84`; its `build.json` names source commit `d053b34b2ae6edd343d50452b6a194ef50ae351c`.
 - Latest documentation mirror artifact branch commit: `0045ea3efc098b9e1f21e8c1272b9f103e686bc8`; its `build.json` names source commit `2ebd54164b696c68433ab843cc16846daae962bb`.
 - Canonical public documentation/editorial URL: `https://www.webnovel.win/`.
@@ -22,7 +22,7 @@ This file records only the current durable operating state and active focus. His
 - `Web Novel Discussion Radar Starter`: **12** WebNR-authored link-only routes. It synchronizes local YAML only; no community post body, username, reply, vote, story text, account state, API request, login, crawler, or background origin synchronization is introduced.
 - Latest substantial reader asset: **“北欧免费经典电子书去哪找？Lönnrot、Runeberg、Bækur、Bokselskap 怎么选”**, published from #187 at `https://www.webnovel.win/blog/2026/09/22/nordic-free-classic-ebooks-lonnrot-runeberg-baekur-bokselskap/`.
 - Application production evidence: deployment workflow `35893544281` succeeded for exact #189 source commit `d053b34b2ae6edd343d50452b6a194ef50ae351c`, including artifact validation and the exact-public-build verifier against `app.webnovel.win`. `app-pages` artifact `d07034d1d23846a991c5d7333593612a172adc84` has `build.json` naming that exact source commit and contains the generated BIDICAM source output.
-- Documentation production evidence: workflow `35759762859` published `gh-pages` artifact `0045ea3efc098b9e1f21e8c1272b9f103e686bc8`, whose `build.json` names `2ebd54164b696c68433ab843cc16846daae962bb`; Cloudflare Pages `webnr-docs` was last independently verified for exact main commit `2ebd54164b696c68433ab843cc16846daae962bb`. The September 23 source-only application change did not trigger the GitHub Pages documentation workflow, and this record does not infer a newer canonical-documentation identity without exact public evidence.
+- Documentation production evidence: workflow `35759762859` remains the last GitHub Pages mirror publication, with `gh-pages` artifact `0045ea3efc098b9e1f21e8c1272b9f103e686bc8` naming `2ebd54164b696c68433ab843cc16846daae962bb`. The canonical Cloudflare documentation target is independently advanced to exact main source commit `d053b34b2ae6edd343d50452b6a194ef50ae351c`; closeout Production evidence must verify that exact public `www.webnovel.win` build before this status can merge.
 - Post-merge source Quality run `35893544396` completed successfully for exact #189 squash commit; Production evidence, Documentation quality, Web quality, and Chromium user journeys all succeeded.
 - Current analytics implementation: sole GA4 destination `G-DGH8HNQKE4`; `page_location` uses `window.location.href`, `page_path` uses `window.location.pathname + window.location.search`; Google signals and ad-personalization signals remain disabled.
 - Current analytics export state: the configured connected Google Drive folder `webNR SEO Weekly CSV` contained no non-trashed GA4 or Search Console exports on 2026-09-23. Provider aggregates are unavailable rather than zero.
