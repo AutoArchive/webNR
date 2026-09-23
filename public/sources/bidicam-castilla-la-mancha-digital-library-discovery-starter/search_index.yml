@@ -1,0 +1,50 @@
+bidicam/overview.md:
+  title: BIDICAM — 卡斯蒂利亚-拉曼恰数字图书馆
+  author: Biblioteca Digital de Castilla-La Mancha (BIDICAM)
+  description: BIDICAM 的第一方项目入口。官方说明其面向不受版权保护的卡斯蒂利亚-拉曼恰书目遗产提供开放访问，并支持检索与多格式全文下载。WebNR 当前只保存发现链接与自写说明，不抓取或重新分发上游数字对象。
+  page_url: https://patrimoniodigital.castillalamancha.es/bidicam/es/micrositios/inicio.do
+  source: WebNR BIDICAM Castilla-La Mancha Digital Library Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - BIDICAM
+    - Spanish literature
+    - Castilla-La Mancha
+    - public-domain heritage
+    - digital library
+  categories:
+    - Official literature discovery
+  region: es-ES
+
+bidicam/search.md:
+  title: BIDICAM — 馆藏辅助检索
+  author: Biblioteca Digital de Castilla-La Mancha (BIDICAM)
+  description: Patrimonio Digital de Castilla-La Mancha 的第一方辅助检索可按题名、作者等字段搜索，并可筛选 BIDICAM 馆藏。WebNR 当前只链接检索入口，不同步目录记录、OCR、图片或文件。
+  page_url: https://patrimoniodigital.castillalamancha.es/es/consulta/busqueda.do
+  source: WebNR BIDICAM Castilla-La Mancha Digital Library Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - BIDICAM
+    - catalog search
+    - Spanish books
+    - Castilla-La Mancha
+    - discovery
+  categories:
+    - Official literature discovery
+  region: es-ES
+
+bidicam/hemeroteca.md:
+  title: BIDICAM — 历史报刊馆藏
+  author: Biblioteca Digital de Castilla-La Mancha (BIDICAM)
+  description: BIDICAM 的第一方 Hemeroteca 可按报刊与日期发现数字化历史期刊和报纸。WebNR 当前只提供跳转，不抓取期号、页面图像、OCR 或下载文件。
+  page_url: https://patrimoniodigital.castillalamancha.es/bidicam/es/publicaciones/listar_numeros.do
+  source: WebNR BIDICAM Castilla-La Mancha Digital Library Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - BIDICAM
+    - historical newspapers
+    - periodicals
+    - Castilla-La Mancha
+    - discovery
+  categories:
+    - Official literature discovery
+  region: es-ES
