@@ -1,0 +1,47 @@
+classics-open-reading/lit2go.md:
+  title: Lit2Go — Stories, Poems & Audiobooks
+  author: Florida Center for Instructional Technology, University of South Florida
+  description: Lit2Go 的第一方公开阅读目录提供故事、诗歌、经典文学、MP3 有声内容和配套 PDF。WebNR 当前仅保存官方入口与自行撰写的发现说明；Lit2Go 的现行许可对文件再利用设置教育、非商业与数量边界，因此不复制、缓存或重发其文本、音频、PDF、教学材料或站点元数据。
+  page_url: https://etc.usf.edu/lit2go/
+  source: WebNR Classics & Open Reading Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Lit2Go
+    - Classic literature
+    - Audiobooks
+    - Education
+  categories:
+    - Free reading discovery
+  region: en
+
+classics-open-reading/alpheios-texts.md:
+  title: Alpheios Texts — Greek & Latin Reading Center
+  author: Alpheios Project
+  description: Alpheios Texts 的第一方 Reading Center 提供古希腊语与古典拉丁语文本浏览；站点说明除另有标注外，Reader 中的文本采用 CC BY-SA 4.0。WebNR 当前只链接官方阅读入口，不复制文本、注释、词典数据、用户词表或站点资产，并保留逐项许可差异在来源站点处理。
+  page_url: https://texts.alpheios.net/
+  source: WebNR Classics & Open Reading Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Alpheios
+    - Ancient Greek
+    - Classical Latin
+    - Open texts
+  categories:
+    - Free reading discovery
+  region: multilingual
+
+classics-open-reading/scaife-viewer.md:
+  title: Perseus Scaife Viewer — Open Greek & Latin Library
+  author: Perseus Digital Library / Open Greek and Latin
+  description: Scaife Viewer 是 Perseus Digital Library / Open Greek and Latin 的第一方预现代文本阅读环境，可浏览古希腊语、拉丁语及相关译本。WebNR 仅保存官方 Library 入口和自行撰写的说明，不复制具体 edition、translation、annotation、词形数据或正文，也不把项目开放访问误写成所有版本均具有统一再分发许可。
+  page_url: https://scaife.perseus.org/
+  source: WebNR Classics & Open Reading Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Perseus Digital Library
+    - Scaife Viewer
+    - Ancient Greek
+    - Classical Latin
+  categories:
+    - Free reading discovery
+  region: multilingual

@@ -1,0 +1,50 @@
+bokselskap-norwegian-literature/catalog.md:
+  title: Bokselskap — 挪威经典文学官方目录
+  author: Det norske språk- og litteraturselskap (NSL)
+  description: Bokselskap 与挪威国家图书馆合作维护的官方电子书入口，提供 400 多部挪威文学作品的在线阅读与下载发现。WebNR 只保存第一方入口和自写说明，不复制作品正文、电子书文件、目录数据或编辑材料。
+  page_url: https://www.bokselskap.no/
+  source: WebNR Bokselskap Norwegian Literature Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Bokselskap
+    - Norwegian literature
+    - 挪威文学
+    - classics
+    - official library
+  categories:
+    - Official literature discovery
+  region: nb-NO
+
+bokselskap-norwegian-literature/authors.md:
+  title: Bokselskap — 挪威作家官方索引
+  author: Det norske språk- og litteraturselskap (NSL)
+  description: Bokselskap 的第一方作者目录，可从 Henrik Ibsen、Camilla Collett、Arne Garborg、Amalie Skram、Ragnhild Jølsen、Sigrid Undset 等作者继续进入作品。WebNR 不抓取作者简介、作品列表或站点目录，只提供稳定发现入口。
+  page_url: https://www.bokselskap.no/forfattere
+  source: WebNR Bokselskap Norwegian Literature Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Bokselskap
+    - Norwegian authors
+    - 挪威作家
+    - classics
+    - discovery
+  categories:
+    - Official literature discovery
+  region: nb-NO
+
+bokselskap-norwegian-literature/downloads.md:
+  title: Bokselskap — 官方电子书下载与 OPDS 指南
+  author: Det norske språk- og litteraturselskap (NSL)
+  description: Bokselskap 的第一方下载页列出 EPUB、MOBI、PDF、HTML 等可用格式，并指向其 OPDS 使用说明。WebNR 当前只链接该指南，不自动读取 OPDS、下载电子书或把原站文件重新分发为 WebNR 内容源。
+  page_url: https://www.bokselskap.no/hjelp_om/nedlastingsside
+  source: WebNR Bokselskap Norwegian Literature Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Bokselskap
+    - OPDS
+    - EPUB
+    - Norwegian literature
+    - download guide
+  categories:
+    - Official literature discovery
+  region: nb-NO

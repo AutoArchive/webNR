@@ -1,0 +1,50 @@
+bvpb-spanish-heritage/home.md:
+  title: BVPB — 西班牙书目遗产数字图书馆
+  author: Ministerio de Cultura — España
+  description: 西班牙文化部 Biblioteca Virtual del Patrimonio Bibliográfico 的第一方入口，提供古籍、手稿、历史照片、地图、乐谱等数字化书目遗产的开放访问。WebNR 当前只保存发现链接与自写说明，不抓取书目记录、扫描、PDF、JPEG、OCR、OAI/SRU 数据或其他馆藏文件。
+  page_url: https://bvpb.mcu.es/es/inicio/inicio.do
+  source: WebNR BVPB Spanish Heritage Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - BVPB
+    - Spanish literature
+    - digital library
+    - cultural heritage
+    - discovery
+  categories:
+    - Official literature discovery
+  region: es-ES
+
+bvpb-spanish-heritage/search.md:
+  title: BVPB — 馆藏检索
+  author: Ministerio de Cultura — España
+  description: BVPB 第一方高级检索入口，可按馆藏字段发现数字化图书、手稿及其他书目遗产。WebNR 不代理检索、不保存结果行，也不把公开可访问外推为所有条目具有相同的再利用许可。
+  page_url: https://bvpb.mcu.es/es/consulta/busqueda.do
+  source: WebNR BVPB Spanish Heritage Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - BVPB
+    - catalog search
+    - Spanish literature
+    - books
+    - discovery
+  categories:
+    - Official literature discovery
+  region: es-ES
+
+bvpb-spanish-heritage/rights-guidance.md:
+  title: BVPB — 使用许可与版权说明
+  author: Ministerio de Cultura — España
+  description: BVPB 第一方法律说明指出馆藏原作多数属于公版，但数字复制品的具体许可应以各书目记录为准；多数数字作品采用 CC BY 4.0，也存在其他或更严格的许可。WebNR 仅把该页面作为权利边界说明，不复制或重发布馆藏内容。
+  page_url: https://bvpb.mcu.es/es/contenido/aviso-legal.do
+  source: WebNR BVPB Spanish Heritage Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - BVPB
+    - copyright
+    - Creative Commons
+    - provenance
+    - reuse guidance
+  categories:
+    - Official literature discovery
+  region: es-ES

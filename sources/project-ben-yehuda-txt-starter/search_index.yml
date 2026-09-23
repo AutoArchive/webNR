@@ -1,0 +1,79 @@
+project-ben-yehuda/work-10.md:
+  title: חצי-נחמה
+  author: אחד העם
+  description: Project Ben-Yehuda 公共领域 dump 中的 UTF-8 纯文本作品。WebNR 保留官方阅读页作为来源说明，并把下载地址固定到已审计的上游 dump commit，使这条目可以真实导入 TXT，而不是只做发现链接。
+  filename: m10.txt
+  page_url: https://benyehuda.org/read/10
+  download_url: https://raw.githubusercontent.com/projectbenyehuda/public_domain_dump/5e4277fead7b565f32cc4b352abd3565023a77d8/txt/p23/m10.txt
+  source: Project Ben-Yehuda public_domain_dump
+  license: Public-Domain-Project-Ben-Yehuda
+  tags:
+    - Project Ben-Yehuda
+    - Hebrew
+    - Public domain
+    - Raw TXT
+    - Essay
+  categories:
+    - Free TXT reading
+  region: he-IL
+  chapters: 1
+
+project-ben-yehuda/work-28.md:
+  title: מעל מכסה האניה
+  author: אלחנן ליב לוינסקי
+  description: Project Ben-Yehuda 公共领域 dump 中的 UTF-8 希伯来语散文。条目使用官方作品页做 provenance，并直接指向固定 commit 的原始 TXT 文件；WebNR 不抓取网站目录或调用需要凭据的 API。
+  filename: m28.txt
+  page_url: https://benyehuda.org/read/28
+  download_url: https://raw.githubusercontent.com/projectbenyehuda/public_domain_dump/5e4277fead7b565f32cc4b352abd3565023a77d8/txt/p33/m28.txt
+  source: Project Ben-Yehuda public_domain_dump
+  license: Public-Domain-Project-Ben-Yehuda
+  tags:
+    - Project Ben-Yehuda
+    - Hebrew
+    - Public domain
+    - Raw TXT
+    - Prose
+  categories:
+    - Free TXT reading
+  region: he-IL
+  chapters: 1
+
+project-ben-yehuda/work-33.md:
+  title: הַתַּכְרִיך
+  author: אברהם שלום פרידברג
+  description: Project Ben-Yehuda 官方页面将该作品标为公共领域，官方 dump 同时以 UTF-8 TXT 发布。WebNR 的直接下载 URL 固定在审计过的上游 commit，便于可重复导入与回滚。
+  filename: m33.txt
+  page_url: https://benyehuda.org/read/33
+  download_url: https://raw.githubusercontent.com/projectbenyehuda/public_domain_dump/5e4277fead7b565f32cc4b352abd3565023a77d8/txt/p21/m33.txt
+  source: Project Ben-Yehuda public_domain_dump
+  license: Public-Domain-Project-Ben-Yehuda
+  tags:
+    - Project Ben-Yehuda
+    - Hebrew
+    - Public domain
+    - Raw TXT
+    - Prose
+  categories:
+    - Free TXT reading
+  region: he-IL
+  chapters: 1
+
+project-ben-yehuda/work-40.md:
+  title: שני ימים ולילה אחד בבית מלון אורחים
+  author: יהודה ליב גורדון
+  description: Project Ben-Yehuda 的公共领域希伯来语散文，正文来自官方 GitHub dump 的 UTF-8 TXT。WebNR 只维护一个小型版本化目录，实际阅读导入使用固定上游 commit 的原始文件。
+  filename: m40.txt
+  page_url: https://benyehuda.org/read/40
+  download_url: https://raw.githubusercontent.com/projectbenyehuda/public_domain_dump/5e4277fead7b565f32cc4b352abd3565023a77d8/txt/p46/m40.txt
+  source: Project Ben-Yehuda public_domain_dump
+  license: Public-Domain-Project-Ben-Yehuda
+  tags:
+    - Project Ben-Yehuda
+    - Hebrew
+    - Public domain
+    - Raw TXT
+    - Prose
+  categories:
+    - Free TXT reading
+  region: he-IL
+  chapters: 1
