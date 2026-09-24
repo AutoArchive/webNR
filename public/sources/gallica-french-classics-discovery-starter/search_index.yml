@@ -1,0 +1,50 @@
+gallica/classiques.md:
+  title: Gallica — 法国文学经典
+  author: Bibliothèque nationale de France (BnF) / Gallica
+  description: Gallica 的第一方法国文学经典入口，可按作者、时期与文学流派发现并免费查阅大量经典作品。WebNR 当前只保存发现链接与自写说明，不抓取、镜像或重新分发 Gallica 记录与文件。
+  page_url: https://gallica.bnf.fr/selections/fr/html/litteratures/les-classiques-de-la-litterature-francaise
+  source: WebNR Gallica French Classics Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Gallica
+    - French literature
+    - French classics
+    - digital library
+    - discovery
+  categories:
+    - Official literature discovery
+  region: fr-FR
+
+gallica/auteurs.md:
+  title: Gallica — 法国文学经典作者索引
+  author: Bibliothèque nationale de France (BnF) / Gallica
+  description: Gallica 的第一方经典文学作者 A–Z 索引，适合从作家进入具体作品与数字版本。WebNR 当前只链接索引，不同步书目、扫描页、OCR、EPUB 或其他文件。
+  page_url: https://gallica.bnf.fr/selections/fr/html/litteratures/les-classiques-de-la-litterature-acces-par-ordre-alphabetique-dauteur
+  source: WebNR Gallica French Classics Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Gallica
+    - authors
+    - French books
+    - classics
+    - discovery
+  categories:
+    - Official literature discovery
+  region: fr-FR
+
+gallica/periodes.md:
+  title: Gallica — 法国文学经典时期索引
+  author: Bibliothèque nationale de France (BnF) / Gallica
+  description: Gallica 的第一方时期索引，从中世纪到二十世纪按时代发现法国文学经典。WebNR 当前只提供跳转，不调用 Gallica API、OPDS、OAI/SRU，也不下载或镜像上游文件。
+  page_url: https://gallica.bnf.fr/selections/fr/html/litteratures/les-classiques-de-la-litterature-acces-par-periode
+  source: WebNR Gallica French Classics Discovery Directory
+  license: Link-only-WebNR-editorial
+  tags:
+    - Gallica
+    - literary periods
+    - French literature
+    - public-domain discovery
+    - discovery
+  categories:
+    - Official literature discovery
+  region: fr-FR
